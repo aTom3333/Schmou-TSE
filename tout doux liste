@@ -1,0 +1,29 @@
+Shmup !
+ETAPE 0:
+Trouver un nom lolmdr Schmoupsse
+
+ETAPE 1 :
+Défilement (fond)
+Base : vaisseau manipulable par le joueur
+Ennemis apparaissent aléatoire (comportement, attaque, capacité)
+Classe Powerups
+	
+Classe Attaque facilement implémentable
+	Collision
+	Trajectoire
+	Caractéristiques
+FX
+Classe Vaisseau joueur
+	Stats
+	Skills	
+	
+ETAPE 2 :
+Idée multijoueur :
+	J2 contrôle les attaques/spawn des ennemi à la souris
+	Vaisseau contralable à plusieurs
+	1 vaisseau par joueur (coop)
+Contrôle de Boss
+
+
+
+
