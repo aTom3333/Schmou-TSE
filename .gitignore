@@ -45,3 +45,6 @@ bin/
 
 # machins de visual studio
 .vs/
+
+# Dossier solution VS
+Schmou'TSE/
