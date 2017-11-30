@@ -31,11 +31,17 @@
 *.out
 *.app
 
+# dossier de CLion
 .idea/
+
+# Fichiers de CMake
 cmake-build-debug/
-cmake-module/
+cmake_modules/
 CMakeLists.txt
 Doxyfile.in
+
+# Dossier où est généré l'éxecutable
+bin/
 
 # machins de visual studio
 .vs/
