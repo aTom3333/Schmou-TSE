@@ -31,5 +31,11 @@
 *.out
 *.app
 
+.idea/
+cmake-build-debug/
+cmake-module/
+CMakeLists.txt
+Doxyfile.in
+
 # machins de visual studio
 .vs/
