@@ -64,3 +64,5 @@
 
 
 *.cpp   filter=spaces2tabs
+*.h   filter=spaces2tabs
+*.hpp   filter=spaces2tabs
