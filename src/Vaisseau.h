@@ -1,22 +1,21 @@
-#ifndef __Vaisseau__
-#define __Vaisseau__
+#ifndef VAISSEAU_H
+#define VAISSEAU_H
 
+
+/**
+ * @class Vaisseau
+ * @brief Description brève
+ *
+ * Description détaillée
+ */
 class Vaisseau
 {
-public:
-	Vaisseau();
-	~Vaisseau();
+	public:
+		Vaisseau();
+		~Vaisseau();
 
-private:
+	private:
 
 };
 
-Vaisseau::Vaisseau()
-{
-}
-
-Vaisseau::~Vaisseau()
-{
-}
-
-#endif // !__Vaisseau__
+#endif // VAISSEAU_H

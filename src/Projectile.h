@@ -1,23 +1,22 @@
-#ifndef __Projectile__
-#define __Projectile__
+#ifndef PROJECTILE_H
+#define PROJECTILE_H
 
+
+/**
+ * @class Projectile
+ * @brief Description brève
+ *
+ * Description détaillée
+ */
 class Projectile
 {
-public:
-	Projectile();
-	~Projectile();
+	public:
+		Projectile();
+		~Projectile();
 
-private:
+	private:
 
 };
 
-Projectile::Projectile()
-{
-}
-
-Projectile::~Projectile()
-{
-}
-
-#endif // !__Projectile__
+#endif // PROJECTILE_H
 

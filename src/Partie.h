@@ -1,22 +1,21 @@
-#ifndef __Partie__
-#define __Partie__
+#ifndef PARTIE_H
+#define PARTIE_H
 
+
+/**
+ * @class Partie
+ * @brief Description brève
+ *
+ * Description détaillée
+ */
 class Partie
 {
-public:
-	Partie();
-	~Partie();
+	public:
+		Partie();
+		~Partie();
 
-private:
+	private:
 
 };
 
-Partie::Partie()
-{
-}
-
-Partie::~Partie()
-{
-}
-
-#endif // !__Partie__
+#endif // PARTIE_H
