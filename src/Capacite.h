@@ -1,12 +1,17 @@
 #ifndef CAPACITE_H
 #define CAPACITE_H
 
+#include <vector>
+#include <string>
+#include <algorithm>
+
+
 
 /**
  * @class Capacite
- * @brief Classe virtuelle qui définit la structure générale d'une capacité
+ * @brief Classe abstraite qui définit la structure générale d'une capacité
  *
- * Cette classe virtuelle permet de définir la structure générale d'une capacité du jeu,
+ * Cette classe abstraite permet de définir la structure générale d'une capacité du jeu,
  * elle doit être héritée pour chaque capacité qui est ajoutée au jeu
  */
 class Capacite
