@@ -9,7 +9,7 @@
 
 /**
  * @class Capacite
- * @brief Classe abstraite qui définit la structure générale d'une capacité
+ * @brief Classe abstraite qui définit la structure générale d'une capacité, à faire hériter de chaque capacité
  *
  * Cette classe abstraite permet de définir la structure générale d'une capacité du jeu,
  * elle doit être héritée pour chaque capacité qui est ajoutée au jeu

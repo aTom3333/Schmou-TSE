@@ -15,6 +15,7 @@
  *
  * Description détaillée
  */
+
 class Partie
 {
 	public:

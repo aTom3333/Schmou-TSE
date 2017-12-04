@@ -14,6 +14,7 @@
  *
  * Description détaillée 
  */
+
 class Vaisseau
 {
 	public:
@@ -22,21 +23,21 @@ class Vaisseau
 
 	private:
 		//personnalisation
-		bool _player;
-		std::string _nom;
-		int _Nskin;
+		bool player_;
+		std::string nom_;
+		int Nskin_;
 		//stats de base
-		int _pvM;
-		int _atqM;
-		int _defM;
-		int _vitM;
+		int pvM_;
+		int atqM_;
+		int defM_;
+		int vitM_;
 		//stats actualisées en jeu
-		int _pv;
-		int _atq;
-		int _def;
-		int _vit;
+		int pv_;
+		int atq_;
+		int def_;
+		int vit_;
 		//liste de capacités
-		std::vector <Capacite> _skills;
+		std::vector <Capacite> skills_;
 };
 
 #endif // VAISSEAU_H

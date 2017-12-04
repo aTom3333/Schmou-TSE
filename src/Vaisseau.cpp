@@ -9,12 +9,12 @@
 Vaisseau::Vaisseau(bool player)
 {
 	//presonnalisation
-	_player = player;
+	player_ = player;
 	//stats de base
-	_pvM = 100;
-	_atqM = 100;
-	_defM = 100;
-	_vitM = 100;
+	pvM_ = 100;
+	atqM_ = 100;
+	defM_ = 100;
+	vitM_ = 100;
 
 }
 
