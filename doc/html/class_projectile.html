@@ -68,11 +68,11 @@ $(function() {
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
 <a href="class_projectile-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
-<div class="title">Référence de la classe Projectile</div>  </div>
+<div class="title">Référence de la classe Projectile<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Description brève.  
+<p>Classe abstraite qui définit la structure générale d'un projectile, à faire hériter pour chaque projectile.  
  <a href="class_projectile.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_projectile_8h_source.html">Projectile.h</a>&gt;</code></p>
@@ -83,10 +83,16 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:ac536ed2aad56af866a2078b9a85aa16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94903e021fa2edab60ba3836ca0b937d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_projectile.html#a94903e021fa2edab60ba3836ca0b937d">~Projectile</a> ()</td></tr>
 <tr class="separator:a94903e021fa2edab60ba3836ca0b937d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5d38357da8a5fdc622b248a449523a5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_projectile.html#aa5d38357da8a5fdc622b248a449523a5">collisionne</a> (const <a class="el" href="class_vaisseau.html">Vaisseau</a> &amp;v) const =0</td></tr>
+<tr class="memdesc:aa5d38357da8a5fdc622b248a449523a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teste s'il y a une coolision entre un <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> et un <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code>.  <a href="#aa5d38357da8a5fdc622b248a449523a5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa5d38357da8a5fdc622b248a449523a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8550c8b1b012c5c290fb6da5b06f57ef"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_projectile.html#a8550c8b1b012c5c290fb6da5b06f57ef">agit</a> (<a class="el" href="class_vaisseau.html">Vaisseau</a> &amp;v)=0</td></tr>
+<tr class="memdesc:a8550c8b1b012c5c290fb6da5b06f57ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réalise l'action que le projectile doit faire sur le vaisseau.  <a href="#a8550c8b1b012c5c290fb6da5b06f57ef">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8550c8b1b012c5c290fb6da5b06f57ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Description brève. </p>
-<p>Description détaillée </p>
+<div class="textblock"><p>Classe abstraite qui définit la structure générale d'un projectile, à faire hériter pour chaque projectile. </p>
+<p>Classe abstraite mère de chaque projectile en tant qu'entité propre. Une capacité peut créer plusieurs projectiles ; elle leur donne des méthodes qui les font exister dans la boucle de jeu : déplacement, test de collison, dégats... </p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="ac536ed2aad56af866a2078b9a85aa16d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac536ed2aad56af866a2078b9a85aa16d">&#9670;&nbsp;</a></span>Projectile()</h2>
@@ -122,8 +128,79 @@ Fonctions membres publiques</h2></td></tr>
 
 </div>
 </div>
-<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="a8550c8b1b012c5c290fb6da5b06f57ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8550c8b1b012c5c290fb6da5b06f57ef">&#9670;&nbsp;</a></span>agit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Projectile::agit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vaisseau.html">Vaisseau</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Réalise l'action que le projectile doit faire sur le vaisseau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Un <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> sur lequel l'action du <code>Prejectile</code> va se faire Fonction virtuelle qui doit être surchargée pour les classes héritées. Elle réalise l'action que le <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> appelant sur le <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> passé en paramètre (dégats, changement de stat, ...) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa5d38357da8a5fdc622b248a449523a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5d38357da8a5fdc622b248a449523a5">&#9670;&nbsp;</a></span>collisionne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Projectile::collisionne </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vaisseau.html">Vaisseau</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Teste s'il y a une coolision entre un <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> et un <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Un <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> avec lequel la collision va être testée </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un <code>bool</code> qui vaut <em>true</em> s'il y a collision entre le <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> et le <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> et <em>false</em> sinon Fonction virtuelle qui doit être surchargée pour les classes héritées afin de tester s'il y a une collision entre le <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> appelant et le <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> passé en paramètre </dd></dl>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>src/<a class="el" href="_projectile_8h_source.html">Projectile.h</a></li>
+<li>src/<a class="el" href="_projectile_8cpp.html">Projectile.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -2,7 +2,7 @@
 \label{class_projectile}\index{Projectile@{Projectile}}
 
 
-Description brève.  
+Classe abstraite qui définit la structure générale d\textquotesingle{}un projectile, à faire hériter pour chaque projectile.  
 
 
 
@@ -15,13 +15,17 @@ Description brève.
 \hyperlink{class_projectile_ac536ed2aad56af866a2078b9a85aa16d}{Projectile} ()
 \item 
 \hyperlink{class_projectile_a94903e021fa2edab60ba3836ca0b937d}{$\sim$\+Projectile} ()
-\end{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{class_projectile_aa5d38357da8a5fdc622b248a449523a5}{collisionne} (const \hyperlink{class_vaisseau}{Vaisseau} \&v) const =0
+\begin{DoxyCompactList}\small\item\em Teste s\textquotesingle{}il y a une coolision entre un {\ttfamily \hyperlink{class_projectile}{Projectile}} et un {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_projectile_a8550c8b1b012c5c290fb6da5b06f57ef}{agit} (\hyperlink{class_vaisseau}{Vaisseau} \&v)=0
+\begin{DoxyCompactList}\small\item\em Réalise l\textquotesingle{}action que le projectile doit faire sur le vaisseau. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-Description brève. 
+Classe abstraite qui définit la structure générale d\textquotesingle{}un projectile, à faire hériter pour chaque projectile. 
 
-Description détaillée 
+Classe abstraite mère de chaque projectile en tant qu\textquotesingle{}entité propre. Une capacité peut créer plusieurs projectiles ; elle leur donne des méthodes qui les font exister dans la boucle de jeu \+: déplacement, test de collison, dégats... 
 
 \subsection{Documentation des constructeurs et destructeur}
 \mbox{\Hypertarget{class_projectile_ac536ed2aad56af866a2078b9a85aa16d}\label{class_projectile_ac536ed2aad56af866a2078b9a85aa16d}} 
@@ -38,6 +42,43 @@ Description détaillée
 
 
 
-La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_projectile_a8550c8b1b012c5c290fb6da5b06f57ef}\label{class_projectile_a8550c8b1b012c5c290fb6da5b06f57ef}} 
+\index{Projectile@{Projectile}!agit@{agit}}
+\index{agit@{agit}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{agit()}{agit()}}
+{\footnotesize\ttfamily Projectile\+::agit (\begin{DoxyParamCaption}\item[{\hyperlink{class_vaisseau}{Vaisseau} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Réalise l\textquotesingle{}action que le projectile doit faire sur le vaisseau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em v} & Un {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} sur lequel l\textquotesingle{}action du {\ttfamily Prejectile} va se faire Fonction virtuelle qui doit être surchargée pour les classes héritées. Elle réalise l\textquotesingle{}action que le {\ttfamily \hyperlink{class_projectile}{Projectile}} appelant sur le {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} passé en paramètre (dégats, changement de stat, ...) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_projectile_aa5d38357da8a5fdc622b248a449523a5}\label{class_projectile_aa5d38357da8a5fdc622b248a449523a5}} 
+\index{Projectile@{Projectile}!collisionne@{collisionne}}
+\index{collisionne@{collisionne}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{collisionne()}{collisionne()}}
+{\footnotesize\ttfamily Projectile\+::collisionne (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vaisseau}{Vaisseau} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Teste s\textquotesingle{}il y a une coolision entre un {\ttfamily \hyperlink{class_projectile}{Projectile}} et un {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em v} & Un {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} avec lequel la collision va être testée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un {\ttfamily bool} qui vaut {\itshape true} s\textquotesingle{}il y a collision entre le {\ttfamily \hyperlink{class_projectile}{Projectile}} et le {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} et {\itshape false} sinon Fonction virtuelle qui doit être surchargée pour les classes héritées afin de tester s\textquotesingle{}il y a une collision entre le {\ttfamily \hyperlink{class_projectile}{Projectile}} appelant et le {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} passé en paramètre 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
-src/\hyperlink{_projectile_8h}{Projectile.\+h}\end{DoxyCompactItemize}
+src/\hyperlink{_projectile_8h}{Projectile.\+h}\item 
+src/\hyperlink{_projectile_8cpp}{Projectile.\+cpp}\end{DoxyCompactItemize}

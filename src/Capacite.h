@@ -6,7 +6,6 @@
 #include <algorithm>
 
 
-
 /**
  * @class Capacite
  * @brief Classe abstraite qui définit la structure générale d'une capacité, à faire hériter de chaque capacité

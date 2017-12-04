@@ -6,7 +6,7 @@
 #include <algorithm>
 #include "Capacite.h"
 #include "Projectile.h"
-
+#include "Vaisseau.h"
 
 
 /**
