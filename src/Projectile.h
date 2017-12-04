@@ -28,21 +28,21 @@ class Projectile
 
 		/**
 		 * @fn collisionne
-		 * @param v Un @c Vaisseau avec lequel la collision va être testée
-		 * @return Un @c bool qui vaut @a true s'il y a collision entre le @c Projectile et le @c Vaisseau et @a false sinon
 		 * @brief Teste s'il y a une coolision entre un @c Projectile et un @c Vaisseau
 		 *
 		 * Fonction virtuelle qui doit être surchargée pour les classes héritées afin de tester s'il y a une collision
 		 * entre le @c Projectile appelant et le @c Vaisseau passé en paramètre
+		 * @param v Un @c Vaisseau avec lequel la collision va être testée
+		 * @return Un @c bool qui vaut @a true s'il y a collision entre le @c Projectile et le @c Vaisseau et @a false sinon
 		 */
 		virtual bool collisionne(const Vaisseau& v) const = 0;
 		/**
 		 * @fn agit
-		 * @param v Un @c Vaisseau sur lequel l'action du @c Prejectile va se faire
-		 * @brief Réalise l'action que le projectile doit faire sur le vaisseau
+		 * @brief Réalise l'action que le @c Projectile doit faire sur le vaisseau
 		 *
 		 * Fonction virtuelle qui doit être surchargée pour les classes héritées.
 		 * Elle réalise l'action que le @c Projectile appelant sur le @c Vaisseau passé en paramètre (dégats, changement de stat, ...)
+		 * @param v Un @c Vaisseau sur lequel l'action du @c Projectile va se faire
 		 */
 		virtual void agit(Vaisseau& v) = 0;
 

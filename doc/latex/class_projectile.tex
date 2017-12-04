@@ -19,7 +19,7 @@ Classe abstraite qui définit la structure générale d\textquotesingle{}un proj
 virtual bool \hyperlink{class_projectile_aa5d38357da8a5fdc622b248a449523a5}{collisionne} (const \hyperlink{class_vaisseau}{Vaisseau} \&v) const =0
 \begin{DoxyCompactList}\small\item\em Teste s\textquotesingle{}il y a une coolision entre un {\ttfamily \hyperlink{class_projectile}{Projectile}} et un {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}}. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_projectile_a8550c8b1b012c5c290fb6da5b06f57ef}{agit} (\hyperlink{class_vaisseau}{Vaisseau} \&v)=0
-\begin{DoxyCompactList}\small\item\em Réalise l\textquotesingle{}action que le projectile doit faire sur le vaisseau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Réalise l\textquotesingle{}action que le {\ttfamily \hyperlink{class_projectile}{Projectile}} doit faire sur le vaisseau. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
@@ -51,11 +51,11 @@ Classe abstraite mère de chaque projectile en tant qu\textquotesingle{}entité 
 
 
 
-Réalise l\textquotesingle{}action que le projectile doit faire sur le vaisseau. 
+Réalise l\textquotesingle{}action que le {\ttfamily \hyperlink{class_projectile}{Projectile}} doit faire sur le vaisseau. 
 
-
+Fonction virtuelle qui doit être surchargée pour les classes héritées. Elle réalise l\textquotesingle{}action que le {\ttfamily \hyperlink{class_projectile}{Projectile}} appelant sur le {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} passé en paramètre (dégats, changement de stat, ...) 
 \begin{DoxyParams}{Paramètres}
-{\em v} & Un {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} sur lequel l\textquotesingle{}action du {\ttfamily Prejectile} va se faire Fonction virtuelle qui doit être surchargée pour les classes héritées. Elle réalise l\textquotesingle{}action que le {\ttfamily \hyperlink{class_projectile}{Projectile}} appelant sur le {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} passé en paramètre (dégats, changement de stat, ...) \\
+{\em v} & Un {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} sur lequel l\textquotesingle{}action du {\ttfamily \hyperlink{class_projectile}{Projectile}} va se faire \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_projectile_aa5d38357da8a5fdc622b248a449523a5}\label{class_projectile_aa5d38357da8a5fdc622b248a449523a5}} 
@@ -68,13 +68,13 @@ Réalise l\textquotesingle{}action que le projectile doit faire sur le vaisseau.
 
 Teste s\textquotesingle{}il y a une coolision entre un {\ttfamily \hyperlink{class_projectile}{Projectile}} et un {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}}. 
 
-
+Fonction virtuelle qui doit être surchargée pour les classes héritées afin de tester s\textquotesingle{}il y a une collision entre le {\ttfamily \hyperlink{class_projectile}{Projectile}} appelant et le {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} passé en paramètre 
 \begin{DoxyParams}{Paramètres}
 {\em v} & Un {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} avec lequel la collision va être testée \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-Un {\ttfamily bool} qui vaut {\itshape true} s\textquotesingle{}il y a collision entre le {\ttfamily \hyperlink{class_projectile}{Projectile}} et le {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} et {\itshape false} sinon Fonction virtuelle qui doit être surchargée pour les classes héritées afin de tester s\textquotesingle{}il y a une collision entre le {\ttfamily \hyperlink{class_projectile}{Projectile}} appelant et le {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} passé en paramètre 
+Un {\ttfamily bool} qui vaut {\itshape true} s\textquotesingle{}il y a collision entre le {\ttfamily \hyperlink{class_projectile}{Projectile}} et le {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} et {\itshape false} sinon 
 \end{DoxyReturn}
 
 

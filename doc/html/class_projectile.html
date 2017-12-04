@@ -87,7 +87,7 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:aa5d38357da8a5fdc622b248a449523a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teste s'il y a une coolision entre un <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> et un <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code>.  <a href="#aa5d38357da8a5fdc622b248a449523a5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa5d38357da8a5fdc622b248a449523a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8550c8b1b012c5c290fb6da5b06f57ef"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_projectile.html#a8550c8b1b012c5c290fb6da5b06f57ef">agit</a> (<a class="el" href="class_vaisseau.html">Vaisseau</a> &amp;v)=0</td></tr>
-<tr class="memdesc:a8550c8b1b012c5c290fb6da5b06f57ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réalise l'action que le projectile doit faire sur le vaisseau.  <a href="#a8550c8b1b012c5c290fb6da5b06f57ef">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a8550c8b1b012c5c290fb6da5b06f57ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réalise l'action que le <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> doit faire sur le vaisseau.  <a href="#a8550c8b1b012c5c290fb6da5b06f57ef">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8550c8b1b012c5c290fb6da5b06f57ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -153,10 +153,10 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Réalise l'action que le projectile doit faire sur le vaisseau. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
+<p>Réalise l'action que le <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> doit faire sur le vaisseau. </p>
+<p>Fonction virtuelle qui doit être surchargée pour les classes héritées. Elle réalise l'action que le <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> appelant sur le <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> passé en paramètre (dégats, changement de stat, ...) </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Un <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> sur lequel l'action du <code>Prejectile</code> va se faire Fonction virtuelle qui doit être surchargée pour les classes héritées. Elle réalise l'action que le <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> appelant sur le <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> passé en paramètre (dégats, changement de stat, ...) </td></tr>
+    <tr><td class="paramname">v</td><td>Un <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> sur lequel l'action du <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> va se faire </td></tr>
   </table>
   </dd>
 </dl>
@@ -188,13 +188,13 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Teste s'il y a une coolision entre un <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> et un <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code>. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
+<p>Fonction virtuelle qui doit être surchargée pour les classes héritées afin de tester s'il y a une collision entre le <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> appelant et le <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> passé en paramètre </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>Un <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> avec lequel la collision va être testée </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Un <code>bool</code> qui vaut <em>true</em> s'il y a collision entre le <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> et le <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> et <em>false</em> sinon Fonction virtuelle qui doit être surchargée pour les classes héritées afin de tester s'il y a une collision entre le <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> appelant et le <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> passé en paramètre </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un <code>bool</code> qui vaut <em>true</em> s'il y a collision entre le <code><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a></code> et le <code><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></code> et <em>false</em> sinon </dd></dl>
 
 </div>
 </div>
