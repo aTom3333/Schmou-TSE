@@ -5,6 +5,7 @@
 #include <string>
 #include <algorithm>
 #include "Capacite.h"
+#include "Entite.h"
 #include "Projectile.h"
 
 
@@ -15,7 +16,7 @@
  * Description détaillée 
  */
 
-class Vaisseau
+class Vaisseau : public Entite
 {
 	public:
 		explicit Vaisseau(bool player);
