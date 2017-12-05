@@ -33,6 +33,7 @@ int main()
 	triangle.setPoint(2, {cote, sqrt(3)/2 * cote});
 	triangle.setPosition(500, 200);
 	triangle.setFillColor(sf::Color::Red);
+	triangle.setScale(1.5, 2.5);
 	triangle.setRotation(60);
 
 	sf::CircleShape origine(2);
@@ -43,21 +44,21 @@ int main()
 	Entite e1;
 	e1.forme_.push_back(&triangle);
 
-	sf::Image map;
-	map.create(800, 800, sf::Color(0, 0, 0, 127));
+	sf::Image masque;
+	masque.create(800, 800, sf::Color(0, 0, 0, 127));
 	for(int  i = 0; i < 800; i++)
 	{
 		for(int j = 0; j < 800; ++j)
 		{
 			c.setPosition(i, j);
 			if(collision(c, triangle))
-				map.setPixel(i, j, sf::Color(255, 255, 255, 127));
+				masque.setPixel(i, j, sf::Color(255, 255, 255, 127));
 		}
 	}
 
 	sf::Texture t;
 	t.create(800, 800);
-	t.update(map);
+	t.update(masque);
 	sf::Sprite s;
 	s.setTexture(t);
 
