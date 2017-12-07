@@ -6,6 +6,7 @@ ProjTest::ProjTest()
 	sprite_.setTexture(texture_);
 	position_.x = 0;
 	position_.y = 0;
+	age_ = 0;
 }
 
 ProjTest::~ProjTest()
@@ -15,6 +16,12 @@ ProjTest::~ProjTest()
 
 void ProjTest::gestion(sf::RenderWindow &window)
 {
+	age_++;
+
+	position_.x = age_;
+	position_.y = age_;
+	
+	
 	afficher(window);
 }
 
