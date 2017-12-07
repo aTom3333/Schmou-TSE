@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include "Entite.h"
 
 
 // Déclaration préalable de Vaisseau pour éviter l'inclusion
@@ -20,7 +21,7 @@ class Vaisseau;
 *
 */
 
-class Projectile
+class Projectile : public Entite
 {
 	public:
 		Projectile();
