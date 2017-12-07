@@ -13,8 +13,10 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!", sf::Style::Default, settings);
 	sf::CircleShape cercle(50.f);
 	cercle.setFillColor(sf::Color::Green);
-	cercle.setPosition(100, 100);
-	cercle.setOrigin(50, 50);
+	cercle.setPosition(300, 100);
+	cercle.setOrigin(0, 0);
+	cercle.setRotation(90);
+	cercle.setScale(1.5, 2.5);
 
 	sf::CircleShape c(26);
 	c.setOrigin(26, 26);
@@ -39,7 +41,7 @@ int main()
 	sf::CircleShape origine(2);
 	origine.setOrigin(2, 2);
 	origine.setFillColor(sf::Color::Black);
-	origine.setPosition(triangle.getPosition());
+	origine.setPosition(cercle.getPosition());
 
 	Entite e1;
 	e1.forme_.push_back(&triangle);
@@ -51,7 +53,7 @@ int main()
 		for(int j = 0; j < 800; ++j)
 		{
 			c.setPosition(i, j);
-			if(collision(c, triangle))
+			if(collision(c, cercle))
 				masque.setPixel(i, j, sf::Color(255, 255, 255, 127));
 		}
 	}
@@ -72,7 +74,6 @@ int main()
 			if (event.type == sf::Event::MouseButtonPressed)
 			{
 				auto pos = sf::Mouse::getPosition(window);
-				std::cout << pos.x << " " << pos.y << std::endl;
 				c.setPosition(pos.x, pos.y);
 				if(collision(triangle, c))
 					std::cout << "Collision !" << std::endl;

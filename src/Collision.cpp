@@ -1,7 +1,30 @@
 #include "Collision.h"
 #include <cmath>
-#include <iostream>
 
+
+constexpr double PI = acos(-1);
+
+sf::Vector2f centre_transforme(const sf::CircleShape& c)
+{
+	double theta = c.getRotation() / 180 * PI;
+	auto z = sf::Vector2f{c.getRadius(), c.getRadius()} - c.getOrigin();
+	z.x *= c.getScale().x;
+	z.y *= c.getScale().y;
+	sf::Vector2f transform(z.x*cos(theta) - z.y*sin(theta), z.x*sin(theta) + z.y*cos(theta));
+
+	return c.getPosition() + transform;
+}
+
+sf::Vector2f point_transforme(const sf::Shape& s, size_t index)
+{
+	double theta = s.getRotation() / 180 * PI;
+	auto z = s.getPoint(index) - s.getOrigin();
+	z.x *= s.getScale().x;
+	z.y *= s.getScale().y;
+	sf::Vector2f transform(z.x*cos(theta) - z.y*sin(theta), z.x*sin(theta) + z.y*cos(theta));
+
+	return s.getPosition() + transform;
+}
 
 bool collision(const sf::Shape& s1, const sf::Shape& s2);
 
@@ -9,8 +32,8 @@ bool collision(const sf::CircleShape& c1, const sf::CircleShape& c2)
 {
 	// TODO Prendre en compte les transformations
 
-	auto c1c = c1.getPosition() - c1.getOrigin() + sf::Vector2f{c1.getRadius(), c1.getRadius()};
-	auto c2c = c2.getPosition() - c2.getOrigin() + sf::Vector2f{c2.getRadius(), c2.getRadius()};
+	auto c1c = centre_transforme(c1);
+	auto c2c = centre_transforme(c2);
 	auto diff = c1c - c2c;
 	return diff.x*diff.x + diff.y*diff.y < (c1.getRadius()+c2.getRadius()) * (c1.getRadius()+c2.getRadius());
 }
@@ -20,10 +43,10 @@ bool collision(const sf::RectangleShape& r, const sf::CircleShape& c);
 
 bool collision(const sf::CircleShape& c, const sf::ConvexShape& co)
 {
-	// TODO Découper cette fonction, c'est trop dégueulasse
+	// TODO Prendre en compte les transformations du cercle
 
 	// Point C
-	auto C = c.getPosition() - c.getOrigin() + sf::Vector2f{c.getRadius(), c.getRadius()};
+	auto C = centre_transforme(c);
 	// Rayon du cercle
 	double R = c.getRadius();
 
@@ -32,22 +55,9 @@ bool collision(const sf::CircleShape& c, const sf::ConvexShape& co)
 	bool direct = true;
 	if(N > 2)
 	{
-		double theta = co.getRotation() / 180 * acos(-1);
-		auto zA = co.getPoint(0) - co.getOrigin();
-		zA.x *= co.getScale().x;
-		zA.y *= co.getScale().y;
-		sf::Vector2f transformA(zA.x*cos(theta) - zA.y*sin(theta), zA.x*sin(theta) + zA.y*cos(theta));
-		auto A = co.getPosition() + transformA;
-		auto zB = co.getPoint(1) - co.getOrigin();
-		zB.x *= co.getScale().x;
-		zB.y *= co.getScale().y;
-		sf::Vector2f transformB(zB.x*cos(theta) - zB.y*sin(theta), zB.x*sin(theta) + zB.y*cos(theta));
-		auto B = co.getPosition() + transformB;
-		auto zC = co.getPoint(2) - co.getOrigin();
-		zC.x *= co.getScale().x;
-		zC.y *= co.getScale().y;
-		sf::Vector2f transformC(zC.x*cos(theta) - zC.y*sin(theta), zC.x*sin(theta) + zC.y*cos(theta));
-		auto C = co.getPosition() + transformC;
+		auto A = point_transforme(co, 0);
+		auto B = point_transforme(co, 1);
+		auto C = point_transforme(co, 2);
 		auto AB = B - A;
 		auto AC = C - A;
 		// Norme du produit vectoriel de AB par AC (pas vraiment en fait, ça peut être négatif)
@@ -59,21 +69,10 @@ bool collision(const sf::CircleShape& c, const sf::ConvexShape& co)
 
 	for(int i = 0; i < N; ++i)
 	{
-		double theta = co.getRotation() / 180 * acos(-1);
-
-		auto zA = co.getPoint(i) - co.getOrigin();
-		zA.x *= co.getScale().x;
-		zA.y *= co.getScale().y;
-		sf::Vector2f transformA(zA.x*cos(theta) - zA.y*sin(theta), zA.x*sin(theta) + zA.y*cos(theta));
 		// Point A
-		auto A = co.getPosition() + transformA;
-
-		auto zB = co.getPoint((i+1) % N) - co.getOrigin();
-		zB.x *= co.getScale().x;
-		zB.y *= co.getScale().y;
-		sf::Vector2f transformB(zB.x*cos(theta) - zB.y*sin(theta), zB.x*sin(theta) + zB.y*cos(theta));
+		auto A = point_transforme(co, i);
 		// Point B
-		auto B = co.getPosition() + transformB;
+		auto B = point_transforme(co, (i+1) % N);
 		// Vecteur AB
 		auto AB = B - A;
 		// Norme de AB au carré
