@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <SFML/Graphics.hpp>
 #include "Capacite.h"
 #include "Projectile.h"
 #include "Vaisseau.h"
@@ -23,6 +24,8 @@ class Partie
 	public:
 		Partie();
 		~Partie();
+
+		void jeu(sf::RenderWindow *window);
 
 	private:
 
