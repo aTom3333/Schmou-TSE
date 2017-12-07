@@ -2,7 +2,7 @@
 #include <cmath>
 
 
-constexpr double PI = acos(-1);
+const double PI = acos(-1);
 
 sf::Vector2f centre_transforme(const sf::CircleShape& c)
 {
