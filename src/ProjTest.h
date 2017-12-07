@@ -14,6 +14,7 @@ class ProjTest : public Projectile
 	private:
 		int mx_;
 		int my_;
+		int vx_, vy_;
 };
 
 #endif

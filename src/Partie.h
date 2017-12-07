@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include "Capacite.h"
@@ -27,6 +28,7 @@ class Partie
 		~Partie();
 
 		void jeu(sf::RenderWindow &window);
+		void testCollision(std::vector<Projectile*> projectiles);
 
 	private:
 

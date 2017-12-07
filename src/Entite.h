@@ -13,6 +13,7 @@ class Entite
 	public:
 		const std::vector<sf::Shape*>& getForme() const { return forme_; }
 		void afficher(sf::RenderWindow &window);
+		void setPosition(const sf::Vector2f &pos);
 
 	//private:
 		bool collisionable_ = true;
