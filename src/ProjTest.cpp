@@ -1,5 +1,6 @@
 #include "ProjTest.h"
 
+
 ProjTest::ProjTest()
 {
 	texture_.loadFromFile("../../rc/Sprites/base/projectile_test.png");

@@ -11,6 +11,7 @@ class Entite
 	friend bool collision(const Entite& e1, const Entite& e2);
 
 	public:
+		virtual ~Entite() = default;
 		const std::vector<sf::Shape*>& getForme() const { return forme_; }
 		void afficher(sf::RenderWindow &window);
 

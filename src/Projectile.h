@@ -25,11 +25,11 @@ class Projectile : public Entite
 {
 	public:
 		Projectile();
-		~Projectile();
+		virtual ~Projectile();
 
 		/**
 		 * @fn collisionne
-		 * @brief Teste s'il y a une coolision entre un @c Projectile et un @c Vaisseau
+		 * @brief Teste s'il y a une collision entre un @c Projectile et un @c Vaisseau
 		 *
 		 * Fonction virtuelle qui doit être surchargée pour les classes héritées afin de tester s'il y a une collision
 		 * entre le @c Projectile appelant et le @c Vaisseau passé en paramètre
