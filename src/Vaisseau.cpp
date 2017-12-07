@@ -9,7 +9,7 @@
 Vaisseau::Vaisseau(bool player)
 {
 	//presonnalisation
-	player_ = player;
+	joueur_ = player;
 	//stats de base
 	pvM_ = 100;
 	atqM_ = 100;

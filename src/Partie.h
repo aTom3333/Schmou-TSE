@@ -25,7 +25,7 @@ class Partie
 		Partie();
 		~Partie();
 
-		void jeu(sf::RenderWindow *window);
+		void jeu(sf::RenderWindow &window);
 
 	private:
 

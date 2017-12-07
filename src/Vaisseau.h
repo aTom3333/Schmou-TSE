@@ -24,7 +24,6 @@ class Vaisseau : public Entite
 
 	private:
 		// personnalisation
-		bool player_; /// < Booléen qui définit si le vaisseau est un joueur ou non
 		std::string nom_; /// < Nom du vaisseau ?
 		int Nskin_; /// < Je ne sais pas
 		// stats de base

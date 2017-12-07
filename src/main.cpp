@@ -11,14 +11,14 @@ int main()
 {
 	// Code propre 
 	
-	sf::RenderWindow window(sf::VideoMode(800, 600), " Le plus grand jeu!");
+	sf::RenderWindow window(sf::VideoMode(800, 600), "Schmou'TSE");
 	Partie partie;
-	partie.jeu(&window);
+	partie.jeu(window);
 	
 
 	//Bordel de Thomas
-	/*
-	sf::ContextSettings settings;
+
+	/*sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 	sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!", sf::Style::Default, settings);
 	sf::CircleShape cercle(50.f);

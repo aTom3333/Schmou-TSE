@@ -12,6 +12,7 @@ class Entite
 
 	public:
 		const std::vector<sf::Shape*>& getForme() const { return forme_; }
+		void afficher(sf::RenderWindow &window);
 
 	//private:
 		bool collisionable_ = true;
@@ -20,6 +21,8 @@ class Entite
 		double angle_;
 		sf::CircleShape cercleEnglobant_;
 		std::vector<sf::Shape*> forme_;
+		sf::Texture texture_;
+		sf::Sprite sprite_;
 };
 
 #endif // ENTITE_H
