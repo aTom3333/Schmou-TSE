@@ -18,12 +18,7 @@ ProjTest::ProjTest()
 	setPosition({ x,  y});
 }
 
-ProjTest::~ProjTest()
-{
-
-}
-
-void ProjTest::gestion(sf::RenderWindow &window)
+void ProjTest::gestion(sf::RenderWindow& window)
 {
 	age_++;
 

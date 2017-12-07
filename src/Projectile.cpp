@@ -11,7 +11,3 @@ Projectile::Projectile()
 {
 	
 }
-
-Projectile::~Projectile()
-{
-}

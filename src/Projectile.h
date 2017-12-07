@@ -25,7 +25,6 @@ class Projectile : public Entite
 {
 	public:
 		Projectile();
-		virtual ~Projectile();
 
 		/**
 		 * @fn collisionne
