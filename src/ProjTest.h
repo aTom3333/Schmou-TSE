@@ -12,7 +12,8 @@ class ProjTest : public Projectile
 		void agit(Vaisseau& v);
 		void gestion(sf::RenderWindow &window);
 	private:
-
+		int mx_;
+		int my_;
 };
 
 #endif
