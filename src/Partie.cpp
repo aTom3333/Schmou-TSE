@@ -1,6 +1,7 @@
 #include "Partie.h"
 #include "ProjTest.h"
 
+
 Partie::Partie()
 {
 }
