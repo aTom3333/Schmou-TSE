@@ -15,5 +15,6 @@ bool collision(const Entite& e1, const Entite& e2)
 
 void Entite::afficher(sf::RenderWindow &window)
 {
+	sprite_.setPosition(position_);
 	window.draw(sprite_);
 }
