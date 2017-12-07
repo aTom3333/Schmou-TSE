@@ -16,6 +16,8 @@
  * Description détaillée
  */
 
+// test
+
 class Partie
 {
 	public:
