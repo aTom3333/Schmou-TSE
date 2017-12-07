@@ -11,7 +11,9 @@ class ProjTest : public Projectile
 		~ProjTest();
 		void gestion(sf::RenderWindow &window);
 	private:
-
+		int mx_;
+		int my_;
+		int vx_, vy_;
 };
 
 #endif

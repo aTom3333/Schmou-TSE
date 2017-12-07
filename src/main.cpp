@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <cmath>
+#include <ctime>
 #include <iostream>
 #include "Entite.h"
 #include "Collision.h"
@@ -13,6 +14,9 @@ int main()
 	
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Schmou'TSE");
 	Partie partie;
+
+	//srand(time(NULL));
+
 	partie.jeu(window);
 	
 
