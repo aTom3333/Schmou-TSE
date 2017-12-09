@@ -6,7 +6,9 @@
 class Attaque
 {
 	public:
-	
+		int const getCooldown() { return cooldown_; };
+		int const getTime() { return t_; };
+		std::string const getNom() { return nom_; };
 	protected:
 		int debutX_, debutY_;
 		int cooldown_;

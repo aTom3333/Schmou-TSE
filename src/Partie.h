@@ -31,6 +31,7 @@ class Partie
 		void Partie::testCollision(std::vector<Projectile*> &projectiles);
 
 	private:
+		sf::Font font_;
 
 };
 
