@@ -27,8 +27,8 @@ class Partie
 		Partie();
 		~Partie();
 
-		void jeu();
-		void testCollision(std::vector<Projectile*> projectiles);
+		void jeu(sf::RenderWindow &window);
+		void Partie::testCollision(std::vector<Projectile*> &projectiles);
 
 		//TODO temporaire pour tester, n'existe pas dans le jeu livré
 		void testProjTest(sf::RenderWindow &window);
