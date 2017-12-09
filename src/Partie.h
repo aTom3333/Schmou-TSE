@@ -35,6 +35,7 @@ class Partie
 		void testVaisseauTest(sf::RenderWindow & window);
 
 	private:
+		sf::Font font_;
 
 };
 

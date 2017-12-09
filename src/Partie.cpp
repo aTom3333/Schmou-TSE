@@ -8,6 +8,10 @@
 
 Partie::Partie()
 {
+	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
+	{
+		std::cout << "Impossible de charger la police" << std::endl;
+	}
 }
 
 Partie::~Partie()
@@ -19,6 +23,12 @@ void Partie::testProjTest(sf::RenderWindow & window)
 	AtkTest atkTest;
 	std::vector<Projectile *> projectiles;
 	sf::Clock clock;
+	sf::Text afficheAtk;
+
+	afficheAtk.setFont(font_);
+	afficheAtk.setCharacterSize(20);
+	afficheAtk.setFillColor(sf::Color::White);
+	afficheAtk.setPosition(0, 0);
 
 	while (window.isOpen())  
 	{
@@ -50,6 +60,13 @@ void Partie::testProjTest(sf::RenderWindow & window)
 
 		testCollision(projectiles);
 
+		std::string txt;
+		if(atkTest.getCooldown() - atkTest.getTime() != 0)
+			txt = atkTest.getNom() + " - " + std::to_string(atkTest.getCooldown() - atkTest.getTime());
+		else
+			txt = atkTest.getNom() + " - " + "Prêt";
+		afficheAtk.setString(txt);
+		window.draw(afficheAtk);
 		window.display();
 
 		sf::sleep(sf::milliseconds(10));
