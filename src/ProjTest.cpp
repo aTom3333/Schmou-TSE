@@ -10,12 +10,16 @@ ProjTest::ProjTest()
 	age_ = 0;
 	mx_ = rand() % 2 == 0 ? 1 : -1;
 	my_ = rand() % 2 == 0 ? 1 : -1;
-	vx_ = rand() % 3 + 1;
-	vy_ = rand() % 3 + 1;
+	vx_ = rand() % 5 + 3;
+	vy_ = rand() % 5 + 3;
 
 	float x = rand() % 800, y = rand() % 600;
 
 	setPosition({ x,  y});
+}
+
+ProjTest::~ProjTest()
+{
 }
 
 void ProjTest::gestion(sf::RenderWindow& window)

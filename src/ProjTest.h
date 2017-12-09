@@ -8,6 +8,7 @@ class ProjTest : public Projectile
 {
 	public:
 		ProjTest();
+		~ProjTest();
 		void gestion(sf::RenderWindow &window);
 	private:
 		int mx_;

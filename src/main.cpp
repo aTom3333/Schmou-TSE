@@ -15,7 +15,7 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Schmou'TSE");
 	Partie partie;
 
-	//srand(time(NULL));
+	srand(time(NULL));
 
 	partie.jeu(window);
 	
