@@ -18,6 +18,23 @@ ProjTest::ProjTest()
 	setPosition({ x,  y});
 }
 
+ProjTest::ProjTest(int x, int y)
+{
+	texture_.loadFromFile("../../rc/Sprites/base/balle.png");
+	cercleEnglobant_ = sf::CircleShape(16);
+	cercleEnglobant_.setOrigin(16, 16);
+	sprite_.setTexture(texture_);
+	age_ = 0;
+	mx_ = rand() % 2 == 0 ? 1 : -1;
+	my_ = rand() % 2 == 0 ? 1 : -1;
+	vx_ = rand() % 5 + 3;
+	vy_ = rand() % 5 + 3;
+
+	float x1 =x, y1 = y;
+
+	setPosition({ x1,  y1 });
+}
+
 ProjTest::~ProjTest()
 {
 }

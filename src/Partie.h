@@ -28,7 +28,7 @@ class Partie
 		~Partie();
 
 		void jeu(sf::RenderWindow &window);
-		void testCollision(std::vector<Projectile*> projectiles);
+		void Partie::testCollision(std::vector<Projectile*> &projectiles);
 
 	private:
 

@@ -1,5 +1,7 @@
 #include "Partie.h"
-#include "ProjTest.h"
+#include "_projectiles.h"
+#include "_attaques.h"
+
 
 
 Partie::Partie()
@@ -12,14 +14,9 @@ Partie::~Partie()
 
 void Partie::jeu(sf::RenderWindow & window)
 {
-	std::vector<Projectile *> proj_test;
+	AtkTest atkTest;
+	std::vector<Projectile *> projectiles;
 	sf::Clock clock;
-
-	for (int i = 0; i < 20; i++)
-	{
-		ProjTest *newProj = new ProjTest;
-		proj_test.push_back(newProj);
-	}
 
 	while (window.isOpen())  
 	{
@@ -28,30 +25,28 @@ void Partie::jeu(sf::RenderWindow & window)
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
+			if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
+			{
+				// récupération de la position de la souris dans la fenêtre
+				sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+				// conversion en coordonnées "monde"
+				sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+
+				atkTest.utiliser(worldPos.x, worldPos.y);
+			}
 		}
 
 		float t_ecoule = clock.restart().asMilliseconds();
 		
 		window.clear();
-		for(int i = 0; i < proj_test.size(); i++)
-			proj_test[i]->gestion(window);
 
-		for (int i = 0; i < proj_test.size() - 1; i++)
-		{
-			for (int j = i + 1; j < proj_test.size(); j++)
-			{
-				if (collision(*proj_test[i], *proj_test[j]))
-				{
-					std::cout << "bouh ! " << std::endl;
-					int r = rand() % 2 == 0 ? i : j;
-					delete proj_test[r];
-					proj_test[r] = proj_test[proj_test.size() - 1];
-					proj_test.pop_back();
-					i--;
-					break;
-				}
-			}
-		}
+		// Gestion des attaques
+		atkTest.actualiser(projectiles);
+
+		for(int i = 0; i < projectiles.size(); i++)
+			projectiles[i]->gestion(window);
+
+		testCollision(projectiles);
 
 		window.display();
 
@@ -61,19 +56,25 @@ void Partie::jeu(sf::RenderWindow & window)
 
 // TODO A refaire !!!!
 
-void Partie::testCollision(std::vector<Projectile*> projectiles)
+void Partie::testCollision(std::vector<Projectile*> &projectiles)
 {
-	for (int i = 0; i < projectiles.size() - 1; i++)
+	if (projectiles.size() != 0)
 	{
-		for (int j = i+1; j < projectiles.size(); j++)
+		for (int i = 0; i < projectiles.size() - 1; i++)
 		{
-			if (collision(*projectiles[i], *projectiles[j]))
+			for (int j = i + 1; j < projectiles.size(); j++)
 			{
-				int r = rand() % 2 == 0 ? i : j;
-				projectiles.erase(projectiles.begin() + r);
+				if (collision(*projectiles[i], *projectiles[j]))
+				{
+					int r = rand() % 2 == 0 ? i : j;
+					delete projectiles[r];
+					projectiles[r] = projectiles[projectiles.size() - 1];
+					projectiles.pop_back();
+					i--;
+					break;
+				}
 			}
 		}
 	}
-		
 
 }

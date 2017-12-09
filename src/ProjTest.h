@@ -8,6 +8,7 @@ class ProjTest : public Projectile
 {
 	public:
 		ProjTest();
+		ProjTest(int x, int y);
 		~ProjTest();
 		void gestion(sf::RenderWindow &window);
 	private:
