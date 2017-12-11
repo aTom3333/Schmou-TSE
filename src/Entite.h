@@ -14,13 +14,26 @@ class Entite
 		virtual ~Entite() = default;
 		const std::vector<sf::Shape*>& getForme() const { return forme_; }
 		void afficher(sf::RenderWindow &window);
-		void setPosition(const sf::Vector2f &pos);
 
-	//private:
+		// Tranformation setters & getters
+		void move(const sf::Vector2f& delta);
+		void setPosition(const sf::Vector2f &pos);
+		const sf::Vector2f& getPosition() const;
+
+		void rotate(float angle);
+		void setRotation(float angle);
+		float getRotation() const;
+
+		void scale(float factor);
+		void setScale(float factor);
+		float getScale() const;
+
+	protected:
 		bool collisionable_ = true;
-		bool joueur_;
+		int equipe_;
 		sf::Vector2f position_;
-		double angle_;
+		float angle_;
+		float scale_;
 		sf::CircleShape cercleEnglobant_;
 		std::vector<sf::Shape*> forme_;
 		sf::Texture texture_;

@@ -6,10 +6,10 @@
 #include "Projectile.h"
 
 
-Vaisseau::Vaisseau(bool player)
+Vaisseau::Vaisseau(int equipe)
 {
 	//presonnalisation
-	joueur_ = player;
+	equipe_ = equipe;
 	//stats de base
 	pvM_ = 100;
 	atqM_ = 100;

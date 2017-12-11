@@ -19,7 +19,7 @@
 class Vaisseau : public Entite
 {
 	public:
-		explicit Vaisseau(bool player);
+		explicit Vaisseau(int equipe);
 		~Vaisseau();
 
 	private:
