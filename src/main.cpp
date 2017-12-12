@@ -17,14 +17,14 @@ int main()
 
 	srand(time(nullptr));
 
-	partie.testProjTest(window); ///le truc que Cyril avait tapé jeudi 7 en club
+	partie.testProjTest(window); ///le truc que Cyril avait tapÃ© jeudi 7 en club
 	
-	//partie.testVaisseauTest(window); ///un vaisseau que pierre a testé
+	//partie.testVaisseauTest(window); ///un vaisseau que pierre a testÃ©
 
 
 
 	//Bordel de Thomas 
-	///<attention très bordélique
+	///<attention trÃ¨s bordÃ©lique
 	/*
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
