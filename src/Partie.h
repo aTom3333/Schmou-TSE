@@ -27,7 +27,7 @@ class Partie
 		Partie();
 		~Partie();
 
-		void jeu();
+		void jeu(sf::RenderWindow &window);
 		void testCollision(std::vector<Projectile*> projectiles);
 
 		//TODO temporaire pour tester, n'existe pas dans le jeu livré
@@ -35,6 +35,7 @@ class Partie
 		void testVaisseauTest(sf::RenderWindow & window);
 
 	private:
+		sf::Font font_;
 
 };
 

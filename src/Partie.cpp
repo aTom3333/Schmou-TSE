@@ -1,10 +1,17 @@
 #include "Partie.h"
+#include "_projectiles.h"
+#include "_attaques.h"
 #include "ProjTest.h"
 #include "VaisseauTest.h"
 
 
+
 Partie::Partie()
 {
+	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
+	{
+		std::cout << "Impossible de charger la police" << std::endl;
+	}
 }
 
 Partie::~Partie()
@@ -13,14 +20,15 @@ Partie::~Partie()
 
 void Partie::testProjTest(sf::RenderWindow & window)
 {
-	std::vector<Projectile *> proj_test;
+	AtkTest atkTest;
+	std::vector<Projectile *> projectiles;
 	sf::Clock clock;
+	sf::Text afficheAtk;
 
-	for (int i = 0; i < 20; i++)
-	{
-		ProjTest *newProj = new ProjTest;
-		proj_test.push_back(newProj);
-	}
+	afficheAtk.setFont(font_);
+	afficheAtk.setCharacterSize(20);
+	afficheAtk.setFillColor(sf::Color::White);
+	afficheAtk.setPosition(0, 0);
 
 	while (window.isOpen())  
 	{
@@ -29,31 +37,36 @@ void Partie::testProjTest(sf::RenderWindow & window)
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
+			if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
+			{
+				// récupération de la position de la souris dans la fenêtre
+				sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+				// conversion en coordonnées "monde"
+				sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+
+				atkTest.utiliser(worldPos.x, worldPos.y);
+			}
 		}
 
 		float t_ecoule = clock.restart().asMilliseconds();
 		
 		window.clear();
-		for(int i = 0; i < proj_test.size(); i++)
-			proj_test[i]->gestion(window);
 
-		for (int i = 0; i < proj_test.size() - 1; i++)
-		{
-			for (int j = i + 1; j < proj_test.size(); j++)
-			{
-				if (collision(*proj_test[i], *proj_test[j]))
-				{
-					std::cout << "bouh ! " << std::endl;
-					int r = rand() % 2 == 0 ? i : j;
-					delete proj_test[r];
-					proj_test[r] = proj_test[proj_test.size() - 1];
-					proj_test.pop_back();
-					i--;
-					break;
-				}
-			}
-		}
+		// Gestion des attaques
+		atkTest.actualiser(projectiles);
 
+		for(int i = 0; i < projectiles.size(); i++)
+			projectiles[i]->gestion(window);
+
+		testCollision(projectiles);
+
+		std::string txt;
+		if(atkTest.getCooldown() - atkTest.getTime() != 0)
+			txt = atkTest.getNom() + " - " + std::to_string(atkTest.getCooldown() - atkTest.getTime());
+		else
+			txt = atkTest.getNom() + " - " + "Prêt";
+		afficheAtk.setString(txt);
+		window.draw(afficheAtk);
 		window.display();
 
 		sf::sleep(sf::milliseconds(10));
@@ -92,19 +105,25 @@ void Partie::testVaisseauTest(sf::RenderWindow & window) {
 
 // TODO A refaire !!!!
 
-void Partie::testCollision(std::vector<Projectile*> projectiles)
+void Partie::testCollision(std::vector<Projectile*> &projectiles)
 {
-	for (int i = 0; i < projectiles.size() - 1; i++)
+	if (projectiles.size() != 0)
 	{
-		for (int j = i+1; j < projectiles.size(); j++)
+		for (int i = 0; i < projectiles.size() - 1; i++)
 		{
-			if (collision(*projectiles[i], *projectiles[j]))
+			for (int j = i + 1; j < projectiles.size(); j++)
 			{
-				int r = rand() % 2 == 0 ? i : j;
-				projectiles.erase(projectiles.begin() + r);
+				if (collision(*projectiles[i], *projectiles[j]))
+				{
+					int r = rand() % 2 == 0 ? i : j;
+					delete projectiles[r];
+					projectiles[r] = projectiles[projectiles.size() - 1];
+					projectiles.pop_back();
+					i--;
+					break;
+				}
 			}
 		}
 	}
-		
 
 }
