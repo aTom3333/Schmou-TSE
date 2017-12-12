@@ -54,10 +54,26 @@ void ProjTest::gestion(sf::RenderWindow& window)
 
 	setPosition({ position_.x + vx_*mx_, position_.y + vy_*my_ });
 
-	if (position_.x > 800) mx_ = -1;
-	if (position_.x < 0) mx_ = 1;
-	if (position_.y > 600) my_ = -1;
-	if (position_.y < 0) my_ = 1;
+	if (position_.x > 800 - 32 - 1)
+	{
+		position_.x = 800 - 32 - 1;
+		mx_ = -1;
+	}
+	if (position_.x < 1)
+	{
+		position_.x = 1;
+		mx_ = 1;
+	}
+	if (position_.y > 600 - 32 - 1)
+	{
+		position_.y = 600 - 32 - 1;
+		my_ = -1;
+	}
+	if (position_.y < 1)
+	{
+		position_.y = 1;
+		my_ = 1;
+	}
 
 	afficher(window);
 }

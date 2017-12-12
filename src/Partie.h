@@ -9,6 +9,7 @@
 #include <SFML/System.hpp>
 #include "Capacite.h"
 #include "Projectile.h"
+#include "Attaque.h"
 #include "Vaisseau.h"
 
 

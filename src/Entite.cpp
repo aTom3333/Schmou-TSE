@@ -73,3 +73,8 @@ float Entite::getScale() const
 {
 	return scale_;
 }
+
+bool Entite::estDehors()
+{
+	return position_.x < 0 || position_.x > 800 || position_.y < 0 || position_.y > 600;
+}

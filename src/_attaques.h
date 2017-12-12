@@ -6,6 +6,7 @@ Header contenant tous les headers d'attaques
 #define _ATTAQUES_H
 
 #include "AtkTest.h"
+#include "AtkPiou.h"
 
 #endif
 

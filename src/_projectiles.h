@@ -6,5 +6,6 @@
 #define _PROJECTILES_H
 
 #include "ProjTest.h"
+#include "ProjPiou.h"
 
 #endif

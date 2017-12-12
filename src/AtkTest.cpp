@@ -1,13 +1,11 @@
 #include "AtkTest.h"
 
-#include <iostream>
-
 AtkTest::AtkTest()
 {
 	// TODO : Donner l'unité de temps en (milli)secondes
 
 	cooldown_ = 100;
-	t_ = 100;
+	t_ = cooldown_;
 	nom_ = "Attaque Test";
 }
 

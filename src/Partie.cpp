@@ -20,15 +20,22 @@ Partie::~Partie()
 
 void Partie::testProjTest(sf::RenderWindow & window)
 {
-	AtkTest atkTest;
+	std::vector<Attaque*> attaques;
 	std::vector<Projectile *> projectiles;
 	sf::Clock clock;
 	sf::Text afficheAtk;
+	int attaqueEnCours = 0;
 
 	afficheAtk.setFont(font_);
 	afficheAtk.setCharacterSize(20);
 	afficheAtk.setFillColor(sf::Color::White);
 	afficheAtk.setPosition(0, 0);
+
+	AtkTest *temp1 = new AtkTest();
+	attaques.push_back(temp1);
+
+	AtkPiou *temp2 = new AtkPiou();
+	attaques.push_back(temp2);
 
 	while (window.isOpen())  
 	{
@@ -37,14 +44,20 @@ void Partie::testProjTest(sf::RenderWindow & window)
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
-			if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 			{
 				// récupération de la position de la souris dans la fenêtre
 				sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
 				// conversion en coordonnées "monde"
 				sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
 
-				atkTest.utiliser(worldPos.x, worldPos.y);
+				attaques[attaqueEnCours]->utiliser(worldPos.x, worldPos.y);
+			}
+			if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Right)
+			{
+				attaqueEnCours++;
+				if (attaqueEnCours >= attaques.size())
+					attaqueEnCours = 0;
 			}
 		}
 
@@ -53,24 +66,31 @@ void Partie::testProjTest(sf::RenderWindow & window)
 		window.clear();
 
 		// Gestion des attaques
-		atkTest.actualiser(projectiles);
+		for(int i = 0; i < attaques.size(); i++)
+			attaques[i]->actualiser(projectiles);
 
+		// Gestion des projectiles
 		for(int i = 0; i < projectiles.size(); i++)
 			projectiles[i]->gestion(window);
 
 		testCollision(projectiles);
 
+		// Affichage attaque en cours
 		std::string txt;
-		if(atkTest.getCooldown() - atkTest.getTime() != 0)
-			txt = atkTest.getNom() + " - " + std::to_string(atkTest.getCooldown() - atkTest.getTime());
+		if(attaques[attaqueEnCours]->getCooldown() - attaques[attaqueEnCours]->getTime() != 0)
+			txt = attaques[attaqueEnCours]->getNom() + " - " + std::to_string(attaques[attaqueEnCours]->getCooldown() - attaques[attaqueEnCours]->getTime());
 		else
-			txt = atkTest.getNom() + " - " + "Prêt";
+			txt = attaques[attaqueEnCours]->getNom() + " - " + "Prêt";
 		afficheAtk.setString(txt);
+
 		window.draw(afficheAtk);
 		window.display();
 
 		sf::sleep(sf::milliseconds(10));
 	}
+
+	for (int i = 0; i < attaques.size(); i++)
+		delete attaques[i];
 }
 
 //test vaisseau piou piou de pierre
@@ -111,18 +131,28 @@ void Partie::testCollision(std::vector<Projectile*> &projectiles)
 	{
 		for (int i = 0; i < projectiles.size() - 1; i++)
 		{
-			for (int j = i + 1; j < projectiles.size(); j++)
+			if (projectiles[i]->estDehors())
 			{
-				if (collision(*projectiles[i], *projectiles[j]))
+				delete projectiles[i];
+				projectiles[i] = projectiles[projectiles.size() - 1];
+				projectiles.pop_back();
+			}
+			else
+			{
+				for (int j = i + 1; j < projectiles.size(); j++)
 				{
-					int r = rand() % 2 == 0 ? i : j;
-					delete projectiles[r];
-					projectiles[r] = projectiles[projectiles.size() - 1];
-					projectiles.pop_back();
-					i--;
-					break;
+					if (collision(*projectiles[i], *projectiles[j]))
+					{
+						int r = rand() % 2 == 0 ? i : j;
+						delete projectiles[r];
+						projectiles[r] = projectiles[projectiles.size() - 1];
+						projectiles.pop_back();
+						i--;
+						break;
+					}
 				}
 			}
+			
 		}
 	}
 
