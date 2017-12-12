@@ -3,15 +3,24 @@
 
 ProjTest::ProjTest()
 {
+
+	//sprite
 	texture_.loadFromFile("../../rc/Sprites/base/balle.png");
+	sprite_.setTexture(texture_);
+
+	//hitbox simple (et complète dans ce cas car c'est le projectile est un cercle)
 	cercleEnglobant_ =  sf::CircleShape(16);
 	cercleEnglobant_.setOrigin(16, 16);
-	sprite_.setTexture(texture_);
+
+	//attributs
 	age_ = 0;
+
+	
 	mx_ = rand() % 2 == 0 ? 1 : -1;
 	my_ = rand() % 2 == 0 ? 1 : -1;
 	vx_ = rand() % 5 + 3;
 	vy_ = rand() % 5 + 3;
+	
 
 	float x = rand() % 800, y = rand() % 600;
 

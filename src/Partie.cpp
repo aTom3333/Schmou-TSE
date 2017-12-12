@@ -1,5 +1,6 @@
 #include "Partie.h"
 #include "ProjTest.h"
+#include "VaisseauTest.h"
 
 
 Partie::Partie()
@@ -10,7 +11,7 @@ Partie::~Partie()
 {
 }
 
-void Partie::jeu(sf::RenderWindow & window)
+void Partie::testProjTest(sf::RenderWindow & window)
 {
 	std::vector<Projectile *> proj_test;
 	sf::Clock clock;
@@ -56,6 +57,36 @@ void Partie::jeu(sf::RenderWindow & window)
 		window.display();
 
 		sf::sleep(sf::milliseconds(10));
+	}
+}
+
+//test vaisseau piou piou de pierre
+void Partie::testVaisseauTest(sf::RenderWindow & window) {
+	//déclarations
+	VaisseauTest vaisseautest;
+	sf::Clock clock;
+	float t_ecoule;
+
+	while (window.isOpen())
+	{
+		//boucle de base 
+			sf::Event event;
+			while (window.pollEvent(event))
+			{
+				if (event.type == sf::Event::Closed)
+					window.close();
+			}
+
+		//maj début de boucle
+			t_ecoule = clock.restart().asMilliseconds();
+			window.clear();
+
+		//code
+			vaisseautest.gestion(window);
+
+		//maj fin de boucle
+			window.display();
+			sf::sleep(sf::milliseconds(10));
 	}
 }
 
