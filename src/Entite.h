@@ -29,8 +29,8 @@ class Entite
 		float getScale() const;
 
 	protected:
-		bool collisionable_ = true;
-		int equipe_;
+		bool collisionable_ = true; ///booléen vrai si collisionnable
+		int equipe_; ///numéro d'équipe
 		sf::Vector2f position_;
 		float angle_;
 		float scale_;

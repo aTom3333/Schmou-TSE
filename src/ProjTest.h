@@ -11,9 +11,10 @@ class ProjTest : public Projectile
 		~ProjTest();
 		void gestion(sf::RenderWindow &window);
 	private:
-		int mx_;
-		int my_;
-		int vx_, vy_;
+		int mx_;/// 
+		int my_;/// 
+		int vx_;/// 
+		int vy_;/// 
 };
 
-#endif
+#endif //PROJ_TEST_H

@@ -12,15 +12,19 @@ int main()
 {
 	// Code propre 
 
-	sf::RenderWindow window(sf::VideoMode(800, 600), "Schmou'TSE");
+	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Schmou'TSE");
 	Partie partie;
 
 	srand(time(nullptr));
 
-	partie.jeu(window);
+	partie.testProjTest(window); ///le truc que Cyril avait tapé jeudi 7 en club
+	
+	//partie.testVaisseauTest(window); ///un vaisseau que pierre a testé
 
 
-	//Bordel de Thomas
+
+	//Bordel de Thomas 
+	///<attention très bordélique
 	/*
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
