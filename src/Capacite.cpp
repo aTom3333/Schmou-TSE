@@ -4,11 +4,3 @@
 #include "Capacite.h"
 #include "Vaisseau.h"
 #include "Projectile.h"
-
-Capacite::Capacite()
-{
-}
-
-Capacite::~Capacite()
-{
-}

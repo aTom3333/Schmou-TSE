@@ -1,6 +1,6 @@
-#include "AtkTest.h"
+#include "CapTest.h"
 
-AtkTest::AtkTest()
+CapTest::CapTest()
 {
 	// TODO : Donner l'unité de temps en (milli)secondes
 
@@ -10,11 +10,11 @@ AtkTest::AtkTest()
 }
 
 
-AtkTest::~AtkTest()
+CapTest::~CapTest()
 {
 }
 
-void AtkTest::utiliser(int x, int y)
+void CapTest::utiliser(int x, int y)
 {
 	if (t_ >= cooldown_)
 	{
@@ -24,7 +24,7 @@ void AtkTest::utiliser(int x, int y)
 	}
 }
 
-void AtkTest::actualiser(std::vector<Projectile*> &projectiles)
+void CapTest::actualiser(std::vector<Projectile*> &projectiles)
 {
 	if (t_ < 20 && t_ % 5 == 0)
 	{

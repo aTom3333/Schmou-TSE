@@ -1,15 +1,15 @@
-#ifndef ATKTEST_H
-#define ATKTEST_H
+#ifndef CAPTEST_H
+#define CAPTEST_H
 
 #include "Capacite.h"
 #include "Projectile.h"
 #include "ProjTest.h"
 
-class AtkTest : public Capacite
+class CapTest : public Capacite
 {
 	public:
-		AtkTest();
-		~AtkTest();
+		CapTest();
+		~CapTest();
 		void utiliser(int x, int y);
 		void actualiser(std::vector<Projectile*> &projectiles);
 };
