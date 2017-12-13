@@ -18,6 +18,8 @@ Partie::~Partie()
 {
 }
 
+
+
 void Partie::testProjTest(sf::RenderWindow & window)
 {
 	std::vector<Attaque*> attaques;
