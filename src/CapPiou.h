@@ -1,17 +1,17 @@
-#ifndef ATKPIOU_H
-#define ATKPIOU_H
+#ifndef CAPPIOU_H
+#define CAPPIOU_H
 
-#include "Attaque.h"
+#include "Capacite.h"
 #include "Projectile.h"
 #include "ProjPiou.h"
 
-class AtkPiou : public Attaque
+class CapPiou : public Capacite
 {
 public:
-	AtkPiou();
-	~AtkPiou();
+	CapPiou();
+	~CapPiou();
 	void utiliser(int x, int y);
 	void actualiser(std::vector<Projectile*> &projectiles);
 };
 
-#endif
+#endif //CAPPIOU

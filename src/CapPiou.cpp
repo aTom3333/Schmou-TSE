@@ -1,6 +1,6 @@
-#include "AtkPiou.h"
+#include "CapPiou.h"
 
-AtkPiou::AtkPiou()
+CapPiou::CapPiou()
 {
 	// TODO : Donner l'unité de temps en (milli)secondes
 
@@ -10,11 +10,11 @@ AtkPiou::AtkPiou()
 }
 
 
-AtkPiou::~AtkPiou()
+CapPiou::~CapPiou()
 {
 }
 
-void AtkPiou::utiliser(int x, int y)
+void CapPiou::utiliser(int x, int y)
 {
 	if (t_ >= cooldown_)
 	{
@@ -24,7 +24,7 @@ void AtkPiou::utiliser(int x, int y)
 	}
 }
 
-void AtkPiou::actualiser(std::vector<Projectile*> &projectiles)
+void CapPiou::actualiser(std::vector<Projectile*> &projectiles)
 {
 	if (t_ == 0)
 	{

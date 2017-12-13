@@ -1,6 +1,6 @@
 #include "Partie.h"
 #include "_projectiles.h"
-#include "_attaques.h"
+#include "_Capacites.h"
 #include "ProjTest.h"
 #include "VaisseauTest.h"
 
@@ -23,7 +23,7 @@ Partie::~Partie()
 
 void Partie::testProjTest(sf::RenderWindow & window)
 {
-	std::vector<Attaque*> attaques;
+	std::vector<Capacite*> attaques;
 	std::vector<Projectile *> projectiles;
 	sf::Clock clock;
 	VaisseauTest vaisseautest;
@@ -38,7 +38,7 @@ void Partie::testProjTest(sf::RenderWindow & window)
 	AtkTest *temp1 = new AtkTest();
 	attaques.push_back(temp1);
 
-	AtkPiou *temp2 = new AtkPiou();
+	CapPiou *temp2 = new CapPiou();
 	attaques.push_back(temp2);
 
 	while (window.isOpen())  

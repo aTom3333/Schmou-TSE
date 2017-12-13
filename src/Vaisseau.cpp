@@ -28,7 +28,7 @@ Vaisseau::~Vaisseau() ///destructeur
 		equipe_ = equipe;
 	}
 
-	void Vaisseau::addCapacite(Capacite skill)
+	void Vaisseau::addCapacite(Capacite* skill)
 	{
 		skills_.push_back(skill);
 	}
@@ -135,7 +135,7 @@ Vaisseau::~Vaisseau() ///destructeur
 		return vit_;
 	}
 
-	std::vector<Capacite> Vaisseau::getskills()
+	std::vector<Capacite*> Vaisseau::getskills()
 	{
 		return skills_;
 	}
