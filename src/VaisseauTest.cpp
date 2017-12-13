@@ -11,6 +11,7 @@ VaisseauTest::VaisseauTest() ///constructeur
 	cercleEnglobant_ = sf::CircleShape(64);
 	cercleEnglobant_.setOrigin(64, 64);
 
+	vit_ = 500;
 
 }
 
@@ -20,38 +21,48 @@ VaisseauTest::~VaisseauTest()///destructeur
 
 void VaisseauTest::gestion(sf::RenderWindow & window)
 {
+	bool zqsd = false;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
 	{
-		position_.x -= vit_ / 100;
+		position_.x -= (float)vit_ / 100.;
+		zqsd = true;
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
-		position_.x += vit_ / 100;
+		position_.x += (float)vit_ / 100.;
+		zqsd = true;
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
 	{
-		position_.y += vit_ / 100;
+		position_.y -= (float)vit_ / 100.;
+		zqsd = true;
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
-		position_.y -= vit_ / 100; 
+		position_.y += (float)vit_ / 100.;
+		zqsd = true;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	
+	if (!zqsd)
 	{
-		position_.x -= vit_ / 100;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+		{
+			position_.x -= (float)vit_ / 100.;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		{
+			position_.x += (float)vit_ / 100.;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+		{
+			position_.y -= (float)vit_ / 100.;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+		{
+			position_.y += (float)vit_ / 100.;
+		}
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-	{
-		position_.x += vit_ / 100;
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-	{
-		position_.y += vit_ / 100; 
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	{
-		position_.y -= vit_ / 100;
-	}
+	
 
 
 

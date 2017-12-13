@@ -25,6 +25,7 @@ void Partie::testProjTest(sf::RenderWindow & window)
 	std::vector<Attaque*> attaques;
 	std::vector<Projectile *> projectiles;
 	sf::Clock clock;
+	VaisseauTest vaisseautest;
 	sf::Text afficheAtk;
 	int attaqueEnCours = 0;
 
@@ -48,14 +49,17 @@ void Partie::testProjTest(sf::RenderWindow & window)
 				window.close();
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 			{
+				// Récupération position souris
+				/*
 				// récupération de la position de la souris dans la fenêtre
 				sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
 				// conversion en coordonnées "monde"
 				sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
-
+				*/
+				sf::Vector2f worldPos = vaisseautest.getPosition();
 				attaques[attaqueEnCours]->utiliser(worldPos.x, worldPos.y);
 			}
-			if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Right)
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
 			{
 				attaqueEnCours++;
 				if (attaqueEnCours >= attaques.size())
@@ -67,6 +71,8 @@ void Partie::testProjTest(sf::RenderWindow & window)
 		
 		window.clear();
 
+		vaisseautest.gestion(window);
+
 		// Gestion des attaques
 		for(int i = 0; i < attaques.size(); i++)
 			attaques[i]->actualiser(projectiles);
@@ -76,6 +82,7 @@ void Partie::testProjTest(sf::RenderWindow & window)
 			projectiles[i]->gestion(window);
 
 		testCollision(projectiles);
+
 
 		// Affichage attaque en cours
 		std::string txt;
