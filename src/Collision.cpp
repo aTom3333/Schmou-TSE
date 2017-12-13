@@ -1,6 +1,5 @@
 #include "Collision.h"
 #include <cmath>
-#include <iostream>
 
 
 const double PI = acos(-1);
@@ -84,8 +83,6 @@ bool collision(const sf::Shape& s1, const sf::Shape& s2)
 
 bool collision_impl(const sf::CircleShape& c1, const sf::CircleShape& c2)
 {
-    std::cout << "Cercle" << std::endl;
-
     auto c1c = centre_transforme(c1);
     auto c2c = centre_transforme(c2);
     auto diff = c1c - c2c;

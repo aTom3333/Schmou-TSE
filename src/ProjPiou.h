@@ -17,4 +17,4 @@ private:
 	int vx_, vy_;
 };
 
-#endif#pragma once
+#endif
