@@ -4,4 +4,3 @@
 #include "Capacite.h"
 #include "Vaisseau.h"
 #include "Projectile.h"
-

@@ -1,6 +1,6 @@
 #include "Partie.h"
 #include "_projectiles.h"
-#include "_Capacites.h"
+#include "_capacites.h"
 #include "ProjTest.h"
 #include "VaisseauTest.h"
 
@@ -35,7 +35,7 @@ void Partie::testProjTest(sf::RenderWindow & window)
 	afficheAtk.setFillColor(sf::Color::White);
 	afficheAtk.setPosition(0, 0);
 
-	AtkTest *temp1 = new AtkTest();
+	CapTest *temp1 = new CapTest();
 	attaques.push_back(temp1);
 
 	CapPiou *temp2 = new CapPiou();
