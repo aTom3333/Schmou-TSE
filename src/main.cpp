@@ -6,6 +6,7 @@
 #include "Entite.h"
 #include "Collision.h"
 #include "Partie.h"
+#include "Input.h"
 
 
 // Code minimal
@@ -26,7 +27,7 @@ int main()
 
 	//Bordel de Thomas 
 	///<attention très bordélique
-	/*
+    /*
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 	sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!", sf::Style::Default, settings);
@@ -85,6 +86,9 @@ int main()
 	sf::Sprite s;
 	s.setTexture(t);
 
+    sf::Clock clock;
+    Input input(window, Input::Media::Mouse);
+
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -102,6 +106,9 @@ int main()
 					std::cout << "Pas de collision..." << std::endl;
 			}
 		}
+
+        auto delta = input.move(600, clock.restart());
+        c.move(delta);
 
 		window.clear(sf::Color::White);
 		window.draw(cercle);
