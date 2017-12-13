@@ -6,6 +6,7 @@
 
 
 
+
 Partie::Partie()
 {
 	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
@@ -65,6 +66,8 @@ void Partie::testProjTest(sf::RenderWindow & window)
 				if (attaqueEnCours >= attaques.size())
 					attaqueEnCours = 0;
 			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+				window.close();
 		}
 
 		float t_ecoule = clock.restart().asMilliseconds();

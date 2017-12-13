@@ -2,6 +2,7 @@
 #include <cmath>
 #include <ctime>
 #include <iostream>
+#include "constantes.h"
 #include "Entite.h"
 #include "Collision.h"
 #include "Partie.h"
@@ -12,7 +13,7 @@ int main()
 {
 	// Code propre 
 
-	sf::RenderWindow window(sf::VideoMode(800,600), "Schmou'TSE");
+	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE", sf::Style::Fullscreen);
 	Partie partie;
 
 	srand(time(nullptr));

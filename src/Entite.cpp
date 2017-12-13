@@ -1,5 +1,6 @@
 #include "Entite.h"
 #include "Collision.h"
+#include "constantes.h"
 #include <cmath>
 
 
@@ -77,5 +78,5 @@ float Entite::getScale() const
 
 bool Entite::estDehors()
 {
-	return position_.x < 0 || position_.x > 800 || position_.y < 0 || position_.y > 600;
+	return position_.x < 0 || position_.x > ECRAN_L || position_.y < 0 || position_.y > ECRAN_H;
 }

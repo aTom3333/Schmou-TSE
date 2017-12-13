@@ -1,4 +1,5 @@
 #include "ProjTest.h"
+#include "constantes.h"
 
 
 ProjTest::ProjTest()
@@ -54,9 +55,9 @@ void ProjTest::gestion(sf::RenderWindow& window)
 
 	setPosition({ position_.x + vx_*mx_, position_.y + vy_*my_ });
 
-	if (position_.x > 800 - 32 - 1)
+	if (position_.x > ECRAN_L - 32 - 1)
 	{
-		position_.x = 800 - 32 - 1;
+		position_.x = ECRAN_L - 32 - 1;
 		mx_ = -1;
 	}
 	if (position_.x < 1)
@@ -64,9 +65,9 @@ void ProjTest::gestion(sf::RenderWindow& window)
 		position_.x = 1;
 		mx_ = 1;
 	}
-	if (position_.y > 600 - 32 - 1)
+	if (position_.y > ECRAN_H - 32 - 1)
 	{
-		position_.y = 600 - 32 - 1;
+		position_.y = ECRAN_H - 32 - 1;
 		my_ = -1;
 	}
 	if (position_.y < 1)
