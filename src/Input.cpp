@@ -3,7 +3,7 @@
 
 
 template<size_t N>
-Input_base<N>::Input_base(Media m)
+Input_base<N>::Input_base(const sf::RenderWindow& w, Media m) : window_{w}
 {
     switch(m)
     {
@@ -13,6 +13,10 @@ Input_base<N>::Input_base(Media m)
 
         case Media::Joypad:
             init_default_joypad();
+            break;
+
+        case Media::Mouse:
+            init_default_mouse();
             break;
 
         default:
@@ -55,7 +59,15 @@ void Input_base<N>::init_default_joypad()
 
 
 template<size_t N>
-sf::Vector2f Input_base<N>::move(float max_speed, const sf::Time& elapsed_time, const sf::Vector2f& ratio)
+void Input_base<N>::init_default_mouse()
+{
+    movement_media_ = Media::Mouse;
+    movement_input_.mouse_ = {};
+}
+
+
+template<size_t N>
+sf::Vector2f Input_base<N>::move(float max_speed, const sf::Time& elapsed_time)
 {
     switch(movement_media_)
     {
@@ -64,6 +76,9 @@ sf::Vector2f Input_base<N>::move(float max_speed, const sf::Time& elapsed_time, 
 
         case Media::Joypad:
             return move_joypad(max_speed, elapsed_time);
+
+        case Media::Mouse:
+            return move_mouse(max_speed, elapsed_time);
 
         default:
             return {0, 0};
@@ -86,10 +101,10 @@ sf::Vector2f Input_base<N>::move_keyboard(float max_speed, const sf::Time& elaps
     if(left && right)
         left = right = false;
 
-    int nb = up + down + left + right;
-
     if(!up && !down && !left && !right)
         return {0, 0};
+
+    int nb = up + down + left + right;
 
     return {(right - left) * max_speed / sqrt(nb) * elapsed_time.asSeconds(), (down - up ) * max_speed / sqrt(nb) * elapsed_time.asSeconds()};
 }
@@ -117,7 +132,60 @@ sf::Vector2f Input_base<N>::move_joypad(float max_speed, const sf::Time& elapsed
 
             return {dx*abs(dx) / sqrt(dx*dx + dy*dy), dy*abs(dy) / sqrt(dx*dx + dy*dy)};
         }
+        else if(movement_input_.joypad_.input_type_ == movement_input_t::joypad_t::Button)
+        {
+            bool up, down, left, right;
+            up = movement_input_.joypad_.joypad_input_.buttons_.up_button_
+                 && sf::Joystick::isButtonPressed(id, movement_input_.joypad_.joypad_input_.buttons_.up_button_.value());
+            down = movement_input_.joypad_.joypad_input_.buttons_.down_button_
+                 && sf::Joystick::isButtonPressed(id, movement_input_.joypad_.joypad_input_.buttons_.down_button_.value());
+            left = movement_input_.joypad_.joypad_input_.buttons_.left_button_
+                 && sf::Joystick::isButtonPressed(id, movement_input_.joypad_.joypad_input_.buttons_.left_button_.value());
+            right = movement_input_.joypad_.joypad_input_.buttons_.right_button_
+                 && sf::Joystick::isButtonPressed(id, movement_input_.joypad_.joypad_input_.buttons_.right_button_.value());
+
+            // Si on a les deux côtés opposés, on annule
+            if(up && down)
+                up = down = false;
+            if(left && right)
+                left = right = false;
+
+            if(!up && !down && !left && !right)
+                return {0, 0};
+
+            int nb = up + down + left + right;
+
+            return {(right - left) * max_speed / sqrt(nb) * elapsed_time.asSeconds(), (down - up ) * max_speed / sqrt(nb) * elapsed_time.asSeconds()};
+        }
     }
 
     return {0, 0};
 }
+
+
+template<size_t N>
+sf::Vector2f Input_base<N>::move_mouse(float max_speed, const sf::Time& elapsed_time)
+{
+    auto new_pos = window_.mapPixelToCoords(sf::Mouse::getPosition(window_));
+    if(!movement_input_.mouse_.last_pos_)
+    {
+        movement_input_.mouse_.last_pos_ = new_pos;
+        return {0, 0};
+    }
+    auto diff = new_pos - movement_input_.mouse_.last_pos_.value();
+
+    if(diff.x == 0 && diff.y == 0)
+        return {0, 0};
+
+    float dx = diff.x * abs(diff.x) / (diff.x*diff.x + diff.y*diff.y);
+    float dy = diff.y * abs(diff.y) / (diff.x*diff.x + diff.y*diff.y);
+
+    sf::Vector2f delta{dx * max_speed * elapsed_time.asSeconds(), dy * max_speed * elapsed_time.asSeconds()};
+
+    movement_input_.mouse_.last_pos_.value() += delta;
+
+    return delta;
+}
+
+
+template class Input_base<0>;

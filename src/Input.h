@@ -1,7 +1,7 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 
 #if __cplusplus < 201703L // Si le compilateur utilise une norme antérieure à la norme c++17
     #include <experimental/optional>
@@ -21,19 +21,22 @@ class Input_base
     public:
         enum class Media
         {
-            Keyboard, Mouse, Joypad, Touchscreen
+            Keyboard, Joypad, Mouse, Touchscreen
         };
 
-        sf::Vector2f move(float max_speed, const sf::Time& elapsed_time, const sf::Vector2f& ratio);
+        sf::Vector2f move(float max_speed, const sf::Time& elapsed_time);
 
-        explicit Input_base(Media m = Media::Keyboard);
+        explicit Input_base(const sf::RenderWindow& w, Media m = Media::Keyboard);
 
     private:
         void init_default_keyboard();
         void init_default_joypad();
+        void init_default_mouse();
         sf::Vector2f move_keyboard(float max_speed, const sf::Time& elapsed_time);
         sf::Vector2f move_joypad(float max_speed, const sf::Time& elapsed_time);
+        sf::Vector2f move_mouse(float max_speed, const sf::Time& elapsed_time);
 
+        const sf::RenderWindow& window_;
         Media movement_media_; // Par quoi est géré le déplacement
         union movement_input_t {
             movement_input_t() {keyboard_ = {sf::Keyboard::Up,
@@ -67,6 +70,9 @@ class Input_base
                     } joysticks_;
                 } joypad_input_;
             } joypad_;
+            struct mouse_t {
+                std::optional<sf::Vector2f> last_pos_;
+            } mouse_;
         } movement_input_;
 
 };
