@@ -18,6 +18,8 @@ Partie::~Partie()
 {
 }
 
+
+
 void Partie::testProjTest(sf::RenderWindow & window)
 {
 	AtkTest atkTest;
@@ -105,7 +107,7 @@ void Partie::testVaisseauTest(sf::RenderWindow & window) {
 
 // TODO A refaire !!!!
 
-void Partie::testCollision(std::vector<Projectile*> &projectiles)
+void Partie::testCollision(std::vector<Projectile*> projectiles)
 {
 	if (projectiles.size() != 0)
 	{

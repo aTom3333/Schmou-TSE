@@ -12,7 +12,7 @@ int main()
 {
 	// Code propre 
 
-	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Schmou'TSE");
+	sf::RenderWindow window(sf::VideoMode(800,600), "Schmou'TSE");
 	Partie partie;
 
 	srand(time(nullptr));
