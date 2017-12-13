@@ -7,6 +7,7 @@ Header contenant tous les headers de CAPACITES
 
 #include "CapTest.h"
 #include "CapPiou.h"
+#include "CapDash.h"
 
 #endif
 

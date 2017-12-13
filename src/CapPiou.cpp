@@ -24,7 +24,7 @@ void CapPiou::utiliser(int x, int y)
 	}
 }
 
-void CapPiou::actualiser(std::vector<Projectile*> &projectiles)
+void CapPiou::actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau)
 {
 	if (t_ == 0)
 	{

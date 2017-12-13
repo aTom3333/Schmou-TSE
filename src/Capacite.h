@@ -5,6 +5,7 @@
 #include <string>
 #include <algorithm>
 #include "Projectile.h"
+#include "Entite.h"
 
 
 /**
@@ -23,7 +24,7 @@ class Capacite
 		int const getTime() { return t_; };
 		std::string const getNom() { return nom_; };
 		virtual void utiliser(int x, int y) = 0;
-		virtual void actualiser(std::vector<Projectile*> &projectiles) = 0;
+		virtual void actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau) = 0;
 	protected:
 		int debutX_, debutY_;
 		int cooldown_;
