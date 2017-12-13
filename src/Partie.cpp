@@ -50,11 +50,11 @@ void Partie::testProjTest(sf::RenderWindow & window)
 				window.close();
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 			{
-				// Récupération position souris
+				// RÃ©cupÃ©ration position souris
 				/*
-				// récupération de la position de la souris dans la fenêtre
+				// rÃ©cupÃ©ration de la position de la souris dans la fenÃªtre
 				sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
-				// conversion en coordonnées "monde"
+				// conversion en coordonnÃ©es "monde"
 				sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
 				*/
 				sf::Vector2f worldPos = vaisseautest.getPosition();
@@ -92,7 +92,7 @@ void Partie::testProjTest(sf::RenderWindow & window)
 		if(attaques[attaqueEnCours]->getCooldown() - attaques[attaqueEnCours]->getTime() != 0)
 			txt = attaques[attaqueEnCours]->getNom() + " - " + std::to_string(attaques[attaqueEnCours]->getCooldown() - attaques[attaqueEnCours]->getTime());
 		else
-			txt = attaques[attaqueEnCours]->getNom() + " - " + "Prêt";
+			txt = attaques[attaqueEnCours]->getNom() + " - " + "PrÃªt";
 		afficheAtk.setString(txt);
 
 		window.draw(afficheAtk);
@@ -107,7 +107,7 @@ void Partie::testProjTest(sf::RenderWindow & window)
 
 //test vaisseau piou piou de pierre
 void Partie::testVaisseauTest(sf::RenderWindow & window) {
-	//déclarations
+	//dÃ©clarations
 	VaisseauTest vaisseautest;
 	sf::Clock clock;
 	float t_ecoule;
@@ -122,7 +122,7 @@ void Partie::testVaisseauTest(sf::RenderWindow & window) {
 					window.close();
 			}
 
-		//maj début de boucle
+		//maj dÃ©but de boucle
 			t_ecoule = clock.restart().asMilliseconds();
 			window.clear();
 
