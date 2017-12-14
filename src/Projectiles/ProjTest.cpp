@@ -2,10 +2,10 @@
 #include "../constantes.h"
 
 /**
-* @fn ProjTest
+* @fn ProjTest::Projtest
 * @brief Constructeur
 *
-* Cr�er un projectile de test � une postion al�atoire
+* Créer un projectile de test à une position aléatoire
 */
 
 ProjTest::ProjTest()
@@ -15,9 +15,11 @@ ProjTest::ProjTest()
 	texture_.loadFromFile("../../rc/Sprites/base/balle.png");
 	sprite_.setTexture(texture_);
 
-	//hitbox simple (et compl�te dans ce cas car c'est le projectile est un cercle)
+	//hitbox simple (et complète dans ce cas car c'est le projectile est un cercle)
 	cercleEnglobant_ =  sf::CircleShape(16);
 	cercleEnglobant_.setOrigin(16, 16);
+
+	forme_.push_back(new sf::CircleShape(cercleEnglobant_));
 
 	//attributs
 	age_ = 0;
@@ -39,10 +41,10 @@ ProjTest::ProjTest()
 /**
 * @fn ProjTest
 * @brief Constructeur
-* @param x Abscisse de la postion de d�part du projectile
-* @param y Ordonn�e de la postion de d�part du projectile
+* @param x Abscisse de la postion de départ du projectile
+* @param y Ordonnée de la postion de départ du projectile
 *
-* Cr�er un projectile de test � la position donn�e en param�tre
+* Créer un projectile de test à la position donnée en paramètre
 */
 
 ProjTest::ProjTest(int x, int y)
@@ -51,9 +53,11 @@ ProjTest::ProjTest(int x, int y)
 	texture_.loadFromFile("../../rc/Sprites/base/balle.png");
 	sprite_.setTexture(texture_);
 
-	//hitbox simple (et compl�te dans ce cas car c'est le projectile est un cercle)
+	//hitbox simple (et complète dans ce cas car c'est le projectile est un cercle)
 	cercleEnglobant_ = sf::CircleShape(16);
 	cercleEnglobant_.setOrigin(16, 16);
+
+	forme_.push_back(new sf::CircleShape(cercleEnglobant_));
 	
 	//attributs
 	age_ = 0;
@@ -87,7 +91,7 @@ ProjTest::~ProjTest()
 * @brief Gestion du projectile
 * @param window Fenetre de jeu
 *
-* Gestion du d�placement et de la collision avec les bords
+* Gestion du déplacement et de la collision avec les bords
 */
 
 void ProjTest::gestion(sf::RenderWindow& window)
