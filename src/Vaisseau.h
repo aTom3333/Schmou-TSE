@@ -60,15 +60,15 @@ class Vaisseau : public Entite
 		// stats de base
 			int pvM_; /// < Points de vie de base
 			int atqM_; /// < Attaque de base
-			int defM_; /// < Défense de base
-			int vitM_; /// < Vitesse de base
+			int defM_; /// Défense de base
+			int vitM_; /// Vitesse de base
 		// stats actualisées en jeu
-			int pv_; /// < Points de vie actuels
-			int atq_; /// < Attaque actuelle
-			int def_; /// < Défense actuelle
-			//int vit_; /// < Vitesse actuelle
+			int pv_; /// Points de vie actuels
+			int atq_; /// Attaque actuelle
+			int def_; /// Défense actuelle
+			int vit_; /// Vitesse actuelle
 		// liste de capacités
-			std::vector<Capacite*> skills_; /// < Liste des capacités du vaisseau
+			std::vector<Capacite*> skills_; /// Liste des capacités du vaisseau
 };
 
 #endif // VAISSEAU_H

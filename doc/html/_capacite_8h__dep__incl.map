@@ -1,7 +1,18 @@
 <map id="src/Capacite.h" name="src/Capacite.h">
-<area shape="rect" id="node2" href="$_capacite_8cpp.html" title="src/Capacite.cpp" alt="" coords="5,155,127,181"/>
-<area shape="rect" id="node3" href="$_vaisseau_8h.html" title="src/Vaisseau.h" alt="" coords="203,80,313,107"/>
-<area shape="rect" id="node4" href="$_partie_8h.html" title="src/Partie.h" alt="" coords="151,155,240,181"/>
-<area shape="rect" id="node5" href="$_projectile_8cpp.html" title="src/Projectile.cpp" alt="" coords="265,155,387,181"/>
-<area shape="rect" id="node6" href="$_vaisseau_8cpp.html" title="src/Vaisseau.cpp" alt="" coords="411,155,534,181"/>
+<area shape="rect" id="node2" href="$_cap_test_8h.html" title="src/CapTest.h" alt="" coords="300,80,405,107"/>
+<area shape="rect" id="node6" href="$_cap_piou_8h.html" title="src/CapPiou.h" alt="" coords="156,80,261,107"/>
+<area shape="rect" id="node8" href="$_cap_dash_8h.html" title="src/CapDash.h" alt="" coords="436,80,547,107"/>
+<area shape="rect" id="node10" href="$_capacite_8cpp.html" title="src/Capacite.cpp" alt="" coords="856,155,977,181"/>
+<area shape="rect" id="node11" href="$_vaisseau_8h.html" title="src/Vaisseau.h" alt="" coords="859,80,969,107"/>
+<area shape="rect" id="node12" href="$_partie_8h.html" title="src/Partie.h" alt="" coords="584,155,673,181"/>
+<area shape="rect" id="node14" href="$_vaisseau_test_8h.html" title="src/VaisseauTest.h" alt="" coords="697,155,832,181"/>
+<area shape="rect" id="node16" href="$_projectile_8cpp.html" title="src/Projectile.cpp" alt="" coords="1002,155,1125,181"/>
+<area shape="rect" id="node17" href="$_vaisseau_8cpp.html" title="src/Vaisseau.cpp" alt="" coords="1149,155,1271,181"/>
+<area shape="rect" id="node3" href="$___capacites_8h.html" title="src/_Capacites.h" alt="" coords="148,155,269,181"/>
+<area shape="rect" id="node5" href="$_cap_test_8cpp.html" title="src/CapTest.cpp" alt="" coords="293,155,412,181"/>
+<area shape="rect" id="node4" href="$_partie_8cpp.html" title="src/Partie.cpp" alt="" coords="577,229,680,256"/>
+<area shape="rect" id="node7" href="$_cap_piou_8cpp.html" title="src/CapPiou.cpp" alt="" coords="5,155,124,181"/>
+<area shape="rect" id="node9" href="$_cap_dash_8cpp.html" title="src/CapDash.cpp" alt="" coords="436,155,560,181"/>
+<area shape="rect" id="node13" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="456,229,553,256"/>
+<area shape="rect" id="node15" href="$_vaisseau_test_8cpp.html" title="src/VaisseauTest.cpp" alt="" coords="705,229,854,256"/>
 </map>

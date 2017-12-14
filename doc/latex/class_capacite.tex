@@ -9,12 +9,44 @@ Classe abstraite qui définit la structure générale d\textquotesingle{}une cap
 
 {\ttfamily \#include $<$Capacite.\+h$>$}
 
+
+
+Graphe d\textquotesingle{}héritage de Capacite\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_capacite__inherit__graph}
+\end{center}
+\end{figure}
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_capacite_a1c3b9e4e72d8d5494d1eb8ad15bb4d2a}{Capacite} ()
+\hyperlink{class_capacite_a8a1aebc5b2332e366a3f207c23b4d363}{Capacite} ()=default
 \item 
-\hyperlink{class_capacite_a2224d62c03a73b7b34c0a5cb68c91279}{$\sim$\+Capacite} ()
+virtual \hyperlink{class_capacite_a687ff139afef118ebb63b897861674fd}{$\sim$\+Capacite} ()=default
+\item 
+int const \hyperlink{class_capacite_a1842888fc39a0054d3cc9d7236ab1191}{get\+Cooldown} ()
+\item 
+int const \hyperlink{class_capacite_a82e4eebf522c02163725872b288bfcf8}{get\+Time} ()
+\item 
+std\+::string const \hyperlink{class_capacite_a96218b289768ff461ffaaa0abe014a42}{get\+Nom} ()
+\item 
+virtual void \hyperlink{class_capacite_a4d4f643987fcc2168567bf28a36ea418}{utiliser} (int x, int y)=0
+\item 
+virtual void \hyperlink{class_capacite_a7d4e86c20cd198960f25c0eb443148fe}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} $\ast$vaisseau)=0
+\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_capacite_abc3eb04129009107c0b60b03e7a3ff06}{debut\+X\+\_\+}
+\item 
+int \hyperlink{class_capacite_a741d48934a015c226b15e6519724e400}{debut\+Y\+\_\+}
+\item 
+int \hyperlink{class_capacite_aabb946971871ffbcb9bb9a4d9cd3c0c3}{cooldown\+\_\+}
+\item 
+int \hyperlink{class_capacite_ac743cb7c9605c9e3205885cdcf14d2dd}{t\+\_\+}
+\item 
+std\+::string \hyperlink{class_capacite_a430472b509233086cbad1d6d8332dc8c}{nom\+\_\+}
 \end{DoxyCompactItemize}
 
 
@@ -24,21 +56,94 @@ Classe abstraite qui définit la structure générale d\textquotesingle{}une cap
 Cette classe abstraite permet de définir la structure générale d\textquotesingle{}une capacité du jeu, elle doit être héritée pour chaque capacité qui est ajoutée au jeu 
 
 \subsection{Documentation des constructeurs et destructeur}
-\mbox{\Hypertarget{class_capacite_a1c3b9e4e72d8d5494d1eb8ad15bb4d2a}\label{class_capacite_a1c3b9e4e72d8d5494d1eb8ad15bb4d2a}} 
+\mbox{\Hypertarget{class_capacite_a8a1aebc5b2332e366a3f207c23b4d363}\label{class_capacite_a8a1aebc5b2332e366a3f207c23b4d363}} 
 \index{Capacite@{Capacite}!Capacite@{Capacite}}
 \index{Capacite@{Capacite}!Capacite@{Capacite}}
 \subsubsection{\texorpdfstring{Capacite()}{Capacite()}}
-{\footnotesize\ttfamily Capacite\+::\+Capacite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Capacite\+::\+Capacite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
-\mbox{\Hypertarget{class_capacite_a2224d62c03a73b7b34c0a5cb68c91279}\label{class_capacite_a2224d62c03a73b7b34c0a5cb68c91279}} 
+\mbox{\Hypertarget{class_capacite_a687ff139afef118ebb63b897861674fd}\label{class_capacite_a687ff139afef118ebb63b897861674fd}} 
 \index{Capacite@{Capacite}!````~Capacite@{$\sim$\+Capacite}}
 \index{````~Capacite@{$\sim$\+Capacite}!Capacite@{Capacite}}
 \subsubsection{\texorpdfstring{$\sim$\+Capacite()}{~Capacite()}}
-{\footnotesize\ttfamily Capacite\+::$\sim$\+Capacite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily virtual Capacite\+::$\sim$\+Capacite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
 
 
 
-La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_capacite_a7d4e86c20cd198960f25c0eb443148fe}\label{class_capacite_a7d4e86c20cd198960f25c0eb443148fe}} 
+\index{Capacite@{Capacite}!actualiser@{actualiser}}
+\index{actualiser@{actualiser}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
+{\footnotesize\ttfamily virtual void Capacite\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} $\ast$}]{vaisseau }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implémenté dans \hyperlink{class_cap_dash_a886522c648db49b81c330737ad96a517}{Cap\+Dash}, \hyperlink{class_cap_piou_aabdcaa253f10db2bca12e750005485fc}{Cap\+Piou}, et \hyperlink{class_cap_test_a5742770894ff765e2785f82aab88b223}{Cap\+Test}.
+
+\mbox{\Hypertarget{class_capacite_a1842888fc39a0054d3cc9d7236ab1191}\label{class_capacite_a1842888fc39a0054d3cc9d7236ab1191}} 
+\index{Capacite@{Capacite}!get\+Cooldown@{get\+Cooldown}}
+\index{get\+Cooldown@{get\+Cooldown}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{get\+Cooldown()}{getCooldown()}}
+{\footnotesize\ttfamily int const Capacite\+::get\+Cooldown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_capacite_a96218b289768ff461ffaaa0abe014a42}\label{class_capacite_a96218b289768ff461ffaaa0abe014a42}} 
+\index{Capacite@{Capacite}!get\+Nom@{get\+Nom}}
+\index{get\+Nom@{get\+Nom}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{get\+Nom()}{getNom()}}
+{\footnotesize\ttfamily std\+::string const Capacite\+::get\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_capacite_a82e4eebf522c02163725872b288bfcf8}\label{class_capacite_a82e4eebf522c02163725872b288bfcf8}} 
+\index{Capacite@{Capacite}!get\+Time@{get\+Time}}
+\index{get\+Time@{get\+Time}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{get\+Time()}{getTime()}}
+{\footnotesize\ttfamily int const Capacite\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_capacite_a4d4f643987fcc2168567bf28a36ea418}\label{class_capacite_a4d4f643987fcc2168567bf28a36ea418}} 
+\index{Capacite@{Capacite}!utiliser@{utiliser}}
+\index{utiliser@{utiliser}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{utiliser()}{utiliser()}}
+{\footnotesize\ttfamily virtual void Capacite\+::utiliser (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implémenté dans \hyperlink{class_cap_dash_ada59ecb62d2c18f6bb6b4acf28a2da93}{Cap\+Dash}, \hyperlink{class_cap_piou_a20ed7a993ce209a3df246f655f107f22}{Cap\+Piou}, et \hyperlink{class_cap_test_af85984f6d9330e5527feff1a62ee4242}{Cap\+Test}.
+
+
+
+\subsection{Documentation des données membres}
+\mbox{\Hypertarget{class_capacite_aabb946971871ffbcb9bb9a4d9cd3c0c3}\label{class_capacite_aabb946971871ffbcb9bb9a4d9cd3c0c3}} 
+\index{Capacite@{Capacite}!cooldown\+\_\+@{cooldown\+\_\+}}
+\index{cooldown\+\_\+@{cooldown\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{cooldown\+\_\+}{cooldown\_}}
+{\footnotesize\ttfamily int Capacite\+::cooldown\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_capacite_abc3eb04129009107c0b60b03e7a3ff06}\label{class_capacite_abc3eb04129009107c0b60b03e7a3ff06}} 
+\index{Capacite@{Capacite}!debut\+X\+\_\+@{debut\+X\+\_\+}}
+\index{debut\+X\+\_\+@{debut\+X\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{debut\+X\+\_\+}{debutX\_}}
+{\footnotesize\ttfamily int Capacite\+::debut\+X\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_capacite_a741d48934a015c226b15e6519724e400}\label{class_capacite_a741d48934a015c226b15e6519724e400}} 
+\index{Capacite@{Capacite}!debut\+Y\+\_\+@{debut\+Y\+\_\+}}
+\index{debut\+Y\+\_\+@{debut\+Y\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{debut\+Y\+\_\+}{debutY\_}}
+{\footnotesize\ttfamily int Capacite\+::debut\+Y\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_capacite_a430472b509233086cbad1d6d8332dc8c}\label{class_capacite_a430472b509233086cbad1d6d8332dc8c}} 
+\index{Capacite@{Capacite}!nom\+\_\+@{nom\+\_\+}}
+\index{nom\+\_\+@{nom\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{nom\+\_\+}{nom\_}}
+{\footnotesize\ttfamily std\+::string Capacite\+::nom\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_capacite_ac743cb7c9605c9e3205885cdcf14d2dd}\label{class_capacite_ac743cb7c9605c9e3205885cdcf14d2dd}} 
+\index{Capacite@{Capacite}!t\+\_\+@{t\+\_\+}}
+\index{t\+\_\+@{t\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{t\+\_\+}{t\_}}
+{\footnotesize\ttfamily int Capacite\+::t\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-src/\hyperlink{_capacite_8h}{Capacite.\+h}\item 
-src/\hyperlink{_capacite_8cpp}{Capacite.\+cpp}\end{DoxyCompactItemize}
+src/\hyperlink{_capacite_8h}{Capacite.\+h}\end{DoxyCompactItemize}

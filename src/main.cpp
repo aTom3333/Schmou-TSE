@@ -13,7 +13,7 @@
 int main()
 {
 	// Code propre 
-
+/*
 	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE");
 	Partie partie;
 
@@ -22,12 +22,12 @@ int main()
 	partie.testProjTest(window); ///le truc que Cyril avait tapé jeudi 7 en club
 	
 	//partie.testVaisseauTest(window); ///un vaisseau que pierre a testé
-
+*/
 
 
 	//Bordel de Thomas 
 	///<attention très bordélique
-    /*
+
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 	sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!", sf::Style::Default, settings);
@@ -87,7 +87,7 @@ int main()
 	s.setTexture(t);
 
     sf::Clock clock;
-    Input input(window, Input::Media::Mouse);
+    Input input(window, Input::Media::Joypad);
 
 	while (window.isOpen())
 	{
@@ -107,7 +107,7 @@ int main()
 			}
 		}
 
-        auto delta = input.move(600, clock.restart());
+        auto delta = input.move(400, clock.restart());
         c.move(delta);
 
 		window.clear(sf::Color::White);
@@ -118,7 +118,7 @@ int main()
 		window.draw(s);
 		window.draw(origine);
 		window.display();
-	}*/
+	}
 
 	return 0;
 }

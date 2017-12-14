@@ -66,9 +66,10 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pro-attribs">Attributs protégés</a> &#124;
 <a href="class_capacite-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
-<div class="title">Référence de la classe Capacite</div>  </div>
+<div class="title">Référence de la classe Capacite<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -76,23 +77,59 @@ $(function() {
  <a href="class_capacite.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_capacite_8h_source.html">Capacite.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe d'héritage de Capacite:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_capacite__inherit__graph.png" border="0" usemap="#_capacite_inherit__map" alt="Inheritance graph"/></div>
+<map name="_capacite_inherit__map" id="_capacite_inherit__map">
+<area shape="rect" id="node2" href="class_cap_dash.html" title="CapDash" alt="" coords="5,80,83,107"/>
+<area shape="rect" id="node3" href="class_cap_piou.html" title="CapPiou" alt="" coords="107,80,179,107"/>
+<area shape="rect" id="node4" href="class_cap_test.html" title="CapTest" alt="" coords="203,80,275,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a1c3b9e4e72d8d5494d1eb8ad15bb4d2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a1c3b9e4e72d8d5494d1eb8ad15bb4d2a">Capacite</a> ()</td></tr>
-<tr class="separator:a1c3b9e4e72d8d5494d1eb8ad15bb4d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2224d62c03a73b7b34c0a5cb68c91279"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a2224d62c03a73b7b34c0a5cb68c91279">~Capacite</a> ()</td></tr>
-<tr class="separator:a2224d62c03a73b7b34c0a5cb68c91279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a1aebc5b2332e366a3f207c23b4d363"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a8a1aebc5b2332e366a3f207c23b4d363">Capacite</a> ()=default</td></tr>
+<tr class="separator:a8a1aebc5b2332e366a3f207c23b4d363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a687ff139afef118ebb63b897861674fd"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a687ff139afef118ebb63b897861674fd">~Capacite</a> ()=default</td></tr>
+<tr class="separator:a687ff139afef118ebb63b897861674fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1842888fc39a0054d3cc9d7236ab1191"><td class="memItemLeft" align="right" valign="top">int const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a1842888fc39a0054d3cc9d7236ab1191">getCooldown</a> ()</td></tr>
+<tr class="separator:a1842888fc39a0054d3cc9d7236ab1191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82e4eebf522c02163725872b288bfcf8"><td class="memItemLeft" align="right" valign="top">int const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a82e4eebf522c02163725872b288bfcf8">getTime</a> ()</td></tr>
+<tr class="separator:a82e4eebf522c02163725872b288bfcf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96218b289768ff461ffaaa0abe014a42"><td class="memItemLeft" align="right" valign="top">std::string const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a96218b289768ff461ffaaa0abe014a42">getNom</a> ()</td></tr>
+<tr class="separator:a96218b289768ff461ffaaa0abe014a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d4f643987fcc2168567bf28a36ea418"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a4d4f643987fcc2168567bf28a36ea418">utiliser</a> (int x, int y)=0</td></tr>
+<tr class="separator:a4d4f643987fcc2168567bf28a36ea418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d4e86c20cd198960f25c0eb443148fe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a7d4e86c20cd198960f25c0eb443148fe">actualiser</a> (std::vector&lt; <a class="el" href="class_projectile.html">Projectile</a> *&gt; &amp;projectiles, <a class="el" href="class_entite.html">Entite</a> *vaisseau)=0</td></tr>
+<tr class="separator:a7d4e86c20cd198960f25c0eb443148fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Attributs protégés</h2></td></tr>
+<tr class="memitem:abc3eb04129009107c0b60b03e7a3ff06"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#abc3eb04129009107c0b60b03e7a3ff06">debutX_</a></td></tr>
+<tr class="separator:abc3eb04129009107c0b60b03e7a3ff06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a741d48934a015c226b15e6519724e400"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a741d48934a015c226b15e6519724e400">debutY_</a></td></tr>
+<tr class="separator:a741d48934a015c226b15e6519724e400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb946971871ffbcb9bb9a4d9cd3c0c3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#aabb946971871ffbcb9bb9a4d9cd3c0c3">cooldown_</a></td></tr>
+<tr class="separator:aabb946971871ffbcb9bb9a4d9cd3c0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac743cb7c9605c9e3205885cdcf14d2dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#ac743cb7c9605c9e3205885cdcf14d2dd">t_</a></td></tr>
+<tr class="separator:ac743cb7c9605c9e3205885cdcf14d2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a430472b509233086cbad1d6d8332dc8c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a430472b509233086cbad1d6d8332dc8c">nom_</a></td></tr>
+<tr class="separator:a430472b509233086cbad1d6d8332dc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe abstraite qui définit la structure générale d'une capacité, à faire hériter de chaque capacité </p>
 <p>Cette classe abstraite permet de définir la structure générale d'une capacité du jeu, elle doit être héritée pour chaque capacité qui est ajoutée au jeu </p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a id="a1c3b9e4e72d8d5494d1eb8ad15bb4d2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c3b9e4e72d8d5494d1eb8ad15bb4d2a">&#9670;&nbsp;</a></span>Capacite()</h2>
+<a id="a8a1aebc5b2332e366a3f207c23b4d363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a1aebc5b2332e366a3f207c23b4d363">&#9670;&nbsp;</a></span>Capacite()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Capacite::Capacite </td>
@@ -101,30 +138,305 @@ Fonctions membres publiques</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a2224d62c03a73b7b34c0a5cb68c91279"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2224d62c03a73b7b34c0a5cb68c91279">&#9670;&nbsp;</a></span>~Capacite()</h2>
+<a id="a687ff139afef118ebb63b897861674fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a687ff139afef118ebb63b897861674fd">&#9670;&nbsp;</a></span>~Capacite()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Capacite::~Capacite </td>
+          <td class="memname">virtual Capacite::~Capacite </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="a7d4e86c20cd198960f25c0eb443148fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d4e86c20cd198960f25c0eb443148fe">&#9670;&nbsp;</a></span>actualiser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Capacite::actualiser </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_projectile.html">Projectile</a> *&gt; &amp;&#160;</td>
+          <td class="paramname"><em>projectiles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_entite.html">Entite</a> *&#160;</td>
+          <td class="paramname"><em>vaisseau</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implémenté dans <a class="el" href="class_cap_dash.html#a886522c648db49b81c330737ad96a517">CapDash</a>, <a class="el" href="class_cap_piou.html#aabdcaa253f10db2bca12e750005485fc">CapPiou</a>, et <a class="el" href="class_cap_test.html#a5742770894ff765e2785f82aab88b223">CapTest</a>.</p>
+
+</div>
+</div>
+<a id="a1842888fc39a0054d3cc9d7236ab1191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1842888fc39a0054d3cc9d7236ab1191">&#9670;&nbsp;</a></span>getCooldown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int const Capacite::getCooldown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96218b289768ff461ffaaa0abe014a42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96218b289768ff461ffaaa0abe014a42">&#9670;&nbsp;</a></span>getNom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string const Capacite::getNom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82e4eebf522c02163725872b288bfcf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82e4eebf522c02163725872b288bfcf8">&#9670;&nbsp;</a></span>getTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int const Capacite::getTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4d4f643987fcc2168567bf28a36ea418"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d4f643987fcc2168567bf28a36ea418">&#9670;&nbsp;</a></span>utiliser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Capacite::utiliser </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implémenté dans <a class="el" href="class_cap_dash.html#ada59ecb62d2c18f6bb6b4acf28a2da93">CapDash</a>, <a class="el" href="class_cap_piou.html#a20ed7a993ce209a3df246f655f107f22">CapPiou</a>, et <a class="el" href="class_cap_test.html#af85984f6d9330e5527feff1a62ee4242">CapTest</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a id="aabb946971871ffbcb9bb9a4d9cd3c0c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb946971871ffbcb9bb9a4d9cd3c0c3">&#9670;&nbsp;</a></span>cooldown_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Capacite::cooldown_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc3eb04129009107c0b60b03e7a3ff06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc3eb04129009107c0b60b03e7a3ff06">&#9670;&nbsp;</a></span>debutX_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Capacite::debutX_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a741d48934a015c226b15e6519724e400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a741d48934a015c226b15e6519724e400">&#9670;&nbsp;</a></span>debutY_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Capacite::debutY_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a430472b509233086cbad1d6d8332dc8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a430472b509233086cbad1d6d8332dc8c">&#9670;&nbsp;</a></span>nom_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Capacite::nom_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac743cb7c9605c9e3205885cdcf14d2dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac743cb7c9605c9e3205885cdcf14d2dd">&#9670;&nbsp;</a></span>t_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Capacite::t_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>src/<a class="el" href="_capacite_8h_source.html">Capacite.h</a></li>
-<li>src/<a class="el" href="_capacite_8cpp.html">Capacite.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
