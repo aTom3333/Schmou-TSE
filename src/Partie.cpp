@@ -1,6 +1,6 @@
 #include "Partie.h"
 #include "_projectiles.h"
-#include "_capacites.h"
+#include "_Capacites.h"
 #include "ProjTest.h"
 #include "VaisseauTest.h"
 
