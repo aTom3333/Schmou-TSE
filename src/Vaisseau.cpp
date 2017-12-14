@@ -14,7 +14,7 @@ Vaisseau::Vaisseau() ///constructeur
 	atqM_ = 100;
 	defM_ = 100;
 	vitM_ = 100;
-	//liste de capacités
+	//liste de capacitÃ©s
 }
 
 

@@ -1,7 +1,24 @@
 <map id="src/Projectile.h" name="src/Projectile.h">
-<area shape="rect" id="node2" href="$_vaisseau_8h.html" title="src/Vaisseau.h" alt="" coords="203,80,313,107"/>
-<area shape="rect" id="node3" href="$_capacite_8cpp.html" title="src/Capacite.cpp" alt="" coords="5,155,127,181"/>
-<area shape="rect" id="node4" href="$_partie_8h.html" title="src/Partie.h" alt="" coords="151,155,240,181"/>
-<area shape="rect" id="node5" href="$_projectile_8cpp.html" title="src/Projectile.cpp" alt="" coords="265,155,387,181"/>
-<area shape="rect" id="node6" href="$_vaisseau_8cpp.html" title="src/Vaisseau.cpp" alt="" coords="411,155,534,181"/>
+<area shape="rect" id="node2" href="$_capacite_8h.html" title="src/Capacite.h" alt="" coords="938,80,1045,107"/>
+<area shape="rect" id="node3" href="$_cap_test_8h.html" title="src/CapTest.h" alt="" coords="480,155,585,181"/>
+<area shape="rect" id="node7" href="$_cap_piou_8h.html" title="src/CapPiou.h" alt="" coords="752,155,857,181"/>
+<area shape="rect" id="node11" href="$_capacite_8cpp.html" title="src/Capacite.cpp" alt="" coords="1101,229,1223,256"/>
+<area shape="rect" id="node12" href="$_vaisseau_8h.html" title="src/Vaisseau.h" alt="" coords="1085,155,1194,181"/>
+<area shape="rect" id="node13" href="$_partie_8h.html" title="src/Partie.h" alt="" coords="829,229,919,256"/>
+<area shape="rect" id="node17" href="$_projectile_8cpp.html" title="src/Projectile.cpp" alt="" coords="1247,229,1370,256"/>
+<area shape="rect" id="node18" href="$_vaisseau_8cpp.html" title="src/Vaisseau.cpp" alt="" coords="1394,229,1517,256"/>
+<area shape="rect" id="node19" href="$_proj_test_8h.html" title="src/ProjTest.h" alt="" coords="279,80,383,107"/>
+<area shape="rect" id="node22" href="$_proj_piou_8h.html" title="src/ProjPiou.h" alt="" coords="641,80,745,107"/>
+<area shape="rect" id="node9" href="$_cap_dash_8h.html" title="src/CapDash.h" alt="" coords="345,155,456,181"/>
+<area shape="rect" id="node15" href="$_vaisseau_test_8h.html" title="src/VaisseauTest.h" alt="" coords="943,229,1077,256"/>
+<area shape="rect" id="node4" href="$___capacites_8h.html" title="src/_Capacites.h" alt="" coords="541,229,663,256"/>
+<area shape="rect" id="node6" href="$_cap_test_8cpp.html" title="src/CapTest.cpp" alt="" coords="399,229,517,256"/>
+<area shape="rect" id="node5" href="$_partie_8cpp.html" title="src/Partie.cpp" alt="" coords="551,304,653,331"/>
+<area shape="rect" id="node8" href="$_cap_piou_8cpp.html" title="src/CapPiou.cpp" alt="" coords="687,229,805,256"/>
+<area shape="rect" id="node10" href="$_cap_dash_8cpp.html" title="src/CapDash.cpp" alt="" coords="251,229,375,256"/>
+<area shape="rect" id="node14" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="819,304,916,331"/>
+<area shape="rect" id="node16" href="$_vaisseau_test_8cpp.html" title="src/VaisseauTest.cpp" alt="" coords="941,304,1090,331"/>
+<area shape="rect" id="node20" href="$__projectiles_8h.html" title="src/_projectiles.h" alt="" coords="200,155,321,181"/>
+<area shape="rect" id="node21" href="$_proj_test_8cpp.html" title="src/ProjTest.cpp" alt="" coords="5,155,124,181"/>
+<area shape="rect" id="node23" href="$_proj_piou_8cpp.html" title="src/ProjPiou.cpp" alt="" coords="609,155,728,181"/>
 </map>

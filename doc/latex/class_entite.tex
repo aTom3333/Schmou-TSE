@@ -1,0 +1,258 @@
+\hypertarget{class_entite}{}\section{Référence de la classe Entite}
+\label{class_entite}\index{Entite@{Entite}}
+
+
+Classe virtuelle qui définit une entité  
+
+
+
+
+{\ttfamily \#include $<$Entite.\+h$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Entite\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{class_entite__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_entite_ace3b4604920a7aeba25efb60590e64cb}{$\sim$\+Entite} ()=default
+\item 
+const std\+::vector$<$ sf\+::\+Shape $\ast$ $>$ \& \hyperlink{class_entite_a0fccfa39c6be09c5ea63fb999fef4c8e}{get\+Forme} () const
+\item 
+void \hyperlink{class_entite_ad80a88f81ccc689b9abdfa75bd1e99d6}{afficher} (sf\+::\+Render\+Window \&window)
+\item 
+void \hyperlink{class_entite_a6d77bd5ad9eaf7e7150a4e96448043ec}{move} (const sf\+::\+Vector2f \&delta)
+\item 
+void \hyperlink{class_entite_a2d97c53ed1b1f6d9c078aa1a89c474fe}{set\+Position} (const sf\+::\+Vector2f \&pos)
+\item 
+const sf\+::\+Vector2f \& \hyperlink{class_entite_a958fc8d1cfb3b91c6cadd615dbb2abbd}{get\+Position} () const
+\item 
+bool \hyperlink{class_entite_a4d38790ebb4bf082e20e47355a7b2f0c}{est\+Dehors} ()
+\item 
+void \hyperlink{class_entite_a620502288a6a0fc619eb4cab0fbe2289}{rotate} (float angle)
+\item 
+void \hyperlink{class_entite_acefaaf63dfe743c73fba1e6143015827}{set\+Rotation} (float angle)
+\item 
+float \hyperlink{class_entite_af245a50c73da19510d9a9e52cb9248a4}{get\+Rotation} () const
+\item 
+void \hyperlink{class_entite_a08e80693f0b1293f5a0ab9d04a5aac0e}{scale} (float factor)
+\item 
+void \hyperlink{class_entite_a3cfd095f6712461cb8c9baa2f6955088}{set\+Scale} (float factor)
+\item 
+float \hyperlink{class_entite_a95d64960088b9576b94346acd5ad6296}{get\+Scale} () const
+\item 
+void \hyperlink{class_entite_a88c148848289e34ca3bc991c37db9b44}{change\+Speed} (int val)
+\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_entite_a37bb9bd568e9e1c904eaa83ec49a2b16}{collisionable\+\_\+} = true
+\item 
+int \hyperlink{class_entite_a86f42758a3e4672052331b7a4daa10b5}{equipe\+\_\+}
+\begin{DoxyCompactList}\small\item\em $<$booléen vrai si collisionnable \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \hyperlink{class_entite_abbd554c4f122159a73cb113cc8de3860}{position\+\_\+}
+\begin{DoxyCompactList}\small\item\em numéro d\textquotesingle{}équipe \end{DoxyCompactList}\item 
+float \hyperlink{class_entite_a2d6dc6bfcee492337b7422f12b393141}{angle\+\_\+}
+\item 
+float \hyperlink{class_entite_a50e0f8c1188d9833432c55c7f7d2aa0f}{scale\+\_\+}
+\item 
+sf\+::\+Circle\+Shape \hyperlink{class_entite_a5b6c62e4dc54221a84ce4dc824fdb2da}{cercle\+Englobant\+\_\+}
+\item 
+std\+::vector$<$ sf\+::\+Shape $\ast$ $>$ \hyperlink{class_entite_ae5c91c9a24e8d91516de7d5598eb34b2}{forme\+\_\+}
+\item 
+sf\+::\+Texture \hyperlink{class_entite_a8147b9459318a9b1de1b72dce115680a}{texture\+\_\+}
+\item 
+sf\+::\+Sprite \hyperlink{class_entite_ab7c03b6fe5c4f1d08cd3e4304e0ef7c0}{sprite\+\_\+}
+\item 
+int \hyperlink{class_entite_a62c3145096f707457d60306ea6729ed6}{vit\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Amis}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_entite_ac85cf277aaeb8a314734c1fa5f35e3be}{collision} (const \hyperlink{class_entite}{Entite} \&e1, const \hyperlink{class_entite}{Entite} \&e2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Classe virtuelle qui définit une entité 
+
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_entite_ace3b4604920a7aeba25efb60590e64cb}\label{class_entite_ace3b4604920a7aeba25efb60590e64cb}} 
+\index{Entite@{Entite}!````~Entite@{$\sim$\+Entite}}
+\index{````~Entite@{$\sim$\+Entite}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{$\sim$\+Entite()}{~Entite()}}
+{\footnotesize\ttfamily virtual Entite\+::$\sim$\+Entite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_entite_ad80a88f81ccc689b9abdfa75bd1e99d6}\label{class_entite_ad80a88f81ccc689b9abdfa75bd1e99d6}} 
+\index{Entite@{Entite}!afficher@{afficher}}
+\index{afficher@{afficher}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{afficher()}{afficher()}}
+{\footnotesize\ttfamily void Entite\+::afficher (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entite_a88c148848289e34ca3bc991c37db9b44}\label{class_entite_a88c148848289e34ca3bc991c37db9b44}} 
+\index{Entite@{Entite}!change\+Speed@{change\+Speed}}
+\index{change\+Speed@{change\+Speed}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{change\+Speed()}{changeSpeed()}}
+{\footnotesize\ttfamily void Entite\+::change\+Speed (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entite_a4d38790ebb4bf082e20e47355a7b2f0c}\label{class_entite_a4d38790ebb4bf082e20e47355a7b2f0c}} 
+\index{Entite@{Entite}!est\+Dehors@{est\+Dehors}}
+\index{est\+Dehors@{est\+Dehors}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{est\+Dehors()}{estDehors()}}
+{\footnotesize\ttfamily bool Entite\+::est\+Dehors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entite_a0fccfa39c6be09c5ea63fb999fef4c8e}\label{class_entite_a0fccfa39c6be09c5ea63fb999fef4c8e}} 
+\index{Entite@{Entite}!get\+Forme@{get\+Forme}}
+\index{get\+Forme@{get\+Forme}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Forme()}{getForme()}}
+{\footnotesize\ttfamily const std\+::vector$<$sf\+::\+Shape$\ast$$>$\& Entite\+::get\+Forme (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a958fc8d1cfb3b91c6cadd615dbb2abbd}\label{class_entite_a958fc8d1cfb3b91c6cadd615dbb2abbd}} 
+\index{Entite@{Entite}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily const sf\+::\+Vector2f \& Entite\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_entite_af245a50c73da19510d9a9e52cb9248a4}\label{class_entite_af245a50c73da19510d9a9e52cb9248a4}} 
+\index{Entite@{Entite}!get\+Rotation@{get\+Rotation}}
+\index{get\+Rotation@{get\+Rotation}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Rotation()}{getRotation()}}
+{\footnotesize\ttfamily float Entite\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_entite_a95d64960088b9576b94346acd5ad6296}\label{class_entite_a95d64960088b9576b94346acd5ad6296}} 
+\index{Entite@{Entite}!get\+Scale@{get\+Scale}}
+\index{get\+Scale@{get\+Scale}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Scale()}{getScale()}}
+{\footnotesize\ttfamily float Entite\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_entite_a6d77bd5ad9eaf7e7150a4e96448043ec}\label{class_entite_a6d77bd5ad9eaf7e7150a4e96448043ec}} 
+\index{Entite@{Entite}!move@{move}}
+\index{move@{move}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Entite\+::move (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{delta }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entite_a620502288a6a0fc619eb4cab0fbe2289}\label{class_entite_a620502288a6a0fc619eb4cab0fbe2289}} 
+\index{Entite@{Entite}!rotate@{rotate}}
+\index{rotate@{rotate}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void Entite\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entite_a08e80693f0b1293f5a0ab9d04a5aac0e}\label{class_entite_a08e80693f0b1293f5a0ab9d04a5aac0e}} 
+\index{Entite@{Entite}!scale@{scale}}
+\index{scale@{scale}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily void Entite\+::scale (\begin{DoxyParamCaption}\item[{float}]{factor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entite_a2d97c53ed1b1f6d9c078aa1a89c474fe}\label{class_entite_a2d97c53ed1b1f6d9c078aa1a89c474fe}} 
+\index{Entite@{Entite}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}}
+{\footnotesize\ttfamily void Entite\+::set\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entite_acefaaf63dfe743c73fba1e6143015827}\label{class_entite_acefaaf63dfe743c73fba1e6143015827}} 
+\index{Entite@{Entite}!set\+Rotation@{set\+Rotation}}
+\index{set\+Rotation@{set\+Rotation}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Rotation()}{setRotation()}}
+{\footnotesize\ttfamily void Entite\+::set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entite_a3cfd095f6712461cb8c9baa2f6955088}\label{class_entite_a3cfd095f6712461cb8c9baa2f6955088}} 
+\index{Entite@{Entite}!set\+Scale@{set\+Scale}}
+\index{set\+Scale@{set\+Scale}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Scale()}{setScale()}}
+{\footnotesize\ttfamily void Entite\+::set\+Scale (\begin{DoxyParamCaption}\item[{float}]{factor }\end{DoxyParamCaption})}
+
+
+
+\subsection{Documentation des fonctions amies et associées}
+\mbox{\Hypertarget{class_entite_ac85cf277aaeb8a314734c1fa5f35e3be}\label{class_entite_ac85cf277aaeb8a314734c1fa5f35e3be}} 
+\index{Entite@{Entite}!collision@{collision}}
+\index{collision@{collision}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{collision}{collision}}
+{\footnotesize\ttfamily bool collision (\begin{DoxyParamCaption}\item[{const \hyperlink{class_entite}{Entite} \&}]{e1,  }\item[{const \hyperlink{class_entite}{Entite} \&}]{e2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Documentation des données membres}
+\mbox{\Hypertarget{class_entite_a2d6dc6bfcee492337b7422f12b393141}\label{class_entite_a2d6dc6bfcee492337b7422f12b393141}} 
+\index{Entite@{Entite}!angle\+\_\+@{angle\+\_\+}}
+\index{angle\+\_\+@{angle\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{angle\+\_\+}{angle\_}}
+{\footnotesize\ttfamily float Entite\+::angle\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a5b6c62e4dc54221a84ce4dc824fdb2da}\label{class_entite_a5b6c62e4dc54221a84ce4dc824fdb2da}} 
+\index{Entite@{Entite}!cercle\+Englobant\+\_\+@{cercle\+Englobant\+\_\+}}
+\index{cercle\+Englobant\+\_\+@{cercle\+Englobant\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{cercle\+Englobant\+\_\+}{cercleEnglobant\_}}
+{\footnotesize\ttfamily sf\+::\+Circle\+Shape Entite\+::cercle\+Englobant\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a37bb9bd568e9e1c904eaa83ec49a2b16}\label{class_entite_a37bb9bd568e9e1c904eaa83ec49a2b16}} 
+\index{Entite@{Entite}!collisionable\+\_\+@{collisionable\+\_\+}}
+\index{collisionable\+\_\+@{collisionable\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{collisionable\+\_\+}{collisionable\_}}
+{\footnotesize\ttfamily bool Entite\+::collisionable\+\_\+ = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a86f42758a3e4672052331b7a4daa10b5}\label{class_entite_a86f42758a3e4672052331b7a4daa10b5}} 
+\index{Entite@{Entite}!equipe\+\_\+@{equipe\+\_\+}}
+\index{equipe\+\_\+@{equipe\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{equipe\+\_\+}{equipe\_}}
+{\footnotesize\ttfamily int Entite\+::equipe\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+$<$booléen vrai si collisionnable 
+
+\mbox{\Hypertarget{class_entite_ae5c91c9a24e8d91516de7d5598eb34b2}\label{class_entite_ae5c91c9a24e8d91516de7d5598eb34b2}} 
+\index{Entite@{Entite}!forme\+\_\+@{forme\+\_\+}}
+\index{forme\+\_\+@{forme\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{forme\+\_\+}{forme\_}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+Shape$\ast$$>$ Entite\+::forme\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_abbd554c4f122159a73cb113cc8de3860}\label{class_entite_abbd554c4f122159a73cb113cc8de3860}} 
+\index{Entite@{Entite}!position\+\_\+@{position\+\_\+}}
+\index{position\+\_\+@{position\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{position\+\_\+}{position\_}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Entite\+::position\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+numéro d\textquotesingle{}équipe 
+
+\mbox{\Hypertarget{class_entite_a50e0f8c1188d9833432c55c7f7d2aa0f}\label{class_entite_a50e0f8c1188d9833432c55c7f7d2aa0f}} 
+\index{Entite@{Entite}!scale\+\_\+@{scale\+\_\+}}
+\index{scale\+\_\+@{scale\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{scale\+\_\+}{scale\_}}
+{\footnotesize\ttfamily float Entite\+::scale\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_ab7c03b6fe5c4f1d08cd3e4304e0ef7c0}\label{class_entite_ab7c03b6fe5c4f1d08cd3e4304e0ef7c0}} 
+\index{Entite@{Entite}!sprite\+\_\+@{sprite\+\_\+}}
+\index{sprite\+\_\+@{sprite\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{sprite\+\_\+}{sprite\_}}
+{\footnotesize\ttfamily sf\+::\+Sprite Entite\+::sprite\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a8147b9459318a9b1de1b72dce115680a}\label{class_entite_a8147b9459318a9b1de1b72dce115680a}} 
+\index{Entite@{Entite}!texture\+\_\+@{texture\+\_\+}}
+\index{texture\+\_\+@{texture\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{texture\+\_\+}{texture\_}}
+{\footnotesize\ttfamily sf\+::\+Texture Entite\+::texture\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a62c3145096f707457d60306ea6729ed6}\label{class_entite_a62c3145096f707457d60306ea6729ed6}} 
+\index{Entite@{Entite}!vit\+\_\+@{vit\+\_\+}}
+\index{vit\+\_\+@{vit\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{vit\+\_\+}{vit\_}}
+{\footnotesize\ttfamily int Entite\+::vit\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_entite_8h}{Entite.\+h}\item 
+src/\hyperlink{_entite_8cpp}{Entite.\+cpp}\end{DoxyCompactItemize}

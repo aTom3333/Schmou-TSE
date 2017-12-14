@@ -21,14 +21,23 @@ bool collision(const Entite& e1, const Entite& e2)
 
 void Entite::afficher(sf::RenderWindow &window)
 {
-	sprite_.setPosition(position_);
 	window.draw(sprite_);
 }
 
+/**
+ * @fn move
+ * @brief Déplace l'entité en fonction de @a delta
+ *
+ * Appelle la fonction move de la SFML sur les attributs de l'objet appelant.
+ *
+ * @param delta un @c sf::Vector2f qui donne la déplacement en x et en y
+ */
 void Entite::move(const sf::Vector2f& delta)
 {
 	for(auto& elem : forme_)
 		elem->move(delta);
+    cercleEnglobant_.move(delta);
+    sprite_.move(delta);
 	position_ += delta;
 }
 
@@ -37,6 +46,12 @@ void Entite::setPosition(const sf::Vector2f & pos)
 	move(pos - position_);
 }
 
+
+/**
+ * @fn getPosition
+ *
+ * @return la position de l'entité appelante
+ */
 const sf::Vector2f& Entite::getPosition() const
 {
 	return position_;
@@ -46,6 +61,8 @@ void Entite::rotate(float angle)
 {
 	for(auto& elem : forme_)
 		elem->rotate(angle);
+    cercleEnglobant_.rotate(angle);
+    sprite_.rotate(angle);
 	angle_ = fmod(angle_ + angle, 360);
 }
 
@@ -63,6 +80,8 @@ void Entite::scale(float factor)
 {
 	for(auto& elem : forme_)
 		elem->scale(factor, factor);
+    cercleEnglobant_.scale(factor, factor);
+    sprite_.scale(factor, factor);
 	scale_ *= factor;
 }
 

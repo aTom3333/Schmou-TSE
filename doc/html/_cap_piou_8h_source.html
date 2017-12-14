@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Schmou&#39;TSE:  Fichier source de src/CapPiou.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Schmou&#39;TSE
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CapPiou.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_cap_piou_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CAPPIOU_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CAPPIOU_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_capacite_8h.html">Capacite.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_projectile_8h.html">Projectile.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_proj_piou_8h.html">ProjPiou.h</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_cap_piou.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cap_piou.html">CapPiou</a> : <span class="keyword">public</span> <a class="code" href="class_capacite.html">Capacite</a></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_cap_piou.html#aa2ed61fb1313a447cf8444399001750d">CapPiou</a>();</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_cap_piou.html#a35d7e0b0c14d6a6e01ba0a053a8a60bd">~CapPiou</a>();</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_cap_piou.html#a20ed7a993ce209a3df246f655f107f22">utiliser</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_cap_piou.html#aabdcaa253f10db2bca12e750005485fc">actualiser</a>(std::vector&lt;Projectile*&gt; &amp;projectiles, <a class="code" href="class_entite.html">Entite</a> *vaisseau);</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif //CAPPIOU</span></div><div class="ttc" id="_proj_piou_8h_html"><div class="ttname"><a href="_proj_piou_8h.html">ProjPiou.h</a></div></div>
+<div class="ttc" id="_capacite_8h_html"><div class="ttname"><a href="_capacite_8h.html">Capacite.h</a></div></div>
+<div class="ttc" id="class_cap_piou_html_aa2ed61fb1313a447cf8444399001750d"><div class="ttname"><a href="class_cap_piou.html#aa2ed61fb1313a447cf8444399001750d">CapPiou::CapPiou</a></div><div class="ttdeci">CapPiou()</div><div class="ttdef"><b>Definition:</b> CapPiou.cpp:3</div></div>
+<div class="ttc" id="_projectile_8h_html"><div class="ttname"><a href="_projectile_8h.html">Projectile.h</a></div></div>
+<div class="ttc" id="class_cap_piou_html_a35d7e0b0c14d6a6e01ba0a053a8a60bd"><div class="ttname"><a href="class_cap_piou.html#a35d7e0b0c14d6a6e01ba0a053a8a60bd">CapPiou::~CapPiou</a></div><div class="ttdeci">~CapPiou()</div><div class="ttdef"><b>Definition:</b> CapPiou.cpp:13</div></div>
+<div class="ttc" id="class_cap_piou_html_a20ed7a993ce209a3df246f655f107f22"><div class="ttname"><a href="class_cap_piou.html#a20ed7a993ce209a3df246f655f107f22">CapPiou::utiliser</a></div><div class="ttdeci">void utiliser(int x, int y)</div><div class="ttdef"><b>Definition:</b> CapPiou.cpp:17</div></div>
+<div class="ttc" id="class_entite_html"><div class="ttname"><a href="class_entite.html">Entite</a></div><div class="ttdoc">Classe virtuelle qui définit une entité </div><div class="ttdef"><b>Definition:</b> Entite.h:13</div></div>
+<div class="ttc" id="class_capacite_html"><div class="ttname"><a href="class_capacite.html">Capacite</a></div><div class="ttdoc">Classe abstraite qui définit la structure générale d&amp;#39;une capacité, à faire hériter de chaque capacité...</div><div class="ttdef"><b>Definition:</b> Capacite.h:18</div></div>
+<div class="ttc" id="class_cap_piou_html_aabdcaa253f10db2bca12e750005485fc"><div class="ttname"><a href="class_cap_piou.html#aabdcaa253f10db2bca12e750005485fc">CapPiou::actualiser</a></div><div class="ttdeci">void actualiser(std::vector&lt; Projectile *&gt; &amp;projectiles, Entite *vaisseau)</div><div class="ttdef"><b>Definition:</b> CapPiou.cpp:27</div></div>
+<div class="ttc" id="class_cap_piou_html"><div class="ttname"><a href="class_cap_piou.html">CapPiou</a></div><div class="ttdef"><b>Definition:</b> CapPiou.h:8</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
