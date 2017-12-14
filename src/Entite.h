@@ -29,6 +29,8 @@ class Entite
 		void setScale(float factor);
 		float getScale() const;
 
+		void changeSpeed(int val);
+
 	protected:
 		bool collisionable_ = true; ///booléen vrai si collisionnable
 		int equipe_; ///numéro d'équipe
@@ -39,6 +41,7 @@ class Entite
 		std::vector<sf::Shape*> forme_;
 		sf::Texture texture_;
 		sf::Sprite sprite_;
+		int vit_; /// < Vitesse actuelle
 };
 
 #endif // ENTITE_H

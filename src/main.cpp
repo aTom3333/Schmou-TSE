@@ -14,7 +14,7 @@ int main()
 {
 	// Code propre 
 
-	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE", sf::Style::Fullscreen);
+	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE");
 	Partie partie;
 
 	srand(time(nullptr));

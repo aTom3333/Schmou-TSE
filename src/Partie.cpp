@@ -41,6 +41,9 @@ void Partie::testProjTest(sf::RenderWindow & window)
 	CapPiou *temp2 = new CapPiou();
 	attaques.push_back(temp2);
 
+	CapDash *temp3 = new CapDash();
+	attaques.push_back(temp3);
+
 	while (window.isOpen())  
 	{
 		sf::Event event;
@@ -78,7 +81,7 @@ void Partie::testProjTest(sf::RenderWindow & window)
 
 		// Gestion des attaques
 		for(int i = 0; i < attaques.size(); i++)
-			attaques[i]->actualiser(projectiles);
+			attaques[i]->actualiser(projectiles, &vaisseautest);
 
 		// Gestion des projectiles
 		for(int i = 0; i < projectiles.size(); i++)

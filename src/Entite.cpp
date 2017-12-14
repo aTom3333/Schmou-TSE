@@ -81,6 +81,11 @@ float Entite::getScale() const
 	return scale_;
 }
 
+void Entite::changeSpeed(int val)
+{
+	vit_ += val;
+}
+
 bool Entite::estDehors()
 {
 	return position_.x < 0 || position_.x > ECRAN_L || position_.y < 0 || position_.y > ECRAN_H;

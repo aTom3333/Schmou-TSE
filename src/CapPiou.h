@@ -11,7 +11,7 @@ public:
 	CapPiou();
 	~CapPiou();
 	void utiliser(int x, int y);
-	void actualiser(std::vector<Projectile*> &projectiles);
+	void actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau);
 };
 
 #endif //CAPPIOU
