@@ -6,6 +6,7 @@
 #include "Entite.h"
 #include "Collision.h"
 #include "Partie.h"
+//#include "Input.h"
 
 
 // Code minimal
@@ -86,7 +87,7 @@ int main()
 	s.setTexture(t);
 
     sf::Clock clock;
-    Input input(window, Input::Media::Mouse);
+    Input input(window, Input::Media::Joypad);
 
 	while (window.isOpen())
 	{
@@ -119,10 +120,6 @@ int main()
 		window.display();
 	}*/
 
-
-/**
-
-*/
 	return 0;
 }
 

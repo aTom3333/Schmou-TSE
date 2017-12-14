@@ -21,14 +21,23 @@ bool collision(const Entite& e1, const Entite& e2)
 
 void Entite::afficher(sf::RenderWindow &window)
 {
-	sprite_.setPosition(position_);
 	window.draw(sprite_);
 }
 
+/**
+ * @fn move
+ * @brief DÃ©place l'entitÃ© en fonction de @a delta
+ *
+ * Appelle la fonction move de la SFML sur les attributs de l'objet appelant.
+ *
+ * @param delta un @c sf::Vector2f qui donne la dÃ©placement en x et en y
+ */
 void Entite::move(const sf::Vector2f& delta)
 {
 	for(auto& elem : forme_)
 		elem->move(delta);
+    cercleEnglobant_.move(delta);
+    sprite_.move(delta);
 	position_ += delta;
 }
 
@@ -37,6 +46,12 @@ void Entite::setPosition(const sf::Vector2f & pos)
 	move(pos - position_);
 }
 
+
+/**
+ * @fn getPosition
+ *
+ * @return la position de l'entitÃ© appelante
+ */
 const sf::Vector2f& Entite::getPosition() const
 {
 	return position_;
@@ -46,6 +61,8 @@ void Entite::rotate(float angle)
 {
 	for(auto& elem : forme_)
 		elem->rotate(angle);
+    cercleEnglobant_.rotate(angle);
+    sprite_.rotate(angle);
 	angle_ = fmod(angle_ + angle, 360);
 }
 
@@ -63,6 +80,8 @@ void Entite::scale(float factor)
 {
 	for(auto& elem : forme_)
 		elem->scale(factor, factor);
+    cercleEnglobant_.scale(factor, factor);
+    sprite_.scale(factor, factor);
 	scale_ *= factor;
 }
 
@@ -80,6 +99,14 @@ void Entite::changeSpeed(int val)
 {
 	vit_ += val;
 }
+
+/**
+* @fn ProjTest
+* @brief Constructeur
+* @return Booleen : true si l'entité est en dehors de l'écran, faux sinon
+*
+* Créer un projectile de test à une postion aléatoire
+*/
 
 bool Entite::estDehors()
 {

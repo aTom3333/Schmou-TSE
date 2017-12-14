@@ -21,11 +21,11 @@ class Vaisseau : public Entite
 	public:
 		//structeurs
 			explicit Vaisseau();
-			~Vaisseau();
+            ~Vaisseau() override;
 
 		//setters
 			void setEquipe(int equipe); ///définit l'équipe (entier)
-			void addCapacite(Capacite* skill); /// < ajoute la @c Capacite skill à la liste des capacités skills_ du vaisseau
+			void addCapacite(Capacite* skill); /// < ajoute la @c Capacité skill à la liste des capacités skills_ du vaisseau
 			void setnom(std::string nom);
 			void setNskin(int Nskin);
 			void setpvM(int pvM);
@@ -60,15 +60,15 @@ class Vaisseau : public Entite
 		// stats de base
 			int pvM_; /// < Points de vie de base
 			int atqM_; /// < Attaque de base
-			int defM_; /// < Défense de base
-			int vitM_; /// < Vitesse de base
+			int defM_; /// Défense de base
+			int vitM_; /// Vitesse de base
 		// stats actualisées en jeu
-			int pv_; /// < Points de vie actuels
-			int atq_; /// < Attaque actuelle
-			int def_; /// < Défense actuelle
-			int vit_; /// < Vitesse actuelle
+			int pv_; /// Points de vie actuels
+			int atq_; /// Attaque actuelle
+			int def_; /// Défense actuelle
+			int vit_; /// Vitesse actuelle
 		// liste de capacités
-			std::vector<Capacite*> skills_; /// < Liste des capacités du vaisseau
+			std::vector<Capacite*> skills_; /// Liste des capacités du vaisseau
 };
 
 #endif // VAISSEAU_H

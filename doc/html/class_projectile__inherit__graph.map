@@ -1,0 +1,5 @@
+<map id="Projectile" name="Projectile">
+<area shape="rect" id="node3" href="$class_proj_piou.html" title="ProjPiou" alt="" coords="5,155,76,181"/>
+<area shape="rect" id="node4" href="$class_proj_test.html" title="ProjTest" alt="" coords="100,155,171,181"/>
+<area shape="rect" id="node2" href="$class_entite.html" title="Classe virtuelle qui définit une entité " alt="" coords="59,5,115,32"/>
+</map>

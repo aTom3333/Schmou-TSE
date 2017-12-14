@@ -6,6 +6,10 @@
 #include <SFML/Graphics.hpp>
 
 
+/**
+ * @class Entite
+ * @brief Classe virtuelle qui dÃ©finit une entitÃ©
+ */
 class Entite
 {
 	friend bool collision(const Entite& e1, const Entite& e2);
@@ -18,7 +22,7 @@ class Entite
 		// Tranformation setters & getters
 		void move(const sf::Vector2f& delta);
 		void setPosition(const sf::Vector2f &pos);
-		const sf::Vector2f& getPosition() const;
+		const sf::Vector2f& getPosition() const; 
 		bool estDehors();
 
 		void rotate(float angle);
@@ -29,11 +33,11 @@ class Entite
 		void setScale(float factor);
 		float getScale() const;
 
-		void changeSpeed(int val);
+		void changeSpeed(int val); 
 
 	protected:
-		bool collisionable_ = true; ///booléen vrai si collisionnable
-		int equipe_; ///numéro d'équipe
+		bool collisionable_ = true; /// <boolÃ©en vrai si collisionnable
+		int equipe_; ///numÃ©ro d'Ã©quipe
 		sf::Vector2f position_;
 		float angle_;
 		float scale_;
