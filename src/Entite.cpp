@@ -1,5 +1,5 @@
 #include "Entite.h"
-#include "Collision.h"
+#include "Utilitaires/Collision.h"
 #include "constantes.h"
 #include <cmath>
 
@@ -103,9 +103,9 @@ void Entite::changeSpeed(int val)
 /**
 * @fn ProjTest
 * @brief Constructeur
-* @return Booleen : true si l'entité est en dehors de l'écran, faux sinon
+* @return Booleen : true si l'entitÃ© est en dehors de l'Ã©cran, faux sinon
 *
-* Créer un projectile de test à une postion aléatoire
+* CrÃ©er un projectile de test Ã  une postion alÃ©atoire
 */
 
 bool Entite::estDehors()

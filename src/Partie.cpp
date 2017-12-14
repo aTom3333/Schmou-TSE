@@ -1,13 +1,13 @@
 #include "Partie.h"
-#include "_projectiles.h"
-#include "_Capacites.h"
-#include "ProjTest.h"
-#include "VaisseauTest.h"
+#include "Projectiles/_projectiles.h"
+#include "Capacites/_Capacites.h"
+#include "Projectiles/ProjTest.h"
+#include "Vaisseau/VaisseauTest.h"
 
 
 
 
-Partie::Partie()
+Partie::Partie(sf::RenderWindow& window) : window_{window}, input(window)
 {
 	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
 	{
@@ -21,7 +21,7 @@ Partie::~Partie()
 
 
 
-void Partie::testProjTest(sf::RenderWindow & window)
+void Partie::testProjTest()
 {
 	std::vector<Capacite*> attaques;
 	std::vector<Projectile *> projectiles;
@@ -46,14 +46,14 @@ void Partie::testProjTest(sf::RenderWindow & window)
 	CapDash *temp3 = new CapDash();
 	attaques.push_back(temp3);
 
-	while (window.isOpen())  
+	while (window_.isOpen())
 	{
 		// Gestion nulle des evenement
 		sf::Event event;
-		while (window.pollEvent(event))
+		while (window_.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
-				window.close();
+				window_.close();
 
 			// Si la touche W est activé
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
@@ -77,15 +77,16 @@ void Partie::testProjTest(sf::RenderWindow & window)
 					attaqueEnCours = 0;
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-				window.close();
+				window_.close();
 		}
 
-		float t_ecoule = clock.restart().asMilliseconds();
+		auto t_ecoule = clock.restart();
 		
 		// Efface l'écran
-		window.clear();
+		window_.clear();
 
-		vaisseautest.gestion(window);
+        vaisseautest.move(input.move(vaisseautest.getvit(), t_ecoule));
+		vaisseautest.gestion(window_);
 
 		// Gestion des attaques
 		for(int i = 0; i < attaques.size(); i++)
@@ -93,7 +94,7 @@ void Partie::testProjTest(sf::RenderWindow & window)
 
 		// Gestion des projectiles
 		for(int i = 0; i < projectiles.size(); i++)
-			projectiles[i]->gestion(window);
+			projectiles[i]->gestion(window_);
 
 		// Collision moisie
 		testCollision(projectiles);
@@ -106,10 +107,10 @@ void Partie::testProjTest(sf::RenderWindow & window)
 		else
 			txt = attaques[attaqueEnCours]->getNom() + " - " + "Prêt";
 		afficheAtk.setString(txt);
-		window.draw(afficheAtk);
+		window_.draw(afficheAtk);
 
 		// Mise à jour de l'écran
-		window.display();
+		window_.display();
 
 		sf::sleep(sf::milliseconds(10));
 	}
@@ -119,31 +120,31 @@ void Partie::testProjTest(sf::RenderWindow & window)
 }
 
 //test vaisseau piou piou de pierre
-void Partie::testVaisseauTest(sf::RenderWindow & window) {
+void Partie::testVaisseauTest() {
 	//déclarations
 	VaisseauTest vaisseautest;
 	sf::Clock clock;
 	float t_ecoule;
 
-	while (window.isOpen())
+	while (window_.isOpen())
 	{
 		//boucle de base 
 			sf::Event event;
-			while (window.pollEvent(event))
+			while (window_.pollEvent(event))
 			{
 				if (event.type == sf::Event::Closed)
-					window.close();
+					window_.close();
 			}
 
 		//maj début de boucle
 			t_ecoule = clock.restart().asMilliseconds();
-			window.clear();
+			window_.clear();
 
 		//code
-			vaisseautest.gestion(window);
+			vaisseautest.gestion(window_);
 
 		//maj fin de boucle
-			window.display();
+			window_.display();
 			sf::sleep(sf::milliseconds(10));
 	}
 }

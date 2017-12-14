@@ -2,8 +2,8 @@
 #define CAPPIOU_H
 
 #include "Capacite.h"
-#include "Projectile.h"
-#include "ProjPiou.h"
+#include "../Projectiles/Projectile.h"
+#include "../Projectiles/ProjPiou.h"
 
 class CapPiou : public Capacite
 {

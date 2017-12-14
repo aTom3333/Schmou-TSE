@@ -2,7 +2,7 @@
 #define VAISSEAUTEST_H
 
 #include "Vaisseau.h"
-#include "Capacite.h"
+#include "../Capacites/Capacite.h"
 
 class VaisseauTest : public Vaisseau
 {

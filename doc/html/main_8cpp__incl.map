@@ -1,10 +1,10 @@
 <map id="src/main.cpp" name="src/main.cpp">
-<area shape="rect" id="node6" href="$constantes_8h.html" title="constantes.h" alt="" coords="814,80,911,107"/>
-<area shape="rect" id="node7" href="$_entite_8h.html" title="Entite.h" alt="" coords="588,379,655,405"/>
-<area shape="rect" id="node10" href="$_collision_8h.html" title="Collision.h" alt="" coords="5,229,88,256"/>
-<area shape="rect" id="node11" href="$_partie_8h.html" title="Partie.h" alt="" coords="511,80,577,107"/>
-<area shape="rect" id="node17" href="$_input_8h.html" title="Input.h" alt="" coords="235,80,298,107"/>
-<area shape="rect" id="node14" href="$_capacite_8h.html" title="Capacite.h" alt="" coords="660,229,745,256"/>
-<area shape="rect" id="node15" href="$_projectile_8h.html" title="Projectile.h" alt="" coords="761,304,847,331"/>
-<area shape="rect" id="node16" href="$_vaisseau_8h.html" title="Vaisseau.h" alt="" coords="659,155,746,181"/>
+<area shape="rect" id="node6" href="$constantes_8h.html" title="constantes.h" alt="" coords="1407,80,1505,107"/>
+<area shape="rect" id="node7" href="$_entite_8h.html" title="Entite.h" alt="" coords="668,379,735,405"/>
+<area shape="rect" id="node10" href="$_collision_8h.html" title="Utilitaires/Collision.h" alt="" coords="1033,304,1175,331"/>
+<area shape="rect" id="node11" href="$_partie_8h.html" title="Partie.h" alt="" coords="551,80,617,107"/>
+<area shape="rect" id="node14" href="$_capacite_8h.html" title="Capacites/Capacite.h" alt="" coords="347,229,495,256"/>
+<area shape="rect" id="node15" href="$_projectile_8h.html" title="../Projectiles/Projectile.h" alt="" coords="449,304,613,331"/>
+<area shape="rect" id="node16" href="$_vaisseau_8h.html" title="Vaisseau/Vaisseau.h" alt="" coords="349,155,494,181"/>
+<area shape="rect" id="node17" href="$_input_8h.html" title="Interface/Input.h" alt="" coords="840,155,957,181"/>
 </map>

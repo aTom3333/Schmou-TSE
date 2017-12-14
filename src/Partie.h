@@ -7,9 +7,10 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
-#include "Capacite.h"
-#include "Projectile.h"
-#include "Vaisseau.h"
+#include "Capacites/Capacite.h"
+#include "Projectiles/Projectile.h"
+#include "Vaisseau/Vaisseau.h"
+#include "Interface/Input.h"
 
 
 /**
@@ -24,19 +25,20 @@
 class Partie
 {
 	public:
-		Partie();
+		Partie(sf::RenderWindow& window);
 		~Partie();
 
-		void jeu(sf::RenderWindow &window);
+		void jeu();
 		void testCollision(std::vector<Projectile*> &projectiles);
 
 		//TODO temporaire pour tester, n'existe pas dans le jeu livré
-		void testProjTest(sf::RenderWindow &window);
-		void testVaisseauTest(sf::RenderWindow & window);
+		void testProjTest();
+		void testVaisseauTest();
 
 	private:
+        sf::RenderWindow& window_;
 		sf::Font font_;
-
+        Input input;
 };
 
 #endif // PARTIE_H

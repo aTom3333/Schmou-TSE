@@ -2,8 +2,8 @@
 #define CAPDASH_H
 
 #include "Capacite.h"
-#include "Entite.h"
-#include "ProjTest.h"
+#include "../Entite.h"
+#include "../Projectiles/ProjTest.h"
 
 class CapDash : public Capacite
 {

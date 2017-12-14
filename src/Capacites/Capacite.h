@@ -4,8 +4,8 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-#include "Projectile.h"
-#include "Entite.h"
+#include "../Projectiles/Projectile.h"
+#include "../Entite.h"
 
 
 /**

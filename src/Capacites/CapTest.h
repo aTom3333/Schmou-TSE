@@ -2,8 +2,8 @@
 #define CAPTEST_H
 
 #include "Capacite.h"
-#include "Projectile.h"
-#include "ProjTest.h"
+#include "../Projectiles/Projectile.h"
+#include "../Projectiles/ProjTest.h"
 
 class CapTest : public Capacite
 {

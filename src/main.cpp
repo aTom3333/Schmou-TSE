@@ -4,7 +4,7 @@
 #include <iostream>
 #include "constantes.h"
 #include "Entite.h"
-#include "Collision.h"
+#include "Utilitaires/Collision.h"
 #include "Partie.h"
 //#include "Input.h"
 
@@ -15,11 +15,11 @@ int main()
 	// Code propre 
 
 	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE");
-	Partie partie;
+	Partie partie(window);
 
 	srand(time(nullptr));
 
-	partie.testProjTest(window); ///le truc que Cyril avait tapé jeudi 7 en club
+	partie.testProjTest(); ///le truc que Cyril avait tapé jeudi 7 en club
 	
 	//partie.testVaisseauTest(window); ///un vaisseau que pierre a testé
 

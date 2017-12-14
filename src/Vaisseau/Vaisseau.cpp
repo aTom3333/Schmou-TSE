@@ -1,9 +1,9 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-#include "Capacite.h"
+#include "../Capacites/Capacite.h"
 #include "Vaisseau.h"
-#include "Projectile.h"
+#include "../Projectiles/Projectile.h"
 
 
 Vaisseau::Vaisseau() ///constructeur

@@ -1,10 +1,10 @@
-<map id="src/Vaisseau.h" name="src/Vaisseau.h">
-<area shape="rect" id="node2" href="$_capacite_8cpp.html" title="src/Capacite.cpp" alt="" coords="5,80,127,107"/>
-<area shape="rect" id="node3" href="$_partie_8h.html" title="src/Partie.h" alt="" coords="151,80,240,107"/>
-<area shape="rect" id="node6" href="$_vaisseau_test_8h.html" title="src/VaisseauTest.h" alt="" coords="264,80,399,107"/>
-<area shape="rect" id="node8" href="$_projectile_8cpp.html" title="src/Projectile.cpp" alt="" coords="423,80,546,107"/>
-<area shape="rect" id="node9" href="$_vaisseau_8cpp.html" title="src/Vaisseau.cpp" alt="" coords="570,80,693,107"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="84,155,181,181"/>
-<area shape="rect" id="node5" href="$_partie_8cpp.html" title="src/Partie.cpp" alt="" coords="205,155,308,181"/>
-<area shape="rect" id="node7" href="$_vaisseau_test_8cpp.html" title="src/VaisseauTest.cpp" alt="" coords="333,155,482,181"/>
+<map id="src/Vaisseau/Vaisseau.h" name="src/Vaisseau/Vaisseau.h">
+<area shape="rect" id="node2" href="$_capacite_8cpp.html" title="src/Capacites/Capacite.cpp" alt="" coords="5,80,189,107"/>
+<area shape="rect" id="node3" href="$_partie_8h.html" title="src/Partie.h" alt="" coords="214,80,303,107"/>
+<area shape="rect" id="node6" href="$_vaisseau_test_8h.html" title="src/Vaisseau/VaisseauTest.h" alt="" coords="327,80,521,107"/>
+<area shape="rect" id="node8" href="$_projectile_8cpp.html" title="src/Projectiles/Projectile.cpp" alt="" coords="545,80,733,107"/>
+<area shape="rect" id="node9" href="$_vaisseau_8cpp.html" title="src/Vaisseau/Vaisseau.cpp" alt="" coords="757,80,939,107"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="147,155,245,181"/>
+<area shape="rect" id="node5" href="$_partie_8cpp.html" title="src/Partie.cpp" alt="" coords="269,155,371,181"/>
+<area shape="rect" id="node7" href="$_vaisseau_test_8cpp.html" title="src/Vaisseau/VaisseauTest.cpp" alt="" coords="395,155,602,181"/>
 </map>

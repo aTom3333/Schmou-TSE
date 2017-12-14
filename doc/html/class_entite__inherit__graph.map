@@ -2,6 +2,6 @@
 <area shape="rect" id="node2" href="$class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje..." alt="" coords="97,80,173,107"/>
 <area shape="rect" id="node5" href="$class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi " alt="" coords="203,80,279,107"/>
 <area shape="rect" id="node3" href="$class_proj_piou.html" title="ProjPiou" alt="" coords="5,155,76,181"/>
-<area shape="rect" id="node4" href="$class_proj_test.html" title="ProjTest" alt="" coords="100,155,171,181"/>
+<area shape="rect" id="node4" href="$class_proj_test.html" title="Projectile de test. " alt="" coords="100,155,171,181"/>
 <area shape="rect" id="node6" href="$class_vaisseau_test.html" title="VaisseauTest" alt="" coords="195,155,297,181"/>
 </map>

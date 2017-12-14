@@ -1,8 +1,8 @@
-<map id="src/ProjPiou.h" name="src/ProjPiou.h">
-<area shape="rect" id="node2" href="$_cap_piou_8h.html" title="src/CapPiou.h" alt="" coords="157,80,263,107"/>
-<area shape="rect" id="node6" href="$__projectiles_8h.html" title="src/_projectiles.h" alt="" coords="293,155,415,181"/>
-<area shape="rect" id="node7" href="$_proj_piou_8cpp.html" title="src/ProjPiou.cpp" alt="" coords="365,80,484,107"/>
-<area shape="rect" id="node3" href="$___capacites_8h.html" title="src/_Capacites.h" alt="" coords="5,155,127,181"/>
-<area shape="rect" id="node5" href="$_cap_piou_8cpp.html" title="src/CapPiou.cpp" alt="" coords="151,155,269,181"/>
-<area shape="rect" id="node4" href="$_partie_8cpp.html" title="src/Partie.cpp" alt="" coords="159,229,261,256"/>
+<map id="src/Projectiles/ProjPiou.h" name="src/Projectiles/ProjPiou.h">
+<area shape="rect" id="node2" href="$_cap_piou_8h.html" title="src/Capacites/CapPiou.h" alt="" coords="221,80,389,107"/>
+<area shape="rect" id="node6" href="$__projectiles_8h.html" title="src/Projectiles/_projectiles.h" alt="" coords="421,155,608,181"/>
+<area shape="rect" id="node7" href="$_proj_piou_8cpp.html" title="src/Projectiles/ProjPiou.cpp" alt="" coords="509,80,691,107"/>
+<area shape="rect" id="node3" href="$___capacites_8h.html" title="src/Capacites/_Capacites.h" alt="" coords="5,155,189,181"/>
+<area shape="rect" id="node5" href="$_cap_piou_8cpp.html" title="src/Capacites/CapPiou.cpp" alt="" coords="214,155,397,181"/>
+<area shape="rect" id="node4" href="$_partie_8cpp.html" title="src/Partie.cpp" alt="" coords="254,229,357,256"/>
 </map>

@@ -32,7 +32,7 @@ Graphe de collaboration de Vaisseau\+:\nopagebreak
 \item 
 \hyperlink{class_vaisseau_a86378a70f0d92fcc6c5c5973574b2b7d}{Vaisseau} ()
 \begin{DoxyCompactList}\small\item\em constructeur \end{DoxyCompactList}\item 
-\hyperlink{class_vaisseau_ae40b8e0143d6b736065207281bde2e8a}{$\sim$\+Vaisseau} ()
+\hyperlink{class_vaisseau_a3360bd62af7a7aaf5732b86d639a0674}{$\sim$\+Vaisseau} () override
 \begin{DoxyCompactList}\small\item\em destructeur \end{DoxyCompactList}\item 
 void \hyperlink{class_vaisseau_a1b3edda1f99d55cb5c0c7cbafe156af6}{set\+Equipe} (int equipe)
 \item 
@@ -101,10 +101,8 @@ int \hyperlink{class_vaisseau_a2b2a2de0e527ed46550922427e067c95}{atq\+\_\+}
 \begin{DoxyCompactList}\small\item\em Points de vie actuels. \end{DoxyCompactList}\item 
 int \hyperlink{class_vaisseau_abe1d646c91dcd6ad2d84a5d30ea2aeca}{def\+\_\+}
 \begin{DoxyCompactList}\small\item\em Attaque actuelle. \end{DoxyCompactList}\item 
-int \hyperlink{class_vaisseau_afab28349b10bc1d8c48888f84c4386dd}{vit\+\_\+}
-\begin{DoxyCompactList}\small\item\em Défense actuelle. \end{DoxyCompactList}\item 
 std\+::vector$<$ \hyperlink{class_capacite}{Capacite} $\ast$ $>$ \hyperlink{class_vaisseau_a7fccd409e1f27f968bbe3f8ee1ded206}{skills\+\_\+}
-\begin{DoxyCompactList}\small\item\em Vitesse actuelle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Défense actuelle. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
@@ -123,11 +121,11 @@ Description détaillée
 
 constructeur 
 
-\mbox{\Hypertarget{class_vaisseau_ae40b8e0143d6b736065207281bde2e8a}\label{class_vaisseau_ae40b8e0143d6b736065207281bde2e8a}} 
+\mbox{\Hypertarget{class_vaisseau_a3360bd62af7a7aaf5732b86d639a0674}\label{class_vaisseau_a3360bd62af7a7aaf5732b86d639a0674}} 
 \index{Vaisseau@{Vaisseau}!````~Vaisseau@{$\sim$\+Vaisseau}}
 \index{````~Vaisseau@{$\sim$\+Vaisseau}!Vaisseau@{Vaisseau}}
 \subsubsection{\texorpdfstring{$\sim$\+Vaisseau()}{~Vaisseau()}}
-{\footnotesize\ttfamily Vaisseau\+::$\sim$\+Vaisseau (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Vaisseau\+::$\sim$\+Vaisseau (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
 
 
@@ -369,16 +367,6 @@ $<$ numéro du skin du vaisseau
 
 
 
-Vitesse actuelle. 
-
-\mbox{\Hypertarget{class_vaisseau_afab28349b10bc1d8c48888f84c4386dd}\label{class_vaisseau_afab28349b10bc1d8c48888f84c4386dd}} 
-\index{Vaisseau@{Vaisseau}!vit\+\_\+@{vit\+\_\+}}
-\index{vit\+\_\+@{vit\+\_\+}!Vaisseau@{Vaisseau}}
-\subsubsection{\texorpdfstring{vit\+\_\+}{vit\_}}
-{\footnotesize\ttfamily int Vaisseau\+::vit\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
 Défense actuelle. 
 
 \mbox{\Hypertarget{class_vaisseau_a7cf3915f4d4044ee28fd5e5633fce11c}\label{class_vaisseau_a7cf3915f4d4044ee28fd5e5633fce11c}} 
@@ -395,5 +383,5 @@ Défense de base.
 
 La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
-src/\hyperlink{_vaisseau_8h}{Vaisseau.\+h}\item 
-src/\hyperlink{_vaisseau_8cpp}{Vaisseau.\+cpp}\end{DoxyCompactItemize}
+src/\+Vaisseau/\hyperlink{_vaisseau_8h}{Vaisseau.\+h}\item 
+src/\+Vaisseau/\hyperlink{_vaisseau_8cpp}{Vaisseau.\+cpp}\end{DoxyCompactItemize}

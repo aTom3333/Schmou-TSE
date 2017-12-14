@@ -1,10 +1,10 @@
-<map id="src/ProjTest.h" name="src/ProjTest.h">
-<area shape="rect" id="node2" href="$_cap_test_8h.html" title="src/CapTest.h" alt="" coords="209,80,315,107"/>
-<area shape="rect" id="node4" href="$_partie_8cpp.html" title="src/Partie.cpp" alt="" coords="113,229,216,256"/>
-<area shape="rect" id="node6" href="$_cap_dash_8h.html" title="src/CapDash.h" alt="" coords="339,80,449,107"/>
-<area shape="rect" id="node8" href="$__projectiles_8h.html" title="src/_projectiles.h" alt="" coords="5,155,127,181"/>
-<area shape="rect" id="node9" href="$_proj_test_8cpp.html" title="src/ProjTest.cpp" alt="" coords="473,80,592,107"/>
-<area shape="rect" id="node3" href="$___capacites_8h.html" title="src/_Capacites.h" alt="" coords="345,155,467,181"/>
-<area shape="rect" id="node5" href="$_cap_test_8cpp.html" title="src/CapTest.cpp" alt="" coords="203,155,321,181"/>
-<area shape="rect" id="node7" href="$_cap_dash_8cpp.html" title="src/CapDash.cpp" alt="" coords="491,155,615,181"/>
+<map id="src/Projectiles/ProjTest.h" name="src/Projectiles/ProjTest.h">
+<area shape="rect" id="node2" href="$_cap_test_8h.html" title="src/Capacites/CapTest.h" alt="" coords="275,80,443,107"/>
+<area shape="rect" id="node4" href="$_partie_8cpp.html" title="src/Partie.cpp" alt="" coords="178,229,281,256"/>
+<area shape="rect" id="node6" href="$_cap_dash_8h.html" title="src/Capacites/CapDash.h" alt="" coords="467,80,640,107"/>
+<area shape="rect" id="node8" href="$__projectiles_8h.html" title="src/Projectiles/_projectiles.h" alt="" coords="5,155,192,181"/>
+<area shape="rect" id="node9" href="$_proj_test_8cpp.html" title="src/Projectiles/ProjTest.cpp" alt="" coords="665,80,847,107"/>
+<area shape="rect" id="node3" href="$___capacites_8h.html" title="src/Capacites/_Capacites.h" alt="" coords="475,155,659,181"/>
+<area shape="rect" id="node5" href="$_cap_test_8cpp.html" title="src/Capacites/CapTest.cpp" alt="" coords="267,155,450,181"/>
+<area shape="rect" id="node7" href="$_cap_dash_8cpp.html" title="src/Capacites/CapDash.cpp" alt="" coords="683,155,869,181"/>
 </map>

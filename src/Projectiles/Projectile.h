@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-#include "Entite.h"
+#include "../Entite.h"
 
 
 // Déclaration préalable de Vaisseau pour éviter l'inclusion

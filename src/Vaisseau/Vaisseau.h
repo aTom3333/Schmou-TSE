@@ -4,9 +4,9 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-#include "Capacite.h"
-#include "Entite.h"
-#include "Projectile.h"
+#include "../Capacites/Capacite.h"
+#include "../Entite.h"
+#include "../Projectiles/Projectile.h"
 
 
 /**
@@ -66,7 +66,7 @@ class Vaisseau : public Entite
 			int pv_; /// Points de vie actuels
 			int atq_; /// Attaque actuelle
 			int def_; /// Défense actuelle
-			int vit_; /// Vitesse actuelle
+			//int vit_; /// Vitesse actuelle
 		// liste de capacités
 			std::vector<Capacite*> skills_; /// Liste des capacités du vaisseau
 };
