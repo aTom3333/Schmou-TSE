@@ -1,8 +1,14 @@
 var searchData=
 [
-  ['up_5fbutton_5f',['up_button_',['../struct_input__base_1_1movement__input__t_1_1joypad__t_1_1joypad__input__t_1_1buttons__t.html#a239929c919634205fe86f61208515848',1,'Input_base::movement_input_t::joypad_t::joypad_input_t::buttons_t']]],
-  ['up_5fdown_5faxis_5f',['up_down_axis_',['../struct_input__base_1_1movement__input__t_1_1joypad__t_1_1joypad__input__t_1_1joysticks__t.html#a4e946e682eb9f4a058fa817fade0bf24',1,'Input_base::movement_input_t::joypad_t::joypad_input_t::joysticks_t']]],
-  ['up_5fdown_5fdir_5f',['up_down_dir_',['../struct_input__base_1_1movement__input__t_1_1joypad__t_1_1joypad__input__t_1_1joysticks__t.html#a70ec58fb91a56fc7679773b4b4b595f7',1,'Input_base::movement_input_t::joypad_t::joypad_input_t::joysticks_t']]],
-  ['up_5fkey_5f',['up_key_',['../struct_input__base_1_1movement__input__t_1_1keyboard__t.html#aa8136cb8a1daced841a7bf3349ae0efd',1,'Input_base::movement_input_t::keyboard_t']]],
-  ['utiliser',['utiliser',['../class_capacite.html#a4d4f643987fcc2168567bf28a36ea418',1,'Capacite::utiliser()'],['../class_cap_dash.html#ada59ecb62d2c18f6bb6b4acf28a2da93',1,'CapDash::utiliser()'],['../class_cap_piou.html#a20ed7a993ce209a3df246f655f107f22',1,'CapPiou::utiliser()'],['../class_cap_test.html#af85984f6d9330e5527feff1a62ee4242',1,'CapTest::utiliser()']]]
+  ['_7ecapacite',['~Capacite',['../class_capacite.html#a687ff139afef118ebb63b897861674fd',1,'Capacite']]],
+  ['_7ecapdash',['~CapDash',['../class_cap_dash.html#aa935262b9ebdaf197294aba7211663cc',1,'CapDash']]],
+  ['_7ecappiou',['~CapPiou',['../class_cap_piou.html#a35d7e0b0c14d6a6e01ba0a053a8a60bd',1,'CapPiou']]],
+  ['_7ecaptest',['~CapTest',['../class_cap_test.html#a92687aa212347d1738e7736cb107d03b',1,'CapTest']]],
+  ['_7eentite',['~Entite',['../class_entite.html#ace3b4604920a7aeba25efb60590e64cb',1,'Entite']]],
+  ['_7epartie',['~Partie',['../class_partie.html#ae4afeb7336bb84427272cfb7018b5e3d',1,'Partie']]],
+  ['_7eprojectilepioupiou',['~ProjectilePiouPiou',['../class_projectile_piou_piou.html#a5aa00e3bbcb78f98464b244c43bea880',1,'ProjectilePiouPiou']]],
+  ['_7eprojpiou',['~ProjPiou',['../class_proj_piou.html#a02224f153ad53afc2b1c40b986ec6492',1,'ProjPiou']]],
+  ['_7eprojtest',['~ProjTest',['../class_proj_test.html#a9bc10c512035ae9f3294179c5d2db808',1,'ProjTest']]],
+  ['_7evaisseau',['~Vaisseau',['../class_vaisseau.html#a3360bd62af7a7aaf5732b86d639a0674',1,'Vaisseau']]],
+  ['_7evaisseautest',['~VaisseauTest',['../class_vaisseau_test.html#ada9b5788bc092ecede953248cd6133e8',1,'VaisseauTest']]]
 ];

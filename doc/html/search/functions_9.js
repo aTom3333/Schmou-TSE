@@ -8,7 +8,7 @@ var searchData=
   ['setequipe',['setEquipe',['../class_vaisseau.html#a1b3edda1f99d55cb5c0c7cbafe156af6',1,'Vaisseau']]],
   ['setnom',['setnom',['../class_vaisseau.html#a46174e710a959996ac9ae56f11757e61',1,'Vaisseau']]],
   ['setnskin',['setNskin',['../class_vaisseau.html#a0d57458dc32dde2d8326c20f25172bab',1,'Vaisseau']]],
-  ['setposition',['setPosition',['../class_entite.html#a2d97c53ed1b1f6d9c078aa1a89c474fe',1,'Entite']]],
+  ['setposition',['setPosition',['../class_entite.html#aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad',1,'Entite']]],
   ['setpv',['setpv',['../class_vaisseau.html#a2c9cf0b0520a6bee6408af58e3c99e34',1,'Vaisseau']]],
   ['setpvm',['setpvM',['../class_vaisseau.html#a10a33c8fed1bb1530148e98313d80a87',1,'Vaisseau']]],
   ['setrotation',['setRotation',['../class_entite.html#acefaaf63dfe743c73fba1e6143015827',1,'Entite']]],

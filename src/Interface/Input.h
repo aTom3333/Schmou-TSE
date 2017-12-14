@@ -29,6 +29,7 @@ class Input_base
 
         const sf::RenderWindow& window_;
         Media movement_media_; // Par quoi est géré le déplacement
+        /// @cond NO_DOC_PRIVATE_CLASSES
         union movement_input_t {
             movement_input_t() {keyboard_ = {sf::Keyboard::Up,
                                              sf::Keyboard::Down,
@@ -65,6 +66,7 @@ class Input_base
                 std::optional<sf::Vector2f> last_pos_;
             } mouse_;
         } movement_input_;
+        /// @endcond
 
 };
 

@@ -11,7 +11,8 @@ Classe virtuelle qui définit une entité
 
 
 
-Graphe d\textquotesingle{}héritage de Entite\+:\nopagebreak
+Graphe d\textquotesingle{}héritage de Entite\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,12 +28,12 @@ const std\+::vector$<$ sf\+::\+Shape $\ast$ $>$ \& \hyperlink{class_entite_a0fcc
 \item 
 void \hyperlink{class_entite_ad80a88f81ccc689b9abdfa75bd1e99d6}{afficher} (sf\+::\+Render\+Window \&window)
 \item 
-void \hyperlink{class_entite_a6d77bd5ad9eaf7e7150a4e96448043ec}{move} (const sf\+::\+Vector2f \&delta)
-\item 
-void \hyperlink{class_entite_a2d97c53ed1b1f6d9c078aa1a89c474fe}{set\+Position} (const sf\+::\+Vector2f \&pos)
-\item 
-const sf\+::\+Vector2f \& \hyperlink{class_entite_a958fc8d1cfb3b91c6cadd615dbb2abbd}{get\+Position} () const
-\item 
+void \hyperlink{class_entite_ac409613f3cf67cae14babd4b16811c8f}{move} (const sf\+::\+Vector2f \&delta)
+\begin{DoxyCompactList}\small\item\em Déplace l\textquotesingle{}entité en fonction de {\itshape delta}. \end{DoxyCompactList}\item 
+void \hyperlink{class_entite_aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad}{set\+Position} (const sf\+::\+Vector2f \&pos)
+\begin{DoxyCompactList}\small\item\em Fixe la position de l\textquotesingle{}entité \end{DoxyCompactList}\item 
+const sf\+::\+Vector2f \& \hyperlink{class_entite_a6f6fd1e1f9f6ad44f0ecc74961a774d9}{get\+Position} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la position de l\textquotesingle{}entité appelante. \end{DoxyCompactList}\item 
 bool \hyperlink{class_entite_a4d38790ebb4bf082e20e47355a7b2f0c}{est\+Dehors} ()
 \item 
 void \hyperlink{class_entite_a620502288a6a0fc619eb4cab0fbe2289}{rotate} (float angle)
@@ -82,6 +83,8 @@ bool \hyperlink{class_entite_ac85cf277aaeb8a314734c1fa5f35e3be}{collision} (cons
 \subsection{Description détaillée}
 Classe virtuelle qui définit une entité 
 
+Cette classe est une base à toutes les entités du jeu, les vaisseaux et les projectiles. Elle définit l\textquotesingle{}interface globale à travers laquelle ces entités peuvent être manipulées 
+
 \subsection{Documentation des constructeurs et destructeur}
 \mbox{\Hypertarget{class_entite_ace3b4604920a7aeba25efb60590e64cb}\label{class_entite_ace3b4604920a7aeba25efb60590e64cb}} 
 \index{Entite@{Entite}!````~Entite@{$\sim$\+Entite}}
@@ -116,12 +119,19 @@ Classe virtuelle qui définit une entité
 \subsubsection{\texorpdfstring{get\+Forme()}{getForme()}}
 {\footnotesize\ttfamily const std\+::vector$<$sf\+::\+Shape$\ast$$>$\& Entite\+::get\+Forme (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_entite_a958fc8d1cfb3b91c6cadd615dbb2abbd}\label{class_entite_a958fc8d1cfb3b91c6cadd615dbb2abbd}} 
+\mbox{\Hypertarget{class_entite_a6f6fd1e1f9f6ad44f0ecc74961a774d9}\label{class_entite_a6f6fd1e1f9f6ad44f0ecc74961a774d9}} 
 \index{Entite@{Entite}!get\+Position@{get\+Position}}
 \index{get\+Position@{get\+Position}!Entite@{Entite}}
 \subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
-{\footnotesize\ttfamily const sf\+::\+Vector2f \& Entite\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Entite\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Renvoie la position de l\textquotesingle{}entité appelante. 
+
+Cette fonction renvoie la position actuelle de l\textquotesingle{}entité appelante par rapport au point haut gauche de la fenêtre \begin{DoxyReturn}{Renvoie}
+la position de l\textquotesingle{}entité appelante 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_entite_af245a50c73da19510d9a9e52cb9248a4}\label{class_entite_af245a50c73da19510d9a9e52cb9248a4}} 
 \index{Entite@{Entite}!get\+Rotation@{get\+Rotation}}
 \index{get\+Rotation@{get\+Rotation}!Entite@{Entite}}
@@ -134,12 +144,21 @@ Classe virtuelle qui définit une entité
 \subsubsection{\texorpdfstring{get\+Scale()}{getScale()}}
 {\footnotesize\ttfamily float Entite\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_entite_a6d77bd5ad9eaf7e7150a4e96448043ec}\label{class_entite_a6d77bd5ad9eaf7e7150a4e96448043ec}} 
+\mbox{\Hypertarget{class_entite_ac409613f3cf67cae14babd4b16811c8f}\label{class_entite_ac409613f3cf67cae14babd4b16811c8f}} 
 \index{Entite@{Entite}!move@{move}}
 \index{move@{move}!Entite@{Entite}}
 \subsubsection{\texorpdfstring{move()}{move()}}
-{\footnotesize\ttfamily void Entite\+::move (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{delta }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Entite\+::move (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{delta }\end{DoxyParamCaption})}
 
+
+
+Déplace l\textquotesingle{}entité en fonction de {\itshape delta}. 
+
+Appelle la fonction move de la S\+F\+ML sur les attributs de l\textquotesingle{}objet appelant. 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in}  & {\em delta} & un {\ttfamily sf\+::\+Vector2f} qui donne le déplacement en x et en y \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_entite_a620502288a6a0fc619eb4cab0fbe2289}\label{class_entite_a620502288a6a0fc619eb4cab0fbe2289}} 
 \index{Entite@{Entite}!rotate@{rotate}}
 \index{rotate@{rotate}!Entite@{Entite}}
@@ -152,12 +171,21 @@ Classe virtuelle qui définit une entité
 \subsubsection{\texorpdfstring{scale()}{scale()}}
 {\footnotesize\ttfamily void Entite\+::scale (\begin{DoxyParamCaption}\item[{float}]{factor }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_entite_a2d97c53ed1b1f6d9c078aa1a89c474fe}\label{class_entite_a2d97c53ed1b1f6d9c078aa1a89c474fe}} 
+\mbox{\Hypertarget{class_entite_aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad}\label{class_entite_aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad}} 
 \index{Entite@{Entite}!set\+Position@{set\+Position}}
 \index{set\+Position@{set\+Position}!Entite@{Entite}}
 \subsubsection{\texorpdfstring{set\+Position()}{setPosition()}}
-{\footnotesize\ttfamily void Entite\+::set\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{pos }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Entite\+::set\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{pos }\end{DoxyParamCaption})}
 
+
+
+Fixe la position de l\textquotesingle{}entité 
+
+Cette fonction change la position de l\textquotesingle{}entité appelante avec les coordonnées données en paramètres. Ces coordonnées sont relatives au coin supérieur gauche de la fenêtre. 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in}  & {\em pos} & Un {\ttfamily sf\+::\+Vector2f} qui contient la nouvelle position \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_entite_acefaaf63dfe743c73fba1e6143015827}\label{class_entite_acefaaf63dfe743c73fba1e6143015827}} 
 \index{Entite@{Entite}!set\+Rotation@{set\+Rotation}}
 \index{set\+Rotation@{set\+Rotation}!Entite@{Entite}}

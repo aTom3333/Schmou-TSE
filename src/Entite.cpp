@@ -19,19 +19,13 @@ bool collision(const Entite& e1, const Entite& e2)
 	return false;
 }
 
-void Entite::afficher(sf::RenderWindow &window)
+Entite::~Entite()
 {
-	window.draw(sprite_);
+	for(auto elem : forme_)
+        delete elem;
 }
 
-/**
- * @fn move
- * @brief Déplace l'entité en fonction de @a delta
- *
- * Appelle la fonction move de la SFML sur les attributs de l'objet appelant.
- *
- * @param delta un @c sf::Vector2f qui donne la déplacement en x et en y
- */
+
 void Entite::move(const sf::Vector2f& delta)
 {
 	for(auto& elem : forme_)
@@ -47,11 +41,6 @@ void Entite::setPosition(const sf::Vector2f & pos)
 }
 
 
-/**
- * @fn getPosition
- *
- * @return la position de l'entité appelante
- */
 const sf::Vector2f& Entite::getPosition() const
 {
 	return position_;

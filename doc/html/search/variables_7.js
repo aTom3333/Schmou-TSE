@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['joypad_5fid_5f',['joypad_id_',['../struct_input__base_1_1movement__input__t_1_1joypad__t.html#aacd21b45339281eab5b674cc16c137d4',1,'Input_base::movement_input_t::joypad_t']]],
-  ['joypad_5finput_5f',['joypad_input_',['../struct_input__base_1_1movement__input__t_1_1joypad__t.html#ab5bd66567a2fc8529d89adf9d22747ae',1,'Input_base::movement_input_t::joypad_t']]],
-  ['joysticks_5f',['joysticks_',['../union_input__base_1_1movement__input__t_1_1joypad__t_1_1joypad__input__t.html#a1d99d1002402eb45d0d4593a8fddca19',1,'Input_base::movement_input_t::joypad_t::joypad_input_t']]]
+  ['scale_5f',['scale_',['../class_entite.html#a50e0f8c1188d9833432c55c7f7d2aa0f',1,'Entite']]],
+  ['skills_5f',['skills_',['../class_vaisseau.html#a7fccd409e1f27f968bbe3f8ee1ded206',1,'Vaisseau']]],
+  ['sprite_5f',['sprite_',['../class_entite.html#ab7c03b6fe5c4f1d08cd3e4304e0ef7c0',1,'Entite']]]
 ];

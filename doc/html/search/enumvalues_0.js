@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['button',['Button',['../struct_input__base_1_1movement__input__t_1_1joypad__t.html#a85cbe03962d167ab3a70fb322aa9d09daea44ebdf8389e1157e5d65eb04998623',1,'Input_base::movement_input_t::joypad_t']]]
+  ['joypad',['Joypad',['../class_input__base.html#a455585e7933485981b3d7bfcad3a47c6ad17c22e217179fc5626be9b94f1f18fa',1,'Input_base']]]
 ];
