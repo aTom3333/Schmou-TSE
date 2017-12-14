@@ -81,6 +81,14 @@ void Entite::changeSpeed(int val)
 	vit_ += val;
 }
 
+/**
+* @fn ProjTest
+* @brief Constructeur
+* @return Booleen : true si l'entité est en dehors de l'écran, faux sinon
+*
+* Créer un projectile de test à une postion aléatoire
+*/
+
 bool Entite::estDehors()
 {
 	return position_.x < 0 || position_.x > ECRAN_L || position_.y < 0 || position_.y > ECRAN_H;

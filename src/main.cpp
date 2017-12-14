@@ -6,7 +6,7 @@
 #include "Entite.h"
 #include "Collision.h"
 #include "Partie.h"
-#include "Input.h"
+//#include "Input.h"
 
 
 // Code minimal

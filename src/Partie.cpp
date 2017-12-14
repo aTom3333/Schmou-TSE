@@ -30,11 +30,13 @@ void Partie::testProjTest(sf::RenderWindow & window)
 	sf::Text afficheAtk;
 	int attaqueEnCours = 0;
 
+	// Initialisation du texte (Nom capacité + Cooldown)
 	afficheAtk.setFont(font_);
 	afficheAtk.setCharacterSize(20);
 	afficheAtk.setFillColor(sf::Color::White);
 	afficheAtk.setPosition(0, 0);
 
+	// Test Vecteur d'attaque
 	CapTest *temp1 = new CapTest();
 	attaques.push_back(temp1);
 
@@ -46,11 +48,14 @@ void Partie::testProjTest(sf::RenderWindow & window)
 
 	while (window.isOpen())  
 	{
+		// Gestion nulle des evenement
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
+
+			// Si la touche W est activé
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 			{
 				// Récupération position souris
@@ -63,8 +68,10 @@ void Partie::testProjTest(sf::RenderWindow & window)
 				sf::Vector2f worldPos = vaisseautest.getPosition();
 				attaques[attaqueEnCours]->utiliser(worldPos.x, worldPos.y);
 			}
+			// Si la touche X est activé
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
 			{
+				// Changement d'attaque
 				attaqueEnCours++;
 				if (attaqueEnCours >= attaques.size())
 					attaqueEnCours = 0;
@@ -75,6 +82,7 @@ void Partie::testProjTest(sf::RenderWindow & window)
 
 		float t_ecoule = clock.restart().asMilliseconds();
 		
+		// Efface l'écran
 		window.clear();
 
 		vaisseautest.gestion(window);
@@ -87,6 +95,7 @@ void Partie::testProjTest(sf::RenderWindow & window)
 		for(int i = 0; i < projectiles.size(); i++)
 			projectiles[i]->gestion(window);
 
+		// Collision moisie
 		testCollision(projectiles);
 
 
@@ -97,8 +106,9 @@ void Partie::testProjTest(sf::RenderWindow & window)
 		else
 			txt = attaques[attaqueEnCours]->getNom() + " - " + "Prêt";
 		afficheAtk.setString(txt);
-
 		window.draw(afficheAtk);
+
+		// Mise à jour de l'écran
 		window.display();
 
 		sf::sleep(sf::milliseconds(10));
