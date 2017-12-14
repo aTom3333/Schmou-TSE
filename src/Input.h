@@ -3,8 +3,10 @@
 
 #include <SFML/Graphics.hpp>
 
+#include <optional>
+/*
 #if __cplusplus < 201703L // Si le compilateur utilise une norme antérieure à la norme c++17
-    #include <experimental/optional>
+#include <experimental/optional>
     namespace std // Pour pouvoir utiliser std::optional même avant c++17 (moche)
     {
         template<typename T>
@@ -13,6 +15,7 @@
 #else
     #include <optional>
 #endif
+*/
 
 
 template<size_t N>

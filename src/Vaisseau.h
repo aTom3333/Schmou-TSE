@@ -25,7 +25,7 @@ class Vaisseau : public Entite
 
 		//setters
 			void setEquipe(int equipe); ///définit l'équipe (entier)
-			void addCapacite(Capacite* skill); /// < ajoute la @c Capacité skill à la liste des capacités skills_ du vaisseau
+			void addCapacite(Capacite* skill); /// < ajoute la @c Capacite skill à la liste des capacités skills_ du vaisseau
 			void setnom(std::string nom);
 			void setNskin(int Nskin);
 			void setpvM(int pvM);
@@ -66,7 +66,7 @@ class Vaisseau : public Entite
 			int pv_; /// < Points de vie actuels
 			int atq_; /// < Attaque actuelle
 			int def_; /// < Défense actuelle
-			//int vit_; /// < Vitesse actuelle
+			int vit_; /// < Vitesse actuelle
 		// liste de capacités
 			std::vector<Capacite*> skills_; /// < Liste des capacités du vaisseau
 };

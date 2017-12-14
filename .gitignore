@@ -1,4 +1,4 @@
-# Prerequisites
+﻿# Prerequisites
 *.d
 
 # Compiled Object files
@@ -48,3 +48,6 @@ bin/
 
 # Dossier solution VS
 Schmou'TSE/
+
+#ignorez des trucs que vous voulez
+_dossier-pierre/

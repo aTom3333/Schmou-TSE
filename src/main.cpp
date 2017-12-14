@@ -6,7 +6,6 @@
 #include "Entite.h"
 #include "Collision.h"
 #include "Partie.h"
-#include "Input.h"
 
 
 // Code minimal
@@ -120,6 +119,10 @@ int main()
 		window.display();
 	}*/
 
+
+/**
+
+*/
 	return 0;
 }
 
