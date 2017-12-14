@@ -21,7 +21,7 @@ class Vaisseau : public Entite
 	public:
 		//structeurs
 			explicit Vaisseau();
-			~Vaisseau();
+            ~Vaisseau() override;
 
 		//setters
 			void setEquipe(int equipe); ///définit l'équipe (entier)
