@@ -126,7 +126,7 @@ class Entite
 		void scale(float factor);
 		/**
 		 * @fn setScale
-		 * @brief Fixer l'échelle de L'entite
+		 * @brief Fixe l'échelle de L'entite
 		 *
 		 * Cette fonction permet de fixer l'échelle de L'entite appelante.
 		 * Contrairement à la fonction scale, cette fonction fixe l'échelle de manière absolue
