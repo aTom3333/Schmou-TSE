@@ -3,9 +3,8 @@
 
 CapTest::CapTest()
 {
-	// TODO : Donner l'unité de temps en (milli)secondes
-
-	cooldown_ = 100;
+	cooldown_ = 1000;
+	frames_ = cooldown_;
 	t_ = cooldown_;
 	nom_ = "Attaque Test";
 }
@@ -22,16 +21,17 @@ void CapTest::utiliser(int x, int y)
 	{
 		// Début du timer
 		t_ = 0;
+		frames_ = 0;
 		// Initialisation de l'endroit ou la compétence à été utilisée
 		debutX_ = x;
 		debutY_ = y;
 	}
 }
 
-void CapTest::actualiser(std::vector<Projectile*>& projectiles, Entite * vaisseau)
+void CapTest::actualiser(std::vector<Projectile*>& projectiles, Entite * vaisseau, float tempsEcoule)
 {
 	// Pour avoir la création des 4 projectile toute les 5 frames
-	if (t_ < 20 && t_ % 5 == 0)
+	if (frames_ < 20 && frames_ % 5 == 0)
 	{
 		// Création d'un nouveau projectile
 		ProjTest *temp = new ProjTest(debutX_, debutY_);
@@ -40,5 +40,9 @@ void CapTest::actualiser(std::vector<Projectile*>& projectiles, Entite * vaissea
 
 	// Si la compétance est en cooldown, on actualise le timer
 	if (t_ < cooldown_)
-		t_++;
+	{
+		t_ += tempsEcoule;
+		frames_++;
+	}
+		
 }

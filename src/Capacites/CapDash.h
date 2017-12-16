@@ -49,7 +49,7 @@ public:
 	* Augmente la vitesse du vaisseau pour quelques frames
 	* Actualise le timer
 	*/
-	void actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau);
+	void actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau, float tempsEcoule);
 };
 
 #endif

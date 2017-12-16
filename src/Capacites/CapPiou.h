@@ -50,7 +50,7 @@ public:
 	* Créer 1 ProjTest à l'activation
 	* Actualise le timer
 	*/
-	void actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau);
+	void actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau, float tempsEcoule);
 };
 
 #endif //CAPPIOU

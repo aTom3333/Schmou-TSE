@@ -46,19 +46,21 @@ class Capacite
 		* @brief Fonction virtuel qui active les effets de la capacité
 		* @param projectile Vecteur de tout les projectiles présent à l'écran
 		* @param vaisseau Vaisseau qui a activé la compétance
+		* @param tempEcoule Temps écoulé depuis la dernière boucle
 		*
 		* Fonction virtuel qui gère la création de projectiles et des modifications à apporter au vaisseau
 		*/
-		virtual void actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau) = 0;
+		virtual void actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau, float tempsEcoule) = 0;
 		
 		// Getters
-		int const getCooldown() { return cooldown_; };
-		int const getTime() { return t_; };
+		float const getCooldown() { return cooldown_; };
+		float const getTime() { return t_; };
 		std::string const getNom() { return nom_; };
 	protected:
 		int debutX_, debutY_; /// Position de départ
-		int cooldown_; /// Nombre de frame à attendre avant de pouvoir utiliser la capacité à nouveau
-		int t_; /// Temps écoulé depuis la dernière activation de la compétance
+		float cooldown_; /// Temps à attendre avant de pouvoir utiliser la capacité à nouveau
+		float t_; /// Temps écoulé depuis la dernière activation de la compétance
+		unsigned int frames_; /// Nombre de frames écoulé depuis la dernière activation
 		std::string nom_; /// Nom de la compétance
 
 };

@@ -85,7 +85,7 @@ void Partie::testProjTest()
 
 		// Gestion des attaques
 		for(int i = 0; i < attaques.size(); i++)
-			attaques[i]->actualiser(projectiles, &vaisseautest);
+			attaques[i]->actualiser(projectiles, &vaisseautest, t_ecoule.asMilliseconds());
 
 		// Gestion des projectiles
 		for(int i = 0; i < projectiles.size(); i++)
@@ -97,10 +97,10 @@ void Partie::testProjTest()
 
 		// Affichage attaque en cours
 		std::string txt;
-		if(attaques[attaqueEnCours]->getCooldown() - attaques[attaqueEnCours]->getTime() != 0)
-			txt = attaques[attaqueEnCours]->getNom() + " - " + std::to_string(attaques[attaqueEnCours]->getCooldown() - attaques[attaqueEnCours]->getTime());
+		if(attaques[attaqueEnCours]->getCooldown() - attaques[attaqueEnCours]->getTime() > 0)
+			txt = attaques[attaqueEnCours]->getNom() + " - " + std::to_string((int)(attaques[attaqueEnCours]->getCooldown() - attaques[attaqueEnCours]->getTime()));
 		else
-			txt = attaques[attaqueEnCours]->getNom() + " - " + "Prêt";
+			txt = attaques[attaqueEnCours]->getNom() + " - " + "Pret";
 		afficheAtk.setString(txt);
 		window_.draw(afficheAtk);
 

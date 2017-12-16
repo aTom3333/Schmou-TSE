@@ -2,10 +2,9 @@
 
 CapPiou::CapPiou()
 {
-	// TODO : Donner l'unité de temps en (milli)secondes
-
-	cooldown_ = 20;
+	cooldown_ = 100;
 	t_ = cooldown_;
+	frames_ = cooldown_;
 	nom_ = "Attaque Piou";
 }
 
@@ -21,16 +20,17 @@ void CapPiou::utiliser(int x, int y)
 	{
 		// Début du timer
 		t_ = 0;
+		frames_ = 0;
 		// Initialisation de l'endroit ou la compétence à été utilisée
 		debutX_ = x;
 		debutY_ = y;
 	}
 }
 
-void CapPiou::actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau)
+void CapPiou::actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau, float tempsEcoule)
 {
 	// Création du projectile au moment où la compétance est lancée
-	if (t_ == 0)
+	if (frames_ == 0)
 	{
 		ProjPiou *temp = new ProjPiou(debutX_, debutY_);
 		projectiles.push_back(temp);
@@ -38,5 +38,9 @@ void CapPiou::actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau
 
 	// Si la compétance est en cooldown, on actualise le timer
 	if (t_ < cooldown_)
-		t_++;
+	{
+		t_ += tempsEcoule;
+		frames_++;
+	}
+		
 }
