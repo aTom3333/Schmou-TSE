@@ -81,53 +81,60 @@ $(function() {
 <div class="dynheader">
 Graphe d'héritage de Entite:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_entite__inherit__graph.svg" width="303" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_entite__inherit__graph.svg" width="303" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:ace3b4604920a7aeba25efb60590e64cb"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ace3b4604920a7aeba25efb60590e64cb">~Entite</a> ()=default</td></tr>
-<tr class="separator:ace3b4604920a7aeba25efb60590e64cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fccfa39c6be09c5ea63fb999fef4c8e"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; sf::Shape * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a0fccfa39c6be09c5ea63fb999fef4c8e">getForme</a> () const</td></tr>
-<tr class="separator:a0fccfa39c6be09c5ea63fb999fef4c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad80a88f81ccc689b9abdfa75bd1e99d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ad80a88f81ccc689b9abdfa75bd1e99d6">afficher</a> (sf::RenderWindow &amp;window)</td></tr>
-<tr class="separator:ad80a88f81ccc689b9abdfa75bd1e99d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8084762a25afbfbcdca31121a3dfcd87"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8084762a25afbfbcdca31121a3dfcd87">~Entite</a> ()=default</td></tr>
+<tr class="memdesc:a8084762a25afbfbcdca31121a3dfcd87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur par défaut.  <a href="#a8084762a25afbfbcdca31121a3dfcd87">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8084762a25afbfbcdca31121a3dfcd87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01177a102251100c96e2060372627ad"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::unique_ptr&lt; sf::Shape &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ae01177a102251100c96e2060372627ad">getForme</a> () const</td></tr>
+<tr class="separator:ae01177a102251100c96e2060372627ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91874d7e87f6cb479a3893fbedc6a4e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a91874d7e87f6cb479a3893fbedc6a4e3">afficher</a> (sf::RenderWindow &amp;window, bool debug=false) const</td></tr>
+<tr class="memdesc:a91874d7e87f6cb479a3893fbedc6a4e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le sprite de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#a91874d7e87f6cb479a3893fbedc6a4e3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a91874d7e87f6cb479a3893fbedc6a4e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac409613f3cf67cae14babd4b16811c8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ac409613f3cf67cae14babd4b16811c8f">move</a> (const sf::Vector2f &amp;delta)</td></tr>
-<tr class="memdesc:ac409613f3cf67cae14babd4b16811c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déplace l'entité en fonction de <em>delta</em>.  <a href="#ac409613f3cf67cae14babd4b16811c8f">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ac409613f3cf67cae14babd4b16811c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déplace l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> en fonction de <em>delta</em>.  <a href="#ac409613f3cf67cae14babd4b16811c8f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac409613f3cf67cae14babd4b16811c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad">setPosition</a> (const sf::Vector2f &amp;pos)</td></tr>
-<tr class="memdesc:aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixe la position de l'entité  <a href="#aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixe la position de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f6fd1e1f9f6ad44f0ecc74961a774d9"><td class="memItemLeft" align="right" valign="top">const sf::Vector2f &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a6f6fd1e1f9f6ad44f0ecc74961a774d9">getPosition</a> () const</td></tr>
-<tr class="memdesc:a6f6fd1e1f9f6ad44f0ecc74961a774d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la position de l'entité appelante.  <a href="#a6f6fd1e1f9f6ad44f0ecc74961a774d9">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a6f6fd1e1f9f6ad44f0ecc74961a774d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la position de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> appelante.  <a href="#a6f6fd1e1f9f6ad44f0ecc74961a774d9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a6f6fd1e1f9f6ad44f0ecc74961a774d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d38790ebb4bf082e20e47355a7b2f0c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a4d38790ebb4bf082e20e47355a7b2f0c">estDehors</a> ()</td></tr>
-<tr class="separator:a4d38790ebb4bf082e20e47355a7b2f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a620502288a6a0fc619eb4cab0fbe2289"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a620502288a6a0fc619eb4cab0fbe2289">rotate</a> (float angle)</td></tr>
-<tr class="separator:a620502288a6a0fc619eb4cab0fbe2289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acefaaf63dfe743c73fba1e6143015827"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#acefaaf63dfe743c73fba1e6143015827">setRotation</a> (float angle)</td></tr>
-<tr class="separator:acefaaf63dfe743c73fba1e6143015827"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af245a50c73da19510d9a9e52cb9248a4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#af245a50c73da19510d9a9e52cb9248a4">getRotation</a> () const</td></tr>
-<tr class="separator:af245a50c73da19510d9a9e52cb9248a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08e80693f0b1293f5a0ab9d04a5aac0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a08e80693f0b1293f5a0ab9d04a5aac0e">scale</a> (float factor)</td></tr>
-<tr class="separator:a08e80693f0b1293f5a0ab9d04a5aac0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cfd095f6712461cb8c9baa2f6955088"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a3cfd095f6712461cb8c9baa2f6955088">setScale</a> (float factor)</td></tr>
-<tr class="separator:a3cfd095f6712461cb8c9baa2f6955088"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95d64960088b9576b94346acd5ad6296"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a95d64960088b9576b94346acd5ad6296">getScale</a> () const</td></tr>
-<tr class="separator:a95d64960088b9576b94346acd5ad6296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1249039d313e4e691a109440663eae7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#af1249039d313e4e691a109440663eae7">rotate</a> (float angle)</td></tr>
+<tr class="memdesc:af1249039d313e4e691a109440663eae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tourne l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> de l'angle passé en paramètre.  <a href="#af1249039d313e4e691a109440663eae7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af1249039d313e4e691a109440663eae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8623ac815e34b553098f45696ea8918b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8623ac815e34b553098f45696ea8918b">setRotation</a> (float angle)</td></tr>
+<tr class="memdesc:a8623ac815e34b553098f45696ea8918b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixe l'orientation de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> appelante.  <a href="#a8623ac815e34b553098f45696ea8918b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8623ac815e34b553098f45696ea8918b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f19439f7e7a5028f4b26eff21683de9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a7f19439f7e7a5028f4b26eff21683de9">getRotation</a> () const</td></tr>
+<tr class="memdesc:a7f19439f7e7a5028f4b26eff21683de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère l'orientation de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#a7f19439f7e7a5028f4b26eff21683de9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7f19439f7e7a5028f4b26eff21683de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a770f6c53856606c4de768bb942299659"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a770f6c53856606c4de768bb942299659">scale</a> (float factor)</td></tr>
+<tr class="memdesc:a770f6c53856606c4de768bb942299659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change l'échelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#a770f6c53856606c4de768bb942299659">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a770f6c53856606c4de768bb942299659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a665939253829baba965ce3ead0f1739c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a665939253829baba965ce3ead0f1739c">setScale</a> (float factor)</td></tr>
+<tr class="memdesc:a665939253829baba965ce3ead0f1739c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixer l'échelle de L'entite.  <a href="#a665939253829baba965ce3ead0f1739c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a665939253829baba965ce3ead0f1739c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f70868f62049291edf4b245a531a6e0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a5f70868f62049291edf4b245a531a6e0">getScale</a> () const</td></tr>
+<tr class="memdesc:a5f70868f62049291edf4b245a531a6e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'échelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#a5f70868f62049291edf4b245a531a6e0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5f70868f62049291edf4b245a531a6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8734ec47c87feb2b8b221bbf5d9ff2b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8734ec47c87feb2b8b221bbf5d9ff2b4">estDehors</a> () const</td></tr>
+<tr class="separator:a8734ec47c87feb2b8b221bbf5d9ff2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88c148848289e34ca3bc991c37db9b44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a88c148848289e34ca3bc991c37db9b44">changeSpeed</a> (int val)</td></tr>
 <tr class="separator:a88c148848289e34ca3bc991c37db9b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
 <tr class="memitem:a37bb9bd568e9e1c904eaa83ec49a2b16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a37bb9bd568e9e1c904eaa83ec49a2b16">collisionable_</a> = true</td></tr>
+<tr class="memdesc:a37bb9bd568e9e1c904eaa83ec49a2b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booléen vrai si collisionnable.  <a href="#a37bb9bd568e9e1c904eaa83ec49a2b16">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a37bb9bd568e9e1c904eaa83ec49a2b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86f42758a3e4672052331b7a4daa10b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a86f42758a3e4672052331b7a4daa10b5">equipe_</a></td></tr>
-<tr class="memdesc:a86f42758a3e4672052331b7a4daa10b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt;booléen vrai si collisionnable  <a href="#a86f42758a3e4672052331b7a4daa10b5">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a86f42758a3e4672052331b7a4daa10b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">numéro d'équipe  <a href="#a86f42758a3e4672052331b7a4daa10b5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a86f42758a3e4672052331b7a4daa10b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbd554c4f122159a73cb113cc8de3860"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#abbd554c4f122159a73cb113cc8de3860">position_</a></td></tr>
-<tr class="memdesc:abbd554c4f122159a73cb113cc8de3860"><td class="mdescLeft">&#160;</td><td class="mdescRight">numéro d'équipe  <a href="#abbd554c4f122159a73cb113cc8de3860">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abbd554c4f122159a73cb113cc8de3860"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d6dc6bfcee492337b7422f12b393141"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a2d6dc6bfcee492337b7422f12b393141">angle_</a></td></tr>
 <tr class="separator:a2d6dc6bfcee492337b7422f12b393141"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,26 +142,28 @@ Attributs protégés</h2></td></tr>
 <tr class="separator:a50e0f8c1188d9833432c55c7f7d2aa0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b6c62e4dc54221a84ce4dc824fdb2da"><td class="memItemLeft" align="right" valign="top">sf::CircleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a5b6c62e4dc54221a84ce4dc824fdb2da">cercleEnglobant_</a></td></tr>
 <tr class="separator:a5b6c62e4dc54221a84ce4dc824fdb2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5c91c9a24e8d91516de7d5598eb34b2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; sf::Shape * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ae5c91c9a24e8d91516de7d5598eb34b2">forme_</a></td></tr>
-<tr class="separator:ae5c91c9a24e8d91516de7d5598eb34b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6bbda9a40f701f273c344406a6f5122"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; sf::Shape &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#aa6bbda9a40f701f273c344406a6f5122">forme_</a></td></tr>
+<tr class="separator:aa6bbda9a40f701f273c344406a6f5122"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8147b9459318a9b1de1b72dce115680a"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8147b9459318a9b1de1b72dce115680a">texture_</a></td></tr>
 <tr class="separator:a8147b9459318a9b1de1b72dce115680a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ab7c03b6fe5c4f1d08cd3e4304e0ef7c0">sprite_</a></td></tr>
 <tr class="separator:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62c3145096f707457d60306ea6729ed6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a62c3145096f707457d60306ea6729ed6">vit_</a></td></tr>
+<tr class="memdesc:a62c3145096f707457d60306ea6729ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse actuelle.  <a href="#a62c3145096f707457d60306ea6729ed6">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a62c3145096f707457d60306ea6729ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Amis</h2></td></tr>
-<tr class="memitem:ac85cf277aaeb8a314734c1fa5f35e3be"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ac85cf277aaeb8a314734c1fa5f35e3be">collision</a> (const <a class="el" href="class_entite.html">Entite</a> &amp;e1, const <a class="el" href="class_entite.html">Entite</a> &amp;e2)</td></tr>
-<tr class="separator:ac85cf277aaeb8a314734c1fa5f35e3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5011435e5099909dd34cd1750933b30"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ac5011435e5099909dd34cd1750933b30">collision</a> (const <a class="el" href="class_entite.html">Entite</a> &amp;e1, const <a class="el" href="class_entite.html">Entite</a> &amp;e2)</td></tr>
+<tr class="memdesc:ac5011435e5099909dd34cd1750933b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détecte une collision entre deux <a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#ac5011435e5099909dd34cd1750933b30">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac5011435e5099909dd34cd1750933b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe virtuelle qui définit une entité </p>
 <p>Cette classe est une base à toutes les entités du jeu, les vaisseaux et les projectiles. Elle définit l'interface globale à travers laquelle ces entités peuvent être manipulées </p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a id="ace3b4604920a7aeba25efb60590e64cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace3b4604920a7aeba25efb60590e64cb">&#9670;&nbsp;</a></span>~Entite()</h2>
+<a id="a8084762a25afbfbcdca31121a3dfcd87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8084762a25afbfbcdca31121a3dfcd87">&#9670;&nbsp;</a></span>~Entite()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,7 +172,7 @@ Amis</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Entite::~Entite </td>
+          <td class="memname">Entite::~Entite </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -176,24 +185,46 @@ Amis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Destructeur par défaut. </p>
+<p>Destructeur virtuel par défaut de la classe <a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. Le destructeur est virtuel car la classe a vocation à être héritée. Il n'y a rien de spécial à faire donc le destructeur par défaut convient </p>
+
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a id="ad80a88f81ccc689b9abdfa75bd1e99d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad80a88f81ccc689b9abdfa75bd1e99d6">&#9670;&nbsp;</a></span>afficher()</h2>
+<a id="a91874d7e87f6cb479a3893fbedc6a4e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91874d7e87f6cb479a3893fbedc6a4e3">&#9670;&nbsp;</a></span>afficher()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Entite::afficher </td>
+          <td class="memname">Entite::afficher </td>
           <td>(</td>
           <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
-          <td class="paramname"><em>window</em></td><td>)</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>debug</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Affiche le sprite de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
+<p>Appelle la fonction afficher de la SFML sur les attributs de l'objet appelant. Peut également afficher des informations de debug telles que le cercle englobant, et la forme de collision. </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">window</td><td>Fenêtre SFML dans laquelle afficher l'entité. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">debug</td><td>Un <code>bool</code> qui vaut <em>true</em> si les informations de debug doivent être affichées et <em>false</em> sinon. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -215,8 +246,8 @@ Amis</h2></td></tr>
 
 </div>
 </div>
-<a id="a4d38790ebb4bf082e20e47355a7b2f0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d38790ebb4bf082e20e47355a7b2f0c">&#9670;&nbsp;</a></span>estDehors()</h2>
+<a id="a8734ec47c87feb2b8b221bbf5d9ff2b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8734ec47c87feb2b8b221bbf5d9ff2b4">&#9670;&nbsp;</a></span>estDehors()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,15 +256,15 @@ Amis</h2></td></tr>
           <td class="memname">bool Entite::estDehors </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a0fccfa39c6be09c5ea63fb999fef4c8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fccfa39c6be09c5ea63fb999fef4c8e">&#9670;&nbsp;</a></span>getForme()</h2>
+<a id="ae01177a102251100c96e2060372627ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae01177a102251100c96e2060372627ad">&#9670;&nbsp;</a></span>getForme()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,7 +273,7 @@ Amis</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt;sf::Shape*&gt;&amp; Entite::getForme </td>
+          <td class="memname">const std::vector&lt;std::unique_ptr&lt;sf::Shape&gt; &gt;&amp; Entite::getForme </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -272,19 +303,19 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Renvoie la position de l'entité appelante. </p>
-<p>Cette fonction renvoie la position actuelle de l'entité appelante par rapport au point haut gauche de la fenêtre </p><dl class="section return"><dt>Renvoie</dt><dd>la position de l'entité appelante </dd></dl>
+<p>Renvoie la position de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> appelante. </p>
+<p>Cette fonction renvoie la position actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> appelante par rapport au point haut gauche de la fenêtre </p><dl class="section return"><dt>Renvoie</dt><dd>la position de l'entité appelante </dd></dl>
 
 </div>
 </div>
-<a id="af245a50c73da19510d9a9e52cb9248a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af245a50c73da19510d9a9e52cb9248a4">&#9670;&nbsp;</a></span>getRotation()</h2>
+<a id="a7f19439f7e7a5028f4b26eff21683de9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f19439f7e7a5028f4b26eff21683de9">&#9670;&nbsp;</a></span>getRotation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float Entite::getRotation </td>
+          <td class="memname">Entite::getRotation </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -292,22 +323,28 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Récupère l'orientation de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
+<p>Cette fonction renvoie l'orientation actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> appelante. La valeur renvoyée correspond à un angle en degrés </p><dl class="section return"><dt>Renvoie</dt><dd>Un <code>float</code> qui correspond à l'eorientation de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> </dd></dl>
+
 </div>
 </div>
-<a id="a95d64960088b9576b94346acd5ad6296"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95d64960088b9576b94346acd5ad6296">&#9670;&nbsp;</a></span>getScale()</h2>
+<a id="a5f70868f62049291edf4b245a531a6e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f70868f62049291edf4b245a531a6e0">&#9670;&nbsp;</a></span>getScale()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float Entite::getScale </td>
+          <td class="memname">Entite::getScale </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Renvoie l'échelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
+<p>Cette fonction renvoie l'échelle actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> appelante </p><dl class="section return"><dt>Renvoie</dt><dd>Un <code>float</code> qui correspond au facteur d'échelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> </dd></dl>
 
 </div>
 </div>
@@ -327,7 +364,7 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Déplace l'entité en fonction de <em>delta</em>. </p>
+<p>Déplace l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> en fonction de <em>delta</em>. </p>
 <p>Appelle la fonction move de la SFML sur les attributs de l'objet appelant. </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">delta</td><td>un <code>sf::Vector2f</code> qui donne le déplacement en x et en y </td></tr>
@@ -337,14 +374,14 @@ Amis</h2></td></tr>
 
 </div>
 </div>
-<a id="a620502288a6a0fc619eb4cab0fbe2289"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a620502288a6a0fc619eb4cab0fbe2289">&#9670;&nbsp;</a></span>rotate()</h2>
+<a id="af1249039d313e4e691a109440663eae7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1249039d313e4e691a109440663eae7">&#9670;&nbsp;</a></span>rotate()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Entite::rotate </td>
+          <td class="memname">Entite::rotate </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>angle</em></td><td>)</td>
@@ -353,16 +390,24 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Tourne l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> de l'angle passé en paramètre. </p>
+<p>Cette fonction permet de aire tourner l'entité de l'angle passé en paramètre, chaque élément composant l'entité est tourné. L'angle est donné en degrés </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">angle</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a08e80693f0b1293f5a0ab9d04a5aac0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08e80693f0b1293f5a0ab9d04a5aac0e">&#9670;&nbsp;</a></span>scale()</h2>
+<a id="a770f6c53856606c4de768bb942299659"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a770f6c53856606c4de768bb942299659">&#9670;&nbsp;</a></span>scale()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Entite::scale </td>
+          <td class="memname">Entite::scale </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>factor</em></td><td>)</td>
@@ -370,6 +415,14 @@ Amis</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Change l'échelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
+<p>Cette fonction permet de modifier l'échelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> appelante en appliquant un coefficient multiplicateur à ses dimensions. Un coefficient de 0.5 divisera les dimentions par 2, à l'inverse un coefficient de 2 rendra l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> 2 fois plus grande. Un coefficient de 1 ne changera rien. </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">factor</td><td>Le coefficient multiplicateur d'échelle à appliquer </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -389,8 +442,8 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fixe la position de l'entité </p>
-<p>Cette fonction change la position de l'entité appelante avec les coordonnées données en paramètres. Ces coordonnées sont relatives au coin supérieur gauche de la fenêtre. </p><dl class="params"><dt>Paramètres</dt><dd>
+<p>Fixe la position de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
+<p>Cette fonction change la position de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> appelante avec les coordonnées données en paramètres. Ces coordonnées sont relatives au coin supérieur gauche de la fenêtre. Cette fonction est implémentée à partir de la fonction <em>move</em> afin que chaque élément reste au même endroit par rapport aux autres s'il n'ont pas la même position initiale. </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>Un <code>sf::Vector2f</code> qui contient la nouvelle position </td></tr>
   </table>
@@ -399,14 +452,14 @@ Amis</h2></td></tr>
 
 </div>
 </div>
-<a id="acefaaf63dfe743c73fba1e6143015827"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acefaaf63dfe743c73fba1e6143015827">&#9670;&nbsp;</a></span>setRotation()</h2>
+<a id="a8623ac815e34b553098f45696ea8918b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8623ac815e34b553098f45696ea8918b">&#9670;&nbsp;</a></span>setRotation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Entite::setRotation </td>
+          <td class="memname">Entite::setRotation </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>angle</em></td><td>)</td>
@@ -415,16 +468,24 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fixe l'orientation de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> appelante. </p>
+<p>Cette fonction change l'orientation de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> appelante à l'angle passé en paramètres. La valeur de l'angle est donnée en degrés. Cette fonction est implémentée en utilisant la fonction rotate pour que les éléments ne soient pa décalés les uns par rapport aux autres s'ils ne disposent pas de la même orientation initiale. </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">angle</td><td>La nouvelle orientation de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a3cfd095f6712461cb8c9baa2f6955088"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cfd095f6712461cb8c9baa2f6955088">&#9670;&nbsp;</a></span>setScale()</h2>
+<a id="a665939253829baba965ce3ead0f1739c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a665939253829baba965ce3ead0f1739c">&#9670;&nbsp;</a></span>setScale()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Entite::setScale </td>
+          <td class="memname">Entite::setScale </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>factor</em></td><td>)</td>
@@ -433,11 +494,19 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fixer l'échelle de L'entite. </p>
+<p>Cette fonction permet de fixer l'échelle de L'entite appelante. Contrairement à la fonction scale, cette fonction fixe l'échelle de manière absolue et non relativement au changements d'échelle déjà appliqué à l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">factor</td><td>Le facteur d'échelle à appliquer </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions amies et associées</h2>
-<a id="ac85cf277aaeb8a314734c1fa5f35e3be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac85cf277aaeb8a314734c1fa5f35e3be">&#9670;&nbsp;</a></span>collision</h2>
+<a id="ac5011435e5099909dd34cd1750933b30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5011435e5099909dd34cd1750933b30">&#9670;&nbsp;</a></span>collision</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -446,7 +515,7 @@ Amis</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool collision </td>
+          <td class="memname">Entite::collision </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_entite.html">Entite</a> &amp;&#160;</td>
           <td class="paramname"><em>e1</em>, </td>
@@ -469,6 +538,16 @@ Amis</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Détecte une collision entre deux <a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
+<p>Cette fonction permet de détecter si deux <a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> sont en collision ou non. Cette fonction prend en compte si les deux <a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> sont collisionables, si elles sont d'équipes différentes, si leur cercles englobants sont en collision et finalement si leur formes de collisions sont en collision </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">e1</td><td>La première <a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> à tester </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">e2</td><td>La deuxième <a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> à tester </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un <code>bool</code> qui vaut <em>true</em> si les <a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> sont en collision et <em>false</em> sinon </dd></dl>
 
 </div>
 </div>
@@ -537,6 +616,8 @@ Amis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Booléen vrai si collisionnable. </p>
+
 </div>
 </div>
 <a id="a86f42758a3e4672052331b7a4daa10b5"></a>
@@ -559,12 +640,12 @@ Amis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>&lt;booléen vrai si collisionnable </p>
+<p>numéro d'équipe </p>
 
 </div>
 </div>
-<a id="ae5c91c9a24e8d91516de7d5598eb34b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5c91c9a24e8d91516de7d5598eb34b2">&#9670;&nbsp;</a></span>forme_</h2>
+<a id="aa6bbda9a40f701f273c344406a6f5122"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6bbda9a40f701f273c344406a6f5122">&#9670;&nbsp;</a></span>forme_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -573,7 +654,7 @@ Amis</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;sf::Shape*&gt; Entite::forme_</td>
+          <td class="memname">std::vector&lt;std::unique_ptr&lt;sf::Shape&gt; &gt; Entite::forme_</td>
         </tr>
       </table>
   </td>
@@ -604,8 +685,6 @@ Amis</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>numéro d'équipe </p>
 
 </div>
 </div>
@@ -694,6 +773,8 @@ Amis</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Vitesse actuelle. </p>
 
 </div>
 </div>

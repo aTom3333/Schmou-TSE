@@ -7,9 +7,9 @@
 
 /**
 * @class CapTest
-* @brief Classe Capacité de test
+* @brief Classe CapacitÃ© de test
 *
-* Capacité qui créé 1 ProjPiou à la postion du lanceur
+* CapacitÃ© qui crÃ©Ã© 1 ProjPiou Ã  la postion du lanceur
 * Nom : Dash
 * Cooldown : 100
 */
@@ -21,7 +21,7 @@ public:
 	* @fn CapDash::CapDash
 	* @brief Constructeur
 	*
-	* Initialisation de la capacité
+	* Initialisation de la capacitÃ©
 	*/
 	CapDash();
 	/**
@@ -34,17 +34,17 @@ public:
 	/**
 	* @fn utiliser
 	* @brief Active la capacite
-	* @param x Abscisse de la postion où la capacite est utilisée
-	* @param y Ordonnée de la postion où la capacite est utilisée
+	* @param x Abscisse de la postion oÃ¹ la capacite est utilisÃ©e
+	* @param y OrdonnÃ©e de la postion oÃ¹ la capacite est utilisÃ©e
 	*
-	* Fonction Initialise la postion de départ et le timer
+	* Fonction Initialise la postion de dÃ©part et le timer
 	*/
 	void utiliser(int x, int y);
 	/**
 	* @fn actualiser
-	* @brief Active les effets de la capacité
-	* @param projectile Vecteur de tout les projectiles présent à l'écran
-	* @param vaisseau Vaisseau qui a activé la compétance
+	* @brief Active les effets de la capacitÃ©
+	* @param projectile Vecteur de tout les projectiles prÃ©sent Ã  l'Ã©cran
+	* @param vaisseau Vaisseau qui a activÃ© la compÃ©tance
 	*
 	* Augmente la vitesse du vaisseau pour quelques frames
 	* Actualise le timer

@@ -25,10 +25,10 @@ public:
 	/**
 	* @fn ProjTest
 	* @brief Constructeur
-	* @param x Abscisse de la postion de départ du projectile
-	* @param y Ordonnée de la postion de départ du projectile
+	* @param x Abscisse de la postion de dÃ©part du projectile
+	* @param y OrdonnÃ©e de la postion de dÃ©part du projectile
 	*
-	* Créer un projectile piou à la position donnée en paramètre
+	* CrÃ©er un projectile piou Ã  la position donnÃ©e en paramÃ¨tre
 	*/
 	ProjPiou(int x, int y);
 	/**
@@ -43,13 +43,13 @@ public:
 	* @brief Gestion du projectile
 	* @param window Fenetre de jeu
 	*
-	* Gestion du déplacement et de l'affichage
+	* Gestion du dÃ©placement et de l'affichage
 	*/
 	void gestion(sf::RenderWindow &window);
 	/**
 	* @fn agit
-	* @brief Procédure lorsque le projectile agit avec unvaisseau
-	* @param Vaisseau à modifier
+	* @brief ProcÃ©dure lorsque le projectile agit avec unvaisseau
+	* @param Vaisseau Ã  modifier
 	*
 	* Vide
 	*/

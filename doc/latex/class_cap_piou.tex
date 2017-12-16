@@ -6,8 +6,7 @@
 
 
 
-Graphe d\textquotesingle{}hÃ©ritage de Cap\+Piou\+:
-\nopagebreak
+Graphe d\textquotesingle{}hÃ©ritage de Cap\+Piou\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +15,7 @@ Graphe d\textquotesingle{}hÃ©ritage de Cap\+Piou\+:
 \end{figure}
 
 
-Graphe de collaboration de Cap\+Piou\+:
-\nopagebreak
+Graphe de collaboration de Cap\+Piou\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,13 +26,13 @@ Graphe de collaboration de Cap\+Piou\+:
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_cap_piou_aa2ed61fb1313a447cf8444399001750d}{Cap\+Piou} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
 \hyperlink{class_cap_piou_a35d7e0b0c14d6a6e01ba0a053a8a60bd}{$\sim$\+Cap\+Piou} ()
-\item 
-void \hyperlink{class_cap_piou_a20ed7a993ce209a3df246f655f107f22}{utiliser} (int x, int y)
-\item 
-void \hyperlink{class_cap_piou_aabdcaa253f10db2bca12e750005485fc}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} $\ast$vaisseau)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \hyperlink{class_cap_piou_a92f5cc3011280ad13bf3ff5e6a3c76ea}{utiliser} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Active la capacite. \end{DoxyCompactList}\item 
+void \hyperlink{class_cap_piou_ae15af0a5a261349ae8462f00b6cb0d5d}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} $\ast$vaisseau, float temps\+Ecoule)
+\begin{DoxyCompactList}\small\item\em Active les effets de la capacité \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres hÃ©ritÃ©s additionnels}
 
 
@@ -45,7 +43,11 @@ void \hyperlink{class_cap_piou_aabdcaa253f10db2bca12e750005485fc}{actualiser} (s
 \subsubsection{\texorpdfstring{Cap\+Piou()}{CapPiou()}}
 {\footnotesize\ttfamily Cap\+Piou\+::\+Cap\+Piou (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_cap_piou_a35d7e0b0c14d6a6e01ba0a053a8a60bd}\label{class_cap_piou_a35d7e0b0c14d6a6e01ba0a053a8a60bd}} 
+
+
+Constructeur. 
+
+Initialisation de la capacité \mbox{\Hypertarget{class_cap_piou_a35d7e0b0c14d6a6e01ba0a053a8a60bd}\label{class_cap_piou_a35d7e0b0c14d6a6e01ba0a053a8a60bd}} 
 \index{Cap\+Piou@{Cap\+Piou}!````~Cap\+Piou@{$\sim$\+Cap\+Piou}}
 \index{````~Cap\+Piou@{$\sim$\+Cap\+Piou}!Cap\+Piou@{Cap\+Piou}}
 \subsubsection{\texorpdfstring{$\sim$\+Cap\+Piou()}{~CapPiou()}}
@@ -53,26 +55,52 @@ void \hyperlink{class_cap_piou_aabdcaa253f10db2bca12e750005485fc}{actualiser} (s
 
 
 
+Destructeur. 
+
+Vide 
+
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_cap_piou_aabdcaa253f10db2bca12e750005485fc}\label{class_cap_piou_aabdcaa253f10db2bca12e750005485fc}} 
+\mbox{\Hypertarget{class_cap_piou_ae15af0a5a261349ae8462f00b6cb0d5d}\label{class_cap_piou_ae15af0a5a261349ae8462f00b6cb0d5d}} 
 \index{Cap\+Piou@{Cap\+Piou}!actualiser@{actualiser}}
 \index{actualiser@{actualiser}!Cap\+Piou@{Cap\+Piou}}
 \subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
-{\footnotesize\ttfamily void Cap\+Piou\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} $\ast$}]{vaisseau }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Cap\+Piou\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} $\ast$}]{vaisseau,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-ImplÃ©mente \hyperlink{class_capacite_a7d4e86c20cd198960f25c0eb443148fe}{Capacite}.
+Active les effets de la capacité 
 
-\mbox{\Hypertarget{class_cap_piou_a20ed7a993ce209a3df246f655f107f22}\label{class_cap_piou_a20ed7a993ce209a3df246f655f107f22}} 
+
+\begin{DoxyParams}{ParamÃ¨tres}
+{\em projectile} & Vecteur de tout les projectiles présent à l\textquotesingle{}écran \\
+\hline
+{\em vaisseau} & \hyperlink{class_vaisseau}{Vaisseau} qui a activé la compétance\\
+\hline
+\end{DoxyParams}
+Créer 1 \hyperlink{class_proj_test}{Proj\+Test} à l\textquotesingle{}activation Actualise le timer 
+
+ImplÃ©mente \hyperlink{class_capacite_a924214972f385ef409031bafc0f315b7}{Capacite}.
+
+\mbox{\Hypertarget{class_cap_piou_a92f5cc3011280ad13bf3ff5e6a3c76ea}\label{class_cap_piou_a92f5cc3011280ad13bf3ff5e6a3c76ea}} 
 \index{Cap\+Piou@{Cap\+Piou}!utiliser@{utiliser}}
 \index{utiliser@{utiliser}!Cap\+Piou@{Cap\+Piou}}
 \subsubsection{\texorpdfstring{utiliser()}{utiliser()}}
-{\footnotesize\ttfamily void Cap\+Piou\+::utiliser (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Cap\+Piou\+::utiliser (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-ImplÃ©mente \hyperlink{class_capacite_a4d4f643987fcc2168567bf28a36ea418}{Capacite}.
+Active la capacite. 
+
+
+\begin{DoxyParams}{ParamÃ¨tres}
+{\em x} & Abscisse de la postion où la capacite est utilisée \\
+\hline
+{\em y} & Ordonnée de la postion où la capacite est utilisée\\
+\hline
+\end{DoxyParams}
+Fonction Initialise la postion de départ et le timer 
+
+ImplÃ©mente \hyperlink{class_capacite_a6f5e6efda11f80ab8538e23f5bdc6e79}{Capacite}.
 
 
 

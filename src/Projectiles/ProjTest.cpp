@@ -12,7 +12,7 @@ ProjTest::ProjTest()
 	cercleEnglobant_ =  sf::CircleShape(16);
 	cercleEnglobant_.setOrigin(16, 16);
 
-	forme_.push_back(new sf::CircleShape(cercleEnglobant_));
+	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
 	//attributs
 	age_ = 0;
@@ -41,7 +41,7 @@ ProjTest::ProjTest(int x, int y)
 	cercleEnglobant_ = sf::CircleShape(16);
 	cercleEnglobant_.setOrigin(16, 16);
 
-	forme_.push_back(new sf::CircleShape(cercleEnglobant_));
+	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 	
 	//attributs
 	age_ = 0;

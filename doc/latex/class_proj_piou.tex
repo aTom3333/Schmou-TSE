@@ -6,8 +6,7 @@
 
 
 
-Graphe d\textquotesingle{}héritage de Proj\+Piou\+:
-\nopagebreak
+Graphe d\textquotesingle{}héritage de Proj\+Piou\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +15,7 @@ Graphe d\textquotesingle{}héritage de Proj\+Piou\+:
 \end{figure}
 
 
-Graphe de collaboration de Proj\+Piou\+:
-\nopagebreak
+Graphe de collaboration de Proj\+Piou\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -33,8 +31,10 @@ Graphe de collaboration de Proj\+Piou\+:
 \item 
 \hyperlink{class_proj_piou_a02224f153ad53afc2b1c40b986ec6492}{$\sim$\+Proj\+Piou} ()
 \item 
-void \hyperlink{class_proj_piou_a964182d333ed2bf64408a7812bc4cd28}{gestion} (sf\+::\+Render\+Window \&window)
-\end{DoxyCompactItemize}
+void \hyperlink{class_proj_piou_a01b45e4045391883472e283e027cf7de}{gestion} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Gestion du projectile. \end{DoxyCompactList}\item 
+void \hyperlink{class_proj_piou_a1594d1ba2fd53ff82af597d2505a7db2}{agit} (\hyperlink{class_vaisseau}{Vaisseau} \&v)
+\begin{DoxyCompactList}\small\item\em Proc�dure lorsque le projectile agit avec unvaisseau. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres hérités additionnels}
 
 
@@ -60,13 +60,41 @@ void \hyperlink{class_proj_piou_a964182d333ed2bf64408a7812bc4cd28}{gestion} (sf\
 
 
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_proj_piou_a964182d333ed2bf64408a7812bc4cd28}\label{class_proj_piou_a964182d333ed2bf64408a7812bc4cd28}} 
+\mbox{\Hypertarget{class_proj_piou_a1594d1ba2fd53ff82af597d2505a7db2}\label{class_proj_piou_a1594d1ba2fd53ff82af597d2505a7db2}} 
+\index{Proj\+Piou@{Proj\+Piou}!agit@{agit}}
+\index{agit@{agit}!Proj\+Piou@{Proj\+Piou}}
+\subsubsection{\texorpdfstring{agit()}{agit()}}
+{\footnotesize\ttfamily Proj\+Piou\+::agit (\begin{DoxyParamCaption}\item[{\hyperlink{class_vaisseau}{Vaisseau} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Proc�dure lorsque le projectile agit avec unvaisseau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \hyperlink{class_vaisseau}{Vaisseau}} & � modifier\\
+\hline
+\end{DoxyParams}
+Vide 
+
+Implémente \hyperlink{class_projectile_a8550c8b1b012c5c290fb6da5b06f57ef}{Projectile}.
+
+\mbox{\Hypertarget{class_proj_piou_a01b45e4045391883472e283e027cf7de}\label{class_proj_piou_a01b45e4045391883472e283e027cf7de}} 
 \index{Proj\+Piou@{Proj\+Piou}!gestion@{gestion}}
 \index{gestion@{gestion}!Proj\+Piou@{Proj\+Piou}}
 \subsubsection{\texorpdfstring{gestion()}{gestion()}}
-{\footnotesize\ttfamily void Proj\+Piou\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Proj\+Piou\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
+
+Gestion du projectile. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em window} & Fenetre de jeu\\
+\hline
+\end{DoxyParams}
+Gestion du d�placement et de l\textquotesingle{}affichage 
 
 Implémente \hyperlink{class_projectile_aa969857f9837d9be3a6ea415c9ba3ff1}{Projectile}.
 

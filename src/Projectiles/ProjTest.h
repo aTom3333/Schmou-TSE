@@ -9,7 +9,7 @@ class Vaisseau;
 * @class ProjTest
 * @brief Projectile de test
 *
-* Lance 4 boules qui rebondissent sur les bord de l'écran
+* Lance 4 boules qui rebondissent sur les bord de l'Ã©cran
 */
 
 class ProjTest : public Projectile
@@ -19,16 +19,16 @@ class ProjTest : public Projectile
 		* @fn ProjTest::Projtest
 		* @brief Constructeur
 		*
-		* Créer un projectile de test à une position aléatoire
+		* CrÃ©er un projectile de test Ã  une position alÃ©atoire
 		*/
 		ProjTest(); 
 		/**
 		* @fn ProjTest
 		* @brief Constructeur
-		* @param x Abscisse de la postion de départ du projectile
-		* @param y Ordonnée de la postion de départ du projectile
+		* @param x Abscisse de la postion de dÃ©part du projectile
+		* @param y OrdonnÃ©e de la postion de dÃ©part du projectile
 		*
-		* Créer un projectile de test à la position donnée en paramètre
+		* CrÃ©er un projectile de test Ã  la position donnÃ©e en paramÃ¨tre
 		*/
 		ProjTest(int x, int y); 
 		/**
@@ -43,20 +43,20 @@ class ProjTest : public Projectile
 		* @brief Gestion du projectile
 		* @param window Fenetre de jeu
 		*
-		* Gestion du déplacement et de la collision avec les bords
+		* Gestion du dÃ©placement et de la collision avec les bords
 		*/
 		void gestion(sf::RenderWindow &window);
 		/**
 		* @fn agit
-		* @brief Procédure lorsque le projectile agit avec unvaisseau
-		* @param Vaisseau à modifier
+		* @brief ProcÃ©dure lorsque le projectile agit avec unvaisseau
+		* @param Vaisseau Ã  modifier
 		*
 		* Vide
 		*/
 		void agit(Vaisseau &v) {};
 	private:
-		int mx_; /// Multiplicateur (1 ou -1) pour gérer le sens du projectile
-		int my_; /// Multiplicateur (1 ou -1) pour gérer le sens du projectile
+		int mx_; /// Multiplicateur (1 ou -1) pour gÃ©rer le sens du projectile
+		int my_; /// Multiplicateur (1 ou -1) pour gÃ©rer le sens du projectile
 		int vx_; /// Vitesse horizontale
 		int vy_; /// Vitesse Verticale
 };

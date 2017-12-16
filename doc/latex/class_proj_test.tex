@@ -11,8 +11,7 @@
 
 
 
-Graphe d\textquotesingle{}h√©ritage de Proj\+Test\+:
-\nopagebreak
+Graphe d\textquotesingle{}h√©ritage de Proj\+Test\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Graphe d\textquotesingle{}h√©ritage de Proj\+Test\+:
 \end{figure}
 
 
-Graphe de collaboration de Proj\+Test\+:
-\nopagebreak
+Graphe de collaboration de Proj\+Test\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -33,18 +31,22 @@ Graphe de collaboration de Proj\+Test\+:
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_proj_test_a64855e6e7ef8219566ab0fde2b05a9e1}{Proj\+Test} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
 \hyperlink{class_proj_test_ae1611498a5b25d561998068205e9f77f}{Proj\+Test} (int x, int y)
 \item 
 \hyperlink{class_proj_test_a9bc10c512035ae9f3294179c5d2db808}{$\sim$\+Proj\+Test} ()
-\item 
-void \hyperlink{class_proj_test_af0b751a8e8cb0b7d10857722b691f3b6}{gestion} (sf\+::\+Render\+Window \&window)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \hyperlink{class_proj_test_a6649e6591e463315aa9513854e2515d4}{gestion} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Gestion du projectile. \end{DoxyCompactList}\item 
+void \hyperlink{class_proj_test_a3adb674973dcd21c6ddaee809b719a65}{agit} (\hyperlink{class_vaisseau}{Vaisseau} \&v)
+\begin{DoxyCompactList}\small\item\em ProcÈdure lorsque le projectile agit avec unvaisseau. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres h√©rit√©s additionnels}
 
 
 \subsection{Description d√©taill√©e}
 \hyperlink{class_projectile}{Projectile} de test. 
+
+\hyperlink{class_projectile}{Projectile} de base. Tire en ligne droite (vers le haut)
 
 Lance 4 boules qui rebondissent sur les bord de l\textquotesingle{}Ècran 
 
@@ -55,7 +57,18 @@ Lance 4 boules qui rebondissent sur les bord de l\textquotesingle{}Ècran
 \subsubsection{\texorpdfstring{Proj\+Test()}{ProjTest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Proj\+Test\+::\+Proj\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_proj_test_ae1611498a5b25d561998068205e9f77f}\label{class_proj_test_ae1611498a5b25d561998068205e9f77f}} 
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em x} & Abscisse de la postion de dÈpart du projectile \\
+\hline
+{\em y} & OrdonnÈe de la postion de dÈpart du projectile\\
+\hline
+\end{DoxyParams}
+CrÈer un projectile de test ‡ la position donnÈe en paramËtre \mbox{\Hypertarget{class_proj_test_ae1611498a5b25d561998068205e9f77f}\label{class_proj_test_ae1611498a5b25d561998068205e9f77f}} 
 \index{Proj\+Test@{Proj\+Test}!Proj\+Test@{Proj\+Test}}
 \index{Proj\+Test@{Proj\+Test}!Proj\+Test@{Proj\+Test}}
 \subsubsection{\texorpdfstring{Proj\+Test()}{ProjTest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -69,14 +82,46 @@ Lance 4 boules qui rebondissent sur les bord de l\textquotesingle{}Ècran
 
 
 
+Destructeur. 
+
+Vide 
+
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_proj_test_af0b751a8e8cb0b7d10857722b691f3b6}\label{class_proj_test_af0b751a8e8cb0b7d10857722b691f3b6}} 
+\mbox{\Hypertarget{class_proj_test_a3adb674973dcd21c6ddaee809b719a65}\label{class_proj_test_a3adb674973dcd21c6ddaee809b719a65}} 
+\index{Proj\+Test@{Proj\+Test}!agit@{agit}}
+\index{agit@{agit}!Proj\+Test@{Proj\+Test}}
+\subsubsection{\texorpdfstring{agit()}{agit()}}
+{\footnotesize\ttfamily Proj\+Test\+::agit (\begin{DoxyParamCaption}\item[{\hyperlink{class_vaisseau}{Vaisseau} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+ProcÈdure lorsque le projectile agit avec unvaisseau. 
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em \hyperlink{class_vaisseau}{Vaisseau}} & ‡ modifier\\
+\hline
+\end{DoxyParams}
+Vide 
+
+Impl√©mente \hyperlink{class_projectile_a8550c8b1b012c5c290fb6da5b06f57ef}{Projectile}.
+
+\mbox{\Hypertarget{class_proj_test_a6649e6591e463315aa9513854e2515d4}\label{class_proj_test_a6649e6591e463315aa9513854e2515d4}} 
 \index{Proj\+Test@{Proj\+Test}!gestion@{gestion}}
 \index{gestion@{gestion}!Proj\+Test@{Proj\+Test}}
 \subsubsection{\texorpdfstring{gestion()}{gestion()}}
-{\footnotesize\ttfamily void Proj\+Test\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Proj\+Test\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
+
+Gestion du projectile. 
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em window} & Fenetre de jeu\\
+\hline
+\end{DoxyParams}
+Gestion du dÈplacement et de la collision avec les bords 
 
 Impl√©mente \hyperlink{class_projectile_aa969857f9837d9be3a6ea415c9ba3ff1}{Projectile}.
 

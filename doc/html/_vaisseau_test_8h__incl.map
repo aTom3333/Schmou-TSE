@@ -1,6 +1,6 @@
 <map id="src/Vaisseau/VaisseauTest.h" name="src/Vaisseau/VaisseauTest.h">
-<area shape="rect" id="node2" href="$_vaisseau_8h.html" title="Vaisseau.h" alt="" coords="463,80,550,107"/>
-<area shape="rect" id="node6" href="$_capacite_8h.html" title="../Capacites/Capacite.h" alt="" coords="309,155,469,181"/>
-<area shape="rect" id="node7" href="$_projectile_8h.html" title="../Projectiles/Projectile.h" alt="" coords="366,229,530,256"/>
-<area shape="rect" id="node8" href="$_entite_8h.html" title="../Entite.h" alt="" coords="161,304,239,331"/>
+<area shape="rect" id="node2" href="$_vaisseau_8h.html" title="Vaisseau.h" alt="" coords="490,80,577,107"/>
+<area shape="rect" id="node6" href="$_capacite_8h.html" title="../Capacites/Capacite.h" alt="" coords="336,155,496,181"/>
+<area shape="rect" id="node7" href="$_projectile_8h.html" title="../Projectiles/Projectile.h" alt="" coords="417,229,581,256"/>
+<area shape="rect" id="node8" href="$_entite_8h.html" title="../Entite.h" alt="" coords="211,304,290,331"/>
 </map>

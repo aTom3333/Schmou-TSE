@@ -11,8 +11,7 @@ Classe abstraite qui définit la structure générale d\textquotesingle{}une cap
 
 
 
-Graphe d\textquotesingle{}héritage de Capacite\+:
-\nopagebreak
+Graphe d\textquotesingle{}héritage de Capacite\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,18 +22,18 @@ Graphe d\textquotesingle{}héritage de Capacite\+:
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_capacite_a8a1aebc5b2332e366a3f207c23b4d363}{Capacite} ()=default
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_capacite_a43be1570a24a64682ff3f034330779a9}{$\sim$\+Capacite} ()=default
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_capacite_a6f5e6efda11f80ab8538e23f5bdc6e79}{utiliser} (int x, int y)=0
+\begin{DoxyCompactList}\small\item\em Fonction virtuel qui active la capacite lorsqu\textquotesingle{}elle est appelée. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_capacite_a924214972f385ef409031bafc0f315b7}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} $\ast$vaisseau, float temps\+Ecoule)=0
+\begin{DoxyCompactList}\small\item\em Fonction virtuel qui active les effets de la capacité \end{DoxyCompactList}\item 
+float const \hyperlink{class_capacite_af07c1c3a2c9259a7eab270b3d8f867de}{get\+Cooldown} ()
 \item 
-virtual \hyperlink{class_capacite_a687ff139afef118ebb63b897861674fd}{$\sim$\+Capacite} ()=default
-\item 
-int const \hyperlink{class_capacite_a1842888fc39a0054d3cc9d7236ab1191}{get\+Cooldown} ()
-\item 
-int const \hyperlink{class_capacite_a82e4eebf522c02163725872b288bfcf8}{get\+Time} ()
+float const \hyperlink{class_capacite_a963dd214cc53c76358b5326d9164884f}{get\+Time} ()
 \item 
 std\+::string const \hyperlink{class_capacite_a96218b289768ff461ffaaa0abe014a42}{get\+Nom} ()
-\item 
-virtual void \hyperlink{class_capacite_a4d4f643987fcc2168567bf28a36ea418}{utiliser} (int x, int y)=0
-\item 
-virtual void \hyperlink{class_capacite_a7d4e86c20cd198960f25c0eb443148fe}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} $\ast$vaisseau)=0
 \end{DoxyCompactItemize}
 \subsection*{Attributs protégés}
 \begin{DoxyCompactItemize}
@@ -43,12 +42,14 @@ int \hyperlink{class_capacite_abc3eb04129009107c0b60b03e7a3ff06}{debut\+X\+\_\+}
 \item 
 int \hyperlink{class_capacite_a741d48934a015c226b15e6519724e400}{debut\+Y\+\_\+}
 \item 
-int \hyperlink{class_capacite_aabb946971871ffbcb9bb9a4d9cd3c0c3}{cooldown\+\_\+}
-\item 
-int \hyperlink{class_capacite_ac743cb7c9605c9e3205885cdcf14d2dd}{t\+\_\+}
-\item 
+float \hyperlink{class_capacite_aa84204be03602333d694faa14dbb693c}{cooldown\+\_\+}
+\begin{DoxyCompactList}\small\item\em Position de départ. \end{DoxyCompactList}\item 
+float \hyperlink{class_capacite_ade805898750e70261be4f4ced92a9063}{t\+\_\+}
+\begin{DoxyCompactList}\small\item\em Temps à attendre avant de pouvoir utiliser la capacité à nouveau. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_capacite_a250c28dafd8e12b58ccfb4224329f111}{frames\+\_\+}
+\begin{DoxyCompactList}\small\item\em Temps écoulé depuis la dernière activation de la compétance. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{class_capacite_a430472b509233086cbad1d6d8332dc8c}{nom\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Nombre de frames écoulé depuis la dernière activation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
@@ -63,30 +64,51 @@ Cette classe abstraite permet de définir la structure générale d\textquotesin
 \subsubsection{\texorpdfstring{Capacite()}{Capacite()}}
 {\footnotesize\ttfamily Capacite\+::\+Capacite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
-\mbox{\Hypertarget{class_capacite_a687ff139afef118ebb63b897861674fd}\label{class_capacite_a687ff139afef118ebb63b897861674fd}} 
+
+
+Constructeur. 
+
+Vide \mbox{\Hypertarget{class_capacite_a43be1570a24a64682ff3f034330779a9}\label{class_capacite_a43be1570a24a64682ff3f034330779a9}} 
 \index{Capacite@{Capacite}!````~Capacite@{$\sim$\+Capacite}}
 \index{````~Capacite@{$\sim$\+Capacite}!Capacite@{Capacite}}
 \subsubsection{\texorpdfstring{$\sim$\+Capacite()}{~Capacite()}}
-{\footnotesize\ttfamily virtual Capacite\+::$\sim$\+Capacite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+{\footnotesize\ttfamily Capacite\+::$\sim$\+Capacite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
 
 
+
+Destructeur. 
+
+Vide 
 
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_capacite_a7d4e86c20cd198960f25c0eb443148fe}\label{class_capacite_a7d4e86c20cd198960f25c0eb443148fe}} 
+\mbox{\Hypertarget{class_capacite_a924214972f385ef409031bafc0f315b7}\label{class_capacite_a924214972f385ef409031bafc0f315b7}} 
 \index{Capacite@{Capacite}!actualiser@{actualiser}}
 \index{actualiser@{actualiser}!Capacite@{Capacite}}
 \subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
-{\footnotesize\ttfamily virtual void Capacite\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} $\ast$}]{vaisseau }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily Capacite\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} $\ast$}]{vaisseau,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implémenté dans \hyperlink{class_cap_dash_a886522c648db49b81c330737ad96a517}{Cap\+Dash}, \hyperlink{class_cap_piou_aabdcaa253f10db2bca12e750005485fc}{Cap\+Piou}, et \hyperlink{class_cap_test_a5742770894ff765e2785f82aab88b223}{Cap\+Test}.
+Fonction virtuel qui active les effets de la capacité 
 
-\mbox{\Hypertarget{class_capacite_a1842888fc39a0054d3cc9d7236ab1191}\label{class_capacite_a1842888fc39a0054d3cc9d7236ab1191}} 
+
+\begin{DoxyParams}{Paramètres}
+{\em projectile} & Vecteur de tout les projectiles présent à l\textquotesingle{}écran \\
+\hline
+{\em vaisseau} & \hyperlink{class_vaisseau}{Vaisseau} qui a activé la compétance \\
+\hline
+{\em temp\+Ecoule} & Temps écoulé depuis la dernière boucle\\
+\hline
+\end{DoxyParams}
+Fonction virtuel qui gère la création de projectiles et des modifications à apporter au vaisseau 
+
+Implémenté dans \hyperlink{class_cap_piou_ae15af0a5a261349ae8462f00b6cb0d5d}{Cap\+Piou}, \hyperlink{class_cap_dash_ad4f99cef49151c1072a11af18852fa7b}{Cap\+Dash}, et \hyperlink{class_cap_test_af8e8fad88e1e4f0037eee576331d3238}{Cap\+Test}.
+
+\mbox{\Hypertarget{class_capacite_af07c1c3a2c9259a7eab270b3d8f867de}\label{class_capacite_af07c1c3a2c9259a7eab270b3d8f867de}} 
 \index{Capacite@{Capacite}!get\+Cooldown@{get\+Cooldown}}
 \index{get\+Cooldown@{get\+Cooldown}!Capacite@{Capacite}}
 \subsubsection{\texorpdfstring{get\+Cooldown()}{getCooldown()}}
-{\footnotesize\ttfamily int const Capacite\+::get\+Cooldown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily float const Capacite\+::get\+Cooldown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_capacite_a96218b289768ff461ffaaa0abe014a42}\label{class_capacite_a96218b289768ff461ffaaa0abe014a42}} 
 \index{Capacite@{Capacite}!get\+Nom@{get\+Nom}}
@@ -94,30 +116,45 @@ Implémenté dans \hyperlink{class_cap_dash_a886522c648db49b81c330737ad96a517}{C
 \subsubsection{\texorpdfstring{get\+Nom()}{getNom()}}
 {\footnotesize\ttfamily std\+::string const Capacite\+::get\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_capacite_a82e4eebf522c02163725872b288bfcf8}\label{class_capacite_a82e4eebf522c02163725872b288bfcf8}} 
+\mbox{\Hypertarget{class_capacite_a963dd214cc53c76358b5326d9164884f}\label{class_capacite_a963dd214cc53c76358b5326d9164884f}} 
 \index{Capacite@{Capacite}!get\+Time@{get\+Time}}
 \index{get\+Time@{get\+Time}!Capacite@{Capacite}}
 \subsubsection{\texorpdfstring{get\+Time()}{getTime()}}
-{\footnotesize\ttfamily int const Capacite\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily float const Capacite\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_capacite_a4d4f643987fcc2168567bf28a36ea418}\label{class_capacite_a4d4f643987fcc2168567bf28a36ea418}} 
+\mbox{\Hypertarget{class_capacite_a6f5e6efda11f80ab8538e23f5bdc6e79}\label{class_capacite_a6f5e6efda11f80ab8538e23f5bdc6e79}} 
 \index{Capacite@{Capacite}!utiliser@{utiliser}}
 \index{utiliser@{utiliser}!Capacite@{Capacite}}
 \subsubsection{\texorpdfstring{utiliser()}{utiliser()}}
-{\footnotesize\ttfamily virtual void Capacite\+::utiliser (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily Capacite\+::utiliser (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implémenté dans \hyperlink{class_cap_dash_ada59ecb62d2c18f6bb6b4acf28a2da93}{Cap\+Dash}, \hyperlink{class_cap_piou_a20ed7a993ce209a3df246f655f107f22}{Cap\+Piou}, et \hyperlink{class_cap_test_af85984f6d9330e5527feff1a62ee4242}{Cap\+Test}.
+Fonction virtuel qui active la capacite lorsqu\textquotesingle{}elle est appelée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Abscisse de la postion où la capacite est utilisée \\
+\hline
+{\em y} & Ordonnée de la postion où la capacite est utilisée\\
+\hline
+\end{DoxyParams}
+Fonction virtuel qui initialise la postion de départ et le timer 
+
+Implémenté dans \hyperlink{class_cap_piou_a92f5cc3011280ad13bf3ff5e6a3c76ea}{Cap\+Piou}, \hyperlink{class_cap_dash_a82823122659ff5a87a09e9ddf0e3dabb}{Cap\+Dash}, et \hyperlink{class_cap_test_a9c85a17dec6cf78f1438b08b175f650d}{Cap\+Test}.
 
 
 
 \subsection{Documentation des données membres}
-\mbox{\Hypertarget{class_capacite_aabb946971871ffbcb9bb9a4d9cd3c0c3}\label{class_capacite_aabb946971871ffbcb9bb9a4d9cd3c0c3}} 
+\mbox{\Hypertarget{class_capacite_aa84204be03602333d694faa14dbb693c}\label{class_capacite_aa84204be03602333d694faa14dbb693c}} 
 \index{Capacite@{Capacite}!cooldown\+\_\+@{cooldown\+\_\+}}
 \index{cooldown\+\_\+@{cooldown\+\_\+}!Capacite@{Capacite}}
 \subsubsection{\texorpdfstring{cooldown\+\_\+}{cooldown\_}}
-{\footnotesize\ttfamily int Capacite\+::cooldown\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily float Capacite\+::cooldown\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Position de départ. 
 
 \mbox{\Hypertarget{class_capacite_abc3eb04129009107c0b60b03e7a3ff06}\label{class_capacite_abc3eb04129009107c0b60b03e7a3ff06}} 
 \index{Capacite@{Capacite}!debut\+X\+\_\+@{debut\+X\+\_\+}}
@@ -131,17 +168,35 @@ Implémenté dans \hyperlink{class_cap_dash_ada59ecb62d2c18f6bb6b4acf28a2da93}{C
 \subsubsection{\texorpdfstring{debut\+Y\+\_\+}{debutY\_}}
 {\footnotesize\ttfamily int Capacite\+::debut\+Y\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
+\mbox{\Hypertarget{class_capacite_a250c28dafd8e12b58ccfb4224329f111}\label{class_capacite_a250c28dafd8e12b58ccfb4224329f111}} 
+\index{Capacite@{Capacite}!frames\+\_\+@{frames\+\_\+}}
+\index{frames\+\_\+@{frames\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{frames\+\_\+}{frames\_}}
+{\footnotesize\ttfamily unsigned int Capacite\+::frames\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temps écoulé depuis la dernière activation de la compétance. 
+
 \mbox{\Hypertarget{class_capacite_a430472b509233086cbad1d6d8332dc8c}\label{class_capacite_a430472b509233086cbad1d6d8332dc8c}} 
 \index{Capacite@{Capacite}!nom\+\_\+@{nom\+\_\+}}
 \index{nom\+\_\+@{nom\+\_\+}!Capacite@{Capacite}}
 \subsubsection{\texorpdfstring{nom\+\_\+}{nom\_}}
 {\footnotesize\ttfamily std\+::string Capacite\+::nom\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_capacite_ac743cb7c9605c9e3205885cdcf14d2dd}\label{class_capacite_ac743cb7c9605c9e3205885cdcf14d2dd}} 
+
+
+Nombre de frames écoulé depuis la dernière activation. 
+
+\mbox{\Hypertarget{class_capacite_ade805898750e70261be4f4ced92a9063}\label{class_capacite_ade805898750e70261be4f4ced92a9063}} 
 \index{Capacite@{Capacite}!t\+\_\+@{t\+\_\+}}
 \index{t\+\_\+@{t\+\_\+}!Capacite@{Capacite}}
 \subsubsection{\texorpdfstring{t\+\_\+}{t\_}}
-{\footnotesize\ttfamily int Capacite\+::t\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily float Capacite\+::t\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temps à attendre avant de pouvoir utiliser la capacité à nouveau. 
 
 
 

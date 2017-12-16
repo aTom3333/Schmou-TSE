@@ -19,15 +19,16 @@ bool collision(const Entite& e1, const Entite& e2)
 	return false;
 }
 
-Entite::~Entite()
-{
-	for(auto elem : forme_)
-        delete elem;
-}
-
-void Entite::afficher(sf::RenderWindow & window)
+void Entite::afficher(sf::RenderWindow & window, bool debug) const
 {
 	window.draw(sprite_);
+
+	if(debug)
+	{
+		window.draw(cercleEnglobant_);
+		for(auto& elem: forme_)
+			window.draw(*elem);
+	}
 }
 
 
@@ -102,7 +103,7 @@ void Entite::changeSpeed(int val)
 * Créer un projectile de test à une postion aléatoire
 */
 
-bool Entite::estDehors()
+bool Entite::estDehors() const
 {
 	return position_.x < 0 || position_.x > ECRAN_L || position_.y < 0 || position_.y > ECRAN_H;
 }

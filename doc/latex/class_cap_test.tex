@@ -2,12 +2,16 @@
 \label{class_cap_test}\index{Cap\+Test@{Cap\+Test}}
 
 
+Classe Capacité de test.  
+
+
+
+
 {\ttfamily \#include $<$Cap\+Test.\+h$>$}
 
 
 
-Graphe d\textquotesingle{}hÃ©ritage de Cap\+Test\+:
-\nopagebreak
+Graphe d\textquotesingle{}hÃ©ritage de Cap\+Test\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +20,7 @@ Graphe d\textquotesingle{}hÃ©ritage de Cap\+Test\+:
 \end{figure}
 
 
-Graphe de collaboration de Cap\+Test\+:
-\nopagebreak
+Graphe de collaboration de Cap\+Test\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,15 +31,24 @@ Graphe de collaboration de Cap\+Test\+:
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_cap_test_a5f6d4b172a6a40f974b3f7414e3f06e5}{Cap\+Test} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
 \hyperlink{class_cap_test_a92687aa212347d1738e7736cb107d03b}{$\sim$\+Cap\+Test} ()
-\item 
-void \hyperlink{class_cap_test_af85984f6d9330e5527feff1a62ee4242}{utiliser} (int x, int y)
-\item 
-void \hyperlink{class_cap_test_a5742770894ff765e2785f82aab88b223}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} $\ast$vaisseau)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \hyperlink{class_cap_test_a9c85a17dec6cf78f1438b08b175f650d}{utiliser} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Active la capacite. \end{DoxyCompactList}\item 
+void \hyperlink{class_cap_test_af8e8fad88e1e4f0037eee576331d3238}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} $\ast$vaisseau, float temps\+Ecoule)
+\begin{DoxyCompactList}\small\item\em Active les effets de la capacité \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres hÃ©ritÃ©s additionnels}
 
+
+\subsection{Description dÃ©taillÃ©e}
+Classe Capacité de test. 
+
+Capacité qui créé 1 \hyperlink{class_proj_piou}{Proj\+Piou} à la postion du lanceur Nom \+: Dash Cooldown \+: 100
+
+Capacité qui créé 1 \hyperlink{class_proj_piou}{Proj\+Piou} à la postion du lanceur Nom \+: Attaque Piou Cooldown \+: 20
+
+Capacité qui créé 4 \hyperlink{class_proj_test}{Proj\+Test} à la postion du lanceur Nom \+: Attaque Test Cooldown \+: 100 
 
 \subsection{Documentation des constructeurs et destructeur}
 \mbox{\Hypertarget{class_cap_test_a5f6d4b172a6a40f974b3f7414e3f06e5}\label{class_cap_test_a5f6d4b172a6a40f974b3f7414e3f06e5}} 
@@ -45,7 +57,11 @@ void \hyperlink{class_cap_test_a5742770894ff765e2785f82aab88b223}{actualiser} (s
 \subsubsection{\texorpdfstring{Cap\+Test()}{CapTest()}}
 {\footnotesize\ttfamily Cap\+Test\+::\+Cap\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_cap_test_a92687aa212347d1738e7736cb107d03b}\label{class_cap_test_a92687aa212347d1738e7736cb107d03b}} 
+
+
+Constructeur. 
+
+Initialisation de la capacité \mbox{\Hypertarget{class_cap_test_a92687aa212347d1738e7736cb107d03b}\label{class_cap_test_a92687aa212347d1738e7736cb107d03b}} 
 \index{Cap\+Test@{Cap\+Test}!````~Cap\+Test@{$\sim$\+Cap\+Test}}
 \index{````~Cap\+Test@{$\sim$\+Cap\+Test}!Cap\+Test@{Cap\+Test}}
 \subsubsection{\texorpdfstring{$\sim$\+Cap\+Test()}{~CapTest()}}
@@ -53,26 +69,52 @@ void \hyperlink{class_cap_test_a5742770894ff765e2785f82aab88b223}{actualiser} (s
 
 
 
+Destructeur. 
+
+Vide 
+
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_cap_test_a5742770894ff765e2785f82aab88b223}\label{class_cap_test_a5742770894ff765e2785f82aab88b223}} 
+\mbox{\Hypertarget{class_cap_test_af8e8fad88e1e4f0037eee576331d3238}\label{class_cap_test_af8e8fad88e1e4f0037eee576331d3238}} 
 \index{Cap\+Test@{Cap\+Test}!actualiser@{actualiser}}
 \index{actualiser@{actualiser}!Cap\+Test@{Cap\+Test}}
 \subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
-{\footnotesize\ttfamily void Cap\+Test\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} $\ast$}]{vaisseau }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Cap\+Test\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} $\ast$}]{vaisseau,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-ImplÃ©mente \hyperlink{class_capacite_a7d4e86c20cd198960f25c0eb443148fe}{Capacite}.
+Active les effets de la capacité 
 
-\mbox{\Hypertarget{class_cap_test_af85984f6d9330e5527feff1a62ee4242}\label{class_cap_test_af85984f6d9330e5527feff1a62ee4242}} 
+
+\begin{DoxyParams}{ParamÃ¨tres}
+{\em projectile} & Vecteur de tout les projectiles présent à l\textquotesingle{}écran \\
+\hline
+{\em vaisseau} & \hyperlink{class_vaisseau}{Vaisseau} qui a activé la compétance\\
+\hline
+\end{DoxyParams}
+Créer 4 \hyperlink{class_proj_test}{Proj\+Test} toutes les 5 frames Actualise le timer 
+
+ImplÃ©mente \hyperlink{class_capacite_a924214972f385ef409031bafc0f315b7}{Capacite}.
+
+\mbox{\Hypertarget{class_cap_test_a9c85a17dec6cf78f1438b08b175f650d}\label{class_cap_test_a9c85a17dec6cf78f1438b08b175f650d}} 
 \index{Cap\+Test@{Cap\+Test}!utiliser@{utiliser}}
 \index{utiliser@{utiliser}!Cap\+Test@{Cap\+Test}}
 \subsubsection{\texorpdfstring{utiliser()}{utiliser()}}
-{\footnotesize\ttfamily void Cap\+Test\+::utiliser (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Cap\+Test\+::utiliser (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-ImplÃ©mente \hyperlink{class_capacite_a4d4f643987fcc2168567bf28a36ea418}{Capacite}.
+Active la capacite. 
+
+
+\begin{DoxyParams}{ParamÃ¨tres}
+{\em x} & Abscisse de la postion où la capacite est utilisée \\
+\hline
+{\em y} & Ordonnée de la postion où la capacite est utilisée\\
+\hline
+\end{DoxyParams}
+Fonction Initialise la postion de départ et le timer 
+
+ImplÃ©mente \hyperlink{class_capacite_a6f5e6efda11f80ab8538e23f5bdc6e79}{Capacite}.
 
 
 
