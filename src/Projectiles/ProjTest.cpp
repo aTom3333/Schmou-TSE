@@ -1,13 +1,6 @@
 #include "ProjTest.h"
 #include "../constantes.h"
 
-/**
-* @fn ProjTest::Projtest
-* @brief Constructeur
-*
-* Créer un projectile de test à une position aléatoire
-*/
-
 ProjTest::ProjTest()
 {
 
@@ -38,15 +31,6 @@ ProjTest::ProjTest()
 	setPosition({ x,  y});
 }
 
-/**
-* @fn ProjTest
-* @brief Constructeur
-* @param x Abscisse de la postion de départ du projectile
-* @param y Ordonnée de la postion de départ du projectile
-*
-* Créer un projectile de test à la position donnée en paramètre
-*/
-
 ProjTest::ProjTest(int x, int y)
 {
 	//Sprite
@@ -75,24 +59,10 @@ ProjTest::ProjTest(int x, int y)
 	setPosition({ x1,  y1 });
 }
 
-/**
-* @fn ~ProjTest
-* @brief Destructeur
-*
-* Vide
-*/
 
 ProjTest::~ProjTest()
 {
 }
-
-/**
-* @fn gestion
-* @brief Gestion du projectile
-* @param window Fenetre de jeu
-*
-* Gestion du déplacement et de la collision avec les bords
-*/
 
 void ProjTest::gestion(sf::RenderWindow& window)
 {

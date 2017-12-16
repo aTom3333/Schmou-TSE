@@ -106,7 +106,7 @@ sf::Vector2f Input_base<N>::move_keyboard(float max_speed, const sf::Time& elaps
 
     int nb = up + down + left + right;
 
-    return {(right - left) * max_speed / sqrt(nb) * elapsed_time.asSeconds(), (down - up ) * max_speed / sqrt(nb) * elapsed_time.asSeconds()};
+    return {(right - left) * max_speed / (float)sqrt(nb) * elapsed_time.asSeconds(), (down - up ) * max_speed / (float)sqrt(nb) * elapsed_time.asSeconds()};
 }
 
 
@@ -155,7 +155,7 @@ sf::Vector2f Input_base<N>::move_joypad(float max_speed, const sf::Time& elapsed
 
             int nb = up + down + left + right;
 
-            return {(right - left) * max_speed / sqrt(nb) * elapsed_time.asSeconds(), (down - up ) * max_speed / sqrt(nb) * elapsed_time.asSeconds()};
+            return {(right - left) * max_speed / (float)sqrt(nb) * elapsed_time.asSeconds(), (down - up ) * max_speed / (float)sqrt(nb) * elapsed_time.asSeconds()};
         }
     }
 

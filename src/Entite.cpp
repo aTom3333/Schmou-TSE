@@ -25,6 +25,11 @@ Entite::~Entite()
         delete elem;
 }
 
+void Entite::afficher(sf::RenderWindow & window)
+{
+	window.draw(sprite_);
+}
+
 
 void Entite::move(const sf::Vector2f& delta)
 {

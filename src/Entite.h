@@ -20,6 +20,13 @@ class Entite
 	public:
 		virtual ~Entite();
 		const std::vector<sf::Shape*>& getForme() const { return forme_; }
+		/**
+		* @fn afficher
+		* @brief Affiche le sprite de l'entité
+		*
+		* Appelle la fonction afficher de la SFML sur les attributs de l'objet appelant.
+		* @param Fenetre SFML
+		*/
 		void afficher(sf::RenderWindow &window);
 
 		// Tranformation setters & getters

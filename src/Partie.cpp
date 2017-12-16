@@ -58,13 +58,7 @@ void Partie::testProjTest()
 			// Si la touche W est activé
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 			{
-				// Récupération position souris
-				/*
-				// récupération de la position de la souris dans la fenêtre
-				sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
-				// conversion en coordonnées "monde"
-				sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
-				*/
+				// Lance la compétance à la postion du vaisseau allié
 				sf::Vector2f worldPos = vaisseautest.getPosition();
 				attaques[attaqueEnCours]->utiliser(worldPos.x, worldPos.y);
 			}
@@ -85,6 +79,7 @@ void Partie::testProjTest()
 		// Efface l'écran
 		window_.clear();
 
+		// Gestion du vaisseau
         vaisseautest.move(input.move(vaisseautest.getvit(), t_ecoule));
 		vaisseautest.gestion(window_);
 
