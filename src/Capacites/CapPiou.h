@@ -6,12 +6,12 @@
 #include "../Projectiles/ProjPiou.h"
 
 /**
-* @class CapTest
-* @brief Classe Capacité de test
+* @class CapPiou
+* @brief Classe Capacité de base
 *
 * Capacité qui créé 1 ProjPiou à la postion du lanceur
 * Nom : Attaque Piou
-* Cooldown : 20
+* Cooldown : 100 ms
 */
 
 
@@ -47,7 +47,7 @@ public:
 	* @param projectile Vecteur de tout les projectiles présent à l'écran
 	* @param vaisseau Vaisseau qui a activé la compétance
 	*
-	* Créer 1 ProjTest à l'activation
+	* Créer 1 ProjPiou à l'activation
 	* Actualise le timer
 	*/
 	void actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau, float tempsEcoule);

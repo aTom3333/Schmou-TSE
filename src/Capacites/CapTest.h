@@ -11,7 +11,7 @@
 *
 * Capacité qui créé 4 ProjTest à la postion du lanceur
 * Nom : Attaque Test
-* Cooldown : 100
+* Cooldown : 1000 ms
 */
 
 class CapTest : public Capacite

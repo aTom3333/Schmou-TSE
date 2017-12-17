@@ -4,7 +4,7 @@
 #include "Projectile.h"
 
 /**
-* @class ProjTest
+* @class ProjPiou
 * @brief Projectile de test
 *
 * Projectile de base. Tire en ligne droite (vers le haut)
@@ -16,14 +16,14 @@ class ProjPiou : public Projectile
 {
 public:
 	/**
-	* @fn ProjTest
+	* @fn ProjPiou
 	* @brief Constructeur
 	*
 	* Vide
 	*/
 	ProjPiou();
 	/**
-	* @fn ProjTest
+	* @fn ProjPiou
 	* @brief Constructeur
 	* @param x Abscisse de la postion de départ du projectile
 	* @param y Ordonnée de la postion de départ du projectile
@@ -32,7 +32,7 @@ public:
 	*/
 	ProjPiou(int x, int y);
 	/**
-	* @fn ~ProjTest
+	* @fn ~ProjPiou
 	* @brief Destructeur
 	*
 	* Vide

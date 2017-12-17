@@ -6,12 +6,12 @@
 #include "../Projectiles/ProjTest.h"
 
 /**
-* @class CapTest
-* @brief Classe Capacité de test
+* @class CapDash
+* @brief Classe Capacité permettant de dash
 *
-* Capacité qui créé 1 ProjPiou à la postion du lanceur
+* Modifie la vitesse du vaisseau peandant quelques frames
 * Nom : Dash
-* Cooldown : 100
+* Cooldown : 500 ms
 */
 
 class CapDash : public Capacite
