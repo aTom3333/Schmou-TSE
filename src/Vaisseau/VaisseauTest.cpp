@@ -19,7 +19,7 @@ VaisseauTest::~VaisseauTest()///destructeur
 {
 }
 
-void VaisseauTest::gestion(sf::RenderWindow & window)
+void VaisseauTest::gestion(sf::RenderWindow & window, float tempsEcoule)
 {
 	afficher(window);
 }

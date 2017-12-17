@@ -22,6 +22,14 @@ class Vaisseau : public Entite
 		//structeurs
 			explicit Vaisseau();
             ~Vaisseau() override;
+			/**
+			* @fn gestion
+			* @brief Gère le comportement du vaisseau
+			* @param window Fenetre SFML où le vaisseau sera affiché
+			*
+			* Fonction virtuelle qui gère le comportement du vaisseau
+			*/
+			virtual void gestion(sf::RenderWindow & window, float tempsEcoule) = 0;
 
 		//setters
 			void setEquipe(int equipe); ///définit l'équipe (entier)

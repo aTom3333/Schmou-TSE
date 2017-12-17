@@ -1,10 +1,7 @@
 #include "Partie.h"
 #include "Projectiles/_projectiles.h"
 #include "Capacites/_Capacites.h"
-#include "Projectiles/ProjTest.h"
-#include "Vaisseau/VaisseauTest.h"
-
-
+#include "Vaisseau/_vaisseaux.h"
 
 
 Partie::Partie(sf::RenderWindow& window) : window_{window}, input(window)
@@ -27,6 +24,10 @@ void Partie::testProjTest()
 	std::vector<Projectile *> projectiles;
 	sf::Clock clock;
 	VaisseauTest vaisseautest;
+	VaisseauEclaireur vaiseauEclaireurL(0, 0, LINEAIRE, 0.5, 1);
+	VaisseauEclaireur vaiseauEclaireurP(1000, 0, PARABOLIQUE, 500, 500, -1);
+	VaisseauEclaireur vaiseauEclaireurS(1000, 0, SINUS, -0.7, 300, 100, -1);
+
 	sf::Text afficheAtk;
 	int attaqueEnCours = 0;
 
@@ -81,7 +82,12 @@ void Partie::testProjTest()
 
 		// Gestion du vaisseau
         vaisseautest.move(input.move(vaisseautest.getvit(), t_ecoule));
-		vaisseautest.gestion(window_);
+		vaisseautest.gestion(window_, t_ecoule.asMilliseconds());
+
+
+		vaiseauEclaireurP.gestion(window_, t_ecoule.asMilliseconds());
+		vaiseauEclaireurL.gestion(window_, t_ecoule.asMilliseconds());
+		vaiseauEclaireurS.gestion(window_, t_ecoule.asMilliseconds());
 
 		// Gestion des attaques
 		for(int i = 0; i < attaques.size(); i++)
@@ -136,7 +142,7 @@ void Partie::testVaisseauTest() {
 			window_.clear();
 
 		//code
-			vaisseautest.gestion(window_);
+			vaisseautest.gestion(window_, t_ecoule);
 
 		//maj fin de boucle
 			window_.display();

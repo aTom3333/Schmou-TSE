@@ -9,7 +9,7 @@ class VaisseauTest : public Vaisseau
 public:
 	VaisseauTest();
 	~VaisseauTest();
-	void gestion(sf::RenderWindow &window);
+	void gestion(sf::RenderWindow & window, float tempsEcoule);
 
 private:
 };
