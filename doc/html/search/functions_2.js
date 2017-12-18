@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['estdehors',['estDehors',['../class_entite.html#a8734ec47c87feb2b8b221bbf5d9ff2b4',1,'Entite']]]
+  ['estdedans',['estDedans',['../class_entite.html#a0861182f1af724c8b5fd70b30720fa04',1,'Entite']]],
+  ['estdehors',['estDehors',['../class_entite.html#a3e3abd5eac22335f388e6b31675319c1',1,'Entite']]]
 ];

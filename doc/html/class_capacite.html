@@ -80,8 +80,7 @@ $(function() {
 <div class="dynheader">
 Graphe d'héritage de Capacite:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_capacite__inherit__graph.svg" width="280" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_capacite__inherit__graph.svg" width="280" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -95,9 +94,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a6f5e6efda11f80ab8538e23f5bdc6e79"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a6f5e6efda11f80ab8538e23f5bdc6e79">utiliser</a> (int x, int y)=0</td></tr>
 <tr class="memdesc:a6f5e6efda11f80ab8538e23f5bdc6e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction virtuel qui active la capacite lorsqu'elle est appelée.  <a href="#a6f5e6efda11f80ab8538e23f5bdc6e79">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a6f5e6efda11f80ab8538e23f5bdc6e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a924214972f385ef409031bafc0f315b7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a924214972f385ef409031bafc0f315b7">actualiser</a> (std::vector&lt; <a class="el" href="class_projectile.html">Projectile</a> *&gt; &amp;projectiles, <a class="el" href="class_entite.html">Entite</a> *vaisseau, float tempsEcoule)=0</td></tr>
-<tr class="memdesc:a924214972f385ef409031bafc0f315b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction virtuel qui active les effets de la capacité  <a href="#a924214972f385ef409031bafc0f315b7">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a924214972f385ef409031bafc0f315b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75c9621d7a704fedb10ad29c6a697d64"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a75c9621d7a704fedb10ad29c6a697d64">actualiser</a> (std::vector&lt; <a class="el" href="class_projectile.html">Projectile</a> *&gt; &amp;projectiles, <a class="el" href="class_entite.html">Entite</a> &amp;vaisseau, float tempsEcoule)=0</td></tr>
+<tr class="memdesc:a75c9621d7a704fedb10ad29c6a697d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction virtuel qui active les effets de la capacité  <a href="#a75c9621d7a704fedb10ad29c6a697d64">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a75c9621d7a704fedb10ad29c6a697d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af07c1c3a2c9259a7eab270b3d8f867de"><td class="memItemLeft" align="right" valign="top">float const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#af07c1c3a2c9259a7eab270b3d8f867de">getCooldown</a> ()</td></tr>
 <tr class="separator:af07c1c3a2c9259a7eab270b3d8f867de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a963dd214cc53c76358b5326d9164884f"><td class="memItemLeft" align="right" valign="top">float const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a963dd214cc53c76358b5326d9164884f">getTime</a> ()</td></tr>
@@ -185,8 +184,8 @@ Attributs protégés</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a id="a924214972f385ef409031bafc0f315b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a924214972f385ef409031bafc0f315b7">&#9670;&nbsp;</a></span>actualiser()</h2>
+<a id="a75c9621d7a704fedb10ad29c6a697d64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75c9621d7a704fedb10ad29c6a697d64">&#9670;&nbsp;</a></span>actualiser()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,7 +202,7 @@ Attributs protégés</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_entite.html">Entite</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_entite.html">Entite</a> &amp;&#160;</td>
           <td class="paramname"><em>vaisseau</em>, </td>
         </tr>
         <tr>
@@ -236,7 +235,7 @@ Attributs protégés</h2></td></tr>
 </dl>
 <p>Fonction virtuel qui gère la création de projectiles et des modifications à apporter au vaisseau </p>
 
-<p>Implémenté dans <a class="el" href="class_cap_piou.html#ae15af0a5a261349ae8462f00b6cb0d5d">CapPiou</a>, <a class="el" href="class_cap_dash.html#ad4f99cef49151c1072a11af18852fa7b">CapDash</a>, et <a class="el" href="class_cap_test.html#af8e8fad88e1e4f0037eee576331d3238">CapTest</a>.</p>
+<p>Implémenté dans <a class="el" href="class_cap_test.html#a082e76e397a400b9c46e13e63ac7ef85">CapTest</a>, <a class="el" href="class_cap_dash.html#a23e3009b85288e7aadce2eb2b581fac0">CapDash</a>, et <a class="el" href="class_cap_piou.html#aede206c70e6697865a8d25e614f138c0">CapPiou</a>.</p>
 
 </div>
 </div>
@@ -359,7 +358,7 @@ Attributs protégés</h2></td></tr>
 </dl>
 <p>Fonction virtuel qui initialise la postion de départ et le timer </p>
 
-<p>Implémenté dans <a class="el" href="class_cap_piou.html#a92f5cc3011280ad13bf3ff5e6a3c76ea">CapPiou</a>, <a class="el" href="class_cap_dash.html#a82823122659ff5a87a09e9ddf0e3dabb">CapDash</a>, et <a class="el" href="class_cap_test.html#a9c85a17dec6cf78f1438b08b175f650d">CapTest</a>.</p>
+<p>Implémenté dans <a class="el" href="class_cap_test.html#a9c85a17dec6cf78f1438b08b175f650d">CapTest</a>, <a class="el" href="class_cap_piou.html#a92f5cc3011280ad13bf3ff5e6a3c76ea">CapPiou</a>, et <a class="el" href="class_cap_dash.html#a8a0fe26c8b13d8a9f6cf5a95d6559f3d">CapDash</a>.</p>
 
 </div>
 </div>

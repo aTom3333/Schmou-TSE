@@ -81,7 +81,7 @@ $(function() {
 <div class="dynheader">
 Graphe d'héritage de Entite:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_entite__inherit__graph.svg" width="303" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_entite__inherit__graph.svg" width="454" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -89,8 +89,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a8084762a25afbfbcdca31121a3dfcd87"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8084762a25afbfbcdca31121a3dfcd87">~Entite</a> ()=default</td></tr>
 <tr class="memdesc:a8084762a25afbfbcdca31121a3dfcd87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur par défaut.  <a href="#a8084762a25afbfbcdca31121a3dfcd87">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8084762a25afbfbcdca31121a3dfcd87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae01177a102251100c96e2060372627ad"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::unique_ptr&lt; sf::Shape &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ae01177a102251100c96e2060372627ad">getForme</a> () const</td></tr>
-<tr class="separator:ae01177a102251100c96e2060372627ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7314f276ea1808e98cfd8b7d0e900c8"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::unique_ptr&lt; sf::Shape &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ad7314f276ea1808e98cfd8b7d0e900c8">getForme</a> () const</td></tr>
+<tr class="memdesc:ad7314f276ea1808e98cfd8b7d0e900c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la forme de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#ad7314f276ea1808e98cfd8b7d0e900c8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad7314f276ea1808e98cfd8b7d0e900c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91874d7e87f6cb479a3893fbedc6a4e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a91874d7e87f6cb479a3893fbedc6a4e3">afficher</a> (sf::RenderWindow &amp;window, bool debug=false) const</td></tr>
 <tr class="memdesc:a91874d7e87f6cb479a3893fbedc6a4e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le sprite de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#a91874d7e87f6cb479a3893fbedc6a4e3">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a91874d7e87f6cb479a3893fbedc6a4e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,35 +122,47 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a5f70868f62049291edf4b245a531a6e0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a5f70868f62049291edf4b245a531a6e0">getScale</a> () const</td></tr>
 <tr class="memdesc:a5f70868f62049291edf4b245a531a6e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'échelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#a5f70868f62049291edf4b245a531a6e0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5f70868f62049291edf4b245a531a6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8734ec47c87feb2b8b221bbf5d9ff2b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8734ec47c87feb2b8b221bbf5d9ff2b4">estDehors</a> () const</td></tr>
-<tr class="separator:a8734ec47c87feb2b8b221bbf5d9ff2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88c148848289e34ca3bc991c37db9b44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a88c148848289e34ca3bc991c37db9b44">changeSpeed</a> (int val)</td></tr>
-<tr class="separator:a88c148848289e34ca3bc991c37db9b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e3abd5eac22335f388e6b31675319c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a3e3abd5eac22335f388e6b31675319c1">estDehors</a> (float x_min=0, float y_min=0, float x_max=<a class="el" href="constantes_8h.html#a078285dfdd5f8d9caa79aeb3f4eb0a1f">ECRAN_L</a>, float y_max=<a class="el" href="constantes_8h.html#a75c426da06c2ec9164baaf36a262fa07">ECRAN_H</a>) const</td></tr>
+<tr class="memdesc:a3e3abd5eac22335f388e6b31675319c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teste si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> est hors d'une zone, par défaut l'écran.  <a href="#a3e3abd5eac22335f388e6b31675319c1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3e3abd5eac22335f388e6b31675319c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0861182f1af724c8b5fd70b30720fa04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a0861182f1af724c8b5fd70b30720fa04">estDedans</a> (float x_min=0, float y_min=0, float x_max=<a class="el" href="constantes_8h.html#a078285dfdd5f8d9caa79aeb3f4eb0a1f">ECRAN_L</a>, float y_max=<a class="el" href="constantes_8h.html#a75c426da06c2ec9164baaf36a262fa07">ECRAN_H</a>) const</td></tr>
+<tr class="memdesc:a0861182f1af724c8b5fd70b30720fa04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teste si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> est dans une zone, par défaut l'écran.  <a href="#a0861182f1af724c8b5fd70b30720fa04">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0861182f1af724c8b5fd70b30720fa04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd20483e4d51bc7ebb0eb58bb4366757"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#abd20483e4d51bc7ebb0eb58bb4366757">changeSpeed</a> (int val)</td></tr>
+<tr class="memdesc:abd20483e4d51bc7ebb0eb58bb4366757"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change la vitesse de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> en ajoutant à la vitesse actuelle une certaine valeur.  <a href="#abd20483e4d51bc7ebb0eb58bb4366757">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abd20483e4d51bc7ebb0eb58bb4366757"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
 <tr class="memitem:a37bb9bd568e9e1c904eaa83ec49a2b16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a37bb9bd568e9e1c904eaa83ec49a2b16">collisionable_</a> = true</td></tr>
-<tr class="memdesc:a37bb9bd568e9e1c904eaa83ec49a2b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booléen vrai si collisionnable.  <a href="#a37bb9bd568e9e1c904eaa83ec49a2b16">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a37bb9bd568e9e1c904eaa83ec49a2b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booléen vrai si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> est collisionnable.  <a href="#a37bb9bd568e9e1c904eaa83ec49a2b16">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a37bb9bd568e9e1c904eaa83ec49a2b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86f42758a3e4672052331b7a4daa10b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a86f42758a3e4672052331b7a4daa10b5">equipe_</a></td></tr>
-<tr class="memdesc:a86f42758a3e4672052331b7a4daa10b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">numéro d'équipe  <a href="#a86f42758a3e4672052331b7a4daa10b5">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a86f42758a3e4672052331b7a4daa10b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifaiant de l'équipe d' l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#a86f42758a3e4672052331b7a4daa10b5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a86f42758a3e4672052331b7a4daa10b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbd554c4f122159a73cb113cc8de3860"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#abbd554c4f122159a73cb113cc8de3860">position_</a></td></tr>
+<tr class="memdesc:abbd554c4f122159a73cb113cc8de3860"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#abbd554c4f122159a73cb113cc8de3860">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abbd554c4f122159a73cb113cc8de3860"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d6dc6bfcee492337b7422f12b393141"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a2d6dc6bfcee492337b7422f12b393141">angle_</a></td></tr>
+<tr class="memdesc:a2d6dc6bfcee492337b7422f12b393141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orientation actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#a2d6dc6bfcee492337b7422f12b393141">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2d6dc6bfcee492337b7422f12b393141"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50e0f8c1188d9833432c55c7f7d2aa0f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a50e0f8c1188d9833432c55c7f7d2aa0f">scale_</a></td></tr>
+<tr class="memdesc:a50e0f8c1188d9833432c55c7f7d2aa0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Échelle actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#a50e0f8c1188d9833432c55c7f7d2aa0f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a50e0f8c1188d9833432c55c7f7d2aa0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b6c62e4dc54221a84ce4dc824fdb2da"><td class="memItemLeft" align="right" valign="top">sf::CircleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a5b6c62e4dc54221a84ce4dc824fdb2da">cercleEnglobant_</a></td></tr>
+<tr class="memdesc:a5b6c62e4dc54221a84ce4dc824fdb2da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cercle Englobant de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#a5b6c62e4dc54221a84ce4dc824fdb2da">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5b6c62e4dc54221a84ce4dc824fdb2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6bbda9a40f701f273c344406a6f5122"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; sf::Shape &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#aa6bbda9a40f701f273c344406a6f5122">forme_</a></td></tr>
+<tr class="memdesc:aa6bbda9a40f701f273c344406a6f5122"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forme de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#aa6bbda9a40f701f273c344406a6f5122">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa6bbda9a40f701f273c344406a6f5122"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8147b9459318a9b1de1b72dce115680a"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8147b9459318a9b1de1b72dce115680a">texture_</a></td></tr>
+<tr class="memdesc:a8147b9459318a9b1de1b72dce115680a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture du sprite de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#a8147b9459318a9b1de1b72dce115680a">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8147b9459318a9b1de1b72dce115680a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ab7c03b6fe5c4f1d08cd3e4304e0ef7c0">sprite_</a></td></tr>
+<tr class="memdesc:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#ab7c03b6fe5c4f1d08cd3e4304e0ef7c0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62c3145096f707457d60306ea6729ed6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a62c3145096f707457d60306ea6729ed6">vit_</a></td></tr>
-<tr class="memdesc:a62c3145096f707457d60306ea6729ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse actuelle.  <a href="#a62c3145096f707457d60306ea6729ed6">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a62c3145096f707457d60306ea6729ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#a62c3145096f707457d60306ea6729ed6">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a62c3145096f707457d60306ea6729ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -228,14 +241,14 @@ Amis</h2></td></tr>
 
 </div>
 </div>
-<a id="a88c148848289e34ca3bc991c37db9b44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88c148848289e34ca3bc991c37db9b44">&#9670;&nbsp;</a></span>changeSpeed()</h2>
+<a id="abd20483e4d51bc7ebb0eb58bb4366757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd20483e4d51bc7ebb0eb58bb4366757">&#9670;&nbsp;</a></span>changeSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Entite::changeSpeed </td>
+          <td class="memname">Entite::changeSpeed </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>val</em></td><td>)</td>
@@ -244,27 +257,122 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Change la vitesse de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> en ajoutant à la vitesse actuelle une certaine valeur. </p>
+<p>Cette fonction permet de modifier la vitesse de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> appelante en ajoutant à la vitesse actuelle la valeur passée en paramètre. Cette dernière peut être négative pour diminuer la vitesse. La vitesse ésultante peut également être négative, cela résultera en un mouvement en miroir </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>La valeur à ajouter à la vitesse actuelle </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a8734ec47c87feb2b8b221bbf5d9ff2b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8734ec47c87feb2b8b221bbf5d9ff2b4">&#9670;&nbsp;</a></span>estDehors()</h2>
+<a id="a0861182f1af724c8b5fd70b30720fa04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0861182f1af724c8b5fd70b30720fa04">&#9670;&nbsp;</a></span>estDedans()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Entite::estDehors </td>
+          <td class="memname">Entite::estDedans </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x_min</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y_min</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x_max</em> = <code><a class="el" href="constantes_8h.html#a078285dfdd5f8d9caa79aeb3f4eb0a1f">ECRAN_L</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y_max</em> = <code><a class="el" href="constantes_8h.html#a75c426da06c2ec9164baaf36a262fa07">ECRAN_H</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Teste si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> est dans une zone, par défaut l'écran. </p>
+<p>Cette fonction permet de tester si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> se trouve dans une zone rectangulaire délimitée par x_min, y_min, x_max, y_max qui vallent par défaut les dimensions de l'écran. La détection est grossière, le test est fait de savoir si le carré de côté deux fois le rayon du cercle englobant est complétement compris dans la zone à tester </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x_min</td><td>L'abscisse minimale de la zone à tester, par défaut 0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y_min</td><td>L'ordonnée minimale de la zone à tester, par défaut 0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x_max</td><td>L'abscisse maximale de la zone à tester, par défaut la largeur de la fenêtre </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y_max</td><td>L'ordonnée maximale de la zone à tester, par défaut la hauteur de la fenêtre </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un <code>bool</code> qui vaut <em>true</em> si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> se trouve dans la zone à tester et <em>false</em> sinon </dd></dl>
+
 </div>
 </div>
-<a id="ae01177a102251100c96e2060372627ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae01177a102251100c96e2060372627ad">&#9670;&nbsp;</a></span>getForme()</h2>
+<a id="a3e3abd5eac22335f388e6b31675319c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e3abd5eac22335f388e6b31675319c1">&#9670;&nbsp;</a></span>estDehors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Entite::estDehors </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x_min</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y_min</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x_max</em> = <code><a class="el" href="constantes_8h.html#a078285dfdd5f8d9caa79aeb3f4eb0a1f">ECRAN_L</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y_max</em> = <code><a class="el" href="constantes_8h.html#a75c426da06c2ec9164baaf36a262fa07">ECRAN_H</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Teste si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> est hors d'une zone, par défaut l'écran. </p>
+<p>Cette fonction permet de tester si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> se trouve hors d'une zone rectangulaire délimitée par x_min, y_min, x_max, y_max qui vallent par défaut les dimensions de l'écran. La détection est grossière, le test est fait de savoir si le carré de côté deux fois le rayon du cercle englobant est complétement compris hors de la zone à tester </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x_min</td><td>L'abscisse minimale de la zone à tester, par défaut 0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y_min</td><td>L'ordonnée minimale de la zone à tester, par défaut 0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x_max</td><td>L'abscisse maximale de la zone à tester, par défaut la largeur de la fenêtre </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y_max</td><td>L'ordonnée maximale de la zone à tester, par défaut la hauteur de la fenêtre </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un <code>bool</code> qui vaut <em>true</em> si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> se trouve hors de la zone à tester et <em>false</em> sinon </dd></dl>
+
+</div>
+</div>
+<a id="ad7314f276ea1808e98cfd8b7d0e900c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7314f276ea1808e98cfd8b7d0e900c8">&#9670;&nbsp;</a></span>getForme()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -273,7 +381,7 @@ Amis</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt;std::unique_ptr&lt;sf::Shape&gt; &gt;&amp; Entite::getForme </td>
+          <td class="memname">Entite::getForme </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -285,6 +393,9 @@ Amis</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Renvoie la forme de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
+<p>Cette fonction renvoie la forme de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> appelante. Cette forme se présente comme un <code>std::vector</code> de pointeur (intelligents, des <code>std::unique_ptr</code>) vers des <code>sf::Shape</code> car la forme totale de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> est la juxtaposition de plusieurs formes plus simples représentées par les <code>sf::Shape</code> indiviuelles </p><dl class="section return"><dt>Renvoie</dt><dd>Un <code>std::vector&lt;std::unique_ptr&lt;sf::Shape&gt;&gt;</code> qui représente la forme de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> </dd></dl>
 
 </div>
 </div>
@@ -572,6 +683,8 @@ Amis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Orientation actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
+
 </div>
 </div>
 <a id="a5b6c62e4dc54221a84ce4dc824fdb2da"></a>
@@ -593,6 +706,8 @@ Amis</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Cercle Englobant de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
 
 </div>
 </div>
@@ -616,7 +731,7 @@ Amis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Booléen vrai si collisionnable. </p>
+<p>Booléen vrai si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> est collisionnable. </p>
 
 </div>
 </div>
@@ -640,7 +755,7 @@ Amis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>numéro d'équipe </p>
+<p>Identifaiant de l'équipe d' l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
 
 </div>
 </div>
@@ -664,6 +779,8 @@ Amis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Forme de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
+
 </div>
 </div>
 <a id="abbd554c4f122159a73cb113cc8de3860"></a>
@@ -685,6 +802,8 @@ Amis</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Position actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
 
 </div>
 </div>
@@ -708,6 +827,8 @@ Amis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Échelle actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
+
 </div>
 </div>
 <a id="ab7c03b6fe5c4f1d08cd3e4304e0ef7c0"></a>
@@ -729,6 +850,8 @@ Amis</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sprite de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
 
 </div>
 </div>
@@ -752,6 +875,8 @@ Amis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Texture du sprite de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
+
 </div>
 </div>
 <a id="a62c3145096f707457d60306ea6729ed6"></a>
@@ -774,7 +899,7 @@ Amis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Vitesse actuelle. </p>
+<p>Vitesse actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
 
 </div>
 </div>

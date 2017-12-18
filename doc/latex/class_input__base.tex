@@ -11,14 +11,18 @@ enum \hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6}{Media} \{ \
 \hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6ad17c22e217179fc5626be9b94f1f18fa}{Media\+::\+Joypad}, 
 \hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6af2a47c6809d88e175dade0ef7b16aa13}{Media\+::\+Mouse}, 
 \hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6a588711541a203a16bbc517f3f73ef7c8}{Media\+::\+Touchscreen}
- \}
+ \}\begin{DoxyCompactList}\small\item\em Énumération qui contient les types d\textquotesingle{}entrées supportées. \end{DoxyCompactList}
 \end{DoxyCompactItemize}
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-sf\+::\+Vector2f \hyperlink{class_input__base_a157b2510537e9f9ee1c29726456541e4}{move} (float max\+\_\+speed, const sf\+::\+Time \&elapsed\+\_\+time)
-\item 
+sf\+::\+Vector2f \hyperlink{class_input__base_a61bba67b702dfd77db2091409ab1d20b}{move} (float max\+\_\+speed, const sf\+::\+Time \&elapsed\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Renvoie le déplacement que l\textquotesingle{}état des entrées induit. \end{DoxyCompactList}\item 
 \hyperlink{class_input__base_a4e1efd96da3e870a9b2f6613b99e6c00}{Input\+\_\+base} (const sf\+::\+Render\+Window \&w, \hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6}{Media} m=\hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6a6ce4d85a628a88bbdb3ac24a8e5a9c2e}{Media\+::\+Keyboard})
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{class_input__base}{Input\+\_\+base}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t M$>$ }\\bool \hyperlink{class_input__base_a48b1df2773bd0bea3c547332f2337af6}{action} () const
+\item 
+bool \hyperlink{class_input__base_ab525fda1b2cc71094d8c0940c80cba27}{action} (size\+\_\+t n) const
 \end{DoxyCompactItemize}
 
 
@@ -30,7 +34,11 @@ sf\+::\+Vector2f \hyperlink{class_input__base_a157b2510537e9f9ee1c29726456541e4}
 {\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
 enum \hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6}{Input\+\_\+base\+::\+Media}\hspace{0.3cm}{\ttfamily [strong]}}
 
-\begin{DoxyEnumFields}{Valeurs énumérées}
+
+
+Énumération qui contient les types d\textquotesingle{}entrées supportées. 
+
+Cette énumération contient 4 valeurs qui représentent les 4 types de média qui sont supportés pour les entrées \begin{DoxyEnumFields}{Valeurs énumérées}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Keyboard@{Keyboard}!Input\+\_\+base@{Input\+\_\+base}}\index{Input\+\_\+base@{Input\+\_\+base}!Keyboard@{Keyboard}}}\mbox{\Hypertarget{class_input__base_a455585e7933485981b3d7bfcad3a47c6a6ce4d85a628a88bbdb3ac24a8e5a9c2e}\label{class_input__base_a455585e7933485981b3d7bfcad3a47c6a6ce4d85a628a88bbdb3ac24a8e5a9c2e}} 
 Keyboard&\\
 \hline
@@ -60,14 +68,54 @@ Touchscreen&\\
 
 
 
+Constructeur de \hyperlink{class_input__base}{Input\+\_\+base}. 
+
+Constructeur qui initialise l\textquotesingle{}état de l\textquotesingle{}objet 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in}  & {\em w} & Une référence vers une sf\+::\+Render\+Window qui permet de récupérer des informations sur ses entrées \\
+\hline
+\mbox{\tt in}  & {\em m} & Le type de Media à utiliser pour toutes les actions par défaut \\
+\hline
+\end{DoxyParams}
+
+
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_input__base_a157b2510537e9f9ee1c29726456541e4}\label{class_input__base_a157b2510537e9f9ee1c29726456541e4}} 
+\mbox{\Hypertarget{class_input__base_a48b1df2773bd0bea3c547332f2337af6}\label{class_input__base_a48b1df2773bd0bea3c547332f2337af6}} 
+\index{Input\+\_\+base@{Input\+\_\+base}!action@{action}}
+\index{action@{action}!Input\+\_\+base@{Input\+\_\+base}}
+\subsubsection{\texorpdfstring{action()}{action()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+template$<$size\+\_\+t M$>$ \\
+bool \hyperlink{class_input__base}{Input\+\_\+base}$<$ N $>$\+::action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_input__base_ab525fda1b2cc71094d8c0940c80cba27}\label{class_input__base_ab525fda1b2cc71094d8c0940c80cba27}} 
+\index{Input\+\_\+base@{Input\+\_\+base}!action@{action}}
+\index{action@{action}!Input\+\_\+base@{Input\+\_\+base}}
+\subsubsection{\texorpdfstring{action()}{action()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+bool \hyperlink{class_input__base}{Input\+\_\+base}$<$ N $>$\+::action (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_input__base_a61bba67b702dfd77db2091409ab1d20b}\label{class_input__base_a61bba67b702dfd77db2091409ab1d20b}} 
 \index{Input\+\_\+base@{Input\+\_\+base}!move@{move}}
 \index{move@{move}!Input\+\_\+base@{Input\+\_\+base}}
 \subsubsection{\texorpdfstring{move()}{move()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
-sf\+::\+Vector2f \hyperlink{class_input__base}{Input\+\_\+base}$<$ N $>$\+::move (\begin{DoxyParamCaption}\item[{float}]{max\+\_\+speed,  }\item[{const sf\+::\+Time \&}]{elapsed\+\_\+time }\end{DoxyParamCaption})}
+\hyperlink{class_input__base}{Input\+\_\+base}$<$ N $>$\+::move (\begin{DoxyParamCaption}\item[{float}]{max\+\_\+speed,  }\item[{const sf\+::\+Time \&}]{elapsed\+\_\+time }\end{DoxyParamCaption})}
 
+
+
+Renvoie le déplacement que l\textquotesingle{}état des entrées induit. 
+
+Cette fonction permet de calculer le déplacement qui doit être effectué sur le vaissea d\textquotesingle{}un joueur (ou sur autre chose) en fonction de l\textquotesingle{}état des entrées, du temps écoulé et de la vitesse maximale donnée. Cette fonction appelle des spécialisation de la fonction pour chaque Media 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in}  & {\em max\+\_\+speed} & La vitesse maximale autorisée en pixel/s \\
+\hline
+\mbox{\tt in}  & {\em elapsed\+\_\+time} & Temps écoulé qui doit être utilisé pour le calcul de la distance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un {\ttfamily sf\+::\+Vector2f} qui contient le déplacement qui doit être effectué sur les deux axes 
+\end{DoxyReturn}
 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}

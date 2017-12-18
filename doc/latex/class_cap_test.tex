@@ -36,7 +36,7 @@ Graphe de collaboration de Cap\+Test\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 void \hyperlink{class_cap_test_a9c85a17dec6cf78f1438b08b175f650d}{utiliser} (int x, int y)
 \begin{DoxyCompactList}\small\item\em Active la capacite. \end{DoxyCompactList}\item 
-void \hyperlink{class_cap_test_af8e8fad88e1e4f0037eee576331d3238}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} $\ast$vaisseau, float temps\+Ecoule)
+void \hyperlink{class_cap_test_a082e76e397a400b9c46e13e63ac7ef85}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} \&vaisseau, float temps\+Ecoule)
 \begin{DoxyCompactList}\small\item\em Active les effets de la capacité \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres hérités additionnels}
 
@@ -44,11 +44,7 @@ void \hyperlink{class_cap_test_af8e8fad88e1e4f0037eee576331d3238}{actualiser} (s
 \subsection{Description détaillée}
 Classe Capacité de test. 
 
-Capacité qui créé 1 \hyperlink{class_proj_piou}{Proj\+Piou} à la postion du lanceur Nom \+: Dash Cooldown \+: 100
-
-Capacité qui créé 1 \hyperlink{class_proj_piou}{Proj\+Piou} à la postion du lanceur Nom \+: Attaque Piou Cooldown \+: 20
-
-Capacité qui créé 4 \hyperlink{class_proj_test}{Proj\+Test} à la postion du lanceur Nom \+: Attaque Test Cooldown \+: 100 
+Capacité qui créé 4 \hyperlink{class_proj_test}{Proj\+Test} à la postion du lanceur Nom \+: Attaque Test Cooldown \+: 1000 ms 
 
 \subsection{Documentation des constructeurs et destructeur}
 \mbox{\Hypertarget{class_cap_test_a5f6d4b172a6a40f974b3f7414e3f06e5}\label{class_cap_test_a5f6d4b172a6a40f974b3f7414e3f06e5}} 
@@ -74,11 +70,11 @@ Destructeur.
 Vide 
 
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_cap_test_af8e8fad88e1e4f0037eee576331d3238}\label{class_cap_test_af8e8fad88e1e4f0037eee576331d3238}} 
+\mbox{\Hypertarget{class_cap_test_a082e76e397a400b9c46e13e63ac7ef85}\label{class_cap_test_a082e76e397a400b9c46e13e63ac7ef85}} 
 \index{Cap\+Test@{Cap\+Test}!actualiser@{actualiser}}
 \index{actualiser@{actualiser}!Cap\+Test@{Cap\+Test}}
 \subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
-{\footnotesize\ttfamily Cap\+Test\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} $\ast$}]{vaisseau,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Cap\+Test\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} \&}]{vaisseau,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -93,7 +89,7 @@ Active les effets de la capacité
 \end{DoxyParams}
 Créer 4 \hyperlink{class_proj_test}{Proj\+Test} toutes les 5 frames Actualise le timer 
 
-Implémente \hyperlink{class_capacite_a924214972f385ef409031bafc0f315b7}{Capacite}.
+Implémente \hyperlink{class_capacite_a75c9621d7a704fedb10ad29c6a697d64}{Capacite}.
 
 \mbox{\Hypertarget{class_cap_test_a9c85a17dec6cf78f1438b08b175f650d}\label{class_cap_test_a9c85a17dec6cf78f1438b08b175f650d}} 
 \index{Cap\+Test@{Cap\+Test}!utiliser@{utiliser}}

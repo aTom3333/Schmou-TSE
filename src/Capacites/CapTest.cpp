@@ -16,29 +16,29 @@ CapTest::~CapTest()
 
 void CapTest::utiliser(int x, int y)
 {
-	// Si la compétence est disponible
+	// Si la compï¿½tence est disponible
 	if (t_ >= cooldown_)
 	{
-		// Début du timer
+		// Dï¿½but du timer
 		t_ = 0;
 		frames_ = 0;
-		// Initialisation de l'endroit ou la compétence à été utilisée
+		// Initialisation de l'endroit ou la compï¿½tence ï¿½ ï¿½tï¿½ utilisï¿½e
 		debutX_ = x;
 		debutY_ = y;
 	}
 }
 
-void CapTest::actualiser(std::vector<Projectile*>& projectiles, Entite * vaisseau, float tempsEcoule)
+void CapTest::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule)
 {
-	// Pour avoir la création des 4 projectile toute les 5 frames
+	// Pour avoir la crï¿½ation des 4 projectile toute les 5 frames
 	if (frames_ < 20 && frames_ % 5 == 0)
 	{
-		// Création d'un nouveau projectile
+		// Crï¿½ation d'un nouveau projectile
 		ProjTest *temp = new ProjTest(debutX_, debutY_);
 		projectiles.push_back(temp);
 	}
 
-	// Si la compétance est en cooldown, on actualise le timer
+	// Si la compï¿½tance est en cooldown, on actualise le timer
 	if (t_ < cooldown_)
 	{
 		t_ += tempsEcoule;

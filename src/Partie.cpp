@@ -4,7 +4,7 @@
 #include "Vaisseau/_vaisseaux.h"
 
 
-Partie::Partie(sf::RenderWindow& window) : window_{window}, input(window)
+Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window)
 {
 	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
 	{
@@ -57,14 +57,14 @@ void Partie::testProjTest()
 				window_.close();
 
 			// Si la touche W est activé
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+			if (input_.action(0))
 			{
 				// Lance la compétance à la postion du vaisseau allié
 				sf::Vector2f worldPos = vaisseautest.getPosition();
 				attaques[attaqueEnCours]->utiliser(worldPos.x, worldPos.y);
 			}
 			// Si la touche X est activé
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+			if (input_.action(1))
 			{
 				// Changement d'attaque
 				attaqueEnCours++;
@@ -81,7 +81,7 @@ void Partie::testProjTest()
 		window_.clear();
 
 		// Gestion du vaisseau
-        vaisseautest.move(input.move(vaisseautest.getvit(), t_ecoule));
+        vaisseautest.move(input_.move(vaisseautest.getvit(), t_ecoule));
 		vaisseautest.gestion(window_, t_ecoule.asMilliseconds());
 
 
@@ -91,7 +91,7 @@ void Partie::testProjTest()
 
 		// Gestion des attaques
 		for(int i = 0; i < attaques.size(); i++)
-			attaques[i]->actualiser(projectiles, &vaisseautest, t_ecoule.asMilliseconds());
+			attaques[i]->actualiser(projectiles, vaisseautest, t_ecoule.asMilliseconds());
 
 		// Gestion des projectiles
 		for(int i = 0; i < projectiles.size(); i++)

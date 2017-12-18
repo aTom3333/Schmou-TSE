@@ -69,7 +69,7 @@ $(function() {
 <a href="#pro-attribs">Attributs protégés</a> &#124;
 <a href="class_vaisseau-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
-<div class="title">Référence de la classe Vaisseau</div>  </div>
+<div class="title">Référence de la classe Vaisseau<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -80,7 +80,7 @@ $(function() {
 <div class="dynheader">
 Graphe d'héritage de Vaisseau:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_vaisseau__inherit__graph.svg" width="114" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_vaisseau__inherit__graph.svg" width="264" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <div class="dynheader">
 Graphe de collaboration de Vaisseau:</div>
@@ -96,6 +96,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a3360bd62af7a7aaf5732b86d639a0674"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a3360bd62af7a7aaf5732b86d639a0674">~Vaisseau</a> () override</td></tr>
 <tr class="memdesc:a3360bd62af7a7aaf5732b86d639a0674"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructeur  <a href="#a3360bd62af7a7aaf5732b86d639a0674">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3360bd62af7a7aaf5732b86d639a0674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98c129568d478586684b1769fe465803"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a98c129568d478586684b1769fe465803">gestion</a> (sf::RenderWindow &amp;window, float tempsEcoule)=0</td></tr>
+<tr class="memdesc:a98c129568d478586684b1769fe465803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère le comportement du vaisseau.  <a href="#a98c129568d478586684b1769fe465803">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a98c129568d478586684b1769fe465803"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b3edda1f99d55cb5c0c7cbafe156af6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a1b3edda1f99d55cb5c0c7cbafe156af6">setEquipe</a> (int equipe)</td></tr>
 <tr class="separator:a1b3edda1f99d55cb5c0c7cbafe156af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04d7069231187e7dba26a06a0aaf2508"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a04d7069231187e7dba26a06a0aaf2508">addCapacite</a> (<a class="el" href="class_capacite.html">Capacite</a> *skill)</td></tr>
@@ -148,8 +151,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a8084762a25afbfbcdca31121a3dfcd87 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8084762a25afbfbcdca31121a3dfcd87">~Entite</a> ()=default</td></tr>
 <tr class="memdesc:a8084762a25afbfbcdca31121a3dfcd87 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur par défaut.  <a href="class_entite.html#a8084762a25afbfbcdca31121a3dfcd87">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8084762a25afbfbcdca31121a3dfcd87 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae01177a102251100c96e2060372627ad inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::unique_ptr&lt; sf::Shape &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ae01177a102251100c96e2060372627ad">getForme</a> () const</td></tr>
-<tr class="separator:ae01177a102251100c96e2060372627ad inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7314f276ea1808e98cfd8b7d0e900c8 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::unique_ptr&lt; sf::Shape &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ad7314f276ea1808e98cfd8b7d0e900c8">getForme</a> () const</td></tr>
+<tr class="memdesc:ad7314f276ea1808e98cfd8b7d0e900c8 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la forme de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#ad7314f276ea1808e98cfd8b7d0e900c8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad7314f276ea1808e98cfd8b7d0e900c8 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91874d7e87f6cb479a3893fbedc6a4e3 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a91874d7e87f6cb479a3893fbedc6a4e3">afficher</a> (sf::RenderWindow &amp;window, bool debug=false) const</td></tr>
 <tr class="memdesc:a91874d7e87f6cb479a3893fbedc6a4e3 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le sprite de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a91874d7e87f6cb479a3893fbedc6a4e3">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a91874d7e87f6cb479a3893fbedc6a4e3 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,10 +184,15 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a5f70868f62049291edf4b245a531a6e0 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a5f70868f62049291edf4b245a531a6e0">getScale</a> () const</td></tr>
 <tr class="memdesc:a5f70868f62049291edf4b245a531a6e0 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'échelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a5f70868f62049291edf4b245a531a6e0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5f70868f62049291edf4b245a531a6e0 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8734ec47c87feb2b8b221bbf5d9ff2b4 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8734ec47c87feb2b8b221bbf5d9ff2b4">estDehors</a> () const</td></tr>
-<tr class="separator:a8734ec47c87feb2b8b221bbf5d9ff2b4 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88c148848289e34ca3bc991c37db9b44 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a88c148848289e34ca3bc991c37db9b44">changeSpeed</a> (int val)</td></tr>
-<tr class="separator:a88c148848289e34ca3bc991c37db9b44 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e3abd5eac22335f388e6b31675319c1 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a3e3abd5eac22335f388e6b31675319c1">estDehors</a> (float x_min=0, float y_min=0, float x_max=<a class="el" href="constantes_8h.html#a078285dfdd5f8d9caa79aeb3f4eb0a1f">ECRAN_L</a>, float y_max=<a class="el" href="constantes_8h.html#a75c426da06c2ec9164baaf36a262fa07">ECRAN_H</a>) const</td></tr>
+<tr class="memdesc:a3e3abd5eac22335f388e6b31675319c1 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teste si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> est hors d'une zone, par défaut l'écran.  <a href="class_entite.html#a3e3abd5eac22335f388e6b31675319c1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3e3abd5eac22335f388e6b31675319c1 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0861182f1af724c8b5fd70b30720fa04 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a0861182f1af724c8b5fd70b30720fa04">estDedans</a> (float x_min=0, float y_min=0, float x_max=<a class="el" href="constantes_8h.html#a078285dfdd5f8d9caa79aeb3f4eb0a1f">ECRAN_L</a>, float y_max=<a class="el" href="constantes_8h.html#a75c426da06c2ec9164baaf36a262fa07">ECRAN_H</a>) const</td></tr>
+<tr class="memdesc:a0861182f1af724c8b5fd70b30720fa04 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teste si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> est dans une zone, par défaut l'écran.  <a href="class_entite.html#a0861182f1af724c8b5fd70b30720fa04">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0861182f1af724c8b5fd70b30720fa04 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd20483e4d51bc7ebb0eb58bb4366757 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#abd20483e4d51bc7ebb0eb58bb4366757">changeSpeed</a> (int val)</td></tr>
+<tr class="memdesc:abd20483e4d51bc7ebb0eb58bb4366757 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change la vitesse de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> en ajoutant à la vitesse actuelle une certaine valeur.  <a href="class_entite.html#abd20483e4d51bc7ebb0eb58bb4366757">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abd20483e4d51bc7ebb0eb58bb4366757 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
@@ -218,27 +227,34 @@ Attributs protégés</h2></td></tr>
 <tr class="separator:a7fccd409e1f27f968bbe3f8ee1ded206"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_entite"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_entite')"><img src="closed.png" alt="-"/>&#160;Attributs protégés hérités de <a class="el" href="class_entite.html">Entite</a></td></tr>
 <tr class="memitem:a37bb9bd568e9e1c904eaa83ec49a2b16 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a37bb9bd568e9e1c904eaa83ec49a2b16">collisionable_</a> = true</td></tr>
-<tr class="memdesc:a37bb9bd568e9e1c904eaa83ec49a2b16 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booléen vrai si collisionnable.  <a href="class_entite.html#a37bb9bd568e9e1c904eaa83ec49a2b16">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a37bb9bd568e9e1c904eaa83ec49a2b16 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booléen vrai si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> est collisionnable.  <a href="class_entite.html#a37bb9bd568e9e1c904eaa83ec49a2b16">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a37bb9bd568e9e1c904eaa83ec49a2b16 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86f42758a3e4672052331b7a4daa10b5 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a86f42758a3e4672052331b7a4daa10b5">equipe_</a></td></tr>
-<tr class="memdesc:a86f42758a3e4672052331b7a4daa10b5 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">numéro d'équipe  <a href="class_entite.html#a86f42758a3e4672052331b7a4daa10b5">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a86f42758a3e4672052331b7a4daa10b5 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifaiant de l'équipe d' l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a86f42758a3e4672052331b7a4daa10b5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a86f42758a3e4672052331b7a4daa10b5 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbd554c4f122159a73cb113cc8de3860 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#abbd554c4f122159a73cb113cc8de3860">position_</a></td></tr>
+<tr class="memdesc:abbd554c4f122159a73cb113cc8de3860 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#abbd554c4f122159a73cb113cc8de3860">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abbd554c4f122159a73cb113cc8de3860 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d6dc6bfcee492337b7422f12b393141 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a2d6dc6bfcee492337b7422f12b393141">angle_</a></td></tr>
+<tr class="memdesc:a2d6dc6bfcee492337b7422f12b393141 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orientation actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a2d6dc6bfcee492337b7422f12b393141">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2d6dc6bfcee492337b7422f12b393141 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50e0f8c1188d9833432c55c7f7d2aa0f inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a50e0f8c1188d9833432c55c7f7d2aa0f">scale_</a></td></tr>
+<tr class="memdesc:a50e0f8c1188d9833432c55c7f7d2aa0f inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Échelle actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a50e0f8c1188d9833432c55c7f7d2aa0f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a50e0f8c1188d9833432c55c7f7d2aa0f inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b6c62e4dc54221a84ce4dc824fdb2da inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">sf::CircleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a5b6c62e4dc54221a84ce4dc824fdb2da">cercleEnglobant_</a></td></tr>
+<tr class="memdesc:a5b6c62e4dc54221a84ce4dc824fdb2da inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cercle Englobant de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a5b6c62e4dc54221a84ce4dc824fdb2da">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5b6c62e4dc54221a84ce4dc824fdb2da inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6bbda9a40f701f273c344406a6f5122 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; sf::Shape &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#aa6bbda9a40f701f273c344406a6f5122">forme_</a></td></tr>
+<tr class="memdesc:aa6bbda9a40f701f273c344406a6f5122 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forme de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#aa6bbda9a40f701f273c344406a6f5122">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa6bbda9a40f701f273c344406a6f5122 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8147b9459318a9b1de1b72dce115680a inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8147b9459318a9b1de1b72dce115680a">texture_</a></td></tr>
+<tr class="memdesc:a8147b9459318a9b1de1b72dce115680a inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture du sprite de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a8147b9459318a9b1de1b72dce115680a">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8147b9459318a9b1de1b72dce115680a inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ab7c03b6fe5c4f1d08cd3e4304e0ef7c0">sprite_</a></td></tr>
+<tr class="memdesc:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#ab7c03b6fe5c4f1d08cd3e4304e0ef7c0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62c3145096f707457d60306ea6729ed6 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a62c3145096f707457d60306ea6729ed6">vit_</a></td></tr>
-<tr class="memdesc:a62c3145096f707457d60306ea6729ed6 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse actuelle.  <a href="class_entite.html#a62c3145096f707457d60306ea6729ed6">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a62c3145096f707457d60306ea6729ed6 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a62c3145096f707457d60306ea6729ed6">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a62c3145096f707457d60306ea6729ed6 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -317,6 +333,53 @@ Attributs protégés</h2></td></tr>
 </div><div class="memdoc">
 
 <p>définit l'équipe (entier) </p>
+
+</div>
+</div>
+<a id="a98c129568d478586684b1769fe465803"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98c129568d478586684b1769fe465803">&#9670;&nbsp;</a></span>gestion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vaisseau::gestion </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>tempsEcoule</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gère le comportement du vaisseau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>Fenetre SFML où le vaisseau sera affiché</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Fonction virtuelle qui gère le comportement du vaisseau </p>
+
+<p>Implémenté dans <a class="el" href="class_vaisseau_eclaireur.html#aa76a51dfb92fa94b7614a58be187db21">VaisseauEclaireur</a>, et <a class="el" href="class_vaisseau_test.html#a50009e27227a8e1c4d18c16bfba0a55f">VaisseauTest</a>.</p>
 
 </div>
 </div>

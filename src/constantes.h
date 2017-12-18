@@ -6,6 +6,8 @@
 #define ECRAN_L 1024 /// Largueur de la fenetre
 #define ECRAN_H 768 /// Hauteur de la fenetre
 
+#define NB_ACTION 2 /// Nombre d'actions
+
 enum Trajectoire
 {
 	LINEAIRE,

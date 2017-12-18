@@ -95,15 +95,14 @@ void Entite::changeSpeed(int val)
 	vit_ += val;
 }
 
-/**
-* @fn ProjTest
-* @brief Constructeur
-* @return Booleen : true si l'entité est en dehors de l'écran, faux sinon
-*
-* Créer un projectile de test à une postion aléatoire
-*/
-
-bool Entite::estDehors() const
+bool Entite::estDehors(float x_min, float y_min, float x_max, float y_max) const
 {
-	return position_.x < 0 || position_.x > ECRAN_L || position_.y < 0 || position_.y > ECRAN_H;
+    float R = cercleEnglobant_.getRadius();
+    return position_.x < x_min - R || position_.x > x_max + R || position_.y < y_min - R || position_.y > y_max + R;
+}
+
+bool Entite::estDedans(float x_min, float y_min, float x_max, float y_max) const
+{
+    float R = cercleEnglobant_.getRadius();
+    return position_.x > x_min + R && position_.x < x_max - R && position_.y > y_min + R && position_.y < y_max - R;
 }

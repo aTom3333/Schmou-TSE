@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['actualiser',['actualiser',['../class_capacite.html#a924214972f385ef409031bafc0f315b7',1,'Capacite::actualiser()'],['../class_cap_dash.html#ad4f99cef49151c1072a11af18852fa7b',1,'CapDash::actualiser()'],['../class_cap_piou.html#ae15af0a5a261349ae8462f00b6cb0d5d',1,'CapPiou::actualiser()'],['../class_cap_test.html#af8e8fad88e1e4f0037eee576331d3238',1,'CapTest::actualiser()']]],
+  ['action',['action',['../class_input__base.html#a48b1df2773bd0bea3c547332f2337af6',1,'Input_base::action() const'],['../class_input__base.html#ab525fda1b2cc71094d8c0940c80cba27',1,'Input_base::action(size_t n) const']]],
+  ['actualiser',['actualiser',['../class_capacite.html#a75c9621d7a704fedb10ad29c6a697d64',1,'Capacite::actualiser()'],['../class_cap_dash.html#a23e3009b85288e7aadce2eb2b581fac0',1,'CapDash::actualiser()'],['../class_cap_piou.html#aede206c70e6697865a8d25e614f138c0',1,'CapPiou::actualiser()'],['../class_cap_test.html#a082e76e397a400b9c46e13e63ac7ef85',1,'CapTest::actualiser()']]],
   ['addcapacite',['addCapacite',['../class_vaisseau.html#a04d7069231187e7dba26a06a0aaf2508',1,'Vaisseau']]],
   ['afficher',['afficher',['../class_entite.html#a91874d7e87f6cb479a3893fbedc6a4e3',1,'Entite']]],
   ['age_5f',['age_',['../class_projectile.html#a1f0a231e002d4796c32ccfeb36c887b1',1,'Projectile']]],

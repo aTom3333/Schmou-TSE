@@ -38,7 +38,7 @@ class Partie
 	private:
         sf::RenderWindow& window_;
 		sf::Font font_;
-        Input input;
+        Input input_;
 };
 
 #endif // PARTIE_H

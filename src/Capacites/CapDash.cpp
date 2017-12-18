@@ -8,31 +8,28 @@ CapDash::CapDash()
 	nom_ = "Dash";
 }
 
-CapDash::~CapDash()
-{
-}
 
 void CapDash::utiliser(int x, int y)
 {
-	// Si la compétence est disponible
+	// Si la compÃ©tence est disponible
 	if (t_ >= cooldown_) {
-		// Début du timer
+		// DÃ©but du timer
 		t_ = 0;
 		frames_ = 0;
 	}
 }
 
 
-void CapDash::actualiser(std::vector<Projectile*>& projectiles, Entite * vaisseau, float tempsEcoule)
+void CapDash::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule)
 {
-	// Augmente la vitesse de 5000 à l'activation
+	// Augmente la vitesse de 5000 Ã  l'activation
 	if(frames_ == 0)
-		vaisseau->changeSpeed(5000);
-	// Retourne à la vitesse de base au bout de 5 frames
+		vaisseau.changeSpeed(5000);
+	// Retourne Ã  la vitesse de base au bout de 5 frames
 	if(frames_ == 5)
-		vaisseau->changeSpeed(-5000);
+		vaisseau.changeSpeed(-5000);
 
-	// Si la compétance est en cooldown, on actualise le timer
+	// Si la compÃ©tence est en cooldown, on actualise le timer
 	if (t_ < cooldown_)
 	{
 		t_ += tempsEcoule;

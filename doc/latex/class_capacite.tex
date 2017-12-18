@@ -11,8 +11,7 @@ Classe abstraite qui définit la structure générale d\textquotesingle{}une cap
 
 
 
-Graphe d\textquotesingle{}héritage de Capacite\+:
-\nopagebreak
+Graphe d\textquotesingle{}héritage de Capacite\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,7 +27,7 @@ virtual \hyperlink{class_capacite_a43be1570a24a64682ff3f034330779a9}{$\sim$\+Cap
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_capacite_a6f5e6efda11f80ab8538e23f5bdc6e79}{utiliser} (int x, int y)=0
 \begin{DoxyCompactList}\small\item\em Fonction virtuel qui active la capacite lorsqu\textquotesingle{}elle est appelée. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_capacite_a924214972f385ef409031bafc0f315b7}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} $\ast$vaisseau, float temps\+Ecoule)=0
+virtual void \hyperlink{class_capacite_a75c9621d7a704fedb10ad29c6a697d64}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} \&vaisseau, float temps\+Ecoule)=0
 \begin{DoxyCompactList}\small\item\em Fonction virtuel qui active les effets de la capacité \end{DoxyCompactList}\item 
 float const \hyperlink{class_capacite_af07c1c3a2c9259a7eab270b3d8f867de}{get\+Cooldown} ()
 \item 
@@ -82,11 +81,11 @@ Destructeur.
 Vide 
 
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_capacite_a924214972f385ef409031bafc0f315b7}\label{class_capacite_a924214972f385ef409031bafc0f315b7}} 
+\mbox{\Hypertarget{class_capacite_a75c9621d7a704fedb10ad29c6a697d64}\label{class_capacite_a75c9621d7a704fedb10ad29c6a697d64}} 
 \index{Capacite@{Capacite}!actualiser@{actualiser}}
 \index{actualiser@{actualiser}!Capacite@{Capacite}}
 \subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
-{\footnotesize\ttfamily Capacite\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} $\ast$}]{vaisseau,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily Capacite\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} \&}]{vaisseau,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
@@ -103,7 +102,7 @@ Fonction virtuel qui active les effets de la capacité
 \end{DoxyParams}
 Fonction virtuel qui gère la création de projectiles et des modifications à apporter au vaisseau 
 
-Implémenté dans \hyperlink{class_cap_piou_ae15af0a5a261349ae8462f00b6cb0d5d}{Cap\+Piou}, \hyperlink{class_cap_dash_ad4f99cef49151c1072a11af18852fa7b}{Cap\+Dash}, et \hyperlink{class_cap_test_af8e8fad88e1e4f0037eee576331d3238}{Cap\+Test}.
+Implémenté dans \hyperlink{class_cap_test_a082e76e397a400b9c46e13e63ac7ef85}{Cap\+Test}, \hyperlink{class_cap_dash_a23e3009b85288e7aadce2eb2b581fac0}{Cap\+Dash}, et \hyperlink{class_cap_piou_aede206c70e6697865a8d25e614f138c0}{Cap\+Piou}.
 
 \mbox{\Hypertarget{class_capacite_af07c1c3a2c9259a7eab270b3d8f867de}\label{class_capacite_af07c1c3a2c9259a7eab270b3d8f867de}} 
 \index{Capacite@{Capacite}!get\+Cooldown@{get\+Cooldown}}
@@ -142,7 +141,7 @@ Fonction virtuel qui active la capacite lorsqu\textquotesingle{}elle est appelé
 \end{DoxyParams}
 Fonction virtuel qui initialise la postion de départ et le timer 
 
-Implémenté dans \hyperlink{class_cap_piou_a92f5cc3011280ad13bf3ff5e6a3c76ea}{Cap\+Piou}, \hyperlink{class_cap_dash_a82823122659ff5a87a09e9ddf0e3dabb}{Cap\+Dash}, et \hyperlink{class_cap_test_a9c85a17dec6cf78f1438b08b175f650d}{Cap\+Test}.
+Implémenté dans \hyperlink{class_cap_test_a9c85a17dec6cf78f1438b08b175f650d}{Cap\+Test}, \hyperlink{class_cap_piou_a92f5cc3011280ad13bf3ff5e6a3c76ea}{Cap\+Piou}, et \hyperlink{class_cap_dash_a8a0fe26c8b13d8a9f6cf5a95d6559f3d}{Cap\+Dash}.
 
 
 

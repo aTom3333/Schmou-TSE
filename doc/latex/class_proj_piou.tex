@@ -2,6 +2,11 @@
 \label{class_proj_piou}\index{Proj\+Piou@{Proj\+Piou}}
 
 
+\hyperlink{class_projectile}{Projectile} de test.  
+
+
+
+
 {\ttfamily \#include $<$Proj\+Piou.\+h$>$}
 
 
@@ -26,17 +31,22 @@ Graphe de collaboration de Proj\+Piou\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_proj_piou_a73d8a01dc3e09f926d14b95b673fd41d}{Proj\+Piou} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
 \hyperlink{class_proj_piou_a4aa12294ad8b563aa00848e395fdf06b}{Proj\+Piou} (int x, int y)
 \item 
 \hyperlink{class_proj_piou_a02224f153ad53afc2b1c40b986ec6492}{$\sim$\+Proj\+Piou} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 void \hyperlink{class_proj_piou_a01b45e4045391883472e283e027cf7de}{gestion} (sf\+::\+Render\+Window \&window)
 \begin{DoxyCompactList}\small\item\em Gestion du projectile. \end{DoxyCompactList}\item 
 void \hyperlink{class_proj_piou_a1594d1ba2fd53ff82af597d2505a7db2}{agit} (\hyperlink{class_vaisseau}{Vaisseau} \&v)
 \begin{DoxyCompactList}\small\item\em Procédure lorsque le projectile agit avec unvaisseau. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres hérités additionnels}
 
+
+\subsection{Description détaillée}
+\hyperlink{class_projectile}{Projectile} de test. 
+
+\hyperlink{class_projectile}{Projectile} de base. Tire en ligne droite (vers le haut) 
 
 \subsection{Documentation des constructeurs et destructeur}
 \mbox{\Hypertarget{class_proj_piou_a73d8a01dc3e09f926d14b95b673fd41d}\label{class_proj_piou_a73d8a01dc3e09f926d14b95b673fd41d}} 
@@ -45,7 +55,20 @@ void \hyperlink{class_proj_piou_a1594d1ba2fd53ff82af597d2505a7db2}{agit} (\hyper
 \subsubsection{\texorpdfstring{Proj\+Piou()}{ProjPiou()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Proj\+Piou\+::\+Proj\+Piou (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_proj_piou_a4aa12294ad8b563aa00848e395fdf06b}\label{class_proj_piou_a4aa12294ad8b563aa00848e395fdf06b}} 
+
+
+Constructeur. 
+
+Vide
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Abscisse de la postion de départ du projectile \\
+\hline
+{\em y} & Ordonnée de la postion de départ du projectile\\
+\hline
+\end{DoxyParams}
+Créer un projectile piou à la position donnée en paramètre \mbox{\Hypertarget{class_proj_piou_a4aa12294ad8b563aa00848e395fdf06b}\label{class_proj_piou_a4aa12294ad8b563aa00848e395fdf06b}} 
 \index{Proj\+Piou@{Proj\+Piou}!Proj\+Piou@{Proj\+Piou}}
 \index{Proj\+Piou@{Proj\+Piou}!Proj\+Piou@{Proj\+Piou}}
 \subsubsection{\texorpdfstring{Proj\+Piou()}{ProjPiou()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -58,6 +81,10 @@ void \hyperlink{class_proj_piou_a1594d1ba2fd53ff82af597d2505a7db2}{agit} (\hyper
 {\footnotesize\ttfamily Proj\+Piou\+::$\sim$\+Proj\+Piou (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+
+Destructeur. 
+
+Vide 
 
 \subsection{Documentation des fonctions membres}
 \mbox{\Hypertarget{class_proj_piou_a1594d1ba2fd53ff82af597d2505a7db2}\label{class_proj_piou_a1594d1ba2fd53ff82af597d2505a7db2}} 

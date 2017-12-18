@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <optional>
+#include "../constantes.h"
 
 
 
@@ -10,25 +11,67 @@ template<size_t N>
 class Input_base
 {
     public:
+        /**
+         * @enum Media
+         * @brief Énumération qui contient les types d'entrées supportées
+         *
+         * Cette énumération contient 4 valeurs qui représentent les 4 types de média qui sont
+         * supportés pour les entrées
+         */
         enum class Media
         {
             Keyboard, Joypad, Mouse, Touchscreen
         };
 
+        /**
+         * @fn move
+         * @brief Renvoie le déplacement que l'état des entrées induit
+         *
+         * Cette fonction permet de calculer le déplacement qui doit être effectué sur le vaissea d'un joueur
+         * (ou sur autre chose) en fonction de l'état des entrées, du temps écoulé et de la vitesse maximale donnée.
+         * Cette fonction appelle des spécialisation de la fonction pour chaque Media
+         * @param [in] max_speed La vitesse maximale autorisée en pixel/s
+         * @param [in] elapsed_time Temps écoulé qui doit être utilisé pour le calcul de la distance
+         * @return Un @c sf::Vector2f qui contient le déplacement qui doit être effectué sur les deux axes
+         */
         sf::Vector2f move(float max_speed, const sf::Time& elapsed_time);
 
+        /**
+         * @fn Input_base
+         * @brief Constructeur de Input_base
+         *
+         * Constructeur qui initialise l'état de l'objet
+         * @param [in] w Une référence vers une sf::RenderWindow qui permet de récupérer des informations sur ses entrées
+         * @param [in] m Le type de Media à utiliser pour toutes les actions par défaut
+         */
         explicit Input_base(const sf::RenderWindow& w, Media m = Media::Keyboard);
+
+        /**
+         * @fn action
+         * @brief Teste si une action est en cours
+         *
+         * Cette fonction permet de vérifiée si une action est en cours, càd si le bouton/la touche qui correspond
+         * est pressé
+         * @param [in] n Le numéro de l'action à tester
+         * @return Un @c bool qui vaut @a true si l'action est en cours et @a false sinon
+         */
+        bool action(size_t n) const;
 
     private:
         void init_default_keyboard();
         void init_default_joypad();
         void init_default_mouse();
+
         sf::Vector2f move_keyboard(float max_speed, const sf::Time& elapsed_time);
         sf::Vector2f move_joypad(float max_speed, const sf::Time& elapsed_time);
         sf::Vector2f move_mouse(float max_speed, const sf::Time& elapsed_time);
 
-        const sf::RenderWindow& window_;
-        Media movement_media_; // Par quoi est géré le déplacement
+        bool action_keyboard(size_t n) const;
+        bool action_joypad(size_t n) const;
+        bool action_mouse(size_t n) const;
+
+        const sf::RenderWindow& window_; ///< Référence vers la fenêtre par rapport à laquelle les entrées sont traitées
+        Media movement_media_; ///< Media qui gère le déplacement
         /// @cond NO_DOC_PRIVATE_CLASSES
         union movement_input_t {
             movement_input_t() {keyboard_ = {sf::Keyboard::Up,
@@ -66,10 +109,22 @@ class Input_base
                 std::optional<sf::Vector2f> last_pos_;
             } mouse_;
         } movement_input_;
+        struct action_t {
+            Media action_media_;
+            union binding_t {
+                binding_t() {keyboard_key_ = std::nullopt;}
+                std::optional<sf::Keyboard::Key> keyboard_key_;
+                struct joypad_action_t {
+                    std::optional<unsigned int> joypad_id_;
+                    std::optional<unsigned int> joypad_button_;
+                } joypad_action_;
+                std::optional<sf::Mouse::Button> mouse_button_;
+            } binding_;
+        };
+        action_t actions_[N];
         /// @endcond
-
 };
 
-using Input = Input_base<0>; // C'est ici qu'on choisit le nombre d'actions qu'on veut
+using Input = Input_base<NB_ACTION>;
 
 #endif // INPUT_H

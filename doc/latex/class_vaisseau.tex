@@ -15,7 +15,7 @@ Graphe d\textquotesingle{}héritage de Vaisseau\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=157pt]{class_vaisseau__inherit__graph}
+\includegraphics[width=270pt]{class_vaisseau__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -34,6 +34,8 @@ Graphe de collaboration de Vaisseau\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em constructeur \end{DoxyCompactList}\item 
 \hyperlink{class_vaisseau_a3360bd62af7a7aaf5732b86d639a0674}{$\sim$\+Vaisseau} () override
 \begin{DoxyCompactList}\small\item\em destructeur \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_vaisseau_a98c129568d478586684b1769fe465803}{gestion} (sf\+::\+Render\+Window \&window, float temps\+Ecoule)=0
+\begin{DoxyCompactList}\small\item\em Gère le comportement du vaisseau. \end{DoxyCompactList}\item 
 void \hyperlink{class_vaisseau_a1b3edda1f99d55cb5c0c7cbafe156af6}{set\+Equipe} (int equipe)
 \item 
 void \hyperlink{class_vaisseau_a04d7069231187e7dba26a06a0aaf2508}{add\+Capacite} (\hyperlink{class_capacite}{Capacite} $\ast$skill)
@@ -143,6 +145,25 @@ destructeur
 
 
 définit l\textquotesingle{}équipe (entier) 
+
+\mbox{\Hypertarget{class_vaisseau_a98c129568d478586684b1769fe465803}\label{class_vaisseau_a98c129568d478586684b1769fe465803}} 
+\index{Vaisseau@{Vaisseau}!gestion@{gestion}}
+\index{gestion@{gestion}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{gestion()}{gestion()}}
+{\footnotesize\ttfamily Vaisseau\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gère le comportement du vaisseau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em window} & Fenetre S\+F\+ML où le vaisseau sera affiché\\
+\hline
+\end{DoxyParams}
+Fonction virtuelle qui gère le comportement du vaisseau 
+
+Implémenté dans \hyperlink{class_vaisseau_eclaireur_aa76a51dfb92fa94b7614a58be187db21}{Vaisseau\+Eclaireur}, et \hyperlink{class_vaisseau_test_a50009e27227a8e1c4d18c16bfba0a55f}{Vaisseau\+Test}.
 
 \mbox{\Hypertarget{class_vaisseau_a03d9f614943176d1e1d71d99f9d7f465}\label{class_vaisseau_a03d9f614943176d1e1d71d99f9d7f465}} 
 \index{Vaisseau@{Vaisseau}!getatq@{getatq}}

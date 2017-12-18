@@ -6,5 +6,6 @@ var searchData=
   ['entite_2ecpp',['Entite.cpp',['../_entite_8cpp.html',1,'']]],
   ['entite_2eh',['Entite.h',['../_entite_8h.html',1,'']]],
   ['equipe_5f',['equipe_',['../class_entite.html#a86f42758a3e4672052331b7a4daa10b5',1,'Entite']]],
-  ['estdehors',['estDehors',['../class_entite.html#a8734ec47c87feb2b8b221bbf5d9ff2b4',1,'Entite']]]
+  ['estdedans',['estDedans',['../class_entite.html#a0861182f1af724c8b5fd70b30720fa04',1,'Entite']]],
+  ['estdehors',['estDehors',['../class_entite.html#a3e3abd5eac22335f388e6b31675319c1',1,'Entite']]]
 ];

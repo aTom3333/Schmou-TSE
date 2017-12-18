@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Schmou&#39;TSE:  Fichier source de src/Vaisseau/VaisseauEclaireur.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Schmou&#39;TSE
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_8af96e67bfef43ea6cf541a302b9a579.html">Vaisseau</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">VaisseauEclaireur.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_vaisseau_eclaireur_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VAISSEAU_ECRAIREUR_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VAISSEAU_ECRAIREUR_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../constantes.h&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vaisseau_8h.html">Vaisseau.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_vaisseau_eclaireur.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_vaisseau_eclaireur.html">VaisseauEclaireur</a> : <span class="keyword">public</span> <a class="code" href="class_vaisseau.html">Vaisseau</a></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_vaisseau_eclaireur.html#ab65919df2049e350f83a77b625870fcc">VaisseauEclaireur</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <a class="code" href="constantes_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95">Trajectoire</a> traj, <span class="keywordtype">float</span> param1, <span class="keywordtype">float</span> param2, <span class="keywordtype">float</span> param3 = 0, <span class="keywordtype">float</span> param4 = 0);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_vaisseau_eclaireur.html#a3e7ef82ff40bf4736d4285311dd8624c">~VaisseauEclaireur</a>();</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_vaisseau_eclaireur.html#aa76a51dfb92fa94b7614a58be187db21">gestion</a>(sf::RenderWindow &amp; window, <span class="keywordtype">float</span> tempsEcoule);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">float</span> x0_; </div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">float</span> y0_; </div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">float</span> param1_;   </div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">float</span> param2_;   </div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">float</span> param3_;   </div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">float</span> param4_;   </div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="constantes_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95">Trajectoire</a> trajectoire_; </div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">float</span> t_; </div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif //VAISSEAU_ECRAIREUR_H</span></div><div class="ttc" id="class_vaisseau_eclaireur_html_aa76a51dfb92fa94b7614a58be187db21"><div class="ttname"><a href="class_vaisseau_eclaireur.html#aa76a51dfb92fa94b7614a58be187db21">VaisseauEclaireur::gestion</a></div><div class="ttdeci">void gestion(sf::RenderWindow &amp;window, float tempsEcoule)</div><div class="ttdoc">G�re le comportement du vaisseau. </div><div class="ttdef"><b>Definition:</b> VaisseauEclaireur.cpp:36</div></div>
+<div class="ttc" id="constantes_8h_html_afa7f6e8323d7ee755d93cd1f6019dd95"><div class="ttname"><a href="constantes_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95">Trajectoire</a></div><div class="ttdeci">Trajectoire</div><div class="ttdef"><b>Definition:</b> constantes.h:9</div></div>
+<div class="ttc" id="class_vaisseau_eclaireur_html_a3e7ef82ff40bf4736d4285311dd8624c"><div class="ttname"><a href="class_vaisseau_eclaireur.html#a3e7ef82ff40bf4736d4285311dd8624c">VaisseauEclaireur::~VaisseauEclaireur</a></div><div class="ttdeci">~VaisseauEclaireur()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> VaisseauEclaireur.cpp:32</div></div>
+<div class="ttc" id="class_vaisseau_html"><div class="ttname"><a href="class_vaisseau.html">Vaisseau</a></div><div class="ttdoc">classe du vaisseau (véhicule) d&amp;#39;un joueur ou d&amp;#39;un ennemi </div><div class="ttdef"><b>Definition:</b> Vaisseau.h:19</div></div>
+<div class="ttc" id="class_vaisseau_eclaireur_html"><div class="ttname"><a href="class_vaisseau_eclaireur.html">VaisseauEclaireur</a></div><div class="ttdoc">classe d&amp;#39;un ennemi de base : l&amp;#39;�claireur </div><div class="ttdef"><b>Definition:</b> VaisseauEclaireur.h:15</div></div>
+<div class="ttc" id="_vaisseau_8h_html"><div class="ttname"><a href="_vaisseau_8h.html">Vaisseau.h</a></div></div>
+<div class="ttc" id="class_vaisseau_eclaireur_html_ab65919df2049e350f83a77b625870fcc"><div class="ttname"><a href="class_vaisseau_eclaireur.html#ab65919df2049e350f83a77b625870fcc">VaisseauEclaireur::VaisseauEclaireur</a></div><div class="ttdeci">VaisseauEclaireur(float x, float y, Trajectoire traj, float param1, float param2, float param3=0, float param4=0)</div><div class="ttdoc">Contructeur. </div><div class="ttdef"><b>Definition:</b> VaisseauEclaireur.cpp:5</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

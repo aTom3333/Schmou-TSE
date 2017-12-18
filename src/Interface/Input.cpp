@@ -33,6 +33,16 @@ void Input_base<N>::init_default_keyboard()
                                  sf::Keyboard::Down,
                                  sf::Keyboard::Left,
                                  sf::Keyboard::Right};
+    if(N > 0)
+    {
+        actions_[0].action_media_ = Media::Keyboard;
+        actions_[0].binding_.keyboard_key_ = sf::Keyboard::W;
+    }
+    if(N > 1)
+    {
+        actions_[1].action_media_ = Media::Keyboard;
+        actions_[1].binding_.keyboard_key_ = sf::Keyboard::X;
+    }
 }
 
 
@@ -187,5 +197,46 @@ sf::Vector2f Input_base<N>::move_mouse(float max_speed, const sf::Time& elapsed_
     return delta;
 }
 
+template<size_t N>
+bool Input_base<N>::action(size_t n) const
+{
+    if(n > N)
+        return false;
+    switch(actions_[n].action_media_)
+    {
+        case Media::Keyboard:
+            return action_keyboard(n);
 
-template class Input_base<0>;
+        case Media::Joypad:
+            return action_joypad(n);
+
+        case Media::Mouse:
+            return action_mouse(n);
+
+        default:
+            return false;
+    }
+}
+
+template<size_t N>
+bool Input_base<N>::action_keyboard(size_t n) const
+{
+    return (actions_[n].binding_.keyboard_key_ && sf::Keyboard::isKeyPressed(actions_[n].binding_.keyboard_key_.value()));
+}
+
+template<size_t N>
+bool Input_base<N>::action_joypad(size_t n) const
+{
+    return actions_[n].binding_.joypad_action_.joypad_id_ && actions_[n].binding_.joypad_action_.joypad_button_
+           && sf::Joystick::isButtonPressed(actions_[n].binding_.joypad_action_.joypad_id_.value(),
+                                            actions_[n].binding_.joypad_action_.joypad_button_.value());
+}
+
+template<size_t N>
+bool Input_base<N>::action_mouse(size_t n) const
+{
+    return actions_[n].binding_.mouse_button_ && sf::Mouse::isButtonPressed(actions_[n].binding_.mouse_button_.value());
+}
+
+
+template class Input_base<NB_ACTION>;

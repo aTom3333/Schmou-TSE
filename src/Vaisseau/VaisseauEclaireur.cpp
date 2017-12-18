@@ -1,4 +1,6 @@
 #include "VaisseauEclaireur.h"
+#include <cmath>
+
 
 VaisseauEclaireur::VaisseauEclaireur(float x, float y,Trajectoire traj, float param1, float param2, float param3, float param4)
 {

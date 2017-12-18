@@ -49,7 +49,7 @@ class CapTest : public Capacite
 		* Créer 4 ProjTest toutes les 5 frames
 		* Actualise le timer
 		*/
-		void actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau, float tempsEcoule);
+		void actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule);
 };
 
 #endif

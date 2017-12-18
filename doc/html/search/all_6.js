@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['gestion',['gestion',['../class_projectile.html#aa969857f9837d9be3a6ea415c9ba3ff1',1,'Projectile::gestion()'],['../class_proj_piou.html#a01b45e4045391883472e283e027cf7de',1,'ProjPiou::gestion()'],['../class_proj_test.html#a6649e6591e463315aa9513854e2515d4',1,'ProjTest::gestion()'],['../class_vaisseau_test.html#acf5f5ea1e9317cbc5a4c445016cd767c',1,'VaisseauTest::gestion()']]],
+  ['gestion',['gestion',['../class_projectile.html#aa969857f9837d9be3a6ea415c9ba3ff1',1,'Projectile::gestion()'],['../class_proj_piou.html#a01b45e4045391883472e283e027cf7de',1,'ProjPiou::gestion()'],['../class_proj_test.html#a6649e6591e463315aa9513854e2515d4',1,'ProjTest::gestion()'],['../class_vaisseau.html#a98c129568d478586684b1769fe465803',1,'Vaisseau::gestion()'],['../class_vaisseau_eclaireur.html#aa76a51dfb92fa94b7614a58be187db21',1,'VaisseauEclaireur::gestion()'],['../class_vaisseau_test.html#a50009e27227a8e1c4d18c16bfba0a55f',1,'VaisseauTest::gestion()']]],
   ['getatq',['getatq',['../class_vaisseau.html#a03d9f614943176d1e1d71d99f9d7f465',1,'Vaisseau']]],
   ['getatqm',['getatqM',['../class_vaisseau.html#a893c8a6199e3e79460891fafb0b16fba',1,'Vaisseau']]],
   ['getcooldown',['getCooldown',['../class_capacite.html#af07c1c3a2c9259a7eab270b3d8f867de',1,'Capacite']]],
   ['getdef',['getdef',['../class_vaisseau.html#a48d7facfa7c34a784bfbee4c4b1100ce',1,'Vaisseau']]],
   ['getdefm',['getdefM',['../class_vaisseau.html#aa983d5040f7c19a9dfcb907618fda321',1,'Vaisseau']]],
-  ['getforme',['getForme',['../class_entite.html#ae01177a102251100c96e2060372627ad',1,'Entite']]],
+  ['getforme',['getForme',['../class_entite.html#ad7314f276ea1808e98cfd8b7d0e900c8',1,'Entite']]],
   ['getnom',['getNom',['../class_capacite.html#a96218b289768ff461ffaaa0abe014a42',1,'Capacite::getNom()'],['../class_vaisseau.html#acbe2e5af7beda381d21392d4eb539761',1,'Vaisseau::getnom()']]],
   ['getnskin',['getNskin',['../class_vaisseau.html#aaecdafade1e84272e58cc97558f7c5c3',1,'Vaisseau']]],
   ['getposition',['getPosition',['../class_entite.html#a6f6fd1e1f9f6ad44f0ecc74961a774d9',1,'Entite']]],

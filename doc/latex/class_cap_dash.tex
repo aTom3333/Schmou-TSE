@@ -2,6 +2,11 @@
 \label{class_cap_dash}\index{Cap\+Dash@{Cap\+Dash}}
 
 
+Classe Capacité permettant de dash.  
+
+
+
+
 {\ttfamily \#include $<$Cap\+Dash.\+h$>$}
 
 
@@ -27,14 +32,17 @@ Graphe de collaboration de Cap\+Dash\+:\nopagebreak
 \item 
 \hyperlink{class_cap_dash_ac38287e31284b6b5ac8add730830bfed}{Cap\+Dash} ()
 \begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
-\hyperlink{class_cap_dash_aa935262b9ebdaf197294aba7211663cc}{$\sim$\+Cap\+Dash} ()
-\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
-void \hyperlink{class_cap_dash_a82823122659ff5a87a09e9ddf0e3dabb}{utiliser} (int x, int y)
+void \hyperlink{class_cap_dash_a8a0fe26c8b13d8a9f6cf5a95d6559f3d}{utiliser} (int x, int y) override
 \begin{DoxyCompactList}\small\item\em Active la capacite. \end{DoxyCompactList}\item 
-void \hyperlink{class_cap_dash_ad4f99cef49151c1072a11af18852fa7b}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} $\ast$vaisseau, float temps\+Ecoule)
+void \hyperlink{class_cap_dash_a23e3009b85288e7aadce2eb2b581fac0}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} \&vaisseau, float temps\+Ecoule) override
 \begin{DoxyCompactList}\small\item\em Active les effets de la capacité \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres hérités additionnels}
 
+
+\subsection{Description détaillée}
+Classe Capacité permettant de dash. 
+
+Modifie la vitesse du vaisseau peandant quelques frames Nom \+: Dash Cooldown \+: 500 ms 
 
 \subsection{Documentation des constructeurs et destructeur}
 \mbox{\Hypertarget{class_cap_dash_ac38287e31284b6b5ac8add730830bfed}\label{class_cap_dash_ac38287e31284b6b5ac8add730830bfed}} 
@@ -47,55 +55,47 @@ void \hyperlink{class_cap_dash_ad4f99cef49151c1072a11af18852fa7b}{actualiser} (s
 
 Constructeur. 
 
-Initialisation de la capacité \mbox{\Hypertarget{class_cap_dash_aa935262b9ebdaf197294aba7211663cc}\label{class_cap_dash_aa935262b9ebdaf197294aba7211663cc}} 
-\index{Cap\+Dash@{Cap\+Dash}!````~Cap\+Dash@{$\sim$\+Cap\+Dash}}
-\index{````~Cap\+Dash@{$\sim$\+Cap\+Dash}!Cap\+Dash@{Cap\+Dash}}
-\subsubsection{\texorpdfstring{$\sim$\+Cap\+Dash()}{~CapDash()}}
-{\footnotesize\ttfamily Cap\+Dash\+::$\sim$\+Cap\+Dash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Destructeur. 
-
-Vide 
+Initialisation de la capacité 
 
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_cap_dash_ad4f99cef49151c1072a11af18852fa7b}\label{class_cap_dash_ad4f99cef49151c1072a11af18852fa7b}} 
+\mbox{\Hypertarget{class_cap_dash_a23e3009b85288e7aadce2eb2b581fac0}\label{class_cap_dash_a23e3009b85288e7aadce2eb2b581fac0}} 
 \index{Cap\+Dash@{Cap\+Dash}!actualiser@{actualiser}}
 \index{actualiser@{actualiser}!Cap\+Dash@{Cap\+Dash}}
 \subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
-{\footnotesize\ttfamily Cap\+Dash\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} $\ast$}]{vaisseau,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Cap\+Dash\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} \&}]{vaisseau,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
 Active les effets de la capacité 
 
 
-\begin{DoxyParams}{Paramètres}
-{\em projectile} & Vecteur de tout les projectiles présent à l\textquotesingle{}écran \\
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in,out}  & {\em projectile} & Vecteur de tout les projectiles présent à l\textquotesingle{}écran \\
 \hline
-{\em vaisseau} & \hyperlink{class_vaisseau}{Vaisseau} qui a activé la compétance\\
+\mbox{\tt in,out}  & {\em vaisseau} & \hyperlink{class_vaisseau}{Vaisseau} qui a activé la compétence \\
+\hline
+\mbox{\tt in}  & {\em temps\+Ecoule} & Temps écoulé en millisecondes\\
 \hline
 \end{DoxyParams}
 Augmente la vitesse du vaisseau pour quelques frames Actualise le timer 
 
-Implémente \hyperlink{class_capacite_a924214972f385ef409031bafc0f315b7}{Capacite}.
+Implémente \hyperlink{class_capacite_a75c9621d7a704fedb10ad29c6a697d64}{Capacite}.
 
-\mbox{\Hypertarget{class_cap_dash_a82823122659ff5a87a09e9ddf0e3dabb}\label{class_cap_dash_a82823122659ff5a87a09e9ddf0e3dabb}} 
+\mbox{\Hypertarget{class_cap_dash_a8a0fe26c8b13d8a9f6cf5a95d6559f3d}\label{class_cap_dash_a8a0fe26c8b13d8a9f6cf5a95d6559f3d}} 
 \index{Cap\+Dash@{Cap\+Dash}!utiliser@{utiliser}}
 \index{utiliser@{utiliser}!Cap\+Dash@{Cap\+Dash}}
 \subsubsection{\texorpdfstring{utiliser()}{utiliser()}}
-{\footnotesize\ttfamily Cap\+Dash\+::utiliser (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Cap\+Dash\+::utiliser (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
 Active la capacite. 
 
 
-\begin{DoxyParams}{Paramètres}
-{\em x} & Abscisse de la postion où la capacite est utilisée \\
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in}  & {\em x} & Abscisse de la postion où la capacite est utilisée \\
 \hline
-{\em y} & Ordonnée de la postion où la capacite est utilisée\\
+\mbox{\tt in}  & {\em y} & Ordonnée de la postion où la capacite est utilisée\\
 \hline
 \end{DoxyParams}
 Fonction Initialise la postion de départ et le timer 

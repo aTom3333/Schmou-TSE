@@ -48,4 +48,6 @@ var menudata={children:[
 {text:"Fonctions",url:"globals_func.html"},
 {text:"Variables",url:"globals_vars.html"},
 {text:"Définitions de type",url:"globals_type.html"},
+{text:"Énumérations",url:"globals_enum.html"},
+{text:"Valeurs énumérées",url:"globals_eval.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

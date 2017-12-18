@@ -50,7 +50,7 @@ class Capacite
 		*
 		* Fonction virtuel qui gère la création de projectiles et des modifications à apporter au vaisseau
 		*/
-		virtual void actualiser(std::vector<Projectile*> &projectiles, Entite *vaisseau, float tempsEcoule) = 0;
+		virtual void actualiser(std::vector<Projectile*> &projectiles, Entite& vaisseau, float tempsEcoule) = 0;
 		
 		// Getters
 		float const getCooldown() { return cooldown_; };

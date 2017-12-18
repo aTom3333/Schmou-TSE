@@ -1,4 +1,5 @@
 <map id="Vaisseau" name="Vaisseau">
-<area shape="rect" id="node3" href="$class_vaisseau_test.html" title="VaisseauTest" alt="" coords="5,155,108,181"/>
-<area shape="rect" id="node2" href="$class_entite.html" title="Classe virtuelle qui définit une entité " alt="" coords="29,5,85,32"/>
+<area shape="rect" id="node3" href="$class_vaisseau_eclaireur.html" title="classe d&#39;un ennemi de base : l&#39;�claireur " alt="" coords="5,155,132,181"/>
+<area shape="rect" id="node4" href="$class_vaisseau_test.html" title="VaisseauTest" alt="" coords="156,155,259,181"/>
+<area shape="rect" id="node2" href="$class_entite.html" title="Classe virtuelle qui définit une entité " alt="" coords="110,5,166,32"/>
 </map>

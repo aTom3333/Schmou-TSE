@@ -5,6 +5,7 @@
 #include <memory>
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
+#include "constantes.h"
 
 
 /**
@@ -40,6 +41,16 @@ class Entite
 		 * donc le destructeur par défaut convient
 		 */
 		virtual ~Entite() = default;
+        /**
+         * @fn getForme
+         * @brief Renvoie la forme de l'Entite
+         *
+         * Cette fonction renvoie la forme de l'Entite appelante. Cette forme se présente comme
+         * un @c std::vector de pointeur (intelligents, des @c std::unique_ptr) vers des @c sf::Shape
+         * car la forme totale de l'Entite est la juxtaposition de plusieurs formes plus simples représentées
+         * par les @c sf::Shape indiviuelles
+         * @return Un @c std::vector<std::unique_ptr<sf::Shape>> qui représente la forme de l'Entite
+         */
 		const std::vector<std::unique_ptr<sf::Shape>>& getForme() const { return forme_; }
 		/**
 		 * @fn afficher
@@ -143,21 +154,59 @@ class Entite
          */
 		float getScale() const;
 
-        bool estDehors() const;
+        /**
+         * @fn estDehors
+         * @brief Teste si l'Entite est hors d'une zone, par défaut l'écran
+         *
+         * Cette fonction permet de tester si l'Entite se trouve hors d'une zone rectangulaire délimitée
+         * par x_min, y_min, x_max, y_max qui vallent par défaut les dimensions de l'écran. La détection
+         * est grossière, le test est fait de savoir si le carré de côté deux fois le rayon du cercle englobant
+         * est complétement compris hors de la zone à tester
+         * @param [in] x_min L'abscisse minimale de la zone à tester, par défaut 0
+         * @param [in] y_min L'ordonnée minimale de la zone à tester, par défaut 0
+         * @param [in] x_max L'abscisse maximale de la zone à tester, par défaut la largeur de la fenêtre
+         * @param [in] y_max L'ordonnée maximale de la zone à tester, par défaut la hauteur de la fenêtre
+         * @return Un @c bool qui vaut @a true si l'Entite se trouve hors de la zone à tester et @a false sinon
+         */
+        bool estDehors(float x_min = 0, float y_min = 0, float x_max = ECRAN_L, float y_max = ECRAN_H) const;
+        /**
+         * @fn estDedans
+         * @brief Teste si l'Entite est dans une zone, par défaut l'écran
+         *
+         * Cette fonction permet de tester si l'Entite se trouve dans une zone rectangulaire délimitée
+         * par x_min, y_min, x_max, y_max qui vallent par défaut les dimensions de l'écran. La détection
+         * est grossière, le test est fait de savoir si le carré de côté deux fois le rayon du cercle englobant
+         * est complétement compris dans la zone à tester
+         * @param [in] x_min L'abscisse minimale de la zone à tester, par défaut 0
+         * @param [in] y_min L'ordonnée minimale de la zone à tester, par défaut 0
+         * @param [in] x_max L'abscisse maximale de la zone à tester, par défaut la largeur de la fenêtre
+         * @param [in] y_max L'ordonnée maximale de la zone à tester, par défaut la hauteur de la fenêtre
+         * @return Un @c bool qui vaut @a true si l'Entite se trouve dans la zone à tester et @a false sinon
+         */
+        bool estDedans(float x_min = 0, float y_min = 0, float x_max = ECRAN_L, float y_max = ECRAN_H) const;
 
+        /**
+         * @fn changeSpeed
+         * @brief Change la vitesse de l'Entite en ajoutant à la vitesse actuelle une certaine valeur
+         *
+         * Cette fonction permet de modifier la vitesse de l'Entite appelante en ajoutant à la vitesse actuelle
+         * la valeur passée en paramètre. Cette dernière peut être négative pour diminuer la vitesse. La vitesse
+         * ésultante peut également être négative, cela résultera en un mouvement en miroir
+         * @param [in] val La valeur à ajouter à la vitesse actuelle
+         */
 		void changeSpeed(int val); 
 
 	protected:
-		bool collisionable_ = true; ///< Booléen vrai si collisionnable
-		int equipe_; ///< numéro d'équipe
-		sf::Vector2f position_;
-		float angle_;
-		float scale_;
-		sf::CircleShape cercleEnglobant_;
-		std::vector<std::unique_ptr<sf::Shape>> forme_;
-		sf::Texture texture_;
-		sf::Sprite sprite_;
-		int vit_; ///< Vitesse actuelle
+		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
+		int equipe_; ///< Identifaiant de l'équipe d' l'Entite
+		sf::Vector2f position_; ///< Position actuelle de l'Entite
+		float angle_; ///< Orientation actuelle de l'Entite
+		float scale_; ///< Échelle actuelle de l'Entite
+		sf::CircleShape cercleEnglobant_; ///< Cercle Englobant de l'Entite
+		std::vector<std::unique_ptr<sf::Shape>> forme_; ///< Forme de l'Entite
+		sf::Texture texture_; ///< Texture du sprite de l'Entite
+		sf::Sprite sprite_; ///< Sprite de l'Entite
+		int vit_; ///< Vitesse actuelle de l'Entite
 };
 
 #endif // ENTITE_H

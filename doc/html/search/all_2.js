@@ -14,7 +14,7 @@ var searchData=
   ['captest_2eh',['CapTest.h',['../_cap_test_8h.html',1,'']]],
   ['centre_5ftransforme',['centre_transforme',['../_collision_8cpp.html#a19be16a0d78cc53699ec1f6cc1247f0a',1,'Collision.cpp']]],
   ['cercleenglobant_5f',['cercleEnglobant_',['../class_entite.html#a5b6c62e4dc54221a84ce4dc824fdb2da',1,'Entite']]],
-  ['changespeed',['changeSpeed',['../class_entite.html#a88c148848289e34ca3bc991c37db9b44',1,'Entite']]],
+  ['changespeed',['changeSpeed',['../class_entite.html#abd20483e4d51bc7ebb0eb58bb4366757',1,'Entite']]],
   ['collision',['collision',['../class_entite.html#ac5011435e5099909dd34cd1750933b30',1,'Entite::collision()'],['../_entite_8cpp.html#ac85cf277aaeb8a314734c1fa5f35e3be',1,'collision(const Entite &amp;e1, const Entite &amp;e2):&#160;Entite.cpp'],['../_collision_8cpp.html#a9037d2ebead3fc780ff50019012ac010',1,'collision(const sf::Shape &amp;s1, const sf::Shape &amp;s2):&#160;Collision.cpp'],['../_collision_8h.html#a9037d2ebead3fc780ff50019012ac010',1,'collision(const sf::Shape &amp;s1, const sf::Shape &amp;s2):&#160;Collision.cpp']]],
   ['collision_2ecpp',['Collision.cpp',['../_collision_8cpp.html',1,'']]],
   ['collision_2eh',['Collision.h',['../_collision_8h.html',1,'']]],
