@@ -4,3 +4,7 @@
   Jour 415 : ils croient toujours que je sais faire de la collision et utilisent mes fonctions
 
 
+20/12/2017
+    17:36 Insérer anectode sur le mouvement brownien
+    
+    21:00 les collisions c'est comme Dieu : on en parle beaucoup et on voudrait y croire mais personne n'en a jamais vues.
