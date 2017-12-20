@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <optional>
+#include <bitset>
 #include "../constantes.h"
 
 
@@ -24,6 +25,24 @@ class Input_base
         };
 
         /**
+         * @fn Input_base
+         * @brief Constructeur de Input_base
+         *
+         * Constructeur qui initialise l'état de l'objet
+         * @param [in] w Une référence vers une sf::RenderWindow qui permet de récupérer des informations sur ses entrées
+         * @param [in] m Le type de Media à utiliser pour toutes les actions par défaut
+         */
+        explicit Input_base(const sf::RenderWindow& w, Media m = Media::Keyboard);
+
+        /**
+         * @fn ~Input_base
+         * @brief Destructeur
+         *
+         * Destructeur qui se contente de libérer la place si l'objet utilisait une manette
+         */
+        ~Input_base();
+
+        /**
          * @fn move
          * @brief Renvoie le déplacement que l'état des entrées induit
          *
@@ -37,16 +56,6 @@ class Input_base
         sf::Vector2f move(float max_speed, const sf::Time& elapsed_time);
 
         /**
-         * @fn Input_base
-         * @brief Constructeur de Input_base
-         *
-         * Constructeur qui initialise l'état de l'objet
-         * @param [in] w Une référence vers une sf::RenderWindow qui permet de récupérer des informations sur ses entrées
-         * @param [in] m Le type de Media à utiliser pour toutes les actions par défaut
-         */
-        explicit Input_base(const sf::RenderWindow& w, Media m = Media::Keyboard);
-
-        /**
          * @fn action
          * @brief Teste si une action est en cours
          *
@@ -58,6 +67,9 @@ class Input_base
         bool action(size_t n) const;
 
     private:
+        bool find_next_joypad();
+        void free_joypad();
+
         void init_default_keyboard();
         void init_default_joypad();
         void init_default_mouse();
@@ -70,8 +82,10 @@ class Input_base
         bool action_joypad(size_t n) const;
         bool action_mouse(size_t n) const;
 
+        static std::bitset<8> joypad_availability_;
         const sf::RenderWindow& window_; ///< Référence vers la fenêtre par rapport à laquelle les entrées sont traitées
         Media movement_media_; ///< Media qui gère le déplacement
+        std::optional<unsigned int> joypad_id_;
         /// @cond NO_DOC_PRIVATE_CLASSES
         union movement_input_t {
             movement_input_t() {keyboard_ = {sf::Keyboard::Up,
@@ -87,7 +101,6 @@ class Input_base
             } keyboard_;
             struct joypad_t {
                 // Movement Joystick binding
-                std::optional<unsigned int> joypad_id_;
                 enum input_type_t { Joystick, Button } input_type_;
                 union joypad_input_t {
                     joypad_input_t() {joysticks_ = joysticks_t();}
@@ -114,10 +127,7 @@ class Input_base
             union binding_t {
                 binding_t() {keyboard_key_ = std::nullopt;}
                 std::optional<sf::Keyboard::Key> keyboard_key_;
-                struct joypad_action_t {
-                    std::optional<unsigned int> joypad_id_;
-                    std::optional<unsigned int> joypad_button_;
-                } joypad_action_;
+                std::optional<unsigned int> joypad_button_;
                 std::optional<sf::Mouse::Button> mouse_button_;
             } binding_;
         };

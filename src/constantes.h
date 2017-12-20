@@ -15,5 +15,10 @@ enum Trajectoire
 	SINUS
 };
 
+enum Actions
+{
+    Pause, Tir1, Tir2, Comp1, Comp2, Comp3, Comp4
+};
+
 
 #endif // CONSTANTES_H

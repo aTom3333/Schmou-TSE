@@ -33,15 +33,11 @@ void Input_base<N>::init_default_keyboard()
                                  sf::Keyboard::Down,
                                  sf::Keyboard::Left,
                                  sf::Keyboard::Right};
-    if(N > 0)
+
+    for(size_t i = 0; i < N; ++i)
     {
-        actions_[0].action_media_ = Media::Keyboard;
-        actions_[0].binding_.keyboard_key_ = sf::Keyboard::W;
-    }
-    if(N > 1)
-    {
-        actions_[1].action_media_ = Media::Keyboard;
-        actions_[1].binding_.keyboard_key_ = sf::Keyboard::X;
+        actions_[i].action_media_ = Media::Keyboard;
+        actions_[i].binding_.keyboard_key_ = std::nullopt;
     }
 }
 
@@ -53,17 +49,20 @@ void Input_base<N>::init_default_joypad()
     movement_input_.joypad_.input_type_ = movement_input_t::joypad_t::Joystick;
     movement_input_.joypad_.joypad_input_.joysticks_ = typename movement_input_t::joypad_t::joypad_input_t::joysticks_t();
 
-    unsigned int id = 0;
-    while(!sf::Joystick::isConnected(id) && id < 7)
-        id++;
 
-    if(sf::Joystick::isConnected(id))
+
+    if(find_next_joypad())
     {
-        movement_input_.joypad_.joypad_id_ = id;
-        if(sf::Joystick::hasAxis(id, sf::Joystick::Axis::X))
+        if(sf::Joystick::hasAxis(joypad_id_.value(), sf::Joystick::Axis::X))
             movement_input_.joypad_.joypad_input_.joysticks_.left_right_axis_ = sf::Joystick::Axis::X;
-        if(sf::Joystick::hasAxis(id, sf::Joystick::Axis::Y))
+        if(sf::Joystick::hasAxis(joypad_id_.value(), sf::Joystick::Axis::Y))
             movement_input_.joypad_.joypad_input_.joysticks_.up_down_axis_ = sf::Joystick::Axis::Y;
+    }
+
+    for(size_t i = 0; i < N; ++i)
+    {
+        actions_[i].action_media_ = Media::Joypad;
+        actions_[i].binding_.joypad_button_ = std::nullopt;
     }
 }
 
@@ -73,6 +72,12 @@ void Input_base<N>::init_default_mouse()
 {
     movement_media_ = Media::Mouse;
     movement_input_.mouse_ = {};
+
+    for(size_t i = 0; i < N; ++i)
+    {
+        actions_[i].action_media_ = Media::Mouse;
+        actions_[i].binding_.mouse_button_ = std::nullopt;
+    }
 }
 
 
@@ -124,7 +129,7 @@ template<size_t N>
 sf::Vector2f Input_base<N>::move_joypad(float max_speed, const sf::Time& elapsed_time)
 {
     unsigned int id;
-    if(movement_input_.joypad_.joypad_id_ && sf::Joystick::isConnected(id = movement_input_.joypad_.joypad_id_.value()))
+    if(joypad_id_ && sf::Joystick::isConnected(id = joypad_id_.value()))
     {
         if(movement_input_.joypad_.input_type_ == movement_input_t::joypad_t::Joystick)
         {
@@ -227,9 +232,9 @@ bool Input_base<N>::action_keyboard(size_t n) const
 template<size_t N>
 bool Input_base<N>::action_joypad(size_t n) const
 {
-    return actions_[n].binding_.joypad_action_.joypad_id_ && actions_[n].binding_.joypad_action_.joypad_button_
-           && sf::Joystick::isButtonPressed(actions_[n].binding_.joypad_action_.joypad_id_.value(),
-                                            actions_[n].binding_.joypad_action_.joypad_button_.value());
+    return joypad_id_ && actions_[n].binding_.joypad_button_
+           && sf::Joystick::isButtonPressed(joypad_id_.value(),
+                                            actions_[n].binding_.joypad_button_.value());
 }
 
 template<size_t N>
@@ -238,5 +243,39 @@ bool Input_base<N>::action_mouse(size_t n) const
     return actions_[n].binding_.mouse_button_ && sf::Mouse::isButtonPressed(actions_[n].binding_.mouse_button_.value());
 }
 
+template<size_t N>
+bool Input_base<N>::find_next_joypad()
+{
+    for(unsigned int id = 0; id < 8; ++id)
+    {
+        if(joypad_availability_.test(id) && sf::Joystick::isConnected(id))
+        {
+            joypad_id_ = id;
+            return true;
+        }
+    }
+
+    return false;
+}
+
+template<size_t N>
+void Input_base<N>::free_joypad()
+{
+    if(joypad_id_)
+    {
+        joypad_availability_.reset(joypad_id_.value());
+        joypad_id_ = std::nullopt;
+    }
+}
+
+template<size_t N>
+Input_base<N>::~Input_base()
+{
+    free_joypad();
+}
+
 
 template class Input_base<NB_ACTION>;
+
+template <size_t N>
+std::bitset<8> Input_base<N>::joypad_availability_;
