@@ -5,6 +5,6 @@
 
 
 20/12/2017
-    17:36 Insérer anectode sur le mouvement brownien
+    17:36 "C'est facile" - Pierre 2017 à propos du mouvement brownien alors qu'il galère avec les *ProjTest
     
     21:00 les collisions c'est comme Dieu : on en parle beaucoup et on voudrait y croire mais personne n'en a jamais vues.
