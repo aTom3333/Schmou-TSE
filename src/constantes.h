@@ -8,12 +8,5 @@
 
 #define NB_ACTION 2 /// Nombre d'actions
 
-enum Trajectoire
-{
-	LINEAIRE,
-	PARABOLIQUE,
-	SINUS
-};
-
 
 #endif // CONSTANTES_H
