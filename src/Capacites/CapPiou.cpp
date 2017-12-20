@@ -29,15 +29,14 @@ void CapPiou::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau
 	if (frames_ == 0)
 	{
 		//TODO bug
-		//ProjPiou *temp = new ProjPiou(debutX_, debutY_);
-		//projectiles.push_back(temp);
+		ProjPiou *temp = new ProjPiou(debutX_, debutY_);
+		projectiles.push_back(temp);
 	}
 
 	// Si la compétence est en cooldown, on actualise le timer
 	if (t_ < cooldown_)
 	{
 		t_ += tempsEcoule;
-		frames_++;
 	}
-		
+	frames_++;
 }

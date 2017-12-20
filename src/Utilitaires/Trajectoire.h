@@ -2,7 +2,7 @@
 #define Trajectoire_H
 
 #include <vector>
-#include <SFML\Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include <cmath>
 
 /**
@@ -23,7 +23,7 @@ enum Trajectoire
 *@fn traj_position
 *@brief cacule le point actuel dans la trajectoire donnée
 *
-*@param trajectoire Nom de la trajectoire voulue (voir @enum Trajectoire)
+*@param trajectoire Nom de la trajectoire voulue (voir Trajectoire)
 *@param t Temps actuel depuis la création de l'entité
 *@param vit_ vitesse de l'entité
 *@param posInit Position initiale

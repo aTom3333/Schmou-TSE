@@ -111,7 +111,7 @@ sf::Vector2f Input_base<N>::move_keyboard(float max_speed, const sf::Time& elaps
     right = movement_input_.keyboard_.right_key_ && sf::Keyboard::isKeyPressed(movement_input_.keyboard_.right_key_.value());
 
     // Si on a les deux côtés opposés, on annule
-	//TODO il serait plus agréable (affordant) que le côté opposé pressé en dernier soit prioritaire car là si on appuie sur les deux en même temps le vaisseau s'arrête et c'est contre-intuitif
+	//TODO il serait plus agréable (affordant) que le côté opposé pressé en dernier soit prioritaire car là si on appuie sur les deux en même temps le vaisseau s'arrête et c'est contre-intuitif. Mais ce n'est pas possible si on fait comme ça, il faudrait récupérer les évènement pour savoir à quel instant quelle touche est pressée alors que là, on ne fait que récupérer l'état du clavier à l'instant t
     if(up && down)
         up = down = false;
     if(left && right)
@@ -273,6 +273,16 @@ template<size_t N>
 Input_base<N>::~Input_base()
 {
     free_joypad();
+}
+
+template<size_t N>
+void Input_base<N>::set_ation_keyboard(size_t n, sf::Keyboard::Key key)
+{
+    if(n >= N)
+        // throw std::out_of_range(""); // with exception
+        return; // without
+    actions_[n].action_media_ = Media::Keyboard;
+    actions_[n].binding_.keyboard_key_ = key;
 }
 
 

@@ -48,12 +48,12 @@ public:
 	void gestion(sf::RenderWindow &window);
 	/**
 	* @fn agit
-	* @brief Procédure lorsque le projectile agit avec unvaisseau
+	* @brief Procédure lorsque le projectile agit avec une Entite
 	* @param Vaisseau à modifier
 	*
 	* Vide
 	*/
-	void agit(Vaisseau &v) {};
+	void agit(Entite &v) {};
 private:
 	int vx_; /// Vitesse horizontale
 	int vy_; /// Vitesse verticale

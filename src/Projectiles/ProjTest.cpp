@@ -99,8 +99,8 @@ void ProjTest::gestion(sf::RenderWindow& window)
 	afficher(window);
 }
 
-void ProjTest::agit(Entite* proj)
+void ProjTest::agit(Entite& proj)
 {
-	proj->changeSpeed(0);
+	proj.changeSpeed(0);
 }
 

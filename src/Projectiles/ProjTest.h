@@ -53,7 +53,7 @@ class ProjTest : public Projectile
 		*
 		* Vide
 		*/
-		void agit(Entite * proj);
+		void agit(Entite& proj);
 	private:
 		int mx_; /// Multiplicateur (1 ou -1) pour gérer le sens du projectile
 		int my_; /// Multiplicateur (1 ou -1) pour gérer le sens du projectile

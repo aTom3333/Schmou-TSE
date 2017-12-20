@@ -66,6 +66,8 @@ class Input_base
          */
         bool action(size_t n) const;
 
+        void set_ation_keyboard(size_t n, sf::Keyboard::Key key);
+
     private:
         bool find_next_joypad();
         void free_joypad();

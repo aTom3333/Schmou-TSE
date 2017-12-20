@@ -1,7 +1,8 @@
 #include "Partie.h"
-#include "projectiles/_projectiles.h"
-#include "capacites/_capacites.h"
+#include "Projectiles/_projectiles.h"
+#include "Capacites/_Capacites.h"
 #include "Vaisseau/_vaisseaux.h"
+#include "Interface/bindings.h"
 
 
 Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window)
@@ -10,6 +11,8 @@ Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window)
 	{
 		std::cout << "Impossible de charger la police" << std::endl;
 	}
+
+	set_keyboard_binding(input_);
 }
 
 Partie::~Partie()
@@ -107,7 +110,7 @@ void Partie::testProjTest()
 			for (int j = 0; j < projectiles_.size(); j++) {
 				
 				if (collision(*projectiles_[i], *projectiles_[j])) {
-					projectiles_[i]->agit(projectiles_[j]);
+					projectiles_[i]->agit(*projectiles_[j]);
 				}
 			}
 		}
