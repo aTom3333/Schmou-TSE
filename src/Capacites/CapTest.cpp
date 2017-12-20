@@ -3,7 +3,7 @@
 
 CapTest::CapTest()
 {
-	cooldown_ = 1000;
+	cooldown_ = 0;
 	frames_ = cooldown_;
 	t_ = cooldown_;
 	nom_ = "Attaque Test";

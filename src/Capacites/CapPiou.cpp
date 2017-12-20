@@ -28,8 +28,9 @@ void CapPiou::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau
 	// Création du projectile au moment où la compétence est lancée
 	if (frames_ == 0)
 	{
-		ProjPiou *temp = new ProjPiou(debutX_, debutY_);
-		projectiles.push_back(temp);
+		//TODO bug
+		//ProjPiou *temp = new ProjPiou(debutX_, debutY_);
+		//projectiles.push_back(temp);
 	}
 
 	// Si la compétence est en cooldown, on actualise le timer

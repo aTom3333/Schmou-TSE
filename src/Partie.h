@@ -36,9 +36,16 @@ class Partie
 		void testVaisseauTest();
 
 	private:
-        sf::RenderWindow& window_;
-		sf::Font font_;
-        Input input_;
+		//attributs de gameplay
+        sf::RenderWindow& window_; /// fenêtre principale
+		sf::Font font_; /// police principale
+        Input input_; /// entrée
+
+		//attributs principaux en jeu
+		std::vector<Vaisseau*> vaisseaux_; ///vecteur des vaisseaux ennemis en jeu
+		std::vector<Capacite*> capacites_; ///TODO temporaire : vectuer des capacités à mettre dans la classe Vaisseau
+		std::vector<Projectile *> projectiles_; /// vecteur des projectiles en jeu
+
 };
 
 #endif // PARTIE_H

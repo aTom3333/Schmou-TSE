@@ -1,6 +1,6 @@
 #include "Partie.h"
-#include "Projectiles/_projectiles.h"
-#include "Capacites/_Capacites.h"
+#include "projectiles/_projectiles.h"
+#include "capacites/_capacites.h"
 #include "Vaisseau/_vaisseaux.h"
 
 
@@ -20,13 +20,11 @@ Partie::~Partie()
 
 void Partie::testProjTest()
 {
-	std::vector<Capacite*> attaques;
-	std::vector<Projectile *> projectiles;
 	sf::Clock clock;
 	VaisseauTest vaisseautest;
-	VaisseauEclaireur vaiseauEclaireurL(0, 0, LINEAIRE, 0.5, 1);
-	VaisseauEclaireur vaiseauEclaireurP(1000, 0, PARABOLIQUE, 500, 500, -1);
-	VaisseauEclaireur vaiseauEclaireurS(1000, 0, SINUS, -0.7, 300, 100, -1);
+	VaisseauEclaireur vaiseauEclaireurL(0, 0, LINEAIRE,1, 0.5);
+	VaisseauEclaireur vaiseauEclaireurP(1000, 0, PARABOLIQUE,-1, 500, 500);
+	VaisseauEclaireur vaiseauEclaireurS(1000, 0, SINUS,-1, 300, 100, -.7);
 
 	sf::Text afficheAtk;
 	int attaqueEnCours = 0;
@@ -39,17 +37,17 @@ void Partie::testProjTest()
 
 	// Test Vecteur d'attaque
 	CapTest *temp1 = new CapTest();
-	attaques.push_back(temp1);
+	capacites_.push_back(temp1);
 
 	CapPiou *temp2 = new CapPiou();
-	attaques.push_back(temp2);
+	capacites_.push_back(temp2);
 
 	CapDash *temp3 = new CapDash();
-	attaques.push_back(temp3);
+	capacites_.push_back(temp3);
 
 	while (window_.isOpen())
 	{
-		// Gestion nulle des evenement
+		// Gestion  des evenement qui n'est pas bien implémentée ! ah si thomas est passé par là :o 
 		sf::Event event;
 		while (window_.pollEvent(event))
 		{
@@ -59,16 +57,16 @@ void Partie::testProjTest()
 			// Si la touche W est activé
 			if (input_.action(0))
 			{
-				// Lance la compétance à la postion du vaisseau allié
-				sf::Vector2f worldPos = vaisseautest.getPosition();
-				attaques[attaqueEnCours]->utiliser(worldPos.x, worldPos.y);
+				// Lance la compétance à la position du vaisseau allié
+				sf::Vector2f posVaisseau = vaisseautest.getPosition();
+				capacites_[attaqueEnCours]->utiliser(posVaisseau.x, posVaisseau.y);
 			}
 			// Si la touche X est activé
 			if (input_.action(1))
 			{
 				// Changement d'attaque
 				attaqueEnCours++;
-				if (attaqueEnCours >= attaques.size())
+				if (attaqueEnCours >= capacites_.size())
 					attaqueEnCours = 0;
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
@@ -89,24 +87,38 @@ void Partie::testProjTest()
 		vaiseauEclaireurL.gestion(window_, t_ecoule.asMilliseconds());
 		vaiseauEclaireurS.gestion(window_, t_ecoule.asMilliseconds());
 
-		// Gestion des attaques
-		for(int i = 0; i < attaques.size(); i++)
-			attaques[i]->actualiser(projectiles, vaisseautest, t_ecoule.asMilliseconds());
+		// Gestion des capacites_
+		for(int i = 0; i < capacites_.size(); i++)
+			capacites_[i]->actualiser(projectiles_, vaisseautest, t_ecoule.asMilliseconds());
 
-		// Gestion des projectiles
-		for(int i = 0; i < projectiles.size(); i++)
-			projectiles[i]->gestion(window_);
+		// Gestion des projectiles_
+		for(int i = 0; i < projectiles_.size(); i++)
+			projectiles_[i]->gestion(window_);
 
 		// Collision moisie
-		testCollision(projectiles);
+		testCollision(projectiles_);
+		for (int i = 0; i < projectiles_.size(); i++) {
+			if (projectiles_[i]->estDehors())
+			{
+				delete projectiles_[i];
+				projectiles_[i] = projectiles_[projectiles_.size() - 1];
+				projectiles_.pop_back();
+			}
+			for (int j = 0; j < projectiles_.size(); j++) {
+				
+				if (collision(*projectiles_[i], *projectiles_[j])) {
+					projectiles_[i]->agit(projectiles_[j]);
+				}
+			}
+		}
 
 
 		// Affichage attaque en cours
 		std::string txt;
-		if(attaques[attaqueEnCours]->getCooldown() - attaques[attaqueEnCours]->getTime() > 0)
-			txt = attaques[attaqueEnCours]->getNom() + " - " + std::to_string((int)(attaques[attaqueEnCours]->getCooldown() - attaques[attaqueEnCours]->getTime()));
+		if(capacites_[attaqueEnCours]->getCooldown() - capacites_[attaqueEnCours]->getTime() > 0)
+			txt = capacites_[attaqueEnCours]->getNom() + " - " + std::to_string((int)(capacites_[attaqueEnCours]->getCooldown() - capacites_[attaqueEnCours]->getTime()));
 		else
-			txt = attaques[attaqueEnCours]->getNom() + " - " + "Pret";
+			txt = capacites_[attaqueEnCours]->getNom() + " - " + "Pret";
 		afficheAtk.setString(txt);
 		window_.draw(afficheAtk);
 
@@ -116,8 +128,8 @@ void Partie::testProjTest()
 		sf::sleep(sf::milliseconds(10));
 	}
 
-	for (int i = 0; i < attaques.size(); i++)
-		delete attaques[i];
+	for (int i = 0; i < capacites_.size(); i++)
+		delete capacites_[i];
 }
 
 //test vaisseau piou piou de pierre
@@ -152,28 +164,28 @@ void Partie::testVaisseauTest() {
 
 // TODO A refaire !!!!
 
-void Partie::testCollision(std::vector<Projectile*> &projectiles)
+void Partie::testCollision(std::vector<Projectile*> &projectiles_)
 {
-	if (projectiles.size() != 0)
+	if (projectiles_.size() != 0)
 	{
-		for (int i = 0; i < projectiles.size() - 1; i++)
+		for (int i = 0; i < projectiles_.size() - 1; i++)
 		{
-			if (projectiles[i]->estDehors())
+			if (projectiles_[i]->estDehors())
 			{
-				delete projectiles[i];
-				projectiles[i] = projectiles[projectiles.size() - 1];
-				projectiles.pop_back();
+				delete projectiles_[i];
+				projectiles_[i] = projectiles_[projectiles_.size() - 1];
+				projectiles_.pop_back();
 			}
 			else
 			{
-				for (int j = i + 1; j < projectiles.size(); j++)
+				for (int j = i + 1; j < projectiles_.size(); j++)
 				{
-					if (collision(*projectiles[i], *projectiles[j]))
+					if (collision(*projectiles_[i], *projectiles_[j]))
 					{
 						int r = rand() % 2 == 0 ? i : j;
-						delete projectiles[r];
-						projectiles[r] = projectiles[projectiles.size() - 1];
-						projectiles.pop_back();
+						delete projectiles_[r];
+						projectiles_[r] = projectiles_[projectiles_.size() - 1];
+						projectiles_.pop_back();
 						i--;
 						break;
 					}

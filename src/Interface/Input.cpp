@@ -111,6 +111,7 @@ sf::Vector2f Input_base<N>::move_keyboard(float max_speed, const sf::Time& elaps
     right = movement_input_.keyboard_.right_key_ && sf::Keyboard::isKeyPressed(movement_input_.keyboard_.right_key_.value());
 
     // Si on a les deux côtés opposés, on annule
+	//TODO il serait plus agréable (affordant) que le côté opposé pressé en dernier soit prioritaire car là si on appuie sur les deux en même temps le vaisseau s'arrête et c'est contre-intuitif
     if(up && down)
         up = down = false;
     if(left && right)

@@ -198,7 +198,7 @@ class Entite
 
 	protected:
 		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
-		int equipe_; ///< Identifaiant de l'équipe d' l'Entite
+		int equipe_; ///< Identifiant de l'équipe de l'Entite
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
 		float angle_; ///< Orientation actuelle de l'Entite
 		float scale_; ///< Échelle actuelle de l'Entite

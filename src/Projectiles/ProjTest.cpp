@@ -54,6 +54,8 @@ ProjTest::ProjTest(int x, int y)
 	vx_ = rand() % 5 + 3;
 	vy_ = rand() % 5 + 3;
 
+	vit_ = 1;
+
 	float x1 =x, y1 = y;
 
 	setPosition({ x1,  y1 });
@@ -69,7 +71,7 @@ void ProjTest::gestion(sf::RenderWindow& window)
 	age_++;
 
 	// Modification de la postion
-	setPosition({ position_.x + vx_*mx_, position_.y + vy_*my_ });
+	setPosition({ vit_*position_.x + vx_*mx_, vit_*position_.y + vy_*my_ });
 
 	// Gestion du rebond
 	if (position_.x > ECRAN_L - 32 - 1)
@@ -95,5 +97,10 @@ void ProjTest::gestion(sf::RenderWindow& window)
 
 	// Afficher le projectile
 	afficher(window);
+}
+
+void ProjTest::agit(Entite* proj)
+{
+	proj->changeSpeed(0);
 }
 
