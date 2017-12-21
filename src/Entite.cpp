@@ -8,8 +8,8 @@ bool collision(const Entite& e1, const Entite& e2)
 {
 	if(!e1.collisionable_ || !e2.collisionable_)
 		return false;
-	if(e1.equipe_ == e2.equipe_)
-		return false;
+//	if(e1.equipe_ == e2.equipe_)
+//		return false;
 	if(!collision(e1.cercleEnglobant_, e2.cercleEnglobant_))
 		return false;
 	for(const auto& f1 : e1.forme_)

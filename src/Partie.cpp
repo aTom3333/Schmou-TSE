@@ -99,18 +99,21 @@ void Partie::testProjTest()
 			projectiles_[i]->gestion(window_);
 
 		// Collision moisie
-		testCollision(projectiles_);
+		//testCollision(projectiles_);
 		for (int i = 0; i < projectiles_.size(); i++) {
 			if (projectiles_[i]->estDehors())
 			{
 				delete projectiles_[i];
 				projectiles_[i] = projectiles_[projectiles_.size() - 1];
 				projectiles_.pop_back();
+				i--;
 			}
-			for (int j = 0; j < projectiles_.size(); j++) {
-				
-				if (collision(*projectiles_[i], *projectiles_[j])) {
-					projectiles_[i]->agit(*projectiles_[j]);
+			else {
+				for (int j = 0; j < i; j++) {
+
+					if (collision(*projectiles_[i], *projectiles_[j])) {
+						projectiles_[i]->agit(*projectiles_[j]);
+					}
 				}
 			}
 		}
