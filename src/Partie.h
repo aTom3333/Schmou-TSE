@@ -30,6 +30,7 @@ class Partie
 
 		void jeu();
 		void collisionProjectile();
+		void collisionVaisseaux();
 
 		//TODO temporaire pour tester, n'existe pas dans le jeu livré
 		void testProjTest();

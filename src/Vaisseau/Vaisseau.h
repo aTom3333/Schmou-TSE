@@ -42,6 +42,8 @@ class Vaisseau : public Entite
 			*/
 			void agit(Entite &e) {};
 
+			
+
 		//setters
 			void setEquipe(int equipe); ///définit l'équipe (entier)
 			void addCapacite(Capacite* skill); /// < ajoute la @c Capacité skill à la liste des capacités skills_ du vaisseau
@@ -55,6 +57,8 @@ class Vaisseau : public Entite
 			void setatq(int atq);
 			void setdef(int def);
 			void setvit(int vit);
+			void setActif(bool val);
+			
 
 		//getters
 			std::string getnom();
@@ -68,6 +72,7 @@ class Vaisseau : public Entite
 			int getdef();
 			int getvit();
 			std::vector<Capacite*> getskills();
+			bool estActif();
 
 	protected:
 		//caractéristiques générales
@@ -88,6 +93,8 @@ class Vaisseau : public Entite
 			//int vit_; /// Vitesse actuelle
 		// liste de capacités
 			std::vector<Capacite*> capacites_; /// Liste des capacités du vaisseau
+		//stats ia
+			bool actif_; /// Booleen indiquant si la trajectoire a été amorcée
 };
 
 #endif // VAISSEAU_H

@@ -58,6 +58,7 @@ public:
 	* Gère le déplacement et l'affichage du vaisseau
 	*/
 	void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input);
+
 private:
 	sf::Vector2f posInit_; ///position de départ
 	std::vector<float> params_; ///vecteur des paramètres, voir dans @c VaisseauEclaireur
@@ -68,6 +69,7 @@ private:
 	Trajectoire trajectoire_; /// Trajectoire du vaisseau
 	float t_; /// Temps écoulé depuis la création (temps de vie)
 	int frames_;/// temps de vie dans une trajectoire
+	
 };
 
 #endif //VAISSEAU_ECRAIREUR_H

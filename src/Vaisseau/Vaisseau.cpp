@@ -31,6 +31,17 @@ void Vaisseau::gestionCapacite(std::vector <Projectile*> &projectiles, sf::Time 
 		capacites_[i]->actualiser(projectiles, *this, t_ecoule.asMilliseconds());
 }
 
+
+void Vaisseau::setActif(bool val)
+{
+	actif_ = val;
+}
+
+bool Vaisseau::estActif()
+{
+	return actif_;
+}
+
 //setters
 	void Vaisseau::setEquipe(int equipe)
 	{

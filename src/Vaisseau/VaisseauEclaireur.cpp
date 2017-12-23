@@ -22,7 +22,8 @@ VaisseauEclaireur::VaisseauEclaireur(float x, float y,Trajectoire traj, float pa
 	// Initialisation des paramètres de base
 	t_ = 0;
 	frames_ = 1;
-	vit_ = 20;
+	vit_ = 30;
+	actif_ = false;
 
 	// Initialisation des paramètres de trajectoire
 	params_.push_back(param1);
@@ -46,11 +47,13 @@ void VaisseauEclaireur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule,
 		frames_ = 0;
 	}*/
 	
+	if (actif_)
+	{
+		setPosition(traj_position(trajectoire_, t_, vit_, posInit_, params_));
+		afficher(window);
 
-
-	setPosition(traj_position(trajectoire_,t_,vit_,posInit_,params_));
-	afficher(window);
-
-	t_ += tempsEcoule.asMilliseconds();
-	frames_++;
+		t_ += tempsEcoule.asMilliseconds();
+		frames_++;
+	}
 }
+

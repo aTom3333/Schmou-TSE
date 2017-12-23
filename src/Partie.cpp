@@ -3,6 +3,7 @@
 #include "Capacites/_Capacites.h"
 #include "Vaisseau/_vaisseaux.h"
 #include "Interface/bindings.h"
+#include "vague.h"
 
 
 Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window)
@@ -17,25 +18,44 @@ Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window)
 
 Partie::~Partie()
 {
-	/*for (int i = 0; i < vaisseaux_.size(); i++)
+	for (int i = 0; i < vaisseaux_.size(); i++)
 		delete vaisseaux_[i];
 	for (int i = 0; i < projectiles_.size(); i++)
-		delete projectiles_[i];*/
+		delete projectiles_[i];
 }
 
 void Partie::testProjTest()
 {
 	sf::Clock clock;
 
-	VaisseauTest *vaisseautest = new VaisseauTest;
-	VaisseauEclaireur *vaiseauEclaireurL = new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5);
-	VaisseauEclaireur *vaiseauEclaireurP = new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500);
-	VaisseauEclaireur *vaiseauEclaireurS = new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7);
+	Vague v1(0), v2(5000), v3(10000);
 
+	VaisseauTest *vaisseautest = new VaisseauTest;
+	/*VaisseauEclaireur *vaiseauEclaireurL = new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5);
+	VaisseauEclaireur *vaiseauEclaireurP = new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500);
+	VaisseauEclaireur *vaiseauEclaireurS = new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7);*/
+
+	//Joueur
 	vaisseaux_.push_back(vaisseautest);
-	vaisseaux_.push_back(vaiseauEclaireurL);
-	vaisseaux_.push_back(vaiseauEclaireurP);
-	vaisseaux_.push_back(vaiseauEclaireurS);
+
+
+	v1.ajouterVaisseau(0, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
+	v1.ajouterVaisseau(200, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
+	v1.ajouterVaisseau(400, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
+	v1.ajouterVaisseau(600, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
+	v1.ajouterVaisseau(800, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
+
+	v2.ajouterVaisseau(0, new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500));
+	v2.ajouterVaisseau(200, new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500));
+	v2.ajouterVaisseau(400, new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500));
+	v2.ajouterVaisseau(600, new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500));
+	v2.ajouterVaisseau(800, new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500));
+
+	v3.ajouterVaisseau(0, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
+	v3.ajouterVaisseau(200, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
+	v3.ajouterVaisseau(400, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
+	v3.ajouterVaisseau(600, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
+	v3.ajouterVaisseau(800, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
 
 	while (window_.isOpen())
 	{
@@ -54,6 +74,11 @@ void Partie::testProjTest()
 		
 		// Efface l'écran
 		window_.clear();
+		
+		// Gestion des vagues
+		v1.gestion(vaisseaux_, t_ecoule);
+		v2.gestion(vaisseaux_, t_ecoule);
+		v3.gestion(vaisseaux_, t_ecoule);
 
 		//Gestion des vaisseaux
 		for (int i = 0; i < vaisseaux_.size(); i++)
@@ -68,6 +93,7 @@ void Partie::testProjTest()
 
 		// Gestion des collisions
 		collisionProjectile();
+		collisionVaisseaux();
 
 		// Mise à jour de l'écran
 		window_.display();
@@ -167,4 +193,22 @@ void Partie::collisionProjectile()
 	}
 	delete allEntite;
 
+}
+
+void Partie::collisionVaisseaux()
+{
+	if (vaisseaux_.size() != 0)
+	{
+		for (int i = 0; i < vaisseaux_.size() - 1; i++)
+		{
+			// Si le projectile est dehors
+			if (vaisseaux_[i]->estDehors())
+			{
+				delete vaisseaux_[i];
+				vaisseaux_[i] = vaisseaux_[vaisseaux_.size() - 1];
+				vaisseaux_.pop_back();
+			}
+			// TODO Gérer la collision Vaisseau-Vaisseau
+		}
+	}
 }
