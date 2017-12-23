@@ -20,6 +20,15 @@ Vaisseau::Vaisseau() ///constructeur
 
 Vaisseau::~Vaisseau() ///destructeur
 {
+	for (int i = 0; i < capacites_.size(); i++)
+		delete capacites_[i];
+}
+
+void Vaisseau::gestionCapacite(std::vector <Projectile*> &projectiles, sf::Time t_ecoule)
+{
+	// Gestion des capacites_
+	for (int i = 0; i < capacites_.size(); i++)
+		capacites_[i]->actualiser(projectiles, *this, t_ecoule.asMilliseconds());
 }
 
 //setters
@@ -30,7 +39,7 @@ Vaisseau::~Vaisseau() ///destructeur
 
 	void Vaisseau::addCapacite(Capacite* skill)
 	{
-		skills_.push_back(skill);
+		capacites_.push_back(skill);
 	}
 
 	void Vaisseau::setnom(std::string nom)
@@ -137,5 +146,5 @@ Vaisseau::~Vaisseau() ///destructeur
 
 	std::vector<Capacite*> Vaisseau::getskills()
 	{
-		return skills_;
+		return capacites_;
 	}

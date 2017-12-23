@@ -24,29 +24,19 @@ Partie::~Partie()
 void Partie::testProjTest()
 {
 	sf::Clock clock;
-	VaisseauTest vaisseautest;
-	VaisseauEclaireur vaiseauEclaireurL(0, 0, LINEAIRE,1, 0.5);
-	VaisseauEclaireur vaiseauEclaireurP(1000, 0, PARABOLIQUE,-1, 500, 500);
-	VaisseauEclaireur vaiseauEclaireurS(1000, 0, SINUS,-1, 300, 100, -.7);
 
-	sf::Text afficheAtk;
-	int attaqueEnCours = 0;
+	
 
-	// Initialisation du texte (Nom capacité + Cooldown)
-	afficheAtk.setFont(font_);
-	afficheAtk.setCharacterSize(20);
-	afficheAtk.setFillColor(sf::Color::White);
-	afficheAtk.setPosition(0, 0);
 
-	// Test Vecteur d'attaque
-	CapTest *temp1 = new CapTest();
-	capacites_.push_back(temp1);
+	VaisseauTest *vaisseautest = new VaisseauTest;
+	VaisseauEclaireur *vaiseauEclaireurL = new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5);
+	VaisseauEclaireur *vaiseauEclaireurP = new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500);
+	VaisseauEclaireur *vaiseauEclaireurS = new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7);
 
-	CapPiou *temp2 = new CapPiou();
-	capacites_.push_back(temp2);
-
-	CapDash *temp3 = new CapDash();
-	capacites_.push_back(temp3);
+	vaisseaux_.push_back(vaisseautest);
+	vaisseaux_.push_back(vaiseauEclaireurL);
+	vaisseaux_.push_back(vaiseauEclaireurP);
+	vaisseaux_.push_back(vaiseauEclaireurS);
 
 	while (window_.isOpen())
 	{
@@ -57,21 +47,6 @@ void Partie::testProjTest()
 			if (event.type == sf::Event::Closed)
 				window_.close();
 
-			// Si la touche W est activé
-			if (input_.action(0))
-			{
-				// Lance la compétance à la position du vaisseau allié
-				sf::Vector2f posVaisseau = vaisseautest.getPosition();
-				capacites_[attaqueEnCours]->utiliser(posVaisseau.x, posVaisseau.y);
-			}
-			// Si la touche X est activé
-			if (input_.action(1))
-			{
-				// Changement d'attaque
-				attaqueEnCours++;
-				if (attaqueEnCours >= capacites_.size())
-					attaqueEnCours = 0;
-			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 				window_.close();
 		}
@@ -81,21 +56,15 @@ void Partie::testProjTest()
 		// Efface l'écran
 		window_.clear();
 
-		// Gestion du vaisseau
-        vaisseautest.move(input_.move(vaisseautest.getvit(), t_ecoule));
-		vaisseautest.gestion(window_, t_ecoule.asMilliseconds());
-
-
-		vaiseauEclaireurP.gestion(window_, t_ecoule.asMilliseconds());
-		vaiseauEclaireurL.gestion(window_, t_ecoule.asMilliseconds());
-		vaiseauEclaireurS.gestion(window_, t_ecoule.asMilliseconds());
-
-		// Gestion des capacites_
-		for(int i = 0; i < capacites_.size(); i++)
-			capacites_[i]->actualiser(projectiles_, vaisseautest, t_ecoule.asMilliseconds());
+		//Gestion des vaisseaux
+		for (int i = 0; i < vaisseaux_.size(); i++)
+		{
+			vaisseaux_[i]->gestionCapacite(projectiles_, t_ecoule);
+			vaisseaux_[i]->gestion(window_, t_ecoule, input_);
+		}
 
 		// Gestion des projectiles_
-		for(int i = 0; i < projectiles_.size(); i++)
+		for (int i = 0; i < projectiles_.size(); i++)
 			projectiles_[i]->gestion(window_);
 
 		// Collision moisie
@@ -118,24 +87,11 @@ void Partie::testProjTest()
 			}
 		}
 
-
-		// Affichage attaque en cours
-		std::string txt;
-		if(capacites_[attaqueEnCours]->getCooldown() - capacites_[attaqueEnCours]->getTime() > 0)
-			txt = capacites_[attaqueEnCours]->getNom() + " - " + std::to_string((int)(capacites_[attaqueEnCours]->getCooldown() - capacites_[attaqueEnCours]->getTime()));
-		else
-			txt = capacites_[attaqueEnCours]->getNom() + " - " + "Pret";
-		afficheAtk.setString(txt);
-		window_.draw(afficheAtk);
-
 		// Mise à jour de l'écran
 		window_.display();
 
 		sf::sleep(sf::milliseconds(10));
 	}
-
-	for (int i = 0; i < capacites_.size(); i++)
-		delete capacites_[i];
 }
 
 //test vaisseau piou piou de pierre
@@ -160,7 +116,7 @@ void Partie::testVaisseauTest() {
 			window_.clear();
 
 		//code
-			vaisseautest.gestion(window_, t_ecoule);
+			//vaisseautest.gestion(window_, t_ecoule);
 
 		//maj fin de boucle
 			window_.display();

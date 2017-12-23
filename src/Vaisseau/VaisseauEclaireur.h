@@ -53,10 +53,11 @@ public:
 	* @brief Gère le comportement du vaisseau
 	* @param window Fenetre SFML où le vaisseau sera affiché
 	* @param tempsEcoule Temps écoulé depuis le dernier appel
+	* @param input Classe Input donnant accés aux entrée
 	*
 	* Gère le déplacement et l'affichage du vaisseau
 	*/
-	void gestion(sf::RenderWindow & window, float tempsEcoule);
+	void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input);
 private:
 	sf::Vector2f posInit_; ///position de départ
 	std::vector<float> params_; ///vecteur des paramètres, voir dans @c VaisseauEclaireur

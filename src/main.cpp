@@ -17,7 +17,7 @@ int main()
 
 	//Brodel de thomas 2 : le retour
 	ProjTest a;
-	std::cout << std::boolalpha << est<Projectile, decltype(a)>(a) << std::endl << est<ProjTest, decltype(a)>(a) << std::endl << est<ProjPiou, decltype(a)>(a) << std::endl;
+//	std::cout << std::boolalpha << est<Projectile, decltype(a)>(a) << std::endl << est<ProjTest, decltype(a)>(a) << std::endl << est<ProjPiou, decltype(a)>(a) << std::endl;
 	
 	// Code propre
 

@@ -43,7 +43,6 @@ class Partie
 
 		//attributs principaux en jeu
 		std::vector<Vaisseau*> vaisseaux_; ///vecteur des vaisseaux ennemis en jeu
-		std::vector<Capacite*> capacites_; ///TODO temporaire : vectuer des capacités à mettre dans la classe Vaisseau
 		std::vector<Projectile *> projectiles_; /// vecteur des projectiles en jeu
 
 };

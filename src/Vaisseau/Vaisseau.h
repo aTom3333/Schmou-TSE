@@ -7,6 +7,7 @@
 #include "../Capacites/Capacite.h"
 #include "../Entite.h"
 #include "../Projectiles/Projectile.h"
+#include "../Interface/Input.h"
 
 
 /**
@@ -26,10 +27,12 @@ class Vaisseau : public Entite
 			* @fn gestion
 			* @brief Gère le comportement du vaisseau
 			* @param window Fenetre SFML où le vaisseau sera affiché
+			* @param input Classe Input donnant accés aux entrée 
 			*
 			* Fonction virtuelle qui gère le comportement du vaisseau
 			*/
-			virtual void gestion(sf::RenderWindow & window, float tempsEcoule) = 0;
+			virtual void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input) = 0;
+			void gestionCapacite(std::vector <Projectile*> &projectiles, sf::Time t_ecoule);
 
 		//setters
 			void setEquipe(int equipe); ///définit l'équipe (entier)
@@ -76,7 +79,7 @@ class Vaisseau : public Entite
 			int def_; /// Défense actuelle
 			//int vit_; /// Vitesse actuelle
 		// liste de capacités
-			std::vector<Capacite*> skills_; /// Liste des capacités du vaisseau
+			std::vector<Capacite*> capacites_; /// Liste des capacités du vaisseau
 };
 
 #endif // VAISSEAU_H

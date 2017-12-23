@@ -34,21 +34,21 @@ VaisseauEclaireur::~VaisseauEclaireur()
 {
 }
 
-void VaisseauEclaireur::gestion(sf::RenderWindow & window, float tempsEcoule)
+void VaisseauEclaireur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input)
 {
-	if (frames_%100==0)
+	/*if (frames_%100==0)
 	{
 		params_[0] = -params_[0];
 		posInit_ = position_;
 		t_ = 0;
 		frames_ = 0;
-	}
+	}*/
 	
 
 
 	setPosition(traj_position(trajectoire_,t_,vit_,posInit_,params_));
 	afficher(window);
 
-	t_ += tempsEcoule;
+	t_ += tempsEcoule.asMilliseconds();
 	frames_++;
 }
