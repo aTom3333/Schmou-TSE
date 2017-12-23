@@ -29,7 +29,7 @@ class Partie
 		~Partie();
 
 		void jeu();
-		void testCollision(std::vector<Projectile*> &projectiles);
+		void collisionProjectile();
 
 		//TODO temporaire pour tester, n'existe pas dans le jeu livré
 		void testProjTest();

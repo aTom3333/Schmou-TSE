@@ -9,8 +9,10 @@ VaisseauEclaireur::VaisseauEclaireur(float x, float y,Trajectoire traj, float pa
 	sprite_.setTexture(texture_);
 
 	//hitbox simple
-	cercleEnglobant_ = sf::CircleShape(32);
-	cercleEnglobant_.setOrigin(16, 32);
+	cercleEnglobant_ = sf::CircleShape(16);
+	cercleEnglobant_.setOrigin(8, 8);
+	cercleEnglobant_.setPosition(16, 32);
+	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
 	// Initialisation de la postion
 	posInit_.x = x;
@@ -20,7 +22,7 @@ VaisseauEclaireur::VaisseauEclaireur(float x, float y,Trajectoire traj, float pa
 	// Initialisation des paramètres de base
 	t_ = 0;
 	frames_ = 1;
-	vit_ = 40;
+	vit_ = 20;
 
 	// Initialisation des paramètres de trajectoire
 	params_.push_back(param1);

@@ -17,16 +17,15 @@ Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window)
 
 Partie::~Partie()
 {
+	/*for (int i = 0; i < vaisseaux_.size(); i++)
+		delete vaisseaux_[i];
+	for (int i = 0; i < projectiles_.size(); i++)
+		delete projectiles_[i];*/
 }
-
-
 
 void Partie::testProjTest()
 {
 	sf::Clock clock;
-
-	
-
 
 	VaisseauTest *vaisseautest = new VaisseauTest;
 	VaisseauEclaireur *vaiseauEclaireurL = new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5);
@@ -67,25 +66,8 @@ void Partie::testProjTest()
 		for (int i = 0; i < projectiles_.size(); i++)
 			projectiles_[i]->gestion(window_);
 
-		// Collision moisie
-		//testCollision(projectiles_);
-		for (int i = 0; i < projectiles_.size(); i++) {
-			if (projectiles_[i]->estDehors())
-			{
-				delete projectiles_[i];
-				projectiles_[i] = projectiles_[projectiles_.size() - 1];
-				projectiles_.pop_back();
-				i--;
-			}
-			else {
-				for (int j = 0; j < i; j++) {
-
-					if (collision(*projectiles_[i], *projectiles_[j])) {
-						projectiles_[i]->agit(*projectiles_[j]);
-					}
-				}
-			}
-		}
+		// Gestion des collisions
+		collisionProjectile();
 
 		// Mise à jour de l'écran
 		window_.display();
@@ -126,35 +108,63 @@ void Partie::testVaisseauTest() {
 
 // TODO A refaire !!!!
 
-void Partie::testCollision(std::vector<Projectile*> &projectiles_)
+void Partie::collisionProjectile()
 {
+	/*std::vector<Entite*> allEntite;
+	allEntite.insert(projectiles_.begin(), vaisseaux_.begin(), vaisseaux_.end());*/
+	int n = projectiles_.size() + vaisseaux_.size();
+	Entite **allEntite = new Entite*[projectiles_.size() + vaisseaux_.size()];
+
+	for (int i = 0; i < projectiles_.size(); i++)
+		allEntite[i] = projectiles_[i];
+	for (int i = projectiles_.size(); i < n; i++)
+		allEntite[i] = vaisseaux_[i - projectiles_.size()];
+
+
 	if (projectiles_.size() != 0)
 	{
 		for (int i = 0; i < projectiles_.size() - 1; i++)
 		{
+			// Si le projectile est dehors
 			if (projectiles_[i]->estDehors())
 			{
 				delete projectiles_[i];
 				projectiles_[i] = projectiles_[projectiles_.size() - 1];
 				projectiles_.pop_back();
+				allEntite[i] = allEntite[projectiles_.size() - 1];
 			}
 			else
 			{
-				for (int j = i + 1; j < projectiles_.size(); j++)
+				// Collision avec une autre entite
+				for (int j = i + 1; j < projectiles_.size() + vaisseaux_.size(); j++)
 				{
-					if (collision(*projectiles_[i], *projectiles_[j]))
-					{
-						int r = rand() % 2 == 0 ? i : j;
-						delete projectiles_[r];
-						projectiles_[r] = projectiles_[projectiles_.size() - 1];
-						projectiles_.pop_back();
-						i--;
-						break;
-					}
+					if (collision(*allEntite[i], *allEntite[j]))
+						allEntite[i]->agit(*allEntite[j]);
 				}
 			}
-			
+
+
+			//Destruction des projectiles morts
+			if (projectiles_[i]->estDetruit())
+			{
+				delete projectiles_[i];
+				projectiles_[i] = projectiles_[projectiles_.size() - 1];
+				projectiles_.pop_back();
+				break;
+			}			
 		}
 	}
+	for (int i = 0; i < vaisseaux_.size(); i++)
+	{
+		//Destruction des vaisseaux morts
+		if (vaisseaux_[i]->estDetruit())
+		{
+			delete vaisseaux_[i];
+			vaisseaux_[i] = vaisseaux_[vaisseaux_.size() - 1];
+			vaisseaux_.pop_back();
+			break;
+		}
+	}
+	delete allEntite;
 
 }

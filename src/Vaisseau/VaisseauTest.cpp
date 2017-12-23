@@ -8,8 +8,10 @@ VaisseauTest::VaisseauTest() ///constructeur
 	sprite_.setTexture(texture_);
 
 	//hitbox simple
-	cercleEnglobant_ = sf::CircleShape(64);
-	cercleEnglobant_.setOrigin(64, 64);
+	cercleEnglobant_ = sf::CircleShape(32);
+	cercleEnglobant_.setOrigin(32, 32);
+	cercleEnglobant_.setPosition(32, 32);
+	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
 	vit_ = 500;
 
@@ -21,6 +23,8 @@ VaisseauTest::VaisseauTest() ///constructeur
 
 	CapDash *temp3 = new CapDash();
 	capacites_.push_back(temp3);
+
+	attaqueEnCours_ = 1;
 
 }
 

@@ -56,7 +56,7 @@ ProjTest::ProjTest(int x, int y)
 
 	vit_ = 1;
 
-	float x1 =x, y1 = y;
+	float x1 = x + 40*mx_, y1 = y + 40 * my_;
 
 	setPosition({ x1,  y1 });
 }
@@ -101,6 +101,7 @@ void ProjTest::gestion(sf::RenderWindow& window)
 
 void ProjTest::agit(Entite& proj)
 {
-	proj.changeSpeed(0);
+	proj.setDetruit(true);
+	detruit_ = true;
 }
 

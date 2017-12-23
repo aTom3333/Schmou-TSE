@@ -95,6 +95,16 @@ void Entite::changeSpeed(int val)
 	vit_ += val;
 }
 
+void Entite::setDetruit(bool val)
+{
+	detruit_ = val;
+}
+
+bool Entite::estDetruit() const
+{
+	return detruit_;
+}
+
 bool Entite::estDehors(float x_min, float y_min, float x_max, float y_max) const
 {
     float R = cercleEnglobant_.getRadius();

@@ -33,6 +33,14 @@ class Vaisseau : public Entite
 			*/
 			virtual void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input) = 0;
 			void gestionCapacite(std::vector <Projectile*> &projectiles, sf::Time t_ecoule);
+			/**
+			* @fn agit
+			* @brief Procédure lorsque le projectile agit avec une Entite
+			* @param e Entite à modifier
+			*
+			* Vide
+			*/
+			void agit(Entite &e) {};
 
 		//setters
 			void setEquipe(int equipe); ///définit l'équipe (entier)

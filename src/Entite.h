@@ -195,9 +195,34 @@ class Entite
          * @param [in] val La valeur à ajouter à la vitesse actuelle
          */
 		void changeSpeed(int val); 
+		/**
+		* @fn setDetruit
+		* @brief Fixe si l'entité est détruit ou non
+		*
+		* Fixe si l'entité est détruit ou non
+		* @param bool L'etat à appliquer
+		*/
+		void setDetruit(bool val);
+		/**
+		* @fn estDetruit
+		* @brief Renvoie un booléen indiquant si l'entité est détuit
+		*
+		* Renvoie un booléen indiquant si l'entité est détuit
+		*/
+		bool estDetruit() const;
+		/**
+		* @fn agit
+		* @brief Réalise l'action que l'@c Entite doit faire sur le vaisseau
+		*
+		* Fonction virtuelle qui doit être surchargée pour les classes héritées.
+		* Elle réalise l'action que l'@c Entite appelant sur l'@c Entite passé en paramètre (dégats, changement de stat, ...)
+		* @param e Une @c Entite sur lequel l'action de l'@c Entite va se faire
+		*/
+		virtual void agit(Entite& e) = 0;
 
 	protected:
 		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
+		bool detruit_ = false;
 		int equipe_; ///< Identifiant de l'équipe de l'Entite
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
 		float angle_; ///< Orientation actuelle de l'Entite

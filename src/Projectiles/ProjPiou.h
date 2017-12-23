@@ -49,11 +49,11 @@ public:
 	/**
 	* @fn agit
 	* @brief Procédure lorsque le projectile agit avec une Entite
-	* @param Vaisseau à modifier
+	* @param e Entite à modifier
 	*
 	* Vide
 	*/
-	void agit(Entite &v) {};
+	void agit(Entite &e);
 private:
 	int vx_; /// Vitesse horizontale
 	int vy_; /// Vitesse verticale
