@@ -28,7 +28,7 @@ void Partie::testProjTest()
 {
 	sf::Clock clock;
 
-	Vague v1(0), v2(5000), v3(10000);
+	Vague v1(0), v2(5000), v3(10000), v4(15000);
 
 	VaisseauTest *vaisseautest = new VaisseauTest;
 	/*VaisseauEclaireur *vaiseauEclaireurL = new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5);
@@ -57,6 +57,19 @@ void Partie::testProjTest()
 	v3.ajouterVaisseau(600, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
 	v3.ajouterVaisseau(800, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
 
+	v4.ajouterVaisseau(0, new VaisseauAttaquant(0, -50, PARABOLIQUE, 1,    200, 0));
+	v4.ajouterVaisseau(0, new VaisseauAttaquant(250, -50, PARABOLIQUE, 1,  200, 250));
+	v4.ajouterVaisseau(0, new VaisseauAttaquant(500, -50, PARABOLIQUE, 1,  200, 500));
+	v4.ajouterVaisseau(0, new VaisseauAttaquant(750, -50, PARABOLIQUE, 1,  200, 750));
+	v4.ajouterVaisseau(0, new VaisseauAttaquant(1000, -50, PARABOLIQUE, 1, 200, 1000));
+
+	std::vector<Vague> pattern;
+
+	pattern.push_back(v1);
+	pattern.push_back(v2);
+	pattern.push_back(v3);
+	pattern.push_back(v4);
+
 	while (window_.isOpen())
 	{
 		// Gestion  des evenement qui n'est pas bien implémentée ! ah si thomas est passé par là :o 
@@ -76,9 +89,8 @@ void Partie::testProjTest()
 		window_.clear();
 		
 		// Gestion des vagues
-		v1.gestion(vaisseaux_, t_ecoule);
-		v2.gestion(vaisseaux_, t_ecoule);
-		v3.gestion(vaisseaux_, t_ecoule);
+		for (int i = 0; i < pattern.size(); i++)
+			pattern[i].gestion(vaisseaux_, t_ecoule);
 
 		//Gestion des vaisseaux
 		for (int i = 0; i < vaisseaux_.size(); i++)
@@ -131,8 +143,6 @@ void Partie::testVaisseauTest() {
 			sf::sleep(sf::milliseconds(10));
 	}
 }
-
-// TODO A refaire !!!!
 
 void Partie::collisionProjectile()
 {
@@ -201,7 +211,7 @@ void Partie::collisionVaisseaux()
 	{
 		for (int i = 0; i < vaisseaux_.size() - 1; i++)
 		{
-			// Si le projectile est dehors
+			// Si le vaisseau est dehors
 			if (vaisseaux_[i]->estDehors())
 			{
 				delete vaisseaux_[i];

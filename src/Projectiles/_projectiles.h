@@ -7,5 +7,6 @@
 
 #include "ProjTest.h"
 #include "ProjPiou.h"
+#include "ProjMissile.h"
 
 #endif

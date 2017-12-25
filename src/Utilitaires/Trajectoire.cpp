@@ -13,8 +13,19 @@ sf::Vector2f traj_position(Trajectoire trajectoire,float t, float vit_, sf::Vect
 		break;
 		// Si la trajectoire est parabolique
 	case PARABOLIQUE:
-		posOut.x = posInit.x + params[0]*vit_*t / 100;
-		posOut.y = (posInit.y - params[1]) / ((posInit.x - params[2])*(posInit.x - params[2])) * (posOut.x - params[2]) * (posOut.x - params[2]) + params[1];
+		if ((posInit.x - params[2]) != 0)
+		{
+			posOut.x = posInit.x + params[0] * vit_*t / 100;
+			posOut.y = (posInit.y - params[1]) / ((posInit.x - params[2])*(posInit.x - params[2])) * (posOut.x - params[2]) * (posOut.x - params[2]) + params[1];
+		}
+		else
+		{
+			posOut.x = posInit.x;
+			params[0] = (params[1] - posInit.y)/abs(params[1] - posInit.y);
+			float g = - vit_ * vit_ / (2 * (params[1] - posInit.y));
+			posOut.y = 0.5* g*t*t/10000+ params[0] * vit_ * t/100  + posInit.y;
+
+		}
 		break;
 		// Si la trajectoire est sinusoidale
 	case SINUS:
