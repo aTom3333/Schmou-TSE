@@ -17,6 +17,19 @@ ProjMissile::ProjMissile(float x, float y)
 	cercleEnglobant_.setPosition(20, 40);
 	//forme_.emplace_back(new sf::RectangleShape({40,80}));
 
+	//stats
+	pvMax_ = 10;
+	armureMax_ = 0;
+	bouclierMax_ = 0;
+
+	pv_ = pvMax_;
+	armure_ = armureMax_;
+	bouclier_ = bouclierMax_;
+
+	regenARM_ = regenBOU_ = regenPV_ = 0;
+
+	degats_ = 200;
+
 	//  Projectile qui se déplace verticalement
 	sens_ = 1;
 	a_ = 1.05 * sens_;
@@ -39,6 +52,6 @@ void ProjMissile::gestion(sf::RenderWindow & window)
 
 void ProjMissile::agit(Entite & e)
 {
-	e.setDetruit(true);
+	e.recoitDegats(degats_);
 	detruit_ = true;
 }

@@ -83,26 +83,6 @@ bool Vaisseau::estActif()
 		vitM_ = vitM;
 	}
 
-	void Vaisseau::setpv(int pv)
-	{
-		pv_ = pv;
-	}
-
-	void Vaisseau::setatq(int atq)
-	{
-		atq_ = atq;
-	}
-
-	void Vaisseau::setdef(int def)
-	{
-		def_ = def;
-	}
-
-	void Vaisseau::setvit(int vit)
-	{
-		vit_ = vit;
-	}
-
 
 //getters
 	std::string Vaisseau::getnom()
@@ -133,26 +113,6 @@ bool Vaisseau::estActif()
 	int Vaisseau::getvitM()
 	{
 		return vitM_;
-	}
-
-	int Vaisseau::getpv()
-	{
-		return pv_;
-	}
-
-	int Vaisseau::getatq()
-	{
-		return atq_;
-	}
-
-	int Vaisseau::getdef()
-	{
-		return def_;
-	}
-
-	int Vaisseau::getvit()
-	{
-		return vit_;
 	}
 
 	std::vector<Capacite*> Vaisseau::getskills()

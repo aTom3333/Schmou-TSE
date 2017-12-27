@@ -18,11 +18,24 @@ ProjPiou::ProjPiou(int x, int y)
 	cercleEnglobant_.setPosition(10, 10);
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 	
+	// Stats
 	age_ = 0;
+
+	pvMax_ = 10;
+	armureMax_ = 0;
+	bouclierMax_ = 0;
+
+	pv_ = pvMax_;
+	armure_ = armureMax_;
+	bouclier_ = bouclierMax_;
+
+	regenARM_ = regenBOU_ = regenPV_ = 0;
+
+	degats_ = 70;
 
 	//  Projectile qui se déplace verticalement
 	vx_ = 0;
-	vy_ = -12;
+	vy_ = -20;
 
 	float x1 = x, y1 = y-20;
 
@@ -41,6 +54,6 @@ void ProjPiou::gestion(sf::RenderWindow & window)
 
 void ProjPiou::agit(Entite& proj)
 {
-	proj.setDetruit(true);
+	proj.recoitDegats(degats_);
 	detruit_ = true;
 }

@@ -13,8 +13,25 @@ VaisseauTest::VaisseauTest() ///constructeur
 	cercleEnglobant_.setPosition(32, 32);
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
+	// Stats
 	vit_ = 500;
 
+	pvMax_ = 300;
+	armureMax_ = 200;
+	bouclierMax_ = 250;
+
+	pv_ = pvMax_;
+	armure_ = armureMax_;
+	bouclier_ = bouclierMax_;
+
+	regenARM_ = 0;
+	regenBOU_ = 2;
+	regenPV_ = 0;
+
+	degats_ = 50;
+
+
+	// Capacités
 	CapTest *temp1 = new CapTest();
 	capacites_.push_back(temp1);
 
@@ -53,7 +70,7 @@ void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Inpu
 	move(input.move(vit_, tempsEcoule));
 
 	// Affichage des informations sur la capacité en cours
-	// TODO Solution temporaire
+	// TODO A mettre dans la classe affichant l'interface
 		sf::Text afficheAtk;
 		sf::Font font_;
 		font_.loadFromFile("../../rc/Font/hemi.ttf");
@@ -70,6 +87,35 @@ void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Inpu
 			txt = capacites_[attaqueEnCours_]->getNom() + " - " + "Pret";
 		afficheAtk.setString(txt);
 		window.draw(afficheAtk);
+
+	// Affichage des points de vie/bouclier/armure
+	// TODO A mettre dans la classe affichant l'interface
+		sf::RectangleShape rec;
+		sf::Vector2f size;
+
+		// PV
+		size.x = pv_/pvMax_ * 300;
+		size.y = 30;
+		rec.setSize(size);
+		rec.setPosition(0, 30);
+		rec.setFillColor(sf::Color::Green);
+		window.draw(rec);
+
+		// Armure
+		size.x = armure_ / armureMax_ * 200;
+		size.y = 20;
+		rec.setSize(size);
+		rec.setPosition(0, 60);
+		rec.setFillColor(sf::Color::Yellow);
+		window.draw(rec);
+
+		// Bouclier
+		size.x = bouclier_ / bouclierMax_ * 200;
+		size.y = 20;
+		rec.setSize(size);
+		rec.setPosition(0, 80);
+		rec.setFillColor(sf::Color::Blue);
+		window.draw(rec);
 
 	afficher(window);
 }

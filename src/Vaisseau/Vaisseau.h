@@ -53,10 +53,6 @@ class Vaisseau : public Entite
 			void setatqM(int atqM);
 			void setdefM(int defM);
 			void setvitM(int vitM);
-			void setpv(int pv);
-			void setatq(int atq);
-			void setdef(int def);
-			void setvit(int vit);
 			void setActif(bool val);
 			
 
@@ -67,10 +63,6 @@ class Vaisseau : public Entite
 			int getatqM();
 			int getdefM();
 			int getvitM();
-			int getpv();
-			int getatq();
-			int getdef();
-			int getvit();
 			std::vector<Capacite*> getskills();
 			bool estActif();
 
@@ -86,11 +78,6 @@ class Vaisseau : public Entite
 			int atqM_; /// < Attaque de base
 			int defM_; /// Défense de base
 			int vitM_; /// Vitesse de base
-		// stats actualisées en jeu
-			int pv_; /// Points de vie actuels
-			int atq_; /// Attaque actuelle
-			int def_; /// Défense actuelle
-			//int vit_; /// Vitesse actuelle
 		// liste de capacités
 			std::vector<Capacite*> capacites_; /// Liste des capacités du vaisseau
 		//stats ia

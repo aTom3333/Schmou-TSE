@@ -100,9 +100,73 @@ void Entite::setDetruit(bool val)
 	detruit_ = val;
 }
 
-bool Entite::estDetruit() const
+bool Entite::estDetruit()
 {
+	if (pv_ <= 0)
+		detruit_ = true;
 	return detruit_;
+}
+
+void Entite::regen(sf::Time t)
+{
+	// Mise à jour du timer
+	t_regen_ += t.asMilliseconds();
+
+	// Si 250 ms se sont écoulé
+	if (t_regen_ >= 250)
+	{
+		// Réinitialisation du timer
+		t_regen_ = 0;
+
+		// Régénération des différentes statistiques
+		pv_ += regenPV_;
+		armure_ += regenARM_;
+		bouclier_ += regenBOU_;
+
+		// Si le seuil maximal est dépassé
+		if (pv_ > pvMax_)
+			pv_ = pvMax_;
+		if (armure_ > armureMax_)
+			armure_ = armureMax_;
+		if (bouclier_ > bouclierMax_)
+			bouclier_ = bouclierMax_;
+	}
+}
+
+void Entite::recoitDegats(float degats)
+{
+	float restant = degats;
+
+	bouclier_ -= restant;
+
+	// Si le bouclier est détruit
+	if (bouclier_ < 0)
+	{
+		// Récupération des dégats restant
+		restant = -bouclier_;
+		bouclier_ = 0;
+	}
+	// Sinon le bouclier a absorbé tout les dégats 
+	else
+		restant = 0;
+
+	float reductionArmure = 0.7; // Multiplicateur de réduction de dégats de l'armure
+	armure_ -= restant * reductionArmure;
+	if (armure_ < 0)
+	{
+		restant = -armure_ / reductionArmure;
+		armure_ = 0;
+	}
+	else
+		restant = 0;
+
+	pv_ -= restant;
+	if (pv_ <= 0)
+	{
+		pv_ = 0;
+		detruit_ = true;
+	}
+
 }
 
 bool Entite::estDehors(float x_min, float y_min, float x_max, float y_max) const

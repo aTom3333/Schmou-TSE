@@ -17,6 +17,18 @@ ProjTest::ProjTest()
 	//attributs
 	age_ = 0;
 
+	pvMax_ = 10;
+	armureMax_ = 0;
+	bouclierMax_ = 0;
+
+	pv_ = pvMax_;
+	armure_ = armureMax_;
+	bouclier_ = bouclierMax_;
+
+	regenARM_ = regenBOU_ = regenPV_ = 0;
+
+	degats_ = 10;
+
 	// Multiplicateur de direction (1 vers la droite/bas -1 vers le haut/gauche)
 	mx_ = rand() % 2 == 0 ? 1 : -1;
 	my_ = rand() % 2 == 0 ? 1 : -1;
@@ -24,7 +36,6 @@ ProjTest::ProjTest()
 	// Vitesse entre 3 et 8
 	vx_ = rand() % 5 + 3;
 	vy_ = rand() % 5 + 3;
-	
 
 	float x = rand() % 800, y = rand() % 600;
 
@@ -45,6 +56,20 @@ ProjTest::ProjTest(int x, int y)
 	
 	//attributs
 	age_ = 0;
+
+	//stats
+
+	pvMax_ = 10;
+	armureMax_ = 0;
+	bouclierMax_ = 0;
+
+	pv_ = pvMax_;
+	armure_ = armureMax_;
+	bouclier_ = bouclierMax_;
+
+	regenARM_ = regenBOU_ = regenPV_ = 0;
+
+	degats_ = 50;
 
 	// Multiplicateur de direction (1 vers la droite/bas -1 vers le haut/gauche)
 	mx_ = rand() % 2 == 0 ? 1 : -1;
@@ -101,7 +126,7 @@ void ProjTest::gestion(sf::RenderWindow& window)
 
 void ProjTest::agit(Entite& proj)
 {
-	proj.setDetruit(true);
+	proj.recoitDegats(degats_);
 	detruit_ = true;
 }
 

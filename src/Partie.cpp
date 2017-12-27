@@ -95,13 +95,18 @@ void Partie::testProjTest()
 		//Gestion des vaisseaux
 		for (int i = 0; i < vaisseaux_.size(); i++)
 		{
+			vaisseaux_[i]->regen(t_ecoule);
 			vaisseaux_[i]->gestionCapacite(projectiles_, t_ecoule);
 			vaisseaux_[i]->gestion(window_, t_ecoule, input_);
 		}
 
 		// Gestion des projectiles_
 		for (int i = 0; i < projectiles_.size(); i++)
+		{
+			projectiles_[i]->regen(t_ecoule);
 			projectiles_[i]->gestion(window_);
+		}
+			
 
 		// Gestion des collisions
 		collisionProjectile();

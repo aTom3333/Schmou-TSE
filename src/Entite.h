@@ -208,8 +208,9 @@ class Entite
 		* @brief Renvoie un booléen indiquant si l'entité est détuit
 		*
 		* Renvoie un booléen indiquant si l'entité est détuit
+		* Si l'entité n'a plus de point de vie, detruit_ est fixé à vrai
 		*/
-		bool estDetruit() const;
+		bool estDetruit();
 		/**
 		* @fn agit
 		* @brief Réalise l'action que l'@c Entite doit faire sur le vaisseau
@@ -219,6 +220,22 @@ class Entite
 		* @param e Une @c Entite sur lequel l'action de l'@c Entite va se faire
 		*/
 		virtual void agit(Entite& e) = 0;
+		/**
+		* @fn regen
+		* @brief Redonne des points de vie, de l'armure et du bouclier toute les 250 ms
+		* @param t Temps écoulé depuis le dernier appel
+		*
+		* Redonne des points de vie, de l'armure et du bouclier toute les 250 ms selons les paramètres de l'entité
+		*/
+		void regen(sf::Time t);
+		/**
+		* @fn recoitDegats
+		* @brief Inflige des dégats au bouclier, à l'armure et aux points de vie en fonctions des dégats reçu
+		*
+		* Retire d'abord des points de bouclier. Si le bouclier est détuit, retire des points d'armure. 
+		* Les dégats sur l'armure sont réduit. Retire le reste des points restant aux points de vie.
+		*/
+		void recoitDegats(float degats);
 
 	protected:
 		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
@@ -231,7 +248,20 @@ class Entite
 		std::vector<std::unique_ptr<sf::Shape>> forme_; ///< Forme de l'Entite
 		sf::Texture texture_; ///< Texture du sprite de l'Entite
 		sf::Sprite sprite_; ///< Sprite de l'Entite
-		int vit_; ///< Vitesse actuelle de l'Entite
+
+		// Stats
+		float pvMax_; /// Point de vie maximum de l'entite
+		float armureMax_;  /// Armure maximum de l'entite
+		float bouclierMax_;  /// Bouclier maximum de l'entite
+		float pv_; /// Points de vie actuel
+		float armure_; ///Armure actuel
+		float bouclier_; /// Bouclier actuel
+		float regenPV_; /// Points de vie rendu tout les 250 ms
+		float regenARM_; /// Armure rendu tout les 250 ms
+		float regenBOU_; /// Bouclier rendu tout les 250 ms
+		float vit_; /// Vitesse actuelle de l'Entite
+		float t_regen_; /// Temps écoulé depuis la dernière régénération
+		float degats_; /// Dégats infligé en cas de de collision
 };
 
 #endif // ENTITE_H
