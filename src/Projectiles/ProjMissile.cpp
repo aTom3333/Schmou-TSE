@@ -12,10 +12,10 @@ ProjMissile::ProjMissile(float x, float y)
 	sprite_.setTexture(texture_);
 
 	// Hitbox
-	cercleEnglobant_ = sf::CircleShape(40);
-	cercleEnglobant_.setOrigin(20, 40);
+	cercleEnglobant_ = sf::CircleShape(sqrt(20*20+40*40));
+	cercleEnglobant_.setOrigin(sqrt(20 * 20 + 40 * 40), sqrt(20 * 20 + 40 * 40));
 	cercleEnglobant_.setPosition(20, 40);
-	//forme_.emplace_back(new sf::RectangleShape({40,80}));
+	forme_.emplace_back(new sf::RectangleShape({40,80}));
 
 	//stats
 	pvMax_ = 10;
@@ -28,7 +28,7 @@ ProjMissile::ProjMissile(float x, float y)
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
-	degats_ = 200;
+	degats_ = 300;
 
 	//  Projectile qui se déplace verticalement
 	sens_ = 1;

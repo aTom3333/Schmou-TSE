@@ -8,8 +8,8 @@ VaisseauTest::VaisseauTest() ///constructeur
 	sprite_.setTexture(texture_);
 
 	//hitbox simple
-	cercleEnglobant_ = sf::CircleShape(32);
-	cercleEnglobant_.setOrigin(32, 32);
+	cercleEnglobant_ = sf::CircleShape(sqrt(2*32*32));
+	cercleEnglobant_.setOrigin(sqrt(2 * 32 * 32), sqrt(2 * 32 * 32));
 	cercleEnglobant_.setPosition(32, 32);
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
@@ -17,15 +17,15 @@ VaisseauTest::VaisseauTest() ///constructeur
 	vit_ = 500;
 
 	pvMax_ = 300;
-	armureMax_ = 200;
-	bouclierMax_ = 250;
+	armureMax_ = 100;
+	bouclierMax_ = 100;
 
 	pv_ = pvMax_;
 	armure_ = armureMax_;
 	bouclier_ = bouclierMax_;
 
 	regenARM_ = 0;
-	regenBOU_ = 2;
+	regenBOU_ = 1;
 	regenPV_ = 0;
 
 	degats_ = 50;
@@ -57,7 +57,10 @@ void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Inpu
 	{
 		// Lance la compétance à la position du vaisseau allié
 		sf::Vector2f posVaisseau = position_;
-		capacites_[attaqueEnCours_]->utiliser(posVaisseau.x, posVaisseau.y);
+		if(attaqueEnCours_ == 1)
+			capacites_[attaqueEnCours_]->utiliser(posVaisseau.x + 32, posVaisseau.y - 20);
+		else
+			capacites_[attaqueEnCours_]->utiliser(posVaisseau.x + 32, posVaisseau.y + 32);
 	}
 	// Si la touche X est activé
 	if (input.action(1))

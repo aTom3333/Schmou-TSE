@@ -46,6 +46,9 @@ class Partie
 		std::vector<Vaisseau*> vaisseaux_; ///vecteur des vaisseaux ennemis en jeu
 		std::vector<Projectile *> projectiles_; /// vecteur des projectiles en jeu
 
+		//attributs de debug
+		float timeSpeed_; /// Facteur controllant le temps
+
 };
 
 #endif // PARTIE_H

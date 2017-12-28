@@ -42,6 +42,12 @@ bool Vaisseau::estActif()
 	return actif_;
 }
 
+void Vaisseau::agit(Entite & e)
+{
+	e.recoitDegats(degats_);
+	recoitDegats(e.getDegats());
+}
+
 //setters
 	void Vaisseau::setEquipe(int equipe)
 	{

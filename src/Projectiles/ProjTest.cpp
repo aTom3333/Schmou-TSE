@@ -11,7 +11,6 @@ ProjTest::ProjTest()
 	//hitbox simple (et complète dans ce cas car c'est le projectile est un cercle)
 	cercleEnglobant_ =  sf::CircleShape(16);
 	cercleEnglobant_.setOrigin(16, 16);
-
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
 	//attributs
@@ -51,6 +50,7 @@ ProjTest::ProjTest(int x, int y)
 	//hitbox simple (et complète dans ce cas car c'est le projectile est un cercle)
 	cercleEnglobant_ = sf::CircleShape(16);
 	cercleEnglobant_.setOrigin(16, 16);
+	cercleEnglobant_.setPosition(16,16);
 
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 	

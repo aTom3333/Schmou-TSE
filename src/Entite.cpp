@@ -26,7 +26,7 @@ void Entite::afficher(sf::RenderWindow & window, bool debug) const
 	if(debug)
 	{
 		window.draw(cercleEnglobant_);
-		for(auto& elem: forme_)
+		for (auto& elem : forme_)
 			window.draw(*elem);
 	}
 }
@@ -107,13 +107,18 @@ bool Entite::estDetruit()
 	return detruit_;
 }
 
+float Entite::getDegats()
+{
+	return degats_;
+}
+
 void Entite::regen(sf::Time t)
 {
 	// Mise à jour du timer
 	t_regen_ += t.asMilliseconds();
 
-	// Si 250 ms se sont écoulé
-	if (t_regen_ >= 250)
+	// Si 100 ms se sont écoulé
+	if (t_regen_ >= 100)
 	{
 		// Réinitialisation du timer
 		t_regen_ = 0;

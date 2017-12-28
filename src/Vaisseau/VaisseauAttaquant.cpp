@@ -9,8 +9,8 @@ VaisseauAttaquant::VaisseauAttaquant(float x, float y, Trajectoire traj, float p
 	sprite_.setTexture(texture_);
 
 	//hitbox simple
-	cercleEnglobant_ = sf::CircleShape(64);
-	cercleEnglobant_.setOrigin(64, 32);
+	cercleEnglobant_ = sf::CircleShape(sqrt(32 * 32 + 64 * 64));
+	cercleEnglobant_.setOrigin(sqrt(32 * 32 + 64 * 64), sqrt(32 * 32 + 64 * 64));
 	cercleEnglobant_.setPosition(64, 32);
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
@@ -56,8 +56,8 @@ void VaisseauAttaquant::gestion(sf::RenderWindow & window, sf::Time tempsEcoule,
 {
 	if (actif_)
 	{
-		if (t_ > 500)
-			capacites_[0]->utiliser(position_.x, position_.y + 64);
+		if (t_ > 1000)
+			capacites_[0]->utiliser(position_.x + 32 + 20, position_.y + 2*sqrt(32 * 32 + 64 * 64));
 
 		setPosition(traj_position(trajectoire_, t_, vit_, posInit_, params_));
 		afficher(window);

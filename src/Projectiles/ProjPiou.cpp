@@ -13,10 +13,10 @@ ProjPiou::ProjPiou(int x, int y)
 	sprite_.setTexture(texture_);
 
 	// Hitbox
-	cercleEnglobant_ = sf::CircleShape(10);
-	cercleEnglobant_.setOrigin(5, 5);
+	cercleEnglobant_ = sf::CircleShape(sqrt(2*10*10));
+	cercleEnglobant_.setOrigin(sqrt(2 * 10 * 10), sqrt(2 * 10 * 10));
 	cercleEnglobant_.setPosition(10, 10);
-	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
+	forme_.emplace_back(new sf::RectangleShape({20,20}));
 	
 	// Stats
 	age_ = 0;
@@ -37,7 +37,7 @@ ProjPiou::ProjPiou(int x, int y)
 	vx_ = 0;
 	vy_ = -20;
 
-	float x1 = x, y1 = y-20;
+	float x1 = x, y1 = y;
 
 	setPosition({ x1,  y1 });
 }

@@ -38,24 +38,23 @@ void Partie::testProjTest()
 	//Joueur
 	vaisseaux_.push_back(vaisseautest);
 
-
 	v1.ajouterVaisseau(0, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
-	v1.ajouterVaisseau(200, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
 	v1.ajouterVaisseau(400, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
-	v1.ajouterVaisseau(600, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
 	v1.ajouterVaisseau(800, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
+	v1.ajouterVaisseau(1200, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
+	v1.ajouterVaisseau(1600, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
 
 	v2.ajouterVaisseau(0, new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500));
-	v2.ajouterVaisseau(200, new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500));
 	v2.ajouterVaisseau(400, new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500));
-	v2.ajouterVaisseau(600, new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500));
 	v2.ajouterVaisseau(800, new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500));
+	v2.ajouterVaisseau(1200, new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500));
+	v2.ajouterVaisseau(1600, new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500));
 
 	v3.ajouterVaisseau(0, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
-	v3.ajouterVaisseau(200, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
-	v3.ajouterVaisseau(400, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
-	v3.ajouterVaisseau(600, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
-	v3.ajouterVaisseau(800, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
+	v3.ajouterVaisseau(500, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
+	v3.ajouterVaisseau(1000, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
+	v3.ajouterVaisseau(1500, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
+	v3.ajouterVaisseau(2000, new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7));
 
 	v4.ajouterVaisseau(0, new VaisseauAttaquant(0, -50, PARABOLIQUE, 1,    200, 0));
 	v4.ajouterVaisseau(0, new VaisseauAttaquant(250, -50, PARABOLIQUE, 1,  200, 250));
@@ -70,6 +69,9 @@ void Partie::testProjTest()
 	pattern.push_back(v3);
 	pattern.push_back(v4);
 
+	// Modifie la vitesse du jeu (debug)
+	timeSpeed_ = 1;
+
 	while (window_.isOpen())
 	{
 		// Gestion  des evenement qui n'est pas bien implémentée ! ah si thomas est passé par là :o 
@@ -81,9 +83,19 @@ void Partie::testProjTest()
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 				window_.close();
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add))
+				if(timeSpeed_ < 5)
+					timeSpeed_ += 0.1;
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Subtract))
+				if(timeSpeed_ > 0.1)
+					timeSpeed_ -= 0.1;
 		}
 
 		auto t_ecoule = clock.restart();
+
+		t_ecoule = t_ecoule * timeSpeed_;
 		
 		// Efface l'écran
 		window_.clear();
@@ -115,6 +127,7 @@ void Partie::testProjTest()
 		// Mise à jour de l'écran
 		window_.display();
 
+		window_.setTitle("Schmou'TSE - Vitesse de jeu : " + std::to_string(timeSpeed_));
 		sf::sleep(sf::milliseconds(10));
 	}
 }
@@ -195,17 +208,6 @@ void Partie::collisionProjectile()
 			}			
 		}
 	}
-	for (int i = 0; i < vaisseaux_.size(); i++)
-	{
-		//Destruction des vaisseaux morts
-		if (vaisseaux_[i]->estDetruit())
-		{
-			delete vaisseaux_[i];
-			vaisseaux_[i] = vaisseaux_[vaisseaux_.size() - 1];
-			vaisseaux_.pop_back();
-			break;
-		}
-	}
 	delete allEntite;
 
 }
@@ -223,7 +225,22 @@ void Partie::collisionVaisseaux()
 				vaisseaux_[i] = vaisseaux_[vaisseaux_.size() - 1];
 				vaisseaux_.pop_back();
 			}
-			// TODO Gérer la collision Vaisseau-Vaisseau
+			for (int j = i+1; j < vaisseaux_.size(); j++)
+			{
+				if (collision(*vaisseaux_[i], *vaisseaux_[j]))
+					vaisseaux_[j]->agit(*vaisseaux_[i]);
+			}
+		}
+	}
+	for (int i = 0; i < vaisseaux_.size(); i++)
+	{
+		//Destruction des vaisseaux morts
+		if (vaisseaux_[i]->estDetruit())
+		{
+			delete vaisseaux_[i];
+			vaisseaux_[i] = vaisseaux_[vaisseaux_.size() - 1];
+			vaisseaux_.pop_back();
+			break;
 		}
 	}
 }

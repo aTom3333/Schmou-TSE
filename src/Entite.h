@@ -62,7 +62,7 @@ class Entite
 		 * @param [in,out] window Fenêtre SFML dans laquelle afficher l'entité.
 		 * @param [in] debug Un @c bool qui vaut @a true si les informations de debug doivent être affichées et @a false sinon.
 		 */
-		void afficher(sf::RenderWindow &window, bool debug=false) const;
+		void afficher(sf::RenderWindow &window, bool debug = false) const;
 
 		// Tranformation setters & getters
         /**
@@ -222,10 +222,10 @@ class Entite
 		virtual void agit(Entite& e) = 0;
 		/**
 		* @fn regen
-		* @brief Redonne des points de vie, de l'armure et du bouclier toute les 250 ms
+		* @brief Redonne des points de vie, de l'armure et du bouclier toute les 100 ms
 		* @param t Temps écoulé depuis le dernier appel
 		*
-		* Redonne des points de vie, de l'armure et du bouclier toute les 250 ms selons les paramètres de l'entité
+		* Redonne des points de vie, de l'armure et du bouclier toute les 100 ms selons les paramètres de l'entité
 		*/
 		void regen(sf::Time t);
 		/**
@@ -236,6 +236,7 @@ class Entite
 		* Les dégats sur l'armure sont réduit. Retire le reste des points restant aux points de vie.
 		*/
 		void recoitDegats(float degats);
+		float getDegats();
 
 	protected:
 		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable

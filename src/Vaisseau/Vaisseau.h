@@ -40,7 +40,7 @@ class Vaisseau : public Entite
 			*
 			* Vide
 			*/
-			void agit(Entite &e) {};
+			void agit(Entite &e);
 
 			
 
