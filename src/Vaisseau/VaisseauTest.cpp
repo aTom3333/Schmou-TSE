@@ -30,6 +30,9 @@ VaisseauTest::VaisseauTest() ///constructeur
 
 	degats_ = 50;
 
+	actif_ = true;
+
+
 
 	// Capacités
 	CapTest *temp1 = new CapTest();

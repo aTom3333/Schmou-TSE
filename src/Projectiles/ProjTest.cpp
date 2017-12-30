@@ -70,6 +70,7 @@ ProjTest::ProjTest(int x, int y)
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
 	degats_ = 50;
+	actif_ = true;
 
 	// Multiplicateur de direction (1 vers la droite/bas -1 vers le haut/gauche)
 	mx_ = rand() % 2 == 0 ? 1 : -1;

@@ -237,10 +237,18 @@ class Entite
 		*/
 		void recoitDegats(float degats);
 		float getDegats();
+		/**
+		* @fn destruction
+		* @brief Procedure a effectuer lorsque le vaisseau est détruit
+		*
+		* Fonction virtuelle qui doit être surchargée pour les classes héritées.
+		*/
+		virtual void destruction() = 0;
 
 	protected:
 		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
-		bool detruit_ = false;
+		bool detruit_ = false; /// ture lorsque que le vaisseau est détruit
+		bool actif_; /// Booleen indiquant si la trajectoire a été amorcée
 		int equipe_; ///< Identifiant de l'équipe de l'Entite
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
 		float angle_; ///< Orientation actuelle de l'Entite

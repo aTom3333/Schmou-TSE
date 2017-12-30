@@ -25,6 +25,7 @@ ProjMissile::ProjMissile(float x, float y)
 	pv_ = pvMax_;
 	armure_ = armureMax_;
 	bouclier_ = bouclierMax_;
+	actif_ = true;
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 

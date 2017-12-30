@@ -41,8 +41,13 @@ class Vaisseau : public Entite
 			* Vide
 			*/
 			void agit(Entite &e);
-
-			
+			/**
+			* @fn destruction
+			* @brief Procedure a effectuer lorsque le vaisseau est détruit
+			*
+			* Fonction virtuelle qui doit être surchargée pour les classes héritées.
+			*/
+			virtual void destruction() = 0; 
 
 		//setters
 			void setEquipe(int equipe); ///définit l'équipe (entier)
@@ -54,6 +59,7 @@ class Vaisseau : public Entite
 			void setdefM(int defM);
 			void setvitM(int vitM);
 			void setActif(bool val);
+			void setAnnexeB(int ind, bool val);
 			
 
 		//getters
@@ -65,6 +71,8 @@ class Vaisseau : public Entite
 			int getvitM();
 			std::vector<Capacite*> getskills();
 			bool estActif();
+			std::vector <Vaisseau*> getAnnexes();
+			std::vector<bool> getAnnexesB();
 
 	protected:
 		//caractéristiques générales
@@ -80,8 +88,12 @@ class Vaisseau : public Entite
 			int vitM_; /// Vitesse de base
 		// liste de capacités
 			std::vector<Capacite*> capacites_; /// Liste des capacités du vaisseau
-		//stats ia
-			bool actif_; /// Booleen indiquant si la trajectoire a été amorcée
+
+		//section
+			std::vector<Vaisseau*> annexes_; /// Vecteur contenant toute les parties annexes d'un vaisseau
+			std::vector<bool> annexesB_; /// Vecteur indiquant si l'annexe au même indice existe encore
+			Vaisseau * createur_; /// Si c'est une annexe, pointe vers le vaisseau  qui possede cette annexe. null_ptr sinon
+			int nbModule_; /// Si c'est une annexe, indice dans le vecteur annexe du créateur
 };
 
 #endif // VAISSEAU_H

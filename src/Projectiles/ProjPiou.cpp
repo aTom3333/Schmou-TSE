@@ -20,6 +20,7 @@ ProjPiou::ProjPiou(int x, int y)
 	
 	// Stats
 	age_ = 0;
+	actif_ = true;
 
 	pvMax_ = 10;
 	armureMax_ = 0;
@@ -35,7 +36,7 @@ ProjPiou::ProjPiou(int x, int y)
 
 	//  Projectile qui se déplace verticalement
 	vx_ = 0;
-	vy_ = -20;
+	vy_ = -15;
 
 	float x1 = x, y1 = y;
 

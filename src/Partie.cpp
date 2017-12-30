@@ -28,7 +28,7 @@ void Partie::testProjTest()
 {
 	sf::Clock clock;
 
-	Vague v1(0), v2(5000), v3(10000), v4(15000);
+	Vague v1(0), v2(5000), v3(10000), v4(15000), v5(10000);
 
 	VaisseauTest *vaisseautest = new VaisseauTest;
 	/*VaisseauEclaireur *vaiseauEclaireurL = new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5);
@@ -62,12 +62,19 @@ void Partie::testProjTest()
 	v4.ajouterVaisseau(0, new VaisseauAttaquant(750, -50, PARABOLIQUE, 1,  200, 750));
 	v4.ajouterVaisseau(0, new VaisseauAttaquant(1000, -50, PARABOLIQUE, 1, 200, 1000));
 
+	v5.ajouterVaisseau(0, new VaisseauDefenseur(-50, 500, vaisseaux_, LINEAIRE, 1, 0));
+	v5.ajouterVaisseau(1500, new VaisseauDefenseur(-50, 500, vaisseaux_, LINEAIRE, 1, 0));
+	v5.ajouterVaisseau(3000, new VaisseauDefenseur(-50, 500, vaisseaux_, LINEAIRE, 1, 0));
+
+
+
 	std::vector<Vague> pattern;
 
 	pattern.push_back(v1);
 	pattern.push_back(v2);
 	pattern.push_back(v3);
 	pattern.push_back(v4);
+	pattern.push_back(v5);
 
 	// Modifie la vitesse du jeu (debug)
 	timeSpeed_ = 1;

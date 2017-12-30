@@ -27,6 +27,13 @@ class Projectile : public Entite
 		Projectile();
 
 		virtual void gestion(sf::RenderWindow& window) = 0;
+		/**
+		* @fn destruction
+		* @brief Procedure a effectuer lorsque le vaisseau est détruit
+		*
+		* Détruit l'entité
+		*/
+		void destruction() { detruit_ = true; }
 	protected:
 		int age_;
 };

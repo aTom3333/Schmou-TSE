@@ -8,5 +8,6 @@ Header contenant tous les headers de CAPACITES
 #include "VaisseauEclaireur.h"
 #include "VaisseauTest.h"
 #include "VaisseauAttaquant.h"
+#include "VaisseauDefenseur.h"
 
 #endif // _VAISSEAUX_H

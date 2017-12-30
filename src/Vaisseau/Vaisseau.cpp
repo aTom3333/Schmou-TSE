@@ -37,9 +37,24 @@ void Vaisseau::setActif(bool val)
 	actif_ = val;
 }
 
+void Vaisseau::setAnnexeB(int ind, bool val)
+{
+	annexesB_[ind] = val;
+}
+
 bool Vaisseau::estActif()
 {
 	return actif_;
+}
+
+std::vector<Vaisseau*> Vaisseau::getAnnexes()
+{
+	return annexes_;
+}
+
+std::vector<bool> Vaisseau::getAnnexesB()
+{
+	return annexesB_;
 }
 
 void Vaisseau::agit(Entite & e)
