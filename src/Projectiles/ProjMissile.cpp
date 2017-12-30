@@ -33,8 +33,8 @@ ProjMissile::ProjMissile(float x, float y)
 
 	//  Projectile qui se déplace verticalement
 	sens_ = 1;
-	a_ = 1.05 * sens_;
-	v_ = 0.1 * sens_;
+	a_ = 1.07 * sens_;
+	v_ = 10 * sens_;
 	setPosition({ x, y });
 }
 
@@ -42,12 +42,12 @@ ProjMissile::~ProjMissile()
 {
 }
 
-void ProjMissile::gestion(sf::RenderWindow & window)
+void ProjMissile::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 {
 	v_ *= a_;
-	if (v_ > 30)
-		v_ = 30;
-	setPosition({ position_.x, position_.y + v_ });
+	if (v_*tempsEcoule.asSeconds() > 30)
+		v_ = 30/ tempsEcoule.asSeconds();
+	setPosition({ position_.x, position_.y + v_*tempsEcoule.asSeconds() });
 	afficher(window);
 }
 

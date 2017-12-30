@@ -76,11 +76,11 @@ ProjTest::ProjTest(int x, int y)
 	mx_ = rand() % 2 == 0 ? 1 : -1;
 	my_ = rand() % 2 == 0 ? 1 : -1;
 
-	// Vitesse entre 3 et 8
-	vx_ = rand() % 5 + 3;
-	vy_ = rand() % 5 + 3;
+	// Vitesse entre 30 et 80
+	vx_ = (rand() % 5 + 3);
+	vy_ = (rand() % 5 + 3);
 
-	vit_ = 1;
+	vit_ = 100;
 
 	float x1 = x + 40*mx_, y1 = y + 40 * my_;
 
@@ -92,12 +92,12 @@ ProjTest::~ProjTest()
 {
 }
 
-void ProjTest::gestion(sf::RenderWindow& window)
+void ProjTest::gestion(sf::RenderWindow& window, sf::Time tempsEcoule)
 {
 	age_++;
 
 	// Modification de la postion
-	setPosition({ position_.x + vit_*vx_*mx_, position_.y + vit_*vy_*my_ });
+	setPosition({ position_.x + vit_*vx_*mx_*tempsEcoule.asSeconds(), position_.y + vit_*vy_*my_*tempsEcoule.asSeconds() });
 
 	// Gestion du rebond
 	if (position_.x > ECRAN_L - 32 - 1)

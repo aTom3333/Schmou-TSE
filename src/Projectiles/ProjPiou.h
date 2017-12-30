@@ -45,7 +45,7 @@ public:
 	*
 	* Gestion du déplacement et de l'affichage
 	*/
-	void gestion(sf::RenderWindow &window);
+	void gestion(sf::RenderWindow &window, sf::Time tempsEcoule);
 	/**
 	* @fn agit
 	* @brief Procédure lorsque le projectile agit avec une Entite

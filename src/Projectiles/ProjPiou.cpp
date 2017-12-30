@@ -35,8 +35,7 @@ ProjPiou::ProjPiou(int x, int y)
 	degats_ = 70;
 
 	//  Projectile qui se déplace verticalement
-	vx_ = 0;
-	vy_ = -15;
+	vit_ = 700;
 
 	float x1 = x, y1 = y;
 
@@ -47,9 +46,9 @@ ProjPiou::~ProjPiou()
 {
 }
 
-void ProjPiou::gestion(sf::RenderWindow & window)
+void ProjPiou::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 {
-	setPosition({ position_.x, position_.y + vy_});
+	setPosition({ position_.x, position_.y - vit_ * tempsEcoule.asSeconds()});
 	afficher(window);
 }
 

@@ -26,7 +26,7 @@ class Projectile : public Entite
 	public:
 		Projectile();
 
-		virtual void gestion(sf::RenderWindow& window) = 0;
+		virtual void gestion(sf::RenderWindow& window, sf::Time tempsEcoule) = 0;
 		/**
 		* @fn destruction
 		* @brief Procedure a effectuer lorsque le vaisseau est détruit

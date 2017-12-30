@@ -79,6 +79,8 @@ void Partie::testProjTest()
 	// Modifie la vitesse du jeu (debug)
 	timeSpeed_ = 1;
 
+	vaisseaux_[0]->setPosition({ 500,700 });
+
 	while (window_.isOpen())
 	{
 		// Gestion  des evenement qui n'est pas bien implémentée ! ah si thomas est passé par là :o 
@@ -123,7 +125,7 @@ void Partie::testProjTest()
 		for (int i = 0; i < projectiles_.size(); i++)
 		{
 			projectiles_[i]->regen(t_ecoule);
-			projectiles_[i]->gestion(window_);
+			projectiles_[i]->gestion(window_, t_ecoule);
 		}
 			
 
@@ -188,12 +190,7 @@ void Partie::collisionProjectile()
 		{
 			// Si le projectile est dehors
 			if (projectiles_[i]->estDehors())
-			{
-				delete projectiles_[i];
-				projectiles_[i] = projectiles_[projectiles_.size() - 1];
-				projectiles_.pop_back();
-				allEntite[i] = allEntite[projectiles_.size() - 1];
-			}
+				projectiles_[i]->destruction();
 			else
 			{
 				// Collision avec une autre entite
@@ -202,21 +199,12 @@ void Partie::collisionProjectile()
 					if (collision(*allEntite[i], *allEntite[j]))
 						allEntite[i]->agit(*allEntite[j]);
 				}
-			}
-
-
-			//Destruction des projectiles morts
-			if (projectiles_[i]->estDetruit())
-			{
-				delete projectiles_[i];
-				projectiles_[i] = projectiles_[projectiles_.size() - 1];
-				projectiles_.pop_back();
-				break;
-			}			
+			}		
 		}
 	}
+	deleteProjectileDetruit();
+	deleteVaisseauDetruit();
 	delete allEntite;
-
 }
 
 void Partie::collisionVaisseaux()
@@ -227,27 +215,43 @@ void Partie::collisionVaisseaux()
 		{
 			// Si le vaisseau est dehors
 			if (vaisseaux_[i]->estDehors())
+				vaisseaux_[i]->destruction();
+			else
 			{
-				delete vaisseaux_[i];
-				vaisseaux_[i] = vaisseaux_[vaisseaux_.size() - 1];
-				vaisseaux_.pop_back();
+				for (int j = i + 1; j < vaisseaux_.size(); j++)
+				{
+					if (collision(*vaisseaux_[i], *vaisseaux_[j]))
+						vaisseaux_[j]->agit(*vaisseaux_[i]);
+				}
 			}
-			for (int j = i+1; j < vaisseaux_.size(); j++)
-			{
-				if (collision(*vaisseaux_[i], *vaisseaux_[j]))
-					vaisseaux_[j]->agit(*vaisseaux_[i]);
-			}
+			
 		}
 	}
+	deleteVaisseauDetruit();
+}
+
+void Partie::deleteProjectileDetruit()
+{
+	for (int i = 0; i < projectiles_.size(); i++)
+	{
+		if (projectiles_[i]->estDetruit())
+		{
+			delete projectiles_[i];
+			projectiles_[i] = projectiles_[projectiles_.size() - 1];
+			projectiles_.pop_back();
+		}
+	}
+}
+
+void Partie::deleteVaisseauDetruit()
+{
 	for (int i = 0; i < vaisseaux_.size(); i++)
 	{
-		//Destruction des vaisseaux morts
 		if (vaisseaux_[i]->estDetruit())
 		{
 			delete vaisseaux_[i];
 			vaisseaux_[i] = vaisseaux_[vaisseaux_.size() - 1];
 			vaisseaux_.pop_back();
-			break;
 		}
 	}
 }
