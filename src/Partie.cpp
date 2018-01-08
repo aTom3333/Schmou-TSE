@@ -38,6 +38,12 @@ void Partie::testProjTest()
 	//Joueur
 	vaisseaux_.push_back(vaisseautest);
 
+	sf::Texture img_test;
+	sf::Sprite img;
+
+	img_test.loadFromFile("../../rc/UI/test.png");
+	img.setTexture(img_test);
+
 	v1.ajouterVaisseau(0, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
 	v1.ajouterVaisseau(400, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
 	v1.ajouterVaisseau(800, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
@@ -134,6 +140,7 @@ void Partie::testProjTest()
 		collisionVaisseaux();
 
 		// Mise à jour de l'écran
+		//window_.draw(img);
 		window_.display();
 
 		window_.setTitle("Schmou'TSE - Vitesse de jeu : " + std::to_string(timeSpeed_));
