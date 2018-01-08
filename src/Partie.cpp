@@ -140,7 +140,7 @@ void Partie::testProjTest()
 		collisionVaisseaux();
 
 		// Mise à jour de l'écran
-		//window_.draw(img);
+		window_.draw(img);
 		window_.display();
 
 		window_.setTitle("Schmou'TSE - Vitesse de jeu : " + std::to_string(timeSpeed_));

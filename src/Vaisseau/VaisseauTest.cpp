@@ -86,7 +86,7 @@ void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Inpu
 		afficheAtk.setFillColor(sf::Color::White);
 		afficheAtk.setPosition(0, 0);
 
-		std::string txt;
+		/*std::string txt;
 		if (capacites_[attaqueEnCours_]->getCooldown() - capacites_[attaqueEnCours_]->getTime() > 0)
 			txt = capacites_[attaqueEnCours_]->getNom() + " - " + std::to_string((int)(capacites_[attaqueEnCours_]->getCooldown() - capacites_[attaqueEnCours_]->getTime()));
 		else
@@ -121,7 +121,7 @@ void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Inpu
 		rec.setSize(size);
 		rec.setPosition(0, 80);
 		rec.setFillColor(sf::Color::Blue);
-		window.draw(rec);
+		window.draw(rec);*/
 
 	afficher(window);
 }
