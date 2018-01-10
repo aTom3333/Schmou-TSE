@@ -245,6 +245,13 @@ class Entite
 		*/
 		virtual void destruction() = 0;
 
+		float getPVMax() { return pvMax_; }; 
+		float getArmureMax() { return armureMax_; };
+		float getBouclierMax() { return bouclierMax_; };
+		float getPV() { return pv_; };
+		float getArmure() { return armure_; };
+		float getBouclier() { return bouclier_; };
+
 	protected:
 		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
 		bool detruit_ = false; /// ture lorsque que le vaisseau est détruit

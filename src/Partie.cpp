@@ -14,6 +14,7 @@ Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window)
 	}
 
 	set_keyboard_binding(input_);
+	afficheHUD_ = true;
 }
 
 Partie::~Partie()
@@ -28,6 +29,8 @@ void Partie::testProjTest()
 {
 	sf::Clock clock;
 
+	
+
 	Vague v1(0), v2(5000), v3(10000), v4(15000), v5(10000);
 
 	VaisseauTest *vaisseautest = new VaisseauTest;
@@ -37,12 +40,6 @@ void Partie::testProjTest()
 
 	//Joueur
 	vaisseaux_.push_back(vaisseautest);
-
-	sf::Texture img_test;
-	sf::Sprite img;
-
-	img_test.loadFromFile("../../rc/UI/test.png");
-	img.setTexture(img_test);
 
 	v1.ajouterVaisseau(0, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
 	v1.ajouterVaisseau(400, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
@@ -139,8 +136,12 @@ void Partie::testProjTest()
 		collisionProjectile();
 		collisionVaisseaux();
 
+		// Affichage de l'ATH
+		if (afficheHUD_)
+			hud_.gestion(vaisseaux_[0]);
+		hud_.draw(window_, afficheHUD_);
+
 		// Mise à jour de l'écran
-		window_.draw(img);
 		window_.display();
 
 		window_.setTitle("Schmou'TSE - Vitesse de jeu : " + std::to_string(timeSpeed_));
@@ -256,6 +257,8 @@ void Partie::deleteVaisseauDetruit()
 	{
 		if (vaisseaux_[i]->estDetruit())
 		{
+			if (i == 0)
+				afficheHUD_ = false;
 			delete vaisseaux_[i];
 			vaisseaux_[i] = vaisseaux_[vaisseaux_.size() - 1];
 			vaisseaux_.pop_back();
