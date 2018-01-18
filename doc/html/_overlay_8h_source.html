@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Schmou&#39;TSE:  Fichier source de src/Interface/Overlay.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Schmou&#39;TSE
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_bba04cfeda2ebb06ea600493f2bb1319.html">Interface</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Overlay.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_overlay_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef OVERLAY_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define OVERLAY_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;SFML/Graphics.hpp&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../constantes.h&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../Entite.h&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_overlay.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_overlay.html">Overlay</a></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_overlay.html#ab4f509d502931bcaad03418470993d70">Overlay</a>();</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_overlay.html#ad40a5e109ee4acbdec9f21d5496b7fa9">~Overlay</a>();</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_overlay.html#a3fcdcd87bc909289e094ce799708a0c9">draw</a>(sf::RenderWindow &amp;window, <span class="keywordtype">bool</span> bDraw = <span class="keyword">true</span>);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_overlay.html#a4a0fd28b3355bcaeb54d24641a1066e3">gestion</a>(<a class="code" href="class_entite.html">Entite</a> * vaisseau);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        </div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    private :</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        sf::Texture overlayText_; </div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        sf::Sprite overlay_; </div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        sf::Font font_; </div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        sf::Text statuts_[4]; </div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// TODO Solution temporaire</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            sf::RectangleShape barre_[3]; </div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif // OVERLAY_H</span></div><div class="ttc" id="class_overlay_html_ab4f509d502931bcaad03418470993d70"><div class="ttname"><a href="class_overlay.html#ab4f509d502931bcaad03418470993d70">Overlay::Overlay</a></div><div class="ttdeci">Overlay()</div><div class="ttdef"><b>Definition:</b> Overlay.cpp:3</div></div>
+<div class="ttc" id="class_overlay_html_a4a0fd28b3355bcaeb54d24641a1066e3"><div class="ttname"><a href="class_overlay.html#a4a0fd28b3355bcaeb54d24641a1066e3">Overlay::gestion</a></div><div class="ttdeci">void gestion(Entite *vaisseau)</div><div class="ttdef"><b>Definition:</b> Overlay.cpp:41</div></div>
+<div class="ttc" id="class_overlay_html"><div class="ttname"><a href="class_overlay.html">Overlay</a></div><div class="ttdoc">Classe qui gère l&amp;#39;overlay ingame. </div><div class="ttdef"><b>Definition:</b> Overlay.h:14</div></div>
+<div class="ttc" id="class_overlay_html_ad40a5e109ee4acbdec9f21d5496b7fa9"><div class="ttname"><a href="class_overlay.html#ad40a5e109ee4acbdec9f21d5496b7fa9">Overlay::~Overlay</a></div><div class="ttdeci">~Overlay()</div><div class="ttdef"><b>Definition:</b> Overlay.cpp:25</div></div>
+<div class="ttc" id="class_overlay_html_a3fcdcd87bc909289e094ce799708a0c9"><div class="ttname"><a href="class_overlay.html#a3fcdcd87bc909289e094ce799708a0c9">Overlay::draw</a></div><div class="ttdeci">void draw(sf::RenderWindow &amp;window, bool bDraw=true)</div><div class="ttdef"><b>Definition:</b> Overlay.cpp:29</div></div>
+<div class="ttc" id="class_entite_html"><div class="ttname"><a href="class_entite.html">Entite</a></div><div class="ttdoc">Classe virtuelle qui définit une entité </div><div class="ttdef"><b>Definition:</b> Entite.h:18</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

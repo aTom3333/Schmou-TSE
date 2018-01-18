@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Schmou&#39;TSE:  Fichier source de src/vague.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Schmou&#39;TSE
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">vague.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="vague_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VAGUE_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VAGUE_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vaisseau_8h.html">Vaisseau/Vaisseau.h</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__vaisseaux_8h.html">Vaisseau/_vaisseaux.h</a>&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="struct_element_vague.html">    9</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct_element_vague.html#af6645ffc5fbc3be59dbf5063a78f8e36">   11</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_element_vague.html#af6645ffc5fbc3be59dbf5063a78f8e36">t</a>;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct_element_vague.html#a74ef9460cb2ccf37f07caa28b48959ec">   12</a></span>&#160;    <a class="code" href="class_vaisseau.html">Vaisseau</a> *<a class="code" href="struct_element_vague.html#a74ef9460cb2ccf37f07caa28b48959ec">v</a>;</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="struct_element_vague.html#ab0bd206a38ece486f6f5bb9ec76ff36b">   13</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="struct_element_vague.html#ab0bd206a38ece486f6f5bb9ec76ff36b">active</a>;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;} <a class="code" href="struct_element_vague.html">ElementVague</a>;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_vague.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_vague.html">Vague</a></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_vague.html#ab1e4786aa02ad641431b56658dbbaac3">Vague</a>();</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_vague.html#ab1e4786aa02ad641431b56658dbbaac3">Vague</a>(<span class="keywordtype">float</span> t);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_vague.html#a72eb74bd6b6cc6de266fa4b8f77e56d4">~Vague</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_vague.html#a82124cdeb165825047f9dd8164e69a16">ajouterVaisseau</a>(<span class="keywordtype">float</span> t, <a class="code" href="class_vaisseau.html">Vaisseau</a> *v);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_vague.html#a37649d5f8063b1d516ce1f865a9d521d">gestion</a>(std::vector&lt;Vaisseau*&gt; &amp;vaisseaux, sf::Time t);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_vague.html#a564d612f69751dd198ffa7ac61ea04dd">setTempsDebut</a>(<span class="keywordtype">float</span> t);</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">float</span> t_debut_; </div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">float</span> t_; </div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::vector &lt;ElementVague&gt; v_; </div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif //VAGUE_H</span></div><div class="ttc" id="struct_element_vague_html"><div class="ttname"><a href="struct_element_vague.html">ElementVague</a></div><div class="ttdef"><b>Definition:</b> vague.h:9</div></div>
+<div class="ttc" id="class_vague_html_a37649d5f8063b1d516ce1f865a9d521d"><div class="ttname"><a href="class_vague.html#a37649d5f8063b1d516ce1f865a9d521d">Vague::gestion</a></div><div class="ttdeci">void gestion(std::vector&lt; Vaisseau *&gt; &amp;vaisseaux, sf::Time t)</div><div class="ttdoc">Gere la vague. </div><div class="ttdef"><b>Definition:</b> vague.cpp:23</div></div>
+<div class="ttc" id="struct_element_vague_html_ab0bd206a38ece486f6f5bb9ec76ff36b"><div class="ttname"><a href="struct_element_vague.html#ab0bd206a38ece486f6f5bb9ec76ff36b">ElementVague::active</a></div><div class="ttdeci">bool active</div><div class="ttdef"><b>Definition:</b> vague.h:13</div></div>
+<div class="ttc" id="class_vague_html_a564d612f69751dd198ffa7ac61ea04dd"><div class="ttname"><a href="class_vague.html#a564d612f69751dd198ffa7ac61ea04dd">Vague::setTempsDebut</a></div><div class="ttdeci">void setTempsDebut(float t)</div><div class="ttdoc">Gere la vague. </div><div class="ttdef"><b>Definition:</b> vague.cpp:41</div></div>
+<div class="ttc" id="__vaisseaux_8h_html"><div class="ttname"><a href="__vaisseaux_8h.html">_vaisseaux.h</a></div></div>
+<div class="ttc" id="struct_element_vague_html_a74ef9460cb2ccf37f07caa28b48959ec"><div class="ttname"><a href="struct_element_vague.html#a74ef9460cb2ccf37f07caa28b48959ec">ElementVague::v</a></div><div class="ttdeci">Vaisseau * v</div><div class="ttdef"><b>Definition:</b> vague.h:12</div></div>
+<div class="ttc" id="struct_element_vague_html_af6645ffc5fbc3be59dbf5063a78f8e36"><div class="ttname"><a href="struct_element_vague.html#af6645ffc5fbc3be59dbf5063a78f8e36">ElementVague::t</a></div><div class="ttdeci">float t</div><div class="ttdef"><b>Definition:</b> vague.h:11</div></div>
+<div class="ttc" id="class_vaisseau_html"><div class="ttname"><a href="class_vaisseau.html">Vaisseau</a></div><div class="ttdoc">classe du vaisseau (véhicule) d&amp;#39;un joueur ou d&amp;#39;un ennemi </div><div class="ttdef"><b>Definition:</b> Vaisseau.h:20</div></div>
+<div class="ttc" id="class_vague_html"><div class="ttname"><a href="class_vague.html">Vague</a></div><div class="ttdoc">Classe qui décrit les vagues d&amp;#39;ennemis. </div><div class="ttdef"><b>Definition:</b> vague.h:24</div></div>
+<div class="ttc" id="_vaisseau_8h_html"><div class="ttname"><a href="_vaisseau_8h.html">Vaisseau.h</a></div></div>
+<div class="ttc" id="class_vague_html_a72eb74bd6b6cc6de266fa4b8f77e56d4"><div class="ttname"><a href="class_vague.html#a72eb74bd6b6cc6de266fa4b8f77e56d4">Vague::~Vague</a></div><div class="ttdeci">~Vague()</div><div class="ttdef"><b>Definition:</b> vague.cpp:12</div></div>
+<div class="ttc" id="class_vague_html_a82124cdeb165825047f9dd8164e69a16"><div class="ttname"><a href="class_vague.html#a82124cdeb165825047f9dd8164e69a16">Vague::ajouterVaisseau</a></div><div class="ttdeci">void ajouterVaisseau(float t, Vaisseau *v)</div><div class="ttdef"><b>Definition:</b> vague.cpp:18</div></div>
+<div class="ttc" id="class_vague_html_ab1e4786aa02ad641431b56658dbbaac3"><div class="ttname"><a href="class_vague.html#ab1e4786aa02ad641431b56658dbbaac3">Vague::Vague</a></div><div class="ttdeci">Vague()</div><div class="ttdef"><b>Definition:</b> vague.cpp:3</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<map id="src/Utilitaires/Trajectoire.h" name="src/Utilitaires/Trajectoire.h">
+<area shape="rect" id="node2" href="$_vaisseau_eclaireur_8h.html" title="src/Vaisseau/VaisseauEclaireur.h" alt="" coords="619,80,837,107"/>
+<area shape="rect" id="node8" href="$_vaisseau_attaquant_8h.html" title="src/Vaisseau/VaisseauAttaquant.h" alt="" coords="121,80,343,107"/>
+<area shape="rect" id="node10" href="$_vaisseau_defenseur_8h.html" title="src/Vaisseau/VaisseauDefenseur.h" alt="" coords="368,80,595,107"/>
+<area shape="rect" id="node12" href="$_trajectoire_8cpp.html" title="src/Utilitaires/Trajectoire.cpp" alt="" coords="861,80,1051,107"/>
+<area shape="rect" id="node3" href="$__vaisseaux_8h.html" title="src/Vaisseau/_vaisseaux.h" alt="" coords="267,155,445,181"/>
+<area shape="rect" id="node7" href="$_vaisseau_eclaireur_8cpp.html" title="src/Vaisseau/VaisseauEclaireur.cpp" alt="" coords="736,155,968,181"/>
+<area shape="rect" id="node4" href="$_partie_8cpp.html" title="src/Partie.cpp" alt="" coords="263,304,366,331"/>
+<area shape="rect" id="node5" href="$vague_8h.html" title="src/vague.h" alt="" coords="352,229,443,256"/>
+<area shape="rect" id="node6" href="$vague_8cpp.html" title="src/vague.cpp" alt="" coords="391,304,495,331"/>
+<area shape="rect" id="node9" href="$_vaisseau_attaquant_8cpp.html" title="src/Vaisseau/VaisseauAttaquant.cpp" alt="" coords="5,155,243,181"/>
+<area shape="rect" id="node11" href="$_vaisseau_defenseur_8cpp.html" title="src/Vaisseau/VaisseauDefenseur.cpp" alt="" coords="470,155,711,181"/>
+</map>

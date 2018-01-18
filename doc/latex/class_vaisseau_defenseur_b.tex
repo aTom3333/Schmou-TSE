@@ -1,0 +1,120 @@
+\hypertarget{class_vaisseau_defenseur_b}{}\section{Référence de la classe Vaisseau\+DefenseurB}
+\label{class_vaisseau_defenseur_b}\index{Vaisseau\+DefenseurB@{Vaisseau\+DefenseurB}}
+
+
+classe du bouclier du \hyperlink{class_vaisseau_defenseur}{Vaisseau\+Defenseur}  
+
+
+
+
+{\ttfamily \#include $<$Vaisseau\+Defenseur\+B.\+h$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Vaisseau\+DefenseurB\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_vaisseau_defenseur_b__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Vaisseau\+DefenseurB\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_vaisseau_defenseur_b__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vaisseau_defenseur_b_a7f6ddaa53d153a14a760bc51945ebb30}{Vaisseau\+DefenseurB} (int nb, float x, float y, \hyperlink{class_vaisseau}{Vaisseau} $\ast$createur)
+\begin{DoxyCompactList}\small\item\em Contructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_vaisseau_defenseur_b_acb6347ed84b0364d36bf581d7a3e1129}{$\sim$\+Vaisseau\+DefenseurB} ()
+\item 
+void \hyperlink{class_vaisseau_defenseur_b_aae8e2488b91dbd1ceef8969debbc234f}{gestion} (sf\+::\+Render\+Window \&window, sf\+::\+Time temps\+Ecoule, \hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input} \&input)
+\begin{DoxyCompactList}\small\item\em Gère le comportement du vaisseau. \end{DoxyCompactList}\item 
+void \hyperlink{class_vaisseau_defenseur_b_aba88319dcc7540dce39c164fa9853732}{destruction} ()
+\begin{DoxyCompactList}\small\item\em Procedure a effectuer lorsque le vaisseau est détruit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+classe du bouclier du \hyperlink{class_vaisseau_defenseur}{Vaisseau\+Defenseur} 
+
+Bouclier \+: Module d\textquotesingle{}un vaisseau ennemi Comportement \+: Pas de déplacement Pas de tir 
+
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_vaisseau_defenseur_b_a7f6ddaa53d153a14a760bc51945ebb30}\label{class_vaisseau_defenseur_b_a7f6ddaa53d153a14a760bc51945ebb30}} 
+\index{Vaisseau\+DefenseurB@{Vaisseau\+DefenseurB}!Vaisseau\+DefenseurB@{Vaisseau\+DefenseurB}}
+\index{Vaisseau\+DefenseurB@{Vaisseau\+DefenseurB}!Vaisseau\+DefenseurB@{Vaisseau\+DefenseurB}}
+\subsubsection{\texorpdfstring{Vaisseau\+Defenseur\+B()}{VaisseauDefenseurB()}}
+{\footnotesize\ttfamily Vaisseau\+Defenseur\+B\+::\+Vaisseau\+DefenseurB (\begin{DoxyParamCaption}\item[{int}]{nb,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{\hyperlink{class_vaisseau}{Vaisseau} $\ast$}]{createur }\end{DoxyParamCaption})}
+
+
+
+Contructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Abscisse de la position de départ \\
+\hline
+{\em y} & Ordonnée de la position de départ \\
+\hline
+{\em createur} & Createur du module Initialise le vaisseau à position et à la trajectoires désirées \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vaisseau_defenseur_b_acb6347ed84b0364d36bf581d7a3e1129}\label{class_vaisseau_defenseur_b_acb6347ed84b0364d36bf581d7a3e1129}} 
+\index{Vaisseau\+DefenseurB@{Vaisseau\+DefenseurB}!````~Vaisseau\+DefenseurB@{$\sim$\+Vaisseau\+DefenseurB}}
+\index{````~Vaisseau\+DefenseurB@{$\sim$\+Vaisseau\+DefenseurB}!Vaisseau\+DefenseurB@{Vaisseau\+DefenseurB}}
+\subsubsection{\texorpdfstring{$\sim$\+Vaisseau\+Defenseur\+B()}{~VaisseauDefenseurB()}}
+{\footnotesize\ttfamily Vaisseau\+Defenseur\+B\+::$\sim$\+Vaisseau\+DefenseurB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_vaisseau_defenseur_b_aba88319dcc7540dce39c164fa9853732}\label{class_vaisseau_defenseur_b_aba88319dcc7540dce39c164fa9853732}} 
+\index{Vaisseau\+DefenseurB@{Vaisseau\+DefenseurB}!destruction@{destruction}}
+\index{destruction@{destruction}!Vaisseau\+DefenseurB@{Vaisseau\+DefenseurB}}
+\subsubsection{\texorpdfstring{destruction()}{destruction()}}
+{\footnotesize\ttfamily Vaisseau\+Defenseur\+B\+::destruction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Procedure a effectuer lorsque le vaisseau est détruit. 
+
+Indique au créateur que l\textquotesingle{}annexe est détuite 
+
+Implémente \hyperlink{class_vaisseau_af4f490c5fd9e171b23067ec73aa737ad}{Vaisseau}.
+
+\mbox{\Hypertarget{class_vaisseau_defenseur_b_aae8e2488b91dbd1ceef8969debbc234f}\label{class_vaisseau_defenseur_b_aae8e2488b91dbd1ceef8969debbc234f}} 
+\index{Vaisseau\+DefenseurB@{Vaisseau\+DefenseurB}!gestion@{gestion}}
+\index{gestion@{gestion}!Vaisseau\+DefenseurB@{Vaisseau\+DefenseurB}}
+\subsubsection{\texorpdfstring{gestion()}{gestion()}}
+{\footnotesize\ttfamily Vaisseau\+Defenseur\+B\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{sf\+::\+Time}]{temps\+Ecoule,  }\item[{\hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input} \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gère le comportement du vaisseau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em window} & Fenetre S\+F\+ML où le vaisseau sera affiché \\
+\hline
+{\em temps\+Ecoule} & Temps écoulé depuis le dernier appel \\
+\hline
+{\em input} & Classe Input donnant accés aux entrée\\
+\hline
+\end{DoxyParams}
+Gère le déplacement et l\textquotesingle{}affichage du vaisseau 
+
+Implémente \hyperlink{class_vaisseau_afaa179c1f03255d7869b8e2296ed8307}{Vaisseau}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+src/\+Vaisseau/\hyperlink{_vaisseau_defenseur_b_8h}{Vaisseau\+Defenseur\+B.\+h}\item 
+src/\+Vaisseau/\hyperlink{_vaisseau_defenseur_b_8cpp}{Vaisseau\+Defenseur\+B.\+cpp}\end{DoxyCompactItemize}
