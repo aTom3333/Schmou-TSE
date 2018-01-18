@@ -15,7 +15,7 @@ Graphe d\textquotesingle{}héritage de Projectile\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=204pt]{class_projectile__inherit__graph}
+\includegraphics[height=550pt]{class_projectile__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -24,7 +24,7 @@ Graphe de collaboration de Projectile\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=137pt]{class_projectile__coll__graph}
+\includegraphics[width=180pt]{class_projectile__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Fonctions membres publiques}
@@ -32,10 +32,10 @@ Graphe de collaboration de Projectile\+:\nopagebreak
 \item 
 \hyperlink{class_projectile_ac536ed2aad56af866a2078b9a85aa16d}{Projectile} ()
 \item 
-virtual void \hyperlink{class_projectile_a8550c8b1b012c5c290fb6da5b06f57ef}{agit} (\hyperlink{class_vaisseau}{Vaisseau} \&v)=0
-\begin{DoxyCompactList}\small\item\em Réalise l\textquotesingle{}action que le {\ttfamily \hyperlink{class_projectile}{Projectile}} doit faire sur le vaisseau. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_projectile_aa969857f9837d9be3a6ea415c9ba3ff1}{gestion} (sf\+::\+Render\+Window \&window)=0
-\end{DoxyCompactItemize}
+virtual void \hyperlink{class_projectile_a09e02b793473660fc59a329a4dfea0ec}{gestion} (sf\+::\+Render\+Window \&window, sf\+::\+Time temps\+Ecoule)=0
+\item 
+void \hyperlink{class_projectile_aac0afd5bf761f0e212d4e1c8a503c86a}{destruction} ()
+\begin{DoxyCompactList}\small\item\em Procedure a effectuer lorsque le vaisseau est détruit. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Attributs protégés}
 \begin{DoxyCompactItemize}
 \item 
@@ -58,34 +58,29 @@ Classe abstraite mère de chaque projectile en tant qu\textquotesingle{}entité 
 
 
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_projectile_a8550c8b1b012c5c290fb6da5b06f57ef}\label{class_projectile_a8550c8b1b012c5c290fb6da5b06f57ef}} 
-\index{Projectile@{Projectile}!agit@{agit}}
-\index{agit@{agit}!Projectile@{Projectile}}
-\subsubsection{\texorpdfstring{agit()}{agit()}}
-{\footnotesize\ttfamily Projectile\+::agit (\begin{DoxyParamCaption}\item[{\hyperlink{class_vaisseau}{Vaisseau} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\mbox{\Hypertarget{class_projectile_aac0afd5bf761f0e212d4e1c8a503c86a}\label{class_projectile_aac0afd5bf761f0e212d4e1c8a503c86a}} 
+\index{Projectile@{Projectile}!destruction@{destruction}}
+\index{destruction@{destruction}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{destruction()}{destruction()}}
+{\footnotesize\ttfamily Projectile\+::destruction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-Réalise l\textquotesingle{}action que le {\ttfamily \hyperlink{class_projectile}{Projectile}} doit faire sur le vaisseau. 
+Procedure a effectuer lorsque le vaisseau est détruit. 
 
-Fonction virtuelle qui doit être surchargée pour les classes héritées. Elle réalise l\textquotesingle{}action que le {\ttfamily \hyperlink{class_projectile}{Projectile}} appelant sur le {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} passé en paramètre (dégats, changement de stat, ...) 
-\begin{DoxyParams}{Paramètres}
-{\em v} & Un {\ttfamily \hyperlink{class_vaisseau}{Vaisseau}} sur lequel l\textquotesingle{}action du {\ttfamily \hyperlink{class_projectile}{Projectile}} va se faire \\
-\hline
-\end{DoxyParams}
+Détruit l\textquotesingle{}entité 
 
+Implémente \hyperlink{class_entite_af5c424f69b2c880ae9c12786abd28592}{Entite}.
 
-Implémenté dans \hyperlink{class_proj_piou_a1594d1ba2fd53ff82af597d2505a7db2}{Proj\+Piou}, et \hyperlink{class_proj_test_a3adb674973dcd21c6ddaee809b719a65}{Proj\+Test}.
-
-\mbox{\Hypertarget{class_projectile_aa969857f9837d9be3a6ea415c9ba3ff1}\label{class_projectile_aa969857f9837d9be3a6ea415c9ba3ff1}} 
+\mbox{\Hypertarget{class_projectile_a09e02b793473660fc59a329a4dfea0ec}\label{class_projectile_a09e02b793473660fc59a329a4dfea0ec}} 
 \index{Projectile@{Projectile}!gestion@{gestion}}
 \index{gestion@{gestion}!Projectile@{Projectile}}
 \subsubsection{\texorpdfstring{gestion()}{gestion()}}
-{\footnotesize\ttfamily virtual void Projectile\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void Projectile\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{sf\+::\+Time}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implémenté dans \hyperlink{class_proj_piou_a01b45e4045391883472e283e027cf7de}{Proj\+Piou}, et \hyperlink{class_proj_test_a6649e6591e463315aa9513854e2515d4}{Proj\+Test}.
+Implémenté dans \hyperlink{class_proj_test_aec696ef399dbe4a7d6cbca6d68196909}{Proj\+Test}, \hyperlink{class_proj_piou_a6efae1f583527446ef824fc1d2823a02}{Proj\+Piou}, et \hyperlink{class_proj_missile_a6e7a2c8180b7275a1d03340229d83bf3}{Proj\+Missile}.
 
 
 

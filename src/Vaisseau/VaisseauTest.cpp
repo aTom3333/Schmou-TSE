@@ -1,4 +1,5 @@
 #include "VaisseauTest.h"
+#include <cmath>
 
 
 VaisseauTest::VaisseauTest() ///constructeur
@@ -34,7 +35,7 @@ VaisseauTest::VaisseauTest() ///constructeur
 
 
 
-	// Capacités
+	// Capacitï¿½s
 	CapTest *temp1 = new CapTest();
 	capacites_.push_back(temp1);
 
@@ -52,21 +53,21 @@ VaisseauTest::~VaisseauTest()///destructeur
 {
 }
 
-void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input)
+void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
 {
 	// Gestion du vaisseau
-	// Si la touche W est activé
-	if (input.action(0))
+	// Si la touche W est activï¿½
+	if (input.action(Tir1))
 	{
-		// Lance la compétance à la position du vaisseau allié
+		// Lance la compï¿½tance ï¿½ la position du vaisseau alliï¿½
 		sf::Vector2f posVaisseau = position_;
 		if(attaqueEnCours_ == 1)
 			capacites_[attaqueEnCours_]->utiliser(posVaisseau.x + 32, posVaisseau.y - 20);
 		else
 			capacites_[attaqueEnCours_]->utiliser(posVaisseau.x + 32, posVaisseau.y + 32);
 	}
-	// Si la touche X est activé
-	if (input.action(1))
+	// Si la touche X est activï¿½
+	if (input.action(Tir2))
 	{
 		// Changement d'attaque
 		attaqueEnCours_++;
@@ -75,12 +76,12 @@ void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Inpu
 	}
 	move(input.move(vit_, tempsEcoule));
 
-	// Affichage des informations sur la capacité en cours
+	// Affichage des informations sur la capacitï¿½ en cours
 	// TODO A mettre dans la classe affichant l'interface
 		sf::Text afficheAtk;
 		sf::Font font_;
 		font_.loadFromFile("../../rc/Font/hemi.ttf");
-		// Initialisation du texte (Nom capacité + Cooldown)
+		// Initialisation du texte (Nom capacitï¿½ + Cooldown)
 		afficheAtk.setFont(font_);
 		afficheAtk.setCharacterSize(20);
 		afficheAtk.setFillColor(sf::Color::White);

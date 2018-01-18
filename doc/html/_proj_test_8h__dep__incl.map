@@ -1,10 +1,16 @@
 <map id="src/Projectiles/ProjTest.h" name="src/Projectiles/ProjTest.h">
-<area shape="rect" id="node2" href="$_cap_test_8h.html" title="src/Capacites/CapTest.h" alt="" coords="231,80,399,107"/>
-<area shape="rect" id="node6" href="$_cap_dash_8h.html" title="src/Capacites/CapDash.h" alt="" coords="423,80,596,107"/>
-<area shape="rect" id="node8" href="$__projectiles_8h.html" title="src/Projectiles/_projectiles.h" alt="" coords="5,155,192,181"/>
-<area shape="rect" id="node9" href="$_proj_test_8cpp.html" title="src/Projectiles/ProjTest.cpp" alt="" coords="621,80,803,107"/>
-<area shape="rect" id="node3" href="$___capacites_8h.html" title="src/Capacites/_Capacites.h" alt="" coords="424,155,608,181"/>
-<area shape="rect" id="node5" href="$_cap_test_8cpp.html" title="src/Capacites/CapTest.cpp" alt="" coords="217,155,399,181"/>
-<area shape="rect" id="node4" href="$_partie_8cpp.html" title="src/Partie.cpp" alt="" coords="255,229,358,256"/>
-<area shape="rect" id="node7" href="$_cap_dash_8cpp.html" title="src/Capacites/CapDash.cpp" alt="" coords="632,155,819,181"/>
+<area shape="rect" id="node2" href="$_cap_test_8h.html" title="src/Capacites/CapTest.h" alt="" coords="499,80,667,107"/>
+<area shape="rect" id="node11" href="$_cap_dash_8h.html" title="src/Capacites/CapDash.h" alt="" coords="301,80,475,107"/>
+<area shape="rect" id="node13" href="$__projectiles_8h.html" title="src/Projectiles/_projectiles.h" alt="" coords="5,80,192,107"/>
+<area shape="rect" id="node15" href="$_proj_test_8cpp.html" title="src/Projectiles/ProjTest.cpp" alt="" coords="691,80,874,107"/>
+<area shape="rect" id="node3" href="$___capacites_8h.html" title="src/Capacites/_Capacites.h" alt="" coords="383,155,567,181"/>
+<area shape="rect" id="node10" href="$_cap_test_8cpp.html" title="src/Capacites/CapTest.cpp" alt="" coords="591,155,774,181"/>
+<area shape="rect" id="node4" href="$_partie_8cpp.html" title="src/Partie.cpp" alt="" coords="186,453,289,480"/>
+<area shape="rect" id="node5" href="$_vaisseau_test_8h.html" title="src/Vaisseau/VaisseauTest.h" alt="" coords="378,229,571,256"/>
+<area shape="rect" id="node6" href="$__vaisseaux_8h.html" title="src/Vaisseau/_vaisseaux.h" alt="" coords="276,304,455,331"/>
+<area shape="rect" id="node9" href="$_vaisseau_test_8cpp.html" title="src/Vaisseau/VaisseauTest.cpp" alt="" coords="479,304,686,331"/>
+<area shape="rect" id="node7" href="$vague_8h.html" title="src/vague.h" alt="" coords="323,379,413,405"/>
+<area shape="rect" id="node8" href="$vague_8cpp.html" title="src/vague.cpp" alt="" coords="316,453,420,480"/>
+<area shape="rect" id="node12" href="$_cap_dash_8cpp.html" title="src/Capacites/CapDash.cpp" alt="" coords="172,155,359,181"/>
+<area shape="rect" id="node14" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="50,155,147,181"/>
 </map>

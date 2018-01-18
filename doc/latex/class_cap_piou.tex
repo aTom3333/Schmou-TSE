@@ -15,7 +15,7 @@ Graphe d\textquotesingle{}héritage de Cap\+Piou\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=136pt]{class_cap_piou__inherit__graph}
+\includegraphics[width=169pt]{class_cap_piou__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -24,7 +24,7 @@ Graphe de collaboration de Cap\+Piou\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=136pt]{class_cap_piou__coll__graph}
+\includegraphics[width=169pt]{class_cap_piou__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Fonctions membres publiques}
@@ -32,9 +32,9 @@ Graphe de collaboration de Cap\+Piou\+:\nopagebreak
 \item 
 \hyperlink{class_cap_piou_aa2ed61fb1313a447cf8444399001750d}{Cap\+Piou} ()
 \begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
-void \hyperlink{class_cap_piou_a92f5cc3011280ad13bf3ff5e6a3c76ea}{utiliser} (int x, int y)
+void \hyperlink{class_cap_piou_aad0eb3b9fab67785e1d0441b96aa921f}{utiliser} (int x, int y) override
 \begin{DoxyCompactList}\small\item\em Active la capacite. \end{DoxyCompactList}\item 
-void \hyperlink{class_cap_piou_aede206c70e6697865a8d25e614f138c0}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} \&vaisseau, float temps\+Ecoule)
+void \hyperlink{class_cap_piou_a0823f301d48377ca2e14a0cd17922716}{actualiser} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, \hyperlink{class_entite}{Entite} \&vaisseau, float temps\+Ecoule) override
 \begin{DoxyCompactList}\small\item\em Active les effets de la capacité \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres hérités additionnels}
 
@@ -58,32 +58,32 @@ Constructeur.
 Initialisation de la capacité 
 
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_cap_piou_aede206c70e6697865a8d25e614f138c0}\label{class_cap_piou_aede206c70e6697865a8d25e614f138c0}} 
+\mbox{\Hypertarget{class_cap_piou_a0823f301d48377ca2e14a0cd17922716}\label{class_cap_piou_a0823f301d48377ca2e14a0cd17922716}} 
 \index{Cap\+Piou@{Cap\+Piou}!actualiser@{actualiser}}
 \index{actualiser@{actualiser}!Cap\+Piou@{Cap\+Piou}}
 \subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
-{\footnotesize\ttfamily Cap\+Piou\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} \&}]{vaisseau,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Cap\+Piou\+::actualiser (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{\hyperlink{class_entite}{Entite} \&}]{vaisseau,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
 Active les effets de la capacité 
 
-
+Créer 1 \hyperlink{class_proj_piou}{Proj\+Piou} à l\textquotesingle{}activation Actualise le timer 
 \begin{DoxyParams}{Paramètres}
 {\em projectile} & Vecteur de tout les projectiles présent à l\textquotesingle{}écran \\
 \hline
-{\em vaisseau} & \hyperlink{class_vaisseau}{Vaisseau} qui a activé la compétance\\
+{\em vaisseau} & \hyperlink{class_vaisseau}{Vaisseau} qui a activé la compétance \\
 \hline
 \end{DoxyParams}
-Créer 1 \hyperlink{class_proj_piou}{Proj\+Piou} à l\textquotesingle{}activation Actualise le timer 
+
 
 Implémente \hyperlink{class_capacite_a75c9621d7a704fedb10ad29c6a697d64}{Capacite}.
 
-\mbox{\Hypertarget{class_cap_piou_a92f5cc3011280ad13bf3ff5e6a3c76ea}\label{class_cap_piou_a92f5cc3011280ad13bf3ff5e6a3c76ea}} 
+\mbox{\Hypertarget{class_cap_piou_aad0eb3b9fab67785e1d0441b96aa921f}\label{class_cap_piou_aad0eb3b9fab67785e1d0441b96aa921f}} 
 \index{Cap\+Piou@{Cap\+Piou}!utiliser@{utiliser}}
 \index{utiliser@{utiliser}!Cap\+Piou@{Cap\+Piou}}
 \subsubsection{\texorpdfstring{utiliser()}{utiliser()}}
-{\footnotesize\ttfamily Cap\+Piou\+::utiliser (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Cap\+Piou\+::utiliser (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 

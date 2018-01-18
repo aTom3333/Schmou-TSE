@@ -1,6 +1,7 @@
 <map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
-<area shape="rect" id="node1" href="$class_capacite.html" title="Classe abstraite qui définit la structure générale d&#39;une capacité, à faire hériter de chaque capacité..." alt="" coords="5,56,80,83"/>
-<area shape="rect" id="node2" href="$class_cap_dash.html" title="Classe Capacité permettant de dash. " alt="" coords="128,5,205,32"/>
-<area shape="rect" id="node3" href="$class_cap_piou.html" title="Classe Capacité de base. " alt="" coords="131,56,203,83"/>
-<area shape="rect" id="node4" href="$class_cap_test.html" title="Classe Capacité de test. " alt="" coords="131,107,203,133"/>
+<area shape="rect" id="node1" href="$class_capacite.html" title="Classe abstraite qui définit la structure générale d&#39;une capacité, à faire hériter de chaque capacité..." alt="" coords="5,81,80,108"/>
+<area shape="rect" id="node2" href="$class_cap_dash.html" title="Classe Capacité permettant de dash. " alt="" coords="133,5,210,32"/>
+<area shape="rect" id="node3" href="$class_cap_missile.html" title="Classe Capacité de base. " alt="" coords="128,56,215,83"/>
+<area shape="rect" id="node4" href="$class_cap_piou.html" title="Classe Capacité de base. " alt="" coords="135,107,207,133"/>
+<area shape="rect" id="node5" href="$class_cap_test.html" title="Classe Capacité de test. " alt="" coords="135,157,207,184"/>
 </map>

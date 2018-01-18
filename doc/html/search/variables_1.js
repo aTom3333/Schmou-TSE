@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['cercleenglobant_5f',['cercleEnglobant_',['../class_entite.html#a5b6c62e4dc54221a84ce4dc824fdb2da',1,'Entite']]],
-  ['collisionable_5f',['collisionable_',['../class_entite.html#a37bb9bd568e9e1c904eaa83ec49a2b16',1,'Entite']]],
-  ['cooldown_5f',['cooldown_',['../class_capacite.html#aa84204be03602333d694faa14dbb693c',1,'Capacite']]]
+  ['bouclier_5f',['bouclier_',['../class_entite.html#a933a79044c5ac6ffccd397c134248d44',1,'Entite']]],
+  ['boucliermax_5f',['bouclierMax_',['../class_entite.html#a7c48bbfd096baadcb84ce62e31e183d9',1,'Entite']]]
 ];

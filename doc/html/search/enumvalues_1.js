@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keyboard',['Keyboard',['../class_input__base.html#a455585e7933485981b3d7bfcad3a47c6a6ce4d85a628a88bbdb3ac24a8e5a9c2e',1,'Input_base']]]
+  ['joypad',['Joypad',['../class_input__base.html#a455585e7933485981b3d7bfcad3a47c6ad17c22e217179fc5626be9b94f1f18fa',1,'Input_base']]]
 ];

@@ -1,4 +1,6 @@
 #include "ProjMissile.h"
+#include <cmath>
+
 
 ProjMissile::ProjMissile()
 {
@@ -31,7 +33,7 @@ ProjMissile::ProjMissile(float x, float y)
 
 	degats_ = 300;
 
-	//  Projectile qui se déplace verticalement
+	//  Projectile qui se dï¿½place verticalement
 	sens_ = 1;
 	a_ = 1.07 * sens_;
 	v_ = 10 * sens_;
