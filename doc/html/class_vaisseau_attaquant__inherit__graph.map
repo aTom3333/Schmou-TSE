@@ -1,0 +1,4 @@
+<map id="VaisseauAttaquant" name="VaisseauAttaquant">
+<area shape="rect" id="node2" href="$class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi " alt="" coords="17,424,153,795"/>
+<area shape="rect" id="node3" href="$class_entite.html" title="Classe virtuelle qui définit une entité " alt="" coords="19,5,152,376"/>
+</map>

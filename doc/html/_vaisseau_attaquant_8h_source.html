@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Schmou&#39;TSE:  Fichier source de src/Vaisseau/VaisseauAttaquant.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Schmou&#39;TSE
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_8af96e67bfef43ea6cf541a302b9a579.html">Vaisseau</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">VaisseauAttaquant.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_vaisseau_attaquant_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VAISSEAU_ATTAQUANT_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VAISSEAU_ATTAQUANT_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../constantes.h&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vaisseau_8h.html">Vaisseau.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../Capacites/CapMissile.h&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../Utilitaires/Trajectoire.h&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_vaisseau_attaquant.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_vaisseau_attaquant.html">VaisseauAttaquant</a> : <span class="keyword">public</span> <a class="code" href="class_vaisseau.html">Vaisseau</a></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>: </div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="class_vaisseau_attaquant.html#a58fd4ab933dd101db82b9287e0c0aafa">VaisseauAttaquant</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <a class="code" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95">Trajectoire</a> traj, <span class="keywordtype">float</span> param1, <span class="keywordtype">float</span> param2, <span class="keywordtype">float</span> param3 = 0, <span class="keywordtype">float</span> param4 = 0);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="class_vaisseau_attaquant.html#a2707dcc90692ba6132ec6aeb659d3620">~VaisseauAttaquant</a>();</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_vaisseau_attaquant.html#ad95d76e5973affa6ef287edd7ad5310e">gestion</a>(sf::RenderWindow &amp; window, sf::Time tempsEcoule, <a class="code" href="class_input__base.html">Input</a>&amp; input);</div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_vaisseau_attaquant.html#af804e1fd491301c2385e10d88f4892a6">   68</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_vaisseau_attaquant.html#af804e1fd491301c2385e10d88f4892a6">destruction</a>() { <a class="code" href="class_entite.html#a2d98d6fac9fb85da156fcda84fcec3ac">detruit_</a> = <span class="keyword">true</span>; }</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        sf::Vector2f posInit_; </div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        std::vector&lt;float&gt; params_; </div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                    <span class="comment">// param1 Lineaire : Sens           Parabolique : Sens                          Sinusoidale : Sens (1/-1)</span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                    <span class="comment">// param2 Lineaire : Pente          Parabolique : Ordonnée de l&#39;extremum        Sinusoidale : Période (spatiale)</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                    <span class="comment">// param3 Lineaire : Inutilisé      Parabolique : Abscisse de l&#39;extremum        Sinusoidale : Amplitude</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                    <span class="comment">// param4 Lineaire : Inutilisé      Parabolique : Inutilisé                     Sinusoidale : Pente</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95">Trajectoire</a> trajectoire_; </div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">float</span> t_; </div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">int</span> frames_;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif // VAISSEAU_ATTAQUANT_H</span></div><div class="ttc" id="class_entite_html_a2d98d6fac9fb85da156fcda84fcec3ac"><div class="ttname"><a href="class_entite.html#a2d98d6fac9fb85da156fcda84fcec3ac">Entite::detruit_</a></div><div class="ttdeci">bool detruit_</div><div class="ttdef"><b>Definition:</b> Entite.h:257</div></div>
+<div class="ttc" id="_trajectoire_8h_html_afa7f6e8323d7ee755d93cd1f6019dd95"><div class="ttname"><a href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95">Trajectoire</a></div><div class="ttdeci">Trajectoire</div><div class="ttdoc">liste �num�r�e des types possibles de trajectoire </div><div class="ttdef"><b>Definition:</b> Trajectoire.h:14</div></div>
+<div class="ttc" id="class_vaisseau_attaquant_html_a58fd4ab933dd101db82b9287e0c0aafa"><div class="ttname"><a href="class_vaisseau_attaquant.html#a58fd4ab933dd101db82b9287e0c0aafa">VaisseauAttaquant::VaisseauAttaquant</a></div><div class="ttdeci">VaisseauAttaquant(float x, float y, Trajectoire traj, float param1, float param2, float param3=0, float param4=0)</div><div class="ttdef"><b>Definition:</b> VaisseauAttaquant.cpp:5</div></div>
+<div class="ttc" id="class_vaisseau_attaquant_html_a2707dcc90692ba6132ec6aeb659d3620"><div class="ttname"><a href="class_vaisseau_attaquant.html#a2707dcc90692ba6132ec6aeb659d3620">VaisseauAttaquant::~VaisseauAttaquant</a></div><div class="ttdeci">~VaisseauAttaquant()</div><div class="ttdef"><b>Definition:</b> VaisseauAttaquant.cpp:51</div></div>
+<div class="ttc" id="class_vaisseau_attaquant_html_ad95d76e5973affa6ef287edd7ad5310e"><div class="ttname"><a href="class_vaisseau_attaquant.html#ad95d76e5973affa6ef287edd7ad5310e">VaisseauAttaquant::gestion</a></div><div class="ttdeci">void gestion(sf::RenderWindow &amp;window, sf::Time tempsEcoule, Input &amp;input)</div><div class="ttdoc">Gère le comportement du vaisseau. </div><div class="ttdef"><b>Definition:</b> VaisseauAttaquant.cpp:55</div></div>
+<div class="ttc" id="class_vaisseau_html"><div class="ttname"><a href="class_vaisseau.html">Vaisseau</a></div><div class="ttdoc">classe du vaisseau (véhicule) d&amp;#39;un joueur ou d&amp;#39;un ennemi </div><div class="ttdef"><b>Definition:</b> Vaisseau.h:20</div></div>
+<div class="ttc" id="class_vaisseau_attaquant_html_af804e1fd491301c2385e10d88f4892a6"><div class="ttname"><a href="class_vaisseau_attaquant.html#af804e1fd491301c2385e10d88f4892a6">VaisseauAttaquant::destruction</a></div><div class="ttdeci">void destruction()</div><div class="ttdoc">Procedure a effectuer lorsque le vaisseau est détruit. </div><div class="ttdef"><b>Definition:</b> VaisseauAttaquant.h:68</div></div>
+<div class="ttc" id="_vaisseau_8h_html"><div class="ttname"><a href="_vaisseau_8h.html">Vaisseau.h</a></div></div>
+<div class="ttc" id="class_vaisseau_attaquant_html"><div class="ttname"><a href="class_vaisseau_attaquant.html">VaisseauAttaquant</a></div><div class="ttdoc">classe d&amp;#39;un ennemi de base : l&amp;#39;attaquant </div><div class="ttdef"><b>Definition:</b> VaisseauAttaquant.h:18</div></div>
+<div class="ttc" id="class_input__base_html"><div class="ttname"><a href="class_input__base.html">Input_base&lt; NB_ACTION &gt;</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

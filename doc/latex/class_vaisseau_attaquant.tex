@@ -1,0 +1,107 @@
+\hypertarget{class_vaisseau_attaquant}{}\section{Référence de la classe Vaisseau\+Attaquant}
+\label{class_vaisseau_attaquant}\index{Vaisseau\+Attaquant@{Vaisseau\+Attaquant}}
+
+
+classe d\textquotesingle{}un ennemi de base \+: l\textquotesingle{}attaquant  
+
+
+
+
+{\ttfamily \#include $<$Vaisseau\+Attaquant.\+h$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Vaisseau\+Attaquant\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_vaisseau_attaquant__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Vaisseau\+Attaquant\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_vaisseau_attaquant__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vaisseau_attaquant_a58fd4ab933dd101db82b9287e0c0aafa}{Vaisseau\+Attaquant} (float x, float y, \hyperlink{_trajectoire_8h_afa7f6e8323d7ee755d93cd1f6019dd95}{Trajectoire} traj, float param1, float param2, float param3=0, float param4=0)
+\item 
+\hyperlink{class_vaisseau_attaquant_a2707dcc90692ba6132ec6aeb659d3620}{$\sim$\+Vaisseau\+Attaquant} ()
+\item 
+void \hyperlink{class_vaisseau_attaquant_ad95d76e5973affa6ef287edd7ad5310e}{gestion} (sf\+::\+Render\+Window \&window, sf\+::\+Time temps\+Ecoule, \hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input} \&input)
+\begin{DoxyCompactList}\small\item\em Gère le comportement du vaisseau. \end{DoxyCompactList}\item 
+void \hyperlink{class_vaisseau_attaquant_af804e1fd491301c2385e10d88f4892a6}{destruction} ()
+\begin{DoxyCompactList}\small\item\em Procedure a effectuer lorsque le vaisseau est détruit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+classe d\textquotesingle{}un ennemi de base \+: l\textquotesingle{}attaquant 
+
+Attaquant \+: \hyperlink{class_vaisseau}{Vaisseau} ennemi Comportement \+: Déplacement (Linéaire, Parabolique, Sinsoidale) uniquement Tir de missile (\hyperlink{class_proj_missile}{Proj\+Missile}) 
+
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_vaisseau_attaquant_a58fd4ab933dd101db82b9287e0c0aafa}\label{class_vaisseau_attaquant_a58fd4ab933dd101db82b9287e0c0aafa}} 
+\index{Vaisseau\+Attaquant@{Vaisseau\+Attaquant}!Vaisseau\+Attaquant@{Vaisseau\+Attaquant}}
+\index{Vaisseau\+Attaquant@{Vaisseau\+Attaquant}!Vaisseau\+Attaquant@{Vaisseau\+Attaquant}}
+\subsubsection{\texorpdfstring{Vaisseau\+Attaquant()}{VaisseauAttaquant()}}
+{\footnotesize\ttfamily Vaisseau\+Attaquant\+::\+Vaisseau\+Attaquant (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{\hyperlink{_trajectoire_8h_afa7f6e8323d7ee755d93cd1f6019dd95}{Trajectoire}}]{traj,  }\item[{float}]{param1,  }\item[{float}]{param2,  }\item[{float}]{param3 = {\ttfamily 0},  }\item[{float}]{param4 = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vaisseau_attaquant_a2707dcc90692ba6132ec6aeb659d3620}\label{class_vaisseau_attaquant_a2707dcc90692ba6132ec6aeb659d3620}} 
+\index{Vaisseau\+Attaquant@{Vaisseau\+Attaquant}!````~Vaisseau\+Attaquant@{$\sim$\+Vaisseau\+Attaquant}}
+\index{````~Vaisseau\+Attaquant@{$\sim$\+Vaisseau\+Attaquant}!Vaisseau\+Attaquant@{Vaisseau\+Attaquant}}
+\subsubsection{\texorpdfstring{$\sim$\+Vaisseau\+Attaquant()}{~VaisseauAttaquant()}}
+{\footnotesize\ttfamily Vaisseau\+Attaquant\+::$\sim$\+Vaisseau\+Attaquant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_vaisseau_attaquant_af804e1fd491301c2385e10d88f4892a6}\label{class_vaisseau_attaquant_af804e1fd491301c2385e10d88f4892a6}} 
+\index{Vaisseau\+Attaquant@{Vaisseau\+Attaquant}!destruction@{destruction}}
+\index{destruction@{destruction}!Vaisseau\+Attaquant@{Vaisseau\+Attaquant}}
+\subsubsection{\texorpdfstring{destruction()}{destruction()}}
+{\footnotesize\ttfamily Vaisseau\+Attaquant\+::destruction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Procedure a effectuer lorsque le vaisseau est détruit. 
+
+Détruit l\textquotesingle{}entité 
+
+Implémente \hyperlink{class_vaisseau_af4f490c5fd9e171b23067ec73aa737ad}{Vaisseau}.
+
+\mbox{\Hypertarget{class_vaisseau_attaquant_ad95d76e5973affa6ef287edd7ad5310e}\label{class_vaisseau_attaquant_ad95d76e5973affa6ef287edd7ad5310e}} 
+\index{Vaisseau\+Attaquant@{Vaisseau\+Attaquant}!gestion@{gestion}}
+\index{gestion@{gestion}!Vaisseau\+Attaquant@{Vaisseau\+Attaquant}}
+\subsubsection{\texorpdfstring{gestion()}{gestion()}}
+{\footnotesize\ttfamily Vaisseau\+Attaquant\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{sf\+::\+Time}]{temps\+Ecoule,  }\item[{\hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input} \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gère le comportement du vaisseau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em window} & Fenetre S\+F\+ML où le vaisseau sera affiché \\
+\hline
+{\em temps\+Ecoule} & Temps écoulé depuis le dernier appel \\
+\hline
+{\em input} & Classe Input donnant accés aux entrée\\
+\hline
+\end{DoxyParams}
+Gère le déplacement et l\textquotesingle{}affichage du vaisseau 
+
+Implémente \hyperlink{class_vaisseau_afaa179c1f03255d7869b8e2296ed8307}{Vaisseau}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+src/\+Vaisseau/\hyperlink{_vaisseau_attaquant_8h}{Vaisseau\+Attaquant.\+h}\item 
+src/\+Vaisseau/\hyperlink{_vaisseau_attaquant_8cpp}{Vaisseau\+Attaquant.\+cpp}\end{DoxyCompactItemize}
