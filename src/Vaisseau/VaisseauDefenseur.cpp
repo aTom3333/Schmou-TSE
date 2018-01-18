@@ -20,7 +20,7 @@ VaisseauDefenseur::VaisseauDefenseur(float x, float y, std::vector<Vaisseau*> &v
 	posInit_.y = y;
 	// initialisation de la trajectoire
 	trajectoire_ = traj;
-	// Initialisation des paramètres de base
+	// Initialisation des paramÃ¨tres de base
 	t_ = 0;
 	frames_ = 1;
 	vit_ = 10;
@@ -44,7 +44,7 @@ VaisseauDefenseur::VaisseauDefenseur(float x, float y, std::vector<Vaisseau*> &v
 	annexesB_.push_back(true);
 	vaisseaux.push_back(annexes_[0]);
 
-	// Initialisation des paramètres de trajectoire
+	// Initialisation des paramÃ¨tres de trajectoire
 	params_.push_back(param1);
 	params_.push_back(param2);
 	params_.push_back(param3);
@@ -57,7 +57,7 @@ VaisseauDefenseur::~VaisseauDefenseur()
 
 }
 
-void VaisseauDefenseur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input)
+void VaisseauDefenseur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
 {
 	/*if (frames_%100==0)
 	{

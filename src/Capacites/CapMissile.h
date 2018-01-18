@@ -6,9 +6,9 @@
 
 /**
 * @class CapMissile
-* @brief Classe Capacité de base
+* @brief Classe CapacitÃ© de base
 *
-* Capacité qui créé 1 ProjMissile à la postion du lanceur
+* CapacitÃ© qui crÃ©Ã© 1 ProjMissile Ã  la postion du lanceur
 * Nom : Missile
 * Cooldown : 5000 ms
 */
@@ -20,20 +20,20 @@ class CapMissile : public Capacite
 		/**
 		* @fn utiliser
 		* @brief Active la capacite
-		* @param x Abscisse de la postion où la capacite est utilisée
-		* @param y Ordonnée de la postion où la capacite est utilisée
+		* @param x Abscisse de la postion oÃ¹ la capacite est utilisÃ©e
+		* @param y OrdonnÃ©e de la postion oÃ¹ la capacite est utilisÃ©e
 		*
-		* Fonction Initialise la postion de départ et le timer
+		* Fonction Initialise la postion de dÃ©part et le timer
 		*/
 		void utiliser(int x, int y) override;
 		/**
 		* @fn actualiser
-		* @brief Active les effets de la capacité
+		* @brief Active les effets de la capacitÃ©
 		*
-		* Créer 1 ProjPiou à l'activation
+		* CrÃ©er 1 ProjPiou Ã  l'activation
 		* Actualise le timer
-		* @param projectile Vecteur de tout les projectiles présent à l'écran
-		* @param vaisseau Vaisseau qui a activé la compétance
+		* @param projectile Vecteur de tout les projectiles prÃ©sent Ã  l'Ã©cran
+		* @param vaisseau Vaisseau qui a activÃ© la compÃ©tance
 		*/
 		void actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule) override;
 	private:

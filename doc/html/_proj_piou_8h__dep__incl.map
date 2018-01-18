@@ -1,8 +1,14 @@
 <map id="src/Projectiles/ProjPiou.h" name="src/Projectiles/ProjPiou.h">
-<area shape="rect" id="node2" href="$_cap_piou_8h.html" title="src/Capacites/CapPiou.h" alt="" coords="221,80,389,107"/>
-<area shape="rect" id="node6" href="$__projectiles_8h.html" title="src/Projectiles/_projectiles.h" alt="" coords="421,155,608,181"/>
-<area shape="rect" id="node7" href="$_proj_piou_8cpp.html" title="src/Projectiles/ProjPiou.cpp" alt="" coords="509,80,691,107"/>
-<area shape="rect" id="node3" href="$___capacites_8h.html" title="src/Capacites/_Capacites.h" alt="" coords="5,155,189,181"/>
-<area shape="rect" id="node5" href="$_cap_piou_8cpp.html" title="src/Capacites/CapPiou.cpp" alt="" coords="214,155,397,181"/>
-<area shape="rect" id="node4" href="$_partie_8cpp.html" title="src/Partie.cpp" alt="" coords="254,229,357,256"/>
+<area shape="rect" id="node2" href="$_cap_piou_8h.html" title="src/Capacites/CapPiou.h" alt="" coords="334,80,502,107"/>
+<area shape="rect" id="node11" href="$__projectiles_8h.html" title="src/Projectiles/_projectiles.h" alt="" coords="526,80,713,107"/>
+<area shape="rect" id="node13" href="$_proj_piou_8cpp.html" title="src/Projectiles/ProjPiou.cpp" alt="" coords="737,80,920,107"/>
+<area shape="rect" id="node3" href="$___capacites_8h.html" title="src/Capacites/_Capacites.h" alt="" coords="154,155,338,181"/>
+<area shape="rect" id="node10" href="$_cap_piou_8cpp.html" title="src/Capacites/CapPiou.cpp" alt="" coords="363,155,545,181"/>
+<area shape="rect" id="node4" href="$_partie_8cpp.html" title="src/Partie.cpp" alt="" coords="403,453,505,480"/>
+<area shape="rect" id="node5" href="$_vaisseau_test_8h.html" title="src/Vaisseau/VaisseauTest.h" alt="" coords="149,229,343,256"/>
+<area shape="rect" id="node6" href="$__vaisseaux_8h.html" title="src/Vaisseau/_vaisseaux.h" alt="" coords="237,304,415,331"/>
+<area shape="rect" id="node9" href="$_vaisseau_test_8cpp.html" title="src/Vaisseau/VaisseauTest.cpp" alt="" coords="5,304,212,331"/>
+<area shape="rect" id="node7" href="$vague_8h.html" title="src/vague.h" alt="" coords="278,379,369,405"/>
+<area shape="rect" id="node8" href="$vague_8cpp.html" title="src/vague.cpp" alt="" coords="271,453,375,480"/>
+<area shape="rect" id="node12" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="621,155,719,181"/>
 </map>

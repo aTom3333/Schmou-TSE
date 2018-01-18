@@ -7,7 +7,7 @@
 
 /**
 * @class Overlay
-* @brief Classe qui gère l'overlay ingame
+* @brief Classe qui gÃ¨re l'overlay ingame
 *
 */
 
@@ -20,8 +20,8 @@ class Overlay
 		void gestion(Entite * vaisseau);
 		
 	private :
-		sf::Texture overlayText_; /// Texture de la partie de l'overlay qui n'intéragie pas
-		sf::Sprite overlay_; /// Sprite de la partie de l'overlay qui n'intéragie pas
+		sf::Texture overlayText_; /// Texture de la partie de l'overlay qui n'intÃ©ragie pas
+		sf::Sprite overlay_; /// Sprite de la partie de l'overlay qui n'intÃ©ragie pas
 
 		sf::Font font_; /// Police des textes
 		sf::Text statuts_[4]; /// Texte d'info

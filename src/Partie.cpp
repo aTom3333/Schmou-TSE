@@ -6,14 +6,14 @@
 #include "vague.h"
 
 
-Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window)
+Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window, Input::Media::Mouse)
 {
 	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
 	{
 		std::cout << "Impossible de charger la police" << std::endl;
 	}
 
-	set_keyboard_binding(input_);
+	set_mouse_default_binding(input_);
 	afficheHUD_ = true;
 }
 
@@ -29,8 +29,6 @@ void Partie::testProjTest()
 {
 	sf::Clock clock;
 
-	
-
 	Vague v1(0), v2(5000), v3(10000), v4(15000), v5(10000);
 
 	VaisseauTest *vaisseautest = new VaisseauTest;
@@ -41,7 +39,8 @@ void Partie::testProjTest()
 	//Joueur
 	vaisseaux_.push_back(vaisseautest);
 
-	v1.ajouterVaisseau(0, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
+
+    v1.ajouterVaisseau(0, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
 	v1.ajouterVaisseau(400, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
 	v1.ajouterVaisseau(800, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
 	v1.ajouterVaisseau(1200, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
@@ -84,6 +83,12 @@ void Partie::testProjTest()
 
 	vaisseaux_[0]->setPosition({ 500,700 });
 
+    // Déplacer la souris à la position du vaisseau
+    auto pos = vaisseaux_[0]->getPosition();
+    pos.x += 32;
+    pos.y += 32;
+    sf::Mouse::setPosition(window_.mapCoordsToPixel(pos), window_);
+
 	while (window_.isOpen())
 	{
 		// Gestion  des evenement qui n'est pas bien implémentée ! ah si thomas est passé par là :o 
@@ -91,9 +96,6 @@ void Partie::testProjTest()
 		while (window_.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
-				window_.close();
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 				window_.close();
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add))
@@ -212,7 +214,7 @@ void Partie::collisionProjectile()
 	}
 	deleteProjectileDetruit();
 	deleteVaisseauDetruit();
-	delete allEntite;
+	delete[] allEntite;
 }
 
 void Partie::collisionVaisseaux()

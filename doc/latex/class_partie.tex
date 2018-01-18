@@ -9,6 +9,15 @@ Description brève.
 
 {\ttfamily \#include $<$Partie.\+h$>$}
 
+
+
+Graphe de collaboration de Partie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{class_partie__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,7 +27,13 @@ Description brève.
 \item 
 void \hyperlink{class_partie_a38d54358098b3e5e47d0059a37bff5ea}{jeu} ()
 \item 
-void \hyperlink{class_partie_aae0457a6d531a2c2da83463a7fa66574}{test\+Collision} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles)
+void \hyperlink{class_partie_a2ed02302df62c0867ebec0fc83078da3}{collision\+Projectile} ()
+\item 
+void \hyperlink{class_partie_a97ce349fac7e91f3cd8cc2a547a35239}{collision\+Vaisseaux} ()
+\item 
+void \hyperlink{class_partie_a88b2fa21d16b97fc120ea4d0e35208af}{delete\+Projectile\+Detruit} ()
+\item 
+void \hyperlink{class_partie_ae3caf4ac1e50ac945783b1a0d79a85c7}{delete\+Vaisseau\+Detruit} ()
 \item 
 void \hyperlink{class_partie_a6f27ab32773454f2d44a1cf3ef95ba47}{test\+Proj\+Test} ()
 \item 
@@ -47,17 +62,35 @@ Description détaillée
 
 
 \subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_partie_a2ed02302df62c0867ebec0fc83078da3}\label{class_partie_a2ed02302df62c0867ebec0fc83078da3}} 
+\index{Partie@{Partie}!collision\+Projectile@{collision\+Projectile}}
+\index{collision\+Projectile@{collision\+Projectile}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{collision\+Projectile()}{collisionProjectile()}}
+{\footnotesize\ttfamily void Partie\+::collision\+Projectile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_partie_a97ce349fac7e91f3cd8cc2a547a35239}\label{class_partie_a97ce349fac7e91f3cd8cc2a547a35239}} 
+\index{Partie@{Partie}!collision\+Vaisseaux@{collision\+Vaisseaux}}
+\index{collision\+Vaisseaux@{collision\+Vaisseaux}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{collision\+Vaisseaux()}{collisionVaisseaux()}}
+{\footnotesize\ttfamily void Partie\+::collision\+Vaisseaux (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_partie_a88b2fa21d16b97fc120ea4d0e35208af}\label{class_partie_a88b2fa21d16b97fc120ea4d0e35208af}} 
+\index{Partie@{Partie}!delete\+Projectile\+Detruit@{delete\+Projectile\+Detruit}}
+\index{delete\+Projectile\+Detruit@{delete\+Projectile\+Detruit}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{delete\+Projectile\+Detruit()}{deleteProjectileDetruit()}}
+{\footnotesize\ttfamily void Partie\+::delete\+Projectile\+Detruit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_partie_ae3caf4ac1e50ac945783b1a0d79a85c7}\label{class_partie_ae3caf4ac1e50ac945783b1a0d79a85c7}} 
+\index{Partie@{Partie}!delete\+Vaisseau\+Detruit@{delete\+Vaisseau\+Detruit}}
+\index{delete\+Vaisseau\+Detruit@{delete\+Vaisseau\+Detruit}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{delete\+Vaisseau\+Detruit()}{deleteVaisseauDetruit()}}
+{\footnotesize\ttfamily void Partie\+::delete\+Vaisseau\+Detruit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{class_partie_a38d54358098b3e5e47d0059a37bff5ea}\label{class_partie_a38d54358098b3e5e47d0059a37bff5ea}} 
 \index{Partie@{Partie}!jeu@{jeu}}
 \index{jeu@{jeu}!Partie@{Partie}}
 \subsubsection{\texorpdfstring{jeu()}{jeu()}}
 {\footnotesize\ttfamily void Partie\+::jeu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_partie_aae0457a6d531a2c2da83463a7fa66574}\label{class_partie_aae0457a6d531a2c2da83463a7fa66574}} 
-\index{Partie@{Partie}!test\+Collision@{test\+Collision}}
-\index{test\+Collision@{test\+Collision}!Partie@{Partie}}
-\subsubsection{\texorpdfstring{test\+Collision()}{testCollision()}}
-{\footnotesize\ttfamily void Partie\+::test\+Collision (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_partie_a6f27ab32773454f2d44a1cf3ef95ba47}\label{class_partie_a6f27ab32773454f2d44a1cf3ef95ba47}} 
 \index{Partie@{Partie}!test\+Proj\+Test@{test\+Proj\+Test}}

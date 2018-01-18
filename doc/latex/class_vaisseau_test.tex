@@ -10,7 +10,7 @@ Graphe d\textquotesingle{}héritage de Vaisseau\+Test\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=157pt]{class_vaisseau_test__inherit__graph}
+\includegraphics[height=550pt]{class_vaisseau_test__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -19,7 +19,7 @@ Graphe de collaboration de Vaisseau\+Test\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=157pt]{class_vaisseau_test__coll__graph}
+\includegraphics[height=550pt]{class_vaisseau_test__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Fonctions membres publiques}
@@ -29,8 +29,10 @@ Graphe de collaboration de Vaisseau\+Test\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em constructeur \end{DoxyCompactList}\item 
 \hyperlink{class_vaisseau_test_ada9b5788bc092ecede953248cd6133e8}{$\sim$\+Vaisseau\+Test} ()
 \begin{DoxyCompactList}\small\item\em destructeur \end{DoxyCompactList}\item 
-void \hyperlink{class_vaisseau_test_a50009e27227a8e1c4d18c16bfba0a55f}{gestion} (sf\+::\+Render\+Window \&window, float temps\+Ecoule)
-\begin{DoxyCompactList}\small\item\em Gère le comportement du vaisseau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{class_vaisseau_test_a83da402707d73465178b4e654d2e054a}{gestion} (sf\+::\+Render\+Window \&window, sf\+::\+Time temps\+Ecoule, \hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input} \&input)
+\begin{DoxyCompactList}\small\item\em Gère le comportement du vaisseau. \end{DoxyCompactList}\item 
+void \hyperlink{class_vaisseau_test_a5b8b67886ecb73d8f720f8499ef3c378}{destruction} ()
+\begin{DoxyCompactList}\small\item\em Procedure a effectuer lorsque le vaisseau est détruit. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres hérités additionnels}
 
 
@@ -58,11 +60,25 @@ destructeur
 
 
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_vaisseau_test_a50009e27227a8e1c4d18c16bfba0a55f}\label{class_vaisseau_test_a50009e27227a8e1c4d18c16bfba0a55f}} 
+\mbox{\Hypertarget{class_vaisseau_test_a5b8b67886ecb73d8f720f8499ef3c378}\label{class_vaisseau_test_a5b8b67886ecb73d8f720f8499ef3c378}} 
+\index{Vaisseau\+Test@{Vaisseau\+Test}!destruction@{destruction}}
+\index{destruction@{destruction}!Vaisseau\+Test@{Vaisseau\+Test}}
+\subsubsection{\texorpdfstring{destruction()}{destruction()}}
+{\footnotesize\ttfamily Vaisseau\+Test\+::destruction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Procedure a effectuer lorsque le vaisseau est détruit. 
+
+Détruit l\textquotesingle{}entité 
+
+Implémente \hyperlink{class_vaisseau_af4f490c5fd9e171b23067ec73aa737ad}{Vaisseau}.
+
+\mbox{\Hypertarget{class_vaisseau_test_a83da402707d73465178b4e654d2e054a}\label{class_vaisseau_test_a83da402707d73465178b4e654d2e054a}} 
 \index{Vaisseau\+Test@{Vaisseau\+Test}!gestion@{gestion}}
 \index{gestion@{gestion}!Vaisseau\+Test@{Vaisseau\+Test}}
 \subsubsection{\texorpdfstring{gestion()}{gestion()}}
-{\footnotesize\ttfamily void Vaisseau\+Test\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Vaisseau\+Test\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{sf\+::\+Time}]{temps\+Ecoule,  }\item[{\hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input} \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -70,12 +86,14 @@ Gère le comportement du vaisseau.
 
 
 \begin{DoxyParams}{Paramètres}
-{\em window} & Fenetre S\+F\+ML où le vaisseau sera affiché\\
+{\em window} & Fenetre S\+F\+ML où le vaisseau sera affiché \\
+\hline
+{\em input} & Classe Input donnant accés aux entrée\\
 \hline
 \end{DoxyParams}
 Fonction virtuelle qui gère le comportement du vaisseau 
 
-Implémente \hyperlink{class_vaisseau_a98c129568d478586684b1769fe465803}{Vaisseau}.
+Implémente \hyperlink{class_vaisseau_afaa179c1f03255d7869b8e2296ed8307}{Vaisseau}.
 
 
 

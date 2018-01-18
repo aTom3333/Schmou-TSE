@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['testcollision',['testCollision',['../class_partie.html#aae0457a6d531a2c2da83463a7fa66574',1,'Partie']]],
-  ['testprojtest',['testProjTest',['../class_partie.html#a6f27ab32773454f2d44a1cf3ef95ba47',1,'Partie']]],
-  ['testvaisseautest',['testVaisseauTest',['../class_partie.html#ad9ed353f340b606840fe4053ab7b6bf3',1,'Partie']]]
+  ['recoitdegats',['recoitDegats',['../class_entite.html#ab16c58f618b3b854310f92f044cc4a17',1,'Entite']]],
+  ['regen',['regen',['../class_entite.html#ac45ceffbeb11cbae7dca26fde5865b85',1,'Entite']]],
+  ['rotate',['rotate',['../class_entite.html#af1249039d313e4e691a109440663eae7',1,'Entite']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vit_5f',['vit_',['../class_entite.html#a62c3145096f707457d60306ea6729ed6',1,'Entite']]],
-  ['vitm_5f',['vitM_',['../class_vaisseau.html#a7cf3915f4d4044ee28fd5e5633fce11c',1,'Vaisseau']]]
+  ['scale_5f',['scale_',['../class_entite.html#a50e0f8c1188d9833432c55c7f7d2aa0f',1,'Entite']]],
+  ['sprite_5f',['sprite_',['../class_entite.html#ab7c03b6fe5c4f1d08cd3e4304e0ef7c0',1,'Entite']]]
 ];

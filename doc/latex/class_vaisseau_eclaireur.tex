@@ -2,7 +2,7 @@
 \label{class_vaisseau_eclaireur}\index{Vaisseau\+Eclaireur@{Vaisseau\+Eclaireur}}
 
 
-classe d\textquotesingle{}un ennemi de base \+: l\textquotesingle{}Èclaireur  
+classe d\textquotesingle{}un ennemi de base \+: l\textquotesingle{}√©claireur  
 
 
 
@@ -15,7 +15,7 @@ Graphe d\textquotesingle{}h√©ritage de Vaisseau\+Eclaireur\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=175pt]{class_vaisseau_eclaireur__inherit__graph}
+\includegraphics[height=550pt]{class_vaisseau_eclaireur__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -24,32 +24,34 @@ Graphe de collaboration de Vaisseau\+Eclaireur\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=175pt]{class_vaisseau_eclaireur__coll__graph}
+\includegraphics[height=550pt]{class_vaisseau_eclaireur__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_vaisseau_eclaireur_ab65919df2049e350f83a77b625870fcc}{Vaisseau\+Eclaireur} (float x, float y, \hyperlink{constantes_8h_afa7f6e8323d7ee755d93cd1f6019dd95}{Trajectoire} traj, float param1, float param2, float param3=0, float param4=0)
+\hyperlink{class_vaisseau_eclaireur_ab65919df2049e350f83a77b625870fcc}{Vaisseau\+Eclaireur} (float x, float y, \hyperlink{_trajectoire_8h_afa7f6e8323d7ee755d93cd1f6019dd95}{Trajectoire} traj, float param1, float param2, float param3=0, float param4=0)
 \begin{DoxyCompactList}\small\item\em Contructeur. \end{DoxyCompactList}\item 
 \hyperlink{class_vaisseau_eclaireur_a3e7ef82ff40bf4736d4285311dd8624c}{$\sim$\+Vaisseau\+Eclaireur} ()
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
-void \hyperlink{class_vaisseau_eclaireur_aa76a51dfb92fa94b7614a58be187db21}{gestion} (sf\+::\+Render\+Window \&window, float temps\+Ecoule)
-\begin{DoxyCompactList}\small\item\em GËre le comportement du vaisseau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{class_vaisseau_eclaireur_aac6158ee2ff8454a93515546cb1be1de}{gestion} (sf\+::\+Render\+Window \&window, sf\+::\+Time temps\+Ecoule, \hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input} \&input)
+\begin{DoxyCompactList}\small\item\em G√®re le comportement du vaisseau. \end{DoxyCompactList}\item 
+void \hyperlink{class_vaisseau_eclaireur_a4f65343b67301d7fa98f5e02337cc1e1}{destruction} ()
+\begin{DoxyCompactList}\small\item\em Procedure a effectuer lorsque le vaisseau est d√©truit. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres h√©rit√©s additionnels}
 
 
 \subsection{Description d√©taill√©e}
-classe d\textquotesingle{}un ennemi de base \+: l\textquotesingle{}Èclaireur 
+classe d\textquotesingle{}un ennemi de base \+: l\textquotesingle{}√©claireur 
 
-Eclaireur \+: \hyperlink{class_vaisseau}{Vaisseau} ennemi Comportement \+: DÈplacement (LinÈaire, Parabolique, Sinsoidale) uniquement \+: pas de tir 
+Eclaireur \+: \hyperlink{class_vaisseau}{Vaisseau} ennemi Comportement \+: D√©placement (Lin√©aire, Parabolique, Sinsoidale) uniquement \+: pas de tir 
 
 \subsection{Documentation des constructeurs et destructeur}
 \mbox{\Hypertarget{class_vaisseau_eclaireur_ab65919df2049e350f83a77b625870fcc}\label{class_vaisseau_eclaireur_ab65919df2049e350f83a77b625870fcc}} 
 \index{Vaisseau\+Eclaireur@{Vaisseau\+Eclaireur}!Vaisseau\+Eclaireur@{Vaisseau\+Eclaireur}}
 \index{Vaisseau\+Eclaireur@{Vaisseau\+Eclaireur}!Vaisseau\+Eclaireur@{Vaisseau\+Eclaireur}}
 \subsubsection{\texorpdfstring{Vaisseau\+Eclaireur()}{VaisseauEclaireur()}}
-{\footnotesize\ttfamily Vaisseau\+Eclaireur\+::\+Vaisseau\+Eclaireur (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{\hyperlink{constantes_8h_afa7f6e8323d7ee755d93cd1f6019dd95}{Trajectoire}}]{traj,  }\item[{float}]{param1,  }\item[{float}]{param2,  }\item[{float}]{param3 = {\ttfamily 0},  }\item[{float}]{param4 = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Vaisseau\+Eclaireur\+::\+Vaisseau\+Eclaireur (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{\hyperlink{_trajectoire_8h_afa7f6e8323d7ee755d93cd1f6019dd95}{Trajectoire}}]{traj,  }\item[{float}]{param1,  }\item[{float}]{param2,  }\item[{float}]{param3 = {\ttfamily 0},  }\item[{float}]{param4 = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 
 
@@ -57,26 +59,26 @@ Contructeur.
 
 
 \begin{DoxyParams}{Param√®tres}
-{\em x} & Abscisse de la position de dÈpart \\
+{\em x} & Abscisse de la position de d√©part \\
 \hline
-{\em y} & OrdonnÈe de la position de dÈpart \\
+{\em y} & Ordonn√©e de la position de d√©part \\
 \hline
-{\em traj} & Trajectoire voulue (LinÈaire, parabolique ou sinusoidale) \\
+{\em traj} & Trajectoire voulue (Lin√©aire, parabolique ou sinusoidale) \\
 \hline
-{\em param1} & Lineaire \+: Pente Parabolique \+: Abscisse de l\textquotesingle{}extremum Sinusoidale \+: Pente \\
+{\em param1} & Lineaire \+: Sens Parabolique \+: Sens Sinusoidale \+: Sens (1/-\/1) \\
 \hline
-{\em param2} & Lineaire \+: Sens (1/-\/1) Parabolique \+: OrdonnÈe de l\textquotesingle{}extremum Sinusoidale \+: PÈriode spatiale \\
+{\em param2} & Lineaire \+: Pente Parabolique \+: Ordonn√©e de l\textquotesingle{}extremum Sinusoidale \+: P√©riode (spatiale) \\
 \hline
-{\em param3} & Lineaire \+: InutilisÈ Parabolique \+: Sens (1/-\/1) Sinusoidale \+: Amplitude \\
+{\em param3} & Lineaire \+: Inutilis√© Parabolique \+: Abscisse de l\textquotesingle{}extremum Sinusoidale \+: Amplitude \\
 \hline
-{\em param4} & Lineaire \+: InutilisÈ Parabolique \+: InutilisÈ Sinusoidale \+: Sens (1/-\/1)\\
+{\em param4} & Lineaire \+: Inutilis√© Parabolique \+: Inutilis√© Sinusoidale \+: Pente\\
 \hline
 \end{DoxyParams}
-Initialise le vaisseau ‡ position et ‡ la trajectoires dÈsirÈes Equations si le vaisseau est en fonction du temps ÈcoulÈ depuis la crÈation\+:
+Initialise le vaisseau √† position et √† la trajectoires d√©sir√©es Equations si le vaisseau est en fonction du temps √©coul√© depuis la cr√©ation\+:
 \begin{DoxyItemize}
-\item Lineraire \+: x = x0 + param2$\ast$v$\ast$t y = param1$\ast$(x -\/ x0) + y0
-\item Parabolique \+: x = x0 + param3$\ast$v$\ast$t (faux mais approximation si la parabole est assez large) y = (y0 -\/ param2)/(x0 -\/ param1)$^\wedge$2 $\ast$ (x -\/ param1)$^\wedge$2 + param2
-\item Sinusoidale \+: x = x0 + param4$\ast$v$\ast$t (faux mais approximation si la diffÈrence de temps est trËs petite devant la pÈriode) y = param1 $\ast$ (x -\/ x0) + y0 + param3 $\ast$ sin(2$\ast$pi/param2 $\ast$ x) 
+\item Lineraire \+: x = x0 + sens$\ast$v$\ast$t y = pente$\ast$(x -\/ x0) + y0
+\item Parabolique \+: x = x0 + sens$\ast$v$\ast$t (faux mais approximation si la parabole est assez large) y = (y0 -\/ ordonnee)/(x0 -\/ abscisse)$^\wedge$2 $\ast$ (x -\/ abscisse)$^\wedge$2 + ordonnee
+\item Sinusoidale \+: x = x0 + sens$\ast$v$\ast$t (faux mais approximation si la diff√©rence de temps est tr√®s petite devant la p√©riode) y = pente $\ast$ (x -\/ x0) + y0 + amplitude $\ast$ sin(2$\ast$pi/p√©riode $\ast$ x) 
 \end{DoxyItemize}\mbox{\Hypertarget{class_vaisseau_eclaireur_a3e7ef82ff40bf4736d4285311dd8624c}\label{class_vaisseau_eclaireur_a3e7ef82ff40bf4736d4285311dd8624c}} 
 \index{Vaisseau\+Eclaireur@{Vaisseau\+Eclaireur}!````~Vaisseau\+Eclaireur@{$\sim$\+Vaisseau\+Eclaireur}}
 \index{````~Vaisseau\+Eclaireur@{$\sim$\+Vaisseau\+Eclaireur}!Vaisseau\+Eclaireur@{Vaisseau\+Eclaireur}}
@@ -90,26 +92,42 @@ Destructeur.
 Vide 
 
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_vaisseau_eclaireur_aa76a51dfb92fa94b7614a58be187db21}\label{class_vaisseau_eclaireur_aa76a51dfb92fa94b7614a58be187db21}} 
+\mbox{\Hypertarget{class_vaisseau_eclaireur_a4f65343b67301d7fa98f5e02337cc1e1}\label{class_vaisseau_eclaireur_a4f65343b67301d7fa98f5e02337cc1e1}} 
+\index{Vaisseau\+Eclaireur@{Vaisseau\+Eclaireur}!destruction@{destruction}}
+\index{destruction@{destruction}!Vaisseau\+Eclaireur@{Vaisseau\+Eclaireur}}
+\subsubsection{\texorpdfstring{destruction()}{destruction()}}
+{\footnotesize\ttfamily Vaisseau\+Eclaireur\+::destruction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Procedure a effectuer lorsque le vaisseau est d√©truit. 
+
+D√©truit l\textquotesingle{}entit√© 
+
+Impl√©mente \hyperlink{class_vaisseau_af4f490c5fd9e171b23067ec73aa737ad}{Vaisseau}.
+
+\mbox{\Hypertarget{class_vaisseau_eclaireur_aac6158ee2ff8454a93515546cb1be1de}\label{class_vaisseau_eclaireur_aac6158ee2ff8454a93515546cb1be1de}} 
 \index{Vaisseau\+Eclaireur@{Vaisseau\+Eclaireur}!gestion@{gestion}}
 \index{gestion@{gestion}!Vaisseau\+Eclaireur@{Vaisseau\+Eclaireur}}
 \subsubsection{\texorpdfstring{gestion()}{gestion()}}
-{\footnotesize\ttfamily Vaisseau\+Eclaireur\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Vaisseau\+Eclaireur\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{sf\+::\+Time}]{temps\+Ecoule,  }\item[{\hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input} \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-GËre le comportement du vaisseau. 
+G√®re le comportement du vaisseau. 
 
 
 \begin{DoxyParams}{Param√®tres}
-{\em window} & Fenetre S\+F\+ML o˘ le vaisseau sera affichÈ \\
+{\em window} & Fenetre S\+F\+ML o√π le vaisseau sera affich√© \\
 \hline
-{\em temps\+Ecoule} & Temps ÈcoulÈ depuis le dernier appel\\
+{\em temps\+Ecoule} & Temps √©coul√© depuis le dernier appel \\
+\hline
+{\em input} & Classe Input donnant acc√©s aux entr√©e\\
 \hline
 \end{DoxyParams}
-GËre le dÈplacement et l\textquotesingle{}affichage du vaisseau 
+G√®re le d√©placement et l\textquotesingle{}affichage du vaisseau 
 
-Impl√©mente \hyperlink{class_vaisseau_a98c129568d478586684b1769fe465803}{Vaisseau}.
+Impl√©mente \hyperlink{class_vaisseau_afaa179c1f03255d7869b8e2296ed8307}{Vaisseau}.
 
 
 

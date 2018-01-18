@@ -15,7 +15,7 @@ Graphe d\textquotesingle{}héritage de Vaisseau\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=270pt]{class_vaisseau__inherit__graph}
+\includegraphics[width=350pt]{class_vaisseau__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -24,7 +24,7 @@ Graphe de collaboration de Vaisseau\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=137pt]{class_vaisseau__coll__graph}
+\includegraphics[height=550pt]{class_vaisseau__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Fonctions membres publiques}
@@ -34,8 +34,14 @@ Graphe de collaboration de Vaisseau\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em constructeur \end{DoxyCompactList}\item 
 \hyperlink{class_vaisseau_a3360bd62af7a7aaf5732b86d639a0674}{$\sim$\+Vaisseau} () override
 \begin{DoxyCompactList}\small\item\em destructeur \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_vaisseau_a98c129568d478586684b1769fe465803}{gestion} (sf\+::\+Render\+Window \&window, float temps\+Ecoule)=0
+virtual void \hyperlink{class_vaisseau_afaa179c1f03255d7869b8e2296ed8307}{gestion} (sf\+::\+Render\+Window \&window, sf\+::\+Time temps\+Ecoule, \hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input} \&input)=0
 \begin{DoxyCompactList}\small\item\em Gère le comportement du vaisseau. \end{DoxyCompactList}\item 
+void \hyperlink{class_vaisseau_a21fbd13a4fad50af3ae34a36dbcb6820}{gestion\+Capacite} (std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&projectiles, sf\+::\+Time t\+\_\+ecoule)
+\item 
+void \hyperlink{class_vaisseau_a0cd6733845f221c2a5a9d7ccd7f43137}{agit} (\hyperlink{class_entite}{Entite} \&e)
+\begin{DoxyCompactList}\small\item\em Procédure lorsque le projectile agit avec une \hyperlink{class_entite}{Entite}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_vaisseau_af4f490c5fd9e171b23067ec73aa737ad}{destruction} ()=0
+\begin{DoxyCompactList}\small\item\em Procedure a effectuer lorsque le vaisseau est détruit. \end{DoxyCompactList}\item 
 void \hyperlink{class_vaisseau_a1b3edda1f99d55cb5c0c7cbafe156af6}{set\+Equipe} (int equipe)
 \item 
 void \hyperlink{class_vaisseau_a04d7069231187e7dba26a06a0aaf2508}{add\+Capacite} (\hyperlink{class_capacite}{Capacite} $\ast$skill)
@@ -52,13 +58,9 @@ void \hyperlink{class_vaisseau_a4120a8c40229b8af08590ee3a6d00f6a}{setdefM} (int 
 \item 
 void \hyperlink{class_vaisseau_a5816b1761b1d6f12f2ee3077b938392a}{setvitM} (int vitM)
 \item 
-void \hyperlink{class_vaisseau_a2c9cf0b0520a6bee6408af58e3c99e34}{setpv} (int pv)
+void \hyperlink{class_vaisseau_a90ac143853468f0aa9f4e83b74882a04}{set\+Actif} (bool val)
 \item 
-void \hyperlink{class_vaisseau_a5dac2a3814de298d8d515c20b7463397}{setatq} (int atq)
-\item 
-void \hyperlink{class_vaisseau_aa6a93a1d1bfd8f7bac3e079fff6d84fa}{setdef} (int def)
-\item 
-void \hyperlink{class_vaisseau_a86c2165e77892f03e8d08f1e509e9b10}{setvit} (int vit)
+void \hyperlink{class_vaisseau_adb209377f322d5dac4ec0f5de330b0fc}{set\+AnnexeB} (int ind, bool val)
 \item 
 std\+::string \hyperlink{class_vaisseau_acbe2e5af7beda381d21392d4eb539761}{getnom} ()
 \item 
@@ -72,15 +74,13 @@ int \hyperlink{class_vaisseau_aa983d5040f7c19a9dfcb907618fda321}{getdefM} ()
 \item 
 int \hyperlink{class_vaisseau_a78f7e268cdb61a39e3292e80309a4ca8}{getvitM} ()
 \item 
-int \hyperlink{class_vaisseau_ae8e571f83be3f2bc1b961841f872265e}{getpv} ()
-\item 
-int \hyperlink{class_vaisseau_a03d9f614943176d1e1d71d99f9d7f465}{getatq} ()
-\item 
-int \hyperlink{class_vaisseau_a48d7facfa7c34a784bfbee4c4b1100ce}{getdef} ()
-\item 
-int \hyperlink{class_vaisseau_a3ca57eda788c37034f9769d79f814dac}{getvit} ()
-\item 
 std\+::vector$<$ \hyperlink{class_capacite}{Capacite} $\ast$ $>$ \hyperlink{class_vaisseau_a40cb016e98f0f928b32b3b4a47e27599}{getskills} ()
+\item 
+bool \hyperlink{class_vaisseau_a9e106e9b7026cdd288ea4745aa1df652}{est\+Actif} ()
+\item 
+std\+::vector$<$ \hyperlink{class_vaisseau}{Vaisseau} $\ast$ $>$ \hyperlink{class_vaisseau_ae09cad2739c02391139241343e361306}{get\+Annexes} ()
+\item 
+std\+::vector$<$ bool $>$ \hyperlink{class_vaisseau_a60335bcf73c8095e63b353d91833f8a4}{get\+AnnexesB} ()
 \end{DoxyCompactItemize}
 \subsection*{Attributs protégés}
 \begin{DoxyCompactItemize}
@@ -97,14 +97,16 @@ int \hyperlink{class_vaisseau_ad62e88bb7527f72a6a446d9bbb219744}{def\+M\+\_\+}
 \begin{DoxyCompactList}\small\item\em $<$ Attaque de base \end{DoxyCompactList}\item 
 int \hyperlink{class_vaisseau_a7cf3915f4d4044ee28fd5e5633fce11c}{vit\+M\+\_\+}
 \begin{DoxyCompactList}\small\item\em Défense de base. \end{DoxyCompactList}\item 
-int \hyperlink{class_vaisseau_ac57363910a13299dd8b10534683c0ad8}{pv\+\_\+}
+std\+::vector$<$ \hyperlink{class_capacite}{Capacite} $\ast$ $>$ \hyperlink{class_vaisseau_a5db47e079dc15db1158bd0a549f22908}{capacites\+\_\+}
 \begin{DoxyCompactList}\small\item\em Vitesse de base. \end{DoxyCompactList}\item 
-int \hyperlink{class_vaisseau_a2b2a2de0e527ed46550922427e067c95}{atq\+\_\+}
-\begin{DoxyCompactList}\small\item\em Points de vie actuels. \end{DoxyCompactList}\item 
-int \hyperlink{class_vaisseau_abe1d646c91dcd6ad2d84a5d30ea2aeca}{def\+\_\+}
-\begin{DoxyCompactList}\small\item\em Attaque actuelle. \end{DoxyCompactList}\item 
-std\+::vector$<$ \hyperlink{class_capacite}{Capacite} $\ast$ $>$ \hyperlink{class_vaisseau_a7fccd409e1f27f968bbe3f8ee1ded206}{skills\+\_\+}
-\begin{DoxyCompactList}\small\item\em Défense actuelle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::vector$<$ \hyperlink{class_vaisseau}{Vaisseau} $\ast$ $>$ \hyperlink{class_vaisseau_a077c826bea6ce9f63de811762fbe8784}{annexes\+\_\+}
+\begin{DoxyCompactList}\small\item\em Liste des capacités du vaisseau. \end{DoxyCompactList}\item 
+std\+::vector$<$ bool $>$ \hyperlink{class_vaisseau_a584960419ccc6ae137c196a012d7eb9f}{annexes\+B\+\_\+}
+\begin{DoxyCompactList}\small\item\em Vecteur contenant toute les parties annexes d\textquotesingle{}un vaisseau. \end{DoxyCompactList}\item 
+\hyperlink{class_vaisseau}{Vaisseau} $\ast$ \hyperlink{class_vaisseau_a838e50295284e3b4996640054ab7ee30}{createur\+\_\+}
+\begin{DoxyCompactList}\small\item\em Vecteur indiquant si l\textquotesingle{}annexe au même indice existe encore. \end{DoxyCompactList}\item 
+int \hyperlink{class_vaisseau_a540cc03e47db59aad60d70be38a010ec}{nb\+Module\+\_\+}
+\begin{DoxyCompactList}\small\item\em Si c\textquotesingle{}est une annexe, pointe vers le vaisseau qui possede cette annexe. null\+\_\+ptr sinon. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
@@ -117,7 +119,7 @@ Description détaillée
 \index{Vaisseau@{Vaisseau}!Vaisseau@{Vaisseau}}
 \index{Vaisseau@{Vaisseau}!Vaisseau@{Vaisseau}}
 \subsubsection{\texorpdfstring{Vaisseau()}{Vaisseau()}}
-{\footnotesize\ttfamily Vaisseau\+::\+Vaisseau (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Vaisseau\+::\+Vaisseau (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -146,11 +148,54 @@ destructeur
 
 définit l\textquotesingle{}équipe (entier) 
 
-\mbox{\Hypertarget{class_vaisseau_a98c129568d478586684b1769fe465803}\label{class_vaisseau_a98c129568d478586684b1769fe465803}} 
+\mbox{\Hypertarget{class_vaisseau_a0cd6733845f221c2a5a9d7ccd7f43137}\label{class_vaisseau_a0cd6733845f221c2a5a9d7ccd7f43137}} 
+\index{Vaisseau@{Vaisseau}!agit@{agit}}
+\index{agit@{agit}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{agit()}{agit()}}
+{\footnotesize\ttfamily Vaisseau\+::agit (\begin{DoxyParamCaption}\item[{\hyperlink{class_entite}{Entite} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Procédure lorsque le projectile agit avec une \hyperlink{class_entite}{Entite}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & \hyperlink{class_entite}{Entite} à modifier\\
+\hline
+\end{DoxyParams}
+Vide 
+
+Implémente \hyperlink{class_entite_a848ec47afac1d7ba970a2bcab5dc7b3b}{Entite}.
+
+\mbox{\Hypertarget{class_vaisseau_af4f490c5fd9e171b23067ec73aa737ad}\label{class_vaisseau_af4f490c5fd9e171b23067ec73aa737ad}} 
+\index{Vaisseau@{Vaisseau}!destruction@{destruction}}
+\index{destruction@{destruction}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{destruction()}{destruction()}}
+{\footnotesize\ttfamily Vaisseau\+::destruction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Procedure a effectuer lorsque le vaisseau est détruit. 
+
+Fonction virtuelle qui doit être surchargée pour les classes héritées. 
+
+Implémente \hyperlink{class_entite_af5c424f69b2c880ae9c12786abd28592}{Entite}.
+
+
+
+Implémenté dans \hyperlink{class_vaisseau_defenseur_a6816d325d737269cddc6310e7f68b222}{Vaisseau\+Defenseur}, \hyperlink{class_vaisseau_attaquant_af804e1fd491301c2385e10d88f4892a6}{Vaisseau\+Attaquant}, \hyperlink{class_vaisseau_eclaireur_a4f65343b67301d7fa98f5e02337cc1e1}{Vaisseau\+Eclaireur}, \hyperlink{class_vaisseau_defenseur_b_aba88319dcc7540dce39c164fa9853732}{Vaisseau\+DefenseurB}, et \hyperlink{class_vaisseau_test_a5b8b67886ecb73d8f720f8499ef3c378}{Vaisseau\+Test}.
+
+\mbox{\Hypertarget{class_vaisseau_a9e106e9b7026cdd288ea4745aa1df652}\label{class_vaisseau_a9e106e9b7026cdd288ea4745aa1df652}} 
+\index{Vaisseau@{Vaisseau}!est\+Actif@{est\+Actif}}
+\index{est\+Actif@{est\+Actif}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{est\+Actif()}{estActif()}}
+{\footnotesize\ttfamily bool Vaisseau\+::est\+Actif (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vaisseau_afaa179c1f03255d7869b8e2296ed8307}\label{class_vaisseau_afaa179c1f03255d7869b8e2296ed8307}} 
 \index{Vaisseau@{Vaisseau}!gestion@{gestion}}
 \index{gestion@{gestion}!Vaisseau@{Vaisseau}}
 \subsubsection{\texorpdfstring{gestion()}{gestion()}}
-{\footnotesize\ttfamily Vaisseau\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{float}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily Vaisseau\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{sf\+::\+Time}]{temps\+Ecoule,  }\item[{\hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input} \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
@@ -158,30 +203,38 @@ Gère le comportement du vaisseau.
 
 
 \begin{DoxyParams}{Paramètres}
-{\em window} & Fenetre S\+F\+ML où le vaisseau sera affiché\\
+{\em window} & Fenetre S\+F\+ML où le vaisseau sera affiché \\
+\hline
+{\em input} & Classe Input donnant accés aux entrée\\
 \hline
 \end{DoxyParams}
 Fonction virtuelle qui gère le comportement du vaisseau 
 
-Implémenté dans \hyperlink{class_vaisseau_eclaireur_aa76a51dfb92fa94b7614a58be187db21}{Vaisseau\+Eclaireur}, et \hyperlink{class_vaisseau_test_a50009e27227a8e1c4d18c16bfba0a55f}{Vaisseau\+Test}.
+Implémenté dans \hyperlink{class_vaisseau_defenseur_adb26b3df0bb5888548ff897f23e2ec82}{Vaisseau\+Defenseur}, \hyperlink{class_vaisseau_attaquant_ad95d76e5973affa6ef287edd7ad5310e}{Vaisseau\+Attaquant}, \hyperlink{class_vaisseau_eclaireur_aac6158ee2ff8454a93515546cb1be1de}{Vaisseau\+Eclaireur}, \hyperlink{class_vaisseau_defenseur_b_aae8e2488b91dbd1ceef8969debbc234f}{Vaisseau\+DefenseurB}, et \hyperlink{class_vaisseau_test_a83da402707d73465178b4e654d2e054a}{Vaisseau\+Test}.
 
-\mbox{\Hypertarget{class_vaisseau_a03d9f614943176d1e1d71d99f9d7f465}\label{class_vaisseau_a03d9f614943176d1e1d71d99f9d7f465}} 
-\index{Vaisseau@{Vaisseau}!getatq@{getatq}}
-\index{getatq@{getatq}!Vaisseau@{Vaisseau}}
-\subsubsection{\texorpdfstring{getatq()}{getatq()}}
-{\footnotesize\ttfamily int Vaisseau\+::getatq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_vaisseau_a21fbd13a4fad50af3ae34a36dbcb6820}\label{class_vaisseau_a21fbd13a4fad50af3ae34a36dbcb6820}} 
+\index{Vaisseau@{Vaisseau}!gestion\+Capacite@{gestion\+Capacite}}
+\index{gestion\+Capacite@{gestion\+Capacite}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{gestion\+Capacite()}{gestionCapacite()}}
+{\footnotesize\ttfamily void Vaisseau\+::gestion\+Capacite (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$$>$ \&}]{projectiles,  }\item[{sf\+::\+Time}]{t\+\_\+ecoule }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vaisseau_ae09cad2739c02391139241343e361306}\label{class_vaisseau_ae09cad2739c02391139241343e361306}} 
+\index{Vaisseau@{Vaisseau}!get\+Annexes@{get\+Annexes}}
+\index{get\+Annexes@{get\+Annexes}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{get\+Annexes()}{getAnnexes()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{class_vaisseau}{Vaisseau} $\ast$ $>$ Vaisseau\+::get\+Annexes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vaisseau_a60335bcf73c8095e63b353d91833f8a4}\label{class_vaisseau_a60335bcf73c8095e63b353d91833f8a4}} 
+\index{Vaisseau@{Vaisseau}!get\+AnnexesB@{get\+AnnexesB}}
+\index{get\+AnnexesB@{get\+AnnexesB}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{get\+Annexes\+B()}{getAnnexesB()}}
+{\footnotesize\ttfamily std\+::vector$<$ bool $>$ Vaisseau\+::get\+AnnexesB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_vaisseau_a893c8a6199e3e79460891fafb0b16fba}\label{class_vaisseau_a893c8a6199e3e79460891fafb0b16fba}} 
 \index{Vaisseau@{Vaisseau}!getatqM@{getatqM}}
 \index{getatqM@{getatqM}!Vaisseau@{Vaisseau}}
 \subsubsection{\texorpdfstring{getatq\+M()}{getatqM()}}
 {\footnotesize\ttfamily int Vaisseau\+::getatqM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_vaisseau_a48d7facfa7c34a784bfbee4c4b1100ce}\label{class_vaisseau_a48d7facfa7c34a784bfbee4c4b1100ce}} 
-\index{Vaisseau@{Vaisseau}!getdef@{getdef}}
-\index{getdef@{getdef}!Vaisseau@{Vaisseau}}
-\subsubsection{\texorpdfstring{getdef()}{getdef()}}
-{\footnotesize\ttfamily int Vaisseau\+::getdef (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_vaisseau_aa983d5040f7c19a9dfcb907618fda321}\label{class_vaisseau_aa983d5040f7c19a9dfcb907618fda321}} 
 \index{Vaisseau@{Vaisseau}!getdefM@{getdefM}}
@@ -201,12 +254,6 @@ Implémenté dans \hyperlink{class_vaisseau_eclaireur_aa76a51dfb92fa94b7614a58be
 \subsubsection{\texorpdfstring{get\+Nskin()}{getNskin()}}
 {\footnotesize\ttfamily int Vaisseau\+::get\+Nskin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_vaisseau_ae8e571f83be3f2bc1b961841f872265e}\label{class_vaisseau_ae8e571f83be3f2bc1b961841f872265e}} 
-\index{Vaisseau@{Vaisseau}!getpv@{getpv}}
-\index{getpv@{getpv}!Vaisseau@{Vaisseau}}
-\subsubsection{\texorpdfstring{getpv()}{getpv()}}
-{\footnotesize\ttfamily int Vaisseau\+::getpv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{class_vaisseau_aac552ebb8c5b199c0f0e38b1f1cd95af}\label{class_vaisseau_aac552ebb8c5b199c0f0e38b1f1cd95af}} 
 \index{Vaisseau@{Vaisseau}!getpvM@{getpvM}}
 \index{getpvM@{getpvM}!Vaisseau@{Vaisseau}}
@@ -219,35 +266,29 @@ Implémenté dans \hyperlink{class_vaisseau_eclaireur_aa76a51dfb92fa94b7614a58be
 \subsubsection{\texorpdfstring{getskills()}{getskills()}}
 {\footnotesize\ttfamily std\+::vector$<$ \hyperlink{class_capacite}{Capacite} $\ast$ $>$ Vaisseau\+::getskills (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_vaisseau_a3ca57eda788c37034f9769d79f814dac}\label{class_vaisseau_a3ca57eda788c37034f9769d79f814dac}} 
-\index{Vaisseau@{Vaisseau}!getvit@{getvit}}
-\index{getvit@{getvit}!Vaisseau@{Vaisseau}}
-\subsubsection{\texorpdfstring{getvit()}{getvit()}}
-{\footnotesize\ttfamily int Vaisseau\+::getvit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{class_vaisseau_a78f7e268cdb61a39e3292e80309a4ca8}\label{class_vaisseau_a78f7e268cdb61a39e3292e80309a4ca8}} 
 \index{Vaisseau@{Vaisseau}!getvitM@{getvitM}}
 \index{getvitM@{getvitM}!Vaisseau@{Vaisseau}}
 \subsubsection{\texorpdfstring{getvit\+M()}{getvitM()}}
 {\footnotesize\ttfamily int Vaisseau\+::getvitM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_vaisseau_a5dac2a3814de298d8d515c20b7463397}\label{class_vaisseau_a5dac2a3814de298d8d515c20b7463397}} 
-\index{Vaisseau@{Vaisseau}!setatq@{setatq}}
-\index{setatq@{setatq}!Vaisseau@{Vaisseau}}
-\subsubsection{\texorpdfstring{setatq()}{setatq()}}
-{\footnotesize\ttfamily void Vaisseau\+::setatq (\begin{DoxyParamCaption}\item[{int}]{atq }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_vaisseau_a90ac143853468f0aa9f4e83b74882a04}\label{class_vaisseau_a90ac143853468f0aa9f4e83b74882a04}} 
+\index{Vaisseau@{Vaisseau}!set\+Actif@{set\+Actif}}
+\index{set\+Actif@{set\+Actif}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{set\+Actif()}{setActif()}}
+{\footnotesize\ttfamily void Vaisseau\+::set\+Actif (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vaisseau_adb209377f322d5dac4ec0f5de330b0fc}\label{class_vaisseau_adb209377f322d5dac4ec0f5de330b0fc}} 
+\index{Vaisseau@{Vaisseau}!set\+AnnexeB@{set\+AnnexeB}}
+\index{set\+AnnexeB@{set\+AnnexeB}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{set\+Annexe\+B()}{setAnnexeB()}}
+{\footnotesize\ttfamily void Vaisseau\+::set\+AnnexeB (\begin{DoxyParamCaption}\item[{int}]{ind,  }\item[{bool}]{val }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_vaisseau_ac1eaf0b717e81471f259ce94ad0afb20}\label{class_vaisseau_ac1eaf0b717e81471f259ce94ad0afb20}} 
 \index{Vaisseau@{Vaisseau}!setatqM@{setatqM}}
 \index{setatqM@{setatqM}!Vaisseau@{Vaisseau}}
 \subsubsection{\texorpdfstring{setatq\+M()}{setatqM()}}
 {\footnotesize\ttfamily void Vaisseau\+::setatqM (\begin{DoxyParamCaption}\item[{int}]{atqM }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_vaisseau_aa6a93a1d1bfd8f7bac3e079fff6d84fa}\label{class_vaisseau_aa6a93a1d1bfd8f7bac3e079fff6d84fa}} 
-\index{Vaisseau@{Vaisseau}!setdef@{setdef}}
-\index{setdef@{setdef}!Vaisseau@{Vaisseau}}
-\subsubsection{\texorpdfstring{setdef()}{setdef()}}
-{\footnotesize\ttfamily void Vaisseau\+::setdef (\begin{DoxyParamCaption}\item[{int}]{def }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_vaisseau_a4120a8c40229b8af08590ee3a6d00f6a}\label{class_vaisseau_a4120a8c40229b8af08590ee3a6d00f6a}} 
 \index{Vaisseau@{Vaisseau}!setdefM@{setdefM}}
@@ -277,23 +318,11 @@ $<$ ajoute la {\ttfamily Capacité} skill à la liste des capacités skills\+\_\
 \subsubsection{\texorpdfstring{set\+Nskin()}{setNskin()}}
 {\footnotesize\ttfamily void Vaisseau\+::set\+Nskin (\begin{DoxyParamCaption}\item[{int}]{Nskin }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_vaisseau_a2c9cf0b0520a6bee6408af58e3c99e34}\label{class_vaisseau_a2c9cf0b0520a6bee6408af58e3c99e34}} 
-\index{Vaisseau@{Vaisseau}!setpv@{setpv}}
-\index{setpv@{setpv}!Vaisseau@{Vaisseau}}
-\subsubsection{\texorpdfstring{setpv()}{setpv()}}
-{\footnotesize\ttfamily void Vaisseau\+::setpv (\begin{DoxyParamCaption}\item[{int}]{pv }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{class_vaisseau_a10a33c8fed1bb1530148e98313d80a87}\label{class_vaisseau_a10a33c8fed1bb1530148e98313d80a87}} 
 \index{Vaisseau@{Vaisseau}!setpvM@{setpvM}}
 \index{setpvM@{setpvM}!Vaisseau@{Vaisseau}}
 \subsubsection{\texorpdfstring{setpv\+M()}{setpvM()}}
 {\footnotesize\ttfamily void Vaisseau\+::setpvM (\begin{DoxyParamCaption}\item[{int}]{pvM }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_vaisseau_a86c2165e77892f03e8d08f1e509e9b10}\label{class_vaisseau_a86c2165e77892f03e8d08f1e509e9b10}} 
-\index{Vaisseau@{Vaisseau}!setvit@{setvit}}
-\index{setvit@{setvit}!Vaisseau@{Vaisseau}}
-\subsubsection{\texorpdfstring{setvit()}{setvit()}}
-{\footnotesize\ttfamily void Vaisseau\+::setvit (\begin{DoxyParamCaption}\item[{int}]{vit }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_vaisseau_a5816b1761b1d6f12f2ee3077b938392a}\label{class_vaisseau_a5816b1761b1d6f12f2ee3077b938392a}} 
 \index{Vaisseau@{Vaisseau}!setvitM@{setvitM}}
@@ -304,15 +333,25 @@ $<$ ajoute la {\ttfamily Capacité} skill à la liste des capacités skills\+\_\
 
 
 \subsection{Documentation des données membres}
-\mbox{\Hypertarget{class_vaisseau_a2b2a2de0e527ed46550922427e067c95}\label{class_vaisseau_a2b2a2de0e527ed46550922427e067c95}} 
-\index{Vaisseau@{Vaisseau}!atq\+\_\+@{atq\+\_\+}}
-\index{atq\+\_\+@{atq\+\_\+}!Vaisseau@{Vaisseau}}
-\subsubsection{\texorpdfstring{atq\+\_\+}{atq\_}}
-{\footnotesize\ttfamily int Vaisseau\+::atq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{class_vaisseau_a077c826bea6ce9f63de811762fbe8784}\label{class_vaisseau_a077c826bea6ce9f63de811762fbe8784}} 
+\index{Vaisseau@{Vaisseau}!annexes\+\_\+@{annexes\+\_\+}}
+\index{annexes\+\_\+@{annexes\+\_\+}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{annexes\+\_\+}{annexes\_}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_vaisseau}{Vaisseau}$\ast$$>$ Vaisseau\+::annexes\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Points de vie actuels. 
+Liste des capacités du vaisseau. 
+
+\mbox{\Hypertarget{class_vaisseau_a584960419ccc6ae137c196a012d7eb9f}\label{class_vaisseau_a584960419ccc6ae137c196a012d7eb9f}} 
+\index{Vaisseau@{Vaisseau}!annexes\+B\+\_\+@{annexes\+B\+\_\+}}
+\index{annexes\+B\+\_\+@{annexes\+B\+\_\+}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{annexes\+B\+\_\+}{annexesB\_}}
+{\footnotesize\ttfamily std\+::vector$<$bool$>$ Vaisseau\+::annexes\+B\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vecteur contenant toute les parties annexes d\textquotesingle{}un vaisseau. 
 
 \mbox{\Hypertarget{class_vaisseau_a24d3d623d4f470aa1a11222c3872b2ec}\label{class_vaisseau_a24d3d623d4f470aa1a11222c3872b2ec}} 
 \index{Vaisseau@{Vaisseau}!atq\+M\+\_\+@{atq\+M\+\_\+}}
@@ -324,15 +363,25 @@ Points de vie actuels.
 
 $<$ Points de vie de base 
 
-\mbox{\Hypertarget{class_vaisseau_abe1d646c91dcd6ad2d84a5d30ea2aeca}\label{class_vaisseau_abe1d646c91dcd6ad2d84a5d30ea2aeca}} 
-\index{Vaisseau@{Vaisseau}!def\+\_\+@{def\+\_\+}}
-\index{def\+\_\+@{def\+\_\+}!Vaisseau@{Vaisseau}}
-\subsubsection{\texorpdfstring{def\+\_\+}{def\_}}
-{\footnotesize\ttfamily int Vaisseau\+::def\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{class_vaisseau_a5db47e079dc15db1158bd0a549f22908}\label{class_vaisseau_a5db47e079dc15db1158bd0a549f22908}} 
+\index{Vaisseau@{Vaisseau}!capacites\+\_\+@{capacites\+\_\+}}
+\index{capacites\+\_\+@{capacites\+\_\+}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{capacites\+\_\+}{capacites\_}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_capacite}{Capacite}$\ast$$>$ Vaisseau\+::capacites\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Attaque actuelle. 
+Vitesse de base. 
+
+\mbox{\Hypertarget{class_vaisseau_a838e50295284e3b4996640054ab7ee30}\label{class_vaisseau_a838e50295284e3b4996640054ab7ee30}} 
+\index{Vaisseau@{Vaisseau}!createur\+\_\+@{createur\+\_\+}}
+\index{createur\+\_\+@{createur\+\_\+}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{createur\+\_\+}{createur\_}}
+{\footnotesize\ttfamily \hyperlink{class_vaisseau}{Vaisseau}$\ast$ Vaisseau\+::createur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vecteur indiquant si l\textquotesingle{}annexe au même indice existe encore. 
 
 \mbox{\Hypertarget{class_vaisseau_ad62e88bb7527f72a6a446d9bbb219744}\label{class_vaisseau_ad62e88bb7527f72a6a446d9bbb219744}} 
 \index{Vaisseau@{Vaisseau}!def\+M\+\_\+@{def\+M\+\_\+}}
@@ -343,6 +392,16 @@ Attaque actuelle.
 
 
 $<$ Attaque de base 
+
+\mbox{\Hypertarget{class_vaisseau_a540cc03e47db59aad60d70be38a010ec}\label{class_vaisseau_a540cc03e47db59aad60d70be38a010ec}} 
+\index{Vaisseau@{Vaisseau}!nb\+Module\+\_\+@{nb\+Module\+\_\+}}
+\index{nb\+Module\+\_\+@{nb\+Module\+\_\+}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{nb\+Module\+\_\+}{nbModule\_}}
+{\footnotesize\ttfamily int Vaisseau\+::nb\+Module\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Si c\textquotesingle{}est une annexe, pointe vers le vaisseau qui possede cette annexe. null\+\_\+ptr sinon. 
 
 \mbox{\Hypertarget{class_vaisseau_a2abb8ab70479bc486d19b563dddbe825}\label{class_vaisseau_a2abb8ab70479bc486d19b563dddbe825}} 
 \index{Vaisseau@{Vaisseau}!nom\+\_\+@{nom\+\_\+}}
@@ -360,16 +419,6 @@ $<$ Attaque de base
 
 $<$ Nom du vaisseau 
 
-\mbox{\Hypertarget{class_vaisseau_ac57363910a13299dd8b10534683c0ad8}\label{class_vaisseau_ac57363910a13299dd8b10534683c0ad8}} 
-\index{Vaisseau@{Vaisseau}!pv\+\_\+@{pv\+\_\+}}
-\index{pv\+\_\+@{pv\+\_\+}!Vaisseau@{Vaisseau}}
-\subsubsection{\texorpdfstring{pv\+\_\+}{pv\_}}
-{\footnotesize\ttfamily int Vaisseau\+::pv\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Vitesse de base. 
-
 \mbox{\Hypertarget{class_vaisseau_ac8b21f62b8c41f90864b1bca81d685de}\label{class_vaisseau_ac8b21f62b8c41f90864b1bca81d685de}} 
 \index{Vaisseau@{Vaisseau}!pv\+M\+\_\+@{pv\+M\+\_\+}}
 \index{pv\+M\+\_\+@{pv\+M\+\_\+}!Vaisseau@{Vaisseau}}
@@ -379,16 +428,6 @@ Vitesse de base.
 
 
 $<$ numéro du skin du vaisseau 
-
-\mbox{\Hypertarget{class_vaisseau_a7fccd409e1f27f968bbe3f8ee1ded206}\label{class_vaisseau_a7fccd409e1f27f968bbe3f8ee1ded206}} 
-\index{Vaisseau@{Vaisseau}!skills\+\_\+@{skills\+\_\+}}
-\index{skills\+\_\+@{skills\+\_\+}!Vaisseau@{Vaisseau}}
-\subsubsection{\texorpdfstring{skills\+\_\+}{skills\_}}
-{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_capacite}{Capacite}$\ast$$>$ Vaisseau\+::skills\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Défense actuelle. 
 
 \mbox{\Hypertarget{class_vaisseau_a7cf3915f4d4044ee28fd5e5633fce11c}\label{class_vaisseau_a7cf3915f4d4044ee28fd5e5633fce11c}} 
 \index{Vaisseau@{Vaisseau}!vit\+M\+\_\+@{vit\+M\+\_\+}}

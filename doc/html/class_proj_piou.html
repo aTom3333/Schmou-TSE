@@ -79,13 +79,13 @@ $(function() {
 <div class="dynheader">
 Graphe d'héritage de ProjPiou:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_proj_piou__inherit__graph.svg" width="87" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_proj_piou__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <div class="dynheader">
 Graphe de collaboration de ProjPiou:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_proj_piou__coll__graph.svg" width="87" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_proj_piou__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -97,15 +97,18 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a02224f153ad53afc2b1c40b986ec6492"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_proj_piou.html#a02224f153ad53afc2b1c40b986ec6492">~ProjPiou</a> ()</td></tr>
 <tr class="memdesc:a02224f153ad53afc2b1c40b986ec6492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a02224f153ad53afc2b1c40b986ec6492">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a02224f153ad53afc2b1c40b986ec6492"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01b45e4045391883472e283e027cf7de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_proj_piou.html#a01b45e4045391883472e283e027cf7de">gestion</a> (sf::RenderWindow &amp;window)</td></tr>
-<tr class="memdesc:a01b45e4045391883472e283e027cf7de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestion du projectile.  <a href="#a01b45e4045391883472e283e027cf7de">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a01b45e4045391883472e283e027cf7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1594d1ba2fd53ff82af597d2505a7db2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_proj_piou.html#a1594d1ba2fd53ff82af597d2505a7db2">agit</a> (<a class="el" href="class_vaisseau.html">Vaisseau</a> &amp;v)</td></tr>
-<tr class="memdesc:a1594d1ba2fd53ff82af597d2505a7db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procédure lorsque le projectile agit avec unvaisseau.  <a href="#a1594d1ba2fd53ff82af597d2505a7db2">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a1594d1ba2fd53ff82af597d2505a7db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6efae1f583527446ef824fc1d2823a02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_proj_piou.html#a6efae1f583527446ef824fc1d2823a02">gestion</a> (sf::RenderWindow &amp;window, sf::Time tempsEcoule)</td></tr>
+<tr class="memdesc:a6efae1f583527446ef824fc1d2823a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestion du projectile.  <a href="#a6efae1f583527446ef824fc1d2823a02">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6efae1f583527446ef824fc1d2823a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd492e686378a86e10136061af035a9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_proj_piou.html#afd492e686378a86e10136061af035a9f">agit</a> (<a class="el" href="class_entite.html">Entite</a> &amp;e)</td></tr>
+<tr class="memdesc:afd492e686378a86e10136061af035a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procédure lorsque le projectile agit avec une <a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#afd492e686378a86e10136061af035a9f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afd492e686378a86e10136061af035a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_projectile"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_projectile')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_projectile.html">Projectile</a></td></tr>
 <tr class="memitem:ac536ed2aad56af866a2078b9a85aa16d inherit pub_methods_class_projectile"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_projectile.html#ac536ed2aad56af866a2078b9a85aa16d">Projectile</a> ()</td></tr>
 <tr class="separator:ac536ed2aad56af866a2078b9a85aa16d inherit pub_methods_class_projectile"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac0afd5bf761f0e212d4e1c8a503c86a inherit pub_methods_class_projectile"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_projectile.html#aac0afd5bf761f0e212d4e1c8a503c86a">destruction</a> ()</td></tr>
+<tr class="memdesc:aac0afd5bf761f0e212d4e1c8a503c86a inherit pub_methods_class_projectile"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procedure a effectuer lorsque le vaisseau est détruit.  <a href="class_projectile.html#aac0afd5bf761f0e212d4e1c8a503c86a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aac0afd5bf761f0e212d4e1c8a503c86a inherit pub_methods_class_projectile"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_entite"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_entite')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_entite.html">Entite</a></td></tr>
 <tr class="memitem:a8084762a25afbfbcdca31121a3dfcd87 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8084762a25afbfbcdca31121a3dfcd87">~Entite</a> ()=default</td></tr>
 <tr class="memdesc:a8084762a25afbfbcdca31121a3dfcd87 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur par défaut.  <a href="class_entite.html#a8084762a25afbfbcdca31121a3dfcd87">Plus de détails...</a><br /></td></tr>
@@ -152,6 +155,32 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:abd20483e4d51bc7ebb0eb58bb4366757 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#abd20483e4d51bc7ebb0eb58bb4366757">changeSpeed</a> (int val)</td></tr>
 <tr class="memdesc:abd20483e4d51bc7ebb0eb58bb4366757 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change la vitesse de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> en ajoutant à la vitesse actuelle une certaine valeur.  <a href="class_entite.html#abd20483e4d51bc7ebb0eb58bb4366757">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abd20483e4d51bc7ebb0eb58bb4366757 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b0ce40a2427f44978728dbae9560fee inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a4b0ce40a2427f44978728dbae9560fee">setDetruit</a> (bool val)</td></tr>
+<tr class="memdesc:a4b0ce40a2427f44978728dbae9560fee inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixe si l'entité est détruit ou non.  <a href="class_entite.html#a4b0ce40a2427f44978728dbae9560fee">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4b0ce40a2427f44978728dbae9560fee inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a282ac7b723e1594f49d27337a872f348 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a282ac7b723e1594f49d27337a872f348">estDetruit</a> ()</td></tr>
+<tr class="memdesc:a282ac7b723e1594f49d27337a872f348 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un booléen indiquant si l'entité est détuit.  <a href="class_entite.html#a282ac7b723e1594f49d27337a872f348">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a282ac7b723e1594f49d27337a872f348 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45ceffbeb11cbae7dca26fde5865b85 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ac45ceffbeb11cbae7dca26fde5865b85">regen</a> (sf::Time t)</td></tr>
+<tr class="memdesc:ac45ceffbeb11cbae7dca26fde5865b85 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redonne des points de vie, de l'armure et du bouclier toute les 100 ms.  <a href="class_entite.html#ac45ceffbeb11cbae7dca26fde5865b85">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac45ceffbeb11cbae7dca26fde5865b85 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab16c58f618b3b854310f92f044cc4a17 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ab16c58f618b3b854310f92f044cc4a17">recoitDegats</a> (float degats)</td></tr>
+<tr class="memdesc:ab16c58f618b3b854310f92f044cc4a17 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inflige des dégats au bouclier, à l'armure et aux points de vie en fonctions des dégats reçu.  <a href="class_entite.html#ab16c58f618b3b854310f92f044cc4a17">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab16c58f618b3b854310f92f044cc4a17 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec50d0b36c1cbe54054f7c469efc581a inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#aec50d0b36c1cbe54054f7c469efc581a">getDegats</a> ()</td></tr>
+<tr class="separator:aec50d0b36c1cbe54054f7c469efc581a inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac55a0e2b2667fda98e47d7057675d295 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ac55a0e2b2667fda98e47d7057675d295">getPVMax</a> ()</td></tr>
+<tr class="separator:ac55a0e2b2667fda98e47d7057675d295 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c7e378e1fb1567d4320647ea1cdfa83 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8c7e378e1fb1567d4320647ea1cdfa83">getArmureMax</a> ()</td></tr>
+<tr class="separator:a8c7e378e1fb1567d4320647ea1cdfa83 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31d930fa852c6254f300927b86dfcf57 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a31d930fa852c6254f300927b86dfcf57">getBouclierMax</a> ()</td></tr>
+<tr class="separator:a31d930fa852c6254f300927b86dfcf57 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e34d82273566ceb7680a5d783af504 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ad6e34d82273566ceb7680a5d783af504">getPV</a> ()</td></tr>
+<tr class="separator:ad6e34d82273566ceb7680a5d783af504 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af22df9c9309e6dc5f4c544ff4d462848 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#af22df9c9309e6dc5f4c544ff4d462848">getArmure</a> ()</td></tr>
+<tr class="separator:af22df9c9309e6dc5f4c544ff4d462848 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5f0e61edacb8d16ab5a8e65fc987a8 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a9f5f0e61edacb8d16ab5a8e65fc987a8">getBouclier</a> ()</td></tr>
+<tr class="separator:a9f5f0e61edacb8d16ab5a8e65fc987a8 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Membres hérités additionnels</h2></td></tr>
@@ -162,8 +191,13 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="memitem:a37bb9bd568e9e1c904eaa83ec49a2b16 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a37bb9bd568e9e1c904eaa83ec49a2b16">collisionable_</a> = true</td></tr>
 <tr class="memdesc:a37bb9bd568e9e1c904eaa83ec49a2b16 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booléen vrai si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> est collisionnable.  <a href="class_entite.html#a37bb9bd568e9e1c904eaa83ec49a2b16">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a37bb9bd568e9e1c904eaa83ec49a2b16 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d98d6fac9fb85da156fcda84fcec3ac inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a2d98d6fac9fb85da156fcda84fcec3ac">detruit_</a> = false</td></tr>
+<tr class="separator:a2d98d6fac9fb85da156fcda84fcec3ac inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8416aa3acec089b4b0daa818d62fea5 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ac8416aa3acec089b4b0daa818d62fea5">actif_</a></td></tr>
+<tr class="memdesc:ac8416aa3acec089b4b0daa818d62fea5 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">ture lorsque que le vaisseau est détruit  <a href="class_entite.html#ac8416aa3acec089b4b0daa818d62fea5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac8416aa3acec089b4b0daa818d62fea5 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86f42758a3e4672052331b7a4daa10b5 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a86f42758a3e4672052331b7a4daa10b5">equipe_</a></td></tr>
-<tr class="memdesc:a86f42758a3e4672052331b7a4daa10b5 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifaiant de l'équipe d' l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a86f42758a3e4672052331b7a4daa10b5">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a86f42758a3e4672052331b7a4daa10b5 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booleen indiquant si la trajectoire a été amorcée.  <a href="class_entite.html#a86f42758a3e4672052331b7a4daa10b5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a86f42758a3e4672052331b7a4daa10b5 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbd554c4f122159a73cb113cc8de3860 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#abbd554c4f122159a73cb113cc8de3860">position_</a></td></tr>
 <tr class="memdesc:abbd554c4f122159a73cb113cc8de3860 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#abbd554c4f122159a73cb113cc8de3860">Plus de détails...</a><br /></td></tr>
@@ -186,12 +220,45 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="memitem:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ab7c03b6fe5c4f1d08cd3e4304e0ef7c0">sprite_</a></td></tr>
 <tr class="memdesc:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#ab7c03b6fe5c4f1d08cd3e4304e0ef7c0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62c3145096f707457d60306ea6729ed6 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a62c3145096f707457d60306ea6729ed6">vit_</a></td></tr>
-<tr class="memdesc:a62c3145096f707457d60306ea6729ed6 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a62c3145096f707457d60306ea6729ed6">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a62c3145096f707457d60306ea6729ed6 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1346c3ad97658a42d327ab4928d6639c inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a1346c3ad97658a42d327ab4928d6639c">pvMax_</a></td></tr>
+<tr class="separator:a1346c3ad97658a42d327ab4928d6639c inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c5851310f0809f805205f23f443a48b inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a2c5851310f0809f805205f23f443a48b">armureMax_</a></td></tr>
+<tr class="memdesc:a2c5851310f0809f805205f23f443a48b inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point de vie maximum de l'entite.  <a href="class_entite.html#a2c5851310f0809f805205f23f443a48b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2c5851310f0809f805205f23f443a48b inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c48bbfd096baadcb84ce62e31e183d9 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a7c48bbfd096baadcb84ce62e31e183d9">bouclierMax_</a></td></tr>
+<tr class="memdesc:a7c48bbfd096baadcb84ce62e31e183d9 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Armure maximum de l'entite.  <a href="class_entite.html#a7c48bbfd096baadcb84ce62e31e183d9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7c48bbfd096baadcb84ce62e31e183d9 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b09d98caf443622a546345db8828b8 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a85b09d98caf443622a546345db8828b8">pv_</a></td></tr>
+<tr class="memdesc:a85b09d98caf443622a546345db8828b8 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bouclier maximum de l'entite.  <a href="class_entite.html#a85b09d98caf443622a546345db8828b8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a85b09d98caf443622a546345db8828b8 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a014535fad669c3d890a216f9e8049d09 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a014535fad669c3d890a216f9e8049d09">armure_</a></td></tr>
+<tr class="memdesc:a014535fad669c3d890a216f9e8049d09 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Points de vie actuel.  <a href="class_entite.html#a014535fad669c3d890a216f9e8049d09">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a014535fad669c3d890a216f9e8049d09 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a933a79044c5ac6ffccd397c134248d44 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a933a79044c5ac6ffccd397c134248d44">bouclier_</a></td></tr>
+<tr class="memdesc:a933a79044c5ac6ffccd397c134248d44 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Armure actuel.  <a href="class_entite.html#a933a79044c5ac6ffccd397c134248d44">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a933a79044c5ac6ffccd397c134248d44 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23d58f4c9b8593a6f0882240b1bf8e8e inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a23d58f4c9b8593a6f0882240b1bf8e8e">regenPV_</a></td></tr>
+<tr class="memdesc:a23d58f4c9b8593a6f0882240b1bf8e8e inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bouclier actuel.  <a href="class_entite.html#a23d58f4c9b8593a6f0882240b1bf8e8e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a23d58f4c9b8593a6f0882240b1bf8e8e inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9b881b665c6997dcc56cd37fb839dce inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#af9b881b665c6997dcc56cd37fb839dce">regenARM_</a></td></tr>
+<tr class="memdesc:af9b881b665c6997dcc56cd37fb839dce inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Points de vie rendu tout les 250 ms.  <a href="class_entite.html#af9b881b665c6997dcc56cd37fb839dce">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af9b881b665c6997dcc56cd37fb839dce inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12deb3f49595ab2cb4fc01a632a989e8 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a12deb3f49595ab2cb4fc01a632a989e8">regenBOU_</a></td></tr>
+<tr class="memdesc:a12deb3f49595ab2cb4fc01a632a989e8 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Armure rendu tout les 250 ms.  <a href="class_entite.html#a12deb3f49595ab2cb4fc01a632a989e8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a12deb3f49595ab2cb4fc01a632a989e8 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacb36948d7853e03a7f9a42aa6ad2d5 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#aaacb36948d7853e03a7f9a42aa6ad2d5">vit_</a></td></tr>
+<tr class="memdesc:aaacb36948d7853e03a7f9a42aa6ad2d5 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bouclier rendu tout les 250 ms.  <a href="class_entite.html#aaacb36948d7853e03a7f9a42aa6ad2d5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aaacb36948d7853e03a7f9a42aa6ad2d5 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ba3a09757f5fd29ec4e2c8e42f7b1e6 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a7ba3a09757f5fd29ec4e2c8e42f7b1e6">t_regen_</a></td></tr>
+<tr class="memdesc:a7ba3a09757f5fd29ec4e2c8e42f7b1e6 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a7ba3a09757f5fd29ec4e2c8e42f7b1e6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7ba3a09757f5fd29ec4e2c8e42f7b1e6 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac453832772daef8dc6eae431358a8e2a inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ac453832772daef8dc6eae431358a8e2a">degats_</a></td></tr>
+<tr class="memdesc:ac453832772daef8dc6eae431358a8e2a inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temps écoulé depuis la dernière régénération.  <a href="class_entite.html#ac453832772daef8dc6eae431358a8e2a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac453832772daef8dc6eae431358a8e2a inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a> de test. </p>
+<p><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a> de base. Tire en ligne droite (vers le bas) avec qui une acceleration verticale</p>
 <p><a class="el" href="class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje...">Projectile</a> de base. Tire en ligne droite (vers le haut) </p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a73d8a01dc3e09f926d14b95b673fd41d"></a>
@@ -271,8 +338,8 @@ Membres hérités additionnels</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a id="a1594d1ba2fd53ff82af597d2505a7db2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1594d1ba2fd53ff82af597d2505a7db2">&#9670;&nbsp;</a></span>agit()</h2>
+<a id="afd492e686378a86e10136061af035a9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd492e686378a86e10136061af035a9f">&#9670;&nbsp;</a></span>agit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,33 +350,33 @@ Membres hérités additionnels</h2></td></tr>
         <tr>
           <td class="memname">ProjPiou::agit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_vaisseau.html">Vaisseau</a> &amp;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_entite.html">Entite</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Procédure lorsque le projectile agit avec unvaisseau. </p>
+<p>Procédure lorsque le projectile agit avec une <a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a></td><td>à modifier</td></tr>
+    <tr><td class="paramname">e</td><td><a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> à modifier</td></tr>
   </table>
   </dd>
 </dl>
 <p>Vide </p>
 
-<p>Implémente <a class="el" href="class_projectile.html#a8550c8b1b012c5c290fb6da5b06f57ef">Projectile</a>.</p>
+<p>Implémente <a class="el" href="class_entite.html#a848ec47afac1d7ba970a2bcab5dc7b3b">Entite</a>.</p>
 
 </div>
 </div>
-<a id="a01b45e4045391883472e283e027cf7de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01b45e4045391883472e283e027cf7de">&#9670;&nbsp;</a></span>gestion()</h2>
+<a id="a6efae1f583527446ef824fc1d2823a02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6efae1f583527446ef824fc1d2823a02">&#9670;&nbsp;</a></span>gestion()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -321,8 +388,18 @@ Membres hérités additionnels</h2></td></tr>
           <td class="memname">ProjPiou::gestion </td>
           <td>(</td>
           <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
-          <td class="paramname"><em>window</em></td><td>)</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">sf::Time&#160;</td>
+          <td class="paramname"><em>tempsEcoule</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -341,7 +418,7 @@ Membres hérités additionnels</h2></td></tr>
 </dl>
 <p>Gestion du déplacement et de l'affichage </p>
 
-<p>Implémente <a class="el" href="class_projectile.html#aa969857f9837d9be3a6ea415c9ba3ff1">Projectile</a>.</p>
+<p>Implémente <a class="el" href="class_projectile.html#a09e02b793473660fc59a329a4dfea0ec">Projectile</a>.</p>
 
 </div>
 </div>

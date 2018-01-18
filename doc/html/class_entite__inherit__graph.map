@@ -1,8 +1,12 @@
 <map id="Entite" name="Entite">
-<area shape="rect" id="node2" href="$class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje..." alt="" coords="97,80,173,107"/>
-<area shape="rect" id="node5" href="$class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi " alt="" coords="220,80,296,107"/>
-<area shape="rect" id="node3" href="$class_proj_piou.html" title="Projectile de test. " alt="" coords="5,155,76,181"/>
-<area shape="rect" id="node4" href="$class_proj_test.html" title="Projectile de test. " alt="" coords="100,155,171,181"/>
-<area shape="rect" id="node6" href="$class_vaisseau_eclaireur.html" title="classe d&#39;un ennemi de base : l&#39;�claireur " alt="" coords="195,155,321,181"/>
-<area shape="rect" id="node7" href="$class_vaisseau_test.html" title="VaisseauTest" alt="" coords="345,155,448,181"/>
+<area shape="rect" id="node2" href="$class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje..." alt="" coords="201,556,308,663"/>
+<area shape="rect" id="node6" href="$class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi " alt="" coords="684,424,820,795"/>
+<area shape="rect" id="node3" href="$class_proj_missile.html" title="{ProjMissile\n||+ ProjMissile()\l+ ProjMissile()\l+ ~ProjMissile()\l+ gestion()\l+ agit()\l}" alt="" coords="5,843,120,979"/>
+<area shape="rect" id="node4" href="$class_proj_piou.html" title="Projectile de test. " alt="" coords="144,843,243,979"/>
+<area shape="rect" id="node5" href="$class_proj_test.html" title="Projectile de test. " alt="" coords="267,843,365,979"/>
+<area shape="rect" id="node7" href="$class_vaisseau_attaquant.html" title="classe d&#39;un ennemi de base : l&#39;attaquant " alt="" coords="389,850,549,971"/>
+<area shape="rect" id="node8" href="$class_vaisseau_defenseur.html" title="{VaisseauDefenseur\n||+ VaisseauDefenseur()\l+ ~VaisseauDefenseur()\l+ gestion()\l+ destruction()\l}" alt="" coords="574,850,738,971"/>
+<area shape="rect" id="node9" href="$class_vaisseau_defenseur_b.html" title="classe du bouclier du VaisseauDefenseur " alt="" coords="763,850,936,971"/>
+<area shape="rect" id="node10" href="$class_vaisseau_eclaireur.html" title="classe d&#39;un ennemi de base : l&#39;éclaireur " alt="" coords="960,850,1115,971"/>
+<area shape="rect" id="node11" href="$class_vaisseau_test.html" title="{VaisseauTest\n||+ VaisseauTest()\l+ ~VaisseauTest()\l+ gestion()\l+ destruction()\l}" alt="" coords="1139,850,1269,971"/>
 </map>

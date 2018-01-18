@@ -80,13 +80,13 @@ $(function() {
 <div class="dynheader">
 Graphe d'héritage de Vaisseau:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_vaisseau__inherit__graph.svg" width="264" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_vaisseau__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <div class="dynheader">
 Graphe de collaboration de Vaisseau:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_vaisseau__coll__graph.svg" width="87" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_vaisseau__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -96,9 +96,17 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a3360bd62af7a7aaf5732b86d639a0674"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a3360bd62af7a7aaf5732b86d639a0674">~Vaisseau</a> () override</td></tr>
 <tr class="memdesc:a3360bd62af7a7aaf5732b86d639a0674"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructeur  <a href="#a3360bd62af7a7aaf5732b86d639a0674">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3360bd62af7a7aaf5732b86d639a0674"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98c129568d478586684b1769fe465803"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a98c129568d478586684b1769fe465803">gestion</a> (sf::RenderWindow &amp;window, float tempsEcoule)=0</td></tr>
-<tr class="memdesc:a98c129568d478586684b1769fe465803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère le comportement du vaisseau.  <a href="#a98c129568d478586684b1769fe465803">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a98c129568d478586684b1769fe465803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaa179c1f03255d7869b8e2296ed8307"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#afaa179c1f03255d7869b8e2296ed8307">gestion</a> (sf::RenderWindow &amp;window, sf::Time tempsEcoule, <a class="el" href="_input_8h.html#a5588d60d674991c719a8df848313e966">Input</a> &amp;input)=0</td></tr>
+<tr class="memdesc:afaa179c1f03255d7869b8e2296ed8307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère le comportement du vaisseau.  <a href="#afaa179c1f03255d7869b8e2296ed8307">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afaa179c1f03255d7869b8e2296ed8307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21fbd13a4fad50af3ae34a36dbcb6820"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a21fbd13a4fad50af3ae34a36dbcb6820">gestionCapacite</a> (std::vector&lt; <a class="el" href="class_projectile.html">Projectile</a> *&gt; &amp;projectiles, sf::Time t_ecoule)</td></tr>
+<tr class="separator:a21fbd13a4fad50af3ae34a36dbcb6820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cd6733845f221c2a5a9d7ccd7f43137"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a0cd6733845f221c2a5a9d7ccd7f43137">agit</a> (<a class="el" href="class_entite.html">Entite</a> &amp;e)</td></tr>
+<tr class="memdesc:a0cd6733845f221c2a5a9d7ccd7f43137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procédure lorsque le projectile agit avec une <a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="#a0cd6733845f221c2a5a9d7ccd7f43137">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0cd6733845f221c2a5a9d7ccd7f43137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4f490c5fd9e171b23067ec73aa737ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#af4f490c5fd9e171b23067ec73aa737ad">destruction</a> ()=0</td></tr>
+<tr class="memdesc:af4f490c5fd9e171b23067ec73aa737ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procedure a effectuer lorsque le vaisseau est détruit.  <a href="#af4f490c5fd9e171b23067ec73aa737ad">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af4f490c5fd9e171b23067ec73aa737ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b3edda1f99d55cb5c0c7cbafe156af6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a1b3edda1f99d55cb5c0c7cbafe156af6">setEquipe</a> (int equipe)</td></tr>
 <tr class="separator:a1b3edda1f99d55cb5c0c7cbafe156af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04d7069231187e7dba26a06a0aaf2508"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a04d7069231187e7dba26a06a0aaf2508">addCapacite</a> (<a class="el" href="class_capacite.html">Capacite</a> *skill)</td></tr>
@@ -117,14 +125,10 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a4120a8c40229b8af08590ee3a6d00f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5816b1761b1d6f12f2ee3077b938392a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a5816b1761b1d6f12f2ee3077b938392a">setvitM</a> (int vitM)</td></tr>
 <tr class="separator:a5816b1761b1d6f12f2ee3077b938392a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c9cf0b0520a6bee6408af58e3c99e34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a2c9cf0b0520a6bee6408af58e3c99e34">setpv</a> (int pv)</td></tr>
-<tr class="separator:a2c9cf0b0520a6bee6408af58e3c99e34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dac2a3814de298d8d515c20b7463397"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a5dac2a3814de298d8d515c20b7463397">setatq</a> (int atq)</td></tr>
-<tr class="separator:a5dac2a3814de298d8d515c20b7463397"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6a93a1d1bfd8f7bac3e079fff6d84fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#aa6a93a1d1bfd8f7bac3e079fff6d84fa">setdef</a> (int def)</td></tr>
-<tr class="separator:aa6a93a1d1bfd8f7bac3e079fff6d84fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86c2165e77892f03e8d08f1e509e9b10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a86c2165e77892f03e8d08f1e509e9b10">setvit</a> (int vit)</td></tr>
-<tr class="separator:a86c2165e77892f03e8d08f1e509e9b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ac143853468f0aa9f4e83b74882a04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a90ac143853468f0aa9f4e83b74882a04">setActif</a> (bool val)</td></tr>
+<tr class="separator:a90ac143853468f0aa9f4e83b74882a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb209377f322d5dac4ec0f5de330b0fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#adb209377f322d5dac4ec0f5de330b0fc">setAnnexeB</a> (int ind, bool val)</td></tr>
+<tr class="separator:adb209377f322d5dac4ec0f5de330b0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbe2e5af7beda381d21392d4eb539761"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#acbe2e5af7beda381d21392d4eb539761">getnom</a> ()</td></tr>
 <tr class="separator:acbe2e5af7beda381d21392d4eb539761"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaecdafade1e84272e58cc97558f7c5c3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#aaecdafade1e84272e58cc97558f7c5c3">getNskin</a> ()</td></tr>
@@ -137,16 +141,14 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:aa983d5040f7c19a9dfcb907618fda321"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78f7e268cdb61a39e3292e80309a4ca8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a78f7e268cdb61a39e3292e80309a4ca8">getvitM</a> ()</td></tr>
 <tr class="separator:a78f7e268cdb61a39e3292e80309a4ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8e571f83be3f2bc1b961841f872265e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#ae8e571f83be3f2bc1b961841f872265e">getpv</a> ()</td></tr>
-<tr class="separator:ae8e571f83be3f2bc1b961841f872265e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03d9f614943176d1e1d71d99f9d7f465"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a03d9f614943176d1e1d71d99f9d7f465">getatq</a> ()</td></tr>
-<tr class="separator:a03d9f614943176d1e1d71d99f9d7f465"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48d7facfa7c34a784bfbee4c4b1100ce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a48d7facfa7c34a784bfbee4c4b1100ce">getdef</a> ()</td></tr>
-<tr class="separator:a48d7facfa7c34a784bfbee4c4b1100ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ca57eda788c37034f9769d79f814dac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a3ca57eda788c37034f9769d79f814dac">getvit</a> ()</td></tr>
-<tr class="separator:a3ca57eda788c37034f9769d79f814dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40cb016e98f0f928b32b3b4a47e27599"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_capacite.html">Capacite</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a40cb016e98f0f928b32b3b4a47e27599">getskills</a> ()</td></tr>
 <tr class="separator:a40cb016e98f0f928b32b3b4a47e27599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e106e9b7026cdd288ea4745aa1df652"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a9e106e9b7026cdd288ea4745aa1df652">estActif</a> ()</td></tr>
+<tr class="separator:a9e106e9b7026cdd288ea4745aa1df652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae09cad2739c02391139241343e361306"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_vaisseau.html">Vaisseau</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#ae09cad2739c02391139241343e361306">getAnnexes</a> ()</td></tr>
+<tr class="separator:ae09cad2739c02391139241343e361306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60335bcf73c8095e63b353d91833f8a4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a60335bcf73c8095e63b353d91833f8a4">getAnnexesB</a> ()</td></tr>
+<tr class="separator:a60335bcf73c8095e63b353d91833f8a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_entite"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_entite')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_entite.html">Entite</a></td></tr>
 <tr class="memitem:a8084762a25afbfbcdca31121a3dfcd87 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8084762a25afbfbcdca31121a3dfcd87">~Entite</a> ()=default</td></tr>
 <tr class="memdesc:a8084762a25afbfbcdca31121a3dfcd87 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur par défaut.  <a href="class_entite.html#a8084762a25afbfbcdca31121a3dfcd87">Plus de détails...</a><br /></td></tr>
@@ -193,6 +195,32 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:abd20483e4d51bc7ebb0eb58bb4366757 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#abd20483e4d51bc7ebb0eb58bb4366757">changeSpeed</a> (int val)</td></tr>
 <tr class="memdesc:abd20483e4d51bc7ebb0eb58bb4366757 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change la vitesse de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> en ajoutant à la vitesse actuelle une certaine valeur.  <a href="class_entite.html#abd20483e4d51bc7ebb0eb58bb4366757">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abd20483e4d51bc7ebb0eb58bb4366757 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b0ce40a2427f44978728dbae9560fee inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a4b0ce40a2427f44978728dbae9560fee">setDetruit</a> (bool val)</td></tr>
+<tr class="memdesc:a4b0ce40a2427f44978728dbae9560fee inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixe si l'entité est détruit ou non.  <a href="class_entite.html#a4b0ce40a2427f44978728dbae9560fee">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4b0ce40a2427f44978728dbae9560fee inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a282ac7b723e1594f49d27337a872f348 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a282ac7b723e1594f49d27337a872f348">estDetruit</a> ()</td></tr>
+<tr class="memdesc:a282ac7b723e1594f49d27337a872f348 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un booléen indiquant si l'entité est détuit.  <a href="class_entite.html#a282ac7b723e1594f49d27337a872f348">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a282ac7b723e1594f49d27337a872f348 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45ceffbeb11cbae7dca26fde5865b85 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ac45ceffbeb11cbae7dca26fde5865b85">regen</a> (sf::Time t)</td></tr>
+<tr class="memdesc:ac45ceffbeb11cbae7dca26fde5865b85 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redonne des points de vie, de l'armure et du bouclier toute les 100 ms.  <a href="class_entite.html#ac45ceffbeb11cbae7dca26fde5865b85">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac45ceffbeb11cbae7dca26fde5865b85 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab16c58f618b3b854310f92f044cc4a17 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ab16c58f618b3b854310f92f044cc4a17">recoitDegats</a> (float degats)</td></tr>
+<tr class="memdesc:ab16c58f618b3b854310f92f044cc4a17 inherit pub_methods_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inflige des dégats au bouclier, à l'armure et aux points de vie en fonctions des dégats reçu.  <a href="class_entite.html#ab16c58f618b3b854310f92f044cc4a17">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab16c58f618b3b854310f92f044cc4a17 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec50d0b36c1cbe54054f7c469efc581a inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#aec50d0b36c1cbe54054f7c469efc581a">getDegats</a> ()</td></tr>
+<tr class="separator:aec50d0b36c1cbe54054f7c469efc581a inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac55a0e2b2667fda98e47d7057675d295 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ac55a0e2b2667fda98e47d7057675d295">getPVMax</a> ()</td></tr>
+<tr class="separator:ac55a0e2b2667fda98e47d7057675d295 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c7e378e1fb1567d4320647ea1cdfa83 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a8c7e378e1fb1567d4320647ea1cdfa83">getArmureMax</a> ()</td></tr>
+<tr class="separator:a8c7e378e1fb1567d4320647ea1cdfa83 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31d930fa852c6254f300927b86dfcf57 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a31d930fa852c6254f300927b86dfcf57">getBouclierMax</a> ()</td></tr>
+<tr class="separator:a31d930fa852c6254f300927b86dfcf57 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e34d82273566ceb7680a5d783af504 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ad6e34d82273566ceb7680a5d783af504">getPV</a> ()</td></tr>
+<tr class="separator:ad6e34d82273566ceb7680a5d783af504 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af22df9c9309e6dc5f4c544ff4d462848 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#af22df9c9309e6dc5f4c544ff4d462848">getArmure</a> ()</td></tr>
+<tr class="separator:af22df9c9309e6dc5f4c544ff4d462848 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5f0e61edacb8d16ab5a8e65fc987a8 inherit pub_methods_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a9f5f0e61edacb8d16ab5a8e65fc987a8">getBouclier</a> ()</td></tr>
+<tr class="separator:a9f5f0e61edacb8d16ab5a8e65fc987a8 inherit pub_methods_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
@@ -213,24 +241,32 @@ Attributs protégés</h2></td></tr>
 <tr class="memitem:a7cf3915f4d4044ee28fd5e5633fce11c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a7cf3915f4d4044ee28fd5e5633fce11c">vitM_</a></td></tr>
 <tr class="memdesc:a7cf3915f4d4044ee28fd5e5633fce11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Défense de base.  <a href="#a7cf3915f4d4044ee28fd5e5633fce11c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7cf3915f4d4044ee28fd5e5633fce11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac57363910a13299dd8b10534683c0ad8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#ac57363910a13299dd8b10534683c0ad8">pv_</a></td></tr>
-<tr class="memdesc:ac57363910a13299dd8b10534683c0ad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse de base.  <a href="#ac57363910a13299dd8b10534683c0ad8">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ac57363910a13299dd8b10534683c0ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b2a2de0e527ed46550922427e067c95"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a2b2a2de0e527ed46550922427e067c95">atq_</a></td></tr>
-<tr class="memdesc:a2b2a2de0e527ed46550922427e067c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Points de vie actuels.  <a href="#a2b2a2de0e527ed46550922427e067c95">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a2b2a2de0e527ed46550922427e067c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe1d646c91dcd6ad2d84a5d30ea2aeca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#abe1d646c91dcd6ad2d84a5d30ea2aeca">def_</a></td></tr>
-<tr class="memdesc:abe1d646c91dcd6ad2d84a5d30ea2aeca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaque actuelle.  <a href="#abe1d646c91dcd6ad2d84a5d30ea2aeca">Plus de détails...</a><br /></td></tr>
-<tr class="separator:abe1d646c91dcd6ad2d84a5d30ea2aeca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fccd409e1f27f968bbe3f8ee1ded206"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_capacite.html">Capacite</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a7fccd409e1f27f968bbe3f8ee1ded206">skills_</a></td></tr>
-<tr class="memdesc:a7fccd409e1f27f968bbe3f8ee1ded206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Défense actuelle.  <a href="#a7fccd409e1f27f968bbe3f8ee1ded206">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a7fccd409e1f27f968bbe3f8ee1ded206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5db47e079dc15db1158bd0a549f22908"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_capacite.html">Capacite</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a5db47e079dc15db1158bd0a549f22908">capacites_</a></td></tr>
+<tr class="memdesc:a5db47e079dc15db1158bd0a549f22908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse de base.  <a href="#a5db47e079dc15db1158bd0a549f22908">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5db47e079dc15db1158bd0a549f22908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a077c826bea6ce9f63de811762fbe8784"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_vaisseau.html">Vaisseau</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a077c826bea6ce9f63de811762fbe8784">annexes_</a></td></tr>
+<tr class="memdesc:a077c826bea6ce9f63de811762fbe8784"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des capacités du vaisseau.  <a href="#a077c826bea6ce9f63de811762fbe8784">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a077c826bea6ce9f63de811762fbe8784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584960419ccc6ae137c196a012d7eb9f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a584960419ccc6ae137c196a012d7eb9f">annexesB_</a></td></tr>
+<tr class="memdesc:a584960419ccc6ae137c196a012d7eb9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vecteur contenant toute les parties annexes d'un vaisseau.  <a href="#a584960419ccc6ae137c196a012d7eb9f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a584960419ccc6ae137c196a012d7eb9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a838e50295284e3b4996640054ab7ee30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vaisseau.html">Vaisseau</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a838e50295284e3b4996640054ab7ee30">createur_</a></td></tr>
+<tr class="memdesc:a838e50295284e3b4996640054ab7ee30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vecteur indiquant si l'annexe au même indice existe encore.  <a href="#a838e50295284e3b4996640054ab7ee30">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a838e50295284e3b4996640054ab7ee30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a540cc03e47db59aad60d70be38a010ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vaisseau.html#a540cc03e47db59aad60d70be38a010ec">nbModule_</a></td></tr>
+<tr class="memdesc:a540cc03e47db59aad60d70be38a010ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si c'est une annexe, pointe vers le vaisseau qui possede cette annexe. null_ptr sinon.  <a href="#a540cc03e47db59aad60d70be38a010ec">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a540cc03e47db59aad60d70be38a010ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_entite"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_entite')"><img src="closed.png" alt="-"/>&#160;Attributs protégés hérités de <a class="el" href="class_entite.html">Entite</a></td></tr>
 <tr class="memitem:a37bb9bd568e9e1c904eaa83ec49a2b16 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a37bb9bd568e9e1c904eaa83ec49a2b16">collisionable_</a> = true</td></tr>
 <tr class="memdesc:a37bb9bd568e9e1c904eaa83ec49a2b16 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booléen vrai si l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> est collisionnable.  <a href="class_entite.html#a37bb9bd568e9e1c904eaa83ec49a2b16">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a37bb9bd568e9e1c904eaa83ec49a2b16 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d98d6fac9fb85da156fcda84fcec3ac inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a2d98d6fac9fb85da156fcda84fcec3ac">detruit_</a> = false</td></tr>
+<tr class="separator:a2d98d6fac9fb85da156fcda84fcec3ac inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8416aa3acec089b4b0daa818d62fea5 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ac8416aa3acec089b4b0daa818d62fea5">actif_</a></td></tr>
+<tr class="memdesc:ac8416aa3acec089b4b0daa818d62fea5 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">ture lorsque que le vaisseau est détruit  <a href="class_entite.html#ac8416aa3acec089b4b0daa818d62fea5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac8416aa3acec089b4b0daa818d62fea5 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86f42758a3e4672052331b7a4daa10b5 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a86f42758a3e4672052331b7a4daa10b5">equipe_</a></td></tr>
-<tr class="memdesc:a86f42758a3e4672052331b7a4daa10b5 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifaiant de l'équipe d' l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a86f42758a3e4672052331b7a4daa10b5">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a86f42758a3e4672052331b7a4daa10b5 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booleen indiquant si la trajectoire a été amorcée.  <a href="class_entite.html#a86f42758a3e4672052331b7a4daa10b5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a86f42758a3e4672052331b7a4daa10b5 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbd554c4f122159a73cb113cc8de3860 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#abbd554c4f122159a73cb113cc8de3860">position_</a></td></tr>
 <tr class="memdesc:abbd554c4f122159a73cb113cc8de3860 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#abbd554c4f122159a73cb113cc8de3860">Plus de détails...</a><br /></td></tr>
@@ -253,9 +289,41 @@ Attributs protégés</h2></td></tr>
 <tr class="memitem:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ab7c03b6fe5c4f1d08cd3e4304e0ef7c0">sprite_</a></td></tr>
 <tr class="memdesc:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#ab7c03b6fe5c4f1d08cd3e4304e0ef7c0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab7c03b6fe5c4f1d08cd3e4304e0ef7c0 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62c3145096f707457d60306ea6729ed6 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a62c3145096f707457d60306ea6729ed6">vit_</a></td></tr>
-<tr class="memdesc:a62c3145096f707457d60306ea6729ed6 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a62c3145096f707457d60306ea6729ed6">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a62c3145096f707457d60306ea6729ed6 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1346c3ad97658a42d327ab4928d6639c inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a1346c3ad97658a42d327ab4928d6639c">pvMax_</a></td></tr>
+<tr class="separator:a1346c3ad97658a42d327ab4928d6639c inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c5851310f0809f805205f23f443a48b inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a2c5851310f0809f805205f23f443a48b">armureMax_</a></td></tr>
+<tr class="memdesc:a2c5851310f0809f805205f23f443a48b inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point de vie maximum de l'entite.  <a href="class_entite.html#a2c5851310f0809f805205f23f443a48b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2c5851310f0809f805205f23f443a48b inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c48bbfd096baadcb84ce62e31e183d9 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a7c48bbfd096baadcb84ce62e31e183d9">bouclierMax_</a></td></tr>
+<tr class="memdesc:a7c48bbfd096baadcb84ce62e31e183d9 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Armure maximum de l'entite.  <a href="class_entite.html#a7c48bbfd096baadcb84ce62e31e183d9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7c48bbfd096baadcb84ce62e31e183d9 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b09d98caf443622a546345db8828b8 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a85b09d98caf443622a546345db8828b8">pv_</a></td></tr>
+<tr class="memdesc:a85b09d98caf443622a546345db8828b8 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bouclier maximum de l'entite.  <a href="class_entite.html#a85b09d98caf443622a546345db8828b8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a85b09d98caf443622a546345db8828b8 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a014535fad669c3d890a216f9e8049d09 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a014535fad669c3d890a216f9e8049d09">armure_</a></td></tr>
+<tr class="memdesc:a014535fad669c3d890a216f9e8049d09 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Points de vie actuel.  <a href="class_entite.html#a014535fad669c3d890a216f9e8049d09">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a014535fad669c3d890a216f9e8049d09 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a933a79044c5ac6ffccd397c134248d44 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a933a79044c5ac6ffccd397c134248d44">bouclier_</a></td></tr>
+<tr class="memdesc:a933a79044c5ac6ffccd397c134248d44 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Armure actuel.  <a href="class_entite.html#a933a79044c5ac6ffccd397c134248d44">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a933a79044c5ac6ffccd397c134248d44 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23d58f4c9b8593a6f0882240b1bf8e8e inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a23d58f4c9b8593a6f0882240b1bf8e8e">regenPV_</a></td></tr>
+<tr class="memdesc:a23d58f4c9b8593a6f0882240b1bf8e8e inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bouclier actuel.  <a href="class_entite.html#a23d58f4c9b8593a6f0882240b1bf8e8e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a23d58f4c9b8593a6f0882240b1bf8e8e inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9b881b665c6997dcc56cd37fb839dce inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#af9b881b665c6997dcc56cd37fb839dce">regenARM_</a></td></tr>
+<tr class="memdesc:af9b881b665c6997dcc56cd37fb839dce inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Points de vie rendu tout les 250 ms.  <a href="class_entite.html#af9b881b665c6997dcc56cd37fb839dce">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af9b881b665c6997dcc56cd37fb839dce inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12deb3f49595ab2cb4fc01a632a989e8 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a12deb3f49595ab2cb4fc01a632a989e8">regenBOU_</a></td></tr>
+<tr class="memdesc:a12deb3f49595ab2cb4fc01a632a989e8 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Armure rendu tout les 250 ms.  <a href="class_entite.html#a12deb3f49595ab2cb4fc01a632a989e8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a12deb3f49595ab2cb4fc01a632a989e8 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacb36948d7853e03a7f9a42aa6ad2d5 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#aaacb36948d7853e03a7f9a42aa6ad2d5">vit_</a></td></tr>
+<tr class="memdesc:aaacb36948d7853e03a7f9a42aa6ad2d5 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bouclier rendu tout les 250 ms.  <a href="class_entite.html#aaacb36948d7853e03a7f9a42aa6ad2d5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aaacb36948d7853e03a7f9a42aa6ad2d5 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ba3a09757f5fd29ec4e2c8e42f7b1e6 inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#a7ba3a09757f5fd29ec4e2c8e42f7b1e6">t_regen_</a></td></tr>
+<tr class="memdesc:a7ba3a09757f5fd29ec4e2c8e42f7b1e6 inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse actuelle de l'<a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>.  <a href="class_entite.html#a7ba3a09757f5fd29ec4e2c8e42f7b1e6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7ba3a09757f5fd29ec4e2c8e42f7b1e6 inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac453832772daef8dc6eae431358a8e2a inherit pro_attribs_class_entite"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entite.html#ac453832772daef8dc6eae431358a8e2a">degats_</a></td></tr>
+<tr class="memdesc:ac453832772daef8dc6eae431358a8e2a inherit pro_attribs_class_entite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temps écoulé depuis la dernière régénération.  <a href="class_entite.html#ac453832772daef8dc6eae431358a8e2a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac453832772daef8dc6eae431358a8e2a inherit pro_attribs_class_entite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>classe du vaisseau (véhicule) d'un joueur ou d'un ennemi </p>
@@ -266,9 +334,6 @@ Attributs protégés</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Vaisseau::Vaisseau </td>
@@ -277,11 +342,6 @@ Attributs protégés</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>constructeur </p>
@@ -336,8 +396,94 @@ Attributs protégés</h2></td></tr>
 
 </div>
 </div>
-<a id="a98c129568d478586684b1769fe465803"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98c129568d478586684b1769fe465803">&#9670;&nbsp;</a></span>gestion()</h2>
+<a id="a0cd6733845f221c2a5a9d7ccd7f43137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cd6733845f221c2a5a9d7ccd7f43137">&#9670;&nbsp;</a></span>agit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vaisseau::agit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_entite.html">Entite</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Procédure lorsque le projectile agit avec une <a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td><a class="el" href="class_entite.html" title="Classe virtuelle qui définit une entité ">Entite</a> à modifier</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Vide </p>
+
+<p>Implémente <a class="el" href="class_entite.html#a848ec47afac1d7ba970a2bcab5dc7b3b">Entite</a>.</p>
+
+</div>
+</div>
+<a id="af4f490c5fd9e171b23067ec73aa737ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4f490c5fd9e171b23067ec73aa737ad">&#9670;&nbsp;</a></span>destruction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vaisseau::destruction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Procedure a effectuer lorsque le vaisseau est détruit. </p>
+<p>Fonction virtuelle qui doit être surchargée pour les classes héritées. </p>
+
+<p>Implémente <a class="el" href="class_entite.html#af5c424f69b2c880ae9c12786abd28592">Entite</a>.</p>
+
+<p>Implémenté dans <a class="el" href="class_vaisseau_defenseur.html#a6816d325d737269cddc6310e7f68b222">VaisseauDefenseur</a>, <a class="el" href="class_vaisseau_attaquant.html#af804e1fd491301c2385e10d88f4892a6">VaisseauAttaquant</a>, <a class="el" href="class_vaisseau_eclaireur.html#a4f65343b67301d7fa98f5e02337cc1e1">VaisseauEclaireur</a>, <a class="el" href="class_vaisseau_defenseur_b.html#aba88319dcc7540dce39c164fa9853732">VaisseauDefenseurB</a>, et <a class="el" href="class_vaisseau_test.html#a5b8b67886ecb73d8f720f8499ef3c378">VaisseauTest</a>.</p>
+
+</div>
+</div>
+<a id="a9e106e9b7026cdd288ea4745aa1df652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e106e9b7026cdd288ea4745aa1df652">&#9670;&nbsp;</a></span>estActif()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Vaisseau::estActif </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afaa179c1f03255d7869b8e2296ed8307"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaa179c1f03255d7869b8e2296ed8307">&#9670;&nbsp;</a></span>gestion()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,8 +500,14 @@ Attributs protégés</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>tempsEcoule</em>&#160;</td>
+          <td class="paramtype">sf::Time&#160;</td>
+          <td class="paramname"><em>tempsEcoule</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_input_8h.html#a5588d60d674991c719a8df848313e966">Input</a> &amp;&#160;</td>
+          <td class="paramname"><em>input</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -373,24 +525,70 @@ Attributs protégés</h2></td></tr>
 <p>Gère le comportement du vaisseau. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>Fenetre SFML où le vaisseau sera affiché</td></tr>
+    <tr><td class="paramname">window</td><td>Fenetre SFML où le vaisseau sera affiché </td></tr>
+    <tr><td class="paramname">input</td><td>Classe Input donnant accés aux entrée</td></tr>
   </table>
   </dd>
 </dl>
 <p>Fonction virtuelle qui gère le comportement du vaisseau </p>
 
-<p>Implémenté dans <a class="el" href="class_vaisseau_eclaireur.html#aa76a51dfb92fa94b7614a58be187db21">VaisseauEclaireur</a>, et <a class="el" href="class_vaisseau_test.html#a50009e27227a8e1c4d18c16bfba0a55f">VaisseauTest</a>.</p>
+<p>Implémenté dans <a class="el" href="class_vaisseau_defenseur.html#adb26b3df0bb5888548ff897f23e2ec82">VaisseauDefenseur</a>, <a class="el" href="class_vaisseau_attaquant.html#ad95d76e5973affa6ef287edd7ad5310e">VaisseauAttaquant</a>, <a class="el" href="class_vaisseau_eclaireur.html#aac6158ee2ff8454a93515546cb1be1de">VaisseauEclaireur</a>, <a class="el" href="class_vaisseau_defenseur_b.html#aae8e2488b91dbd1ceef8969debbc234f">VaisseauDefenseurB</a>, et <a class="el" href="class_vaisseau_test.html#a83da402707d73465178b4e654d2e054a">VaisseauTest</a>.</p>
 
 </div>
 </div>
-<a id="a03d9f614943176d1e1d71d99f9d7f465"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03d9f614943176d1e1d71d99f9d7f465">&#9670;&nbsp;</a></span>getatq()</h2>
+<a id="a21fbd13a4fad50af3ae34a36dbcb6820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21fbd13a4fad50af3ae34a36dbcb6820">&#9670;&nbsp;</a></span>gestionCapacite()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Vaisseau::getatq </td>
+          <td class="memname">void Vaisseau::gestionCapacite </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_projectile.html">Projectile</a> *&gt; &amp;&#160;</td>
+          <td class="paramname"><em>projectiles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Time&#160;</td>
+          <td class="paramname"><em>t_ecoule</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae09cad2739c02391139241343e361306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae09cad2739c02391139241343e361306">&#9670;&nbsp;</a></span>getAnnexes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_vaisseau.html">Vaisseau</a> * &gt; Vaisseau::getAnnexes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60335bcf73c8095e63b353d91833f8a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60335bcf73c8095e63b353d91833f8a4">&#9670;&nbsp;</a></span>getAnnexesB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; bool &gt; Vaisseau::getAnnexesB </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -408,23 +606,6 @@ Attributs protégés</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int Vaisseau::getatqM </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a48d7facfa7c34a784bfbee4c4b1100ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48d7facfa7c34a784bfbee4c4b1100ce">&#9670;&nbsp;</a></span>getdef()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Vaisseau::getdef </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -485,23 +666,6 @@ Attributs protégés</h2></td></tr>
 
 </div>
 </div>
-<a id="ae8e571f83be3f2bc1b961841f872265e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8e571f83be3f2bc1b961841f872265e">&#9670;&nbsp;</a></span>getpv()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Vaisseau::getpv </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aac552ebb8c5b199c0f0e38b1f1cd95af"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac552ebb8c5b199c0f0e38b1f1cd95af">&#9670;&nbsp;</a></span>getpvM()</h2>
 
@@ -536,23 +700,6 @@ Attributs protégés</h2></td></tr>
 
 </div>
 </div>
-<a id="a3ca57eda788c37034f9769d79f814dac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ca57eda788c37034f9769d79f814dac">&#9670;&nbsp;</a></span>getvit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Vaisseau::getvit </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a78f7e268cdb61a39e3292e80309a4ca8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78f7e268cdb61a39e3292e80309a4ca8">&#9670;&nbsp;</a></span>getvitM()</h2>
 
@@ -570,18 +717,46 @@ Attributs protégés</h2></td></tr>
 
 </div>
 </div>
-<a id="a5dac2a3814de298d8d515c20b7463397"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5dac2a3814de298d8d515c20b7463397">&#9670;&nbsp;</a></span>setatq()</h2>
+<a id="a90ac143853468f0aa9f4e83b74882a04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90ac143853468f0aa9f4e83b74882a04">&#9670;&nbsp;</a></span>setActif()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Vaisseau::setatq </td>
+          <td class="memname">void Vaisseau::setActif </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb209377f322d5dac4ec0f5de330b0fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb209377f322d5dac4ec0f5de330b0fc">&#9670;&nbsp;</a></span>setAnnexeB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Vaisseau::setAnnexeB </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>atq</em></td><td>)</td>
+          <td class="paramname"><em>ind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -599,24 +774,6 @@ Attributs protégés</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>atqM</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa6a93a1d1bfd8f7bac3e079fff6d84fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6a93a1d1bfd8f7bac3e079fff6d84fa">&#9670;&nbsp;</a></span>setdef()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Vaisseau::setdef </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>def</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -698,24 +855,6 @@ Attributs protégés</h2></td></tr>
 
 </div>
 </div>
-<a id="a2c9cf0b0520a6bee6408af58e3c99e34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c9cf0b0520a6bee6408af58e3c99e34">&#9670;&nbsp;</a></span>setpv()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Vaisseau::setpv </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pv</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a10a33c8fed1bb1530148e98313d80a87"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a10a33c8fed1bb1530148e98313d80a87">&#9670;&nbsp;</a></span>setpvM()</h2>
 
@@ -727,24 +866,6 @@ Attributs protégés</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>pvM</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a86c2165e77892f03e8d08f1e509e9b10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86c2165e77892f03e8d08f1e509e9b10">&#9670;&nbsp;</a></span>setvit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Vaisseau::setvit </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>vit</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -771,8 +892,8 @@ Attributs protégés</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentation des données membres</h2>
-<a id="a2b2a2de0e527ed46550922427e067c95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b2a2de0e527ed46550922427e067c95">&#9670;&nbsp;</a></span>atq_</h2>
+<a id="a077c826bea6ce9f63de811762fbe8784"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a077c826bea6ce9f63de811762fbe8784">&#9670;&nbsp;</a></span>annexes_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -781,7 +902,7 @@ Attributs protégés</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Vaisseau::atq_</td>
+          <td class="memname">std::vector&lt;<a class="el" href="class_vaisseau.html">Vaisseau</a>*&gt; Vaisseau::annexes_</td>
         </tr>
       </table>
   </td>
@@ -791,7 +912,31 @@ Attributs protégés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Points de vie actuels. </p>
+<p>Liste des capacités du vaisseau. </p>
+
+</div>
+</div>
+<a id="a584960419ccc6ae137c196a012d7eb9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584960419ccc6ae137c196a012d7eb9f">&#9670;&nbsp;</a></span>annexesB_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;bool&gt; Vaisseau::annexesB_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vecteur contenant toute les parties annexes d'un vaisseau. </p>
 
 </div>
 </div>
@@ -819,8 +964,8 @@ Attributs protégés</h2></td></tr>
 
 </div>
 </div>
-<a id="abe1d646c91dcd6ad2d84a5d30ea2aeca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe1d646c91dcd6ad2d84a5d30ea2aeca">&#9670;&nbsp;</a></span>def_</h2>
+<a id="a5db47e079dc15db1158bd0a549f22908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5db47e079dc15db1158bd0a549f22908">&#9670;&nbsp;</a></span>capacites_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -829,7 +974,7 @@ Attributs protégés</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Vaisseau::def_</td>
+          <td class="memname">std::vector&lt;<a class="el" href="class_capacite.html">Capacite</a>*&gt; Vaisseau::capacites_</td>
         </tr>
       </table>
   </td>
@@ -839,7 +984,31 @@ Attributs protégés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Attaque actuelle. </p>
+<p>Vitesse de base. </p>
+
+</div>
+</div>
+<a id="a838e50295284e3b4996640054ab7ee30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a838e50295284e3b4996640054ab7ee30">&#9670;&nbsp;</a></span>createur_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vaisseau.html">Vaisseau</a>* Vaisseau::createur_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vecteur indiquant si l'annexe au même indice existe encore. </p>
 
 </div>
 </div>
@@ -864,6 +1033,30 @@ Attributs protégés</h2></td></tr>
 </div><div class="memdoc">
 
 <p>&lt; Attaque de base </p>
+
+</div>
+</div>
+<a id="a540cc03e47db59aad60d70be38a010ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a540cc03e47db59aad60d70be38a010ec">&#9670;&nbsp;</a></span>nbModule_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Vaisseau::nbModule_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Si c'est une annexe, pointe vers le vaisseau qui possede cette annexe. null_ptr sinon. </p>
 
 </div>
 </div>
@@ -913,30 +1106,6 @@ Attributs protégés</h2></td></tr>
 
 </div>
 </div>
-<a id="ac57363910a13299dd8b10534683c0ad8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac57363910a13299dd8b10534683c0ad8">&#9670;&nbsp;</a></span>pv_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Vaisseau::pv_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Vitesse de base. </p>
-
-</div>
-</div>
 <a id="ac8b21f62b8c41f90864b1bca81d685de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8b21f62b8c41f90864b1bca81d685de">&#9670;&nbsp;</a></span>pvM_</h2>
 
@@ -958,30 +1127,6 @@ Attributs protégés</h2></td></tr>
 </div><div class="memdoc">
 
 <p>&lt; numéro du skin du vaisseau </p>
-
-</div>
-</div>
-<a id="a7fccd409e1f27f968bbe3f8ee1ded206"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fccd409e1f27f968bbe3f8ee1ded206">&#9670;&nbsp;</a></span>skills_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="class_capacite.html">Capacite</a>*&gt; Vaisseau::skills_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Défense actuelle. </p>
 
 </div>
 </div>

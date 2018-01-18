@@ -1,4 +1,4 @@
 <map id="ProjPiou" name="ProjPiou">
-<area shape="rect" id="node2" href="$class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje..." alt="" coords="5,80,81,107"/>
-<area shape="rect" id="node3" href="$class_entite.html" title="Classe virtuelle qui définit une entité " alt="" coords="15,5,71,32"/>
+<area shape="rect" id="node2" href="$class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje..." alt="" coords="19,424,125,531"/>
+<area shape="rect" id="node3" href="$class_entite.html" title="Classe virtuelle qui définit une entité " alt="" coords="5,5,139,376"/>
 </map>
