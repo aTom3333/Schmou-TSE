@@ -61,8 +61,8 @@ class Capacite
 		float cooldown_; /// Temps à attendre avant de pouvoir utiliser la capacité à nouveau
 		float t_; /// Temps écoulé depuis la dernière activation de la compétance
 		unsigned int frames_; /// Nombre de frames écoulé depuis la dernière activation
-		std::string nom_; /// Nom de la compétance
-
+		std::string nom_; /// Nom de la compétence
+		bool autoAim; ///état visée auto
 };
 
 #endif // CAPACITE_H

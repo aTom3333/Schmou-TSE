@@ -14,11 +14,11 @@ VaisseauTest::VaisseauTest() ///constructeur
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
 	// Stats
-	vit_ = 500;
+	vit_ = 5c00;
 
-	pvMax_ = 300;
+	pvMax_ = 1000;
 	armureMax_ = 100;
-	bouclierMax_ = 100;
+	bouclierMax_ = 0;
 
 	pv_ = pvMax_;
 	armure_ = armureMax_;
