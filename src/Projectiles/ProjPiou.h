@@ -22,6 +22,7 @@ public:
 	* Vide
 	*/
 	ProjPiou();
+
 	/**
 	* @fn ProjPiou
 	* @brief Constructeur
@@ -31,6 +32,7 @@ public:
 	* Créer un projectile piou à la position donnée en paramètre
 	*/
 	ProjPiou(int x, int y);
+
 	/**
 	* @fn ~ProjPiou
 	* @brief Destructeur
@@ -38,6 +40,7 @@ public:
 	* Vide
 	*/
 	~ProjPiou();
+
 	/**
 	* @fn gestion
 	* @brief Gestion du projectile
@@ -46,6 +49,7 @@ public:
 	* Gestion du déplacement et de l'affichage
 	*/
 	void gestion(sf::RenderWindow &window, sf::Time tempsEcoule);
+
 	/**
 	* @fn agit
 	* @brief Procédure lorsque le projectile agit avec une Entite
@@ -54,6 +58,8 @@ public:
 	* Vide
 	*/
 	void agit(Entite &e);
+
+
 private:
 	int vx_; /// Vitesse horizontale
 	int vy_; /// Vitesse verticale

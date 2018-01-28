@@ -11,7 +11,6 @@
 #include "Projectiles/Projectile.h"
 #include "Vaisseau/Vaisseau.h"
 #include "Interface/Input.h"
-#include "Interface/Overlay.h"
 
 
 /**
@@ -44,15 +43,13 @@ class Partie
         sf::RenderWindow& window_; /// fenêtre principale
 		sf::Font font_; /// police principale
         Input input_; /// entrée
-		Overlay hud_; /// Affichage Tête Haute
-		bool afficheHUD_; /// Vrai si on veux afficher le HUD, faux sinon
 
 		//attributs principaux en jeu
 		std::vector<Vaisseau*> vaisseaux_; ///vecteur des vaisseaux ennemis en jeu
 		std::vector<Projectile *> projectiles_; /// vecteur des projectiles en jeu
 
 		//attributs de debug
-		float timeSpeed_; /// Facteur controllant le temps
+		float timeSpeed_; /// Facteur contrôlant le temps
 
 };
 

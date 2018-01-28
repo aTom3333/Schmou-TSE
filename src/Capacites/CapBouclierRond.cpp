@@ -1,0 +1,58 @@
+﻿#include "CapBouclierRond.h"
+
+CapBouclierRond::CapBouclierRond(int niveau, Entite* Entite_liee)
+{
+	niveau_ = niveau;
+	Entite_liee_ = Entite_liee;
+	switch (niveau)
+	{
+	default:
+		break;
+
+	case 1:
+		cooldown_ = 1000;
+		pvM_ = 500;
+		degatsColl_ = 0;
+
+	case 2:
+		cooldown_ = 500;
+		pvM_ = 1000;
+		degatsColl_ = 100;
+
+	}
+	nom_ = "Bouclier";
+
+}
+
+void CapBouclierRond::utiliser(int x, int y)
+{
+	// Si la compétence est disponible
+	if (t_ >= cooldown_)
+	{
+		// Début du timer
+		t_ = 0;
+		frames_ = 0;
+		// Initialisation de l'endroit ou la compétence a été utilisée
+		debutX_ = x;
+		debutY_ = y;
+	}
+}
+
+
+void CapBouclierRond::actualiser(std::vector<Projectile*>& GVP, Entite& vaisseau, float tempsEcoule)
+{
+	// Création du projectile au moment où la compétence est lancée
+	if (frames_ == 0)
+	{
+		//TODO bug
+		ProjBouclierRond *temp = new ProjBouclierRond(Entite_liee_, pvM_, degatsColl_);
+		GVP.push_back(temp);
+	}
+
+	// Si la compétence est en cooldown, on actualise le timer
+	if (t_ < cooldown_)
+	{
+		t_ += tempsEcoule;
+	}
+	frames_++;
+}

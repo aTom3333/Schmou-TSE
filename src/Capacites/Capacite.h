@@ -57,12 +57,17 @@ class Capacite
 		float const getTime() { return t_; };
 		std::string const getNom() { return nom_; };
 	protected:
+		std::string nom_; /// Nom de la compétence
+		unsigned int niveau_; /// Niveau, à partir de 1
+
 		int debutX_, debutY_; /// Position de départ
 		float cooldown_; /// Temps à attendre avant de pouvoir utiliser la capacité à nouveau
-		float t_; /// Temps écoulé depuis la dernière activation de la compétance
-		unsigned int frames_; /// Nombre de frames écoulé depuis la dernière activation
-		std::string nom_; /// Nom de la compétance
+		float t_stay; ///Temps après lequel le projectile issu disparait
 
+		float t_; /// Temps écoulé depuis la dernière activation de la compétence
+		unsigned int frames_; /// Nombre de frames écoulé depuis la dernière activation
+
+		bool autoAim; ///état visée auto
 };
 
 #endif // CAPACITE_H

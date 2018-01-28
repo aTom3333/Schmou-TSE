@@ -23,22 +23,16 @@ Input_base<N>::Input_base(const sf::RenderWindow& w, Media m) : window_{w}
             break;
     }
 }
-/*
-template<size_t N>
-Input_base<N>::Input_base(const Input_base& other) : 
-    window_{other.window_},
-    
-
-{
-
-}*/
-
 
 
 template<size_t N>
 void Input_base<N>::init_default_keyboard()
 {
-    set_default_movement_keyboard();
+    movement_media_ = Media::Keyboard;
+    movement_input_.keyboard_ = {sf::Keyboard::Up,
+                                 sf::Keyboard::Down,
+                                 sf::Keyboard::Left,
+                                 sf::Keyboard::Right};
 
     for(size_t i = 0; i < N; ++i)
     {
@@ -51,7 +45,19 @@ void Input_base<N>::init_default_keyboard()
 template<size_t N>
 void Input_base<N>::init_default_joypad()
 {
-    set_default_movement_joypad();
+    movement_media_ = Media::Joypad;
+    movement_input_.joypad_.input_type_ = movement_input_t::joypad_t::Joystick;
+    movement_input_.joypad_.joypad_input_.joysticks_ = typename movement_input_t::joypad_t::joypad_input_t::joysticks_t();
+
+
+
+    if(find_next_joypad())
+    {
+        if(sf::Joystick::hasAxis(joypad_id_.value(), sf::Joystick::Axis::X))
+            movement_input_.joypad_.joypad_input_.joysticks_.left_right_axis_ = sf::Joystick::Axis::X;
+        if(sf::Joystick::hasAxis(joypad_id_.value(), sf::Joystick::Axis::Y))
+            movement_input_.joypad_.joypad_input_.joysticks_.up_down_axis_ = sf::Joystick::Axis::Y;
+    }
 
     for(size_t i = 0; i < N; ++i)
     {
@@ -270,7 +276,7 @@ Input_base<N>::~Input_base()
 }
 
 template<size_t N>
-void Input_base<N>::set_action_keyboard(size_t n, sf::Keyboard::Key key)
+void Input_base<N>::set_ation_keyboard(size_t n, sf::Keyboard::Key key)
 {
     if(n >= N)
         // throw std::out_of_range(""); // with exception

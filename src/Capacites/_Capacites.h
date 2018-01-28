@@ -9,6 +9,9 @@ Header contenant tous les headers de CAPACITES
 #include "CapPiou.h"
 #include "CapDash.h"
 #include "CapMissile.h"
+#include "CapAimBot.h"
+#include "CapBouclierRond.h"
+#include "CapBismillahBeam.h"
 
 #endif
 

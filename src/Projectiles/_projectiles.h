@@ -6,7 +6,7 @@
 #define _PROJECTILES_H
 
 #include "ProjTest.h"
-#include "ProjPiou.h"
+#include "ProjBouclierRond.h"
 #include "ProjMissile.h"
 
 #endif

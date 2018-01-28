@@ -1,6 +1,4 @@
 #include "ProjMissile.h"
-#include <cmath>
-
 
 ProjMissile::ProjMissile()
 {
@@ -31,9 +29,9 @@ ProjMissile::ProjMissile(float x, float y)
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
-	degats_ = 300;
+	degatsColl_ = 300;
 
-	//  Projectile qui se dï¿½place verticalement
+	//  Projectile qui se déplace verticalement
 	sens_ = 1;
 	a_ = 1.07 * sens_;
 	v_ = 10 * sens_;
@@ -55,6 +53,6 @@ void ProjMissile::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 
 void ProjMissile::agit(Entite & e)
 {
-	e.recoitDegats(degats_);
+	e.recoitDegats(degatsColl_);
 	detruit_ = true;
 }
