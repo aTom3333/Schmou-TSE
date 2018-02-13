@@ -67,6 +67,11 @@ class Input_base
         bool action(size_t n) const;
 
         void set_ation_keyboard(size_t n, sf::Keyboard::Key key);
+        void set_action_mouse(size_t n, sf::Mouse::Button button);
+        void set_default_movement_keyboard();
+        void set_default_movement_joypad();
+        void set_movement_mode(Input_base::Media movement_media);
+
 
     private:
         bool find_next_joypad();
