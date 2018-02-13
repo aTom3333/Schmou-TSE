@@ -323,7 +323,7 @@ void Input_base<N>::set_default_movement_joypad()
 }
 
 template<size_t N>
-void Input_base<N>::set_movement_mode(Input_base::Input::Media movement_media)
+void Input_base<N>::set_movement_mode(Input_base::Media movement_media)
 {
     switch(movement_media)
     {
