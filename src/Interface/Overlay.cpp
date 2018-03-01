@@ -2,6 +2,10 @@
 
 Overlay::Overlay()
 {
+}
+
+void Overlay::init(Vaisseau *vaisseau)
+{
 	font_.loadFromFile("../../rc/Font/hemi.ttf");
 	overlayText_.loadFromFile("../../rc/UI/overlay.png");
 	overlay_.setTexture(overlayText_);
@@ -13,39 +17,71 @@ Overlay::Overlay()
 		barre_[i].setFillColor({ 255, 255, 255, 102 });
 	}
 
-	for (int i = 0; i < 4; i++)
+	int n = 0;
+
+	for (int i = 0; i < vaisseau->getskills().size(); i++)
+	{
+		vaisseau->getskills()[i]->initIcon(n);
+		n += vaisseau->getskills()[i]->getAffiche() ? 1 : 0;
+	}
+
+	statuts_ = new sf::Text[n];
+	for (int i = 0; i < n; i++)
 	{
 		statuts_[i].setFont(font_);
 		statuts_[i].setCharacterSize(20);
-		statuts_[i].setFillColor({ 255, 255, 255, 102 });
-		statuts_[i].setPosition(164, 108 + 25 * i);
+		statuts_[i].setFillColor({ 0, 0, 0, 102 });
+		statuts_[i].setPosition(935, 185 + 135 * i);
 	}
 }
 
 Overlay::~Overlay()
 {
+	delete[] statuts_;
 }
 
-void Overlay::draw(sf::RenderWindow & window, bool bDraw)
+void Overlay::draw(sf::RenderWindow & window, Vaisseau * vaisseau, bool bDraw)
 {
 	if (bDraw)
 	{
 		window.draw(overlay_);
 		for(int i = 0; i < 3; i++)
 			window.draw(barre_[i]);
-		for (int i = 0; i < 4; i++)
-			window.draw(statuts_[i]);
+
+		int n = 0;
+		for (int i = 0; i < vaisseau->getskills().size(); i++)
+		{
+			if (vaisseau->getskills()[i]->getAffiche())
+			{
+				window.draw(vaisseau->getskills()[i]->getIcon());
+				window.draw(statuts_[n]);
+				n++;
+			}
+			
+		}
+			
 	}
 }
 
-void Overlay::gestion(Entite * vaisseau)
+void Overlay::gestion(Vaisseau * vaisseau)
 {
 	barre_[0].setSize({ OVERLAY_BARRE_W*vaisseau->getPV() / vaisseau->getPVMax(), OVERLAY_BARRE_H });
 	barre_[1].setSize({ OVERLAY_BARRE_W*vaisseau->getArmure() / vaisseau->getArmureMax(), OVERLAY_BARRE_H });
 	barre_[2].setSize({ OVERLAY_BARRE_W*vaisseau->getBouclier() / vaisseau->getBouclierMax(), OVERLAY_BARRE_H });
 
-	statuts_[0].setString("Statuts : ok");
-	statuts_[1].setString("Coque : " + std::to_string((int)(vaisseau->getPV() / vaisseau->getPVMax() * 100))+"%");
-	statuts_[2].setString("Armure : " + std::to_string((int)(vaisseau->getArmure() / vaisseau->getArmureMax() * 100))+"%");
-	statuts_[3].setString("Bouclier : " + std::to_string((int)(vaisseau->getBouclier() / vaisseau->getBouclierMax() * 100))+"%");
+
+	int n = 0;
+	for (int i = 0; i < vaisseau->getskills().size(); i++)
+	{
+		if (vaisseau->getskills()[i]->getAffiche())
+		{
+			int cooldown = (int)(vaisseau->getskills()[i]->getCooldown() - vaisseau->getskills()[i]->getTime());
+			std::string str = cooldown <= 0 ? "Ready" : std::to_string(cooldown);
+			statuts_[n].setString(str);
+
+			statuts_[n].setPosition(1015 - statuts_[n].getLocalBounds().width, statuts_[n].getPosition().y);
+			n++;
+		}
+	}
+		
 }
