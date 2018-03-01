@@ -5,11 +5,11 @@
 
 /**
 * @class CapAimBot
-* @brief donne visée auto à un skill (missile)
+* @brief donne vis�e auto � un skill (missile)
 *
-* Capacité qui permet de donner un mode visée auto à un autre skill du vaisseau.
+* Capacit� qui permet de donner un mode vis�e auto � un autre skill du vaisseau.
 * Niveau 1 : seulement le prochain tir
-* Niveau supérieurs : plusieurs tirs
+* Niveau sup�rieurs : plusieurs tirs
 *
 * Cooldown : 10sec
 */
@@ -18,7 +18,7 @@
 class CapAimBot : public Capacite
 {
 private:
-	
+	bool autoAim_;
 public:
 
 
@@ -57,7 +57,7 @@ public:
 
 };
 
-#endif AIMBOT_H
+#endif //AIMBOT_H
 
 
 
