@@ -8,3 +8,9 @@
     17:36 "C'est facile" - Pierre 2017 à propos du mouvement brownien alors qu'il galère avec les *ProjTest
     
     21:00 les collisions c'est comme Dieu : on en parle beaucoup et on voudrait y croire mais personne n'en a jamais vues.
+
+
+01/03/2018
+    Reprise d'activité après 2 mois, Pierre avait tout cassé. Cyril est relou donc on fait des optional.
+    Merci Andrzej Krzemienski !
+    Les deux compères qui m'accompagnent ont enfin compris size_t (signé Thomas le train).

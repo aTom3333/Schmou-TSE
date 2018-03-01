@@ -117,21 +117,21 @@ float Entite::getDegats()
 
 void Entite::regen(sf::Time t)
 {
-	// Mise à jour du timer
+	// Mise Ã  jour du timer
 	t_regen_ += t.asMilliseconds();
 
-	// Si 100 ms se sont écoulé
+	// Si 100 ms se sont Ã©coulÃ©
 	if (t_regen_ >= 50)
 	{
-		// Réinitialisation du timer
+		// RÃ©initialisation du timer
 		t_regen_ = 0;
 
-		// Régénération des différentes statistiques
+		// RÃ©gÃ©nÃ©ration des diffÃ©rentes statistiques
 		pv_ += regenPV_;
 		armure_ += regenARM_;
 		bouclier_ += regenBOU_;
 
-		// Si le seuil maximal est dépassé
+		// Si le seuil maximal est dÃ©passÃ©
 		if (pv_ > pvMax_)
 			pv_ = pvMax_;
 		if (armure_ > armureMax_)
@@ -147,18 +147,18 @@ void Entite::recoitDegats(float degats)
 
 	bouclier_ -= restant;
 
-	// Si le bouclier est détruit
+	// Si le bouclier est dÃ©truit
 	if (bouclier_ < 0)
 	{
-		// Récupération des dégats restant
+		// RÃ©cupÃ©ration des dÃ©gats restant
 		restant = -bouclier_;
 		bouclier_ = 0;
 	}
-	// Sinon le bouclier a absorbé tout les dégats 
+	// Sinon le bouclier a absorbÃ© tout les dÃ©gats 
 	else
 		restant = 0;
 
-	float reductionArmure = 0.7; // Multiplicateur de réduction de dégats de l'armure
+	float reductionArmure = 0.7; // Multiplicateur de rÃ©duction de dÃ©gats de l'armure
 	armure_ -= restant * reductionArmure;
 	if (armure_ < 0)
 	{
