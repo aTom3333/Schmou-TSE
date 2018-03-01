@@ -6,10 +6,12 @@ Overlay::Overlay()
 
 void Overlay::init(Vaisseau *vaisseau)
 {
+	// Chargement des images
 	font_.loadFromFile("../../rc/Font/hemi.ttf");
 	overlayText_.loadFromFile("../../rc/UI/overlay.png");
 	overlay_.setTexture(overlayText_);
 
+	// Initialisation des barre de vie, d'armure et de bouclier
 	for (int i = 0; i < 3; i++)
 	{
 		barre_[i].setSize({ OVERLAY_BARRE_W, OVERLAY_BARRE_H });
@@ -17,14 +19,17 @@ void Overlay::init(Vaisseau *vaisseau)
 		barre_[i].setFillColor({ 255, 255, 255, 102 });
 	}
 
+	// Compteur qui permet de connaitre le nombre de capacités a afficher
 	int n = 0;
 
+	// Initialisation des icones
 	for (int i = 0; i < vaisseau->getskills().size(); i++)
 	{
 		vaisseau->getskills()[i]->initIcon(n);
 		n += vaisseau->getskills()[i]->getAffiche() ? 1 : 0;
 	}
 
+	// Initialisation du texte affichant les cooldowns
 	statuts_ = new sf::Text[n];
 	for (int i = 0; i < n; i++)
 	{
@@ -42,6 +47,7 @@ Overlay::~Overlay()
 
 void Overlay::draw(sf::RenderWindow & window, Vaisseau * vaisseau, bool bDraw)
 {
+	// Affichage de l'overlay
 	if (bDraw)
 	{
 		window.draw(overlay_);
@@ -57,7 +63,6 @@ void Overlay::draw(sf::RenderWindow & window, Vaisseau * vaisseau, bool bDraw)
 				window.draw(statuts_[n]);
 				n++;
 			}
-			
 		}
 			
 	}
@@ -65,6 +70,8 @@ void Overlay::draw(sf::RenderWindow & window, Vaisseau * vaisseau, bool bDraw)
 
 void Overlay::gestion(Vaisseau * vaisseau)
 {
+
+	// Gestion de barres de vie, d'armure et de bouclier
 	barre_[0].setSize({ OVERLAY_BARRE_W*vaisseau->getPV() / vaisseau->getPVMax(), OVERLAY_BARRE_H });
 	barre_[1].setSize({ OVERLAY_BARRE_W*vaisseau->getArmure() / vaisseau->getArmureMax(), OVERLAY_BARRE_H });
 	barre_[2].setSize({ OVERLAY_BARRE_W*vaisseau->getBouclier() / vaisseau->getBouclierMax(), OVERLAY_BARRE_H });

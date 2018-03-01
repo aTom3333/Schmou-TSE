@@ -26,10 +26,9 @@ class Overlay
 		sf::Sprite overlay_; /// Sprite de la partie de l'overlay qui n'intéragie pas
 
 		sf::Font font_; /// Police des textes
-		sf::Text *statuts_; /// Texte d'info
+		sf::Text *statuts_; /// Texte des cooldowns
 
-		// TODO Solution temporaire
-			sf::RectangleShape barre_[3]; /// Rectangle indiquant la vie, l'armure et les boucliers
+		sf::RectangleShape barre_[3]; /// Rectangle indiquant la vie, l'armure et les boucliers
 };
 
 
