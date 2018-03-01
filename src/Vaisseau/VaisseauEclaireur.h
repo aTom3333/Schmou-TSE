@@ -8,10 +8,10 @@
 
 /**
 * @class VaisseauEclaireur
-* @brief classe d'un ennemi de base : l'éclaireur
+* @brief classe d'un ennemi de base : l'Ã©claireur
 *
 * Eclaireur : Vaisseau ennemi
-* Comportement : Déplacement (Linéaire, Parabolique, Sinsoidale) uniquement : pas de tir
+* Comportement : DÃ©placement (LinÃ©aire, Parabolique, Sinsoidale) uniquement : pas de tir
 */
 
 class VaisseauEclaireur : public Vaisseau
@@ -20,16 +20,16 @@ public:
 	/**
 	* @fn VaisseauEclaireur
 	* @brief Contructeur
-	* @param x Abscisse de la position de départ
-	* @param y Ordonnée de la position de départ
-	* @param traj Trajectoire voulue (Linéaire, parabolique ou sinusoidale)
+	* @param x Abscisse de la position de dÃ©part
+	* @param y OrdonnÃ©e de la position de dÃ©part
+	* @param traj Trajectoire voulue (LinÃ©aire, parabolique ou sinusoidale)
 	* @param param1  Lineaire : Sens			Parabolique : Sens							Sinusoidale : Sens (1/-1)
-	* @param param2  Lineaire : Pente			Parabolique : Ordonnée de l'extremum		Sinusoidale : Période (spatiale)
-	* @param param3  Lineaire : Inutilisé		Parabolique : Abscisse de l'extremum		Sinusoidale : Amplitude
-	* @param param4  Lineaire : Inutilisé		Parabolique : Inutilisé						Sinusoidale : Pente
+	* @param param2  Lineaire : Pente			Parabolique : OrdonnÃ©e de l'extremum		Sinusoidale : PÃ©riode (spatiale)
+	* @param param3  Lineaire : InutilisÃ©		Parabolique : Abscisse de l'extremum		Sinusoidale : Amplitude
+	* @param param4  Lineaire : InutilisÃ©		Parabolique : InutilisÃ©						Sinusoidale : Pente
 	*
-	* Initialise le vaisseau à position et à la trajectoires désirées
-	* Equations si le vaisseau est en fonction du temps écoulé depuis la création:
+	* Initialise le vaisseau Ã  position et Ã  la trajectoires dÃ©sirÃ©es
+	* Equations si le vaisseau est en fonction du temps Ã©coulÃ© depuis la crÃ©ation:
 		- Lineraire : 
 			x = x0 + sens*v*t
 			y = pente*(x - x0) + y0
@@ -37,8 +37,8 @@ public:
 			x = x0 + sens*v*t (faux mais approximation si la parabole est assez large)
 			y = (y0 - ordonnee)/(x0 - abscisse)^2 * (x - abscisse)^2 + ordonnee
 		- Sinusoidale :
-			x = x0 + sens*v*t (faux mais approximation si la différence de temps est très petite devant la période)
-			y = pente * (x - x0) + y0 + amplitude * sin(2*pi/période * x)
+			x = x0 + sens*v*t (faux mais approximation si la diffÃ©rence de temps est trÃ¨s petite devant la pÃ©riode)
+			y = pente * (x - x0) + y0 + amplitude * sin(2*pi/pÃ©riode * x)
 	*/
 	VaisseauEclaireur(float x, float y, Trajectoire traj, float param1, float param2, float param3 = 0, float param4 = 0);
 	/**
@@ -50,31 +50,31 @@ public:
 	~VaisseauEclaireur();
 	/**
 	* @fn gestion
-	* @brief Gère le comportement du vaisseau
-	* @param window Fenetre SFML où le vaisseau sera affiché
-	* @param tempsEcoule Temps écoulé depuis le dernier appel
-	* @param input Classe Input donnant accés aux entrée
+	* @brief GÃ¨re le comportement du vaisseau
+	* @param window Fenetre SFML oÃ¹ le vaisseau sera affichÃ©
+	* @param tempsEcoule Temps Ã©coulÃ© depuis le dernier appel
+	* @param input Classe Input donnant accÃ©s aux entrÃ©e
 	*
-	* Gère le déplacement et l'affichage du vaisseau
+	* GÃ¨re le dÃ©placement et l'affichage du vaisseau
 	*/
-	void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input);
+	void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input);
 	/**
 	* @fn destruction
-	* @brief Procedure a effectuer lorsque le vaisseau est détruit
+	* @brief Procedure a effectuer lorsque le vaisseau est dÃ©truit
 	*
-	* Détruit l'entité
+	* DÃ©truit l'entitÃ©
 	*/
 	void destruction() { detruit_ = true; }
 
 private:
-	sf::Vector2f posInit_; ///position de départ
-	std::vector<float> params_; ///vecteur des paramètres, voir dans @c VaisseauEclaireur
+	sf::Vector2f posInit_; ///position de dÃ©part
+	std::vector<float> params_; ///vecteur des paramÃ¨tres, voir dans @c VaisseauEclaireur
 	// param1 Lineaire : Sens			Parabolique : Sens							Sinusoidale : Sens (1/-1)
-	// param2 Lineaire : Pente			Parabolique : Ordonnée de l'extremum		Sinusoidale : Période (spatiale)
-	// param3 Lineaire : Inutilisé		Parabolique : Abscisse de l'extremum		Sinusoidale : Amplitude
-	// param4 Lineaire : Inutilisé		Parabolique : Inutilisé						Sinusoidale : Pente
+	// param2 Lineaire : Pente			Parabolique : OrdonnÃ©e de l'extremum		Sinusoidale : PÃ©riode (spatiale)
+	// param3 Lineaire : InutilisÃ©		Parabolique : Abscisse de l'extremum		Sinusoidale : Amplitude
+	// param4 Lineaire : InutilisÃ©		Parabolique : InutilisÃ©						Sinusoidale : Pente
 	Trajectoire trajectoire_; /// Trajectoire du vaisseau
-	float t_; /// Temps écoulé depuis la création (temps de vie)
+	float t_; /// Temps Ã©coulÃ© depuis la crÃ©ation (temps de vie)
 	int frames_;/// temps de vie dans une trajectoire
 	
 };

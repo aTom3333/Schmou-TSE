@@ -2,10 +2,13 @@
 
 CapDash::CapDash()
 {
+	capText_.loadFromFile("../../rc/Capacites/dash.png");
+	capacite_.setTexture(capText_);
 	cooldown_ = 500;
 	frames_ = cooldown_;
 	t_ = cooldown_;
 	nom_ = "Dash";
+	affiche_ = true;
 }
 
 

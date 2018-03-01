@@ -4,6 +4,15 @@
 
 {\ttfamily \#include $<$Input.\+h$>$}
 
+
+
+Graphe de collaboration de Input\+\_\+base$<$ N $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_input__base__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Types publics}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,13 +25,19 @@ enum \hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6}{Media} \{ \
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-sf\+::\+Vector2f \hyperlink{class_input__base_a61bba67b702dfd77db2091409ab1d20b}{move} (float max\+\_\+speed, const sf\+::\+Time \&elapsed\+\_\+time)
-\begin{DoxyCompactList}\small\item\em Renvoie le déplacement que l\textquotesingle{}état des entrées induit. \end{DoxyCompactList}\item 
 \hyperlink{class_input__base_a4e1efd96da3e870a9b2f6613b99e6c00}{Input\+\_\+base} (const sf\+::\+Render\+Window \&w, \hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6}{Media} m=\hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6a6ce4d85a628a88bbdb3ac24a8e5a9c2e}{Media\+::\+Keyboard})
 \begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{class_input__base}{Input\+\_\+base}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$size\+\_\+t M$>$ }\\bool \hyperlink{class_input__base_a48b1df2773bd0bea3c547332f2337af6}{action} () const
+\hyperlink{class_input__base_a7dabafa58d0e4bd94a84562900d06a5e}{$\sim$\+Input\+\_\+base} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \hyperlink{class_input__base_a61bba67b702dfd77db2091409ab1d20b}{move} (float max\+\_\+speed, const sf\+::\+Time \&elapsed\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Renvoie le déplacement que l\textquotesingle{}état des entrées induit. \end{DoxyCompactList}\item 
+bool \hyperlink{class_input__base_a2ac741377832fd670954dba5abf82a10}{action} (size\+\_\+t n) const
+\begin{DoxyCompactList}\small\item\em Teste si une action est en cours. \end{DoxyCompactList}\item 
+void \hyperlink{class_input__base_a4c0631d64c47b84db480a9098f5a8e1b}{set\+\_\+ation\+\_\+keyboard} (size\+\_\+t n, sf\+::\+Keyboard\+::\+Key key)
 \item 
-bool \hyperlink{class_input__base_ab525fda1b2cc71094d8c0940c80cba27}{action} (size\+\_\+t n) const
+void \hyperlink{class_input__base_a302f14b88b743a1b6510d632c141971f}{set\+\_\+ation\+\_\+mouse} (size\+\_\+t n, sf\+::\+Mouse\+::\+Button button)
+\item 
+void \hyperlink{class_input__base_a103633f42d3fa58352a12b54ed4b3faf}{set\+\_\+movement\+\_\+mode} (\hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6}{Media} movement\+\_\+media)
 \end{DoxyCompactItemize}
 
 
@@ -70,31 +85,53 @@ Touchscreen&\\
 
 Constructeur de \hyperlink{class_input__base}{Input\+\_\+base}. 
 
+Constructeur de copie.
+
 Constructeur qui initialise l\textquotesingle{}état de l\textquotesingle{}objet 
 \begin{DoxyParams}[1]{Paramètres}
 \mbox{\tt in}  & {\em w} & Une référence vers une sf\+::\+Render\+Window qui permet de récupérer des informations sur ses entrées \\
 \hline
-\mbox{\tt in}  & {\em m} & Le type de Media à utiliser pour toutes les actions par défaut \\
+\mbox{\tt in}  & {\em m} & Le type de Media à utiliser pour toutes les actions par défaut\\
 \hline
 \end{DoxyParams}
+Constructeur qui crée un nouvel objet en copiant un autre 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in}  & {\em other} & Un autre \hyperlink{class_input__base}{Input\+\_\+base} à copier \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_input__base_a7dabafa58d0e4bd94a84562900d06a5e}\label{class_input__base_a7dabafa58d0e4bd94a84562900d06a5e}} 
+\index{Input\+\_\+base@{Input\+\_\+base}!````~Input\+\_\+base@{$\sim$\+Input\+\_\+base}}
+\index{````~Input\+\_\+base@{$\sim$\+Input\+\_\+base}!Input\+\_\+base@{Input\+\_\+base}}
+\subsubsection{\texorpdfstring{$\sim$\+Input\+\_\+base()}{~Input\_base()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+\hyperlink{class_input__base}{Input\+\_\+base}$<$ N $>$\+::$\sim$\hyperlink{class_input__base}{Input\+\_\+base} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Destructeur. 
+
+Destructeur qui se contente de libérer la place si l\textquotesingle{}objet utilisait une manette 
 
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_input__base_a48b1df2773bd0bea3c547332f2337af6}\label{class_input__base_a48b1df2773bd0bea3c547332f2337af6}} 
+\mbox{\Hypertarget{class_input__base_a2ac741377832fd670954dba5abf82a10}\label{class_input__base_a2ac741377832fd670954dba5abf82a10}} 
 \index{Input\+\_\+base@{Input\+\_\+base}!action@{action}}
 \index{action@{action}!Input\+\_\+base@{Input\+\_\+base}}
-\subsubsection{\texorpdfstring{action()}{action()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{action()}{action()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
-template$<$size\+\_\+t M$>$ \\
-bool \hyperlink{class_input__base}{Input\+\_\+base}$<$ N $>$\+::action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+\hyperlink{class_input__base}{Input\+\_\+base}$<$ N $>$\+::action (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_input__base_ab525fda1b2cc71094d8c0940c80cba27}\label{class_input__base_ab525fda1b2cc71094d8c0940c80cba27}} 
-\index{Input\+\_\+base@{Input\+\_\+base}!action@{action}}
-\index{action@{action}!Input\+\_\+base@{Input\+\_\+base}}
-\subsubsection{\texorpdfstring{action()}{action()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
-bool \hyperlink{class_input__base}{Input\+\_\+base}$<$ N $>$\+::action (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n }\end{DoxyParamCaption}) const}
 
+
+Teste si une action est en cours. 
+
+Cette fonction permet de vérifiée si une action est en cours, càd si le bouton/la touche qui correspond est pressé 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\tt in}  & {\em n} & Le numéro de l\textquotesingle{}action à tester \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un {\ttfamily bool} qui vaut {\itshape true} si l\textquotesingle{}action est en cours et {\itshape false} sinon 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_input__base_a61bba67b702dfd77db2091409ab1d20b}\label{class_input__base_a61bba67b702dfd77db2091409ab1d20b}} 
 \index{Input\+\_\+base@{Input\+\_\+base}!move@{move}}
 \index{move@{move}!Input\+\_\+base@{Input\+\_\+base}}
@@ -116,6 +153,27 @@ Cette fonction permet de calculer le déplacement qui doit être effectué sur l
 \begin{DoxyReturn}{Renvoie}
 Un {\ttfamily sf\+::\+Vector2f} qui contient le déplacement qui doit être effectué sur les deux axes 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_input__base_a4c0631d64c47b84db480a9098f5a8e1b}\label{class_input__base_a4c0631d64c47b84db480a9098f5a8e1b}} 
+\index{Input\+\_\+base@{Input\+\_\+base}!set\+\_\+ation\+\_\+keyboard@{set\+\_\+ation\+\_\+keyboard}}
+\index{set\+\_\+ation\+\_\+keyboard@{set\+\_\+ation\+\_\+keyboard}!Input\+\_\+base@{Input\+\_\+base}}
+\subsubsection{\texorpdfstring{set\+\_\+ation\+\_\+keyboard()}{set\_ation\_keyboard()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+void \hyperlink{class_input__base}{Input\+\_\+base}$<$ N $>$\+::set\+\_\+ation\+\_\+keyboard (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n,  }\item[{sf\+::\+Keyboard\+::\+Key}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_input__base_a302f14b88b743a1b6510d632c141971f}\label{class_input__base_a302f14b88b743a1b6510d632c141971f}} 
+\index{Input\+\_\+base@{Input\+\_\+base}!set\+\_\+ation\+\_\+mouse@{set\+\_\+ation\+\_\+mouse}}
+\index{set\+\_\+ation\+\_\+mouse@{set\+\_\+ation\+\_\+mouse}!Input\+\_\+base@{Input\+\_\+base}}
+\subsubsection{\texorpdfstring{set\+\_\+ation\+\_\+mouse()}{set\_ation\_mouse()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+void \hyperlink{class_input__base}{Input\+\_\+base}$<$ N $>$\+::set\+\_\+ation\+\_\+mouse (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n,  }\item[{sf\+::\+Mouse\+::\+Button}]{button }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_input__base_a103633f42d3fa58352a12b54ed4b3faf}\label{class_input__base_a103633f42d3fa58352a12b54ed4b3faf}} 
+\index{Input\+\_\+base@{Input\+\_\+base}!set\+\_\+movement\+\_\+mode@{set\+\_\+movement\+\_\+mode}}
+\index{set\+\_\+movement\+\_\+mode@{set\+\_\+movement\+\_\+mode}!Input\+\_\+base@{Input\+\_\+base}}
+\subsubsection{\texorpdfstring{set\+\_\+movement\+\_\+mode()}{set\_movement\_mode()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+void \hyperlink{class_input__base}{Input\+\_\+base}$<$ N $>$\+::set\+\_\+movement\+\_\+mode (\begin{DoxyParamCaption}\item[{\hyperlink{class_input__base}{Input\+\_\+base}$<$ N $>$\+::\hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6}{Media}}]{movement\+\_\+media }\end{DoxyParamCaption})}
+
 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}

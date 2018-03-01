@@ -1,5 +1,6 @@
 <map id="Capacite" name="Capacite">
-<area shape="rect" id="node2" href="$class_cap_dash.html" title="Classe Capacité permettant de dash. " alt="" coords="5,80,83,107"/>
-<area shape="rect" id="node3" href="$class_cap_piou.html" title="Classe Capacité de base. " alt="" coords="107,80,179,107"/>
-<area shape="rect" id="node4" href="$class_cap_test.html" title="Classe Capacité de test. " alt="" coords="203,80,275,107"/>
+<area shape="rect" id="node2" href="$class_cap_dash.html" title="Classe Capacité permettant de dash. " alt="" coords="5,299,104,406"/>
+<area shape="rect" id="node3" href="$class_cap_missile.html" title="Classe Capacité de base. " alt="" coords="128,299,235,406"/>
+<area shape="rect" id="node4" href="$class_cap_piou.html" title="Classe Capacité de base. " alt="" coords="259,299,357,406"/>
+<area shape="rect" id="node5" href="$class_cap_test.html" title="Classe Capacité de test. " alt="" coords="382,292,482,413"/>
 </map>

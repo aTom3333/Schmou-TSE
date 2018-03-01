@@ -2,11 +2,12 @@
 #define INPUT_H
 
 #include <SFML/Graphics.hpp>
-#include <optional>
 #include <bitset>
 #include "../constantes.h"
+#include "../Utilitaires/optional.h"
 
-
+using std::experimental::optional;
+using std::experimental::nullopt;
 
 template<size_t N>
 class Input_base
@@ -33,6 +34,15 @@ class Input_base
          * @param [in] m Le type de Media à utiliser pour toutes les actions par défaut
          */
         explicit Input_base(const sf::RenderWindow& w, Media m = Media::Keyboard);
+    
+        /**
+         * @fn Input_base
+         * @brief Constructeur de copie
+         * 
+         * Constructeur qui crée un nouvel objet en copiant un autre
+         * @param [in] other Un autre Input_base à copier
+         */
+        //Input_base(const Input_base& other);
 
         /**
          * @fn ~Input_base
@@ -59,14 +69,19 @@ class Input_base
          * @fn action
          * @brief Teste si une action est en cours
          *
-         * Cette fonction permet de vérifiée si une action est en cours, càd si le bouton/la touche qui correspond
+         * Cette fonction permet de vérifier si une action est en cours, càd si le bouton/la touche qui correspond
          * est pressé
          * @param [in] n Le numéro de l'action à tester
          * @return Un @c bool qui vaut @a true si l'action est en cours et @a false sinon
          */
         bool action(size_t n) const;
 
-        void set_ation_keyboard(size_t n, sf::Keyboard::Key key);
+        void set_action_keyboard(size_t n, sf::Keyboard::Key key);
+        void set_action_mouse(size_t n, sf::Mouse::Button button);
+        void set_default_movement_keyboard();
+        void set_default_movement_joypad();
+        void set_movement_mode(Media movement_media);
+
 
     private:
         bool find_next_joypad();
@@ -87,19 +102,22 @@ class Input_base
         static std::bitset<8> joypad_availability_;
         const sf::RenderWindow& window_; ///< Référence vers la fenêtre par rapport à laquelle les entrées sont traitées
         Media movement_media_; ///< Media qui gère le déplacement
-        std::optional<unsigned int> joypad_id_;
+        optional<unsigned int> joypad_id_;
         /// @cond NO_DOC_PRIVATE_CLASSES
+    
+    
         union movement_input_t {
             movement_input_t() {keyboard_ = {sf::Keyboard::Up,
                                              sf::Keyboard::Down,
                                              sf::Keyboard::Left,
                                              sf::Keyboard::Right};}
+            ~movement_input_t() {};
             struct keyboard_t {
                 // Movement Keyboard binding
-                std::optional<sf::Keyboard::Key> up_key_;
-                std::optional<sf::Keyboard::Key> down_key_;
-                std::optional<sf::Keyboard::Key> left_key_;
-                std::optional<sf::Keyboard::Key> right_key_;
+                optional<sf::Keyboard::Key> up_key_;
+                optional<sf::Keyboard::Key> down_key_;
+                optional<sf::Keyboard::Key> left_key_;
+                optional<sf::Keyboard::Key> right_key_;
             } keyboard_;
             struct joypad_t {
                 // Movement Joystick binding
@@ -107,30 +125,33 @@ class Input_base
                 union joypad_input_t {
                     joypad_input_t() {joysticks_ = joysticks_t();}
                     struct buttons_t {
-                        std::optional<unsigned int> up_button_;
-                        std::optional<unsigned int> down_button_;
-                        std::optional<unsigned int> left_button_;
-                        std::optional<unsigned int> right_button_;
+                        optional<unsigned int> up_button_;
+                        optional<unsigned int> down_button_;
+                        optional<unsigned int> left_button_;
+                        optional<unsigned int> right_button_;
                     } buttons_;
                     struct joysticks_t {
-                        std::optional<sf::Joystick::Axis> up_down_axis_;
-                        std::optional<bool> up_down_dir_;
-                        std::optional<sf::Joystick::Axis> left_right_axis_;
-                        std::optional<bool> left_right_dir_;
+                        optional<sf::Joystick::Axis> up_down_axis_;
+                        optional<bool> up_down_dir_;
+                        optional<sf::Joystick::Axis> left_right_axis_;
+                        optional<bool> left_right_dir_;
                     } joysticks_;
                 } joypad_input_;
             } joypad_;
             struct mouse_t {
-                std::optional<sf::Vector2f> last_pos_;
+                optional<sf::Vector2f> last_pos_;
             } mouse_;
         } movement_input_;
         struct action_t {
+            action_t() {};
+            ~action_t() {};
             Media action_media_;
             union binding_t {
-                binding_t() {keyboard_key_ = std::nullopt;}
-                std::optional<sf::Keyboard::Key> keyboard_key_;
-                std::optional<unsigned int> joypad_button_;
-                std::optional<sf::Mouse::Button> mouse_button_;
+                binding_t() {}
+                ~binding_t() {};
+                optional<sf::Keyboard::Key> keyboard_key_;
+                optional<unsigned int> joypad_button_;
+                optional<sf::Mouse::Button> mouse_button_;
             } binding_;
         };
         action_t actions_[N];

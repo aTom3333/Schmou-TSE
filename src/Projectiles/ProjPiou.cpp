@@ -1,5 +1,5 @@
 #include "ProjPiou.h"
-
+#include <cmath>
 
 
 ProjPiou::ProjPiou()

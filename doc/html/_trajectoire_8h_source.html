@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Schmou&#39;TSE:  Fichier source de src/Utilitaires/Trajectoire.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Schmou&#39;TSE
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7bcc001f3717f1c94ddcda8dc570557c.html">Utilitaires</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Trajectoire.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_trajectoire_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef Trajectoire_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define Trajectoire_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95">   14</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95">Trajectoire</a></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95a8bc010f4818a3f1553fbb13140ef7764">   16</a></span>&#160;    <a class="code" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95a8bc010f4818a3f1553fbb13140ef7764">LINEAIRE</a>,</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95a2e1c07250c4de3cf6c0db9a42dd0870b">   17</a></span>&#160;    <a class="code" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95a2e1c07250c4de3cf6c0db9a42dd0870b">PARABOLIQUE</a>,</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95a33f374dc94a3ff34a023886c4e6e7102">   18</a></span>&#160;    <a class="code" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95a33f374dc94a3ff34a023886c4e6e7102">SINUS</a>,</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95a90e1b7efef28fa0dc94c0af827f8c5a9">   19</a></span>&#160;    <a class="code" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95a90e1b7efef28fa0dc94c0af827f8c5a9">MOUTON</a></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;sf::Vector2f <a class="code" href="_trajectoire_8h.html#acb6b19dacbcb60977ea16b36c5888404">traj_position</a>(<a class="code" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95">Trajectoire</a> trajectoire,<span class="keywordtype">float</span> t, <span class="keywordtype">float</span> vit_, sf::Vector2f posInit, std::vector&lt;float&gt; params);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif // !Trajectoire_H</span></div><div class="ttc" id="_trajectoire_8h_html_afa7f6e8323d7ee755d93cd1f6019dd95a2e1c07250c4de3cf6c0db9a42dd0870b"><div class="ttname"><a href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95a2e1c07250c4de3cf6c0db9a42dd0870b">PARABOLIQUE</a></div><div class="ttdef"><b>Definition:</b> Trajectoire.h:17</div></div>
+<div class="ttc" id="_trajectoire_8h_html_afa7f6e8323d7ee755d93cd1f6019dd95"><div class="ttname"><a href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95">Trajectoire</a></div><div class="ttdeci">Trajectoire</div><div class="ttdoc">liste �num�r�e des types possibles de trajectoire </div><div class="ttdef"><b>Definition:</b> Trajectoire.h:14</div></div>
+<div class="ttc" id="_trajectoire_8h_html_afa7f6e8323d7ee755d93cd1f6019dd95a90e1b7efef28fa0dc94c0af827f8c5a9"><div class="ttname"><a href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95a90e1b7efef28fa0dc94c0af827f8c5a9">MOUTON</a></div><div class="ttdef"><b>Definition:</b> Trajectoire.h:19</div></div>
+<div class="ttc" id="_trajectoire_8h_html_afa7f6e8323d7ee755d93cd1f6019dd95a33f374dc94a3ff34a023886c4e6e7102"><div class="ttname"><a href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95a33f374dc94a3ff34a023886c4e6e7102">SINUS</a></div><div class="ttdef"><b>Definition:</b> Trajectoire.h:18</div></div>
+<div class="ttc" id="_trajectoire_8h_html_afa7f6e8323d7ee755d93cd1f6019dd95a8bc010f4818a3f1553fbb13140ef7764"><div class="ttname"><a href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95a8bc010f4818a3f1553fbb13140ef7764">LINEAIRE</a></div><div class="ttdef"><b>Definition:</b> Trajectoire.h:16</div></div>
+<div class="ttc" id="_trajectoire_8h_html_acb6b19dacbcb60977ea16b36c5888404"><div class="ttname"><a href="_trajectoire_8h.html#acb6b19dacbcb60977ea16b36c5888404">traj_position</a></div><div class="ttdeci">sf::Vector2f traj_position(Trajectoire trajectoire, float t, float vit_, sf::Vector2f posInit, std::vector&lt; float &gt; params)</div><div class="ttdef"><b>Definition:</b> Trajectoire.cpp:4</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

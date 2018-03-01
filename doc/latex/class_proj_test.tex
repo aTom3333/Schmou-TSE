@@ -15,7 +15,7 @@ Graphe d\textquotesingle{}héritage de Proj\+Test\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=137pt]{class_proj_test__inherit__graph}
+\includegraphics[height=550pt]{class_proj_test__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -24,7 +24,7 @@ Graphe de collaboration de Proj\+Test\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=137pt]{class_proj_test__coll__graph}
+\includegraphics[height=550pt]{class_proj_test__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Fonctions membres publiques}
@@ -36,9 +36,9 @@ Graphe de collaboration de Proj\+Test\+:\nopagebreak
 \item 
 \hyperlink{class_proj_test_a9bc10c512035ae9f3294179c5d2db808}{$\sim$\+Proj\+Test} ()
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
-void \hyperlink{class_proj_test_a6649e6591e463315aa9513854e2515d4}{gestion} (sf\+::\+Render\+Window \&window)
+void \hyperlink{class_proj_test_aec696ef399dbe4a7d6cbca6d68196909}{gestion} (sf\+::\+Render\+Window \&window, sf\+::\+Time temps\+Ecoule)
 \begin{DoxyCompactList}\small\item\em Gestion du projectile. \end{DoxyCompactList}\item 
-void \hyperlink{class_proj_test_a3adb674973dcd21c6ddaee809b719a65}{agit} (\hyperlink{class_vaisseau}{Vaisseau} \&v)
+void \hyperlink{class_proj_test_a1a20ef0f16a8b58c653a1cf1544ef0b7}{agit} (\hyperlink{class_entite}{Entite} \&proj)
 \begin{DoxyCompactList}\small\item\em Procédure lorsque le projectile agit avec unvaisseau. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membres hérités additionnels}
 
@@ -85,11 +85,11 @@ Destructeur.
 Vide 
 
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_proj_test_a3adb674973dcd21c6ddaee809b719a65}\label{class_proj_test_a3adb674973dcd21c6ddaee809b719a65}} 
+\mbox{\Hypertarget{class_proj_test_a1a20ef0f16a8b58c653a1cf1544ef0b7}\label{class_proj_test_a1a20ef0f16a8b58c653a1cf1544ef0b7}} 
 \index{Proj\+Test@{Proj\+Test}!agit@{agit}}
 \index{agit@{agit}!Proj\+Test@{Proj\+Test}}
 \subsubsection{\texorpdfstring{agit()}{agit()}}
-{\footnotesize\ttfamily Proj\+Test\+::agit (\begin{DoxyParamCaption}\item[{\hyperlink{class_vaisseau}{Vaisseau} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily Proj\+Test\+::agit (\begin{DoxyParamCaption}\item[{\hyperlink{class_entite}{Entite} \&}]{proj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -102,13 +102,13 @@ Procédure lorsque le projectile agit avec unvaisseau.
 \end{DoxyParams}
 Vide 
 
-Implémente \hyperlink{class_projectile_a8550c8b1b012c5c290fb6da5b06f57ef}{Projectile}.
+Implémente \hyperlink{class_entite_a848ec47afac1d7ba970a2bcab5dc7b3b}{Entite}.
 
-\mbox{\Hypertarget{class_proj_test_a6649e6591e463315aa9513854e2515d4}\label{class_proj_test_a6649e6591e463315aa9513854e2515d4}} 
+\mbox{\Hypertarget{class_proj_test_aec696ef399dbe4a7d6cbca6d68196909}\label{class_proj_test_aec696ef399dbe4a7d6cbca6d68196909}} 
 \index{Proj\+Test@{Proj\+Test}!gestion@{gestion}}
 \index{gestion@{gestion}!Proj\+Test@{Proj\+Test}}
 \subsubsection{\texorpdfstring{gestion()}{gestion()}}
-{\footnotesize\ttfamily Proj\+Test\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Proj\+Test\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{sf\+::\+Time}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -116,12 +116,14 @@ Gestion du projectile.
 
 
 \begin{DoxyParams}{Paramètres}
-{\em window} & Fenetre de jeu\\
+{\em window} & Fenetre de jeu \\
+\hline
+{\em temps\+Ecoule} & Temps écoulé depuis le dernier appel\\
 \hline
 \end{DoxyParams}
 Gestion du déplacement et de la collision avec les bords 
 
-Implémente \hyperlink{class_projectile_aa969857f9837d9be3a6ea415c9ba3ff1}{Projectile}.
+Implémente \hyperlink{class_projectile_a09e02b793473660fc59a329a4dfea0ec}{Projectile}.
 
 
 
