@@ -4,7 +4,7 @@
 #include "Projectile.h"
 
 /**
-* @class ProjBouclierRond
+* @class ProjPiou
 * @brief Projectile de test
 *
 * Projectile de base. Tire en ligne droite (vers le bas) avec qui une acceleration verticale

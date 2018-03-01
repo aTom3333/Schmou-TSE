@@ -21,7 +21,7 @@ class Vaisseau : public Entite
 {
 	public:
 		//structeurs
-			explicit Vaisseau();
+			Vaisseau();
             ~Vaisseau() override;
 			/**
 			* @fn gestion
@@ -31,7 +31,7 @@ class Vaisseau : public Entite
 			*
 			* Fonction virtuelle qui gère le comportement du vaisseau
 			*/
-			virtual void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input) = 0;
+			virtual void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input) = 0;
 			void gestionCapacite(std::vector <Projectile*> &projectiles, sf::Time t_ecoule);
 			/**
 			* @fn agit

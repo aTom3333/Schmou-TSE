@@ -59,7 +59,7 @@ std::vector<bool> Vaisseau::getAnnexesB()
 
 void Vaisseau::agit(Entite & e)
 {
-	e.recoitDegats(degatsColl_);
+	e.recoitDegats(degats_);
 	recoitDegats(e.getDegats());
 }
 

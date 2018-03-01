@@ -1,9 +1,11 @@
 #include "VaisseauDefenseurB.h"
+#include <cmath>
+
 
 VaisseauDefenseurB::VaisseauDefenseurB(int nb, float x, float y, Vaisseau *createur)
 {
 	//sprite
-	texture_.loadFromFile("../../rc/Sprites/base/VaisseauDefenseurBouclier.png");
+	texture_.loadFromFile("../../rc/Sprites/base/vaisseauDefenseurBouclier.png");
 	sprite_.setTexture(texture_);
 
 	//hitbox simple
@@ -28,7 +30,7 @@ VaisseauDefenseurB::VaisseauDefenseurB(int nb, float x, float y, Vaisseau *creat
 	regenBOU_ = 2;
 	regenPV_ = 0;
 
-	degatsColl_ = 0;
+	degats_ = 0;
 
 	createur_ = createur;
 }
@@ -37,7 +39,7 @@ VaisseauDefenseurB::~VaisseauDefenseurB()
 {
 }
 
-void VaisseauDefenseurB::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input)
+void VaisseauDefenseurB::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
 {
 	if (actif_)
 		afficher(window);

@@ -6,14 +6,15 @@
 #include "vague.h"
 
 
-Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window)
+Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window, Input::Media::Mouse)
 {
 	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
 	{
 		std::cout << "Impossible de charger la police" << std::endl;
 	}
 
-	set_keyboard_binding(input_);
+	set_mouse_default_binding(input_);
+	afficheHUD_ = true;
 }
 
 Partie::~Partie()
@@ -38,13 +39,8 @@ void Partie::testProjTest()
 	//Joueur
 	vaisseaux_.push_back(vaisseautest);
 
-	sf::Texture img_test;
-	sf::Sprite img;
 
-	img_test.loadFromFile("../../rc/UI/test.png");
-	img.setTexture(img_test);
-
-	v1.ajouterVaisseau(0, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
+    v1.ajouterVaisseau(0, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
 	v1.ajouterVaisseau(400, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
 	v1.ajouterVaisseau(800, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
 	v1.ajouterVaisseau(1200, new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5));
@@ -87,6 +83,12 @@ void Partie::testProjTest()
 
 	vaisseaux_[0]->setPosition({ 500,700 });
 
+    // Déplacer la souris à la position du vaisseau
+    auto pos = vaisseaux_[0]->getPosition();
+    pos.x += 32;
+    pos.y += 32;
+    sf::Mouse::setPosition(window_.mapCoordsToPixel(pos), window_);
+
 	while (window_.isOpen())
 	{
 		// Gestion  des evenement qui n'est pas bien implémentée ! ah si thomas est passé par là :o 
@@ -94,9 +96,6 @@ void Partie::testProjTest()
 		while (window_.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
-				window_.close();
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 				window_.close();
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add))
@@ -139,8 +138,12 @@ void Partie::testProjTest()
 		collisionProjectile();
 		collisionVaisseaux();
 
+		// Affichage de l'ATH
+		if (afficheHUD_)
+			hud_.gestion(vaisseaux_[0]);
+		hud_.draw(window_, afficheHUD_);
+
 		// Mise à jour de l'écran
-		//window_.draw(img);
 		window_.display();
 
 		window_.setTitle("Schmou'TSE - Vitesse de jeu : " + std::to_string(timeSpeed_));
@@ -151,14 +154,12 @@ void Partie::testProjTest()
 //test vaisseau piou piou de pierre
 void Partie::testVaisseauTest() {
 	//déclarations
-	VaisseauTest * vaisseautest = new VaisseauTest;
+	VaisseauTest vaisseautest;
 	sf::Clock clock;
-	window_.setTitle("Vaisseau Test" + std::to_string(timeSpeed_));
+	float t_ecoule;
 
-	
 	while (window_.isOpen())
 	{
-
 		//boucle de base 
 			sf::Event event;
 			while (window_.pollEvent(event))
@@ -168,34 +169,17 @@ void Partie::testVaisseauTest() {
 			}
 
 		//maj début de boucle
-
-			auto t_ecoule = clock.restart();
+			t_ecoule = clock.restart().asMilliseconds();
 			window_.clear();
 
 		//code
-			//gestion vaisseau test
-			vaisseautest->gestion(window_, t_ecoule, input_);
-
-			// Gestion des projectiles_
-			for (int i = 0; i < projectiles_.size(); i++)
-			{
-				projectiles_[i]->regen(t_ecoule);
-				projectiles_[i]->gestion(window_, t_ecoule);
-			}
-
-
-			// Gestion des collisions
-			collisionProjectile();
-			collisionVaisseaux();
-
+			//vaisseautest.gestion(window_, t_ecoule);
 
 		//maj fin de boucle
 			window_.display();
 			sf::sleep(sf::milliseconds(10));
 	}
 }
-
-
 
 void Partie::collisionProjectile()
 {
@@ -230,7 +214,7 @@ void Partie::collisionProjectile()
 	}
 	deleteProjectileDetruit();
 	deleteVaisseauDetruit();
-	delete allEntite;
+	delete[] allEntite;
 }
 
 void Partie::collisionVaisseaux()
@@ -275,6 +259,8 @@ void Partie::deleteVaisseauDetruit()
 	{
 		if (vaisseaux_[i]->estDetruit())
 		{
+			if (i == 0)
+				afficheHUD_ = false;
 			delete vaisseaux_[i];
 			vaisseaux_[i] = vaisseaux_[vaisseaux_.size() - 1];
 			vaisseaux_.pop_back();

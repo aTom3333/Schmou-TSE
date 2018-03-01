@@ -66,7 +66,6 @@ class Capacite
 
 		float t_; /// Temps écoulé depuis la dernière activation de la compétence
 		unsigned int frames_; /// Nombre de frames écoulé depuis la dernière activation
-		std::string nom_; /// Nom de la compétance
 
 		bool autoAim; ///état visée auto
 };
