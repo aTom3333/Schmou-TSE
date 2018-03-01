@@ -43,7 +43,7 @@ void Input_base<N>::init_default_keyboard()
     for(size_t i = 0; i < N; ++i)
     {
         actions_[i].action_media_ = Media::Keyboard;
-        actions_[i].binding_.keyboard_key_ = std::nullopt;
+        actions_[i].binding_.keyboard_key_ = nullopt;
     }
 }
 
@@ -56,7 +56,7 @@ void Input_base<N>::init_default_joypad()
     for(size_t i = 0; i < N; ++i)
     {
         actions_[i].action_media_ = Media::Joypad;
-        actions_[i].binding_.joypad_button_ = std::nullopt;
+        actions_[i].binding_.joypad_button_ = nullopt;
     }
 }
 
@@ -70,7 +70,7 @@ void Input_base<N>::init_default_mouse()
     for(size_t i = 0; i < N; ++i)
     {
         actions_[i].action_media_ = Media::Mouse;
-        actions_[i].binding_.mouse_button_ = std::nullopt;
+        actions_[i].binding_.mouse_button_ = nullopt;
     }
 }
 
@@ -259,7 +259,7 @@ void Input_base<N>::free_joypad()
     if(joypad_id_)
     {
         joypad_availability_.reset(joypad_id_.value());
-        joypad_id_ = std::nullopt;
+        joypad_id_ = nullopt;
     }
 }
 
