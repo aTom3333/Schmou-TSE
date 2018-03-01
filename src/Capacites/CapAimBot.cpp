@@ -8,10 +8,10 @@ CapAimBot::CapAimBot()
 
 void CapAimBot::set_state_autoAim_true(Capacite & capacite)
 {
-	autoAim_ = true;
+	autoAim = true;
 }
 
 void CapAimBot::set_state_autoAim_false(Capacite & capacite)
 {
-	autoAim_ = false;
+	autoAim = false;
 }
