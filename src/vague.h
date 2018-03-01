@@ -15,9 +15,9 @@ typedef struct
 
 /**
 * @class Vague
-* @brief Classe qui dÃ©crit les vagues d'ennemis
+* @brief Classe qui décrit les vagues d'ennemis
 *
-* Cette classe pertmet de crÃ©er des vaisseaux selon un schÃ©ma dÃ©fini, Ã  partir d'un temps donnÃ©
+* Cette classe pertmet de créer des vaisseaux selon un schéma défini, à partir d'un temps donné
 */
 
 
@@ -30,29 +30,29 @@ public:
 
 	/**
 	* @fn ajouterVaissseau
-	* @brief Ajoute un vaisseau Ã  la vague
-	* @param t Le temps Ã©coulÃ© depuis le dÃ©but de la vague avant apparition que le vaisseau apparaisse
-	* @param v Le vaisseau Ã  vaire apparaitre
+	* @brief Ajoute un vaisseau à la vague
+	* @param t Le temps écoulé depuis le début de la vague avant apparition que le vaisseau apparaisse
+	* @param v Le vaisseau à vaire apparaitre
 	*/
 	void ajouterVaisseau(float t, Vaisseau *v);
 	/**
 	* @fn gestion
 	* @brief Gere la vague
-	* @param t Temps Ã©coulÃ© depuis le dÃ©but de la boucle
-	* @param vaisseaux Vecteur de tous les vaisseaux prÃ©sent Ã  l'Ã©cran
-	* Gere le dÃ©clanchement de la vague et l'apparition des vaisseaux
+	* @param t Temps écoulé depuis le début de la boucle
+	* @param vaisseaux Vecteur de tous les vaisseaux présent à l'écran
+	* Gere le déclanchement de la vague et l'apparition des vaisseaux
 	*/
 	void gestion(std::vector<Vaisseau*> &vaisseaux, sf::Time t);
 	/**
 	* @fn setTempsDebut
 	* @brief Gere la vague
-	* @param t Temps de dÃ©part de la vague
-	* Fixe le temps de dÃ©part du dÃ©but de la vague
+	* @param t Temps de départ de la vague
+	* Fixe le temps de départ du début de la vague
 	*/
 	void setTempsDebut(float t);
 private:
-	float t_debut_; /// Temps en millisecondes du dÃ©but de la vague
-	float t_; /// Temps depuis le dÃ©but de la vague
+	float t_debut_; /// Temps en millisecondes du début de la vague
+	float t_; /// Temps depuis le début de la vague
 	std::vector <ElementVague> v_; /// Vecteur des vaisseaux qui apparaissent
 };
 

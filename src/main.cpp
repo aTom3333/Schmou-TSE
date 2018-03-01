@@ -15,9 +15,9 @@
 int main()
 {
 
-	//Brodel de thomas 2 : le retour
+	//Bordel de thomas 2 : le retour
 	ProjTest a;
-//	std::cout << std::boolalpha << est<Projectile, decltype(a)>(a) << std::endl << est<ProjTest, decltype(a)>(a) << std::endl << est<ProjPiou, decltype(a)>(a) << std::endl;
+//	std::cout << std::boolalpha << est<Projectile, decltype(a)>(a) << std::endl << est<ProjTest, decltype(a)>(a) << std::endl << est<ProjBouclierRond, decltype(a)>(a) << std::endl;
 	
 	// Code propre
 
@@ -28,7 +28,7 @@ int main()
 
 	partie.testProjTest(); ///le truc que Cyril avait tapé jeudi 7 en club
 	
-	//partie.testVaisseauTest(window); ///un vaisseau que pierre a testé
+	//partie.testVaisseauTest(); ///un vaisseau que pierre a testé
 
 
 
@@ -37,7 +37,7 @@ int main()
 
 
 
-	///<attention très bordélique
+	///attention très bordélique
     /*
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;

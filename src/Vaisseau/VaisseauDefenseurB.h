@@ -8,7 +8,7 @@
 * @brief classe du bouclier du VaisseauDefenseur
 *
 * Bouclier : Module d'un vaisseau ennemi
-* Comportement : Pas de dÃ©placement Pas de tir
+* Comportement : Pas de déplacement Pas de tir
 */
 
 class VaisseauDefenseurB : public Vaisseau
@@ -17,10 +17,10 @@ class VaisseauDefenseurB : public Vaisseau
 		/**
 		* @fn VaisseauDefenseurB
 		* @brief Contructeur
-		* @param x Abscisse de la position de dÃ©part
-		* @param y OrdonnÃ©e de la position de dÃ©part
+		* @param x Abscisse de la position de départ
+		* @param y Ordonnée de la position de départ
 		* @param createur Createur du module
-		* Initialise le vaisseau Ã  position et Ã  la trajectoires dÃ©sirÃ©es
+		* Initialise le vaisseau à position et à la trajectoires désirées
 		*/
 		VaisseauDefenseurB(int nb, float x, float y, Vaisseau *createur);
 		/**
@@ -32,19 +32,19 @@ class VaisseauDefenseurB : public Vaisseau
 		~VaisseauDefenseurB();
 		/**
 		* @fn gestion
-		* @brief GÃ¨re le comportement du vaisseau
-		* @param window Fenetre SFML oÃ¹ le vaisseau sera affichÃ©
-		* @param tempsEcoule Temps Ã©coulÃ© depuis le dernier appel
-		* @param input Classe Input donnant accÃ©s aux entrÃ©e
+		* @brief Gère le comportement du vaisseau
+		* @param window Fenetre SFML où le vaisseau sera affiché
+		* @param tempsEcoule Temps écoulé depuis le dernier appel
+		* @param input Classe Input donnant accés aux entrée
 		*
-		* GÃ¨re le dÃ©placement et l'affichage du vaisseau
+		* Gère le déplacement et l'affichage du vaisseau
 		*/
-		void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input);
+		void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input);
 		/**
 		* @fn destruction
-		* @brief Procedure a effectuer lorsque le vaisseau est dÃ©truit
+		* @brief Procedure a effectuer lorsque le vaisseau est détruit
 		*
-		* Indique au crÃ©ateur que l'annexe est dÃ©tuite
+		* Indique au créateur que l'annexe est détuite
 		*/
 		void destruction();
 	private:

@@ -10,12 +10,12 @@ class VaisseauTest : public Vaisseau
 public:
 	VaisseauTest();
 	~VaisseauTest();
-	void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input);
+	void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input);
 	/**
 	* @fn destruction
-	* @brief Procedure a effectuer lorsque le vaisseau est dÃ©truit
+	* @brief Procedure a effectuer lorsque le vaisseau est détruit
 	*
-	* DÃ©truit l'entitÃ©
+	* Détruit l'entité
 	*/
 	void destruction() { detruit_ = true; }
 
