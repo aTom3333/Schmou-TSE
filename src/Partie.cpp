@@ -13,7 +13,7 @@ Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window, Input
 		std::cout << "Impossible de charger la police" << std::endl;
 	}
 
-	set_mouse_default_binding(input_);
+	set_keyboard_default_binding(input_);
 	afficheHUD_ = true;
 }
 
@@ -89,6 +89,8 @@ void Partie::testProjTest()
     pos.y += 32;
     sf::Mouse::setPosition(window_.mapCoordsToPixel(pos), window_);
 
+	hud_.init(vaisseaux_[0]);
+
 	while (window_.isOpen())
 	{
 		// Gestion  des evenement qui n'est pas bien implémentée ! ah si thomas est passé par là :o 
@@ -140,8 +142,11 @@ void Partie::testProjTest()
 
 		// Affichage de l'ATH
 		if (afficheHUD_)
+		{
 			hud_.gestion(vaisseaux_[0]);
-		hud_.draw(window_, afficheHUD_);
+			hud_.draw(window_, vaisseaux_[0], afficheHUD_);
+		}
+			
 
 		// Mise à jour de l'écran
 		window_.display();

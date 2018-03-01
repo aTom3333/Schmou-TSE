@@ -7,6 +7,11 @@ CapTest::CapTest()
 	frames_ = cooldown_;
 	t_ = cooldown_;
 	nom_ = "Attaque Test";
+
+	capText_.loadFromFile("../../rc/Capacites/attaque_test.png");
+	capacite_.setTexture(capText_);
+
+	affiche_ = true;
 }
 
 

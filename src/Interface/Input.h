@@ -79,7 +79,7 @@ class Input_base
         void set_action_mouse(size_t n, sf::Mouse::Button button);
         void set_default_movement_keyboard();
         void set_default_movement_joypad();
-        void set_movement_mode(Input_base::Media movement_media);
+        void set_movement_mode(Media movement_media);
 
 
     private:

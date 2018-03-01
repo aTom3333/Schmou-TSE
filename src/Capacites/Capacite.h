@@ -51,12 +51,19 @@ class Capacite
 		* Fonction virtuel qui gère la création de projectiles et des modifications à apporter au vaisseau
 		*/
 		virtual void actualiser(std::vector<Projectile*> &projectiles, Entite& vaisseau, float tempsEcoule) = 0;
+
+		void initIcon(int i);
 		
 		// Getters
 		float const getCooldown() { return cooldown_; };
 		float const getTime() { return t_; };
 		std::string const getNom() { return nom_; };
+		sf::Sprite getIcon() { return capacite_; };
+		bool getAffiche() { return affiche_; };
 	protected:
+		sf::Texture capText_;
+		sf::Sprite capacite_;
+		bool affiche_ = false;
 		std::string nom_; /// Nom de la compétence
 		unsigned int niveau_; /// Niveau, à partir de 1
 
