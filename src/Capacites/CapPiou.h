@@ -9,7 +9,7 @@
 * @class CapPiou
 * @brief Classe Capacité de base
 *
-* Capacité qui créé 1 ProjPiou à la position du lanceur
+* Capacité qui créé 1 ProjPiou à la postion du lanceur
 * Nom : Attaque Piou
 * Cooldown : 100 ms
 */

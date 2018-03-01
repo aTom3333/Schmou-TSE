@@ -19,7 +19,7 @@ VaisseauEclaireur::VaisseauEclaireur(float x, float y,Trajectoire traj, float pa
 	posInit_.y = y;
 	// initialisation de la trajectoire
 	trajectoire_ = traj;
-	// Initialisation des paramètres de base
+	// Initialisation des paramÃ¨tres de base
 	t_ = 0;
 	frames_ = 1;
 	vit_ = 30;
@@ -37,9 +37,9 @@ VaisseauEclaireur::VaisseauEclaireur(float x, float y,Trajectoire traj, float pa
 	regenBOU_ = 0;
 	regenPV_ = 0;
 
-	degatsColl_ = 50;
+	degats_ = 50;
 
-	// Initialisation des paramètres de trajectoire
+	// Initialisation des paramÃ¨tres de trajectoire
 	params_.push_back(param1);
 	params_.push_back(param2);
 	params_.push_back(param3);
@@ -51,7 +51,7 @@ VaisseauEclaireur::~VaisseauEclaireur()
 {
 }
 
-void VaisseauEclaireur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input)
+void VaisseauEclaireur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
 {
 	/*if (frames_%100==0)
 	{

@@ -245,9 +245,16 @@ class Entite
 		*/
 		virtual void destruction() = 0;
 
+		float getPVMax() { return pvMax_; }; 
+		float getArmureMax() { return armureMax_; };
+		float getBouclierMax() { return bouclierMax_; };
+		float getPV() { return pv_; };
+		float getArmure() { return armure_; };
+		float getBouclier() { return bouclier_; };
+
 	protected:
 		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
-		bool detruit_ = false; /// ture lorsque que l'Entite est détruit
+		bool detruit_ = false; /// ture lorsque que le vaisseau est détruit
 		bool actif_; /// Booleen indiquant si la trajectoire a été amorcée
 		int equipe_; ///< Identifiant de l'équipe de l'Entite
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
@@ -270,8 +277,7 @@ class Entite
 		float regenBOU_; /// Bouclier rendu tout les 250 ms
 		float vit_; /// Vitesse actuelle de l'Entite
 		float t_regen_; /// Temps écoulé depuis la dernière régénération
-		float degatsColl_; /// Dégats infligé en cas de de collision
-		float t_stay_; ///Temps après lequel l'Entite disparait
+		float degats_; /// Dégats infligé en cas de de collision
 };
 
 #endif // ENTITE_H

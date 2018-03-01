@@ -33,6 +33,15 @@ class Input_base
          * @param [in] m Le type de Media à utiliser pour toutes les actions par défaut
          */
         explicit Input_base(const sf::RenderWindow& w, Media m = Media::Keyboard);
+    
+        /**
+         * @fn Input_base
+         * @brief Constructeur de copie
+         * 
+         * Constructeur qui crée un nouvel objet en copiant un autre
+         * @param [in] other Un autre Input_base à copier
+         */
+        //Input_base(const Input_base& other);
 
         /**
          * @fn ~Input_base
@@ -59,14 +68,14 @@ class Input_base
          * @fn action
          * @brief Teste si une action est en cours
          *
-         * Cette fonction permet de vérifiée si une action est en cours, càd si le bouton/la touche qui correspond
+         * Cette fonction permet de vérifier si une action est en cours, càd si le bouton/la touche qui correspond
          * est pressé
          * @param [in] n Le numéro de l'action à tester
          * @return Un @c bool qui vaut @a true si l'action est en cours et @a false sinon
          */
         bool action(size_t n) const;
 
-        void set_ation_keyboard(size_t n, sf::Keyboard::Key key);
+        void set_action_keyboard(size_t n, sf::Keyboard::Key key);
         void set_action_mouse(size_t n, sf::Mouse::Button button);
         void set_default_movement_keyboard();
         void set_default_movement_joypad();

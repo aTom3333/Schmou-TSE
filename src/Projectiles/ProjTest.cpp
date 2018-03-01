@@ -26,7 +26,7 @@ ProjTest::ProjTest()
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
-	degatsColl_ = 10;
+	degats_ = 10;
 
 	// Multiplicateur de direction (1 vers la droite/bas -1 vers le haut/gauche)
 	mx_ = rand() % 2 == 0 ? 1 : -1;
@@ -69,7 +69,7 @@ ProjTest::ProjTest(int x, int y)
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
-	degatsColl_ = 50;
+	degats_ = 50;
 	actif_ = true;
 
 	// Multiplicateur de direction (1 vers la droite/bas -1 vers le haut/gauche)
@@ -127,7 +127,7 @@ void ProjTest::gestion(sf::RenderWindow& window, sf::Time tempsEcoule)
 
 void ProjTest::agit(Entite& proj)
 {
-	proj.recoitDegats(degatsColl_);
+	proj.recoitDegats(degats_);
 	detruit_ = true;
 }
 

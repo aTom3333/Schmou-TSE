@@ -1,4 +1,6 @@
-﻿#include "VaisseauTest.h"
+#include "VaisseauTest.h"
+#include <cmath>
+
 
 VaisseauTest::VaisseauTest() ///constructeur
 {
@@ -15,9 +17,9 @@ VaisseauTest::VaisseauTest() ///constructeur
 	// Stats
 	vit_ = 500;
 
-	pvMax_ = 1000;
+	pvMax_ = 300;
 	armureMax_ = 100;
-	bouclierMax_ = 0;
+	bouclierMax_ = 100;
 
 	pv_ = pvMax_;
 	armure_ = armureMax_;
@@ -27,26 +29,21 @@ VaisseauTest::VaisseauTest() ///constructeur
 	regenBOU_ = 1;
 	regenPV_ = 0;
 
-	degatsColl_ = 50;
+	degats_ = 50;
 
 	actif_ = true;
 
 
 
-	// Capacités
-	CapBouclierRond *temp1 = new CapBouclierRond(1, this);
+	// Capacit�s
+	CapTest *temp1 = new CapTest();
 	capacites_.push_back(temp1);
 
-	CapTest *temp2 = new CapTest();
+	CapPiou *temp2 = new CapPiou();
 	capacites_.push_back(temp2);
 
-	CapPiou *temp3 = new CapPiou();
+	CapDash *temp3 = new CapDash();
 	capacites_.push_back(temp3);
-
-	CapDash *temp4 = new CapDash();
-	capacites_.push_back(temp4);
-
-
 
 	attaqueEnCours_ = 1;
 
@@ -56,21 +53,21 @@ VaisseauTest::~VaisseauTest()///destructeur
 {
 }
 
-void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input)
+void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
 {
 	// Gestion du vaisseau
-	// Si la touche W est activé
-	if (input.action(0))
+	// Si la touche W est activ�
+	if (input.action(Tir1))
 	{
-		// Lance la compétence à la position du vaisseau allié
+		// Lance la comp�tance � la position du vaisseau alli�
 		sf::Vector2f posVaisseau = position_;
 		if(attaqueEnCours_ == 1)
 			capacites_[attaqueEnCours_]->utiliser(posVaisseau.x + 32, posVaisseau.y - 20);
 		else
 			capacites_[attaqueEnCours_]->utiliser(posVaisseau.x + 32, posVaisseau.y + 32);
 	}
-	// Si la touche X est activé
-	if (input.action(1))
+	// Si la touche X est activ�
+	if (input.action(Tir2))
 	{
 		// Changement d'attaque
 		attaqueEnCours_++;
@@ -79,18 +76,18 @@ void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Inpu
 	}
 	move(input.move(vit_, tempsEcoule));
 
-	// Affichage des informations sur la capacité en cours
+	// Affichage des informations sur la capacit� en cours
 	// TODO A mettre dans la classe affichant l'interface
 		sf::Text afficheAtk;
 		sf::Font font_;
 		font_.loadFromFile("../../rc/Font/hemi.ttf");
-		// Initialisation du texte (Nom capacité + Cooldown)
+		// Initialisation du texte (Nom capacit� + Cooldown)
 		afficheAtk.setFont(font_);
 		afficheAtk.setCharacterSize(20);
 		afficheAtk.setFillColor(sf::Color::White);
 		afficheAtk.setPosition(0, 0);
 
-		std::string txt;
+		/*std::string txt;
 		if (capacites_[attaqueEnCours_]->getCooldown() - capacites_[attaqueEnCours_]->getTime() > 0)
 			txt = capacites_[attaqueEnCours_]->getNom() + " - " + std::to_string((int)(capacites_[attaqueEnCours_]->getCooldown() - capacites_[attaqueEnCours_]->getTime()));
 		else
@@ -125,7 +122,7 @@ void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Inpu
 		rec.setSize(size);
 		rec.setPosition(0, 80);
 		rec.setFillColor(sf::Color::Blue);
-		window.draw(rec);
+		window.draw(rec);*/
 
 	afficher(window);
 }

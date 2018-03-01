@@ -1,5 +1,5 @@
 #include "ProjPiou.h"
-
+#include <cmath>
 
 
 ProjPiou::ProjPiou()
@@ -32,7 +32,7 @@ ProjPiou::ProjPiou(int x, int y)
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
-	degatsColl_ = 70;
+	degats_ = 70;
 
 	//  Projectile qui se déplace verticalement
 	vit_ = 700;
@@ -54,6 +54,6 @@ void ProjPiou::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 
 void ProjPiou::agit(Entite& proj)
 {
-	proj.recoitDegats(degatsColl_);
+	proj.recoitDegats(degats_);
 	detruit_ = true;
 }

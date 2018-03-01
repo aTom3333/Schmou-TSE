@@ -112,7 +112,7 @@ bool Entite::estDetruit()
 
 float Entite::getDegats()
 {
-	return degatsColl_;
+	return degats_;
 }
 
 void Entite::regen(sf::Time t)
@@ -121,7 +121,7 @@ void Entite::regen(sf::Time t)
 	t_regen_ += t.asMilliseconds();
 
 	// Si 100 ms se sont écoulé
-	if (t_regen_ >= 100)
+	if (t_regen_ >= 50)
 	{
 		// Réinitialisation du timer
 		t_regen_ = 0;

@@ -19,7 +19,7 @@ VaisseauAttaquant::VaisseauAttaquant(float x, float y, Trajectoire traj, float p
 	posInit_.y = y;
 	// initialisation de la trajectoire
 	trajectoire_ = traj;
-	// Initialisation des paramètres de base
+	// Initialisation des paramÃ¨tres de base
 	t_ = 0;
 	frames_ = 1;
 	vit_ = 40;
@@ -37,9 +37,9 @@ VaisseauAttaquant::VaisseauAttaquant(float x, float y, Trajectoire traj, float p
 	regenBOU_ = 0;
 	regenPV_ = 0;
 
-	degatsColl_ = 50;
+	degats_ = 50;
 
-	// Initialisation des paramètres de trajectoire
+	// Initialisation des paramÃ¨tres de trajectoire
 	params_.push_back(param1);
 	params_.push_back(param2);
 	params_.push_back(param3);
@@ -52,7 +52,7 @@ VaisseauAttaquant::~VaisseauAttaquant()
 {
 }
 
-void VaisseauAttaquant::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input input)
+void VaisseauAttaquant::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
 {
 	if (actif_)
 	{
