@@ -1,4 +1,6 @@
 #include "ProjBouclierRond.h"
+#include <cmath>
+
 
 ProjBouclierRond::ProjBouclierRond(){}
 
@@ -29,7 +31,7 @@ ProjBouclierRond::ProjBouclierRond(Entite* Entite_liee, int pvM, int degatsColl)
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
-	degatsColl_ = degatsColl; 
+	degats_ = degatsColl; 
 
 	//Entité à laquelle est rattaché le bouclier
 	Entite_liee_ = Entite_liee;
@@ -45,6 +47,6 @@ void ProjBouclierRond::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 
 void ProjBouclierRond::agit(Entite& proj)
 {
-	proj.recoitDegats(degatsColl_);
+	proj.recoitDegats(degats_);
 	detruit_ = true;
 }

@@ -5,11 +5,11 @@
 
 /**
 * @class CapAimBot
-* @brief donne visée auto à un skill (missile)
+* @brief donne visï¿½e auto ï¿½ un skill (missile)
 *
-* Capacité qui permet de donner un mode visée auto à un autre skill du vaisseau.
+* Capacitï¿½ qui permet de donner un mode visï¿½e auto ï¿½ un autre skill du vaisseau.
 * Niveau 1 : seulement le prochain tir
-* Niveau supérieurs : plusieurs tirs
+* Niveau supï¿½rieurs : plusieurs tirs
 *
 * Cooldown : 10sec
 */
@@ -18,7 +18,7 @@
 class CapAimBot : public Capacite
 {
 private:
-	
+	bool autoAim_;
 public:
 
 
@@ -36,28 +36,28 @@ public:
 	*
 	* Vide
 	*/
-	CapAimBot::~CapAimBot()
+	~CapAimBot()
 	{
 	}
 	/**
 	* @fn CapAimBot::set_state_autoAim_true
 	* @brief Destructeur
 	*
-	* change l'état autoaim à true
+	* change l'ï¿½tat autoaim ï¿½ true
 	*/
 	void set_state_autoAim_true(Capacite& capacite);
 	/**
 	* @fn CapAimBot::set_state_autoAim_false
 	* @brief Destructeur
 	*
-	* change l'état autoaim à false
+	* change l'ï¿½tat autoaim ï¿½ false
 	*/
 	void set_state_autoAim_false(Capacite& capacite);
 
 
 };
 
-#endif AIMBOT_H
+#endif //AIMBOT_H
 
 
 
