@@ -69,9 +69,12 @@ class Capacite
 
 		int debutX_, debutY_; /// Position de départ
 		float cooldown_; /// Temps à attendre avant de pouvoir utiliser la capacité à nouveau
-		float t_; /// Temps écoulé depuis la dernière activation de la compétance
+		float t_stay; ///Temps après lequel le projectile issu disparait
+
+		float t_; /// Temps écoulé depuis la dernière activation de la compétence
 		unsigned int frames_; /// Nombre de frames écoulé depuis la dernière activation
 
+		bool autoAim; ///état visée auto
 };
 
 #endif // CAPACITE_H

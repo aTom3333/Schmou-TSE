@@ -10,7 +10,6 @@
 * Capacit� qui permet de donner un mode vis�e auto � un autre skill du vaisseau.
 * Niveau 1 : seulement le prochain tir
 * Niveau sup�rieurs : plusieurs tirs
-
 *
 * Cooldown : 10sec
 */
@@ -44,14 +43,14 @@ public:
 	* @fn CapAimBot::set_state_autoAim_true
 	* @brief Destructeur
 	*
-	* change l'�tat autoaim � true
+	* change l'état autoaim à true
 	*/
 	void set_state_autoAim_true(Capacite& capacite);
 	/**
 	* @fn CapAimBot::set_state_autoAim_false
 	* @brief Destructeur
 	*
-	* change l'�tat autoaim � false
+	* change l'état autoaim à false
 	*/
 	void set_state_autoAim_false(Capacite& capacite);
 
