@@ -61,20 +61,15 @@ void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Inpu
 	{
 		// Lance la comp�tance � la position du vaisseau alli�
 		sf::Vector2f posVaisseau = position_;
-		if(attaqueEnCours_ == 1)
-			capacites_[1]->utiliser(posVaisseau.x + 32, posVaisseau.y - 20);
-		else
-			capacites_[1]->utiliser(posVaisseau.x + 32, posVaisseau.y + 32);
+		capacites_[1]->utiliser(posVaisseau.x + 32, posVaisseau.y - 20);
+
 	}
 	// Si la touche X est activ�
 	if (input.action(TIR2))
 	{
 		// Lance la comp�tance � la position du vaisseau alli�
 		sf::Vector2f posVaisseau = position_;
-		if (attaqueEnCours_ == 3)
-			capacites_[2]->utiliser(posVaisseau.x + 32, posVaisseau.y - 20);
-		else
-			capacites_[2]->utiliser(posVaisseau.x + 32, posVaisseau.y + 32);
+		capacites_[2]->utiliser(posVaisseau.x + 32, posVaisseau.y + 32);
 	}
 
 	// Si la touche X est activ�
@@ -82,10 +77,7 @@ void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Inpu
 	{
 		// Lance la comp�tance � la position du vaisseau alli�
 		sf::Vector2f posVaisseau = position_;
-		if (attaqueEnCours_ == 3)
-			capacites_[0]->utiliser(posVaisseau.x + 32, posVaisseau.y - 20);
-		else
-			capacites_[0]->utiliser(posVaisseau.x + 32, posVaisseau.y + 32);
+		capacites_[0]->utiliser(posVaisseau.x + 32, posVaisseau.y + 32);
 	}
 	move(input.move(vit_, tempsEcoule));
 
