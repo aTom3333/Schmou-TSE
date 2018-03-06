@@ -12,7 +12,8 @@ Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window, Input
 	{
 		std::cout << "Impossible de charger la police" << std::endl;
 	}
-
+	
+	//set_mouse_default_binding(input_);
 	set_keyboard_default_binding(input_);
 	afficheHUD_ = true;
 }
