@@ -14,6 +14,7 @@ VaisseauDefenseurB::VaisseauDefenseurB(int nb, float x, float y, Vaisseau *creat
 	cercleEnglobant_.setPosition(64, 10);
 	forme_.emplace_back(new sf::RectangleShape({ 128,20 }));
 
+	equipe_ = ENNEMI;
 	vit_ = 0;
 	actif_ = false;
 	nbModule_ = nb;

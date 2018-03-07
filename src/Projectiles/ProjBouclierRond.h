@@ -16,7 +16,7 @@ public:
 	* @param degatsColl dégats infligés lors d'une collision avec une Entite collisionnable
 	* Gestion du déplacement et de l'affichage
 	*/
-	ProjBouclierRond(Entite* Entite_liee, int pvM, int degatsColl);
+	ProjBouclierRond(Entite* Entite_liee, int pvM, int degatsColl, float tempsMax, Equipe equipe);
 
 	/**
 	* @fn gestion
@@ -38,7 +38,8 @@ public:
 
 protected:
 	Entite* Entite_liee_;
-
+	float tempsMax_;
+	float t_;
 };
 
 

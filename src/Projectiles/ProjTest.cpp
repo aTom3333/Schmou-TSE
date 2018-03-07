@@ -39,6 +39,8 @@ ProjTest::ProjTest()
 	float x = rand() % 800, y = rand() % 600;
 
 	setPosition({ x,  y});
+
+	equipe_ = NEUTRE;
 }
 
 ProjTest::ProjTest(int x, int y)
@@ -85,6 +87,7 @@ ProjTest::ProjTest(int x, int y)
 	float x1 = x + 40*mx_, y1 = y + 40 * my_;
 
 	setPosition({ x1,  y1 });
+	equipe_ = NEUTRE;
 }
 
 

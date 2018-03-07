@@ -173,7 +173,7 @@ void Partie::collisionProjectile()
 
 	if (projectiles_.size() != 0)
 	{
-		for (int i = 0; i < projectiles_.size() - 1; i++)
+		for (int i = 0; i < projectiles_.size(); i++)
 		{
 			// Si le projectile est dehors
 			if (projectiles_[i]->estDehors())
@@ -181,10 +181,14 @@ void Partie::collisionProjectile()
 			else
 			{
 				// Collision avec une autre entite
-				for (int j = i + 1; j < projectiles_.size() + vaisseaux_.size(); j++)
+				for (int j = i + 1; j < n; j++)
 				{
 					if (collision(*allEntite[i], *allEntite[j]))
+					{
 						allEntite[i]->agit(*allEntite[j]);
+						allEntite[j]->agit(*allEntite[i]);
+					}
+						
 				}
 			}		
 		}

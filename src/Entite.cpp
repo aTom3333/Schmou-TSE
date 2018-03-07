@@ -10,8 +10,8 @@ bool collision(const Entite& e1, const Entite& e2)
 	{
 		if (!e1.collisionable_ || !e2.collisionable_)
 			return false;
-		//	if(e1.equipe_ == e2.equipe_)
-		//		return false;
+			if(e1.equipe_ == e2.equipe_ && e1.equipe_ != NEUTRE)
+				return false;
 		if (!collision(e1.cercleEnglobant_, e2.cercleEnglobant_))
 			return false;
 		for (const auto& f1 : e1.forme_)
@@ -28,7 +28,7 @@ void Entite::afficher(sf::RenderWindow & window, bool debug) const
 
 	if(debug)
 	{
-		window.draw(cercleEnglobant_);
+		//window.draw(cercleEnglobant_);
 		for (auto& elem : forme_)
 			window.draw(*elem);
 	}
@@ -172,6 +172,7 @@ void Entite::recoitDegats(float degats)
 	if (pv_ <= 0)
 	{
 		pv_ = 0;
+		detruit_ = true;
 		destruction();
 	}
 

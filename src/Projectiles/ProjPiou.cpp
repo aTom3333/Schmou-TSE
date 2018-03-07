@@ -6,7 +6,7 @@ ProjPiou::ProjPiou()
 {
 }
 
-ProjPiou::ProjPiou(int x, int y)
+ProjPiou::ProjPiou(int x, int y, Equipe equipe)
 {
 	// Gestion du sprite
 	texture_.loadFromFile("../../rc/Sprites/base/projectile_test.png");
@@ -19,6 +19,7 @@ ProjPiou::ProjPiou(int x, int y)
 	forme_.emplace_back(new sf::RectangleShape({20,20}));
 	
 	// Stats
+	equipe_ = equipe;
 	age_ = 0;
 	actif_ = true;
 

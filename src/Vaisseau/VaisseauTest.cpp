@@ -15,6 +15,7 @@ VaisseauTest::VaisseauTest() ///constructeur
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
 	// Stats
+	equipe_ = JOUEUR;
 	vit_ = 500;
 
 	pvMax_ = 1000;

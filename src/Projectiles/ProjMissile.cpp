@@ -7,7 +7,7 @@ ProjMissile::ProjMissile()
 
 }
 
-ProjMissile::ProjMissile(float x, float y)
+ProjMissile::ProjMissile(float x, float y, Equipe equipe)
 {
 	// Gestion du sprite
 	texture_.loadFromFile("../../rc/Sprites/base/projectile_missile.png");
@@ -20,6 +20,7 @@ ProjMissile::ProjMissile(float x, float y)
 	forme_.emplace_back(new sf::RectangleShape({40,80}));
 
 	//stats
+	equipe_ = equipe;
 	pvMax_ = 10;
 	armureMax_ = 0;
 	bouclierMax_ = 0;

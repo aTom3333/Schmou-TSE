@@ -30,7 +30,7 @@ public:
 	*
 	* Créer un projectile piou à la position donnée en paramètre
 	*/
-	ProjPiou(int x, int y);
+	ProjPiou(int x, int y, Equipe equipe);
 	/**
 	* @fn ~ProjPiou
 	* @brief Destructeur

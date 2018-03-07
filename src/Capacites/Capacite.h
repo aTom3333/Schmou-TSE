@@ -60,6 +60,7 @@ class Capacite
 		std::string const getNom() { return nom_; };
 		sf::Sprite getIcon() { return capacite_; };
 		bool getAffiche() { return affiche_; };
+
 	protected:
 		sf::Texture capText_;
 		sf::Sprite capacite_;

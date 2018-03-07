@@ -7,7 +7,7 @@ Overlay::Overlay()
 void Overlay::init(Vaisseau *vaisseau)
 {
 	// Chargement des images
-	font_.loadFromFile("../../rc/Font/hemi.ttf");
+	font_.loadFromFile("../../rc/Font/whitrabt.ttf");
 	overlayText_.loadFromFile("../../rc/UI/overlay.png");
 	overlay_.setTexture(overlayText_);
 

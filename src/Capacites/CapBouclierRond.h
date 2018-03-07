@@ -22,8 +22,8 @@ class CapBouclierRond : public Capacite
 {
 protected :
 	int pvM_; ///pv max du bouclier
-	int cooldown_; /// cooldown
 	int degatsColl_; /// dégats infligés lors d'une collisison avec une Entite collisionnable
+	float tempsMax_; /// durée de vie du bouclier 
 	Entite* Entite_liee_; /// Entite à laquelle s'applique le bouclier
 
 public:
@@ -44,10 +44,6 @@ public:
 	void utiliser(int x, int y) override;
 
 	void actualiser(std::vector<Projectile*>& GVP, Entite& vaisseau, float tempsEcoule);
-
-	
-
-
 
 };
 

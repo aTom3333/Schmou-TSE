@@ -50,7 +50,7 @@ class Vaisseau : public Entite
 			virtual void destruction() = 0; 
 
 		//setters
-			void setEquipe(int equipe); ///définit l'équipe (entier)
+			void setEquipe(Equipe equipe); ///définit l'équipe (entier)
 			void addCapacite(Capacite* skill); /// < ajoute la @c Capacite skill à la liste des capacités skills_ du vaisseau
 			void setCapacite(Capacite* skill, int n); /// modifie la @c Capacite n
 			void setnom(std::string nom);

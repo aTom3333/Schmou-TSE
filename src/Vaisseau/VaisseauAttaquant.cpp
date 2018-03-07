@@ -20,6 +20,7 @@ VaisseauAttaquant::VaisseauAttaquant(float x, float y, Trajectoire traj, float p
 	// initialisation de la trajectoire
 	trajectoire_ = traj;
 	// Initialisation des paramètres de base
+	equipe_ = ENNEMI;
 	t_ = 0;
 	frames_ = 1;
 	vit_ = 40;

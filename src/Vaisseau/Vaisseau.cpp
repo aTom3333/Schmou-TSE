@@ -64,7 +64,7 @@ void Vaisseau::agit(Entite & e)
 }
 
 //setters
-	void Vaisseau::setEquipe(int equipe)
+	void Vaisseau::setEquipe(Equipe equipe)
 	{
 		equipe_ = equipe;
 	}

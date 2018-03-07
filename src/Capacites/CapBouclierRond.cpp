@@ -4,23 +4,33 @@ CapBouclierRond::CapBouclierRond(int niveau, Entite* Entite_liee)
 {
 	niveau_ = niveau;
 	Entite_liee_ = Entite_liee;
+
+	capText_.loadFromFile("../../rc/Capacites/boubou.png");
+	capacite_.setTexture(capText_);
+	affiche_ = true;
+	
+
 	switch (niveau)
 	{
 	default:
 		break;
 
 	case 1:
-		cooldown_ = 1000;
+		cooldown_ = 15000;
 		pvM_ = 500;
 		degatsColl_ = 0;
-
+		tempsMax_ = 3000;
+		break;
 	case 2:
-		cooldown_ = 500;
+		cooldown_ = 10000;
 		pvM_ = 1000;
 		degatsColl_ = 100;
-
+		tempsMax_ = 5000;
+		break;
 	}
 	nom_ = "Bouclier";
+	t_ = cooldown_;
+	frames_ = cooldown_;
 
 }
 
@@ -45,7 +55,7 @@ void CapBouclierRond::actualiser(std::vector<Projectile*>& GVP, Entite& vaisseau
 	if (frames_ == 0)
 	{
 		//TODO bug
-		ProjBouclierRond *temp = new ProjBouclierRond(Entite_liee_, pvM_, degatsColl_);
+		ProjBouclierRond *temp = new ProjBouclierRond(Entite_liee_, pvM_, degatsColl_, tempsMax_, vaisseau.getEquipe());
 		GVP.push_back(temp);
 	}
 
@@ -55,4 +65,5 @@ void CapBouclierRond::actualiser(std::vector<Projectile*>& GVP, Entite& vaisseau
 		t_ += tempsEcoule;
 	}
 	frames_++;
+	
 }

@@ -252,11 +252,13 @@ class Entite
 		float getArmure() { return armure_; };
 		float getBouclier() { return bouclier_; };
 
+		Equipe getEquipe() { return equipe_; };
+
 	protected:
 		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
 		bool detruit_ = false; /// ture lorsque que le vaisseau est détruit
 		bool actif_; /// Booleen indiquant si la trajectoire a été amorcée
-		int equipe_; ///< Identifiant de l'équipe de l'Entite
+		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
 		float angle_; ///< Orientation actuelle de l'Entite
 		float scale_; ///< Échelle actuelle de l'Entite

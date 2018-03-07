@@ -14,7 +14,7 @@ class ProjMissile : public Projectile
 {
 	public:
 		ProjMissile();
-		ProjMissile(float x, float y);
+		ProjMissile(float x, float y, Equipe equipe);
 		~ProjMissile();
 		/**
 		* @fn gestion

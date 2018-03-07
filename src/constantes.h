@@ -15,7 +15,12 @@
 
 enum Actions
 {
-    PAUSE = 0, TIR1 = 1, TIR2 = 2, COMP1 = 3, COMP2 = 4, COMP3 = 5, ULTI = 6
+    PAUSE , TIR1, TIR2, COMP1, COMP2, COMP3, ULTI
+};
+
+enum Equipe
+{
+	JOUEUR, ENNEMI, NEUTRE 
 };
 
 
