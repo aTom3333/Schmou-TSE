@@ -18,8 +18,6 @@
 * Cooldown : 10sec
 */
 
-
-
 class CapBouclierRond : public Capacite
 {
 protected :

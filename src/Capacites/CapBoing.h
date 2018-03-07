@@ -6,7 +6,7 @@
 #include "../Projectiles/ProjTest.h"
 
 /**
-* @class CapTest
+* @class CapBoing
 * @brief Classe Capacité de test
 *
 * Capacité qui créé 4 ProjTest à la postion du lanceur
@@ -14,23 +14,23 @@
 * Cooldown : 1000 ms
 */
 
-class CapTest : public Capacite
+class CapBoing : public Capacite
 {
 	public:
 		/**
-		* @fn CapTest::CapTest
+		* @fn CapBoing::CapBoing
 		* @brief Constructeur
 		*
 		* Initialisation de la capacité
 		*/
-		CapTest();
+		CapBoing();
 		/**
-		* @fn CapTest::~CapTest
+		* @fn CapBoing::~CapBoing
 		* @brief Destructeur
 		*
 		* Vide
 		*/
-		~CapTest();
+		~CapBoing();
 		/**
 		* @fn utiliser
 		* @brief Active la capacite
@@ -44,7 +44,7 @@ class CapTest : public Capacite
 		* @fn actualiser
 		* @brief Active les effets de la capacité
 		* @param projectile Vecteur de tout les projectiles présent à l'écran
-		* @param vaisseau Vaisseau qui a activé la compétance
+		* @param vaisseau Vaisseau qui a activé la compétence
 		*
 		* Créer 4 ProjTest toutes les 5 frames
 		* Actualise le timer

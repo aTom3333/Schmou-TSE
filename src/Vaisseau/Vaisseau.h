@@ -51,7 +51,8 @@ class Vaisseau : public Entite
 
 		//setters
 			void setEquipe(int equipe); ///définit l'équipe (entier)
-			void addCapacite(Capacite* skill); /// < ajoute la @c Capacité skill à la liste des capacités skills_ du vaisseau
+			void addCapacite(Capacite* skill); /// < ajoute la @c Capacite skill à la liste des capacités skills_ du vaisseau
+			void setCapacite(Capacite* skill, int n); /// modifie la @c Capacite n
 			void setnom(std::string nom);
 			void setNskin(int Nskin);
 			void setpvM(int pvM);

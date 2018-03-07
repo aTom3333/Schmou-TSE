@@ -26,7 +26,7 @@ Partie::~Partie()
 		delete projectiles_[i];
 }
 
-void Partie::testProjTest()
+void Partie::testPartie()
 {
 	sf::Clock clock;
 
@@ -98,7 +98,8 @@ void Partie::testProjTest()
 		sf::Event event;
 		while (window_.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed)
+			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
+				//TODO PG 07-03-2018 j'ai mis Suppr pour fermer temporairement
 				window_.close();
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add))
@@ -157,33 +158,90 @@ void Partie::testProjTest()
 	}
 }
 
-//test vaisseau piou piou de pierre
+//test vaisseau
 void Partie::testVaisseauTest() {
-	//déclarations
-	VaisseauTest vaisseautest;
 	sf::Clock clock;
-	float t_ecoule;
+
+	VaisseauTest *vaisseautest = new VaisseauTest;
+
+	//Joueur
+	vaisseaux_.push_back(vaisseautest);
+	vaisseaux_[0]->setPosition({ 500,700 });
+
+	// Modifie la vitesse du jeu (debug)
+	timeSpeed_ = 1;
+
+
+	// Déplacer la souris à la position du vaisseau
+	auto pos = vaisseaux_[0]->getPosition();
+	pos.x += 32;
+	pos.y += 32;
+	sf::Mouse::setPosition(window_.mapCoordsToPixel(pos), window_);
+
+	//HACK suppression de l'ATH
+	//hud_.init(vaisseaux_[0]);
 
 	while (window_.isOpen())
 	{
-		//boucle de base 
-			sf::Event event;
-			while (window_.pollEvent(event))
-			{
-				if (event.type == sf::Event::Closed)
-					window_.close();
-			}
+		// Gestion  des évènements
+		sf::Event event;
+		while (window_.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
+				window_.close();
 
-		//maj début de boucle
-			t_ecoule = clock.restart().asMilliseconds();
-			window_.clear();
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add))
+				if (timeSpeed_ < 5)
+					timeSpeed_ += 0.1;
 
-		//code
-			//vaisseautest.gestion(window_, t_ecoule);
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Subtract))
+				if (timeSpeed_ > 0.1)
+					timeSpeed_ -= 0.1;
+		}
 
-		//maj fin de boucle
-			window_.display();
-			sf::sleep(sf::milliseconds(10));
+		//Gestion du temps
+		auto t_ecoule = clock.restart();
+		t_ecoule = t_ecoule * timeSpeed_;
+
+		// Efface l'écran
+		window_.clear();
+
+		//Gestion des vaisseaux
+		for (int i = 0; i < vaisseaux_.size(); i++)
+		{
+			vaisseaux_[i]->regen(t_ecoule);
+			vaisseaux_[i]->gestionCapacite(projectiles_, t_ecoule);
+			vaisseaux_[i]->gestion(window_, t_ecoule, input_);
+		}
+
+		// Gestion des projectiles_
+		for (int i = 0; i < projectiles_.size(); i++)
+		{
+			projectiles_[i]->regen(t_ecoule);
+			projectiles_[i]->gestion(window_, t_ecoule);
+		}
+
+		// Gestion des collisions
+		collisionProjectile();
+		collisionVaisseaux();
+
+		// Affichage de l'ATH
+
+		//HACK suppression de l'ATH
+		/*
+		if (afficheHUD_)
+		{
+			hud_.gestion(vaisseaux_[0]);
+			hud_.draw(window_, vaisseaux_[0], afficheHUD_);
+		}
+		*/
+
+
+		// Mise à jour de l'écran
+		window_.display();
+
+		window_.setTitle("Schmou'TSE - Vitesse de jeu : " + std::to_string(timeSpeed_));
+		sf::sleep(sf::milliseconds(10));
 	}
 }
 

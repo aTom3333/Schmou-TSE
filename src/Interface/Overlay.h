@@ -4,6 +4,7 @@
 #include "SFML/Graphics.hpp"
 #include "../constantes.h"
 #include "../Vaisseau/Vaisseau.h"
+#include <iostream>
 
 
 /**
@@ -22,8 +23,8 @@ class Overlay
 		void gestion(Vaisseau * vaisseau);
 		
 	private :
-		sf::Texture overlayText_; /// Texture de la partie de l'overlay qui n'intéragie pas
-		sf::Sprite overlay_; /// Sprite de la partie de l'overlay qui n'intéragie pas
+		sf::Texture overlayText_; /// Texture de la partie de l'overlay qui n'intéragit pas
+		sf::Sprite overlay_; /// Sprite de la partie de l'overlay qui n'intéragit pas
 
 		sf::Font font_; /// Police des textes
 		sf::Text *statuts_; /// Texte des cooldowns

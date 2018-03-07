@@ -28,7 +28,7 @@ void Vaisseau::gestionCapacite(std::vector <Projectile*> &projectiles, sf::Time 
 {
 	// Gestion des capacites_
 	for (int i = 0; i < capacites_.size(); i++)
-		capacites_[i]->actualiser(projectiles, *this, t_ecoule.asMilliseconds());
+		if (capacites_[i] != nullptr) capacites_[i]->actualiser(projectiles, *this, t_ecoule.asMilliseconds());
 }
 
 
@@ -72,6 +72,11 @@ void Vaisseau::agit(Entite & e)
 	void Vaisseau::addCapacite(Capacite* skill)
 	{
 		capacites_.push_back(skill);
+	}
+
+	void Vaisseau::setCapacite(Capacite * skill, int n)
+	{
+		capacites_[n] = skill;
 	}
 
 	void Vaisseau::setnom(std::string nom)

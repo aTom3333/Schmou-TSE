@@ -1,7 +1,7 @@
-#include "CapTest.h"
+#include "CapBoing.h"
 #include "CapDash.h"
 
-CapTest::CapTest()
+CapBoing::CapBoing()
 {
 	cooldown_ = 1000;
 	frames_ = cooldown_;
@@ -15,11 +15,11 @@ CapTest::CapTest()
 }
 
 
-CapTest::~CapTest()
+CapBoing::~CapBoing()
 {
 }
 
-void CapTest::utiliser(int x, int y)
+void CapBoing::utiliser(int x, int y)
 {
 	// Si la compétence est disponible
 	if (t_ >= cooldown_)
@@ -33,7 +33,7 @@ void CapTest::utiliser(int x, int y)
 	}
 }
 
-void CapTest::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule)
+void CapBoing::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule)
 {
 	// Pour avoir la création des 4 projectile toute les 5 frames
 	if (frames_ < 20 && frames_ % 5 == 0)

@@ -14,9 +14,13 @@ void Overlay::init(Vaisseau *vaisseau)
 	// Initialisation des barre de vie, d'armure et de bouclier
 	for (int i = 0; i < 3; i++)
 	{
-		barre_[i].setSize({ OVERLAY_BARRE_W, OVERLAY_BARRE_H });
+		barre_[i].setSize({ OVERLAY_BARRE_L, OVERLAY_BARRE_H });
 		barre_[i].setPosition(5, 7 + (OVERLAY_BARRE_H + 4) * i);
-		barre_[i].setFillColor({ 255, 255, 255, 102 });
+		switch (i) {
+		case 0: {barre_[i].setFillColor({ 255, 66, 66, 200 }); break; }
+		case 2: {barre_[i].setFillColor({ 244, 244, 66, 200 }); break; }
+		case 1: {barre_[i].setFillColor({ 66, 166, 244, 200 }); break; }
+		}
 	}
 
 	// Compteur qui permet de connaitre le nombre de capacités a afficher
@@ -25,9 +29,15 @@ void Overlay::init(Vaisseau *vaisseau)
 	// Initialisation des icones
 	for (int i = 0; i < vaisseau->getskills().size(); i++)
 	{
-		vaisseau->getskills()[i]->initIcon(n);
-		n += vaisseau->getskills()[i]->getAffiche() ? 1 : 0;
-	}
+		if (vaisseau->getskills()[i] != nullptr)
+		{
+			vaisseau->getskills()[i]->initIcon(n);
+			n += vaisseau->getskills()[i]->getAffiche() ? 1 : 0;
+		}
+	}	
+
+	
+
 
 	// Initialisation du texte affichant les cooldowns
 	statuts_ = new sf::Text[n];
@@ -50,9 +60,10 @@ void Overlay::draw(sf::RenderWindow & window, Vaisseau * vaisseau, bool bDraw)
 	// Affichage de l'overlay
 	if (bDraw)
 	{
-		window.draw(overlay_);
-		for(int i = 0; i < 3; i++)
+		for(int i = 0; i < 3; i++) //barres de stats
 			window.draw(barre_[i]);
+
+		window.draw(overlay_); //overlay fixe
 
 		int n = 0;
 		for (int i = 0; i < vaisseau->getskills().size(); i++)
@@ -72,9 +83,9 @@ void Overlay::gestion(Vaisseau * vaisseau)
 {
 
 	// Gestion de barres de vie, d'armure et de bouclier
-	barre_[0].setSize({ OVERLAY_BARRE_W*vaisseau->getPV() / vaisseau->getPVMax(), OVERLAY_BARRE_H });
-	barre_[1].setSize({ OVERLAY_BARRE_W*vaisseau->getArmure() / vaisseau->getArmureMax(), OVERLAY_BARRE_H });
-	barre_[2].setSize({ OVERLAY_BARRE_W*vaisseau->getBouclier() / vaisseau->getBouclierMax(), OVERLAY_BARRE_H });
+	barre_[0].setSize({ OVERLAY_BARRE_L*vaisseau->getPV() / vaisseau->getPVMax(), OVERLAY_BARRE_H });
+	barre_[1].setSize({ OVERLAY_BARRE_L*vaisseau->getArmure() / vaisseau->getArmureMax(), OVERLAY_BARRE_H });
+	barre_[2].setSize({ OVERLAY_BARRE_L*vaisseau->getBouclier() / vaisseau->getBouclierMax(), OVERLAY_BARRE_H });
 
 
 	int n = 0;

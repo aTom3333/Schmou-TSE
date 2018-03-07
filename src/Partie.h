@@ -36,7 +36,7 @@ class Partie
 		void deleteVaisseauDetruit();
 
 		//TODO temporaire pour tester, n'existe pas dans le jeu livré
-		void testProjTest();
+		void testPartie();
 		void testVaisseauTest();
 
 	private:

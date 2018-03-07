@@ -45,7 +45,7 @@ class Capacite
 		* @fn actualiser
 		* @brief Fonction virtuel qui active les effets de la capacité
 		* @param projectile Vecteur de tout les projectiles présent à l'écran
-		* @param vaisseau Vaisseau qui a activé la compétance
+		* @param vaisseau Vaisseau qui a activé la compétence
 		* @param tempEcoule Temps écoulé depuis la dernière boucle
 		*
 		* Fonction virtuel qui gère la création de projectiles et des modifications à apporter au vaisseau

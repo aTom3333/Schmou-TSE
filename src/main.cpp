@@ -26,9 +26,9 @@ int main()
 
 	srand(time(nullptr));
 
-	partie.testProjTest(); ///le truc que Cyril avait tapé jeudi 7 en club
+	//partie.testPartie(); //teste Partie avec une vague
 	
-	//partie.testVaisseauTest(window); ///un vaisseau que pierre a testé
+	partie.testVaisseauTest(); //teste le vaisseau test tout seul
 	
 
 	return 0;
