@@ -37,9 +37,6 @@ VaisseauTest::VaisseauTest() ///constructeur
 
 	// Capacités
 
-	//rien en pos 0
-	capacites_.push_back(nullptr);
-
 	//TIR1
 	CapPiou *temp1 = new CapPiou();
 	capacites_.push_back(temp1);
@@ -78,48 +75,40 @@ void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Inpu
 	if (input.action(TIR1))
 	{
 		// Lance la compétence à la position du vaisseau allié
-		sf::Vector2f posVaisseau = position_;
-		capacites_[1]->utiliser(posVaisseau.x + 32, posVaisseau.y - 20);
+		capacites_[0]->utiliser(position_.x + 32, position_.y - 20);
 
 	}
 	// Si la touche TIR 2 est activé
 	if (input.action(TIR2))
 	{
-		
+		// Lance la compétence à la position du vaisseau allié
+		capacites_[3]->utiliser(position_.x + 32, position_.y + 32);
 	}
 
 	// Si la touche COMP 1 est activé
 	if (input.action(COMP1))
 	{
 		// Lance la compétence à la position du vaisseau allié
-		sf::Vector2f posVaisseau = position_;
-		capacites_[3]->utiliser(posVaisseau.x + 32, posVaisseau.y + 32);
+		capacites_[2]->utiliser(position_.x + 32, position_.y + 32);
 	}
 
 	// Si la touche COMP 2 est activé
 	if (input.action(COMP2))
 	{
-		// Lance la compétence à la position du vaisseau allié
-		sf::Vector2f posVaisseau = position_;
-		capacites_[4]->utiliser(posVaisseau.x + 32, posVaisseau.y + 32);
+		
 	}
 
 	// Si la touche COMP 3 est activé
 	if (input.action(COMP3))
 	{
 		// Lance la compétence à la position du vaisseau allié
-		sf::Vector2f posVaisseau = position_;
-		capacites_[5]->utiliser(posVaisseau.x + 32, posVaisseau.y + 32);
+		capacites_[4]->utiliser(position_.x + 32, position_.y + 32);
 	}
 
 	// Si la touche ULTI est activé
 	if (input.action(ULTI))
 	{
 	}
-
-
-
-
 
 	//déplacement
 	move(input.move(vit_, tempsEcoule));

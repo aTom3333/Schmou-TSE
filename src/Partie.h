@@ -37,7 +37,6 @@ class Partie
 
 		//TODO temporaire pour tester, n'existe pas dans le jeu livré
 		void testPartie();
-		void testVaisseauTest();
 
 	private:
 		//attributs de gameplay

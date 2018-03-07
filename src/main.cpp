@@ -26,9 +26,7 @@ int main()
 
 	srand(time(nullptr));
 
-	//partie.testPartie(); //teste Partie avec une vague
-	
-	partie.testVaisseauTest(); //teste le vaisseau test tout seul
+	partie.testPartie();
 	
 
 	return 0;

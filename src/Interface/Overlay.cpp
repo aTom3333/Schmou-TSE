@@ -15,11 +15,11 @@ void Overlay::init(Vaisseau *vaisseau)
 	for (int i = 0; i < 3; i++)
 	{
 		barre_[i].setSize({ OVERLAY_BARRE_L, OVERLAY_BARRE_H });
-		barre_[i].setPosition(5, 7 + (OVERLAY_BARRE_H + 4) * i);
+		barre_[i].setPosition(20, 12 + (OVERLAY_BARRE_H + 4) * i);
 		switch (i) {
-		case 0: {barre_[i].setFillColor({ 255, 66, 66, 200 }); break; }
-		case 2: {barre_[i].setFillColor({ 244, 244, 66, 200 }); break; }
-		case 1: {barre_[i].setFillColor({ 66, 166, 244, 200 }); break; }
+		case 0: {barre_[i].setFillColor({ 255, 66, 66, 150 }); break; }
+		case 1: {barre_[i].setFillColor({ 244, 244, 66, 150 }); break; }
+		case 2: {barre_[i].setFillColor({ 66, 166, 244, 150 }); break; }
 		}
 	}
 
@@ -34,10 +34,7 @@ void Overlay::init(Vaisseau *vaisseau)
 			vaisseau->getskills()[i]->initIcon(n);
 			n += vaisseau->getskills()[i]->getAffiche() ? 1 : 0;
 		}
-	}	
-
-	
-
+	}
 
 	// Initialisation du texte affichant les cooldowns
 	statuts_ = new sf::Text[n];
@@ -68,7 +65,7 @@ void Overlay::draw(sf::RenderWindow & window, Vaisseau * vaisseau, bool bDraw)
 		int n = 0;
 		for (int i = 0; i < vaisseau->getskills().size(); i++)
 		{
-			if (vaisseau->getskills()[i]->getAffiche())
+			if (vaisseau->getskills()[i] != nullptr && vaisseau->getskills()[i]->getAffiche())
 			{
 				window.draw(vaisseau->getskills()[i]->getIcon());
 				window.draw(statuts_[n]);
@@ -91,7 +88,7 @@ void Overlay::gestion(Vaisseau * vaisseau)
 	int n = 0;
 	for (int i = 0; i < vaisseau->getskills().size(); i++)
 	{
-		if (vaisseau->getskills()[i]->getAffiche())
+		if (vaisseau->getskills()[i] != nullptr && vaisseau->getskills()[i]->getAffiche())
 		{
 			int cooldown = (int)(vaisseau->getskills()[i]->getCooldown() - vaisseau->getskills()[i]->getTime());
 			std::string str = cooldown <= 0 ? "Ready" : std::to_string(cooldown);

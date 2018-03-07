@@ -14,7 +14,7 @@ Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window, Input
 	}
 	
 	//set_mouse_default_binding(input_);
-	set_keyboard_default_binding_2(input_);
+	set_keyboard_default_binding_1(input_);
 	afficheHUD_ = true;
 }
 
@@ -149,93 +149,6 @@ void Partie::testPartie()
 			hud_.draw(window_, vaisseaux_[0], afficheHUD_);
 		}
 			
-
-		// Mise à jour de l'écran
-		window_.display();
-
-		window_.setTitle("Schmou'TSE - Vitesse de jeu : " + std::to_string(timeSpeed_));
-		sf::sleep(sf::milliseconds(10));
-	}
-}
-
-//test vaisseau
-void Partie::testVaisseauTest() {
-	sf::Clock clock;
-
-	VaisseauTest *vaisseautest = new VaisseauTest;
-
-	//Joueur
-	vaisseaux_.push_back(vaisseautest);
-	vaisseaux_[0]->setPosition({ 500,700 });
-
-	// Modifie la vitesse du jeu (debug)
-	timeSpeed_ = 1;
-
-
-	// Déplacer la souris à la position du vaisseau
-	auto pos = vaisseaux_[0]->getPosition();
-	pos.x += 32;
-	pos.y += 32;
-	sf::Mouse::setPosition(window_.mapCoordsToPixel(pos), window_);
-
-	//HACK suppression de l'ATH
-	//hud_.init(vaisseaux_[0]);
-
-	while (window_.isOpen())
-	{
-		// Gestion  des évènements
-		sf::Event event;
-		while (window_.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
-				window_.close();
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add))
-				if (timeSpeed_ < 5)
-					timeSpeed_ += 0.1;
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Subtract))
-				if (timeSpeed_ > 0.1)
-					timeSpeed_ -= 0.1;
-		}
-
-		//Gestion du temps
-		auto t_ecoule = clock.restart();
-		t_ecoule = t_ecoule * timeSpeed_;
-
-		// Efface l'écran
-		window_.clear();
-
-		//Gestion des vaisseaux
-		for (int i = 0; i < vaisseaux_.size(); i++)
-		{
-			vaisseaux_[i]->regen(t_ecoule);
-			vaisseaux_[i]->gestionCapacite(projectiles_, t_ecoule);
-			vaisseaux_[i]->gestion(window_, t_ecoule, input_);
-		}
-
-		// Gestion des projectiles_
-		for (int i = 0; i < projectiles_.size(); i++)
-		{
-			projectiles_[i]->regen(t_ecoule);
-			projectiles_[i]->gestion(window_, t_ecoule);
-		}
-
-		// Gestion des collisions
-		collisionProjectile();
-		collisionVaisseaux();
-
-		// Affichage de l'ATH
-
-		//HACK suppression de l'ATH
-		/*
-		if (afficheHUD_)
-		{
-			hud_.gestion(vaisseaux_[0]);
-			hud_.draw(window_, vaisseaux_[0], afficheHUD_);
-		}
-		*/
-
 
 		// Mise à jour de l'écran
 		window_.display();
