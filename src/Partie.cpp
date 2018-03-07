@@ -14,7 +14,7 @@ Partie::Partie(sf::RenderWindow& window) : window_{window}, input_(window, Input
 	}
 	
 	//set_mouse_default_binding(input_);
-	set_keyboard_default_binding(input_);
+	set_keyboard_default_binding_2(input_);
 	afficheHUD_ = true;
 }
 

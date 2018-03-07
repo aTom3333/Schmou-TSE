@@ -15,7 +15,7 @@
 
 enum Actions
 {
-    PAUSE = 0, TIR1 = 1, TIR2 = 2, COMP1 = 3, COMP2 = 4, COMP3 = 5, COMP4 = 6
+    PAUSE = 0, TIR1 = 1, TIR2 = 2, COMP1 = 3, COMP2 = 4, COMP3 = 5, ULTI = 6
 };
 
 

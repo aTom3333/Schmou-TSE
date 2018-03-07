@@ -1,7 +1,7 @@
 #include "bindings.h"
 
 
-void set_keyboard_default_binding(Input& in)
+void set_keyboard_default_binding_1(Input& in)
 {
     in.set_movement_mode(Input::Media::Keyboard);
     in.set_action_keyboard(PAUSE, sf::Keyboard::Escape);
@@ -10,7 +10,20 @@ void set_keyboard_default_binding(Input& in)
     in.set_action_keyboard(COMP1, sf::Keyboard::Q);
     in.set_action_keyboard(COMP2, sf::Keyboard::S);
     in.set_action_keyboard(COMP3, sf::Keyboard::D);
-    in.set_action_keyboard(COMP4, sf::Keyboard::C);
+    in.set_action_keyboard(ULTI, sf::Keyboard::C);
+}
+
+
+void set_keyboard_default_binding_2(Input& in)
+{
+	in.set_movement_mode(Input::Media::Keyboard);
+	in.set_action_keyboard(PAUSE, sf::Keyboard::Escape);
+	in.set_action_keyboard(TIR1, sf::Keyboard::V);
+	in.set_action_keyboard(TIR2, sf::Keyboard::B);
+	in.set_action_keyboard(COMP1, sf::Keyboard::A);
+	in.set_action_keyboard(COMP2, sf::Keyboard::Z);
+	in.set_action_keyboard(COMP3, sf::Keyboard::E);
+	in.set_action_keyboard(ULTI, sf::Keyboard::R);
 }
 
 void set_mouse_default_binding(Input& in)
@@ -22,7 +35,7 @@ void set_mouse_default_binding(Input& in)
     in.set_action_keyboard(COMP1, sf::Keyboard::A);
 	in.set_action_keyboard(COMP2, sf::Keyboard::Z);
 	in.set_action_keyboard(COMP3, sf::Keyboard::E);
-	in.set_action_keyboard(COMP4, sf::Keyboard::R);
+	in.set_action_keyboard(ULTI, sf::Keyboard::R);
 }
 
 void set_joypad_default_binding(Input& in)
