@@ -12,7 +12,7 @@ void Overlay::init(Vaisseau *vaisseau)
 	overlay_.setTexture(overlayText_);
 
 	// Initialisation des barre de vie, d'armure et de bouclier
-	for (int i = 0; i < 3; i++)
+	for(unsigned int i = 0; i < 3; i++)
 	{
 		barre_[i].setSize({ OVERLAY_BARRE_L, OVERLAY_BARRE_H });
 		barre_[i].setPosition(20, 12 + (OVERLAY_BARRE_H + 4) * i);
@@ -23,11 +23,11 @@ void Overlay::init(Vaisseau *vaisseau)
 		}
 	}
 
-	// Compteur qui permet de connaitre le nombre de capacités a afficher
-	int n = 0;
+	// Compteur qui permet de connaitre le nombre de capacitÃ©s a afficher
+	unsigned int n = 0;
 
 	// Initialisation des icones
-	for (int i = 0; i < vaisseau->getskills().size(); i++)
+	for(unsigned int i = 0; i < vaisseau->getskills().size(); i++)
 	{
 		if (vaisseau->getskills()[i] != nullptr)
 		{
@@ -38,7 +38,7 @@ void Overlay::init(Vaisseau *vaisseau)
 
 	// Initialisation du texte affichant les cooldowns
 	statuts_ = new sf::Text[n];
-	for (int i = 0; i < n; i++)
+	for(unsigned int i = 0; i < n; i++)
 	{
 		statuts_[i].setFont(font_);
 		statuts_[i].setCharacterSize(20);
@@ -63,7 +63,7 @@ void Overlay::draw(sf::RenderWindow & window, Vaisseau * vaisseau, bool bDraw)
 		window.draw(overlay_); //overlay fixe
 
 		int n = 0;
-		for (int i = 0; i < vaisseau->getskills().size(); i++)
+		for(unsigned int i = 0; i < vaisseau->getskills().size(); i++)
 		{
 			if (vaisseau->getskills()[i] != nullptr && vaisseau->getskills()[i]->getAffiche())
 			{
@@ -86,7 +86,7 @@ void Overlay::gestion(Vaisseau * vaisseau)
 
 
 	int n = 0;
-	for (int i = 0; i < vaisseau->getskills().size(); i++)
+	for(unsigned int i = 0; i < vaisseau->getskills().size(); i++)
 	{
 		if (vaisseau->getskills()[i] != nullptr && vaisseau->getskills()[i]->getAffiche())
 		{

@@ -4,7 +4,7 @@ CapPiou::CapPiou()
 {
 	cooldown_ = 100;
 	t_ = cooldown_;
-	frames_ = cooldown_;
+	frames_ = cooldown_; //TODO ici le warning pourrait être important (float vers uint)
 	nom_ = "Attaque Piou";
 }
 

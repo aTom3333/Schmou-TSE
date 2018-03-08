@@ -7,7 +7,7 @@
 
 /**
 *@enum Trajectoire
-*@brief liste énumérée des types possibles de trajectoire
+*@brief liste Ã©numÃ©rÃ©e des types possibles de trajectoire
 *
 *
 */
@@ -21,13 +21,13 @@ enum Trajectoire
 
 /**
 *@fn traj_position
-*@brief cacule le point actuel dans la trajectoire donnée
+*@brief cacule le point actuel dans la trajectoire donnÃ©e
 *
 *@param trajectoire Nom de la trajectoire voulue (voir Trajectoire)
-*@param t Temps actuel depuis la création de l'entité
-*@param vit_ vitesse de l'entité
+*@param t Temps actuel depuis la crÃ©ation de l'entitÃ©
+*@param vit_ vitesse de l'entitÃ©
 *@param posInit Position initiale
-*@param params liste de float pour paramétrer la forme des courbes
+*@param params liste de float pour paramÃ©trer la forme des courbes
 *
 */
 sf::Vector2f traj_position(Trajectoire trajectoire,float t, float vit_, sf::Vector2f posInit, std::vector<float> params);

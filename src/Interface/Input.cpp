@@ -3,9 +3,9 @@
 
 
 template<size_t N>
-Input_base<N>::Input_base(const sf::RenderWindow& w, Media m) : window_{w}
+Input_base<N>::Input_base(const sf::RenderWindow& w, Media media) : window_{w}
 {
-    switch(m)
+    switch(media)
     {
         case Media::Keyboard:
             init_default_keyboard();
@@ -103,9 +103,9 @@ sf::Vector2f Input_base<N>::move_keyboard(float max_speed, const sf::Time& elaps
     down = movement_input_.keyboard_.down_key_ && sf::Keyboard::isKeyPressed(movement_input_.keyboard_.down_key_.value());
     left = movement_input_.keyboard_.left_key_ && sf::Keyboard::isKeyPressed(movement_input_.keyboard_.left_key_.value());
     right = movement_input_.keyboard_.right_key_ && sf::Keyboard::isKeyPressed(movement_input_.keyboard_.right_key_.value());
-
+	
     // Si on a les deux côtés opposés, on annule
-	//TODO il serait plus agréable (affordant) que le côté opposé pressé en dernier soit prioritaire car là si on appuie sur les deux en même temps le vaisseau s'arrête et c'est contre-intuitif. Mais ce n'est pas possible si on fait comme ça, il faudrait récupérer les évènement pour savoir à quel instant quelle touche est pressée alors que là, on ne fait que récupérer l'état du clavier à l'instant t
+	//TODO il serait plus agréable (affordant) que le côté opposé pressé en dernier soit prioritaire car là si on appuie sur les deux en même temps le vaisseau s'arrête et c'est contre-intuitif. Mais ce n'est pas possible si on fait comme ça, il faudrait récupérer les évènement pour savoir à quel instant quelle touche est pressée alors que là, on ne fait que récupérer l'état du clavier à l'instant t. Eh bien c'est très simple on créer un vector d'inputs qui gare en mémoire les actions effectuées depuis x secondes ohohoh
     if(up && down)
         up = down = false;
     if(left && right)
@@ -267,6 +267,12 @@ template<size_t N>
 Input_base<N>::~Input_base()
 {
     free_joypad();
+}
+
+template<size_t N>
+bool Input_base<N>::isMoving() const
+{
+	return sf::Keyboard::isKeyPressed(movement_input_.keyboard_.up_key_.value()) || sf::Keyboard::isKeyPressed(movement_input_.keyboard_.down_key_.value()) || sf::Keyboard::isKeyPressed(movement_input_.keyboard_.left_key_.value()) || sf::Keyboard::isKeyPressed(movement_input_.keyboard_.right_key_.value());
 }
 
 template<size_t N>

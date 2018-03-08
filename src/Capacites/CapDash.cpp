@@ -1,11 +1,12 @@
 #include "CapDash.h"
+#include "../Interface/Input.h"
 
 CapDash::CapDash()
 {
 	capText_.loadFromFile("../../rc/Capacites/dash.png");
 	capacite_.setTexture(capText_);
 	cooldown_ = 500;
-	frames_ = cooldown_;
+	frames_ = cooldown_; //TODO ici le warning pourrait être important (float vers uint)
 	t_ = cooldown_;
 	nom_ = "Dash";
 	affiche_ = true;
@@ -25,6 +26,8 @@ void CapDash::utiliser(int x, int y)
 
 void CapDash::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule)
 {
+	//if (Input::isMoving()) 
+	//TODO bon il est 3 heures faut que j'aille dormir jpp Thomas faut que tu m'aides :'(
 	// Augmente la vitesse de 5000 à l'activation
 	if(frames_ == 0)
 		vaisseau.changeSpeed(5000);

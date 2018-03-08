@@ -30,7 +30,7 @@ CapBouclierRond::CapBouclierRond(int niveau, Entite* Entite_liee)
 	}
 	nom_ = "Bouclier";
 	t_ = cooldown_;
-	frames_ = cooldown_;
+	frames_ = cooldown_; //TODO ici le warning pourrait être important (float vers uint)
 
 }
 

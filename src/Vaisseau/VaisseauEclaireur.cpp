@@ -2,21 +2,21 @@
 #include <cmath>
 
 
-VaisseauEclaireur::VaisseauEclaireur(float x, float y,Trajectoire traj, float param1, float param2, float param3, float param4)
+VaisseauEclaireur::VaisseauEclaireur(double x, double y,Trajectoire traj, double param1, double param2, double param3, double param4)
 {
 	//sprite
 	texture_.loadFromFile("../../rc/Sprites/base/vaisseauEnnemiTest.png");
 	sprite_.setTexture(texture_);
 
 	//hitbox simple
-	cercleEnglobant_ = sf::CircleShape(sqrt(2*32*32));
-	cercleEnglobant_.setOrigin(sqrt(2 * 32 * 32), sqrt(2 * 32 * 32));
+	cercleEnglobant_ = sf::CircleShape((float)sqrt(2*32*32));
+	cercleEnglobant_.setOrigin((float)sqrt(2 * 32 * 32), (float)sqrt(2 * 32 * 32));
 	cercleEnglobant_.setPosition(16, 32);
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
 	// Initialisation de la postion
-	posInit_.x = x;
-	posInit_.y = y;
+	posInit_.x = (float)x;
+	posInit_.y = (float)y;
 	// initialisation de la trajectoire
 	trajectoire_ = traj;
 	// Initialisation des paramètres de base
@@ -41,10 +41,10 @@ VaisseauEclaireur::VaisseauEclaireur(float x, float y,Trajectoire traj, float pa
 	degats_ = 50;
 
 	// Initialisation des paramètres de trajectoire
-	params_.push_back(param1);
-	params_.push_back(param2);
-	params_.push_back(param3);
-	params_.push_back(param4);
+	params_.push_back((float)param1);
+	params_.push_back((float)param2);
+	params_.push_back((float)param3);
+	params_.push_back((float)param4);
 
 }
 

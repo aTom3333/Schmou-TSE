@@ -31,7 +31,7 @@ class Input_base
          *
          * Constructeur qui initialise l'état de l'objet
          * @param [in] w Une référence vers une sf::RenderWindow qui permet de récupérer des informations sur ses entrées
-         * @param [in] m Le type de Media à utiliser pour toutes les actions par défaut
+         * @param [in] m Le type de Media à utiliser pour toutes les actions par défaut, clavier par défaut
          */
         explicit Input_base(const sf::RenderWindow& w, Media m = Media::Keyboard);
     
@@ -75,6 +75,15 @@ class Input_base
          * @return Un @c bool qui vaut @a true si l'action est en cours et @a false sinon
          */
         bool action(size_t n) const;
+
+		/**
+		* @fn isMoving
+		* @brief renvoie True si une touche pour se mouvoir est pressée
+		*
+		* Cette fonction permet de vérifier si on cherche à mouvoir le joueur, quel que soit le Input::Media
+		* @return Un @c bool qui vaut @a true si un mouvement est en cours et @a false sinon
+		*/
+		bool isMoving() const;
 
         void set_action_keyboard(size_t n, sf::Keyboard::Key key);
         void set_action_mouse(size_t n, sf::Mouse::Button button);
@@ -159,5 +168,6 @@ class Input_base
 };
 
 using Input = Input_base<NB_ACTION>;
+//aaaaaaaaaaaaaaaaaaaaaaaah le N était NB_ACTION depuis tout ce temps !! Thomas pourquoi tu l'as mis ici tout caché omg tout est clair maintenant !!
 
 #endif // INPUT_H

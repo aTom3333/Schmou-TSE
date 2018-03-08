@@ -260,8 +260,8 @@ class Entite
 		bool actif_; /// Booleen indiquant si la trajectoire a été amorcée
 		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
-		float angle_; ///< Orientation actuelle de l'Entite
-		float scale_; ///< Échelle actuelle de l'Entite
+		double angle_; ///< Orientation actuelle de l'Entite
+		double scale_; ///< Échelle actuelle de l'Entite
 		sf::CircleShape cercleEnglobant_; ///< Cercle Englobant de l'Entite
 		std::vector<std::unique_ptr<sf::Shape>> forme_; ///< Forme de l'Entite
 		sf::Texture texture_; ///< Texture du sprite de l'Entite

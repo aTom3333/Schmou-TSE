@@ -12,6 +12,7 @@
 #include "Vaisseau/Vaisseau.h"
 #include "Interface/Input.h"
 #include "Interface/Overlay.h"
+#include "Pattern\Vague.h"
 
 
 /**
@@ -26,7 +27,8 @@
 class Partie
 {
 	public:
-		Partie(sf::RenderWindow& window);
+		Partie(sf::RenderWindow& window, Input::Media media);
+		Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecVagues);
 		~Partie();
 
 		void jeu();
@@ -35,23 +37,30 @@ class Partie
 		void deleteProjectileDetruit();
 		void deleteVaisseauDetruit();
 
+		//Patterns
+		void initPatternTest();
+
 		//TODO temporaire pour tester, n'existe pas dans le jeu livré
 		void testPartie();
 
-	private:
+	protected:
 		//attributs de gameplay
         sf::RenderWindow& window_; /// fenêtre principale
 		sf::Font font_; /// police principale
         Input input_; /// entrée
 		Overlay hud_; /// Affichage Tête Haute
-		bool afficheHUD_; /// Vrai si on veux afficher le HUD, faux sinon
+			
+		//pattern
+		std::vector<Vague> pattern_;			
 
 		//attributs principaux en jeu
 		std::vector<Vaisseau*> vaisseaux_; ///vecteur des vaisseaux ennemis en jeu
 		std::vector<Projectile *> projectiles_; /// vecteur des projectiles en jeu
 
 		//attributs de debug
-		float timeSpeed_; /// Facteur controllant le temps
+		double timeSpeed_; /// Facteur contrôlant le temps
+		bool avecPattern_;
+		bool afficheHUD_; /// Vrai si on veux afficher le HUD, faux sinon
 
 };
 

@@ -6,7 +6,7 @@ sf::Vector2f traj_position(Trajectoire trajectoire,float t, float vit_, sf::Vect
 	sf::Vector2f posOut;//position de sortie
 	switch (trajectoire)
 	{
-		// Si la trajectoire est linéaire
+		// Si la trajectoire est linÃ©aire
 	case LINEAIRE:
 		posOut.x = posInit.x + params[0]*vit_*t / 100;
 		posOut.y = params[1] * (posOut.x - posInit.x) + posInit.y;
@@ -22,7 +22,7 @@ sf::Vector2f traj_position(Trajectoire trajectoire,float t, float vit_, sf::Vect
 		{
 			posOut.x = posInit.x;
 			params[0] = (params[1] - posInit.y)/abs(params[1] - posInit.y);
-			float g = - vit_ * vit_ / (2 * (params[1] - posInit.y));
+			double g = - vit_ * vit_ / (2 * (params[1] - posInit.y));
 			posOut.y = 0.5* g*t*t/10000+ params[0] * vit_ * t/100  + posInit.y;
 
 		}

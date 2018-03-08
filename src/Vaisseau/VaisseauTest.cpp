@@ -9,8 +9,8 @@ VaisseauTest::VaisseauTest() ///constructeur
 	sprite_.setTexture(texture_);
 
 	//hitbox simple
-	cercleEnglobant_ = sf::CircleShape(sqrt(2*32*32));
-	cercleEnglobant_.setOrigin(sqrt(2 * 32 * 32), sqrt(2 * 32 * 32));
+	cercleEnglobant_ = sf::CircleShape((float)sqrt(2*32*32));
+	cercleEnglobant_.setOrigin((float)sqrt(2 * 32 * 32), (float)sqrt(2 * 32 * 32));
 	cercleEnglobant_.setPosition(32, 32);
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 

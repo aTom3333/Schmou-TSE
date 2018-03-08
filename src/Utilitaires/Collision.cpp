@@ -43,7 +43,7 @@ bool is_point_in(const sf::Vector2f& C, const sf::Shape& s)
         direct = AB_v_AC_n > 0;
     }
 
-    for(int i = 0; i < N; ++i)
+    for(unsigned int i = 0; i < N; ++i)
     {
         // Point A
         auto A = point_transforme(s, i);
@@ -115,7 +115,7 @@ bool collision_impl(const sf::CircleShape& c, const sf::Shape& co)
 
     bool dedans = true;
 
-    for(int i = 0; i < N; ++i)
+    for(unsigned int i = 0; i < N; ++i)
     {
         // Point A
         auto A = point_transforme(co, i);
@@ -159,12 +159,12 @@ bool collision_impl(const sf::Shape& co, const sf::CircleShape& c)
 
 bool collision_impl(const sf::Shape& s1, const sf::Shape& s2)
 {
-    for(int i = 0; i < s1.getPointCount(); ++i)
+    for(unsigned int i = 0; i < s1.getPointCount(); ++i)
     {
         if(is_point_in(point_transforme(s1, i), s2))
             return true;
     }
-    for(int i = 0; i < s2.getPointCount(); ++i)
+    for(unsigned int i = 0; i < s2.getPointCount(); ++i)
     {
         if(is_point_in(point_transforme(s2, i), s1))
             return true;

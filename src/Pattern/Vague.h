@@ -3,8 +3,7 @@
 
 #include <vector>
 #include <SFML/Graphics.hpp>
-#include "Vaisseau/Vaisseau.h"
-#include "Vaisseau/_vaisseaux.h"
+#include "../Vaisseau/_vaisseaux.h"
 
 typedef struct
 {

@@ -4,7 +4,7 @@
 CapBoing::CapBoing()
 {
 	cooldown_ = 1000;
-	frames_ = cooldown_;
+	frames_ = cooldown_; //TODO ici le warning pourrait être important (float vers uint)
 	t_ = cooldown_;
 	nom_ = "Attaque Test";
 

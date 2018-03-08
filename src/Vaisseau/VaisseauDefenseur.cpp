@@ -10,8 +10,8 @@ VaisseauDefenseur::VaisseauDefenseur(float x, float y, std::vector<Vaisseau*> &v
 	sprite_.setTexture(texture_);
 
 	//hitbox simple
-	cercleEnglobant_ = sf::CircleShape(sqrt(32 * 32 + 64 * 64));
-	cercleEnglobant_.setOrigin(sqrt(32 * 32 + 64 * 64), sqrt(32 * 32 + 64 * 64));
+	cercleEnglobant_ = sf::CircleShape((float)sqrt(32 * 32 + 64 * 64));
+	cercleEnglobant_.setOrigin((float)sqrt(32 * 32 + 64 * 64), sqrt((float)32 * 32 + 64 * 64));
 	cercleEnglobant_.setPosition(16, 32);
 	forme_.emplace_back(new sf::RectangleShape({ 128,64 }));
 
@@ -74,7 +74,7 @@ void VaisseauDefenseur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule,
 		afficher(window);
 
 		// Gestion du module de bouclier
-		for (int i = 0; i < annexes_.size(); i++)
+		for(unsigned int i = 0; i < annexes_.size(); i++)
 		{
 			if (annexesB_[i])
 			{

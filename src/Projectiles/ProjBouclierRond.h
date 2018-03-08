@@ -13,8 +13,8 @@ public:
 	* @brief Constructeur
 	* @param Entite_liee entite sur laquelle s'applique le bouclier
 	* @param pvM pv max
-	* @param degatsColl dégats infligés lors d'une collision avec une Entite collisionnable
-	* Gestion du déplacement et de l'affichage
+	* @param degatsColl dÃ©gats infligÃ©s lors d'une collision avec une Entite collisionnable
+	* Gestion du dÃ©placement et de l'affichage
 	*/
 	ProjBouclierRond(Entite* Entite_liee, int pvM, int degatsColl, float tempsMax, Equipe equipe);
 
@@ -23,7 +23,7 @@ public:
 	* @brief Gestion du projectile
 	* @param window Fenetre de jeu
 	*
-	* Gestion du déplacement et de l'affichage : le bouclier reste lié à l'Entite_liee
+	* Gestion du dÃ©placement et de l'affichage : le bouclier reste liÃ© Ã  l'Entite_liee
 	*/
 	void gestion(sf::RenderWindow &window, sf::Time tempsEcoule);
 
@@ -32,7 +32,7 @@ public:
 	* @brief Action lorsque collision avec une Entite collisionnable
 	* @param e Entite 
 	*
-	* Inflige les dégat déterminés à la construction
+	* Inflige les dÃ©gat dÃ©terminÃ©s Ã  la construction
 	*/
 	void agit(Entite &e);
 

@@ -1,4 +1,4 @@
-#include "vague.h"
+#include "Vague.h"
 
 Vague::Vague()
 {
@@ -11,7 +11,7 @@ Vague::Vague(float t)
 
 Vague::~Vague()
 {
-	/*for (int i = 0; i < v_.size(); i++)
+	/*for(unsigned int i = 0; i < v_.size(); i++)
 		delete v_[i].v;*/
 }
 
@@ -26,7 +26,7 @@ void Vague::gestion(std::vector<Vaisseau*>& vaisseaux, sf::Time t)
 	t_ += temps;
 	if (t_ >= t_debut_)
 	{
-		for (int i = 0; i < v_.size(); i++)
+		for(unsigned int i = 0; i < v_.size(); i++)
 		{
 			if (!v_[i].active && v_[i].t < t_ - t_debut_)
 			{
@@ -42,4 +42,3 @@ void Vague::setTempsDebut(float t)
 {
 	t_debut_ = t;
 }
-

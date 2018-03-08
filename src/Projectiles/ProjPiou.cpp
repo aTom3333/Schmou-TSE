@@ -35,7 +35,7 @@ ProjPiou::ProjPiou(int x, int y, Equipe equipe)
 
 	degats_ = 70;
 
-	//  Projectile qui se déplace verticalement
+	//  Projectile qui se dÃ©place verticalement
 	vit_ = 700;
 
 	float x1 = x, y1 = y;

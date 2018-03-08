@@ -40,7 +40,7 @@ public:
 			x = x0 + sens*v*t (faux mais approximation si la différence de temps est très petite devant la période)
 			y = pente * (x - x0) + y0 + amplitude * sin(2*pi/période * x)
 	*/
-	VaisseauEclaireur(float x, float y, Trajectoire traj, float param1, float param2, float param3 = 0, float param4 = 0);
+	VaisseauEclaireur(double x, double y, Trajectoire traj, double param1, double param2, double param3 = 0, double param4 = 0);
 	/**
 	* @fn ~VaisseauEclaireur
 	* @brief Destructeur

@@ -68,7 +68,7 @@ class Capacite
 		std::string nom_; /// Nom de la compétence
 		unsigned int niveau_; /// Niveau, à partir de 1
 
-		int debutX_, debutY_; /// Position de départ
+		double debutX_, debutY_; /// Position de départ
 		float cooldown_; /// Temps à attendre avant de pouvoir utiliser la capacité à nouveau
 		float t_stay; ///Temps après lequel le projectile issu disparait
 

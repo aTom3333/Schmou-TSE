@@ -4,7 +4,7 @@ CapMissile::CapMissile()
 {
 	cooldown_ = 5000;
 	t_ = cooldown_;
-	frames_ = cooldown_;
+	frames_ = cooldown_; //TODO ici le warning pourrait être important (float vers uint)
 	nom_ = "Missile";
 }
 
