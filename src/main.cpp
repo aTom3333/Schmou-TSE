@@ -22,7 +22,7 @@ int main()
 	// Code propre
 
 	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE");
-	Partie partie(window, Input::Media::Mouse, true, true);
+	Partie partie(window, Input::Media::Mouse);
 
 	srand(time(nullptr));
 

@@ -5,17 +5,6 @@
 #include "Interface/bindings.h"
 #include "Pattern\Vague.h"
 
-Partie::Partie(sf::RenderWindow& window, Input::Media media) : window_{ window }, input_(window, media), afficheHUD_{ true }, avecPattern_{ true }
-	{
-		if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
-		{
-			std::cout << "Impossible de charger la police" << std::endl;
-		}
-
-	//set_mouse_default_binding(input_);
-	set_keyboard_default_binding_2(input_);
-	}
-
 Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : window_{window}, input_(window, media), afficheHUD_{afficheHUD}, avecPattern_{avecPattern}
 {
 	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
@@ -24,6 +13,7 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 	}
 	
 	//set_mouse_default_binding(input_);
+	//set_keyboard_default_binding_1(input_);
 	set_keyboard_default_binding_2(input_);
 }
 
