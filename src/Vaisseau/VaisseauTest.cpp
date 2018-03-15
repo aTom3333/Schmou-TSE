@@ -44,16 +44,16 @@ VaisseauTest::VaisseauTest() ///constructeur
 	capacites_.push_back(temp1);
 
 	//TIR2
-	//TODO CapMissile
-	capacites_.push_back(nullptr);
+	CapDash *temp4 = new CapDash();
+	capacites_.push_back(temp4);
 
 	//COMP1
 	CapBouclierRond *temp3 = new CapBouclierRond(1, this);
 	capacites_.push_back(temp3);
 
 	//COMP2
-	CapDash *temp4 = new CapDash();
-	capacites_.push_back(temp4);
+	//TODO CapMissile
+	capacites_.push_back(nullptr);
 
 	//COMP 3
 	CapBoing *temp5 = new CapBoing();
@@ -84,7 +84,7 @@ void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Inpu
 	if (input.action(TIR2))
 	{
 		// Lance la compétence à la position du vaisseau allié
-		capacites_[3]->utiliser(position_.x + 32, position_.y + 32);
+		capacites_[1]->utiliser(position_.x + 32, position_.y + 32);
 	}
 
 	// Si la touche COMP 1 est activé

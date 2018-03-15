@@ -23,16 +23,22 @@ void Overlay::init(Vaisseau *vaisseau)
 		}
 	}
 
-	// Compteur qui permet de connaitre le nombre de capacitÃ©s a afficher
-	unsigned int n = 0;
+	// Compteur qui permet de connaitre le nombre de capacités a afficher
+	unsigned int n = 0, m = 0;
 
 	// Initialisation des icones
 	for(unsigned int i = 0; i < vaisseau->getskills().size(); i++)
 	{
 		if (vaisseau->getskills()[i] != nullptr)
 		{
-			vaisseau->getskills()[i]->initIcon(n);
+			if(vaisseau->getskills()[i]->getAffiche())
+				vaisseau->getskills()[i]->initIcon(n);
+
+			if (vaisseau->getskills()[i]->getTir())
+				vaisseau->getskills()[i]->initIcon(m);
+
 			n += vaisseau->getskills()[i]->getAffiche() ? 1 : 0;
+			m += vaisseau->getskills()[i]->getTir() ? 1 : 0;
 		}
 	}
 
@@ -62,7 +68,7 @@ void Overlay::draw(sf::RenderWindow & window, Vaisseau * vaisseau, bool bDraw)
 
 		window.draw(overlay_); //overlay fixe
 
-		int n = 0;
+		int n = 0, m = 0;
 		for(unsigned int i = 0; i < vaisseau->getskills().size(); i++)
 		{
 			if (vaisseau->getskills()[i] != nullptr && vaisseau->getskills()[i]->getAffiche())
@@ -71,6 +77,16 @@ void Overlay::draw(sf::RenderWindow & window, Vaisseau * vaisseau, bool bDraw)
 				window.draw(statuts_[n]);
 				n++;
 			}
+
+			if (vaisseau->getskills()[i] != nullptr && vaisseau->getskills()[i]->getTir())
+			{
+				window.draw(vaisseau->getskills()[i]->getIcon());
+				vaisseau->getskills()[i]->afficherNom(window);
+				m++;
+			}
+
+			if(vaisseau->getskills()[i] != nullptr)
+				window.draw(vaisseau->getskills()[i]->getMasque());
 		}
 			
 	}
@@ -88,6 +104,9 @@ void Overlay::gestion(Vaisseau * vaisseau)
 	int n = 0;
 	for(unsigned int i = 0; i < vaisseau->getskills().size(); i++)
 	{
+		if (vaisseau->getskills()[i] != nullptr)
+			vaisseau->getskills()[i]->gestionIcon();
+
 		if (vaisseau->getskills()[i] != nullptr && vaisseau->getskills()[i]->getAffiche())
 		{
 			int cooldown = (int)(vaisseau->getskills()[i]->getCooldown() - vaisseau->getskills()[i]->getTime());

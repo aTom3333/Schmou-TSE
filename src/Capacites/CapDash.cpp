@@ -3,13 +3,13 @@
 
 CapDash::CapDash()
 {
-	capText_.loadFromFile("../../rc/Capacites/dash.png");
+	capText_.loadFromFile("../../rc/Capacites/tir.png");
 	capacite_.setTexture(capText_);
 	cooldown_ = 500;
 	frames_ = cooldown_; //TODO ici le warning pourrait être important (float vers uint)
 	t_ = cooldown_;
 	nom_ = "Dash";
-	affiche_ = true;
+	tir_ = true;
 }
 
 

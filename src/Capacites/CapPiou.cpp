@@ -2,10 +2,13 @@
 
 CapPiou::CapPiou()
 {
+	capText_.loadFromFile("../../rc/Capacites/tir.png");
+	capacite_.setTexture(capText_);
 	cooldown_ = 100;
 	t_ = cooldown_;
 	frames_ = cooldown_; //TODO ici le warning pourrait être important (float vers uint)
-	nom_ = "Attaque Piou";
+	nom_ = "Canon Laser";
+	tir_ = true;
 }
 
 

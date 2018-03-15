@@ -18,7 +18,7 @@ CapBouclierRond::CapBouclierRond(int niveau, Entite* Entite_liee)
 	case 1:
 		cooldown_ = 15000;
 		pvM_ = 500;
-		degatsColl_ = 0;
+		degatsColl_ = 50;
 		tempsMax_ = 3000;
 		break;
 	case 2:
