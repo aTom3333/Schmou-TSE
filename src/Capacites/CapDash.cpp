@@ -29,11 +29,20 @@ void CapDash::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau
 	//TODO bon il est 3 heures faut que j'aille dormir jpp Thomas faut que tu m'aides :'(
 
 	// Augmente la vitesse  à l'activation
-	if(frames_ == 0)
+	if (frames_ == 0)
+	{
 		vaisseau.changeSpeed(2500);
+		vaisseau.setNbPositions(15);
+		vaisseau.setSmokeTexture(vaisseau.getTexture(), { 120, 120, 120, 120 });
+	}
+		
 	// Retourne à la vitesse de base au bout de 6 frames
-	if(frames_ == 6)
+	if (frames_ == 6)
+	{
 		vaisseau.changeSpeed(-2500);
+		vaisseau.setNbPositions(0);
+	}
+		
 
 	// Si la compétence est en cooldown, on actualise le timer
 	if (t_ < cooldown_)

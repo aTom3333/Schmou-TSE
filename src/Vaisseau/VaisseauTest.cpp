@@ -35,6 +35,8 @@ VaisseauTest::VaisseauTest() ///constructeur
 
 	actif_ = true;
 
+	nbPositions_ = 0;
+
 
 
 	// Capacités

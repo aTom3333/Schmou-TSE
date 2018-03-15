@@ -63,7 +63,7 @@ class Entite
 		 * @param [in,out] window Fenêtre SFML dans laquelle afficher l'entité.
 		 * @param [in] debug Un @c bool qui vaut @a true si les informations de debug doivent être affichées et @a false sinon.
 		 */
-		void afficher(sf::RenderWindow &window, bool debug = false) const;
+		void afficher(sf::RenderWindow &window, bool debug = false);
 
 		// Tranformation setters & getters
         /**
@@ -246,22 +246,25 @@ class Entite
 		*/
 		virtual void destruction() = 0;
 
-		float getPVMax() { return pvMax_; }; 
-		float getArmureMax() { return armureMax_; };
-		float getBouclierMax() { return bouclierMax_; };
-		float getPV() { return pv_; };
-		float getArmure() { return armure_; };
-		float getBouclier() { return bouclier_; };
+		
 
 		//getters
 		Equipe getEquipe() const { return equipe_; };
 		sf::Vector2f getTaille() const { return { sprite_.getGlobalBounds().width, sprite_.getGlobalBounds().height }; }//largeur, hauteur
 		bool getInnate_() const { return innate_; }
+		float getPVMax() { return pvMax_; };
+		float getArmureMax() { return armureMax_; };
+		float getBouclierMax() { return bouclierMax_; };
+		float getPV() { return pv_; };
+		float getArmure() { return armure_; };
+		float getBouclier() { return bouclier_; };
+		sf::Texture getTexture() { return texture_; };
 
 		//setters
 		void setequipe_(Equipe equipe) { equipe_ = equipe; }
 		void setInnate_(bool isInnate) { innate_ = isInnate; }
-		void setNbPositions_(size_t nbPositions) { nbPositions_ = nbPositions; }
+		void setNbPositions(int val);
+		void setSmokeTexture(sf::Texture &text, sf::Color couleur = { 255,255,255 });
 
 	protected:
 		//coordonnées
@@ -285,7 +288,10 @@ class Entite
 		sf::CircleShape cercleEnglobant_; ///< Cercle Englobant de l'Entite
 		std::vector<std::unique_ptr<sf::Shape>> forme_; ///< Forme de l'Entite
 		sf::Texture texture_; ///< Texture du sprite de l'Entite
+		sf::Texture textSmoke_; /// Texture à afficher sur la trainée du vaisseau
+		sf::Sprite smoke_; /// Sprite à afficher sur la trainée du vaisseau
 		sf::Sprite sprite_; ///< Sprite de l'Entite
+		
 
 		// Stats
 		float pvMax_; /// Point de vie maximum de l'entite

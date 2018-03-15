@@ -83,7 +83,6 @@ void Partie::testPartie()
 				}
 			}
 		}
-		timeSpeed_ = 0.1;
 
 		//gestion temps
 		auto t_ecoule = clock.restart();

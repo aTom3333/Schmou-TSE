@@ -22,9 +22,15 @@ bool collision(const Entite& e1, const Entite& e2)
 	return false;
 }
 
-void Entite::afficher(sf::RenderWindow & window, bool debug) const
+void Entite::afficher(sf::RenderWindow & window, bool debug)
 {
 	window.draw(sprite_);
+
+	for (auto pos : positionsPrev_)
+	{
+		smoke_.setPosition(pos);
+		window.draw(smoke_);
+	}
 
 	if(debug)
 	{
@@ -129,6 +135,19 @@ bool Entite::estDetruit()
 float Entite::getDegats()
 {
 	return degats_;
+}
+
+void Entite::setNbPositions(int val)
+{
+	nbPositions_ = val;
+	if(val == 0) positionsPrev_.clear();
+}
+
+void Entite::setSmokeTexture(sf::Texture &text, sf::Color couleur)
+{
+	textSmoke_ = text;
+	smoke_.setTexture(textSmoke_);
+	smoke_.setColor(couleur);
 }
 
 void Entite::regen(sf::Time t)
