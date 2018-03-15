@@ -59,14 +59,17 @@ class Capacite
 		float const getTime() { return t_; };
 		std::string const getNom() { return nom_; };
 		sf::Sprite getIcon() { return capacite_; };
+		sf::RectangleShape getMasque() { return masque_; };
 		sf::Text getText() { return text_; };
 		bool getAffiche() { return affiche_; };
 		bool getTir() { return tir_; };
 		void afficherNom(sf::RenderWindow &window) { window.draw(text_); };
+		void gestionIcon();
 
 	protected:
 		sf::Texture capText_;
 		sf::Sprite capacite_;
+		sf::RectangleShape masque_;
 		sf::Font font_;
 		sf::Text text_;
 		bool affiche_ = false;

@@ -81,10 +81,12 @@ void Overlay::draw(sf::RenderWindow & window, Vaisseau * vaisseau, bool bDraw)
 			if (vaisseau->getskills()[i] != nullptr && vaisseau->getskills()[i]->getTir())
 			{
 				window.draw(vaisseau->getskills()[i]->getIcon());
-				//window.draw(vaisseau->getskills()[i]->getText());
 				vaisseau->getskills()[i]->afficherNom(window);
 				m++;
 			}
+
+			if(vaisseau->getskills()[i] != nullptr)
+				window.draw(vaisseau->getskills()[i]->getMasque());
 		}
 			
 	}
@@ -102,6 +104,9 @@ void Overlay::gestion(Vaisseau * vaisseau)
 	int n = 0;
 	for(unsigned int i = 0; i < vaisseau->getskills().size(); i++)
 	{
+		if (vaisseau->getskills()[i] != nullptr)
+			vaisseau->getskills()[i]->gestionIcon();
+
 		if (vaisseau->getskills()[i] != nullptr && vaisseau->getskills()[i]->getAffiche())
 		{
 			int cooldown = (int)(vaisseau->getskills()[i]->getCooldown() - vaisseau->getskills()[i]->getTime());
