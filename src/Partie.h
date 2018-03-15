@@ -27,7 +27,7 @@
 class Partie
 {
 	public:
-		Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD = true, bool avecVagues = true);
+		Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD = true, bool avecPattern = true);
 		~Partie();
 
 		void jeu();

@@ -1,12 +1,13 @@
 #ifndef ENTITE_H
 #define ENTITE_H
 
+#include "constantes.h"
+
 #include <vector>
 #include <memory>
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
-#include "constantes.h"
-
+#include <deque>
 
 /**
  * @class Entite
@@ -260,11 +261,14 @@ class Entite
 		//setters
 		void setequipe_(Equipe equipe) { equipe_ = equipe; }
 		void setInnate_(bool isInnate) { innate_ = isInnate; }
+		void setNbPositions_(size_t nbPositions) { nbPositions_ = nbPositions; }
 
 	protected:
 		//coordonnées
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
-		sf::Vector2f position_prev_; ///< Position à la boucle précédente
+		std::deque<sf::Vector2f> positionsPrev_; ///< Positions précédentes
+			// /!\ne pas itérer, pas stocké contigument
+		int nbPositions_ = 0; ///nombre de positions précédentes à conserver
 		double angle_; ///< Orientation actuelle de l'Entite
 		double scale_; ///< Échelle actuelle de l'Entite
 

@@ -24,7 +24,7 @@ class Vaisseau;
 class Projectile : public Entite
 {
 	public:
-		Projectile();
+		Projectile() {};
 
 		virtual void gestion(sf::RenderWindow& window, sf::Time tempsEcoule) = 0;
 		/**

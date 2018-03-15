@@ -13,16 +13,9 @@
 
 // Code minimal
 int main()
-{
-
-	//Brodel de thomas 2 : le retour
-	ProjTest a;
-//	std::cout << std::boolalpha << est<Projectile, decltype(a)>(a) << std::endl << est<ProjTest, decltype(a)>(a) << std::endl << est<ProjPiou, decltype(a)>(a) << std::endl;
-	
-	// Code propre
-
+{	
 	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE");
-	Partie partie(window, Input::Media::Mouse);
+	Partie partie(window, Input::Media::Keyboard);
 
 	srand(time(nullptr));
 

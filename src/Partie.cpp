@@ -3,7 +3,7 @@
 #include "Capacites/_Capacites.h"
 #include "Vaisseau/_vaisseaux.h"
 #include "Interface/bindings.h"
-#include "Pattern\Vague.h"
+#include "Pattern/Vague.h"
 
 Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : window_{window}, input_(window, media), afficheHUD_{afficheHUD}, avecPattern_{avecPattern}
 {
@@ -12,9 +12,10 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 		std::cout << "Impossible de charger la police" << std::endl;
 	}
 	
-	//set_mouse_default_binding(input_);
-	//set_keyboard_default_binding_1(input_);
-	set_keyboard_default_binding_2(input_);
+	if (media == Input::Media::Mouse)set_mouse_default_binding(input_);
+	if (media == Input::Media::Keyboard)set_keyboard_default_binding(input_);
+	if (media == Input::Media::Joypad)set_joypad_default_binding(input_);
+
 }
 
 Partie::~Partie()
@@ -63,13 +64,26 @@ void Partie::testPartie()
 				window_.close();
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add))
-				if (timeSpeed_ < 5)
+			{
+				if (timeSpeed_ < 20)
+				{
 					timeSpeed_ += 0.1;
+				}
+			}
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Subtract))
-				if (timeSpeed_ > 0.1)
+			{
+				if (timeSpeed_ >= 0.1)
+				{
 					timeSpeed_ -= 0.1;
+				}
+				else if (timeSpeed_ > 0.01)
+				{
+					timeSpeed_ -= 0.01;
+				}
+			}
 		}
+		timeSpeed_ = 0.1;
 
 		//gestion temps
 		auto t_ecoule = clock.restart();
@@ -181,20 +195,7 @@ void Partie::collisionVaisseaux()
 						vaisseaux_[i]->agit(*vaisseaux_[j]);
 					}
 				}
-			}
-
-			/*if (vaisseaux_[i]->getEquipe() == JOUEUR)
-			{
-				sf::Vector2f taille = vaisseaux_[i]->getTaille();
-				sf::Vector2f pos = vaisseaux_[i]->getPosition();
-				if ((pos.x + taille.x) > ECRAN_L) vaisseaux_[i]->move({ -(pos.x + taille.x - ECRAN_L),0 });
-				if (pos.x < 0) vaisseaux_[i]->move({ -pos.x, 0 });
-				if ((pos.y + taille.y) > ECRAN_H) vaisseaux_[i]->move({ 0,-(pos.y + taille.y - ECRAN_H) });
-				if (pos.y < 0) vaisseaux_[i]->move({ 0, -pos.y });
-			}*/
-
-		
-			
+			}			
 		}
 	}
 	deleteVaisseauDetruit();

@@ -2,7 +2,7 @@
 
 CapPiou::CapPiou()
 {
-	capText_.loadFromFile("../../rc/Capacites/tir.png");
+	capText_.loadFromFile("../../rc/Pictos_Caps/tir.png");
 	capacite_.setTexture(capText_);
 	cooldown_ = 100;
 	t_ = cooldown_;

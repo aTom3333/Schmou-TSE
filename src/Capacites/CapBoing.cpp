@@ -8,7 +8,7 @@ CapBoing::CapBoing()
 	t_ = cooldown_;
 	nom_ = "Attaque Test";
 
-	capText_.loadFromFile("../../rc/Capacites/attaque_test.png");
+	capText_.loadFromFile("../../rc/Pictos_Caps/attaque_test.png");
 	capacite_.setTexture(capText_);
 
 	affiche_ = true;

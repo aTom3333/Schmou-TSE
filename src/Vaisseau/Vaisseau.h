@@ -28,15 +28,16 @@ protected:
 	std::string nom_; /// < Nom du vaisseau
 	int Nskin_; /// numéro du skin du vaisseau
 
-				// stats de base
+	// stats de base
 	int pvM_; /// Points de vie de base
 	int atqM_; /// Attaque de base
 	int defM_; /// Défense de base
 	int vitM_; /// Vitesse de base
-			   // liste de capacités
+
+	// liste de capacités
 	std::vector<Capacite*> capacites_; /// Liste des capacités du vaisseau
 
-									   //section
+    //section
 	std::vector<Vaisseau*> annexes_; /// Vecteur contenant toute les parties annexes d'un vaisseau
 	std::vector<bool> annexesB_; /// Vecteur indiquant si l'annexe au même indice existe encore
 	Vaisseau * createur_; /// Si c'est une annexe, pointe vers le vaisseau  qui possede cette annexe. null_ptr sinon

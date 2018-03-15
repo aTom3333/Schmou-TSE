@@ -3,7 +3,7 @@
 
 #include "Input.h"
 
-void set_keyboard_default_binding_1(Input& in);
+void set_keyboard_default_binding(Input& in);
 
 void set_keyboard_default_binding_2(Input& in);
 

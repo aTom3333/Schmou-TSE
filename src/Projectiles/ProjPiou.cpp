@@ -14,9 +14,9 @@ ProjPiou::ProjPiou(int x, int y, Equipe equipe)
 	sprite_.setTexture(texture_);
 
 	// Hitbox
-	cercleEnglobant_ = sf::CircleShape(sqrt(2*10*10));
-	cercleEnglobant_.setOrigin(sqrt(2 * 10 * 10), sqrt(2 * 10 * 10));
-	cercleEnglobant_.setPosition(10, 15);
+	cercleEnglobant_ = sf::CircleShape(5);
+	cercleEnglobant_.setOrigin(10, 10);
+	cercleEnglobant_.setPosition(10, 10);
 	forme_.emplace_back(new sf::RectangleShape({20,30}));
 	
 	// Stats

@@ -1,7 +1,7 @@
 #include "bindings.h"
 
 
-void set_keyboard_default_binding_1(Input& in)
+void set_keyboard_default_binding_2(Input& in)
 {
     in.set_movement_mode(Input::Media::Keyboard);
     in.set_action_keyboard(PAUSE, sf::Keyboard::Escape);
@@ -14,7 +14,7 @@ void set_keyboard_default_binding_1(Input& in)
 }
 
 
-void set_keyboard_default_binding_2(Input& in)
+void set_keyboard_default_binding(Input& in)
 {
 	in.set_movement_mode(Input::Media::Keyboard);
 	in.set_action_keyboard(PAUSE, sf::Keyboard::Escape);

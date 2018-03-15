@@ -51,12 +51,17 @@ void Entite::move(sf::Vector2f& delta)
 			elem->move(delta);
 		cercleEnglobant_.move(delta);
 		sprite_.move(delta);
+
+		if (nbPositions_)
+		{
+			positionsPrev_.push_front(position_);
+			if (positionsPrev_.size() > nbPositions_)positionsPrev_.pop_back();
+		}
 		position_ += delta;
 }
 
 void Entite::setPosition(const sf::Vector2f & pos)
 {
-	position_prev_ = position_;
 	move(pos - position_);
 }
 

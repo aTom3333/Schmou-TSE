@@ -3,7 +3,7 @@
 
 CapDash::CapDash()
 {
-	capText_.loadFromFile("../../rc/Capacites/tir.png");
+	capText_.loadFromFile("../../rc/Pictos_Caps/tir.png");
 	capacite_.setTexture(capText_);
 	cooldown_ = 500;
 	frames_ = cooldown_; //TODO ici le warning pourrait être important (float vers uint)
@@ -26,14 +26,14 @@ void CapDash::utiliser(int x, int y)
 
 void CapDash::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule)
 {
-	//if (Input::isMoving()) 
 	//TODO bon il est 3 heures faut que j'aille dormir jpp Thomas faut que tu m'aides :'(
-	// Augmente la vitesse de 5000 à l'activation
+
+	// Augmente la vitesse  à l'activation
 	if(frames_ == 0)
-		vaisseau.changeSpeed(5000);
-	// Retourne à la vitesse de base au bout de 5 frames
-	if(frames_ == 5)
-		vaisseau.changeSpeed(-5000);
+		vaisseau.changeSpeed(2500);
+	// Retourne à la vitesse de base au bout de 6 frames
+	if(frames_ == 6)
+		vaisseau.changeSpeed(-2500);
 
 	// Si la compétence est en cooldown, on actualise le timer
 	if (t_ < cooldown_)
