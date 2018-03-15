@@ -49,10 +49,18 @@ public:
 	* Fixe le temps de départ du début de la vague
 	*/
 	void setTempsDebut(float t);
+
+	//getters
+	std::vector <ElementVague> getv_() { return v_; }
+
+	//setters
+	void setEquipeAll(Equipe equipe) { for (auto &element : v_) element.v->setequipe_(ENNEMI); }
+
 private:
 	float t_debut_; /// Temps en millisecondes du début de la vague
 	float t_; /// Temps depuis le début de la vague
 	std::vector <ElementVague> v_; /// Vecteur des vaisseaux qui apparaissent
+
 };
 
 #endif //VAGUE_H

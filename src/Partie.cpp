@@ -42,6 +42,7 @@ void Partie::testPartie()
 
 	//Joueur
 	VaisseauTest *vaisseautest = new VaisseauTest;
+	vaisseautest->setequipe_(JOUEUR);
 	vaisseaux_.push_back(vaisseautest);
 	vaisseaux_[0]->setPosition({ 500,700 });
 
@@ -110,7 +111,7 @@ void Partie::testPartie()
 		}			
 
 		// Gestion des collisions
-		collisionProjectile();
+		collisionProjectile(); //le code est plus bas
 		collisionVaisseaux();
 
 		// Affichage de l'ATH
@@ -173,19 +174,36 @@ void Partie::collisionVaisseaux()
 {
 	if (vaisseaux_.size() != 0)
 	{
-		for(unsigned int i = 0; i < vaisseaux_.size() - 1; i++)
+		for (unsigned int i = 0; i < vaisseaux_.size() - 1; i++)
 		{
 			// Si le vaisseau est dehors
 			if (vaisseaux_[i]->estDehors())
-				vaisseaux_[i]->destruction();
+			{
+				vaisseaux_[i]->destruction();				
+			}
 			else
 			{
-				for(unsigned int j = i + 1; j < vaisseaux_.size(); j++)
+				for (unsigned int j = i + 1; j < vaisseaux_.size(); j++)
 				{
 					if (collision(*vaisseaux_[i], *vaisseaux_[j]))
+					{
 						vaisseaux_[j]->agit(*vaisseaux_[i]);
+						vaisseaux_[i]->agit(*vaisseaux_[j]);
+					}
 				}
 			}
+
+			/*if (vaisseaux_[i]->getEquipe() == JOUEUR)
+			{
+				sf::Vector2f taille = vaisseaux_[i]->getTaille();
+				sf::Vector2f pos = vaisseaux_[i]->getPosition();
+				if ((pos.x + taille.x) > ECRAN_L) vaisseaux_[i]->move({ -(pos.x + taille.x - ECRAN_L),0 });
+				if (pos.x < 0) vaisseaux_[i]->move({ -pos.x, 0 });
+				if ((pos.y + taille.y) > ECRAN_H) vaisseaux_[i]->move({ 0,-(pos.y + taille.y - ECRAN_H) });
+				if (pos.y < 0) vaisseaux_[i]->move({ 0, -pos.y });
+			}*/
+
+		
 			
 		}
 	}
@@ -261,4 +279,7 @@ void Partie::initPatternTest()
 	pattern_.push_back(v3);
 	pattern_.push_back(v4);
 	pattern_.push_back(v5);
+
+	for (auto &vague : pattern_) vague.setEquipeAll(ENNEMI);
+
 }

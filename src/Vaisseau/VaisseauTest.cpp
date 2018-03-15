@@ -16,6 +16,7 @@ VaisseauTest::VaisseauTest() ///constructeur
 
 	// Stats
 	equipe_ = JOUEUR;
+	innate_ = true;
 	vit_ = 500;
 
 	pvMax_ = 1000;

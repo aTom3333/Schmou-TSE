@@ -9,14 +9,15 @@ ProjPiou::ProjPiou()
 ProjPiou::ProjPiou(int x, int y, Equipe equipe)
 {
 	// Gestion du sprite
-	texture_.loadFromFile("../../rc/Sprites/base/projectile_test.png");
+	//texture_.loadFromFile("../../rc/Sprites/base/projectile_test.png");
+	texture_.loadFromFile("../../rc/Sprites/Capacites/Piou20x30.PNG");
 	sprite_.setTexture(texture_);
 
 	// Hitbox
 	cercleEnglobant_ = sf::CircleShape(sqrt(2*10*10));
 	cercleEnglobant_.setOrigin(sqrt(2 * 10 * 10), sqrt(2 * 10 * 10));
-	cercleEnglobant_.setPosition(10, 10);
-	forme_.emplace_back(new sf::RectangleShape({20,20}));
+	cercleEnglobant_.setPosition(10, 15);
+	forme_.emplace_back(new sf::RectangleShape({20,30}));
 	
 	// Stats
 	equipe_ = equipe;

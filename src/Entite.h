@@ -72,7 +72,7 @@ class Entite
          * Appelle la fonction move de la SFML sur les attributs de l'objet appelant.
          * @param [in] delta un @c sf::Vector2f qui donne le déplacement en x et en y
          */
-		void move(const sf::Vector2f& delta);
+		void move(sf::Vector2f& delta);
         /**
          * @fn setPosition
          * @brief Fixe la position de l'Entite
@@ -252,16 +252,32 @@ class Entite
 		float getArmure() { return armure_; };
 		float getBouclier() { return bouclier_; };
 
-		Equipe getEquipe() { return equipe_; };
+		//getters
+		Equipe getEquipe() const { return equipe_; };
+		sf::Vector2f getTaille() const { return { sprite_.getGlobalBounds().width, sprite_.getGlobalBounds().height }; }//largeur, hauteur
+		bool getInnate_() const { return innate_; }
+
+		//setters
+		void setequipe_(Equipe equipe) { equipe_ = equipe; }
+		void setInnate_(bool isInnate) { innate_ = isInnate; }
 
 	protected:
-		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
-		bool detruit_ = false; /// ture lorsque que le vaisseau est détruit
-		bool actif_; /// Booleen indiquant si la trajectoire a été amorcée
-		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
+		//coordonnées
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
+		sf::Vector2f position_prev_; ///< Position à la boucle précédente
 		double angle_; ///< Orientation actuelle de l'Entite
 		double scale_; ///< Échelle actuelle de l'Entite
+
+		//caractéristiques
+		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
+		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
+		bool innate_ = false; ///false si doit rester dans l'écran
+
+		//état
+		bool detruit_ = false; /// ture lorsque que le vaisseau est détruit
+		bool actif_; /// Booleen indiquant si la trajectoire a été amorcée
+
+		//graphismes
 		sf::CircleShape cercleEnglobant_; ///< Cercle Englobant de l'Entite
 		std::vector<std::unique_ptr<sf::Shape>> forme_; ///< Forme de l'Entite
 		sf::Texture texture_; ///< Texture du sprite de l'Entite

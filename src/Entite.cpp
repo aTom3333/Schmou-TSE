@@ -35,17 +35,28 @@ void Entite::afficher(sf::RenderWindow & window, bool debug) const
 }
 
 
-void Entite::move(const sf::Vector2f& delta)
+void Entite::move(sf::Vector2f& delta)
 {
-	for(auto& elem : forme_)
-		elem->move(delta);
-    cercleEnglobant_.move(delta);
-    sprite_.move(delta);
-	position_ += delta;
+	if(innate_)
+	{
+		sf::Vector2f taille = getTaille();
+		sf::Vector2f pos = getPosition();
+		if ((pos.x + taille.x + delta.x) > ECRAN_L) delta.x = ECRAN_L - pos.x - taille.x;
+		if (pos.x + delta.x < 0) delta.x = -pos.x;
+		if ((pos.y + taille.y + delta.y) > ECRAN_H) delta.y = ECRAN_H - pos.y - taille.y;
+		if (pos.y + delta.y < 0) delta.y = -pos.y;
+	}
+
+		for (auto& elem : forme_)
+			elem->move(delta);
+		cercleEnglobant_.move(delta);
+		sprite_.move(delta);
+		position_ += delta;
 }
 
 void Entite::setPosition(const sf::Vector2f & pos)
 {
+	position_prev_ = position_;
 	move(pos - position_);
 }
 

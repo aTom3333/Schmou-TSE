@@ -20,7 +20,7 @@ enum Actions
 
 enum Equipe
 {
-	JOUEUR, ENNEMI, NEUTRE 
+	JOUEUR,  ENNEMI, NEUTRE ,ALLIE
 };
 
 
