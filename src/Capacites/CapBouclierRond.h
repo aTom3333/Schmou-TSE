@@ -47,7 +47,7 @@ public:
 
 };
 
-#endif BOUCLIER_ROND_H
+#endif //BOUCLIER_ROND_H
 
 
 

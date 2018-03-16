@@ -5,7 +5,7 @@
 #include "Interface/bindings.h"
 #include "Pattern/Vague.h"
 
-Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : window_{window}, input_(window, media), afficheHUD_{afficheHUD}, avecPattern_{avecPattern}
+Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : window_{window}, input_(window, media), avecPattern_{avecPattern}, afficheHUD_{afficheHUD}
 {
 	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
 	{

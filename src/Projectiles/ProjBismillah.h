@@ -18,9 +18,16 @@ public:
 	*/
 	ProjBismillah(int x, int y, sf::Sound sound, Equipe equipe = NEUTRE);
 
-	void gestion(sf::RenderWindow& window, sf::Time tempsEcoule) {};
+	void gestion(sf::RenderWindow& window, sf::Time tempsEcoule) override {
+		// Juste pour mute les warnings du compilateur
+        (void)window;
+        (void)tempsEcoule;
+	};
 
-	void agit(Entite& e) {};
+	void agit(Entite& e) override {
+		// Juste pour mute les warnings du compilateur
+        (void)e;
+	};
 
 };
 

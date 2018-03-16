@@ -54,6 +54,9 @@ VaisseauEclaireur::~VaisseauEclaireur()
 
 void VaisseauEclaireur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
 {
+	// Juste pour mute les warnings du compilateur
+	(void)input;
+	
 	/*if (frames_%100==0)
 	{
 		params_[0] = -params_[0];

@@ -43,6 +43,9 @@ void CapBoing::utiliser(int x, int y)
 
 void CapBoing::actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule)
 {
+    // Juste pour mute les warnings du compilateur
+    (void)vaisseau;
+    
 	// Pour avoir la création des 4 projectile toute les 5 frames
 	if (frames_ < 20 && frames_ % 5 == 0)
 	{

@@ -55,7 +55,9 @@ public:
 	std::vector<ElementVague> getv_() { return v_; }
 
 	//setters
-	void setEquipeAll(Equipe equipe) { for (auto &element : v_) element.v->setequipe_(ENNEMI); }
+	void setEquipeAll(Equipe equipe) {
+		for (auto &element : v_) element.v->setequipe_(equipe); 
+	}
 
 private:
 	float t_debut_; /// Temps en millisecondes du début de la vague

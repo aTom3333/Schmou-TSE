@@ -4,6 +4,10 @@
 
 VaisseauDefenseurB::VaisseauDefenseurB(int nb, float x, float y, Vaisseau *createur)
 {
+	// Juste pour mute les warnings du compilateur
+	(void)x;
+	(void)y;
+	
 	//sprite
 	texture_.loadFromFile("../../rc/Sprites/base/vaisseauDefenseurBouclier.png");
 	sprite_.setTexture(texture_);
@@ -42,6 +46,10 @@ VaisseauDefenseurB::~VaisseauDefenseurB()
 
 void VaisseauDefenseurB::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
 {
+	// Juste pour mute les warnings du compilateur
+	(void)tempsEcoule;
+	(void)input;
+	
 	if (actif_)
 		afficher(window);
 }

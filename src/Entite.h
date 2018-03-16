@@ -275,7 +275,7 @@ class Entite
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
 		std::deque<sf::Vector2f> positionsPrev_; ///< Positions précédentes
 			// /!\ne pas itérer, pas stocké contigument
-		int nbPositions_ = 0; ///nombre de positions précédentes à conserver
+		size_t nbPositions_ = 0; ///nombre de positions précédentes à conserver
 		double angle_; ///< Orientation actuelle de l'Entite
 		double scale_; ///< Échelle actuelle de l'Entite
 

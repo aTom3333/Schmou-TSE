@@ -34,6 +34,10 @@ void CapPiou::utiliser(int x, int y)
 
 void CapPiou::actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule)
 {
+    // Juste pour mute les warnings du compilateur
+    (void)projectiles;
+	(void)vaisseau;
+    
 	// Création du projectile au moment où la compétence est lancée
 	if (frames_ == 0)
 	{

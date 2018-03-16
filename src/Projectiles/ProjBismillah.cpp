@@ -4,6 +4,9 @@
 
 ProjBismillah::ProjBismillah(int x, int y, sf::Sound sound, Equipe equipe)
 {
+	// Juste pour mute les warnings du compilateur
+	(void)sound;
+	
 	// Gestion du sprite
 	texture_.loadFromFile("../../rc/Sprites/Capacites/Piou20x30.PNG");
 	//sf::RectangleShape texture({ 32, 128 });

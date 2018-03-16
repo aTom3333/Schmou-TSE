@@ -3,6 +3,9 @@
 
 ProjBouclierRond::ProjBouclierRond(Entite* Entite_liee, int pvM, int degatsColl, float tempsMax, Equipe equipe)
 {
+	// Juste pour mute les warnings du compilateur
+	(void)equipe;
+	
 	// Sprite
 	texture_.loadFromFile("../../rc/Sprites/base/bouclier_rond.png");
 	sprite_.setTexture(texture_);

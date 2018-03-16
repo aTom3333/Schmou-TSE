@@ -55,6 +55,9 @@ VaisseauAttaquant::~VaisseauAttaquant()
 
 void VaisseauAttaquant::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
 {
+	// Juste pour mute les warnings du compilateur
+	(void)input;
+	
 	if (actif_)
 	{
 		if (t_ > 1000)

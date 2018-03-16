@@ -3,6 +3,9 @@
 
 ProjPiou::ProjPiou(int x, int y, sf::Sound sound, Equipe equipe)
 {
+	// Juste pour mute les warnings du compilateur
+	(void)sound;
+	
 	// Gestion du sprite
 	//texture_.loadFromFile("../../rc/Sprites/base/projectile_test.png");
 	texture_.loadFromFile("../../rc/Sprites/Capacites/Piou20x30.PNG");

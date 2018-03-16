@@ -39,6 +39,9 @@ void CapBismillah::utiliser(int x, int y)
 
 void CapBismillah::actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule)
 {
+	// Juste pour mute les warnings du compilateur
+    (void)vaisseau;
+
 	// Cr�ation du projectile au moment o� la comp�tence est lanc�e
 	if (frames_ == 0)
 	{
