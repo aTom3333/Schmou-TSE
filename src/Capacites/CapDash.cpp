@@ -31,7 +31,7 @@ void CapDash::utiliser(int x, int y)
 }
 
 
-void CapDash::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule)
+void CapDash::actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule)
 {
 	//TODO ne se lance que si le lanceur n'est pas immobile
 

@@ -24,7 +24,7 @@ Vaisseau::~Vaisseau() ///destructeur
 		delete capacites_[i];
 }
 
-void Vaisseau::gestionCapacite(std::vector <Projectile*> &projectiles, sf::Time t_ecoule)
+void Vaisseau::gestionCapacite(proj_container &projectiles, sf::Time t_ecoule)
 {
 	// Gestion des capacites
 	for(unsigned int i = 0; i < capacites_.size(); i++)

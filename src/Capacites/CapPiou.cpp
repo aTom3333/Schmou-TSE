@@ -32,13 +32,13 @@ void CapPiou::utiliser(int x, int y)
 	}
 }
 
-void CapPiou::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule)
+void CapPiou::actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule)
 {
 	// Création du projectile au moment où la compétence est lancée
 	if (frames_ == 0)
 	{
 		//TODO bug
-		ProjPiou *temp = new ProjPiou(debutX_, debutY_, sound_, JOUEUR);
+		proj_ptr temp(new ProjPiou(debutX_, debutY_, sound_, JOUEUR));
 		sound_.play();
 		projectiles.push_back(temp);
 	}

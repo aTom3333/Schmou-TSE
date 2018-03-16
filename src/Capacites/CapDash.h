@@ -43,7 +43,7 @@ class CapDash : public Capacite
 		 * Augmente la vitesse du vaisseau pour quelques frames
 		 * Actualise le timer
 		 */
-		void actualiser(std::vector<Projectile*> &projectiles, Entite& vaisseau, float tempsEcoule) override;
+		void actualiser(proj_container &projectiles, Entite& vaisseau, float tempsEcoule) override;
 };
 
 #endif

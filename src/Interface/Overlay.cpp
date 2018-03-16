@@ -4,7 +4,7 @@ Overlay::Overlay()
 {
 }
 
-void Overlay::init(Vaisseau *vaisseau)
+void Overlay::init(vaisseau_ptr vaisseau)
 {
 	// Chargement des images
 	font_.loadFromFile("../../rc/Font/whitrabt.ttf");
@@ -58,7 +58,7 @@ Overlay::~Overlay()
 	delete[] statuts_;
 }
 
-void Overlay::draw(sf::RenderWindow & window, Vaisseau * vaisseau, bool bDraw)
+void Overlay::draw(sf::RenderWindow & window, vaisseau_ptr vaisseau, bool bDraw)
 {
 	// Affichage de l'overlay
 	if (bDraw)
@@ -92,7 +92,7 @@ void Overlay::draw(sf::RenderWindow & window, Vaisseau * vaisseau, bool bDraw)
 	}
 }
 
-void Overlay::gestion(Vaisseau * vaisseau)
+void Overlay::gestion(vaisseau_ptr vaisseau)
 {
 
 	// Gestion de barres de vie, d'armure et de bouclier

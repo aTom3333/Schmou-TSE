@@ -41,13 +41,13 @@ void CapBoing::utiliser(int x, int y)
 	}
 }
 
-void CapBoing::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule)
+void CapBoing::actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule)
 {
 	// Pour avoir la création des 4 projectile toute les 5 frames
 	if (frames_ < 20 && frames_ % 5 == 0)
 	{
 		// Création d'un nouveau projectile
-		ProjBoing *temp = new ProjBoing(debutX_, debutY_, sound_);
+		proj_ptr temp(new ProjBoing(debutX_, debutY_, sound_));
 		projectiles.push_back(temp);
 	}
 

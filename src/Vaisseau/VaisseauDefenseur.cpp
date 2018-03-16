@@ -3,7 +3,7 @@
 #include <cmath>
 
 
-VaisseauDefenseur::VaisseauDefenseur(float x, float y, std::vector<Vaisseau*> &vaisseaux, Trajectoire traj, float param1, float param2, float param3, float param4)
+VaisseauDefenseur::VaisseauDefenseur(float x, float y, vaisseau_container &vaisseaux, Trajectoire traj, float param1, float param2, float param3, float param4)
 {
 	//sprite
 	texture_.loadFromFile("../../rc/Sprites/base/vaisseauDefenseur.png");
@@ -41,7 +41,7 @@ VaisseauDefenseur::VaisseauDefenseur(float x, float y, std::vector<Vaisseau*> &v
 
 	degats_ = 75;
 
-	annexes_.push_back(new VaisseauDefenseurB(0, x, y+64, this));
+	annexes_.push_back(vaisseau_ptr(new VaisseauDefenseurB(0, x, y+64, this)));
 	annexesB_.push_back(true);
 	vaisseaux.push_back(annexes_[0]);
 

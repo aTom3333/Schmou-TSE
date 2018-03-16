@@ -5,6 +5,7 @@
 #include <string>
 #include <algorithm>
 #include <iostream>
+#include <memory>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include "Capacites/Capacite.h"
@@ -13,6 +14,7 @@
 #include "Interface/Input.h"
 #include "Interface/Overlay.h"
 #include "Pattern/Vague.h"
+#include "def_type.h"
 
 
 /**
@@ -53,8 +55,8 @@ class Partie
 		std::vector<Vague> pattern_;			
 
 		//attributs principaux en jeu
-		std::vector<Vaisseau*> vaisseaux_; ///vecteur des vaisseaux ennemis en jeu
-		std::vector<Projectile *> projectiles_; /// vecteur des projectiles en jeu
+		vaisseau_container vaisseaux_; ///vecteur des vaisseaux ennemis en jeu
+		proj_container projectiles_; /// vecteur des projectiles en jeu
 
 		//attributs de debug
 		double timeSpeed_; /// Facteur contrôlant le temps

@@ -35,7 +35,7 @@ class CapMissile : public Capacite
 		* @param projectile Vecteur de tout les projectiles présent à l'écran
 		* @param vaisseau Vaisseau qui a activé la compétence
 		*/
-		void actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule) override;
+		void actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule) override;
 	private:
 
 };

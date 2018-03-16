@@ -49,13 +49,13 @@ void CapBouclierRond::utiliser(int x, int y)
 }
 
 
-void CapBouclierRond::actualiser(std::vector<Projectile*>& GVP, Entite& vaisseau, float tempsEcoule)
+void CapBouclierRond::actualiser(proj_container& GVP, Entite& vaisseau, float tempsEcoule)
 {
 	// Création du projectile au moment où la compétence est lancée
 	if (frames_ == 0)
 	{
 		//TODO bug
-		ProjBouclierRond *temp = new ProjBouclierRond(Entite_liee_, pvM_, degatsColl_, tempsMax_, vaisseau.getEquipe());
+		proj_ptr temp(new ProjBouclierRond(Entite_liee_, pvM_, degatsColl_, tempsMax_, vaisseau.getEquipe()));
 		GVP.push_back(temp);
 	}
 
