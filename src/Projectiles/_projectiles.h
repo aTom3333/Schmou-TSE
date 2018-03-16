@@ -8,5 +8,6 @@
 #include "ProjBoing.h"
 #include "ProjPiou.h"
 #include "ProjMissile.h"
+#include "ProjBismillah.h"
 
 #endif

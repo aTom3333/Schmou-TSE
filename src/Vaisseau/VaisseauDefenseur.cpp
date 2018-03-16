@@ -15,7 +15,7 @@ VaisseauDefenseur::VaisseauDefenseur(float x, float y, std::vector<Vaisseau*> &v
 	cercleEnglobant_.setPosition(16, 32);
 	forme_.emplace_back(new sf::RectangleShape({ 128,64 }));
 
-	// Initialisation de la postion
+	// Initialisation de la position
 	posInit_.x = x;
 	posInit_.y = y;
 	// initialisation de la trajectoire

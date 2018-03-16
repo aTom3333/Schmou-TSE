@@ -107,7 +107,7 @@ void ProjBoing::gestion(sf::RenderWindow& window, sf::Time tempsEcoule)
 {
 	age_++;
 
-	// Modification de la postion
+	// Modification de la position
 	setPosition({ position_.x + vit_*vx_*mx_*tempsEcoule.asSeconds(), position_.y + vit_*vy_*my_*tempsEcoule.asSeconds() });
 
 	// Gestion du rebond

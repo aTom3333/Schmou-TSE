@@ -27,10 +27,10 @@ class CapDash : public Capacite
 		/**
 		* @fn utiliser
 		* @brief Active la capacite
-		* @param [in] x Abscisse de la postion où la capacite est utilisée
-		* @param [in] y Ordonnée de la postion où la capacite est utilisée
+		* @param [in] x Abscisse de la position où la capacite est utilisée
+		* @param [in] y Ordonnée de la position où la capacite est utilisée
 		*
-		* Fonction Initialise la postion de départ et le timer
+		* Fonction Initialise la position de départ et le timer
 		*/
 		void utiliser(int x, int y) override;
 		/**

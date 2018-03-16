@@ -260,6 +260,9 @@ class Entite
 		float getArmure() { return armure_; };
 		float getBouclier() { return bouclier_; };
 		const sf::Texture& getTexture() { return texture_; };
+		bool isInvincible() const { return framesInvincibilite_ != 0; };
+		bool isCollisionneuse() { return collisionneuse_; }
+		bool isCollisionnable() { return collisionable_; }
 
 		//setters
 		void setequipe_(Equipe equipe) { equipe_ = equipe; }
@@ -278,6 +281,7 @@ class Entite
 
 		//caractéristiques
 		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
+		bool collisionneuse_ = true;
 		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
 		bool innate_ = false; ///false si doit rester dans l'écran
 
@@ -299,18 +303,23 @@ class Entite
 		sf::Sound sound_;
 
 		// Stats
-		float pvMax_; /// Point de vie maximum de l'entite
-		float armureMax_;  /// Armure maximum de l'entite
-		float bouclierMax_;  /// Bouclier maximum de l'entite
-		float pv_; /// Points de vie actuel
-		float armure_; ///Armure actuel
-		float bouclier_; /// Bouclier actuel
-		float regenPV_; /// Points de vie rendu tout les 250 ms
-		float regenARM_; /// Armure rendu tout les 250 ms
-		float regenBOU_; /// Bouclier rendu tout les 250 ms
-		float vit_; /// Vitesse actuelle de l'Entite
+		float pvMax_ = 0; /// Point de vie maximum de l'entite
+		float armureMax_ = 0;  /// Armure maximum de l'entite
+		float bouclierMax_ = 0;  /// Bouclier maximum de l'entite
+		float vitM_ = 0; ///Vitesse maximale de l'entite
+
+		float pv_ = pvMax_; /// Points de vie actuel
+		float armure_ = armureMax_; ///Armure actuel
+		float bouclier_ = bouclierMax_; /// Bouclier actuel
+		float vit_ = vitM_; /// Vitesse actuelle de l'Entite
+
+		float regenPV_ = 0; /// Points de vie rendu tout les 250 ms
+		float regenARM_ = 0; /// Armure rendu tout les 250 ms
+		float regenBOU_ = 0; /// Bouclier rendu tout les 250 ms
 		float t_regen_; /// Temps écoulé depuis la dernière régénération
-		float degats_; /// Dégats infligé en cas de de collision
+
+		float degats_ = 0; /// Dégats infligé en cas de de collision
+		int framesInvincibilite_ = 0; /// Frames invincibilites
 };
 
 #endif // ENTITE_H

@@ -9,7 +9,7 @@
 * @class CapPiou
 * @brief Classe Capacité de base
 *
-* Capacité qui créé 1 ProjPiou à la postion du lanceur
+* Capacité qui créé 1 ProjPiou à la position du lanceur
 * Nom : Attaque Piou
 * Cooldown : 100 ms
 */
@@ -28,10 +28,10 @@ class CapPiou : public Capacite
 		/**
 		* @fn utiliser
 		* @brief Active la capacite
-		* @param x Abscisse de la postion où la capacite est utilisée
-		* @param y Ordonnée de la postion où la capacite est utilisée
+		* @param x Abscisse de la position où la capacite est utilisée
+		* @param y Ordonnée de la position où la capacite est utilisée
 		*
-		* Fonction Initialise la postion de départ et le timer
+		* Fonction Initialise la position de départ et le timer
 		*/
 		void utiliser(int x, int y) override;
 		/**

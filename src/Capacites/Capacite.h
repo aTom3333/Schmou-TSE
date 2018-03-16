@@ -35,10 +35,10 @@ class Capacite
 		/**
 		* @fn utiliser
 		* @brief Fonction virtuel qui active la capacite lorsqu'elle est appelée
-		* @param x Abscisse de la postion où la capacite est utilisée
-		* @param y Ordonnée de la postion où la capacite est utilisée
+		* @param x Abscisse de la position où la capacite est utilisée
+		* @param y Ordonnée de la position où la capacite est utilisée
 		*
-		* Fonction virtuel qui initialise la postion de départ et le timer
+		* Fonction virtuel qui initialise la position de départ et le timer
 		*/
 		virtual void utiliser(int x, int y) = 0;
 		/**

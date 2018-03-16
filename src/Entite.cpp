@@ -6,25 +6,30 @@
 
 bool collision(const Entite& e1, const Entite& e2)
 {
-	if (e1.actif_ && e2.actif_)
+	if (!e1.isInvincible() && !e2.isInvincible())
 	{
-		if (!e1.collisionable_ || !e2.collisionable_)
-			return false;
-			if(e1.equipe_ == e2.equipe_ && e1.equipe_ != NEUTRE)
+		if (e1.actif_ && e2.actif_)
+		{
+			if (!e1.collisionable_ || !e2.collisionable_)
 				return false;
-		if (!collision(e1.cercleEnglobant_, e2.cercleEnglobant_))
-			return false;
-		for (const auto& f1 : e1.forme_)
-			for (const auto& f2 : e2.forme_)
-				if (collision(*f1, *f2))
-					return true;
+			if (e1.equipe_ == e2.equipe_ && e1.equipe_ != NEUTRE)
+				return false;
+			if (!collision(e1.cercleEnglobant_, e2.cercleEnglobant_))
+				return false;
+			for (const auto& f1 : e1.forme_)
+				for (const auto& f2 : e2.forme_)
+					if (collision(*f1, *f2))
+						return true;
+		}
 	}
+	
 	return false;
 }
 
 void Entite::afficher(sf::RenderWindow & window, bool debug)
 {
-	window.draw(sprite_);
+	if ((framesInvincibilite_ / 10) % 2 == 0)
+		window.draw(sprite_);
 
 	for (auto pos : positionsPrev_)
 	{
@@ -38,6 +43,8 @@ void Entite::afficher(sf::RenderWindow & window, bool debug)
 		for (auto& elem : forme_)
 			window.draw(*elem);
 	}
+
+	if(framesInvincibilite_ != 0) framesInvincibilite_--;
 }
 
 
@@ -180,37 +187,41 @@ void Entite::recoitDegats(float degats)
 {
 	float restant = degats;
 
-	bouclier_ -= restant;
-
-	// Si le bouclier est détruit
-	if (bouclier_ < 0)
+	if (degats != 0)
 	{
-		// Récupération des dégats restant
-		restant = -bouclier_;
-		bouclier_ = 0;
-	}
-	// Sinon le bouclier a absorbé tout les dégats 
-	else
-		restant = 0;
+		framesInvincibilite_ = NB_FRAMES_INVINCIBILITE;
 
-	float reductionArmure = 0.7; // Multiplicateur de réduction de dégats de l'armure
-	armure_ -= restant * reductionArmure;
-	if (armure_ < 0)
-	{
-		restant = -armure_ / reductionArmure;
-		armure_ = 0;
-	}
-	else
-		restant = 0;
+		bouclier_ -= restant;
 
-	pv_ -= restant;
-	if (pv_ <= 0)
-	{
-		pv_ = 0;
-		detruit_ = true;
-		destruction();
-	}
+		// Si le bouclier est détruit
+		if (bouclier_ < 0)
+		{
+			// Récupération des dégats restant
+			restant = -bouclier_;
+			bouclier_ = 0;
+		}
+		// Sinon le bouclier a absorbé tout les dégats 
+		else
+			restant = 0;
 
+		float reductionArmure = 0.7; // Multiplicateur de réduction de dégats de l'armure
+		armure_ -= restant * reductionArmure;
+		if (armure_ < 0)
+		{
+			restant = -armure_ / reductionArmure;
+			armure_ = 0;
+		}
+		else
+			restant = 0;
+
+		pv_ -= restant;
+		if (pv_ <= 0)
+		{
+			pv_ = 0;
+			detruit_ = true;
+			destruction();
+		}
+	}
 }
 
 bool Entite::estDehors(float x_min, float y_min, float x_max, float y_max) const

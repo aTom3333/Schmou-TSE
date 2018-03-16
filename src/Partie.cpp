@@ -53,6 +53,10 @@ void Partie::testPartie()
 
 	hud_.init(vaisseaux_[0]);
 
+	// TODO TRUC TEMPORAIRE
+	sf::Listener::setGlobalVolume(10);
+
+	clock.restart();
 	while (window_.isOpen())
 	{
 		// Gestion  des évènements 
@@ -160,8 +164,8 @@ void Partie::collisionProjectile()
 				{
 					if (collision(*allEntite[i], *allEntite[j]))
 					{
-						allEntite[i]->agit(*allEntite[j]);
-						allEntite[j]->agit(*allEntite[i]);
+						if (allEntite[i]->isCollisionneuse() && allEntite[j]->isCollisionnable()) allEntite[i]->agit(*allEntite[j]);
+						if (allEntite[j]->isCollisionneuse() && allEntite[i]->isCollisionnable()) allEntite[j]->agit(*allEntite[i]);
 					}
 						
 				}

@@ -8,12 +8,14 @@ CapBoing::CapBoing()
 	t_ = cooldown_;
 	nom_ = "Attaque Test";
 
-	capText_.loadFromFile("../../rc/Pictos_Caps/attaque_test.png");
-	capacite_.setTexture(capText_);
-
+	//état
 	affiche_ = true;
 
-	//son
+	//Icône
+	capText_.loadFromFile("../../rc/Icones_Caps/attaque_test.png");
+	capacite_.setTexture(capText_);
+
+	//Son
 	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/boing.wav");
 	sound_.setBuffer(soundbuffer_);
 	sound_.setLoop(false);
