@@ -74,7 +74,7 @@ class Entite
          * Appelle la fonction move de la SFML sur les attributs de l'objet appelant.
          * @param [in] delta un @c sf::Vector2f qui donne le déplacement en x et en y
          */
-		void move(sf::Vector2f& delta);
+		void move(sf::Vector2f delta);
         /**
          * @fn setPosition
          * @brief Fixe la position de l'Entite
@@ -259,13 +259,13 @@ class Entite
 		float getPV() { return pv_; };
 		float getArmure() { return armure_; };
 		float getBouclier() { return bouclier_; };
-		sf::Texture getTexture() { return texture_; };
+		const sf::Texture& getTexture() { return texture_; };
 
 		//setters
 		void setequipe_(Equipe equipe) { equipe_ = equipe; }
 		void setInnate_(bool isInnate) { innate_ = isInnate; }
 		void setNbPositions(int val);
-		void setSmokeTexture(sf::Texture &text, sf::Color couleur = { 255,255,255 });
+		void setSmokeTexture(const sf::Texture &text, sf::Color couleur = { 255,255,255 });
 
 	protected:
 		//coordonnées

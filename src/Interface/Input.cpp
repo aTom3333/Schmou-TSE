@@ -272,6 +272,12 @@ Input_base<N>::~Input_base()
 template<size_t N>
 bool Input_base<N>::isMoving() const
 {
+    switch(movement_media_)
+    {
+        case Media::Keyboard:
+            break;
+    }
+    
 	return sf::Keyboard::isKeyPressed(movement_input_.keyboard_.up_key_.value()) || sf::Keyboard::isKeyPressed(movement_input_.keyboard_.down_key_.value()) || sf::Keyboard::isKeyPressed(movement_input_.keyboard_.left_key_.value()) || sf::Keyboard::isKeyPressed(movement_input_.keyboard_.right_key_.value());
 }
 

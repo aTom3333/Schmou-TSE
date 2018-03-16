@@ -12,7 +12,7 @@
 #include "Vaisseau/Vaisseau.h"
 #include "Interface/Input.h"
 #include "Interface/Overlay.h"
-#include "Pattern\Vague.h"
+#include "Pattern/Vague.h"
 
 
 /**
