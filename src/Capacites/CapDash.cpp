@@ -10,6 +10,12 @@ CapDash::CapDash()
 	t_ = cooldown_;
 	nom_ = "Dash";
 	tir_ = true;
+
+	//son
+	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/dash.wav");
+	sound_.setBuffer(soundbuffer_);
+	sound_.setLoop(false);
+
 }
 
 
@@ -20,6 +26,7 @@ void CapDash::utiliser(int x, int y)
 		// Début du timer
 		t_ = 0;
 		frames_ = 0;
+		sound_.play();
 	}
 }
 

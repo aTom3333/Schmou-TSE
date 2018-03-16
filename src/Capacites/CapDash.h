@@ -3,7 +3,7 @@
 
 #include "Capacite.h"
 #include "../Entite.h"
-#include "../Projectiles/ProjTest.h"
+#include "../Projectiles/ProjBoing.h"
 
 /**
 * @class CapDash

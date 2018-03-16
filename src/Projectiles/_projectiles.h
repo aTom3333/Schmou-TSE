@@ -5,7 +5,7 @@
 #ifndef _PROJECTILES_H
 #define _PROJECTILES_H
 
-#include "ProjTest.h"
+#include "ProjBoing.h"
 #include "ProjPiou.h"
 #include "ProjMissile.h"
 

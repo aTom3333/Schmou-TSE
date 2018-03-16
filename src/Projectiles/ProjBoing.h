@@ -1,43 +1,43 @@
-#ifndef PROJ_TEST_H
-#define PROJ_TEST_H
+#ifndef PROJ_BOING_H
+#define PROJ_BOING_H
 
 #include "Projectile.h"
 
 class Vaisseau;
 
 /**
-* @class ProjTest
+* @class ProjBoing
 * @brief Projectile de test
 *
 * Lance 4 boules qui rebondissent sur les bord de l'écran
 */
 
-class ProjTest : public Projectile
+class ProjBoing : public Projectile
 {
 	public:
 		/**
-		* @fn ProjTest::Projtest
+		* @fn ProjBoing::Projtest
 		* @brief Constructeur
 		*
 		* Créer un projectile de test à une position aléatoire
 		*/
-		ProjTest(); 
+		ProjBoing(); 
 		/**
-		* @fn ProjTest
+		* @fn ProjBoing
 		* @brief Constructeur
 		* @param x Abscisse de la postion de départ du projectile
 		* @param y Ordonnée de la postion de départ du projectile
 		*
 		* Créer un projectile de test à la position donnée en paramètre
 		*/
-		ProjTest(int x, int y); 
+		ProjBoing(int x, int y, sf::Sound sound);
 		/**
-		* @fn ~ProjTest
+		* @fn ~ProjBoing
 		* @brief Destructeur
 		*
 		* Vide
 		*/
-		~ProjTest(); 
+		~ProjBoing(); 
 		/**
 		* @fn gestion
 		* @brief Gestion du projectile

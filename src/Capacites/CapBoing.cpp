@@ -12,6 +12,12 @@ CapBoing::CapBoing()
 	capacite_.setTexture(capText_);
 
 	affiche_ = true;
+
+	//son
+	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/boing.wav");
+	sound_.setBuffer(soundbuffer_);
+	sound_.setLoop(false);
+
 }
 
 
@@ -39,7 +45,7 @@ void CapBoing::actualiser(std::vector<Projectile*>& projectiles, Entite& vaissea
 	if (frames_ < 20 && frames_ % 5 == 0)
 	{
 		// Création d'un nouveau projectile
-		ProjTest *temp = new ProjTest(debutX_, debutY_);
+		ProjBoing *temp = new ProjBoing(debutX_, debutY_, sound_);
 		projectiles.push_back(temp);
 	}
 

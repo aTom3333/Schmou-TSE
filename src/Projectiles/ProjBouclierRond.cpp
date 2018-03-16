@@ -1,15 +1,17 @@
 #include "ProjBouclierRond.h"
 #include <cmath>
 
-
-ProjBouclierRond::ProjBouclierRond(){}
-
-
 ProjBouclierRond::ProjBouclierRond(Entite* Entite_liee, int pvM, int degatsColl, float tempsMax, Equipe equipe)
 {
 	// Sprite
 	texture_.loadFromFile("../../rc/Sprites/base/bouclier_rond.png");
 	sprite_.setTexture(texture_);
+
+	//Son
+	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/boubou_stase.wav");
+	sound_.setBuffer(soundbuffer_);
+	sound_.setLoop(true);
+	sound_.play();
 
 	// Hitbox
 	cercleEnglobant_ = sf::CircleShape(75);

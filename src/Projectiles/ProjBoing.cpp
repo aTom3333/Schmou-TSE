@@ -1,12 +1,17 @@
-#include "ProjTest.h"
+#include "ProjBoing.h"
 #include "../constantes.h"
 
-ProjTest::ProjTest()
+ProjBoing::ProjBoing()
 {
 
 	//sprite
 	texture_.loadFromFile("../../rc/Sprites/base/balle.png");
 	sprite_.setTexture(texture_);
+
+	//son
+	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/boing.wav");
+	sound_.setBuffer(soundbuffer_);
+	sound_.setLoop(false);
 
 	//hitbox simple (et complète dans ce cas car c'est le projectile est un cercle)
 	cercleEnglobant_ =  sf::CircleShape(16);
@@ -43,11 +48,14 @@ ProjTest::ProjTest()
 	equipe_ = NEUTRE;
 }
 
-ProjTest::ProjTest(int x, int y)
+ProjBoing::ProjBoing(int x, int y, sf::Sound sound)
 {
 	//Sprite
 	texture_.loadFromFile("../../rc/Sprites/base/balle.png");
 	sprite_.setTexture(texture_);
+
+	//son
+	sound_ = sound;
 
 	//hitbox simple (et complète dans ce cas car c'est le projectile est un cercle)
 	cercleEnglobant_ = sf::CircleShape(16);
@@ -91,11 +99,11 @@ ProjTest::ProjTest(int x, int y)
 }
 
 
-ProjTest::~ProjTest()
+ProjBoing::~ProjBoing()
 {
 }
 
-void ProjTest::gestion(sf::RenderWindow& window, sf::Time tempsEcoule)
+void ProjBoing::gestion(sf::RenderWindow& window, sf::Time tempsEcoule)
 {
 	age_++;
 
@@ -107,28 +115,32 @@ void ProjTest::gestion(sf::RenderWindow& window, sf::Time tempsEcoule)
 	{
 		position_.x = ECRAN_L - 32 - 1;
 		mx_ = -1;
+		sound_.play();
 	}
 	if (position_.x < 1)
 	{
 		position_.x = 1;
 		mx_ = 1;
+		sound_.play();
 	}
 	if (position_.y > ECRAN_H - 32 - 1)
 	{
 		position_.y = ECRAN_H - 32 - 1;
 		my_ = -1;
+		sound_.play();
 	}
 	if (position_.y < 1)
 	{
 		position_.y = 1;
 		my_ = 1;
+		sound_.play();
 	}
 
 	// Afficher le projectile
 	afficher(window);
 }
 
-void ProjTest::agit(Entite& proj)
+void ProjBoing::agit(Entite& proj)
 {
 	proj.recoitDegats(degats_);
 	detruit_ = true;

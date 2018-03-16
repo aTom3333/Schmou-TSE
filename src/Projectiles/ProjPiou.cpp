@@ -1,17 +1,17 @@
 #include "ProjPiou.h"
 #include <cmath>
 
-
-ProjPiou::ProjPiou()
-{
-}
-
-ProjPiou::ProjPiou(int x, int y, Equipe equipe)
+ProjPiou::ProjPiou(int x, int y, Equipe equipe, sf::Sound sound)
 {
 	// Gestion du sprite
 	//texture_.loadFromFile("../../rc/Sprites/base/projectile_test.png");
 	texture_.loadFromFile("../../rc/Sprites/Capacites/Piou20x30.PNG");
 	sprite_.setTexture(texture_);
+
+	////Gestion du son
+	//sound_ = sound;
+	//sound.play();//son joué à la création du projectile
+	
 
 	// Hitbox
 	cercleEnglobant_ = sf::CircleShape(5);

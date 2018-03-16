@@ -18,19 +18,14 @@ public:
 	/**
 	* @fn ProjPiou
 	* @brief Constructeur
-	*
-	* Vide
-	*/
-	ProjPiou();
-	/**
-	* @fn ProjPiou
-	* @brief Constructeur
 	* @param x Abscisse de la postion de départ du projectile
 	* @param y Ordonnée de la postion de départ du projectile
+	* @param equipe représente l'équipe depuis _constante.h : enum Equipe
+	* @param sound son par défaut donnée par la capacité qui crée le proj
 	*
 	* Créer un projectile piou à la position donnée en paramètre
 	*/
-	ProjPiou(int x, int y, Equipe equipe);
+	ProjPiou(int x, int y, Equipe equipe, sf::Sound sound);
 	/**
 	* @fn ~ProjPiou
 	* @brief Destructeur
@@ -57,6 +52,7 @@ public:
 private:
 	int vx_; /// Vitesse horizontale
 	int vy_; /// Vitesse verticale
+
 };
 
 #endif

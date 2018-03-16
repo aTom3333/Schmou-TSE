@@ -63,8 +63,14 @@ class Capacite
 		sf::Text getText() { return text_; };
 		bool getAffiche() { return affiche_; };
 		bool getTir() { return tir_; };
+		sf::SoundBuffer getSoundBuffer_() { return soundbuffer_; }
+		sf::Sound getSound_() { return sound_; }
+
+
+
 		void afficherNom(sf::RenderWindow &window) { window.draw(text_); };
 		void gestionIcon();
+		
 
 	protected:
 		sf::Texture capText_;
@@ -85,6 +91,10 @@ class Capacite
 		unsigned int frames_; /// Nombre de frames écoulé depuis la dernière activation
 
 		bool autoAim; ///état visée auto
+
+		//son
+		sf::SoundBuffer soundbuffer_;
+		sf::Sound sound_;
 };
 
 #endif // CAPACITE_H

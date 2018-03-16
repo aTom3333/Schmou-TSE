@@ -9,6 +9,12 @@ CapPiou::CapPiou()
 	frames_ = cooldown_; //TODO ici le warning pourrait être important (float vers uint)
 	nom_ = "Canon Laser";
 	tir_ = true;
+
+	//son
+	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/piou.wav");
+	sound_.setBuffer(soundbuffer_);
+	sound_.setLoop(false);
+
 }
 
 
@@ -32,7 +38,8 @@ void CapPiou::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau
 	if (frames_ == 0)
 	{
 		//TODO bug
-		ProjPiou *temp = new ProjPiou(debutX_, debutY_, vaisseau.getEquipe());
+		ProjPiou *temp = new ProjPiou(debutX_, debutY_, vaisseau.getEquipe(), sound_);
+		sound_.play();
 		projectiles.push_back(temp);
 	}
 

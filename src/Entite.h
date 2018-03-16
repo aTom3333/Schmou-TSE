@@ -7,6 +7,7 @@
 #include <memory>
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <deque>
 
 /**
@@ -286,6 +287,10 @@ class Entite
 		std::vector<std::unique_ptr<sf::Shape>> forme_; ///< Forme de l'Entite
 		sf::Texture texture_; ///< Texture du sprite de l'Entite
 		sf::Sprite sprite_; ///< Sprite de l'Entite
+
+		//son
+		sf::SoundBuffer soundbuffer_;
+		sf::Sound sound_;
 
 		// Stats
 		float pvMax_; /// Point de vie maximum de l'entite

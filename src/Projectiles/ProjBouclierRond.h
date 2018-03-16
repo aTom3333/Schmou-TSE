@@ -6,7 +6,7 @@
 class ProjBouclierRond : public Projectile
 {
 public:
-	ProjBouclierRond();
+	~ProjBouclierRond() { sound_.stop(); }
 
 	/**
 	* @fn ProjBouclierRond
