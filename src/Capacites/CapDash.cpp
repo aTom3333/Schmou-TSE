@@ -55,9 +55,8 @@ void CapDash::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau
 	if (t_ < cooldown_)
 	{
 		t_ += tempsEcoule;
-		frames_++;
-
 	}
-		
+	
+	frames_++;
 
 }
