@@ -16,6 +16,8 @@ CapBismillah::CapBismillah()
 	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/Bismillah.wav");
 	sound_.setBuffer(soundbuffer_);
 	sound_.setLoop(false);
+
+	affiche_ = true;
 }
 
 void CapBismillah::utiliser(int x, int y)

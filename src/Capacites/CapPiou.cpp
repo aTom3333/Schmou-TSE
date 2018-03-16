@@ -38,7 +38,7 @@ void CapPiou::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau
 	if (frames_ == 0)
 	{
 		//TODO bug
-		ProjPiou *temp = new ProjPiou(debutX_, debutY_, sound_, ALLIE);
+		ProjPiou *temp = new ProjPiou(debutX_, debutY_, sound_, JOUEUR);
 		sound_.play();
 		projectiles.push_back(temp);
 	}
