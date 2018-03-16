@@ -113,6 +113,7 @@ void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Inpu
 	// Si la touche ULTI est activé
 	if (input.action(ULTI))
 	{
+		capacites_[5]->utiliser(position_.x + 32, position_.y + 32);
 	}
 
 	//déplacement
