@@ -1,7 +1,7 @@
 #include "ProjPiou.h"
 #include <cmath>
 
-ProjPiou::ProjPiou(int x, int y, Equipe equipe, sf::Sound sound)
+ProjPiou::ProjPiou(int x, int y, sf::Sound sound, Equipe equipe)
 {
 	// Gestion du sprite
 	//texture_.loadFromFile("../../rc/Sprites/base/projectile_test.png");
@@ -10,11 +10,10 @@ ProjPiou::ProjPiou(int x, int y, Equipe equipe, sf::Sound sound)
 
 	////Gestion du son
 	//sound_ = sound;
-	//sound.play();//son joué à la création du projectile
-	
+	//sound.play();//son joué à la création du projectile	
 
 	// Hitbox
-	cercleEnglobant_ = sf::CircleShape(5);
+	cercleEnglobant_ = sf::CircleShape(hypot(20,30));
 	cercleEnglobant_.setOrigin(10, 10);
 	cercleEnglobant_.setPosition(10, 10);
 	forme_.emplace_back(new sf::RectangleShape({20,30}));

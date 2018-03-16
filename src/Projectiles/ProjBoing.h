@@ -25,8 +25,8 @@ class ProjBoing : public Projectile
 		/**
 		* @fn ProjBoing
 		* @brief Constructeur
-		* @param x Abscisse de la postion de départ du projectile
-		* @param y Ordonnée de la postion de départ du projectile
+		* @param x Abscisse de la position de départ du projectile
+		* @param y Ordonnée de la position de départ du projectile
 		*
 		* Créer un projectile de test à la position donnée en paramètre
 		*/

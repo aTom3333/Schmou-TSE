@@ -2,7 +2,7 @@
 
 CapPiou::CapPiou()
 {
-	capText_.loadFromFile("../../rc/Pictos_Caps/tir.png");
+	capText_.loadFromFile("../../rc/Icones_Caps/tir.png");
 	capacite_.setTexture(capText_);
 	cooldown_ = 100;
 	t_ = cooldown_;
@@ -38,7 +38,7 @@ void CapPiou::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau
 	if (frames_ == 0)
 	{
 		//TODO bug
-		ProjPiou *temp = new ProjPiou(debutX_, debutY_, vaisseau.getEquipe(), sound_);
+		ProjPiou *temp = new ProjPiou(debutX_, debutY_, sound_, ALLIE);
 		sound_.play();
 		projectiles.push_back(temp);
 	}

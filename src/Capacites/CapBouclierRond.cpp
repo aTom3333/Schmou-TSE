@@ -5,7 +5,7 @@ CapBouclierRond::CapBouclierRond(int niveau, Entite* Entite_liee)
 	niveau_ = niveau;
 	Entite_liee_ = Entite_liee;
 
-	capText_.loadFromFile("../../rc/Pictos_Caps/boubou.png");
+	capText_.loadFromFile("../../rc/Icones_Caps/boubou.png");
 	capacite_.setTexture(capText_);
 	affiche_ = true;
 	

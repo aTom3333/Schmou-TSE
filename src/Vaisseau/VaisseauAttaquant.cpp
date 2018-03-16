@@ -14,7 +14,7 @@ VaisseauAttaquant::VaisseauAttaquant(float x, float y, Trajectoire traj, float p
 	cercleEnglobant_.setPosition(64, 32);
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
-	// Initialisation de la postion
+	// Initialisation de la position
 	posInit_.x = x;
 	posInit_.y = y;
 	// initialisation de la trajectoire

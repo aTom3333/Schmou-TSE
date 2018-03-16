@@ -42,27 +42,28 @@ VaisseauTest::VaisseauTest() ///constructeur
 	// Capacités
 
 	//TIR1
-	CapPiou *temp1 = new CapPiou();
-	capacites_.push_back(temp1);
+	CapPiou *piou = new CapPiou();
+	capacites_.push_back(piou);
 
 	//TIR2
-	CapDash *temp4 = new CapDash();
-	capacites_.push_back(temp4);
+	CapDash *dash = new CapDash();
+	capacites_.push_back(dash);
 
 	//COMP1
-	CapBouclierRond *temp3 = new CapBouclierRond(1, this);
-	capacites_.push_back(temp3);
+	CapBouclierRond *boubou = new CapBouclierRond(1, this);
+	capacites_.push_back(boubou);
 
 	//COMP2
 	//TODO CapMissile
 	capacites_.push_back(nullptr);
 
 	//COMP 3
-	CapBoing *temp5 = new CapBoing();
-	capacites_.push_back(temp5);
+	CapBoing *boing = new CapBoing();
+	capacites_.push_back(boing);
 
 	//ULTI
-	//TODO CapBismillahBeam
+	CapBismillah *bism = new CapBismillah();
+	capacites_.push_back(bism);
 
 	attaqueEnCours_ = 1;
 

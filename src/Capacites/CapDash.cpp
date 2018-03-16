@@ -3,7 +3,7 @@
 
 CapDash::CapDash()
 {
-	capText_.loadFromFile("../../rc/Pictos_Caps/tir.png");
+	capText_.loadFromFile("../../rc/Icones_Caps/tir.png");
 	capacite_.setTexture(capText_);
 	cooldown_ = 500;
 	frames_ = cooldown_; //TODO ici le warning pourrait être important (float vers uint)
@@ -33,7 +33,7 @@ void CapDash::utiliser(int x, int y)
 
 void CapDash::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule)
 {
-	//TODO bon il est 3 heures faut que j'aille dormir jpp Thomas faut que tu m'aides :'(
+	//TODO ne se lance que si le lanceur n'est pas immobile
 
 	// Augmente la vitesse  à l'activation
 	if (frames_ == 0)

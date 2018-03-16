@@ -278,6 +278,7 @@ class Entite
 
 		//caractéristiques
 		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
+		bool collisionneuse = true;
 		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
 		bool innate_ = false; ///false si doit rester dans l'écran
 

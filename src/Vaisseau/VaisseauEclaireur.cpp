@@ -14,7 +14,7 @@ VaisseauEclaireur::VaisseauEclaireur(double x, double y,Trajectoire traj, double
 	cercleEnglobant_.setPosition(16, 32);
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
-	// Initialisation de la postion
+	// Initialisation de la position
 	posInit_.x = (float)x;
 	posInit_.y = (float)y;
 	// initialisation de la trajectoire
