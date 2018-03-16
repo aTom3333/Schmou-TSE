@@ -6,25 +6,30 @@
 
 bool collision(const Entite& e1, const Entite& e2)
 {
-	if (e1.actif_ && e2.actif_)
+	if (!e1.isInvincible() && !e2.isInvincible())
 	{
-		if (!e1.collisionable_ || !e2.collisionable_)
-			return false;
-			if(e1.equipe_ == e2.equipe_ && e1.equipe_ != NEUTRE)
+		if (e1.actif_ && e2.actif_)
+		{
+			if (!e1.collisionable_ || !e2.collisionable_)
 				return false;
-		if (!collision(e1.cercleEnglobant_, e2.cercleEnglobant_))
-			return false;
-		for (const auto& f1 : e1.forme_)
-			for (const auto& f2 : e2.forme_)
-				if (collision(*f1, *f2))
-					return true;
+			if (e1.equipe_ == e2.equipe_ && e1.equipe_ != NEUTRE)
+				return false;
+			if (!collision(e1.cercleEnglobant_, e2.cercleEnglobant_))
+				return false;
+			for (const auto& f1 : e1.forme_)
+				for (const auto& f2 : e2.forme_)
+					if (collision(*f1, *f2))
+						return true;
+		}
 	}
+	
 	return false;
 }
 
 void Entite::afficher(sf::RenderWindow & window, bool debug)
 {
-	window.draw(sprite_);
+	if ((framesInvincibilite_ / 10) % 2 == 0)
+		window.draw(sprite_);
 
 	for (auto pos : positionsPrev_)
 	{
@@ -38,6 +43,8 @@ void Entite::afficher(sf::RenderWindow & window, bool debug)
 		for (auto& elem : forme_)
 			window.draw(*elem);
 	}
+
+	if(framesInvincibilite_ != 0) framesInvincibilite_--;
 }
 
 
@@ -179,6 +186,8 @@ void Entite::regen(sf::Time t)
 void Entite::recoitDegats(float degats)
 {
 	float restant = degats;
+
+	framesInvincibilite_ = NB_FRAMES_INVINCIBILITE;
 
 	bouclier_ -= restant;
 
