@@ -12,6 +12,8 @@
 
 #define NB_ACTION 7 /// Nombre d'actions
 
+#define NB_FRAMES_INVINCIBILITE 60 /// Nombres de frames d'invincibilités
+
 
 enum Actions
 {

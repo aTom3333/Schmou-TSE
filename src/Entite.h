@@ -260,6 +260,7 @@ class Entite
 		float getArmure() { return armure_; };
 		float getBouclier() { return bouclier_; };
 		sf::Texture getTexture() { return texture_; };
+		bool isInvincible() const { return framesInvincibilite_ != 0; };
 
 		//setters
 		void setequipe_(Equipe equipe) { equipe_ = equipe; }
@@ -311,6 +312,7 @@ class Entite
 		float vit_; /// Vitesse actuelle de l'Entite
 		float t_regen_; /// Temps écoulé depuis la dernière régénération
 		float degats_; /// Dégats infligé en cas de de collision
+		int framesInvincibilite_ = 0; /// Frames invincibilites
 };
 
 #endif // ENTITE_H

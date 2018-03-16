@@ -53,6 +53,10 @@ void Partie::testPartie()
 
 	hud_.init(vaisseaux_[0]);
 
+	// TODO TRUC TEMPORAIRE
+	sf::Listener::setGlobalVolume(10);
+
+	clock.restart();
 	while (window_.isOpen())
 	{
 		// Gestion  des évènements 
