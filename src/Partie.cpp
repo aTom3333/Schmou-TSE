@@ -164,8 +164,8 @@ void Partie::collisionProjectile()
 				{
 					if (collision(*allEntite[i], *allEntite[j]))
 					{
-						allEntite[i]->agit(*allEntite[j]);
-						allEntite[j]->agit(*allEntite[i]);
+						if (allEntite[i]->isCollisionneuse() && allEntite[j]->isCollisionnable()) allEntite[i]->agit(*allEntite[j]);
+						if (allEntite[j]->isCollisionneuse() && allEntite[i]->isCollisionnable()) allEntite[j]->agit(*allEntite[i]);
 					}
 						
 				}

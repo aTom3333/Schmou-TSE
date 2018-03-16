@@ -18,20 +18,14 @@ ProjBismillah::ProjBismillah(int x, int y, sf::Sound sound, Equipe equipe)
 	cercleEnglobant_.setPosition(10, 10);
 	forme_.emplace_back(new sf::RectangleShape({ 20,30 }));
 
-	// Stats
+	// Caractéristiques
 	equipe_ = equipe;
 	age_ = 0;
 	actif_ = true;
+	collisionable_ = false;
 
-	pvMax_ = INT_MAX;
-	armureMax_ = 0;
-	bouclierMax_ = 0;
 
-	pv_ = pvMax_;
-	armure_ = armureMax_;
-	bouclier_ = bouclierMax_;
 
-	regenARM_ = regenBOU_ = regenPV_ = 0;
 
 	degats_ = 70;
 
