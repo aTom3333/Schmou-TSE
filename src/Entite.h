@@ -238,7 +238,7 @@ class Entite
 		* Les dégats sur l'armure sont réduit. Retire le reste des points restant aux points de vie.
 		*/
 		void recoitDegats(float degats);
-		float getDegats();
+		float getDegats() const;
 		/**
 		* @fn destruction
 		* @brief Procedure a effectuer lorsque le vaisseau est détruit
@@ -253,16 +253,16 @@ class Entite
 		Equipe getEquipe() const { return equipe_; };
 		sf::Vector2f getTaille() const { return { sprite_.getGlobalBounds().width, sprite_.getGlobalBounds().height }; }//largeur, hauteur
 		bool getInnate_() const { return innate_; }
-		float getPVMax() { return pvMax_; };
-		float getArmureMax() { return armureMax_; };
-		float getBouclierMax() { return bouclierMax_; };
-		float getPV() { return pv_; };
-		float getArmure() { return armure_; };
-		float getBouclier() { return bouclier_; };
-		const sf::Texture& getTexture() { return texture_; };
+		float getPVMax() const { return pvMax_; };
+		float getArmureMax() const { return armureMax_; };
+		float getBouclierMax() const { return bouclierMax_; };
+		float getPV() const { return pv_; };
+		float getArmure() const { return armure_; };
+		float getBouclier() const { return bouclier_; };
+		const sf::Texture& getTexture() const { return texture_; };
 		bool isInvincible() const { return framesInvincibilite_ != 0; };
-		bool isCollisionneuse() { return collisionneuse_; }
-		bool isCollisionnable() { return collisionable_; }
+		bool isCollisionneuse() const { return collisionneuse_; }
+		bool isCollisionnable() const { return collisionable_; }
 
 		//setters
 		void setequipe_(Equipe equipe) { equipe_ = equipe; }

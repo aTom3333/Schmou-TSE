@@ -139,7 +139,7 @@ bool Entite::estDetruit()
 	return detruit_;
 }
 
-float Entite::getDegats()
+float Entite::getDegats() const
 {
 	return degats_;
 }

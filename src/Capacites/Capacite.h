@@ -55,16 +55,16 @@ class Capacite
 		void initIcon(int i);
 		
 		// Getters
-		float const getCooldown() { return cooldown_; };
-		float const getTime() { return t_; };
-		std::string const getNom() { return nom_; };
-		sf::Sprite getIcon() { return capacite_; };
-		sf::RectangleShape getMasque() { return masque_; };
-		sf::Text getText() { return text_; };
+		float getCooldown() const { return cooldown_; };
+		float getTime() const { return t_; };
+		const std::string& getNom() const { return nom_; };
+		const sf::Sprite& getIcon() const { return capacite_; };
+		const sf::RectangleShape& getMasque() const { return masque_; };
+		const sf::Text& getText() const { return text_; };
 		bool getAffiche() { return affiche_; };
 		bool getTir() { return tir_; };
-		sf::SoundBuffer getSoundBuffer_() { return soundbuffer_; }
-		sf::Sound getSound_() { return sound_; }
+		const sf::SoundBuffer& getSoundBuffer_() const { return soundbuffer_; }
+		const sf::Sound& getSound_() const { return sound_; }
 
 
 

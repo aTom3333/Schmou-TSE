@@ -88,16 +88,16 @@ public:
 			
 
 	//getters
-		std::string getnom(){return nom_; }
-		int getNskin(){ return Nskin_; }
-		int getpvM(){ return pvM_; }
-		int getatqM(){ return atqM_; }
-		int getdefM(){ return defM_; }
-		int getvitM(){ return vitM_; }
-		std::vector<Capacite*> getskills(){ return capacites_; }
-		bool estActif(){ return actif_; }
-		std::vector <Vaisseau*> getAnnexes(){ return annexes_; }
-		std::vector<bool> getAnnexesB(){ return annexesB_; }
+		std::string getnom() const {return nom_; }
+		int getNskin() const { return Nskin_; }
+		int getpvM() const { return pvM_; }
+		int getatqM() const { return atqM_; }
+		int getdefM() const { return defM_; }
+		int getvitM() const { return vitM_; }
+		std::vector<Capacite*> getskills() const { return capacites_; }
+		bool estActif() const { return actif_; }
+		std::vector <Vaisseau*> getAnnexes() const { return annexes_; }
+		std::vector<bool> getAnnexesB() const { return annexesB_; }
 
 };
 

@@ -1,0 +1,274 @@
+\hypertarget{optional_8h}{}\section{Référence du fichier src/\+Utilitaires/optional.h}
+\label{optional_8h}\index{src/\+Utilitaires/optional.\+h@{src/\+Utilitaires/optional.\+h}}
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$initializer\+\_\+list$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+Graphe des dépendances par inclusion de optional.\+h\+:
+% FIG 0
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1is__nothrow__move__constructible}{std\+::experimental\+::is\+\_\+nothrow\+\_\+move\+\_\+constructible$<$ T $>$}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1is__assignable}{std\+::experimental\+::is\+\_\+assignable$<$ T, U $>$}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1is__nothrow__move__assignable}{std\+::experimental\+::is\+\_\+nothrow\+\_\+move\+\_\+assignable$<$ T $>$}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1is__nothrow__move__assignable_1_1has__nothrow__move__assign}{std\+::experimental\+::is\+\_\+nothrow\+\_\+move\+\_\+assignable$<$ T $>$\+::has\+\_\+nothrow\+\_\+move\+\_\+assign$<$ X, has\+\_\+any\+\_\+move\+\_\+assign $>$}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1is__nothrow__move__assignable_1_1has__nothrow__move__assign_3_01_x_00_01true_01_4}{std\+::experimental\+::is\+\_\+nothrow\+\_\+move\+\_\+assignable$<$ T $>$\+::has\+\_\+nothrow\+\_\+move\+\_\+assign$<$ X, true $>$}
+\item 
+class \hyperlink{classstd_1_1experimental_1_1optional}{std\+::experimental\+::optional$<$ T $>$}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1detail___1_1has__overloaded__addressof}{std\+::experimental\+::detail\+\_\+\+::has\+\_\+overloaded\+\_\+addressof$<$ T $>$}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1trivial__init__t}{std\+::experimental\+::trivial\+\_\+init\+\_\+t}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1in__place__t}{std\+::experimental\+::in\+\_\+place\+\_\+t}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1nullopt__t}{std\+::experimental\+::nullopt\+\_\+t}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1nullopt__t_1_1init}{std\+::experimental\+::nullopt\+\_\+t\+::init}
+\item 
+class \hyperlink{classstd_1_1experimental_1_1bad__optional__access}{std\+::experimental\+::bad\+\_\+optional\+\_\+access}
+\item 
+union \hyperlink{unionstd_1_1experimental_1_1storage__t}{std\+::experimental\+::storage\+\_\+t$<$ T $>$}
+\item 
+union \hyperlink{unionstd_1_1experimental_1_1constexpr__storage__t}{std\+::experimental\+::constexpr\+\_\+storage\+\_\+t$<$ T $>$}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1optional__base}{std\+::experimental\+::optional\+\_\+base$<$ T $>$}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1constexpr__optional__base}{std\+::experimental\+::constexpr\+\_\+optional\+\_\+base$<$ T $>$}
+\item 
+class \hyperlink{classstd_1_1experimental_1_1optional}{std\+::experimental\+::optional$<$ T $>$}
+\item 
+class \hyperlink{classstd_1_1experimental_1_1optional_3_01_t_01_6_01_4}{std\+::experimental\+::optional$<$ T \& $>$}
+\item 
+class \hyperlink{classstd_1_1experimental_1_1optional_3_01_t_01_6_6_01_4}{std\+::experimental\+::optional$<$ T \&\& $>$}
+\item 
+struct \hyperlink{structstd_1_1hash_3_01std_1_1experimental_1_1optional_3_01_t_01_4_01_4}{std\+::hash$<$ std\+::experimental\+::optional$<$ T $>$ $>$}
+\item 
+struct \hyperlink{structstd_1_1hash_3_01std_1_1experimental_1_1optional_3_01_t_01_6_01_4_01_4}{std\+::hash$<$ std\+::experimental\+::optional$<$ T \& $>$ $>$}
+\end{DoxyCompactItemize}
+\subsection*{Espaces de nommage}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacestd}{std}
+\item 
+ \hyperlink{namespacestd_1_1experimental}{std\+::experimental}
+\item 
+ \hyperlink{namespacestd_1_1experimental_1_1detail__}{std\+::experimental\+::detail\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{optional_8h_a2bc77cf029dcdedaf87668a8da6e899b}{T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+R\+E\+Q\+U\+I\+R\+ES}(...)~typename enable\+\_\+if$<$\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+\+::value, bool$>$\+::type = false
+\item 
+\#define \hyperlink{optional_8h_a2fb97d4b996dbddf95c6c25b64e5abb5}{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+T\+H\+I\+S\+\_\+\+R\+V\+A\+L\+U\+E\+\_\+\+R\+E\+FS}~0
+\item 
+\#define \hyperlink{optional_8h_af240286c9615958c84d4e886d29022e2}{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST}~0
+\item 
+\#define \hyperlink{optional_8h_a7399114ed1c146a67741cdd1f681fcb5}{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST}
+\item 
+\#define \hyperlink{optional_8h_a6e00fbaad952db7aa7f8a701e49ec8f6}{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+M\+O\+V\+E\+\_\+\+A\+C\+C\+E\+S\+S\+O\+RS}~0
+\item 
+\#define \hyperlink{optional_8h_af4ab9c6c6aaf518cb24356dbcfa92d90}{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+M\+U\+T\+A\+B\+L\+E\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR}~constexpr
+\item 
+\#define \hyperlink{optional_8h_aba246528349d07cba40ef2d678e6fc78}{T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+A\+S\+S\+E\+R\+T\+E\+D\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON}(C\+H\+E\+CK,  E\+X\+PR)~((C\+H\+E\+CK) ? (E\+X\+PR) \+: (\mbox{[}$\,$\mbox{]}\{assert(!\#C\+H\+E\+CK);\}(), (E\+X\+PR)))
+\end{DoxyCompactItemize}
+\subsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespacestd_1_1experimental_a481cc29b2f00961d0afc189e6e90f739}{std\+::experimental\+::is\+\_\+trivially\+\_\+destructible} = std\+::has\+\_\+trivial\+\_\+destructor$<$ T $>$
+\item 
+{\footnotesize template$<$class T $>$ }\\using \hyperlink{namespacestd_1_1experimental_a33aa5e258a2b0762197365c1ef3f90aa}{std\+::experimental\+::\+Optional\+Base} = typename std\+::conditional$<$ is\+\_\+trivially\+\_\+destructible$<$ T $>$\+::value, constexpr\+\_\+optional\+\_\+base$<$ typename std\+::remove\+\_\+const$<$ T $>$\+::type $>$, optional\+\_\+base$<$ typename std\+::remove\+\_\+const$<$ T $>$\+::type $>$ $>$\+::type
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr T \&\& \hyperlink{namespacestd_1_1experimental_ad6c79ef527ee25f0a6295128c4b51f89}{std\+::experimental\+::constexpr\+\_\+forward} (typename std\+::remove\+\_\+reference$<$ T $>$\+::type \&t) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr T \&\& \hyperlink{namespacestd_1_1experimental_a9bcca6a02f6e3005b3180962429c6feb}{std\+::experimental\+::constexpr\+\_\+forward} (typename std\+::remove\+\_\+reference$<$ T $>$\+::type \&\&t) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr std\+::remove\+\_\+reference$<$ T $>$\+::type \&\& \hyperlink{namespacestd_1_1experimental_abe16b4d69976581fbfc135b809b3ffe3}{std\+::experimental\+::constexpr\+\_\+move} (T \&\&t) noexcept
+\item 
+{\footnotesize template$<$typename T , T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+S(!has\+\_\+overloaded\+\_\+addressof$<$ T $>$) $>$ }\\constexpr T $\ast$ \hyperlink{namespacestd_1_1experimental_1_1detail___aa205cc382da48555de424fc09d3286b1}{std\+::experimental\+::detail\+\_\+\+::static\+\_\+addressof} (T \&ref)
+\item 
+{\footnotesize template$<$typename T , T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+S(has\+\_\+overloaded\+\_\+addressof$<$ T $>$) $>$ }\\T $\ast$ \hyperlink{namespacestd_1_1experimental_1_1detail___a9255e1a7ac3bf9c92e04e8fb4303f352}{std\+::experimental\+::detail\+\_\+\+::static\+\_\+addressof} (T \&ref)
+\item 
+{\footnotesize template$<$class U $>$ }\\constexpr U \hyperlink{namespacestd_1_1experimental_1_1detail___a2a47800848ffd486b8ca82d2fbbb244d}{std\+::experimental\+::detail\+\_\+\+::convert} (U v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a0bd6ca198e90eb70255e0b370072f154}{std\+::experimental\+::operator==} (const optional$<$ T $>$ \&x, const optional$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_abf45cbc40acb4929dbf1caa3b31460d9}{std\+::experimental\+::operator!=} (const optional$<$ T $>$ \&x, const optional$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a27caacd2780817469b565c269933185d}{std\+::experimental\+::operator$<$} (const optional$<$ T $>$ \&x, const optional$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a1d2409f0cb8fda0ec9a0b9d5e1e61cb5}{std\+::experimental\+::operator$>$} (const optional$<$ T $>$ \&x, const optional$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_afd5e1ebb8edd29dc3916bf546c9ffca3}{std\+::experimental\+::operator$<$=} (const optional$<$ T $>$ \&x, const optional$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a2c2515ef0e94b6089f60aaf6757741c9}{std\+::experimental\+::operator$>$=} (const optional$<$ T $>$ \&x, const optional$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a4f15144833bc5951b01fbd4b4bfdb6fb}{std\+::experimental\+::operator==} (const optional$<$ T $>$ \&x, nullopt\+\_\+t) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a23a59ad403fb2809087806ff9037d42e}{std\+::experimental\+::operator==} (nullopt\+\_\+t, const optional$<$ T $>$ \&x) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a768f39fe88fcf07a351e8f45d6dfb1b3}{std\+::experimental\+::operator!=} (const optional$<$ T $>$ \&x, nullopt\+\_\+t) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_aa340c9c2a57fd083695e470ded11c089}{std\+::experimental\+::operator!=} (nullopt\+\_\+t, const optional$<$ T $>$ \&x) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_aa7075b9ff2db35978c50e744de295b37}{std\+::experimental\+::operator$<$} (const optional$<$ T $>$ \&, nullopt\+\_\+t) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a419ed2da725cc9c030f5d741a1f13d50}{std\+::experimental\+::operator$<$} (nullopt\+\_\+t, const optional$<$ T $>$ \&x) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a2130b2ce528946a4ef4e56f80d823267}{std\+::experimental\+::operator$<$=} (const optional$<$ T $>$ \&x, nullopt\+\_\+t) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ae72fae9caf85b2dff2e94ebd29371937}{std\+::experimental\+::operator$<$=} (nullopt\+\_\+t, const optional$<$ T $>$ \&) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ab0139892916a389ed15c89675d5512ac}{std\+::experimental\+::operator$>$} (const optional$<$ T $>$ \&x, nullopt\+\_\+t) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a02002e302d09fd9596aadd26a38043c0}{std\+::experimental\+::operator$>$} (nullopt\+\_\+t, const optional$<$ T $>$ \&) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a35cdc6a5b56b8db5690f4035242332a0}{std\+::experimental\+::operator$>$=} (const optional$<$ T $>$ \&, nullopt\+\_\+t) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_aec1ef0d119fb9270b05212cea79a0fe0}{std\+::experimental\+::operator$>$=} (nullopt\+\_\+t, const optional$<$ T $>$ \&x) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ad40f3ff2c6562139fe910ab3d0a63f10}{std\+::experimental\+::operator==} (const optional$<$ T $>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a1958e649d145d612bc04a821d28c0ffb}{std\+::experimental\+::operator==} (const T \&v, const optional$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a65194017839ffdd2eeeb2f8f510d9a84}{std\+::experimental\+::operator!=} (const optional$<$ T $>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_aa6a14a4a2f99c053eaf12e4d438786cc}{std\+::experimental\+::operator!=} (const T \&v, const optional$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_acd496ce7fb815b5ed07c64c3c50473a5}{std\+::experimental\+::operator$<$} (const optional$<$ T $>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a2c15354bc231381036462b92afd3737e}{std\+::experimental\+::operator$>$} (const T \&v, const optional$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_acd392a8263ad2dd322655078d53e77ad}{std\+::experimental\+::operator$>$} (const optional$<$ T $>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a1d3cd046025f9693e0c6c7e57c67e379}{std\+::experimental\+::operator$<$} (const T \&v, const optional$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a3209ada3ae8542ffbdfcc7e7d35f19a5}{std\+::experimental\+::operator$>$=} (const optional$<$ T $>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a4482ae3dc6aad99b5d17a3a2c0dfe30f}{std\+::experimental\+::operator$<$=} (const T \&v, const optional$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a9dd11e02b37f5d3e9c09a29c7ea7024c}{std\+::experimental\+::operator$<$=} (const optional$<$ T $>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a0e2303b05ab975b9dd1a53c198bf2e45}{std\+::experimental\+::operator$>$=} (const T \&v, const optional$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a5e8049d714e136368d3f1cc2cc7fc787}{std\+::experimental\+::operator==} (const optional$<$ T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ad874f9e082998b503ad0f7bb0376782e}{std\+::experimental\+::operator==} (const T \&v, const optional$<$ T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a32e202bafe91eccccc3d34ef53bc3f01}{std\+::experimental\+::operator!=} (const optional$<$ T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_aa2bc218261382e5d1dbb90aee5930580}{std\+::experimental\+::operator!=} (const T \&v, const optional$<$ T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a83a84dd901351c69fb0e53efe17526eb}{std\+::experimental\+::operator$<$} (const optional$<$ T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a84d294fc6ef231696e23f6b21f0391aa}{std\+::experimental\+::operator$>$} (const T \&v, const optional$<$ T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a733d2aa90d49bd113f2420f996e13a8f}{std\+::experimental\+::operator$>$} (const optional$<$ T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ae8fc20bba7e30d2ad7bc8646ec1de715}{std\+::experimental\+::operator$<$} (const T \&v, const optional$<$ T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a8e331f49161fae9a2dc83a0838d5c332}{std\+::experimental\+::operator$>$=} (const optional$<$ T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a59ad44110fa8b750e2ca4cf69327c182}{std\+::experimental\+::operator$<$=} (const T \&v, const optional$<$ T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_adeee1539a6ebda9088aaaa92a363a38c}{std\+::experimental\+::operator$<$=} (const optional$<$ T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_af08a779caea9116149f04d2b2e330b44}{std\+::experimental\+::operator$>$=} (const T \&v, const optional$<$ T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ad41e06efa15d85ead93eafecb8dde126}{std\+::experimental\+::operator==} (const optional$<$ const T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a9ff726fa7b981eeae6f6b8e98eb514ce}{std\+::experimental\+::operator==} (const T \&v, const optional$<$ const T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a007e24ca3b589918778709281a5611d7}{std\+::experimental\+::operator!=} (const optional$<$ const T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ab5a8b15ec09913c93bac27399f0cba38}{std\+::experimental\+::operator!=} (const T \&v, const optional$<$ const T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_afd3f43608dc3267d32ee592ae88fba55}{std\+::experimental\+::operator$<$} (const optional$<$ const T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a3899be1cf909f9d5dc2718c912c73d67}{std\+::experimental\+::operator$>$} (const T \&v, const optional$<$ const T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ab62a91459215563e8996e69785166789}{std\+::experimental\+::operator$>$} (const optional$<$ const T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a3905d16fb3b1c1627ff2082e6159d4fb}{std\+::experimental\+::operator$<$} (const T \&v, const optional$<$ const T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a43c159cf8ffd0e172adbac601809aacd}{std\+::experimental\+::operator$>$=} (const optional$<$ const T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_aca22cd45974dad371a24b9618f2d1b33}{std\+::experimental\+::operator$<$=} (const T \&v, const optional$<$ const T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_afb3a1b869e0a3eb4840f37edf61ba0ef}{std\+::experimental\+::operator$<$=} (const optional$<$ const T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a943314dada174c65a0ac853cbdc89989}{std\+::experimental\+::operator$>$=} (const T \&v, const optional$<$ const T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacestd_1_1experimental_acdfba2d2e9c79f689a34c9cea5c5682d}{std\+::experimental\+::swap} (optional$<$ T $>$ \&x, optional$<$ T $>$ \&y) noexcept(noexcept(x.\+swap(y)))
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr optional$<$ typename decay$<$ T $>$\+::type $>$ \hyperlink{namespacestd_1_1experimental_aa6c8db3625ec5a8e7f6288fb5adf8f95}{std\+::experimental\+::make\+\_\+optional} (T \&\&v)
+\item 
+{\footnotesize template$<$class X $>$ }\\constexpr optional$<$ X \& $>$ \hyperlink{namespacestd_1_1experimental_a0f7b286ddf3bb6c4e95580898dcde37b}{std\+::experimental\+::make\+\_\+optional} (reference\+\_\+wrapper$<$ X $>$ v)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr struct \hyperlink{structstd_1_1experimental_1_1trivial__init__t}{std\+::experimental\+::trivial\+\_\+init\+\_\+t} \hyperlink{namespacestd_1_1experimental_a453a56e465f134032297679f0511f02b}{std\+::experimental\+::trivial\+\_\+init}
+\item 
+constexpr struct \hyperlink{structstd_1_1experimental_1_1in__place__t}{std\+::experimental\+::in\+\_\+place\+\_\+t} \hyperlink{namespacestd_1_1experimental_a93be82cb49ba2dc64a23c881ad152fd6}{std\+::experimental\+::in\+\_\+place}
+\item 
+constexpr nullopt\+\_\+t \hyperlink{namespacestd_1_1experimental_af16e944368340cafdc29647c42a1f542}{std\+::experimental\+::nullopt} \{nullopt\+\_\+t\+::init()\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des macros}
+\mbox{\Hypertarget{optional_8h_a7399114ed1c146a67741cdd1f681fcb5}\label{optional_8h_a7399114ed1c146a67741cdd1f681fcb5}} 
+\index{optional.\+h@{optional.\+h}!O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST@{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST}}
+\index{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST@{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST}!optional.\+h@{optional.\+h}}
+\subsubsection{\texorpdfstring{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST}{OPTIONAL\_CONSTEXPR\_INIT\_LIST}}
+{\footnotesize\ttfamily \#define O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST}
+
+\mbox{\Hypertarget{optional_8h_af240286c9615958c84d4e886d29022e2}\label{optional_8h_af240286c9615958c84d4e886d29022e2}} 
+\index{optional.\+h@{optional.\+h}!O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST@{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST}}
+\index{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST@{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST}!optional.\+h@{optional.\+h}}
+\subsubsection{\texorpdfstring{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST}{OPTIONAL\_HAS\_CONSTEXPR\_INIT\_LIST}}
+{\footnotesize\ttfamily \#define O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R\+\_\+\+I\+N\+I\+T\+\_\+\+L\+I\+ST~0}
+
+\mbox{\Hypertarget{optional_8h_a6e00fbaad952db7aa7f8a701e49ec8f6}\label{optional_8h_a6e00fbaad952db7aa7f8a701e49ec8f6}} 
+\index{optional.\+h@{optional.\+h}!O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+M\+O\+V\+E\+\_\+\+A\+C\+C\+E\+S\+S\+O\+RS@{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+M\+O\+V\+E\+\_\+\+A\+C\+C\+E\+S\+S\+O\+RS}}
+\index{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+M\+O\+V\+E\+\_\+\+A\+C\+C\+E\+S\+S\+O\+RS@{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+M\+O\+V\+E\+\_\+\+A\+C\+C\+E\+S\+S\+O\+RS}!optional.\+h@{optional.\+h}}
+\subsubsection{\texorpdfstring{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+M\+O\+V\+E\+\_\+\+A\+C\+C\+E\+S\+S\+O\+RS}{OPTIONAL\_HAS\_MOVE\_ACCESSORS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+M\+O\+V\+E\+\_\+\+A\+C\+C\+E\+S\+S\+O\+RS~0}
+
+\mbox{\Hypertarget{optional_8h_a2fb97d4b996dbddf95c6c25b64e5abb5}\label{optional_8h_a2fb97d4b996dbddf95c6c25b64e5abb5}} 
+\index{optional.\+h@{optional.\+h}!O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+T\+H\+I\+S\+\_\+\+R\+V\+A\+L\+U\+E\+\_\+\+R\+E\+FS@{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+T\+H\+I\+S\+\_\+\+R\+V\+A\+L\+U\+E\+\_\+\+R\+E\+FS}}
+\index{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+T\+H\+I\+S\+\_\+\+R\+V\+A\+L\+U\+E\+\_\+\+R\+E\+FS@{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+T\+H\+I\+S\+\_\+\+R\+V\+A\+L\+U\+E\+\_\+\+R\+E\+FS}!optional.\+h@{optional.\+h}}
+\subsubsection{\texorpdfstring{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+T\+H\+I\+S\+\_\+\+R\+V\+A\+L\+U\+E\+\_\+\+R\+E\+FS}{OPTIONAL\_HAS\_THIS\_RVALUE\_REFS}}
+{\footnotesize\ttfamily \#define O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+H\+A\+S\+\_\+\+T\+H\+I\+S\+\_\+\+R\+V\+A\+L\+U\+E\+\_\+\+R\+E\+FS~0}
+
+\mbox{\Hypertarget{optional_8h_af4ab9c6c6aaf518cb24356dbcfa92d90}\label{optional_8h_af4ab9c6c6aaf518cb24356dbcfa92d90}} 
+\index{optional.\+h@{optional.\+h}!O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+M\+U\+T\+A\+B\+L\+E\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR@{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+M\+U\+T\+A\+B\+L\+E\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR}}
+\index{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+M\+U\+T\+A\+B\+L\+E\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR@{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+M\+U\+T\+A\+B\+L\+E\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR}!optional.\+h@{optional.\+h}}
+\subsubsection{\texorpdfstring{O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+M\+U\+T\+A\+B\+L\+E\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR}{OPTIONAL\_MUTABLE\_CONSTEXPR}}
+{\footnotesize\ttfamily \#define O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+M\+U\+T\+A\+B\+L\+E\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR~constexpr}
+
+\mbox{\Hypertarget{optional_8h_aba246528349d07cba40ef2d678e6fc78}\label{optional_8h_aba246528349d07cba40ef2d678e6fc78}} 
+\index{optional.\+h@{optional.\+h}!T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+A\+S\+S\+E\+R\+T\+E\+D\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON@{T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+A\+S\+S\+E\+R\+T\+E\+D\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON}}
+\index{T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+A\+S\+S\+E\+R\+T\+E\+D\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON@{T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+A\+S\+S\+E\+R\+T\+E\+D\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON}!optional.\+h@{optional.\+h}}
+\subsubsection{\texorpdfstring{T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+A\+S\+S\+E\+R\+T\+E\+D\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON}{TR2\_OPTIONAL\_ASSERTED\_EXPRESSION}}
+{\footnotesize\ttfamily \#define T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+A\+S\+S\+E\+R\+T\+E\+D\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+ON(\begin{DoxyParamCaption}\item[{}]{C\+H\+E\+CK,  }\item[{}]{E\+X\+PR }\end{DoxyParamCaption})~((C\+H\+E\+CK) ? (E\+X\+PR) \+: (\mbox{[}$\,$\mbox{]}\{assert(!\#C\+H\+E\+CK);\}(), (E\+X\+PR)))}
+
+\mbox{\Hypertarget{optional_8h_a2bc77cf029dcdedaf87668a8da6e899b}\label{optional_8h_a2bc77cf029dcdedaf87668a8da6e899b}} 
+\index{optional.\+h@{optional.\+h}!T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+R\+E\+Q\+U\+I\+R\+ES@{T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+R\+E\+Q\+U\+I\+R\+ES}}
+\index{T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+R\+E\+Q\+U\+I\+R\+ES@{T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+R\+E\+Q\+U\+I\+R\+ES}!optional.\+h@{optional.\+h}}
+\subsubsection{\texorpdfstring{T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+R\+E\+Q\+U\+I\+R\+ES}{TR2\_OPTIONAL\_REQUIRES}}
+{\footnotesize\ttfamily \#define T\+R2\+\_\+\+O\+P\+T\+I\+O\+N\+A\+L\+\_\+\+R\+E\+Q\+U\+I\+R\+ES(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~typename enable\+\_\+if$<$\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+\+::value, bool$>$\+::type = false}
+

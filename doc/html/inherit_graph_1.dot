@@ -1,0 +1,22 @@
+digraph "Graphe hiérarchique des classes"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="Capacite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_capacite.html",tooltip="Classe abstraite qui définit la structure générale d&#39;une capacité, à faire hériter de chaque capacité..."];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="CapAimBot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cap_aim_bot.html",tooltip="donne vis�e auto � un skill (missile) "];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CapBismillah",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cap_bismillah.html"];
+  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CapBoing",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cap_boing.html",tooltip="Classe Capacité de test. "];
+  Node0 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="CapBouclierRond",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cap_bouclier_rond.html",tooltip="bouclier circulaire avec x PB "];
+  Node0 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="CapDash",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cap_dash.html",tooltip="Classe Capacité permettant de dash. "];
+  Node0 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="CapMissile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cap_missile.html",tooltip="Classe Capacité de base. "];
+  Node0 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="CapPiou",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cap_piou.html",tooltip="Classe Capacité de base. "];
+}

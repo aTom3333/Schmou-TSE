@@ -24,13 +24,13 @@ if (edges && edges.length) {
                 <circle id="rim" cx="0" cy="0" r="7"/>
                 <circle id="rim2" cx="0" cy="0" r="3.5"/>
                 <g id="zoomPlus">
-                        <use xlink:href="#rim" fill="#404040">
+                        <use xlink:href="#rim" target="_top" fill="#404040">
                                 <set attributeName="fill" to="#808080" begin="zoomplus.mouseover" end="zoomplus.mouseout"/>
                         </use>
                         <path d="M-4,0h8M0,-4v8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
                 </g>
                 <g id="zoomMin">
-                        <use xlink:href="#rim" fill="#404040">
+                        <use xlink:href="#rim" target="_top" fill="#404040">
                                 <set attributeName="fill" to="#808080" begin="zoomminus.mouseover" end="zoomminus.mouseout"/>
                         </use>
                         <path d="M-4,0h8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
@@ -39,7 +39,7 @@ if (edges && edges.length) {
                         <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
                 </g>
                <g id="resetDef">
-                       <use xlink:href="#rim2" fill="#404040">
+                       <use xlink:href="#rim2" target="_top" fill="#404040">
                                <set attributeName="fill" to="#808080" begin="reset.mouseover" end="reset.mouseout"/>
                        </use>
                </g>
@@ -50,7 +50,7 @@ var viewWidth = 2051;
 var viewHeight = 375;
 var sectionId = 'dynsection-1';
 </script>
-<script xlink:href="svgpan.js"/>
+<script xlink:href="svgpan.js" target="_top"/>
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>src/Capacites/Capacite.h</title>
@@ -62,7 +62,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node11 -->
 <g id="node2" class="node"><title>Node11</title>
-<g id="a_node2"><a xlink:href="_cap_test_8h.html" target="_top" xlink:title="src/Capacites/CapTest.h">
+<g id="a_node2"><a xlink:href="_cap_test_8h.html" target="_top" target="_top" xlink:title="src/Capacites/CapTest.h">
 <polygon fill="white" stroke="black" points="320,-291.5 320,-310.5 446,-310.5 446,-291.5 320,-291.5"/>
 <text text-anchor="middle" x="383" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Capacites/CapTest.h</text>
 </a>
@@ -75,7 +75,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node14 -->
 <g id="node5" class="node"><title>Node14</title>
-<g id="a_node5"><a xlink:href="_vaisseau_test_8h.html" target="_top" xlink:title="src/Vaisseau/VaisseauTest.h">
+<g id="a_node5"><a xlink:href="_vaisseau_test_8h.html" target="_top" target="_top" xlink:title="src/Vaisseau/VaisseauTest.h">
 <polygon fill="white" stroke="black" points="573.5,-174 573.5,-193 718.5,-193 718.5,-174 573.5,-174"/>
 <text text-anchor="middle" x="646" y="-181" font-family="Helvetica,sans-Serif" font-size="10.00">src/Vaisseau/VaisseauTest.h</text>
 </a>
@@ -88,7 +88,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node20 -->
 <g id="node11" class="node"><title>Node20</title>
-<g id="a_node11"><a xlink:href="_cap_piou_8h.html" target="_top" xlink:title="src/Capacites/CapPiou.h">
+<g id="a_node11"><a xlink:href="_cap_piou_8h.html" target="_top" target="_top" xlink:title="src/Capacites/CapPiou.h">
 <polygon fill="white" stroke="black" points="476,-291.5 476,-310.5 602,-310.5 602,-291.5 476,-291.5"/>
 <text text-anchor="middle" x="539" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Capacites/CapPiou.h</text>
 </a>
@@ -101,7 +101,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node22 -->
 <g id="node13" class="node"><title>Node22</title>
-<g id="a_node13"><a xlink:href="_cap_dash_8h.html" target="_top" xlink:title="src/Capacites/CapDash.h">
+<g id="a_node13"><a xlink:href="_cap_dash_8h.html" target="_top" target="_top" xlink:title="src/Capacites/CapDash.h">
 <polygon fill="white" stroke="black" points="167,-291.5 167,-310.5 297,-310.5 297,-291.5 167,-291.5"/>
 <text text-anchor="middle" x="232" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Capacites/CapDash.h</text>
 </a>
@@ -114,7 +114,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node24 -->
 <g id="node15" class="node"><title>Node24</title>
-<g id="a_node15"><a xlink:href="_cap_missile_8h.html" target="_top" xlink:title="src/Capacites/CapMissile.h">
+<g id="a_node15"><a xlink:href="_cap_missile_8h.html" target="_top" target="_top" xlink:title="src/Capacites/CapMissile.h">
 <polygon fill="white" stroke="black" points="741.5,-291.5 741.5,-310.5 878.5,-310.5 878.5,-291.5 741.5,-291.5"/>
 <text text-anchor="middle" x="810" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Capacites/CapMissile.h</text>
 </a>
@@ -127,7 +127,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node28 -->
 <g id="node19" class="node"><title>Node28</title>
-<g id="a_node19"><a xlink:href="_capacite_8cpp.html" target="_top" xlink:title="src/Capacites/Capacite.cpp">
+<g id="a_node19"><a xlink:href="_capacite_8cpp.html" target="_top" target="_top" xlink:title="src/Capacites/Capacite.cpp">
 <polygon fill="white" stroke="black" points="1053,-235.5 1053,-254.5 1191,-254.5 1191,-235.5 1053,-235.5"/>
 <text text-anchor="middle" x="1122" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Capacites/Capacite.cpp</text>
 </a>
@@ -140,7 +140,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node29 -->
 <g id="node20" class="node"><title>Node29</title>
-<g id="a_node20"><a xlink:href="_vaisseau_8h.html" target="_top" xlink:title="src/Vaisseau/Vaisseau.h">
+<g id="a_node20"><a xlink:href="_vaisseau_8h.html" target="_top" target="_top" xlink:title="src/Vaisseau/Vaisseau.h">
 <polygon fill="white" stroke="black" points="1314.5,-291.5 1314.5,-310.5 1439.5,-310.5 1439.5,-291.5 1314.5,-291.5"/>
 <text text-anchor="middle" x="1377" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Vaisseau/Vaisseau.h</text>
 </a>
@@ -153,7 +153,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node30 -->
 <g id="node21" class="node"><title>Node30</title>
-<g id="a_node21"><a xlink:href="_partie_8h.html" target="_top" xlink:title="src/Partie.h">
+<g id="a_node21"><a xlink:href="_partie_8h.html" target="_top" target="_top" xlink:title="src/Partie.h">
 <polygon fill="white" stroke="black" points="1209.5,-235.5 1209.5,-254.5 1276.5,-254.5 1276.5,-235.5 1209.5,-235.5"/>
 <text text-anchor="middle" x="1243" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Partie.h</text>
 </a>
@@ -166,7 +166,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node38 -->
 <g id="node29" class="node"><title>Node38</title>
-<g id="a_node29"><a xlink:href="_projectile_8cpp.html" target="_top" xlink:title="src/Projectiles/Projectile.cpp">
+<g id="a_node29"><a xlink:href="_projectile_8cpp.html" target="_top" target="_top" xlink:title="src/Projectiles/Projectile.cpp">
 <polygon fill="white" stroke="black" points="1747.5,-235.5 1747.5,-254.5 1888.5,-254.5 1888.5,-235.5 1747.5,-235.5"/>
 <text text-anchor="middle" x="1818" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Projectiles/Projectile.cpp</text>
 </a>
@@ -179,7 +179,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node39 -->
 <g id="node30" class="node"><title>Node39</title>
-<g id="a_node30"><a xlink:href="_vaisseau_8cpp.html" target="_top" xlink:title="src/Vaisseau/Vaisseau.cpp">
+<g id="a_node30"><a xlink:href="_vaisseau_8cpp.html" target="_top" target="_top" xlink:title="src/Vaisseau/Vaisseau.cpp">
 <polygon fill="white" stroke="black" points="1907,-235.5 1907,-254.5 2043,-254.5 2043,-235.5 1907,-235.5"/>
 <text text-anchor="middle" x="1975" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Vaisseau/Vaisseau.cpp</text>
 </a>
@@ -192,7 +192,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node12 -->
 <g id="node3" class="node"><title>Node12</title>
-<g id="a_node3"><a xlink:href="___capacites_8h.html" target="_top" xlink:title="src/Capacites/_Capacites.h">
+<g id="a_node3"><a xlink:href="___capacites_8h.html" target="_top" target="_top" xlink:title="src/Capacites/_Capacites.h">
 <polygon fill="white" stroke="black" points="314,-235.5 314,-254.5 452,-254.5 452,-235.5 314,-235.5"/>
 <text text-anchor="middle" x="383" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Capacites/_Capacites.h</text>
 </a>
@@ -205,7 +205,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node19 -->
 <g id="node10" class="node"><title>Node19</title>
-<g id="a_node10"><a xlink:href="_cap_test_8cpp.html" target="_top" xlink:title="src/Capacites/CapTest.cpp">
+<g id="a_node10"><a xlink:href="_cap_test_8cpp.html" target="_top" target="_top" xlink:title="src/Capacites/CapTest.cpp">
 <polygon fill="white" stroke="black" points="158.5,-235.5 158.5,-254.5 295.5,-254.5 295.5,-235.5 158.5,-235.5"/>
 <text text-anchor="middle" x="227" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Capacites/CapTest.cpp</text>
 </a>
@@ -218,7 +218,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node13 -->
 <g id="node4" class="node"><title>Node13</title>
-<g id="a_node4"><a xlink:href="_partie_8cpp.html" target="_top" xlink:title="src/Partie.cpp">
+<g id="a_node4"><a xlink:href="_partie_8cpp.html" target="_top" target="_top" xlink:title="src/Partie.cpp">
 <polygon fill="white" stroke="black" points="954.5,-0.5 954.5,-19.5 1031.5,-19.5 1031.5,-0.5 954.5,-0.5"/>
 <text text-anchor="middle" x="993" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Partie.cpp</text>
 </a>
@@ -236,7 +236,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node15 -->
 <g id="node6" class="node"><title>Node15</title>
-<g id="a_node6"><a xlink:href="__vaisseaux_8h.html" target="_top" xlink:title="src/Vaisseau/_vaisseaux.h">
+<g id="a_node6"><a xlink:href="__vaisseaux_8h.html" target="_top" target="_top" xlink:title="src/Vaisseau/_vaisseaux.h">
 <polygon fill="white" stroke="black" points="1022,-112.5 1022,-131.5 1156,-131.5 1156,-112.5 1022,-112.5"/>
 <text text-anchor="middle" x="1089" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Vaisseau/_vaisseaux.h</text>
 </a>
@@ -249,7 +249,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node18 -->
 <g id="node9" class="node"><title>Node18</title>
-<g id="a_node9"><a xlink:href="_vaisseau_test_8cpp.html" target="_top" xlink:title="src/Vaisseau/VaisseauTest.cpp">
+<g id="a_node9"><a xlink:href="_vaisseau_test_8cpp.html" target="_top" target="_top" xlink:title="src/Vaisseau/VaisseauTest.cpp">
 <polygon fill="white" stroke="black" points="568.5,-112.5 568.5,-131.5 723.5,-131.5 723.5,-112.5 568.5,-112.5"/>
 <text text-anchor="middle" x="646" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Vaisseau/VaisseauTest.cpp</text>
 </a>
@@ -267,7 +267,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node16 -->
 <g id="node7" class="node"><title>Node16</title>
-<g id="a_node7"><a xlink:href="vague_8h.html" target="_top" xlink:title="src/vague.h">
+<g id="a_node7"><a xlink:href="vague_8h.html" target="_top" target="_top" xlink:title="src/vague.h">
 <polygon fill="white" stroke="black" points="1057,-56.5 1057,-75.5 1125,-75.5 1125,-56.5 1057,-56.5"/>
 <text text-anchor="middle" x="1091" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/vague.h</text>
 </a>
@@ -285,7 +285,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node17 -->
 <g id="node8" class="node"><title>Node17</title>
-<g id="a_node8"><a xlink:href="vague_8cpp.html" target="_top" xlink:title="src/vague.cpp">
+<g id="a_node8"><a xlink:href="vague_8cpp.html" target="_top" target="_top" xlink:title="src/vague.cpp">
 <polygon fill="white" stroke="black" points="1052,-0.5 1052,-19.5 1130,-19.5 1130,-0.5 1052,-0.5"/>
 <text text-anchor="middle" x="1091" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/vague.cpp</text>
 </a>
@@ -303,7 +303,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node21 -->
 <g id="node12" class="node"><title>Node21</title>
-<g id="a_node12"><a xlink:href="_cap_piou_8cpp.html" target="_top" xlink:title="src/Capacites/CapPiou.cpp">
+<g id="a_node12"><a xlink:href="_cap_piou_8cpp.html" target="_top" target="_top" xlink:title="src/Capacites/CapPiou.cpp">
 <polygon fill="white" stroke="black" points="470.5,-235.5 470.5,-254.5 607.5,-254.5 607.5,-235.5 470.5,-235.5"/>
 <text text-anchor="middle" x="539" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Capacites/CapPiou.cpp</text>
 </a>
@@ -326,7 +326,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node23 -->
 <g id="node14" class="node"><title>Node23</title>
-<g id="a_node14"><a xlink:href="_cap_dash_8cpp.html" target="_top" xlink:title="src/Capacites/CapDash.cpp">
+<g id="a_node14"><a xlink:href="_cap_dash_8cpp.html" target="_top" target="_top" xlink:title="src/Capacites/CapDash.cpp">
 <polygon fill="white" stroke="black" points="0,-235.5 0,-254.5 140,-254.5 140,-235.5 0,-235.5"/>
 <text text-anchor="middle" x="70" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Capacites/CapDash.cpp</text>
 </a>
@@ -344,7 +344,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node25 -->
 <g id="node16" class="node"><title>Node25</title>
-<g id="a_node16"><a xlink:href="_cap_missile_8cpp.html" target="_top" xlink:title="src/Capacites/CapMissile.cpp">
+<g id="a_node16"><a xlink:href="_cap_missile_8cpp.html" target="_top" target="_top" xlink:title="src/Capacites/CapMissile.cpp">
 <polygon fill="white" stroke="black" points="664,-235.5 664,-254.5 812,-254.5 812,-235.5 664,-235.5"/>
 <text text-anchor="middle" x="738" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Capacites/CapMissile.cpp</text>
 </a>
@@ -357,7 +357,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node26 -->
 <g id="node17" class="node"><title>Node26</title>
-<g id="a_node17"><a xlink:href="_vaisseau_attaquant_8h.html" target="_top" xlink:title="src/Vaisseau/VaisseauAttaquant.h">
+<g id="a_node17"><a xlink:href="_vaisseau_attaquant_8h.html" target="_top" target="_top" xlink:title="src/Vaisseau/VaisseauAttaquant.h">
 <polygon fill="white" stroke="black" points="867.5,-235.5 867.5,-254.5 1034.5,-254.5 1034.5,-235.5 867.5,-235.5"/>
 <text text-anchor="middle" x="951" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Vaisseau/VaisseauAttaquant.h</text>
 </a>
@@ -375,7 +375,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node27 -->
 <g id="node18" class="node"><title>Node27</title>
-<g id="a_node18"><a xlink:href="_vaisseau_attaquant_8cpp.html" target="_top" xlink:title="src/Vaisseau/VaisseauAttaquant.cpp">
+<g id="a_node18"><a xlink:href="_vaisseau_attaquant_8cpp.html" target="_top" target="_top" xlink:title="src/Vaisseau/VaisseauAttaquant.cpp">
 <polygon fill="white" stroke="black" points="747,-174 747,-193 925,-193 925,-174 747,-174"/>
 <text text-anchor="middle" x="836" y="-181" font-family="Helvetica,sans-Serif" font-size="10.00">src/Vaisseau/VaisseauAttaquant.cpp</text>
 </a>
@@ -413,7 +413,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node32 -->
 <g id="node23" class="node"><title>Node32</title>
-<g id="a_node23"><a xlink:href="_vaisseau_eclaireur_8h.html" target="_top" xlink:title="src/Vaisseau/VaisseauEclaireur.h">
+<g id="a_node23"><a xlink:href="_vaisseau_eclaireur_8h.html" target="_top" target="_top" xlink:title="src/Vaisseau/VaisseauEclaireur.h">
 <polygon fill="white" stroke="black" points="1295,-235.5 1295,-254.5 1459,-254.5 1459,-235.5 1295,-235.5"/>
 <text text-anchor="middle" x="1377" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Vaisseau/VaisseauEclaireur.h</text>
 </a>
@@ -426,7 +426,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node34 -->
 <g id="node25" class="node"><title>Node34</title>
-<g id="a_node25"><a xlink:href="_vaisseau_defenseur_8h.html" target="_top" xlink:title="src/Vaisseau/VaisseauDefenseur.h">
+<g id="a_node25"><a xlink:href="_vaisseau_defenseur_8h.html" target="_top" target="_top" xlink:title="src/Vaisseau/VaisseauDefenseur.h">
 <polygon fill="white" stroke="black" points="1341,-174 1341,-193 1511,-193 1511,-174 1341,-174"/>
 <text text-anchor="middle" x="1426" y="-181" font-family="Helvetica,sans-Serif" font-size="10.00">src/Vaisseau/VaisseauDefenseur.h</text>
 </a>
@@ -439,7 +439,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node36 -->
 <g id="node27" class="node"><title>Node36</title>
-<g id="a_node27"><a xlink:href="_vaisseau_defenseur_b_8h.html" target="_top" xlink:title="src/Vaisseau/VaisseauDefenseurB.h">
+<g id="a_node27"><a xlink:href="_vaisseau_defenseur_b_8h.html" target="_top" target="_top" xlink:title="src/Vaisseau/VaisseauDefenseurB.h">
 <polygon fill="white" stroke="black" points="1514.5,-235.5 1514.5,-254.5 1691.5,-254.5 1691.5,-235.5 1514.5,-235.5"/>
 <text text-anchor="middle" x="1603" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Vaisseau/VaisseauDefenseurB.h</text>
 </a>
@@ -467,7 +467,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node31 -->
 <g id="node22" class="node"><title>Node31</title>
-<g id="a_node22"><a xlink:href="main_8cpp.html" target="_top" xlink:title="src/main.cpp">
+<g id="a_node22"><a xlink:href="main_8cpp.html" target="_top" target="_top" xlink:title="src/main.cpp">
 <polygon fill="white" stroke="black" points="1019.5,-174 1019.5,-193 1092.5,-193 1092.5,-174 1019.5,-174"/>
 <text text-anchor="middle" x="1056" y="-181" font-family="Helvetica,sans-Serif" font-size="10.00">src/main.cpp</text>
 </a>
@@ -485,7 +485,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node33 -->
 <g id="node24" class="node"><title>Node33</title>
-<g id="a_node24"><a xlink:href="_vaisseau_eclaireur_8cpp.html" target="_top" xlink:title="src/Vaisseau/VaisseauEclaireur.cpp">
+<g id="a_node24"><a xlink:href="_vaisseau_eclaireur_8cpp.html" target="_top" target="_top" xlink:title="src/Vaisseau/VaisseauEclaireur.cpp">
 <polygon fill="white" stroke="black" points="1149,-174 1149,-193 1323,-193 1323,-174 1149,-174"/>
 <text text-anchor="middle" x="1236" y="-181" font-family="Helvetica,sans-Serif" font-size="10.00">src/Vaisseau/VaisseauEclaireur.cpp</text>
 </a>
@@ -503,7 +503,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node35 -->
 <g id="node26" class="node"><title>Node35</title>
-<g id="a_node26"><a xlink:href="_vaisseau_defenseur_8cpp.html" target="_top" xlink:title="src/Vaisseau/VaisseauDefenseur.cpp">
+<g id="a_node26"><a xlink:href="_vaisseau_defenseur_8cpp.html" target="_top" target="_top" xlink:title="src/Vaisseau/VaisseauDefenseur.cpp">
 <polygon fill="white" stroke="black" points="1335.5,-112.5 1335.5,-131.5 1516.5,-131.5 1516.5,-112.5 1335.5,-112.5"/>
 <text text-anchor="middle" x="1426" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Vaisseau/VaisseauDefenseur.cpp</text>
 </a>
@@ -521,7 +521,7 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node37 -->
 <g id="node28" class="node"><title>Node37</title>
-<g id="a_node28"><a xlink:href="_vaisseau_defenseur_b_8cpp.html" target="_top" xlink:title="src/Vaisseau/VaisseauDefenseur\lB.cpp">
+<g id="a_node28"><a xlink:href="_vaisseau_defenseur_b_8cpp.html" target="_top" target="_top" xlink:title="src/Vaisseau/VaisseauDefenseur\lB.cpp">
 <polygon fill="white" stroke="black" points="1529,-168.5 1529,-198.5 1691,-198.5 1691,-168.5 1529,-168.5"/>
 <text text-anchor="start" x="1537" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/Vaisseau/VaisseauDefenseur</text>
 <text text-anchor="middle" x="1610" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">B.cpp</text>
@@ -537,29 +537,29 @@ var sectionId = 'dynsection-1';
 </svg>
         <g id="navigator" transform="translate(0 0)" fill="#404254">
                 <rect fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width=".5" x="0" y="0" width="60" height="60"/>
-                <use id="zoomplus" xlink:href="#zoomPlus" x="17" y="9" onmousedown="handleZoom(evt,'in')"/>
-                <use id="zoomminus" xlink:href="#zoomMin" x="42" y="9" onmousedown="handleZoom(evt,'out')"/>
-                <use id="reset" xlink:href="#resetDef" x="30" y="36" onmousedown="handleReset()"/>
-                <g id="arrowUp" xlink:href="#dirArrow" transform="translate(30 24)" onmousedown="handlePan(0,-1)">
-                  <use xlink:href="#rim" fill="#404040">
+                <use id="zoomplus" xlink:href="#zoomPlus" target="_top" x="17" y="9" onmousedown="handleZoom(evt,'in')"/>
+                <use id="zoomminus" xlink:href="#zoomMin" target="_top" x="42" y="9" onmousedown="handleZoom(evt,'out')"/>
+                <use id="reset" xlink:href="#resetDef" target="_top" x="30" y="36" onmousedown="handleReset()"/>
+                <g id="arrowUp" xlink:href="#dirArrow" target="_top" transform="translate(30 24)" onmousedown="handlePan(0,-1)">
+                  <use xlink:href="#rim" target="_top" fill="#404040">
                         <set attributeName="fill" to="#808080" begin="arrowUp.mouseover" end="arrowUp.mouseout"/>
                   </use>
                   <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
                 </g>
-                <g id="arrowRight" xlink:href="#dirArrow" transform="rotate(90) translate(36 -43)" onmousedown="handlePan(1,0)">
-                  <use xlink:href="#rim" fill="#404040">
+                <g id="arrowRight" xlink:href="#dirArrow" target="_top" transform="rotate(90) translate(36 -43)" onmousedown="handlePan(1,0)">
+                  <use xlink:href="#rim" target="_top" fill="#404040">
                         <set attributeName="fill" to="#808080" begin="arrowRight.mouseover" end="arrowRight.mouseout"/>
                   </use>
                   <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
                 </g>
-                <g id="arrowDown" xlink:href="#dirArrow" transform="rotate(180) translate(-30 -48)" onmousedown="handlePan(0,1)">
-                  <use xlink:href="#rim" fill="#404040">
+                <g id="arrowDown" xlink:href="#dirArrow" target="_top" transform="rotate(180) translate(-30 -48)" onmousedown="handlePan(0,1)">
+                  <use xlink:href="#rim" target="_top" fill="#404040">
                         <set attributeName="fill" to="#808080" begin="arrowDown.mouseover" end="arrowDown.mouseout"/>
                   </use>
                   <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
                 </g>
-                <g id="arrowLeft" xlink:href="#dirArrow" transform="rotate(270) translate(-36 17)" onmousedown="handlePan(-1,0)">
-                  <use xlink:href="#rim" fill="#404040">
+                <g id="arrowLeft" xlink:href="#dirArrow" target="_top" transform="rotate(270) translate(-36 17)" onmousedown="handlePan(-1,0)">
+                  <use xlink:href="#rim" target="_top" fill="#404040">
                         <set attributeName="fill" to="#808080" begin="arrowLeft.mouseover" end="arrowLeft.mouseout"/>
                   </use>
                   <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
@@ -567,7 +567,7 @@ var sectionId = 'dynsection-1';
         </g>
         <svg viewBox="0 0 15 15" width="100%" height="30px" preserveAspectRatio="xMaxYMin meet">
          <g id="arrow_out" transform="scale(0.3 0.3)">
-          <a xlink:href="_capacite_8h__dep__incl_org.svg" target="_base">
+          <a xlink:href="_capacite_8h__dep__incl_org.svg" target="_top" target="_base">
            <rect id="button" ry="5" rx="5" y="6" x="6" height="38" width="38"
                 fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width="1.0"/>
            <path id="arrow"

@@ -1,0 +1,32 @@
+digraph "Graphe hiérarchique des classes"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="Entite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_entite.html",tooltip="Classe virtuelle qui définit une entité "];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="Projectile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile.html",tooltip="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje..."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ProjBismillah",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_proj_bismillah.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ProjBoing",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_proj_boing.html",tooltip="Projectile de test. "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ProjBouclierRond",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_proj_bouclier_rond.html"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ProjMissile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_proj_missile.html"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ProjPiou",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_proj_piou.html",tooltip="Projectile de test. "];
+  Node0 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Vaisseau",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vaisseau.html",tooltip="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="VaisseauAttaquant",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vaisseau_attaquant.html",tooltip="classe d&#39;un ennemi de base : l&#39;attaquant "];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="VaisseauDefenseur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vaisseau_defenseur.html"];
+  Node7 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="VaisseauDefenseurB",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vaisseau_defenseur_b.html",tooltip="classe du bouclier du VaisseauDefenseur "];
+  Node7 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="VaisseauEclaireur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vaisseau_eclaireur.html",tooltip="classe d&#39;un ennemi de base : l&#39;éclaireur "];
+  Node7 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="VaisseauTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vaisseau_test.html"];
+}

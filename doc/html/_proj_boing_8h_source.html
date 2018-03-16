@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Schmou&#39;TSE:  Fichier source de src/Projectiles/ProjBoing.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Schmou&#39;TSE
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_fcac084c8285db543138d67b8fc65208.html">Projectiles</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ProjBoing.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_proj_boing_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PROJ_BOING_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PROJ_BOING_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_projectile_8h.html">Projectile.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="class_vaisseau.html">Vaisseau</a>;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_proj_boing.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_proj_boing.html">ProjBoing</a> : <span class="keyword">public</span> <a class="code" href="class_projectile.html">Projectile</a></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_proj_boing.html#aebaef3b6474750c645ccd633b03bb9ce">ProjBoing</a>(); </div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_proj_boing.html#aebaef3b6474750c645ccd633b03bb9ce">ProjBoing</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, sf::Sound sound);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="class_proj_boing.html#a3b5745800aa7ce95337b6e89f06d2d43">~ProjBoing</a>(); </div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_proj_boing.html#aab0f3ea007483e26c38bd9f861954dae">gestion</a>(sf::RenderWindow &amp;window, sf::Time tempsEcoule);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_proj_boing.html#acbee1a0aa00582682ce755e1b19d687a">agit</a>(<a class="code" href="class_entite.html">Entite</a>&amp; proj);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">int</span> mx_; </div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">int</span> my_; </div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">int</span> vx_; </div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">int</span> vy_; </div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif //PROJ_TEST_H</span></div><div class="ttc" id="class_proj_boing_html"><div class="ttname"><a href="class_proj_boing.html">ProjBoing</a></div><div class="ttdoc">Projectile de test. </div><div class="ttdef"><b>Definition:</b> ProjBoing.h:15</div></div>
+<div class="ttc" id="class_proj_boing_html_a3b5745800aa7ce95337b6e89f06d2d43"><div class="ttname"><a href="class_proj_boing.html#a3b5745800aa7ce95337b6e89f06d2d43">ProjBoing::~ProjBoing</a></div><div class="ttdeci">~ProjBoing()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> ProjBoing.cpp:102</div></div>
+<div class="ttc" id="class_proj_boing_html_aebaef3b6474750c645ccd633b03bb9ce"><div class="ttname"><a href="class_proj_boing.html#aebaef3b6474750c645ccd633b03bb9ce">ProjBoing::ProjBoing</a></div><div class="ttdeci">ProjBoing()</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> ProjBoing.cpp:4</div></div>
+<div class="ttc" id="class_vaisseau_html"><div class="ttname"><a href="class_vaisseau.html">Vaisseau</a></div><div class="ttdoc">classe du vaisseau (véhicule) d&amp;#39;un joueur ou d&amp;#39;un ennemi </div><div class="ttdef"><b>Definition:</b> Vaisseau.h:22</div></div>
+<div class="ttc" id="_projectile_8h_html"><div class="ttname"><a href="_projectile_8h.html">Projectile.h</a></div></div>
+<div class="ttc" id="class_projectile_html"><div class="ttname"><a href="class_projectile.html">Projectile</a></div><div class="ttdoc">Classe abstraite qui définit la structure générale d&amp;#39;un projectile, à faire hériter pour chaque proje...</div><div class="ttdef"><b>Definition:</b> Projectile.h:24</div></div>
+<div class="ttc" id="class_proj_boing_html_acbee1a0aa00582682ce755e1b19d687a"><div class="ttname"><a href="class_proj_boing.html#acbee1a0aa00582682ce755e1b19d687a">ProjBoing::agit</a></div><div class="ttdeci">void agit(Entite &amp;proj)</div><div class="ttdoc">Procédure lorsque le projectile agit avec unvaisseau. </div><div class="ttdef"><b>Definition:</b> ProjBoing.cpp:143</div></div>
+<div class="ttc" id="class_proj_boing_html_aab0f3ea007483e26c38bd9f861954dae"><div class="ttname"><a href="class_proj_boing.html#aab0f3ea007483e26c38bd9f861954dae">ProjBoing::gestion</a></div><div class="ttdeci">void gestion(sf::RenderWindow &amp;window, sf::Time tempsEcoule)</div><div class="ttdoc">Gestion du projectile. </div><div class="ttdef"><b>Definition:</b> ProjBoing.cpp:106</div></div>
+<div class="ttc" id="class_entite_html"><div class="ttname"><a href="class_entite.html">Entite</a></div><div class="ttdoc">Classe virtuelle qui définit une entité </div><div class="ttdef"><b>Definition:</b> Entite.h:20</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

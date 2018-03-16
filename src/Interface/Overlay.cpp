@@ -23,7 +23,7 @@ void Overlay::init(Vaisseau *vaisseau)
 		}
 	}
 
-	// Compteur qui permet de connaitre le nombre de capacités a afficher
+	// Compteur qui permet de connaitre le nombre de capacitÃ©s a afficher
 	unsigned int n = 0, m = 0;
 
 	// Initialisation des icones

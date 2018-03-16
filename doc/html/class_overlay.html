@@ -72,14 +72,15 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Classe qui gère l'overlay ingame.  
+<p>Classe qui le bouton des capacité IG.  
  <a href="class_overlay.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_overlay_8h_source.html">Overlay.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe de collaboration de Overlay:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_overlay__coll__graph.svg" width="106" height="132"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><!-- SVG 0 -->
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -88,13 +89,16 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:ab4f509d502931bcaad03418470993d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad40a5e109ee4acbdec9f21d5496b7fa9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_overlay.html#ad40a5e109ee4acbdec9f21d5496b7fa9">~Overlay</a> ()</td></tr>
 <tr class="separator:ad40a5e109ee4acbdec9f21d5496b7fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fcdcd87bc909289e094ce799708a0c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_overlay.html#a3fcdcd87bc909289e094ce799708a0c9">draw</a> (sf::RenderWindow &amp;window, bool bDraw=true)</td></tr>
-<tr class="separator:a3fcdcd87bc909289e094ce799708a0c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a0fd28b3355bcaeb54d24641a1066e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_overlay.html#a4a0fd28b3355bcaeb54d24641a1066e3">gestion</a> (<a class="el" href="class_entite.html">Entite</a> *vaisseau)</td></tr>
-<tr class="separator:a4a0fd28b3355bcaeb54d24641a1066e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afce384f88db42331c819e361a90d943d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_overlay.html#afce384f88db42331c819e361a90d943d">init</a> (<a class="el" href="class_vaisseau.html">Vaisseau</a> *vaisseau)</td></tr>
+<tr class="separator:afce384f88db42331c819e361a90d943d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a264955d57ee1b8c3d655321f26802e18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_overlay.html#a264955d57ee1b8c3d655321f26802e18">draw</a> (sf::RenderWindow &amp;window, <a class="el" href="class_vaisseau.html">Vaisseau</a> *vaisseau, bool bDraw=true)</td></tr>
+<tr class="separator:a264955d57ee1b8c3d655321f26802e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39d341f16ea50172a8c2add7bfdf2843"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_overlay.html#a39d341f16ea50172a8c2add7bfdf2843">gestion</a> (<a class="el" href="class_vaisseau.html">Vaisseau</a> *vaisseau)</td></tr>
+<tr class="separator:a39d341f16ea50172a8c2add7bfdf2843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Classe qui gère l'overlay ingame. </p>
+<div class="textblock"><p>Classe qui le bouton des capacité IG. </p>
+<p>Classe qui gère l'overlay ingame. </p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="ab4f509d502931bcaad03418470993d70"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4f509d502931bcaad03418470993d70">&#9670;&nbsp;</a></span>Overlay()</h2>
@@ -131,8 +135,8 @@ Fonctions membres publiques</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a id="a3fcdcd87bc909289e094ce799708a0c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fcdcd87bc909289e094ce799708a0c9">&#9670;&nbsp;</a></span>draw()</h2>
+<a id="a264955d57ee1b8c3d655321f26802e18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a264955d57ee1b8c3d655321f26802e18">&#9670;&nbsp;</a></span>draw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,6 +146,12 @@ Fonctions membres publiques</h2></td></tr>
           <td>(</td>
           <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
           <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vaisseau.html">Vaisseau</a> *&#160;</td>
+          <td class="paramname"><em>vaisseau</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -159,8 +169,8 @@ Fonctions membres publiques</h2></td></tr>
 
 </div>
 </div>
-<a id="a4a0fd28b3355bcaeb54d24641a1066e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a0fd28b3355bcaeb54d24641a1066e3">&#9670;&nbsp;</a></span>gestion()</h2>
+<a id="a39d341f16ea50172a8c2add7bfdf2843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39d341f16ea50172a8c2add7bfdf2843">&#9670;&nbsp;</a></span>gestion()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +178,25 @@ Fonctions membres publiques</h2></td></tr>
         <tr>
           <td class="memname">void Overlay::gestion </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_entite.html">Entite</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_vaisseau.html">Vaisseau</a> *&#160;</td>
+          <td class="paramname"><em>vaisseau</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afce384f88db42331c819e361a90d943d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afce384f88db42331c819e361a90d943d">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Overlay::init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vaisseau.html">Vaisseau</a> *&#160;</td>
           <td class="paramname"><em>vaisseau</em></td><td>)</td>
           <td></td>
         </tr>

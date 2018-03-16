@@ -24,7 +24,7 @@ class Vague
 {
 public:
 	Vague();
-	Vague(float t);
+	explicit Vague(float t);
 	~Vague();
 
 	/**
@@ -51,7 +51,7 @@ public:
 	void setTempsDebut(float t);
 
 	//getters
-	std::vector <ElementVague> getv_() { return v_; }
+	std::vector<ElementVague> getv_() { return v_; }
 
 	//setters
 	void setEquipeAll(Equipe equipe) { for (auto &element : v_) element.v->setequipe_(ENNEMI); }
@@ -59,7 +59,7 @@ public:
 private:
 	float t_debut_; /// Temps en millisecondes du début de la vague
 	float t_; /// Temps depuis le début de la vague
-	std::vector <ElementVague> v_; /// Vecteur des vaisseaux qui apparaissent
+	std::vector<ElementVague> v_; /// Vecteur des vaisseaux qui apparaissent
 
 };
 

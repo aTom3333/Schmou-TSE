@@ -1,0 +1,12 @@
+digraph "VaisseauTest"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3 [label="{VaisseauTest\n||+ VaisseauTest()\l+ ~VaisseauTest()\l+ gestion()\l+ destruction()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{Vaisseau\n|# nom_\l# Nskin_\l# pvM_\l# atqM_\l# defM_\l# vitM_\l# capacites_\l# annexes_\l# annexesB_\l# nbModule_\l|+ Vaisseau()\l+ ~Vaisseau()\l+ gestion()\l+ gestionCapacite()\l+ agit()\l+ destruction()\l+ setEquipe()\l+ addCapacite()\l+ setCapacite()\l+ setnom()\let 17 de plus...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vaisseau.html",tooltip="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi "];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{Entite\n|# position_\l# positionsPrev_\l# nbPositions_\l# angle_\l# scale_\l# collisionable_\l# collisionneuse_\l# equipe_\l# innate_\l# detruit_\let 23 de plus...\l|+ ~Entite()\l+ getForme()\l+ afficher()\l+ move()\l+ setPosition()\l+ getPosition()\l+ rotate()\l+ setRotation()\l+ getRotation()\l+ scale()\let 29 de plus...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_entite.html",tooltip="Classe virtuelle qui définit une entité "];
+  Node4 -> Node4 [color="grey25",fontsize="10",style="solid",label=" #createur_" ,arrowhead="odiamond",fontname="Helvetica"];
+}

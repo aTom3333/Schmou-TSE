@@ -1,0 +1,123 @@
+\hypertarget{class_proj_boing}{}\section{Référence de la classe Proj\+Boing}
+\label{class_proj_boing}\index{Proj\+Boing@{Proj\+Boing}}
+
+
+\hyperlink{class_projectile}{Projectile} de test.  
+
+
+
+
+{\ttfamily \#include $<$Proj\+Boing.\+h$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Proj\+Boing\+:
+% FIG 0
+
+
+Graphe de collaboration de Proj\+Boing\+:
+% FIG 1
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_proj_boing_aebaef3b6474750c645ccd633b03bb9ce}{Proj\+Boing} ()
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_proj_boing_ad2f963465fff3fae7aeeeda8546afe09}{Proj\+Boing} (int x, int y, sf\+::\+Sound sound)
+\item 
+\hyperlink{class_proj_boing_a3b5745800aa7ce95337b6e89f06d2d43}{$\sim$\+Proj\+Boing} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \hyperlink{class_proj_boing_aab0f3ea007483e26c38bd9f861954dae}{gestion} (sf\+::\+Render\+Window \&window, sf\+::\+Time temps\+Ecoule)
+\begin{DoxyCompactList}\small\item\em Gestion du projectile. \end{DoxyCompactList}\item 
+void \hyperlink{class_proj_boing_acbee1a0aa00582682ce755e1b19d687a}{agit} (\hyperlink{class_entite}{Entite} \&proj)
+\begin{DoxyCompactList}\small\item\em Procédure lorsque le projectile agit avec unvaisseau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+\hyperlink{class_projectile}{Projectile} de test. 
+
+Lance 4 boules qui rebondissent sur les bord de l\textquotesingle{}écran 
+
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_proj_boing_aebaef3b6474750c645ccd633b03bb9ce}\label{class_proj_boing_aebaef3b6474750c645ccd633b03bb9ce}} 
+\index{Proj\+Boing@{Proj\+Boing}!Proj\+Boing@{Proj\+Boing}}
+\index{Proj\+Boing@{Proj\+Boing}!Proj\+Boing@{Proj\+Boing}}
+\subsubsection{\texorpdfstring{Proj\+Boing()}{ProjBoing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Proj\+Boing\+::\+Proj\+Boing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Abscisse de la position de départ du projectile \\
+\hline
+{\em y} & Ordonnée de la position de départ du projectile\\
+\hline
+\end{DoxyParams}
+Créer un projectile de test à la position donnée en paramètre \mbox{\Hypertarget{class_proj_boing_ad2f963465fff3fae7aeeeda8546afe09}\label{class_proj_boing_ad2f963465fff3fae7aeeeda8546afe09}} 
+\index{Proj\+Boing@{Proj\+Boing}!Proj\+Boing@{Proj\+Boing}}
+\index{Proj\+Boing@{Proj\+Boing}!Proj\+Boing@{Proj\+Boing}}
+\subsubsection{\texorpdfstring{Proj\+Boing()}{ProjBoing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Proj\+Boing\+::\+Proj\+Boing (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{sf\+::\+Sound}]{sound }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_proj_boing_a3b5745800aa7ce95337b6e89f06d2d43}\label{class_proj_boing_a3b5745800aa7ce95337b6e89f06d2d43}} 
+\index{Proj\+Boing@{Proj\+Boing}!````~Proj\+Boing@{$\sim$\+Proj\+Boing}}
+\index{````~Proj\+Boing@{$\sim$\+Proj\+Boing}!Proj\+Boing@{Proj\+Boing}}
+\subsubsection{\texorpdfstring{$\sim$\+Proj\+Boing()}{~ProjBoing()}}
+{\footnotesize\ttfamily Proj\+Boing\+::$\sim$\+Proj\+Boing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur. 
+
+Vide 
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_proj_boing_acbee1a0aa00582682ce755e1b19d687a}\label{class_proj_boing_acbee1a0aa00582682ce755e1b19d687a}} 
+\index{Proj\+Boing@{Proj\+Boing}!agit@{agit}}
+\index{agit@{agit}!Proj\+Boing@{Proj\+Boing}}
+\subsubsection{\texorpdfstring{agit()}{agit()}}
+{\footnotesize\ttfamily Proj\+Boing\+::agit (\begin{DoxyParamCaption}\item[{\hyperlink{class_entite}{Entite} \&}]{proj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Procédure lorsque le projectile agit avec unvaisseau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \hyperlink{class_vaisseau}{Vaisseau}} & à modifier\\
+\hline
+\end{DoxyParams}
+Vide 
+
+Implémente \hyperlink{class_entite_a848ec47afac1d7ba970a2bcab5dc7b3b}{Entite}.
+
+\mbox{\Hypertarget{class_proj_boing_aab0f3ea007483e26c38bd9f861954dae}\label{class_proj_boing_aab0f3ea007483e26c38bd9f861954dae}} 
+\index{Proj\+Boing@{Proj\+Boing}!gestion@{gestion}}
+\index{gestion@{gestion}!Proj\+Boing@{Proj\+Boing}}
+\subsubsection{\texorpdfstring{gestion()}{gestion()}}
+{\footnotesize\ttfamily Proj\+Boing\+::gestion (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{sf\+::\+Time}]{temps\+Ecoule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gestion du projectile. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em window} & Fenetre de jeu \\
+\hline
+{\em temps\+Ecoule} & Temps écoulé depuis le dernier appel\\
+\hline
+\end{DoxyParams}
+Gestion du déplacement et de la collision avec les bords 
+
+Implémente \hyperlink{class_projectile_a09e02b793473660fc59a329a4dfea0ec}{Projectile}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+src/\+Projectiles/\hyperlink{_proj_boing_8h}{Proj\+Boing.\+h}\item 
+src/\+Projectiles/\hyperlink{_proj_boing_8cpp}{Proj\+Boing.\+cpp}\end{DoxyCompactItemize}

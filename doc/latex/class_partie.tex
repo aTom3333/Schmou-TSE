@@ -11,17 +11,16 @@ Description brève.
 
 
 
-Graphe de collaboration de Partie\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=208pt]{class_partie__coll__graph}
-\end{center}
-\end{figure}
+Graphe d\textquotesingle{}héritage de Partie\+:
+% FIG 0
+
+
+Graphe de collaboration de Partie\+:
+% FIG 1
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_partie_a4ff8a252d0ca57f42abb2285cf5ad2e0}{Partie} (sf\+::\+Render\+Window \&window)
+\hyperlink{class_partie_a480ca8b79b54d01f4d1f1722f6c42935}{Partie} (sf\+::\+Render\+Window \&window, \hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6}{Input\+::\+Media} media, bool affiche\+H\+UD=true, bool avec\+Pattern=true)
 \item 
 \hyperlink{class_partie_ae4afeb7336bb84427272cfb7018b5e3d}{$\sim$\+Partie} ()
 \item 
@@ -35,9 +34,32 @@ void \hyperlink{class_partie_a88b2fa21d16b97fc120ea4d0e35208af}{delete\+Projecti
 \item 
 void \hyperlink{class_partie_ae3caf4ac1e50ac945783b1a0d79a85c7}{delete\+Vaisseau\+Detruit} ()
 \item 
-void \hyperlink{class_partie_a6f27ab32773454f2d44a1cf3ef95ba47}{test\+Proj\+Test} ()
+void \hyperlink{class_partie_a3a0c4920ea230fb971f278a1b22d87a9}{init\+Pattern\+Test} ()
 \item 
-void \hyperlink{class_partie_ad9ed353f340b606840fe4053ab7b6bf3}{test\+Vaisseau\+Test} ()
+void \hyperlink{class_partie_a74a29a9840bdcb69acdd225acd6b336c}{test\+Partie} ()
+\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Render\+Window \& \hyperlink{class_partie_acb65cc46c340d6268679143aac50f8c0}{window\+\_\+}
+\item 
+sf\+::\+Font \hyperlink{class_partie_ab00aee0dc5c4a9eb16d17160bd6a707a}{font\+\_\+}
+\begin{DoxyCompactList}\small\item\em fenêtre principale \end{DoxyCompactList}\item 
+\hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input} \hyperlink{class_partie_a3a6f85686da661a2391dec412354c846}{input\+\_\+}
+\begin{DoxyCompactList}\small\item\em police principale \end{DoxyCompactList}\item 
+\hyperlink{class_overlay}{Overlay} \hyperlink{class_partie_a7d7dcc006ac52993ac65de1eae66bbf8}{hud\+\_\+}
+\begin{DoxyCompactList}\small\item\em entrée \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_vague}{Vague} $>$ \hyperlink{class_partie_ab03632c60e33c4811178d9ce9c9454a9}{pattern\+\_\+}
+\begin{DoxyCompactList}\small\item\em Affichage Tête Haute. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_vaisseau}{Vaisseau} $\ast$ $>$ \hyperlink{class_partie_a39a4031c59acafbefca6fae1333ebb5a}{vaisseaux\+\_\+}
+\item 
+std\+::vector$<$ \hyperlink{class_projectile}{Projectile} $\ast$ $>$ \hyperlink{class_partie_a2e494ef1d28f7d1067c3a7a3282ecd29}{projectiles\+\_\+}
+\begin{DoxyCompactList}\small\item\em vecteur des vaisseaux ennemis en jeu \end{DoxyCompactList}\item 
+double \hyperlink{class_partie_abd0c9a82f1b42b06f4a3699a484e0766}{time\+Speed\+\_\+}
+\begin{DoxyCompactList}\small\item\em vecteur des projectiles en jeu \end{DoxyCompactList}\item 
+bool \hyperlink{class_partie_ac29991e8e0eb729541168f47238635a9}{avec\+Pattern\+\_\+}
+\begin{DoxyCompactList}\small\item\em Facteur contrôlant le temps. \end{DoxyCompactList}\item 
+bool \hyperlink{class_partie_a253b0099bf8ef4c3dce2fe3e3dd8def5}{affiche\+H\+U\+D\+\_\+}
 \end{DoxyCompactItemize}
 
 
@@ -47,11 +69,11 @@ Description brève.
 Description détaillée 
 
 \subsection{Documentation des constructeurs et destructeur}
-\mbox{\Hypertarget{class_partie_a4ff8a252d0ca57f42abb2285cf5ad2e0}\label{class_partie_a4ff8a252d0ca57f42abb2285cf5ad2e0}} 
+\mbox{\Hypertarget{class_partie_a480ca8b79b54d01f4d1f1722f6c42935}\label{class_partie_a480ca8b79b54d01f4d1f1722f6c42935}} 
 \index{Partie@{Partie}!Partie@{Partie}}
 \index{Partie@{Partie}!Partie@{Partie}}
 \subsubsection{\texorpdfstring{Partie()}{Partie()}}
-{\footnotesize\ttfamily Partie\+::\+Partie (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Partie\+::\+Partie (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{\hyperlink{class_input__base_a455585e7933485981b3d7bfcad3a47c6}{Input\+::\+Media}}]{media,  }\item[{bool}]{affiche\+H\+UD = {\ttfamily true},  }\item[{bool}]{avec\+Pattern = {\ttfamily true} }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_partie_ae4afeb7336bb84427272cfb7018b5e3d}\label{class_partie_ae4afeb7336bb84427272cfb7018b5e3d}} 
 \index{Partie@{Partie}!````~Partie@{$\sim$\+Partie}}
@@ -86,23 +108,114 @@ Description détaillée
 \subsubsection{\texorpdfstring{delete\+Vaisseau\+Detruit()}{deleteVaisseauDetruit()}}
 {\footnotesize\ttfamily void Partie\+::delete\+Vaisseau\+Detruit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{class_partie_a3a0c4920ea230fb971f278a1b22d87a9}\label{class_partie_a3a0c4920ea230fb971f278a1b22d87a9}} 
+\index{Partie@{Partie}!init\+Pattern\+Test@{init\+Pattern\+Test}}
+\index{init\+Pattern\+Test@{init\+Pattern\+Test}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{init\+Pattern\+Test()}{initPatternTest()}}
+{\footnotesize\ttfamily void Partie\+::init\+Pattern\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{class_partie_a38d54358098b3e5e47d0059a37bff5ea}\label{class_partie_a38d54358098b3e5e47d0059a37bff5ea}} 
 \index{Partie@{Partie}!jeu@{jeu}}
 \index{jeu@{jeu}!Partie@{Partie}}
 \subsubsection{\texorpdfstring{jeu()}{jeu()}}
 {\footnotesize\ttfamily void Partie\+::jeu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_partie_a6f27ab32773454f2d44a1cf3ef95ba47}\label{class_partie_a6f27ab32773454f2d44a1cf3ef95ba47}} 
-\index{Partie@{Partie}!test\+Proj\+Test@{test\+Proj\+Test}}
-\index{test\+Proj\+Test@{test\+Proj\+Test}!Partie@{Partie}}
-\subsubsection{\texorpdfstring{test\+Proj\+Test()}{testProjTest()}}
-{\footnotesize\ttfamily void Partie\+::test\+Proj\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_partie_a74a29a9840bdcb69acdd225acd6b336c}\label{class_partie_a74a29a9840bdcb69acdd225acd6b336c}} 
+\index{Partie@{Partie}!test\+Partie@{test\+Partie}}
+\index{test\+Partie@{test\+Partie}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{test\+Partie()}{testPartie()}}
+{\footnotesize\ttfamily void Partie\+::test\+Partie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_partie_ad9ed353f340b606840fe4053ab7b6bf3}\label{class_partie_ad9ed353f340b606840fe4053ab7b6bf3}} 
-\index{Partie@{Partie}!test\+Vaisseau\+Test@{test\+Vaisseau\+Test}}
-\index{test\+Vaisseau\+Test@{test\+Vaisseau\+Test}!Partie@{Partie}}
-\subsubsection{\texorpdfstring{test\+Vaisseau\+Test()}{testVaisseauTest()}}
-{\footnotesize\ttfamily void Partie\+::test\+Vaisseau\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\subsection{Documentation des données membres}
+\mbox{\Hypertarget{class_partie_a253b0099bf8ef4c3dce2fe3e3dd8def5}\label{class_partie_a253b0099bf8ef4c3dce2fe3e3dd8def5}} 
+\index{Partie@{Partie}!affiche\+H\+U\+D\+\_\+@{affiche\+H\+U\+D\+\_\+}}
+\index{affiche\+H\+U\+D\+\_\+@{affiche\+H\+U\+D\+\_\+}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{affiche\+H\+U\+D\+\_\+}{afficheHUD\_}}
+{\footnotesize\ttfamily bool Partie\+::affiche\+H\+U\+D\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_partie_ac29991e8e0eb729541168f47238635a9}\label{class_partie_ac29991e8e0eb729541168f47238635a9}} 
+\index{Partie@{Partie}!avec\+Pattern\+\_\+@{avec\+Pattern\+\_\+}}
+\index{avec\+Pattern\+\_\+@{avec\+Pattern\+\_\+}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{avec\+Pattern\+\_\+}{avecPattern\_}}
+{\footnotesize\ttfamily bool Partie\+::avec\+Pattern\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Facteur contrôlant le temps. 
+
+\mbox{\Hypertarget{class_partie_ab00aee0dc5c4a9eb16d17160bd6a707a}\label{class_partie_ab00aee0dc5c4a9eb16d17160bd6a707a}} 
+\index{Partie@{Partie}!font\+\_\+@{font\+\_\+}}
+\index{font\+\_\+@{font\+\_\+}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{font\+\_\+}{font\_}}
+{\footnotesize\ttfamily sf\+::\+Font Partie\+::font\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+fenêtre principale 
+
+\mbox{\Hypertarget{class_partie_a7d7dcc006ac52993ac65de1eae66bbf8}\label{class_partie_a7d7dcc006ac52993ac65de1eae66bbf8}} 
+\index{Partie@{Partie}!hud\+\_\+@{hud\+\_\+}}
+\index{hud\+\_\+@{hud\+\_\+}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{hud\+\_\+}{hud\_}}
+{\footnotesize\ttfamily \hyperlink{class_overlay}{Overlay} Partie\+::hud\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+entrée 
+
+\mbox{\Hypertarget{class_partie_a3a6f85686da661a2391dec412354c846}\label{class_partie_a3a6f85686da661a2391dec412354c846}} 
+\index{Partie@{Partie}!input\+\_\+@{input\+\_\+}}
+\index{input\+\_\+@{input\+\_\+}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{input\+\_\+}{input\_}}
+{\footnotesize\ttfamily \hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input} Partie\+::input\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+police principale 
+
+\mbox{\Hypertarget{class_partie_ab03632c60e33c4811178d9ce9c9454a9}\label{class_partie_ab03632c60e33c4811178d9ce9c9454a9}} 
+\index{Partie@{Partie}!pattern\+\_\+@{pattern\+\_\+}}
+\index{pattern\+\_\+@{pattern\+\_\+}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{pattern\+\_\+}{pattern\_}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_vague}{Vague}$>$ Partie\+::pattern\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Affichage Tête Haute. 
+
+\mbox{\Hypertarget{class_partie_a2e494ef1d28f7d1067c3a7a3282ecd29}\label{class_partie_a2e494ef1d28f7d1067c3a7a3282ecd29}} 
+\index{Partie@{Partie}!projectiles\+\_\+@{projectiles\+\_\+}}
+\index{projectiles\+\_\+@{projectiles\+\_\+}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{projectiles\+\_\+}{projectiles\_}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_projectile}{Projectile} $\ast$$>$ Partie\+::projectiles\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+vecteur des vaisseaux ennemis en jeu 
+
+\mbox{\Hypertarget{class_partie_abd0c9a82f1b42b06f4a3699a484e0766}\label{class_partie_abd0c9a82f1b42b06f4a3699a484e0766}} 
+\index{Partie@{Partie}!time\+Speed\+\_\+@{time\+Speed\+\_\+}}
+\index{time\+Speed\+\_\+@{time\+Speed\+\_\+}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{time\+Speed\+\_\+}{timeSpeed\_}}
+{\footnotesize\ttfamily double Partie\+::time\+Speed\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+vecteur des projectiles en jeu 
+
+\mbox{\Hypertarget{class_partie_a39a4031c59acafbefca6fae1333ebb5a}\label{class_partie_a39a4031c59acafbefca6fae1333ebb5a}} 
+\index{Partie@{Partie}!vaisseaux\+\_\+@{vaisseaux\+\_\+}}
+\index{vaisseaux\+\_\+@{vaisseaux\+\_\+}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{vaisseaux\+\_\+}{vaisseaux\_}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_vaisseau}{Vaisseau}$\ast$$>$ Partie\+::vaisseaux\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_partie_acb65cc46c340d6268679143aac50f8c0}\label{class_partie_acb65cc46c340d6268679143aac50f8c0}} 
+\index{Partie@{Partie}!window\+\_\+@{window\+\_\+}}
+\index{window\+\_\+@{window\+\_\+}!Partie@{Partie}}
+\subsubsection{\texorpdfstring{window\+\_\+}{window\_}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window\& Partie\+::window\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
