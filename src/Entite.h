@@ -274,7 +274,7 @@ class Entite
 		//coordonnées
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
 		std::deque<sf::Vector2f> positionsPrev_; ///< Positions précédentes
-			// /!\ne pas itérer, pas stocké contigument
+			// /!\ne pas itérer, pas stocké contigûment
 		int nbPositions_ = 0; ///nombre de positions précédentes à conserver
 		double angle_; ///< Orientation actuelle de l'Entite
 		double scale_; ///< Échelle actuelle de l'Entite
@@ -296,9 +296,11 @@ class Entite
 		sf::Texture textSmoke_; /// Texture à afficher sur la trainée du vaisseau
 		sf::Sprite smoke_; /// Sprite à afficher sur la trainée du vaisseau
 		sf::Sprite sprite_; ///< Sprite de l'Entite
+
+		//TODO PG vector de sprites/textures ac pointeurs pas bêtes
 		
 
-		//son
+		//Son
 		sf::SoundBuffer soundbuffer_;
 		sf::Sound sound_;
 

@@ -5,6 +5,7 @@ CapBismillah::CapBismillah()
 {
 	//Caractéristiques
 	t_ = frames_ = cooldown_ = 1000;
+
 	//TODO ici le warning pourrait être important (frames_ : float vers uint)
 	nom_ = "Bismillah";
 

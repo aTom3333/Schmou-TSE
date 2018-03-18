@@ -2,15 +2,18 @@
 
 CapPiou::CapPiou()
 {
-	capText_.loadFromFile("../../rc/Icones_Caps/tir.png");
-	capacite_.setTexture(capText_);
+	//Caractéristiques
 	cooldown_ = 100;
 	t_ = cooldown_;
 	frames_ = cooldown_; //TODO ici le warning pourrait être important (float vers uint)
 	nom_ = "Canon Laser";
 	tir_ = true;
 
-	//son
+	//Icônes
+	capText_.loadFromFile("../../rc/Icones_Caps/tir.png");
+	capacite_.setTexture(capText_);
+
+	//Son
 	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/piou.wav");
 	sound_.setBuffer(soundbuffer_);
 	sound_.setLoop(false);
