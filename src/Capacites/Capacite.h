@@ -92,7 +92,7 @@ class Capacite
 
 		bool autoAim; ///état visée auto
 
-		//son
+		//Son
 		sf::SoundBuffer soundbuffer_;
 		sf::Sound sound_;
 };

@@ -140,7 +140,7 @@ sf::Vector2f Input_base<N>::move_joypad(float max_speed, const sf::Time& elapsed
             dx *= max_speed / 100 * elapsed_time.asSeconds() * (movement_input_.joypad_.joypad_input_.joysticks_.left_right_dir_.value_or(false) ? -1 : 1);
             dy *= max_speed / 100 * elapsed_time.asSeconds() * (movement_input_.joypad_.joypad_input_.joysticks_.up_down_dir_.value_or(false) ? -1 : 1);
 
-            return {dx*abs(dx) / sqrt(dx*dx + dy*dy), dy*abs(dy) / sqrt(dx*dx + dy*dy)};
+            return {dx*abs(dx) / hypot(dx,dy), dy*abs(dy) / hypot(dx,dy)};
         }
         else if(movement_input_.joypad_.input_type_ == movement_input_t::joypad_t::Button)
         {
