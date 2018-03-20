@@ -29,10 +29,10 @@ protected:
 	int Nskin_; /// numéro du skin du vaisseau
 
 	// stats de base
-	int pvM_; /// Points de vie de base
-	int atqM_; /// Attaque de base
-	int defM_; /// Défense de base
-	int vitM_; /// Vitesse de base
+	int pvM_ = 0; /// Points de vie de base
+	int atqM_ = 0; /// Attaque de base
+	int defM_ = 0; /// Défense de base
+	int vitM_ = 0; /// Vitesse de base
 
 	// liste de capacités
 	std::vector<Capacite*> capacites_; /// Liste des capacités du vaisseau

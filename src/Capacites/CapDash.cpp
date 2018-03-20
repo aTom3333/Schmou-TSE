@@ -6,7 +6,7 @@ CapDash::CapDash()
 	capText_.loadFromFile("../../rc/Icones_Caps/tir.png");
 	capacite_.setTexture(capText_);
 	cooldown_ = 500;
-	frames_ = cooldown_; //TODO ici le warning pourrait être important (float vers uint)
+	frames_ = cooldown_; //TODO PG ici le warning pourrait être important (float vers uint)
 	t_ = cooldown_;
 	nom_ = "Dash";
 	tir_ = true;

@@ -53,7 +53,7 @@ void Partie::testPartie()
 
 	hud_.init(vaisseaux_[0]);
 
-	// TODO TRUC TEMPORAIRE
+	//TODO CL réglage volume global temporaire
 	sf::Listener::setGlobalVolume(10);
 
 	clock.restart();
@@ -90,7 +90,7 @@ void Partie::testPartie()
 
 		//gestion temps
 		auto t_ecoule = clock.restart();
-		t_ecoule = t_ecoule * (float)timeSpeed_;
+		t_ecoule = t_ecoule * (float)timeSpeed_ * (float)10;//TODO PG vitesse
 
 		// Efface l'écran
 		window_.clear();

@@ -26,19 +26,19 @@ VaisseauEclaireur::VaisseauEclaireur(double x, double y,Trajectoire traj, double
 	vit_ = 30;
 	actif_ = false;
 
-	pvMax_ = 50;
-	armureMax_ = 0;
-	bouclierMax_ = 0;
+	pvM_ = 50;
+	armureM_ = 0;
+	bouclierM_ = 0;
 
-	pv_ = pvMax_;
-	armure_ = armureMax_;
-	bouclier_ = bouclierMax_;
+	pv_ = pvM_;
+	armure_ = armureM_;
+	bouclier_ = bouclierM_;
 
 	regenARM_ = 0;
 	regenBOU_ = 0;
 	regenPV_ = 0;
 
-	degats_ = 50;
+	degatsColl_ = 50;
 
 	// Initialisation des paramètres de trajectoire
 	params_.push_back((float)param1);

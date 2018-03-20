@@ -20,20 +20,19 @@ ProjBouclierRond::ProjBouclierRond(Entite* Entite_liee, int pvM, int degatsColl,
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
 	// Stats
-	age_ = 0;
 	actif_ = true;
 
-	pvMax_ = pvM;
-	armureMax_ = 0;
-	bouclierMax_ = 0;
+	pvM_ = pvM;
+	armureM_ = 0;
+	bouclierM_ = 0;
 
-	pv_ = pvMax_;
+	pv_ = pvM_;
 	armure_ = 0;
 	bouclier_ = 0;
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
-	degats_ = degatsColl; 
+	degatsColl_ = degatsColl; 
 
 	//Entité à laquelle est rattaché le bouclier
 	Entite_liee_ = Entite_liee;
@@ -56,9 +55,9 @@ void ProjBouclierRond::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 
 void ProjBouclierRond::agit(Entite& proj)
 {
-	proj.recoitDegats(degats_);
-	pv_ -= proj.getDegats();
-	int alpha = (int)(pv_ / pvMax_ * 255);
+	proj.recoitDegats(degatsColl_);
+	pv_ -= proj.getDegatsColl_();
+	int alpha = (int)(pv_ / pvM_ * 255);
 	sprite_.setColor({ 255, 255, 255, ( sf::Uint8)alpha });
 	if (pv_ < 0)
 		detruit_ = true;

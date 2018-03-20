@@ -238,7 +238,7 @@ class Entite
 		* Les dégats sur l'armure sont réduit. Retire le reste des points restant aux points de vie.
 		*/
 		void recoitDegats(float degats);
-		float getDegats();
+		float getDegatsColl_();
 		/**
 		* @fn destruction
 		* @brief Procedure a effectuer lorsque le vaisseau est détruit
@@ -253,9 +253,9 @@ class Entite
 		Equipe getEquipe() const { return equipe_; };
 		sf::Vector2f getTaille() const { return { sprite_.getGlobalBounds().width, sprite_.getGlobalBounds().height }; }//largeur, hauteur
 		bool getInnate_() const { return innate_; }
-		float getPVMax() { return pvMax_; };
-		float getArmureMax() { return armureMax_; };
-		float getBouclierMax() { return bouclierMax_; };
+		float getPVMax() { return pvM_; };
+		float getArmureMax() { return armureM_; };
+		float getBouclierMax() { return bouclierM_; };
 		float getPV() { return pv_; };
 		float getArmure() { return armure_; };
 		float getBouclier() { return bouclier_; };
@@ -283,7 +283,7 @@ class Entite
 		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
 		bool collisionneuse_ = true;
 		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
-		bool innate_ = false; ///false si doit rester dans l'écran
+		bool innate_ = false; ///true si doit rester dans l'écran
 
 		//état
 		bool detruit_ = false; /// ture lorsque que le vaisseau est détruit
@@ -292,27 +292,30 @@ class Entite
 		//graphismes
 		sf::CircleShape cercleEnglobant_; ///< Cercle Englobant de l'Entite
 		std::vector<std::unique_ptr<sf::Shape>> forme_; ///< Forme de l'Entite
-		sf::Texture texture_; ///< Texture du sprite de l'Entite
+		sf::Texture texture_; /// Texture en cas de texture unique
+		sf::Sprite sprite_; /// Sprite en cas de sprite unique
+		std::vector<std::unique_ptr<sf::Texture>> textureV_; ///< Vecteur de textures pour en avoir plusieurs
+		std::vector<sf::Sprite> spriteV_; ///< Vecteur de sprites pour en avoir plusieurs
+
 		sf::Texture textSmoke_; /// Texture à afficher sur la trainée du vaisseau
 		sf::Sprite smoke_; /// Sprite à afficher sur la trainée du vaisseau
-		sf::Sprite sprite_; ///< Sprite de l'Entite
-
-		//TODO PG vector de sprites/textures ac pointeurs pas bêtes
-		
 
 		//Son
 		sf::SoundBuffer soundbuffer_;
 		sf::Sound sound_;
+		std::vector<std::unique_ptr<sf::SoundBuffer>> soundbufferV_;
+		std::vector<sf::Sound> soundV_;
 
 		// Stats
-		float pvMax_ = 0; /// Point de vie maximum de l'entite
-		float armureMax_ = 0;  /// Armure maximum de l'entite
-		float bouclierMax_ = 0;  /// Bouclier maximum de l'entite
+		float pvM_ = 0; /// Point de vie maximum de l'entite
+		float armureM_ = 0;  /// Armure maximum de l'entite
+		float bouclierM_ = 0;  /// Bouclier maximum de l'entite
+
 		float vitM_ = 0; ///Vitesse maximale de l'entite
 
-		float pv_ = pvMax_; /// Points de vie actuel
-		float armure_ = armureMax_; ///Armure actuel
-		float bouclier_ = bouclierMax_; /// Bouclier actuel
+		float pv_ = pvM_; /// Points de vie actuel
+		float armure_ = armureM_; ///Armure actuel
+		float bouclier_ = bouclierM_; /// Bouclier actuel
 		float vit_ = vitM_; /// Vitesse actuelle de l'Entite
 
 		float regenPV_ = 0; /// Points de vie rendu tout les 250 ms
@@ -320,7 +323,7 @@ class Entite
 		float regenBOU_ = 0; /// Bouclier rendu tout les 250 ms
 		float t_regen_; /// Temps écoulé depuis la dernière régénération
 
-		float degats_ = 0; /// Dégats infligé en cas de de collision
+		float degatsColl_ = 0; /// Dégats infligé en cas de collision
 		int framesInvincibilite_ = 0; /// Frames invincibilites
 };
 

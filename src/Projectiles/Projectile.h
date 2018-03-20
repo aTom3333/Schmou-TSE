@@ -35,7 +35,6 @@ class Projectile : public Entite
 		*/
 		void destruction() { detruit_ = true; }
 	protected:
-		int age_;
 };
 
 #endif // PROJECTILE_H

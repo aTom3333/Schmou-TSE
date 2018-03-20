@@ -5,7 +5,7 @@ CapPiou::CapPiou()
 	//Caractéristiques
 	cooldown_ = 100;
 	t_ = cooldown_;
-	frames_ = cooldown_; //TODO ici le warning pourrait être important (float vers uint)
+	frames_ = cooldown_; //TODO PG ici le warning pourrait être important (float vers uint)
 	nom_ = "Canon Laser";
 	tir_ = true;
 

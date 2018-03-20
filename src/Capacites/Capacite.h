@@ -92,9 +92,18 @@ class Capacite
 
 		bool autoAim; ///état visée auto
 
+		//Texture
+		sf::Texture texture_; /// Texture en cas de texture unique
+		sf::Sprite sprite_; /// Sprite en cas de sprite unique
+		std::vector<std::unique_ptr<sf::Texture>> textureV_; ///< Vecteur de textures pour en avoir plusieurs
+		std::vector<sf::Sprite> spriteV_; ///< Vecteur de sprites pour en avoir plusieurs
+
 		//Son
 		sf::SoundBuffer soundbuffer_;
 		sf::Sound sound_;
+		std::vector<std::unique_ptr<sf::SoundBuffer>> soundbufferV_;
+		std::vector<sf::Sound> soundV_;
+
 };
 
 #endif // CAPACITE_H

@@ -139,9 +139,9 @@ bool Entite::estDetruit()
 	return detruit_;
 }
 
-float Entite::getDegats()
+float Entite::getDegatsColl_()
 {
-	return degats_;
+	return degatsColl_;
 }
 
 void Entite::setNbPositions(int val)
@@ -174,12 +174,12 @@ void Entite::regen(sf::Time t)
 		bouclier_ += regenBOU_;
 
 		// Si le seuil maximal est dépassé
-		if (pv_ > pvMax_)
-			pv_ = pvMax_;
-		if (armure_ > armureMax_)
-			armure_ = armureMax_;
-		if (bouclier_ > bouclierMax_)
-			bouclier_ = bouclierMax_;
+		if (pv_ > pvM_)
+			pv_ = pvM_;
+		if (armure_ > armureM_)
+			armure_ = armureM_;
+		if (bouclier_ > bouclierM_)
+			bouclier_ = bouclierM_;
 	}
 }
 

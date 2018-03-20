@@ -21,18 +21,18 @@ ProjMissile::ProjMissile(float x, float y, Equipe equipe)
 
 	//stats
 	equipe_ = equipe;
-	pvMax_ = 10;
-	armureMax_ = 0;
-	bouclierMax_ = 0;
+	pvM_ = 10;
+	armureM_ = 0;
+	bouclierM_ = 0;
 
-	pv_ = pvMax_;
-	armure_ = armureMax_;
-	bouclier_ = bouclierMax_;
+	pv_ = pvM_;
+	armure_ = armureM_;
+	bouclier_ = bouclierM_;
 	actif_ = true;
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
-	degats_ = 300;
+	degatsColl_ = 300;
 
 	//  Projectile qui se d�place verticalement
 	sens_ = 1;
@@ -56,6 +56,6 @@ void ProjMissile::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 
 void ProjMissile::agit(Entite & e)
 {
-	e.recoitDegats(degats_);
+	e.recoitDegats(degatsColl_);
 	detruit_ = true;
 }

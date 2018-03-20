@@ -34,5 +34,5 @@ void Vaisseau::gestionCapacite(std::vector <Projectile*> &projectiles, sf::Time 
 
 void Vaisseau::agit(Entite & e)
 {
-	e.recoitDegats(degats_);
+	e.recoitDegats(degatsColl_);
 }

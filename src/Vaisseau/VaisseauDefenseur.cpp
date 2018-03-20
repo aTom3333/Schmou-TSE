@@ -27,19 +27,19 @@ VaisseauDefenseur::VaisseauDefenseur(float x, float y, std::vector<Vaisseau*> &v
 	vit_ = 10;
 	actif_ = false;
 
-	pvMax_ = 50;
-	armureMax_ = 50;
-	bouclierMax_ = 0;
+	pvM_ = 50;
+	armureM_ = 50;
+	bouclierM_ = 0;
 
-	pv_ = pvMax_;
-	armure_ = armureMax_;
-	bouclier_ = bouclierMax_;
+	pv_ = pvM_;
+	armure_ = armureM_;
+	bouclier_ = bouclierM_;
 
 	regenARM_ = 0;
 	regenBOU_ = 0;
 	regenPV_ = 0;
 
-	degats_ = 75;
+	degatsColl_ = 75;
 
 	annexes_.push_back(new VaisseauDefenseurB(0, x, y+64, this));
 	annexesB_.push_back(true);

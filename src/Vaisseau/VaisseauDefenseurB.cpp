@@ -19,19 +19,19 @@ VaisseauDefenseurB::VaisseauDefenseurB(int nb, float x, float y, Vaisseau *creat
 	actif_ = false;
 	nbModule_ = nb;
 
-	pvMax_ = 1;
-	armureMax_ = 0;
-	bouclierMax_ = 300;
+	pvM_ = 1;
+	armureM_ = 0;
+	bouclierM_ = 300;
 
-	pv_ = pvMax_;
-	armure_ = armureMax_;
-	bouclier_ = bouclierMax_;
+	pv_ = pvM_;
+	armure_ = armureM_;
+	bouclier_ = bouclierM_;
 
 	regenARM_ = 0;
 	regenBOU_ = 2;
 	regenPV_ = 0;
 
-	degats_ = 0;
+	degatsColl_ = 0;
 
 	createur_ = createur;
 }
