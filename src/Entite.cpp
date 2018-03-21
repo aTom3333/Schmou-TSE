@@ -10,7 +10,9 @@ bool collision(const Entite& e1, const Entite& e2)
 	{
 		if (e1.actif_ && e2.actif_)
 		{
-			if (!e1.collisionable_ || !e2.collisionable_)
+			if (!e1.collisionnable_ && !e2.collisionnable_)
+				return false;
+			if (!e1.collisionneuse_ && !e2.collisionneuse_)
 				return false;
 			if (e1.equipe_ == e2.equipe_ && e1.equipe_ != NEUTRE)
 				return false;
@@ -68,7 +70,7 @@ void Entite::move(sf::Vector2f& delta)
 		if (nbPositions_)
 		{
 			positionsPrev_.push_front(position_);
-			//if (positionsPrev_.size() > nbPositions_)positionsPrev_.pop_back();
+			if (positionsPrev_.size() > nbPositions_)positionsPrev_.pop_back();
 		}
 		position_ += delta;
 }

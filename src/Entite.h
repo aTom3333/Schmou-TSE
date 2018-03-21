@@ -262,7 +262,7 @@ class Entite
 		sf::Texture getTexture() { return texture_; };
 		bool isInvincible() const { return framesInvincibilite_ != 0; };
 		bool isCollisionneuse() { return collisionneuse_; }
-		bool isCollisionnable() { return collisionable_; }
+		bool isCollisionnable() { return collisionnable_; }
 
 		//setters
 		void setequipe_(Equipe equipe) { equipe_ = equipe; }
@@ -280,7 +280,7 @@ class Entite
 		double scale_; ///< Échelle actuelle de l'Entite
 
 		//caractéristiques
-		bool collisionable_ = true; ///< Booléen vrai si l'Entite est collisionnable
+		bool collisionnable_ = true; ///< Booléen vrai si l'Entite est collisionnable
 		bool collisionneuse_ = true;
 		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
 		bool innate_ = false; ///true si doit rester dans l'écran

@@ -27,6 +27,13 @@ protected:
 	// personnalisation
 	std::string nom_; /// < Nom du vaisseau
 	int Nskin_; /// numéro du skin du vaisseau
+	
+	//Stats
+	float atqM_ = 0;
+	float defM_ = 0;
+
+	float atq = 0;
+	float def = 0;
 
 	// liste de capacités
 	std::vector<Capacite*> capacites_; /// Liste des capacités du vaisseau
@@ -76,6 +83,8 @@ public:
 		void setpvM(int pvM){ pvM_ = pvM; }
 		void setActif(bool val){ actif_ = val; }
 		void setAnnexeB(int ind, bool val){ annexesB_[ind] = val; }
+		void setatqM(int atqM) { atqM_ = atqM; }
+		void setdefM(int defM) { defM_ = defM; }
 			
 
 	//getters
@@ -86,6 +95,8 @@ public:
 		bool estActif(){ return actif_; }
 		std::vector <Vaisseau*> getAnnexes(){ return annexes_; }
 		std::vector<bool> getAnnexesB(){ return annexesB_; }
+		int getatqM() { return atqM_; }
+		int getdefM() { return defM_; }
 
 };
 

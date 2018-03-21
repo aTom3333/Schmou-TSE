@@ -28,6 +28,9 @@ Partie::~Partie()
 
 void Partie::testPartie()
 {
+	//TODO CL réglage volume global temporaire
+	sf::Listener::setGlobalVolume(10);
+
 	//horloge
 	sf::Clock clock;
 
@@ -52,9 +55,6 @@ void Partie::testPartie()
     sf::Mouse::setPosition(window_.mapCoordsToPixel(pos), window_);
 
 	hud_.init(vaisseaux_[0]);
-
-	//TODO CL réglage volume global temporaire
-	sf::Listener::setGlobalVolume(10);
 
 	clock.restart();
 	while (window_.isOpen())
@@ -106,8 +106,8 @@ void Partie::testPartie()
 		for(unsigned int i = 0; i < vaisseaux_.size(); i++)
 		{
 			vaisseaux_[i]->regen(t_ecoule);
-			vaisseaux_[i]->gestionCapacite(projectiles_, t_ecoule);
 			vaisseaux_[i]->gestion(window_, t_ecoule, input_);
+			vaisseaux_[i]->gestionCapacite(projectiles_, t_ecoule);
 		}
 
 		// Gestion des projectiles_
@@ -208,7 +208,7 @@ void Partie::deleteProjectileDetruit()
 {
 	for(unsigned int i = 0; i < projectiles_.size(); i++)
 	{
-		if (projectiles_[i]->estDetruit())
+		if (projectiles_[i]->estDetruit() && projectiles_[i]->isCollisionnable())//teste si détruit ou si pv <=0;
 		{
 			delete projectiles_[i];
 			projectiles_[i] = projectiles_[projectiles_.size() - 1];

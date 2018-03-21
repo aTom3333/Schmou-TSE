@@ -4,7 +4,7 @@
 ProjBouclierRond::ProjBouclierRond(Entite* Entite_liee, int pvM, int degatsColl, float tempsMax, Equipe equipe)
 {
 	// Sprite
-	texture_.loadFromFile("../../rc/Sprites/base/bouclier_rond.png");
+	texture_.loadFromFile("../../rc/Sprites/Capacites/BouclierRond/bouclier_rond.png");
 	sprite_.setTexture(texture_);
 
 	//Son

@@ -8,10 +8,10 @@ ProjBoing::ProjBoing()
 	texture_.loadFromFile("../../rc/Sprites/base/balle.png");
 	sprite_.setTexture(texture_);
 
-	//son
-	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/boing.wav");
-	sound_.setBuffer(soundbuffer_);
-	sound_.setLoop(false);
+	////son
+	//soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/boing.wav");
+	//sound_.setBuffer(soundbuffer_);
+	//sound_.setLoop(false);
 
 	//hitbox simple (et complète dans ce cas car c'est le projectile est un cercle)
 	cercleEnglobant_ =  sf::CircleShape(16);

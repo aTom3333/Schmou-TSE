@@ -4,7 +4,7 @@
 CapBismillah::CapBismillah()
 {
 	//Caractéristiques
-	t_ = frames_ = cooldown_ = 1000;
+	t_ = frames_ = cooldown_ = 1000; //ms
 
 	//TODO PG ici le warning pourrait être important (frames_ : float vers uint)
 	nom_ = "Bismillah";
@@ -37,9 +37,6 @@ void CapBismillah::utiliser(int x, int y)
 		// Début du timer
 		t_ = 0;
 		frames_ = 0;
-		// Initialisation de l'endroit où la compétence a été utilisée
-		debutX_ = x;
-		debutY_ = y;
 	}
 
 }
@@ -50,6 +47,7 @@ void CapBismillah::actualiser(std::vector<Projectile*>& projectiles, Entite& vai
 	if (frames_ == 0)
 	{
 		ProjBismillah *temp = new ProjBismillah(&vaisseau, spriteV_, sound_, ALLIE);
+		sound_.play();
 		projectiles.push_back(temp);
 	}
 
@@ -58,7 +56,5 @@ void CapBismillah::actualiser(std::vector<Projectile*>& projectiles, Entite& vai
 	{
 		t_ += tempsEcoule;
 		frames_++;
-
 	}
-
 }
