@@ -11,8 +11,6 @@ Vaisseau::Vaisseau() ///constructeur
 	//personnalisation
 	//stats de base
 	pvM_ = 100;
-	atqM_ = 100;
-	defM_ = 100;
 	vitM_ = 100;
 	//liste de capacités
 }

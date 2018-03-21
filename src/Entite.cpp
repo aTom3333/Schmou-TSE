@@ -68,7 +68,7 @@ void Entite::move(sf::Vector2f& delta)
 		if (nbPositions_)
 		{
 			positionsPrev_.push_front(position_);
-			if (positionsPrev_.size() > nbPositions_)positionsPrev_.pop_back();
+			//if (positionsPrev_.size() > nbPositions_)positionsPrev_.pop_back();
 		}
 		position_ += delta;
 }

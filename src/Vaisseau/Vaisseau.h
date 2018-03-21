@@ -28,12 +28,6 @@ protected:
 	std::string nom_; /// < Nom du vaisseau
 	int Nskin_; /// numéro du skin du vaisseau
 
-	// stats de base
-	int pvM_ = 0; /// Points de vie de base
-	int atqM_ = 0; /// Attaque de base
-	int defM_ = 0; /// Défense de base
-	int vitM_ = 0; /// Vitesse de base
-
 	// liste de capacités
 	std::vector<Capacite*> capacites_; /// Liste des capacités du vaisseau
 
@@ -80,9 +74,6 @@ public:
 		void setnom(std::string nom){ nom_ = nom; }
 		void setNskin(int Nskin){ Nskin_ = Nskin; }
 		void setpvM(int pvM){ pvM_ = pvM; }
-		void setatqM(int atqM){ atqM_ = atqM; }
-		void setdefM(int defM){ defM_ = defM; }
-		void setvitM(int vitM){ vitM_ = vitM; }
 		void setActif(bool val){ actif_ = val; }
 		void setAnnexeB(int ind, bool val){ annexesB_[ind] = val; }
 			
@@ -91,9 +82,6 @@ public:
 		std::string getnom(){return nom_; }
 		int getNskin(){ return Nskin_; }
 		int getpvM(){ return pvM_; }
-		int getatqM(){ return atqM_; }
-		int getdefM(){ return defM_; }
-		int getvitM(){ return vitM_; }
 		std::vector<Capacite*> getskills(){ return capacites_; }
 		bool estActif(){ return actif_; }
 		std::vector <Vaisseau*> getAnnexes(){ return annexes_; }
