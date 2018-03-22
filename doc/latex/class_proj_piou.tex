@@ -11,29 +11,17 @@
 
 
 
-Graphe d\textquotesingle{}héritage de Proj\+Piou\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=550pt]{class_proj_piou__inherit__graph}
-\end{center}
-\end{figure}
+Graphe d\textquotesingle{}héritage de Proj\+Piou\+:
+% FIG 0
 
 
-Graphe de collaboration de Proj\+Piou\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=550pt]{class_proj_piou__coll__graph}
-\end{center}
-\end{figure}
+Graphe de collaboration de Proj\+Piou\+:
+% FIG 1
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_proj_piou_a73d8a01dc3e09f926d14b95b673fd41d}{Proj\+Piou} ()
+\hyperlink{class_proj_piou_a4f762d33904c082e226a2170e83ba544}{Proj\+Piou} (int x, int y, sf\+::\+Sound sound, \hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe} equipe=\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83a31ad00d2974deb1103ea000de3bff57d}{N\+E\+U\+T\+RE})
 \begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
-\hyperlink{class_proj_piou_a4aa12294ad8b563aa00848e395fdf06b}{Proj\+Piou} (int x, int y)
-\item 
 \hyperlink{class_proj_piou_a02224f153ad53afc2b1c40b986ec6492}{$\sim$\+Proj\+Piou} ()
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
 void \hyperlink{class_proj_piou_a6efae1f583527446ef824fc1d2823a02}{gestion} (sf\+::\+Render\+Window \&window, sf\+::\+Time temps\+Ecoule)
@@ -51,32 +39,28 @@ void \hyperlink{class_proj_piou_afd492e686378a86e10136061af035a9f}{agit} (\hyper
 \hyperlink{class_projectile}{Projectile} de base. Tire en ligne droite (vers le haut) 
 
 \subsection{Documentation des constructeurs et destructeur}
-\mbox{\Hypertarget{class_proj_piou_a73d8a01dc3e09f926d14b95b673fd41d}\label{class_proj_piou_a73d8a01dc3e09f926d14b95b673fd41d}} 
+\mbox{\Hypertarget{class_proj_piou_a4f762d33904c082e226a2170e83ba544}\label{class_proj_piou_a4f762d33904c082e226a2170e83ba544}} 
 \index{Proj\+Piou@{Proj\+Piou}!Proj\+Piou@{Proj\+Piou}}
 \index{Proj\+Piou@{Proj\+Piou}!Proj\+Piou@{Proj\+Piou}}
-\subsubsection{\texorpdfstring{Proj\+Piou()}{ProjPiou()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Proj\+Piou\+::\+Proj\+Piou (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{Proj\+Piou()}{ProjPiou()}}
+{\footnotesize\ttfamily Proj\+Piou\+::\+Proj\+Piou (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{sf\+::\+Sound}]{sound,  }\item[{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}}]{equipe = {\ttfamily \hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83a31ad00d2974deb1103ea000de3bff57d}{N\+E\+U\+T\+RE}} }\end{DoxyParamCaption})}
 
 
 
 Constructeur. 
 
-Vide
-
 
 \begin{DoxyParams}{Paramètres}
-{\em x} & Abscisse de la postion de départ du projectile \\
+{\em x} & Abscisse de la position de départ du projectile \\
 \hline
-{\em y} & Ordonnée de la postion de départ du projectile\\
+{\em y} & Ordonnée de la position de départ du projectile \\
+\hline
+{\em equipe} & Représente l\textquotesingle{}équipe depuis \+\_\+constante.\+h \+: enum Equipe \\
+\hline
+{\em sound} & Son par défaut donné par la capacité qui crée le proj\\
 \hline
 \end{DoxyParams}
-Créer un projectile piou à la position donnée en paramètre \mbox{\Hypertarget{class_proj_piou_a4aa12294ad8b563aa00848e395fdf06b}\label{class_proj_piou_a4aa12294ad8b563aa00848e395fdf06b}} 
-\index{Proj\+Piou@{Proj\+Piou}!Proj\+Piou@{Proj\+Piou}}
-\index{Proj\+Piou@{Proj\+Piou}!Proj\+Piou@{Proj\+Piou}}
-\subsubsection{\texorpdfstring{Proj\+Piou()}{ProjPiou()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Proj\+Piou\+::\+Proj\+Piou (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_proj_piou_a02224f153ad53afc2b1c40b986ec6492}\label{class_proj_piou_a02224f153ad53afc2b1c40b986ec6492}} 
+Créer un projectile piou à la position donnée en paramètre \mbox{\Hypertarget{class_proj_piou_a02224f153ad53afc2b1c40b986ec6492}\label{class_proj_piou_a02224f153ad53afc2b1c40b986ec6492}} 
 \index{Proj\+Piou@{Proj\+Piou}!````~Proj\+Piou@{$\sim$\+Proj\+Piou}}
 \index{````~Proj\+Piou@{$\sim$\+Proj\+Piou}!Proj\+Piou@{Proj\+Piou}}
 \subsubsection{\texorpdfstring{$\sim$\+Proj\+Piou()}{~ProjPiou()}}

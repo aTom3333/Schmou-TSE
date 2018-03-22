@@ -16,7 +16,7 @@ public:
 	*
 	* Créer un projectile piou à la position donnée en paramètre
 	*/
-	ProjBismillah(Entite* lanceur, std::vector<sf::Sprite>& spriteV, sf::Sound sound, Equipe equipe = NEUTRE);
+	ProjBismillah(entite_ptr lanceur, std::vector<sf::Sprite>& spriteV, sf::Sound sound, Equipe equipe = NEUTRE);
 
 	void gestion(sf::RenderWindow& window, sf::Time tempsEcoule);
 

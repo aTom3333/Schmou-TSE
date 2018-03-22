@@ -4,6 +4,7 @@
 #include "SFML/Graphics.hpp"
 #include "../constantes.h"
 #include "../Vaisseau/Vaisseau.h"
+#include "../def_type.h"
 #include <iostream>
 
 
@@ -18,9 +19,9 @@ class Overlay
 	public:
 		Overlay();
 		~Overlay();
-		void init(Vaisseau *vaisseau);
-		void draw(sf::RenderWindow &window, Vaisseau *vaisseau, bool bDraw = true);
-		void gestion(Vaisseau * vaisseau);
+		void init(vaisseau_ptr vaisseau);
+		void draw(sf::RenderWindow &window, vaisseau_ptr vaisseau, bool bDraw = true);
+		void gestion(vaisseau_ptr vaisseau);
 		
 	private :
 		sf::Texture overlayText_; /// Texture de la partie de l'overlay qui n'intéragit pas

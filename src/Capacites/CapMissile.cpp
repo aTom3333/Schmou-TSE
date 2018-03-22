@@ -22,12 +22,12 @@ void CapMissile::utiliser(int x, int y)
 	}
 }
 
-void CapMissile::actualiser(std::vector<Projectile*>& projectiles, Entite & vaisseau, float tempsEcoule)
+void CapMissile::actualiser(proj_container& projectiles, Entite & vaisseau, float tempsEcoule)
 {
 	// Création du projectile au moment où la compétence est lancée
 	if (frames_ == 0)
 	{
-		ProjMissile *temp = new ProjMissile(debutX_, debutY_, vaisseau.getEquipe());
+		proj_ptr temp(new ProjMissile(debutX_, debutY_, vaisseau.getEquipe()));
 		projectiles.push_back(temp);
 	}
 

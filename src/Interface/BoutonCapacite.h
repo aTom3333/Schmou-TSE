@@ -2,7 +2,7 @@
 
 /**
 * @class Overlay
-* @brief Classe qui le bouton des capacité IG
+* @brief Classe qui le bouton des capacitÃ© IG
 *
 */
 

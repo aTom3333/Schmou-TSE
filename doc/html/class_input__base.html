@@ -77,7 +77,8 @@ $(function() {
 <div class="dynheader">
 Graphe de collaboration de Input_base&lt; N &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_input__base__coll__graph.svg" width="178" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><!-- SVG 0 -->
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -104,10 +105,17 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a2ac741377832fd670954dba5abf82a10"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input__base.html#a2ac741377832fd670954dba5abf82a10">action</a> (size_t n) const</td></tr>
 <tr class="memdesc:a2ac741377832fd670954dba5abf82a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teste si une action est en cours.  <a href="#a2ac741377832fd670954dba5abf82a10">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2ac741377832fd670954dba5abf82a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c0631d64c47b84db480a9098f5a8e1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input__base.html#a4c0631d64c47b84db480a9098f5a8e1b">set_action_keyboard</a> (size_t n, sf::Keyboard::Key key)</td></tr>
-<tr class="separator:a4c0631d64c47b84db480a9098f5a8e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a302f14b88b743a1b6510d632c141971f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input__base.html#a302f14b88b743a1b6510d632c141971f">set_action_mouse</a> (size_t n, sf::Mouse::Button button)</td></tr>
-<tr class="separator:a302f14b88b743a1b6510d632c141971f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a895ecc7012d6ccdd4284de7d613f2ed2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input__base.html#a895ecc7012d6ccdd4284de7d613f2ed2">isMoving</a> () const</td></tr>
+<tr class="memdesc:a895ecc7012d6ccdd4284de7d613f2ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie True si une touche pour se mouvoir est pressée  <a href="#a895ecc7012d6ccdd4284de7d613f2ed2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a895ecc7012d6ccdd4284de7d613f2ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7163e5edb9d3f938811d990863ce0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input__base.html#aba7163e5edb9d3f938811d990863ce0e">set_action_keyboard</a> (size_t n, sf::Keyboard::Key key)</td></tr>
+<tr class="separator:aba7163e5edb9d3f938811d990863ce0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5600e81056832d37167aec2ff0034a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input__base.html#aa5600e81056832d37167aec2ff0034a4">set_action_mouse</a> (size_t n, sf::Mouse::Button button)</td></tr>
+<tr class="separator:aa5600e81056832d37167aec2ff0034a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4092ec083ca10480a0fd61301b336f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input__base.html#ae4092ec083ca10480a0fd61301b336f1">set_default_movement_keyboard</a> ()</td></tr>
+<tr class="separator:ae4092ec083ca10480a0fd61301b336f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50d1a01cf671110d8b73c7b48b18095f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input__base.html#a50d1a01cf671110d8b73c7b48b18095f">set_default_movement_joypad</a> ()</td></tr>
+<tr class="separator:a50d1a01cf671110d8b73c7b48b18095f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a103633f42d3fa58352a12b54ed4b3faf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input__base.html#a103633f42d3fa58352a12b54ed4b3faf">set_movement_mode</a> (<a class="el" href="class_input__base.html#a455585e7933485981b3d7bfcad3a47c6">Media</a> movement_media)</td></tr>
 <tr class="separator:a103633f42d3fa58352a12b54ed4b3faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -187,7 +195,7 @@ template&lt;size_t N&gt; </div>
 <p>Constructeur qui initialise l'état de l'objet </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>Une référence vers une sf::RenderWindow qui permet de récupérer des informations sur ses entrées </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>Le type de Media à utiliser pour toutes les actions par défaut</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>Le type de Media à utiliser pour toutes les actions par défaut, clavier par défaut</td></tr>
   </table>
   </dd>
 </dl>
@@ -242,13 +250,35 @@ template&lt;size_t N&gt; </div>
 </div><div class="memdoc">
 
 <p>Teste si une action est en cours. </p>
-<p>Cette fonction permet de vérifiée si une action est en cours, càd si le bouton/la touche qui correspond est pressé </p><dl class="params"><dt>Paramètres</dt><dd>
+<p>Cette fonction permet de vérifier si une action est en cours, càd si le bouton/la touche qui correspond est pressé </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Le numéro de l'action à tester </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Un <code>bool</code> qui vaut <em>true</em> si l'action est en cours et <em>false</em> sinon </dd></dl>
+
+</div>
+</div>
+<a id="a895ecc7012d6ccdd4284de7d613f2ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a895ecc7012d6ccdd4284de7d613f2ed2">&#9670;&nbsp;</a></span>isMoving()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_input__base.html">Input_base</a>&lt; N &gt;::isMoving </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>renvoie True si une touche pour se mouvoir est pressée </p>
+<p>Cette fonction permet de vérifier si on cherche à mouvoir le joueur, quel que soit le <a class="el" href="class_input__base.html#a455585e7933485981b3d7bfcad3a47c6" title="Énumération qui contient les types d&#39;entrées supportées. ">Input::Media</a> </p><dl class="section return"><dt>Renvoie</dt><dd>Un <code>bool</code> qui vaut <em>true</em> si un mouvement est en cours et <em>false</em> sinon </dd></dl>
 
 </div>
 </div>
@@ -292,8 +322,8 @@ template&lt;size_t N&gt; </div>
 
 </div>
 </div>
-<a id="a4c0631d64c47b84db480a9098f5a8e1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c0631d64c47b84db480a9098f5a8e1b">&#9670;&nbsp;</a></span>set_action_keyboard()</h2>
+<a id="aba7163e5edb9d3f938811d990863ce0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba7163e5edb9d3f938811d990863ce0e">&#9670;&nbsp;</a></span>set_action_keyboard()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -322,8 +352,8 @@ template&lt;size_t N&gt; </div>
 
 </div>
 </div>
-<a id="a302f14b88b743a1b6510d632c141971f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a302f14b88b743a1b6510d632c141971f">&#9670;&nbsp;</a></span>set_action_mouse()</h2>
+<a id="aa5600e81056832d37167aec2ff0034a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5600e81056832d37167aec2ff0034a4">&#9670;&nbsp;</a></span>set_action_mouse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,6 +382,44 @@ template&lt;size_t N&gt; </div>
 
 </div>
 </div>
+<a id="a50d1a01cf671110d8b73c7b48b18095f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50d1a01cf671110d8b73c7b48b18095f">&#9670;&nbsp;</a></span>set_default_movement_joypad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_input__base.html">Input_base</a>&lt; N &gt;::set_default_movement_joypad </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4092ec083ca10480a0fd61301b336f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4092ec083ca10480a0fd61301b336f1">&#9670;&nbsp;</a></span>set_default_movement_keyboard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_input__base.html">Input_base</a>&lt; N &gt;::set_default_movement_keyboard </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a103633f42d3fa58352a12b54ed4b3faf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a103633f42d3fa58352a12b54ed4b3faf">&#9670;&nbsp;</a></span>set_movement_mode()</h2>
 
@@ -363,7 +431,7 @@ template&lt;size_t N&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="class_input__base.html">Input_base</a>&lt; N &gt;::set_movement_mode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_input__base.html">Input_base</a>&lt; N &gt;::<a class="el" href="class_input__base.html#a455585e7933485981b3d7bfcad3a47c6">Media</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_input__base.html#a455585e7933485981b3d7bfcad3a47c6">Media</a>&#160;</td>
           <td class="paramname"><em>movement_media</em></td><td>)</td>
           <td></td>
         </tr>

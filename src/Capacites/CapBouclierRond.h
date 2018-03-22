@@ -43,11 +43,11 @@ public:
 
 	void utiliser(int x, int y) override;
 
-	void actualiser(std::vector<Projectile*>& GVP, Entite& vaisseau, float tempsEcoule);
+	void actualiser(proj_container& GVP, Entite& vaisseau, float tempsEcoule);
 
 };
 
-#endif BOUCLIER_ROND_H
+#endif //BOUCLIER_ROND_H
 
 
 

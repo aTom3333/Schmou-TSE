@@ -1,0 +1,638 @@
+\hypertarget{namespacestd_1_1experimental}{}\section{Référence de l\textquotesingle{}espace de nommage std\+:\+:experimental}
+\label{namespacestd_1_1experimental}\index{std\+::experimental@{std\+::experimental}}
+\subsection*{Espaces de nommage}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacestd_1_1experimental_1_1detail__}{detail\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classstd_1_1experimental_1_1bad__optional__access}{bad\+\_\+optional\+\_\+access}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1constexpr__optional__base}{constexpr\+\_\+optional\+\_\+base}
+\item 
+union \hyperlink{unionstd_1_1experimental_1_1constexpr__storage__t}{constexpr\+\_\+storage\+\_\+t}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1in__place__t}{in\+\_\+place\+\_\+t}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1is__assignable}{is\+\_\+assignable}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1is__nothrow__move__assignable}{is\+\_\+nothrow\+\_\+move\+\_\+assignable}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1is__nothrow__move__constructible}{is\+\_\+nothrow\+\_\+move\+\_\+constructible}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}
+\item 
+class \hyperlink{classstd_1_1experimental_1_1optional}{optional}
+\item 
+class \hyperlink{classstd_1_1experimental_1_1optional_3_01_t_01_6_01_4}{optional$<$ T \& $>$}
+\item 
+class \hyperlink{classstd_1_1experimental_1_1optional_3_01_t_01_6_6_01_4}{optional$<$ T \&\& $>$}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1optional__base}{optional\+\_\+base}
+\item 
+union \hyperlink{unionstd_1_1experimental_1_1storage__t}{storage\+\_\+t}
+\item 
+struct \hyperlink{structstd_1_1experimental_1_1trivial__init__t}{trivial\+\_\+init\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespacestd_1_1experimental_a481cc29b2f00961d0afc189e6e90f739}{is\+\_\+trivially\+\_\+destructible} = std\+::has\+\_\+trivial\+\_\+destructor$<$ T $>$
+\item 
+{\footnotesize template$<$class T $>$ }\\using \hyperlink{namespacestd_1_1experimental_a33aa5e258a2b0762197365c1ef3f90aa}{Optional\+Base} = typename std\+::conditional$<$ \hyperlink{namespacestd_1_1experimental_a481cc29b2f00961d0afc189e6e90f739}{is\+\_\+trivially\+\_\+destructible}$<$ T $>$\+::value, \hyperlink{structstd_1_1experimental_1_1constexpr__optional__base}{constexpr\+\_\+optional\+\_\+base}$<$ typename std\+::remove\+\_\+const$<$ T $>$\+::type $>$, \hyperlink{structstd_1_1experimental_1_1optional__base}{optional\+\_\+base}$<$ typename std\+::remove\+\_\+const$<$ T $>$\+::type $>$ $>$\+::type
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr T \&\& \hyperlink{namespacestd_1_1experimental_ad6c79ef527ee25f0a6295128c4b51f89}{constexpr\+\_\+forward} (typename std\+::remove\+\_\+reference$<$ T $>$\+::type \&t) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr T \&\& \hyperlink{namespacestd_1_1experimental_a9bcca6a02f6e3005b3180962429c6feb}{constexpr\+\_\+forward} (typename std\+::remove\+\_\+reference$<$ T $>$\+::type \&\&t) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr std\+::remove\+\_\+reference$<$ T $>$\+::type \&\& \hyperlink{namespacestd_1_1experimental_abe16b4d69976581fbfc135b809b3ffe3}{constexpr\+\_\+move} (T \&\&t) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a0bd6ca198e90eb70255e0b370072f154}{operator==} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_abf45cbc40acb4929dbf1caa3b31460d9}{operator!=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a27caacd2780817469b565c269933185d}{operator$<$} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a1d2409f0cb8fda0ec9a0b9d5e1e61cb5}{operator$>$} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_afd5e1ebb8edd29dc3916bf546c9ffca3}{operator$<$=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a2c2515ef0e94b6089f60aaf6757741c9}{operator$>$=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a4f15144833bc5951b01fbd4b4bfdb6fb}{operator==} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, \hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a23a59ad403fb2809087806ff9037d42e}{operator==} (\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a768f39fe88fcf07a351e8f45d6dfb1b3}{operator!=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, \hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_aa340c9c2a57fd083695e470ded11c089}{operator!=} (\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_aa7075b9ff2db35978c50e744de295b37}{operator$<$} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&, \hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a419ed2da725cc9c030f5d741a1f13d50}{operator$<$} (\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a2130b2ce528946a4ef4e56f80d823267}{operator$<$=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, \hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ae72fae9caf85b2dff2e94ebd29371937}{operator$<$=} (\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ab0139892916a389ed15c89675d5512ac}{operator$>$} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, \hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a02002e302d09fd9596aadd26a38043c0}{operator$>$} (\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a35cdc6a5b56b8db5690f4035242332a0}{operator$>$=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&, \hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_aec1ef0d119fb9270b05212cea79a0fe0}{operator$>$=} (\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x) noexcept
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ad40f3ff2c6562139fe910ab3d0a63f10}{operator==} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a1958e649d145d612bc04a821d28c0ffb}{operator==} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a65194017839ffdd2eeeb2f8f510d9a84}{operator!=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_aa6a14a4a2f99c053eaf12e4d438786cc}{operator!=} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_acd496ce7fb815b5ed07c64c3c50473a5}{operator$<$} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a2c15354bc231381036462b92afd3737e}{operator$>$} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_acd392a8263ad2dd322655078d53e77ad}{operator$>$} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a1d3cd046025f9693e0c6c7e57c67e379}{operator$<$} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a3209ada3ae8542ffbdfcc7e7d35f19a5}{operator$>$=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a4482ae3dc6aad99b5d17a3a2c0dfe30f}{operator$<$=} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a9dd11e02b37f5d3e9c09a29c7ea7024c}{operator$<$=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a0e2303b05ab975b9dd1a53c198bf2e45}{operator$>$=} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a5e8049d714e136368d3f1cc2cc7fc787}{operator==} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ad874f9e082998b503ad0f7bb0376782e}{operator==} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a32e202bafe91eccccc3d34ef53bc3f01}{operator!=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_aa2bc218261382e5d1dbb90aee5930580}{operator!=} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a83a84dd901351c69fb0e53efe17526eb}{operator$<$} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a84d294fc6ef231696e23f6b21f0391aa}{operator$>$} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a733d2aa90d49bd113f2420f996e13a8f}{operator$>$} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ae8fc20bba7e30d2ad7bc8646ec1de715}{operator$<$} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a8e331f49161fae9a2dc83a0838d5c332}{operator$>$=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a59ad44110fa8b750e2ca4cf69327c182}{operator$<$=} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_adeee1539a6ebda9088aaaa92a363a38c}{operator$<$=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_af08a779caea9116149f04d2b2e330b44}{operator$>$=} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ad41e06efa15d85ead93eafecb8dde126}{operator==} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a9ff726fa7b981eeae6f6b8e98eb514ce}{operator==} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a007e24ca3b589918778709281a5611d7}{operator!=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ab5a8b15ec09913c93bac27399f0cba38}{operator!=} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_afd3f43608dc3267d32ee592ae88fba55}{operator$<$} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a3899be1cf909f9d5dc2718c912c73d67}{operator$>$} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_ab62a91459215563e8996e69785166789}{operator$>$} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a3905d16fb3b1c1627ff2082e6159d4fb}{operator$<$} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a43c159cf8ffd0e172adbac601809aacd}{operator$>$=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_aca22cd45974dad371a24b9618f2d1b33}{operator$<$=} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_afb3a1b869e0a3eb4840f37edf61ba0ef}{operator$<$=} (const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&x, const T \&v)
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespacestd_1_1experimental_a943314dada174c65a0ac853cbdc89989}{operator$>$=} (const T \&v, const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&x)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacestd_1_1experimental_acdfba2d2e9c79f689a34c9cea5c5682d}{swap} (\hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&x, \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&y) noexcept(noexcept(x.\+swap(y)))
+\item 
+{\footnotesize template$<$class T $>$ }\\constexpr \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ typename decay$<$ T $>$\+::type $>$ \hyperlink{namespacestd_1_1experimental_aa6c8db3625ec5a8e7f6288fb5adf8f95}{make\+\_\+optional} (T \&\&v)
+\item 
+{\footnotesize template$<$class X $>$ }\\constexpr \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ X \& $>$ \hyperlink{namespacestd_1_1experimental_a0f7b286ddf3bb6c4e95580898dcde37b}{make\+\_\+optional} (reference\+\_\+wrapper$<$ X $>$ v)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr struct \hyperlink{structstd_1_1experimental_1_1trivial__init__t}{std\+::experimental\+::trivial\+\_\+init\+\_\+t} \hyperlink{namespacestd_1_1experimental_a453a56e465f134032297679f0511f02b}{trivial\+\_\+init}
+\item 
+constexpr struct \hyperlink{structstd_1_1experimental_1_1in__place__t}{std\+::experimental\+::in\+\_\+place\+\_\+t} \hyperlink{namespacestd_1_1experimental_a93be82cb49ba2dc64a23c881ad152fd6}{in\+\_\+place}
+\item 
+constexpr \hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t} \hyperlink{namespacestd_1_1experimental_af16e944368340cafdc29647c42a1f542}{nullopt} \{\hyperlink{structstd_1_1experimental_1_1nullopt__t_1_1init}{nullopt\+\_\+t\+::init}()\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des définitions de type}
+\mbox{\Hypertarget{namespacestd_1_1experimental_a481cc29b2f00961d0afc189e6e90f739}\label{namespacestd_1_1experimental_a481cc29b2f00961d0afc189e6e90f739}} 
+\index{std\+::experimental@{std\+::experimental}!is\+\_\+trivially\+\_\+destructible@{is\+\_\+trivially\+\_\+destructible}}
+\index{is\+\_\+trivially\+\_\+destructible@{is\+\_\+trivially\+\_\+destructible}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{is\+\_\+trivially\+\_\+destructible}{is\_trivially\_destructible}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \hyperlink{namespacestd_1_1experimental_a481cc29b2f00961d0afc189e6e90f739}{std\+::experimental\+::is\+\_\+trivially\+\_\+destructible} = typedef std\+::has\+\_\+trivial\+\_\+destructor$<$T$>$}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a33aa5e258a2b0762197365c1ef3f90aa}\label{namespacestd_1_1experimental_a33aa5e258a2b0762197365c1ef3f90aa}} 
+\index{std\+::experimental@{std\+::experimental}!Optional\+Base@{Optional\+Base}}
+\index{Optional\+Base@{Optional\+Base}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{Optional\+Base}{OptionalBase}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+using \hyperlink{namespacestd_1_1experimental_a33aa5e258a2b0762197365c1ef3f90aa}{std\+::experimental\+::\+Optional\+Base} = typedef typename std\+::conditional$<$ \hyperlink{namespacestd_1_1experimental_a481cc29b2f00961d0afc189e6e90f739}{is\+\_\+trivially\+\_\+destructible}$<$T$>$\+::value, \hyperlink{structstd_1_1experimental_1_1constexpr__optional__base}{constexpr\+\_\+optional\+\_\+base}$<$typename std\+::remove\+\_\+const$<$T$>$\+::type$>$, \hyperlink{structstd_1_1experimental_1_1optional__base}{optional\+\_\+base}$<$typename std\+::remove\+\_\+const$<$T$>$\+::type$>$ $>$\+::type}
+
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{namespacestd_1_1experimental_ad6c79ef527ee25f0a6295128c4b51f89}\label{namespacestd_1_1experimental_ad6c79ef527ee25f0a6295128c4b51f89}} 
+\index{std\+::experimental@{std\+::experimental}!constexpr\+\_\+forward@{constexpr\+\_\+forward}}
+\index{constexpr\+\_\+forward@{constexpr\+\_\+forward}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{constexpr\+\_\+forward()}{constexpr\_forward()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr T\&\& std\+::experimental\+::constexpr\+\_\+forward (\begin{DoxyParamCaption}\item[{typename std\+::remove\+\_\+reference$<$ T $>$\+::type \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a9bcca6a02f6e3005b3180962429c6feb}\label{namespacestd_1_1experimental_a9bcca6a02f6e3005b3180962429c6feb}} 
+\index{std\+::experimental@{std\+::experimental}!constexpr\+\_\+forward@{constexpr\+\_\+forward}}
+\index{constexpr\+\_\+forward@{constexpr\+\_\+forward}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{constexpr\+\_\+forward()}{constexpr\_forward()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr T\&\& std\+::experimental\+::constexpr\+\_\+forward (\begin{DoxyParamCaption}\item[{typename std\+::remove\+\_\+reference$<$ T $>$\+::type \&\&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_abe16b4d69976581fbfc135b809b3ffe3}\label{namespacestd_1_1experimental_abe16b4d69976581fbfc135b809b3ffe3}} 
+\index{std\+::experimental@{std\+::experimental}!constexpr\+\_\+move@{constexpr\+\_\+move}}
+\index{constexpr\+\_\+move@{constexpr\+\_\+move}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{constexpr\+\_\+move()}{constexpr\_move()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr std\+::remove\+\_\+reference$<$T$>$\+::type\&\& std\+::experimental\+::constexpr\+\_\+move (\begin{DoxyParamCaption}\item[{T \&\&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_aa6c8db3625ec5a8e7f6288fb5adf8f95}\label{namespacestd_1_1experimental_aa6c8db3625ec5a8e7f6288fb5adf8f95}} 
+\index{std\+::experimental@{std\+::experimental}!make\+\_\+optional@{make\+\_\+optional}}
+\index{make\+\_\+optional@{make\+\_\+optional}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{make\+\_\+optional()}{make\_optional()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$typename decay$<$T$>$\+::type$>$ std\+::experimental\+::make\+\_\+optional (\begin{DoxyParamCaption}\item[{T \&\&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a0f7b286ddf3bb6c4e95580898dcde37b}\label{namespacestd_1_1experimental_a0f7b286ddf3bb6c4e95580898dcde37b}} 
+\index{std\+::experimental@{std\+::experimental}!make\+\_\+optional@{make\+\_\+optional}}
+\index{make\+\_\+optional@{make\+\_\+optional}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{make\+\_\+optional()}{make\_optional()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class X $>$ \\
+constexpr \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$X\&$>$ std\+::experimental\+::make\+\_\+optional (\begin{DoxyParamCaption}\item[{reference\+\_\+wrapper$<$ X $>$}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_abf45cbc40acb4929dbf1caa3b31460d9}\label{namespacestd_1_1experimental_abf45cbc40acb4929dbf1caa3b31460d9}} 
+\index{std\+::experimental@{std\+::experimental}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a768f39fe88fcf07a351e8f45d6dfb1b3}\label{namespacestd_1_1experimental_a768f39fe88fcf07a351e8f45d6dfb1b3}} 
+\index{std\+::experimental@{std\+::experimental}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_aa340c9c2a57fd083695e470ded11c089}\label{namespacestd_1_1experimental_aa340c9c2a57fd083695e470ded11c089}} 
+\index{std\+::experimental@{std\+::experimental}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator!= (\begin{DoxyParamCaption}\item[{\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}}]{,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a65194017839ffdd2eeeb2f8f510d9a84}\label{namespacestd_1_1experimental_a65194017839ffdd2eeeb2f8f510d9a84}} 
+\index{std\+::experimental@{std\+::experimental}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_aa6a14a4a2f99c053eaf12e4d438786cc}\label{namespacestd_1_1experimental_aa6a14a4a2f99c053eaf12e4d438786cc}} 
+\index{std\+::experimental@{std\+::experimental}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator!= (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a32e202bafe91eccccc3d34ef53bc3f01}\label{namespacestd_1_1experimental_a32e202bafe91eccccc3d34ef53bc3f01}} 
+\index{std\+::experimental@{std\+::experimental}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_aa2bc218261382e5d1dbb90aee5930580}\label{namespacestd_1_1experimental_aa2bc218261382e5d1dbb90aee5930580}} 
+\index{std\+::experimental@{std\+::experimental}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator!= (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a007e24ca3b589918778709281a5611d7}\label{namespacestd_1_1experimental_a007e24ca3b589918778709281a5611d7}} 
+\index{std\+::experimental@{std\+::experimental}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_ab5a8b15ec09913c93bac27399f0cba38}\label{namespacestd_1_1experimental_ab5a8b15ec09913c93bac27399f0cba38}} 
+\index{std\+::experimental@{std\+::experimental}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator!= (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a27caacd2780817469b565c269933185d}\label{namespacestd_1_1experimental_a27caacd2780817469b565c269933185d}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_aa7075b9ff2db35978c50e744de295b37}\label{namespacestd_1_1experimental_aa7075b9ff2db35978c50e744de295b37}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{,  }\item[{\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a419ed2da725cc9c030f5d741a1f13d50}\label{namespacestd_1_1experimental_a419ed2da725cc9c030f5d741a1f13d50}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}}]{,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_acd496ce7fb815b5ed07c64c3c50473a5}\label{namespacestd_1_1experimental_acd496ce7fb815b5ed07c64c3c50473a5}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a1d3cd046025f9693e0c6c7e57c67e379}\label{namespacestd_1_1experimental_a1d3cd046025f9693e0c6c7e57c67e379}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$ (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a83a84dd901351c69fb0e53efe17526eb}\label{namespacestd_1_1experimental_a83a84dd901351c69fb0e53efe17526eb}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_ae8fc20bba7e30d2ad7bc8646ec1de715}\label{namespacestd_1_1experimental_ae8fc20bba7e30d2ad7bc8646ec1de715}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$ (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_afd3f43608dc3267d32ee592ae88fba55}\label{namespacestd_1_1experimental_afd3f43608dc3267d32ee592ae88fba55}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a3905d16fb3b1c1627ff2082e6159d4fb}\label{namespacestd_1_1experimental_a3905d16fb3b1c1627ff2082e6159d4fb}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$ (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_afd5e1ebb8edd29dc3916bf546c9ffca3}\label{namespacestd_1_1experimental_afd5e1ebb8edd29dc3916bf546c9ffca3}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a2130b2ce528946a4ef4e56f80d823267}\label{namespacestd_1_1experimental_a2130b2ce528946a4ef4e56f80d823267}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_ae72fae9caf85b2dff2e94ebd29371937}\label{namespacestd_1_1experimental_ae72fae9caf85b2dff2e94ebd29371937}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$= (\begin{DoxyParamCaption}\item[{\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}}]{,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a4482ae3dc6aad99b5d17a3a2c0dfe30f}\label{namespacestd_1_1experimental_a4482ae3dc6aad99b5d17a3a2c0dfe30f}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$= (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a9dd11e02b37f5d3e9c09a29c7ea7024c}\label{namespacestd_1_1experimental_a9dd11e02b37f5d3e9c09a29c7ea7024c}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a59ad44110fa8b750e2ca4cf69327c182}\label{namespacestd_1_1experimental_a59ad44110fa8b750e2ca4cf69327c182}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$= (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_adeee1539a6ebda9088aaaa92a363a38c}\label{namespacestd_1_1experimental_adeee1539a6ebda9088aaaa92a363a38c}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_aca22cd45974dad371a24b9618f2d1b33}\label{namespacestd_1_1experimental_aca22cd45974dad371a24b9618f2d1b33}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$= (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_afb3a1b869e0a3eb4840f37edf61ba0ef}\label{namespacestd_1_1experimental_afb3a1b869e0a3eb4840f37edf61ba0ef}} 
+\index{std\+::experimental@{std\+::experimental}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a0bd6ca198e90eb70255e0b370072f154}\label{namespacestd_1_1experimental_a0bd6ca198e90eb70255e0b370072f154}} 
+\index{std\+::experimental@{std\+::experimental}!operator==@{operator==}}
+\index{operator==@{operator==}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a4f15144833bc5951b01fbd4b4bfdb6fb}\label{namespacestd_1_1experimental_a4f15144833bc5951b01fbd4b4bfdb6fb}} 
+\index{std\+::experimental@{std\+::experimental}!operator==@{operator==}}
+\index{operator==@{operator==}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a23a59ad403fb2809087806ff9037d42e}\label{namespacestd_1_1experimental_a23a59ad403fb2809087806ff9037d42e}} 
+\index{std\+::experimental@{std\+::experimental}!operator==@{operator==}}
+\index{operator==@{operator==}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator== (\begin{DoxyParamCaption}\item[{\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}}]{,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_ad40f3ff2c6562139fe910ab3d0a63f10}\label{namespacestd_1_1experimental_ad40f3ff2c6562139fe910ab3d0a63f10}} 
+\index{std\+::experimental@{std\+::experimental}!operator==@{operator==}}
+\index{operator==@{operator==}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a1958e649d145d612bc04a821d28c0ffb}\label{namespacestd_1_1experimental_a1958e649d145d612bc04a821d28c0ffb}} 
+\index{std\+::experimental@{std\+::experimental}!operator==@{operator==}}
+\index{operator==@{operator==}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator== (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a5e8049d714e136368d3f1cc2cc7fc787}\label{namespacestd_1_1experimental_a5e8049d714e136368d3f1cc2cc7fc787}} 
+\index{std\+::experimental@{std\+::experimental}!operator==@{operator==}}
+\index{operator==@{operator==}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_ad874f9e082998b503ad0f7bb0376782e}\label{namespacestd_1_1experimental_ad874f9e082998b503ad0f7bb0376782e}} 
+\index{std\+::experimental@{std\+::experimental}!operator==@{operator==}}
+\index{operator==@{operator==}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator== (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_ad41e06efa15d85ead93eafecb8dde126}\label{namespacestd_1_1experimental_ad41e06efa15d85ead93eafecb8dde126}} 
+\index{std\+::experimental@{std\+::experimental}!operator==@{operator==}}
+\index{operator==@{operator==}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a9ff726fa7b981eeae6f6b8e98eb514ce}\label{namespacestd_1_1experimental_a9ff726fa7b981eeae6f6b8e98eb514ce}} 
+\index{std\+::experimental@{std\+::experimental}!operator==@{operator==}}
+\index{operator==@{operator==}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator== (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a1d2409f0cb8fda0ec9a0b9d5e1e61cb5}\label{namespacestd_1_1experimental_a1d2409f0cb8fda0ec9a0b9d5e1e61cb5}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_ab0139892916a389ed15c89675d5512ac}\label{namespacestd_1_1experimental_ab0139892916a389ed15c89675d5512ac}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a02002e302d09fd9596aadd26a38043c0}\label{namespacestd_1_1experimental_a02002e302d09fd9596aadd26a38043c0}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$ (\begin{DoxyParamCaption}\item[{\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}}]{,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a2c15354bc231381036462b92afd3737e}\label{namespacestd_1_1experimental_a2c15354bc231381036462b92afd3737e}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$ (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_acd392a8263ad2dd322655078d53e77ad}\label{namespacestd_1_1experimental_acd392a8263ad2dd322655078d53e77ad}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a84d294fc6ef231696e23f6b21f0391aa}\label{namespacestd_1_1experimental_a84d294fc6ef231696e23f6b21f0391aa}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$ (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a733d2aa90d49bd113f2420f996e13a8f}\label{namespacestd_1_1experimental_a733d2aa90d49bd113f2420f996e13a8f}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a3899be1cf909f9d5dc2718c912c73d67}\label{namespacestd_1_1experimental_a3899be1cf909f9d5dc2718c912c73d67}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$ (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_ab62a91459215563e8996e69785166789}\label{namespacestd_1_1experimental_ab62a91459215563e8996e69785166789}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a2c2515ef0e94b6089f60aaf6757741c9}\label{namespacestd_1_1experimental_a2c2515ef0e94b6089f60aaf6757741c9}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a35cdc6a5b56b8db5690f4035242332a0}\label{namespacestd_1_1experimental_a35cdc6a5b56b8db5690f4035242332a0}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{,  }\item[{\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_aec1ef0d119fb9270b05212cea79a0fe0}\label{namespacestd_1_1experimental_aec1ef0d119fb9270b05212cea79a0fe0}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$= (\begin{DoxyParamCaption}\item[{\hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t}}]{,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a3209ada3ae8542ffbdfcc7e7d35f19a5}\label{namespacestd_1_1experimental_a3209ada3ae8542ffbdfcc7e7d35f19a5}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a0e2303b05ab975b9dd1a53c198bf2e45}\label{namespacestd_1_1experimental_a0e2303b05ab975b9dd1a53c198bf2e45}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$= (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a8e331f49161fae9a2dc83a0838d5c332}\label{namespacestd_1_1experimental_a8e331f49161fae9a2dc83a0838d5c332}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_af08a779caea9116149f04d2b2e330b44}\label{namespacestd_1_1experimental_af08a779caea9116149f04d2b2e330b44}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$= (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T \&$>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a43c159cf8ffd0e172adbac601809aacd}\label{namespacestd_1_1experimental_a43c159cf8ffd0e172adbac601809aacd}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&}]{x,  }\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a943314dada174c65a0ac853cbdc89989}\label{namespacestd_1_1experimental_a943314dada174c65a0ac853cbdc89989}} 
+\index{std\+::experimental@{std\+::experimental}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+constexpr bool std\+::experimental\+::operator$>$= (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const \hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ const T \&$>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_acdfba2d2e9c79f689a34c9cea5c5682d}\label{namespacestd_1_1experimental_acdfba2d2e9c79f689a34c9cea5c5682d}} 
+\index{std\+::experimental@{std\+::experimental}!swap@{swap}}
+\index{swap@{swap}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void std\+::experimental\+::swap (\begin{DoxyParamCaption}\item[{\hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{x,  }\item[{\hyperlink{classstd_1_1experimental_1_1optional}{optional}$<$ T $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\subsection{Documentation des variables}
+\mbox{\Hypertarget{namespacestd_1_1experimental_a93be82cb49ba2dc64a23c881ad152fd6}\label{namespacestd_1_1experimental_a93be82cb49ba2dc64a23c881ad152fd6}} 
+\index{std\+::experimental@{std\+::experimental}!in\+\_\+place@{in\+\_\+place}}
+\index{in\+\_\+place@{in\+\_\+place}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{in\+\_\+place}{in\_place}}
+{\footnotesize\ttfamily constexpr struct \hyperlink{structstd_1_1experimental_1_1in__place__t}{std\+::experimental\+::in\+\_\+place\+\_\+t}  std\+::experimental\+::in\+\_\+place}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_af16e944368340cafdc29647c42a1f542}\label{namespacestd_1_1experimental_af16e944368340cafdc29647c42a1f542}} 
+\index{std\+::experimental@{std\+::experimental}!nullopt@{nullopt}}
+\index{nullopt@{nullopt}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{nullopt}{nullopt}}
+{\footnotesize\ttfamily constexpr \hyperlink{structstd_1_1experimental_1_1nullopt__t}{nullopt\+\_\+t} std\+::experimental\+::nullopt \{\hyperlink{structstd_1_1experimental_1_1nullopt__t_1_1init}{nullopt\+\_\+t\+::init}()\}}
+
+\mbox{\Hypertarget{namespacestd_1_1experimental_a453a56e465f134032297679f0511f02b}\label{namespacestd_1_1experimental_a453a56e465f134032297679f0511f02b}} 
+\index{std\+::experimental@{std\+::experimental}!trivial\+\_\+init@{trivial\+\_\+init}}
+\index{trivial\+\_\+init@{trivial\+\_\+init}!std\+::experimental@{std\+::experimental}}
+\subsubsection{\texorpdfstring{trivial\+\_\+init}{trivial\_init}}
+{\footnotesize\ttfamily constexpr struct \hyperlink{structstd_1_1experimental_1_1trivial__init__t}{std\+::experimental\+::trivial\+\_\+init\+\_\+t}  std\+::experimental\+::trivial\+\_\+init}
+

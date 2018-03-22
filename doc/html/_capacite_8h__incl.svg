@@ -46,7 +46,7 @@
 </g>
 <!-- Node4 -->
 <g id="node5" class="node"><title>Node4</title>
-<g id="a_node5"><a xlink:href="_projectile_8h.html" target="_top" xlink:title="../Projectiles/Projectile.h">
+<g id="a_node5"><a xlink:href="_projectile_8h.html" target="_top" target="_top" xlink:title="../Projectiles/Projectile.h">
 <polygon fill="white" stroke="black" points="92.5,-112.5 92.5,-131.5 215.5,-131.5 215.5,-112.5 92.5,-112.5"/>
 <text text-anchor="middle" x="154" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">../Projectiles/Projectile.h</text>
 </a>
@@ -59,7 +59,7 @@
 </g>
 <!-- Node5 -->
 <g id="node6" class="node"><title>Node5</title>
-<g id="a_node6"><a xlink:href="_entite_8h.html" target="_top" xlink:title="../Entite.h">
+<g id="a_node6"><a xlink:href="_entite_8h.html" target="_top" target="_top" xlink:title="../Entite.h">
 <polygon fill="white" stroke="black" points="198.5,-56.5 198.5,-75.5 257.5,-75.5 257.5,-56.5 198.5,-56.5"/>
 <text text-anchor="middle" x="228" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">../Entite.h</text>
 </a>
@@ -127,7 +127,7 @@
 </g>
 <!-- Node9 -->
 <g id="node10" class="node"><title>Node9</title>
-<g id="a_node10"><a xlink:href="constantes_8h.html" target="_top" xlink:title="constantes.h">
+<g id="a_node10"><a xlink:href="constantes_8h.html" target="_top" target="_top" xlink:title="constantes.h">
 <polygon fill="white" stroke="black" points="191.5,-0.5 191.5,-19.5 264.5,-19.5 264.5,-0.5 191.5,-0.5"/>
 <text text-anchor="middle" x="228" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">constantes.h</text>
 </a>

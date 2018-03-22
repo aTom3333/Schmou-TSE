@@ -74,7 +74,7 @@ class Entite
          * Appelle la fonction move de la SFML sur les attributs de l'objet appelant.
          * @param [in] delta un @c sf::Vector2f qui donne le déplacement en x et en y
          */
-		void move(sf::Vector2f& delta);
+		void move(sf::Vector2f delta);
         /**
          * @fn setPosition
          * @brief Fixe la position de l'Entite
@@ -238,7 +238,7 @@ class Entite
 		* Les dégats sur l'armure sont réduit. Retire le reste des points restant aux points de vie.
 		*/
 		void recoitDegats(float degats);
-		float getDegatsColl_();
+		float getDegatsColl_() const;
 		/**
 		* @fn destruction
 		* @brief Procedure a effectuer lorsque le vaisseau est détruit
@@ -253,29 +253,29 @@ class Entite
 		Equipe getEquipe() const { return equipe_; };
 		sf::Vector2f getTaille() const { return { sprite_.getGlobalBounds().width, sprite_.getGlobalBounds().height }; }//largeur, hauteur
 		bool getInnate_() const { return innate_; }
-		float getPVMax() { return pvM_; };
-		float getArmureMax() { return armureM_; };
-		float getBouclierMax() { return bouclierM_; };
-		float getPV() { return pv_; };
-		float getArmure() { return armure_; };
-		float getBouclier() { return bouclier_; };
-		sf::Texture getTexture() { return texture_; };
+		float getPVMax() const { return pvM_; };
+		float getArmureMax() const { return armureM_; };
+		float getBouclierMax() const { return bouclierM_; };
+		float getPV() const { return pv_; };
+		float getArmure() const { return armure_; };
+		float getBouclier() const { return bouclier_; };
+		const sf::Texture& getTexture() const { return texture_; };
 		bool isInvincible() const { return framesInvincibilite_ != 0; };
-		bool isCollisionneuse() { return collisionneuse_; }
-		bool isCollisionnable() { return collisionnable_; }
+		bool isCollisionneuse() const { return collisionneuse_; }
+		bool isCollisionnable() const { return collisionnable_; }
 
 		//setters
 		void setequipe_(Equipe equipe) { equipe_ = equipe; }
 		void setInnate_(bool isInnate) { innate_ = isInnate; }
 		void setNbPositions(int val);
-		void setSmokeTexture(sf::Texture &text, sf::Color couleur = { 255,255,255 });
+		void setSmokeTexture(const sf::Texture &text, sf::Color couleur = { 255,255,255 });
 
 	protected:
 		//coordonnées
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
 		std::deque<sf::Vector2f> positionsPrev_; ///< Positions précédentes
 			// /!\ne pas itérer, pas stocké contigûment
-		int nbPositions_ = 0; ///nombre de positions précédentes à conserver
+		size_t nbPositions_ = 0; ///nombre de positions précédentes à conserver
 		double angle_; ///< Orientation actuelle de l'Entite
 		double scale_; ///< Échelle actuelle de l'Entite
 

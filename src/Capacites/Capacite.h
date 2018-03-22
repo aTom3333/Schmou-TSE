@@ -6,6 +6,7 @@
 #include <algorithm>
 #include "../Projectiles/Projectile.h"
 #include "../Entite.h"
+#include "../def_type.h"
 
 
 /**
@@ -50,21 +51,21 @@ class Capacite
 		*
 		* Fonction virtuel qui gère la création de projectiles et des modifications à apporter au vaisseau
 		*/
-		virtual void actualiser(std::vector<Projectile*> &projectiles, Entite& vaisseau, float tempsEcoule) = 0;
+		virtual void actualiser(proj_container &projectiles, Entite& vaisseau, float tempsEcoule) = 0;
 
 		void initIcon(int i);
 		
 		// Getters
-		float const getCooldown() { return cooldown_; };
-		float const getTime() { return t_; };
-		std::string const getNom() { return nom_; };
-		sf::Sprite getIcon() { return capacite_; };
-		sf::RectangleShape getMasque() { return masque_; };
-		sf::Text getText() { return text_; };
+		float getCooldown() const { return cooldown_; };
+		float getTime() const { return t_; };
+		const std::string& getNom() const { return nom_; };
+		const sf::Sprite& getIcon() const { return capacite_; };
+		const sf::RectangleShape& getMasque() const { return masque_; };
+		const sf::Text& getText() const { return text_; };
 		bool getAffiche() { return affiche_; };
 		bool getTir() { return tir_; };
-		sf::SoundBuffer getSoundBuffer_() { return soundbuffer_; }
-		sf::Sound getSound_() { return sound_; }
+		const sf::SoundBuffer& getSoundBuffer_() const { return soundbuffer_; }
+		const sf::Sound& getSound_() const { return sound_; }
 
 
 

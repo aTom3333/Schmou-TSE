@@ -4,11 +4,12 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include "../Vaisseau/_vaisseaux.h"
+#include "../def_type.h"
 
 typedef struct
 {
 	float t;
-	Vaisseau *v;
+	vaisseau_ptr v;
 	bool active;
 } ElementVague;
 
@@ -24,7 +25,7 @@ class Vague
 {
 public:
 	Vague();
-	Vague(float t);
+	explicit Vague(float t);
 	~Vague();
 
 	/**
@@ -33,7 +34,7 @@ public:
 	* @param t Le temps écoulé depuis le début de la vague avant apparition que le vaisseau apparaisse
 	* @param v Le vaisseau à vaire apparaitre
 	*/
-	void ajouterVaisseau(float t, Vaisseau *v);
+	void ajouterVaisseau(float t, vaisseau_ptr v);
 	/**
 	* @fn gestion
 	* @brief Gere la vague
@@ -41,7 +42,7 @@ public:
 	* @param vaisseaux Vecteur de tous les vaisseaux présent à l'écran
 	* Gere le déclanchement de la vague et l'apparition des vaisseaux
 	*/
-	void gestion(std::vector<Vaisseau*> &vaisseaux, sf::Time t);
+	void gestion(vaisseau_container &vaisseaux, sf::Time t);
 	/**
 	* @fn setTempsDebut
 	* @brief Gere la vague
@@ -51,15 +52,17 @@ public:
 	void setTempsDebut(float t);
 
 	//getters
-	std::vector <ElementVague> getv_() { return v_; }
+	std::vector<ElementVague> getv_() { return v_; }
 
 	//setters
-	void setEquipeAll(Equipe equipe) { for (auto &element : v_) element.v->setequipe_(ENNEMI); }
+	void setEquipeAll(Equipe equipe) {
+		for (auto &element : v_) element.v->setequipe_(equipe); 
+	}
 
 private:
 	float t_debut_; /// Temps en millisecondes du début de la vague
 	float t_; /// Temps depuis le début de la vague
-	std::vector <ElementVague> v_; /// Vecteur des vaisseaux qui apparaissent
+	std::vector<ElementVague> v_; /// Vecteur des vaisseaux qui apparaissent
 
 };
 
