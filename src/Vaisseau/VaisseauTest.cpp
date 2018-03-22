@@ -5,7 +5,7 @@
 VaisseauTest::VaisseauTest() ///constructeur
 {
 	//sprite
-	texture_.loadFromFile("../../rc/Sprites/base/vaisseauNoel.png");
+	texture_.loadFromFile("../../rc/Sprites/base/vaisseauLapin.png");
 	sprite_.setTexture(texture_);
 
 	//hitbox simple

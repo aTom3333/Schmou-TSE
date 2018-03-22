@@ -3,52 +3,12 @@
 
 ProjBoing::ProjBoing()
 {
-
-	//sprite
-	texture_.loadFromFile("../../rc/Sprites/base/balle.png");
-	sprite_.setTexture(texture_);
-
-	////son
-	//soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/boing.wav");
-	//sound_.setBuffer(soundbuffer_);
-	//sound_.setLoop(false);
-
-	//hitbox simple (et complète dans ce cas car c'est le projectile est un cercle)
-	cercleEnglobant_ =  sf::CircleShape(16);
-	cercleEnglobant_.setOrigin(16, 16);
-	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
-
-	//Stats
-
-	pvM_ = 10;
-	armureM_ = 0;
-	bouclierM_ = 0;
-
-	pv_ = pvM_;
-	armure_ = armureM_;
-	bouclier_ = bouclierM_;
-
-	degatsColl_ = 10;
-
-	// Multiplicateur de direction (1 vers la droite/bas -1 vers le haut/gauche)
-	mx_ = rand() % 2 == 0 ? 1 : -1;
-	my_ = rand() % 2 == 0 ? 1 : -1;
-
-	// Vitesse entre 3 et 8
-	vx_ = rand() % 5 + 3;
-	vy_ = rand() % 5 + 3;
-
-	float x = rand() % 800, y = rand() % 600;
-
-	setPosition({ x,  y});
-
-	equipe_ = NEUTRE;
 }
 
 ProjBoing::ProjBoing(int x, int y, sf::Sound sound)
 {
 	//Sprite
-	texture_.loadFromFile("../../rc/Sprites/base/balle.png");
+	texture_.loadFromFile("../../rc/Sprites/base/ballePaques.png");
 	sprite_.setTexture(texture_);
 
 	//son
@@ -58,6 +18,8 @@ ProjBoing::ProjBoing(int x, int y, sf::Sound sound)
 	cercleEnglobant_ = sf::CircleShape(16);
 	cercleEnglobant_.setOrigin(16, 16);
 	cercleEnglobant_.setPosition(16,16);
+
+	sprite_.setOrigin(16, 16);
 
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 	
@@ -92,6 +54,7 @@ ProjBoing::ProjBoing(int x, int y, sf::Sound sound)
 
 	setPosition({ x1,  y1 });
 	equipe_ = NEUTRE;
+	rotation_ = 0;
 }
 
 
@@ -129,6 +92,9 @@ void ProjBoing::gestion(sf::RenderWindow& window, sf::Time tempsEcoule)
 		my_ = 1;
 		sound_.play();
 	}
+
+	rotation_ += 20;
+	sprite_.setRotation(rotation_);
 
 	// Afficher le projectile
 	afficher(window);
