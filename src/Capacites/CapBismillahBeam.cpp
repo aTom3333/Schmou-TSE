@@ -14,12 +14,12 @@ CapBismillah::CapBismillah()
 	capacite_.setTexture(capText_);
 	
 	//Texture
-	for (size_t i = 0; i < 4; ++i) textureV_.emplace_back(std::unique_ptr<sf::Texture>(new sf::Texture));//resize de taille 4 avec des unique_ptr sur sf::Texture vides
-	textureV_.at(0).get()->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/charge92x92.png");
-	textureV_.at(1).get()->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon1.png");
-	textureV_.at(2).get()->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon2.png");
-	textureV_.at(3).get()->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon3.png");
-	for (size_t i = 0; i < 4; ++i) spriteV_.emplace_back(sf::Sprite(*textureV_.at(i).get()));
+	for(size_t i = 0; i < 4; ++i) textureV_.emplace_back(new sf::Texture);//resize de taille 4 avec des unique_ptr sur sf::Texture vides
+	textureV_.at(0)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/charge92x92.png");
+	textureV_.at(1)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon1.png");
+	textureV_.at(2)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon2.png");
+	textureV_.at(3)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon3.png");
+	for(size_t i = 0; i < 4; ++i) spriteV_.emplace_back(sf::Sprite(*textureV_.at(i)));
 
 	//Son
 	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/Bismillah.wav");
@@ -49,8 +49,8 @@ void CapBismillah::actualiser(proj_container& projectiles, Entite& vaisseau, flo
 	// Cr�ation du projectile au moment o� la comp�tence est lanc�e
 	if (frames_ == 0)
 	{
-		//ProjBismillah *temp = new ProjBismillah(&vaisseau, spriteV_, sound_, JOUEUR);
-		std::shared_ptr<Projectile> temp(new ProjBismillah(&vaisseau, spriteV_, sound_, JOUEUR));
+		//TODO bug
+		proj_ptr temp(new ProjBismillah(vaisseau, spriteV_, sound_, ALLIE));
 		projectiles.push_back(temp);
 
 		sound_.play();

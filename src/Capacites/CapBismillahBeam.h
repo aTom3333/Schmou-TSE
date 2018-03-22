@@ -5,12 +5,12 @@
 
 class CapBismillah : public Capacite
 {
-public:
-	CapBismillah();
-
-	void utiliser(int x, int y);
-	void actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule);
-private:
+	public:
+		CapBismillah();
+	
+		void utiliser(int x, int y) override;
+		void actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule);
+	private:
 
 };
 
