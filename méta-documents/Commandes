@@ -1,6 +1,9 @@
 // Commandes Actuelles
-ZQSD : déplacement
 Flèches : déplacement
-W : Tirer
-X : Changer d'armes
+F : Tir Principal
+D : Tir Secondaire
+A : Capacité 1
+Z : Capacité 2
+E : Capacité 3
+R : Capacité ultime
 Echap : Quitter le jeu

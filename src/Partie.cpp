@@ -4,6 +4,7 @@
 #include "Vaisseau/_vaisseaux.h"
 #include "Interface/bindings.h"
 #include "Pattern/Vague.h"
+#include "Ecran.h"
 
 Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : window_{window}, input_(window, media), avecPattern_{avecPattern}, afficheHUD_{afficheHUD}
 {
@@ -85,7 +86,7 @@ void Partie::testPartie()
 
 		//gestion temps
 		auto t_ecoule = clock.restart();
-		t_ecoule = t_ecoule * (float)timeSpeed_;//TODO PG vitesse
+		t_ecoule = t_ecoule * (float)timeSpeed_;
 
 		// Efface l'écran
 		window_.clear();
