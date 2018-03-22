@@ -4,7 +4,7 @@
 CapBismillah::CapBismillah()
 {
 	//Caractéristiques
-	t_ = frames_ = cooldown_ = 1000; //ms
+	t_ = frames_ = cooldown_ = 20000; //ms
 
 	//TODO PG ici le warning pourrait être important (frames_ : float vers uint)
 	nom_ = "Bismillah";
@@ -46,7 +46,7 @@ void CapBismillah::actualiser(std::vector<Projectile*>& projectiles, Entite& vai
 	// Création du projectile au moment où la compétence est lancée
 	if (frames_ == 0)
 	{
-		ProjBismillah *temp = new ProjBismillah(&vaisseau, spriteV_, sound_, ALLIE);
+		ProjBismillah *temp = new ProjBismillah(&vaisseau, spriteV_, sound_, JOUEUR);
 		sound_.play();
 		projectiles.push_back(temp);
 	}
