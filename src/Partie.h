@@ -31,7 +31,7 @@
 class Partie : public Ecran
 {
 	public:
-		Partie(std::stack<std::unique_ptr<Ecran>>& pile, sf::RenderWindow& window, Input::Media media, bool afficheHUD = true, bool avecPattern = true);
+		Partie(std::vector<std::unique_ptr<Ecran>>& pile, sf::RenderWindow& window, Input::Media media, bool afficheHUD = true, bool avecPattern = true);
 		~Partie();
 
 		void jeu();
@@ -43,7 +43,7 @@ class Partie : public Ecran
 		//Patterns
 		void initPatternTest();
 
-		void executer();
+		int executer();
 
 	protected:
 		//attributs de gameplay
