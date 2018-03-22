@@ -2,7 +2,7 @@
 
 
 
-ProjBismillah::ProjBismillah(entite_ptr lanceur, std::vector<sf::Sprite>& spriteV, sf::Sound sound, Equipe equipe)
+ProjBismillah::ProjBismillah(Entite* lanceur, std::vector<sf::Sprite>& spriteV, sf::Sound sound, Equipe equipe)
 {
 	//Gestion du son
 	sound.play();//TODO PG pourquoi tu ne joues pas ??

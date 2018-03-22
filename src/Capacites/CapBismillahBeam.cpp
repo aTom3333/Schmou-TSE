@@ -49,9 +49,11 @@ void CapBismillah::actualiser(proj_container& projectiles, Entite& vaisseau, flo
 	// Cr�ation du projectile au moment o� la comp�tence est lanc�e
 	if (frames_ == 0)
 	{
-		ProjBismillah *temp = new ProjBismillah(&vaisseau, spriteV_, sound_, JOUEUR);
-		sound_.play();
+		//ProjBismillah *temp = new ProjBismillah(&vaisseau, spriteV_, sound_, JOUEUR);
+		std::shared_ptr<Projectile> temp(new ProjBismillah(&vaisseau, spriteV_, sound_, JOUEUR));		
 		projectiles.push_back(temp);
+
+		sound_.play();
 	}
 
 	// Si la comp�tence est en cooldown, on actualise le timer
