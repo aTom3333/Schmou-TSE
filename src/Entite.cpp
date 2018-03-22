@@ -30,8 +30,21 @@ bool collision(const Entite& e1, const Entite& e2)
 
 void Entite::afficher(sf::RenderWindow & window, bool debug)
 {
-	if ((framesInvincibilite_ / 10) % 2 == 0)
+	if (equipe_ != JOUEUR)
+	{
+		if (framesInvincibilite_ == 0 || (framesInvincibilite_ / 10) % 2 == 0)
+			sprite_.setColor({ 255, 255, 255 });
+		else
+			sprite_.setColor({ 255, 100, 100 });
+
 		window.draw(sprite_);
+	}
+	else
+	{
+		if((framesInvincibilite_ / 10) % 2 == 0)
+			window.draw(sprite_);
+	}
+	
 
 	for (auto pos : positionsPrev_)
 	{
