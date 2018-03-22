@@ -10,6 +10,7 @@
 #include "Projectiles/_projectiles.h"
 #include <SFML/Audio.hpp>
 //#include "Input.h"
+#include "Utilitaires/Chargeur.h"
 
 
 // Code minimal
@@ -19,6 +20,8 @@ int main()
 	eyaeya.openFromFile("../../rc/Musics/eyaeya.ogg");
 	eyaeya.setLoop(true);
 	eyaeya.play();
+    
+    auto& chargeur = Chargeur::getInstance();
 	
 	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE");
 	Partie partie(window, Input::Media::Keyboard);
