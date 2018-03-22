@@ -11,7 +11,7 @@ ProjBismillah::ProjBismillah(Entite* lanceur, std::vector<sf::Sprite>& spriteV, 
 	spriteV_ = spriteV;
 
 	// Hitbox 
-	//TODO PG à revoir même si ça sert à rien avec CL
+	//TODO PG cercle englobant à revoir même si ça sert à rien avec CL
 	float y = lanceur->getPosition().y;
 	double R = hypot(y / 2.0, 96.0 / 2.0);
 	cercleEnglobant_ = sf::CircleShape(R);
