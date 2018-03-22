@@ -6,7 +6,7 @@
 #include "Pattern/Vague.h"
 #include "Ecran.h"
 
-Partie::Partie(std::stack<std::unique_ptr<Ecran>>& pile, sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : window_{window}, input_(window, media), avecPattern_{avecPattern}, afficheHUD_{afficheHUD}, Ecran(pile)
+Partie::Partie(std::vector<std::unique_ptr<Ecran>>& pile, sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : window_{window}, input_(window, media), avecPattern_{avecPattern}, afficheHUD_{afficheHUD}, Ecran(pile)
 {
 	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
 	{
@@ -22,7 +22,7 @@ Partie::Partie(std::stack<std::unique_ptr<Ecran>>& pile, sf::RenderWindow& windo
 Partie::~Partie()
 {}
 
-void Partie::executer()
+int Partie::executer()
 {
 	//TODO CL réglage volume global temporaire
 	sf::Listener::setGlobalVolume(10);
@@ -131,6 +131,8 @@ void Partie::executer()
 		window_.setTitle("Schmou'TSE - Vitesse de jeu : " + std::to_string(timeSpeed_));
 		sf::sleep(sf::milliseconds(10));
 	}
+
+	return -1;
 }
 
 void Partie::collisionProjectile()

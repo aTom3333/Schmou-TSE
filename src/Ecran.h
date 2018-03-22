@@ -13,13 +13,13 @@ class Ecran
 {
 public:
 	//structeurs
-	Ecran(std::stack<std::unique_ptr<Ecran>>& pile); /// < constructeur principal
+	Ecran(std::vector<std::unique_ptr<Ecran>>& pile); /// < constructeur principal
 	virtual ~Ecran() = default;
 
-	virtual void executer() = 0;
+	virtual int executer() = 0;
 
 protected:
-	std::stack<std::unique_ptr<Ecran>>& pile_; /// < pile de tous les écrans du jeu empilés
+	std::vector<std::unique_ptr<Ecran>>& pile_; /// < pile de tous les écrans du jeu empilés
 	std::vector<sf::Font> polices_;/// < vector de toutes les polices du jeu
 
 };

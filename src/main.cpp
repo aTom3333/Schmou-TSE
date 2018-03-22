@@ -33,14 +33,18 @@ int main(int argc, char* argv[])
 	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE");
 
 	//Stack d'écran
-	std::stack<std::unique_ptr<Ecran>> pile;
+	std::vector<std::unique_ptr<Ecran>> vectEtats;
 
 	//Lancement de partie	
-	pile.emplace(new Partie(pile, window, Input::Media::Keyboard));
+	vectEtats.emplace_back(new Partie(vectEtats, window, Input::Media::Keyboard));
 
-	bool continuer = true;
+	int etat = 0;
 
-	pile.top()->executer(); 
+	while (etat != -1)
+	{
+		etat = vectEtats.at(etat)->executer();
+	}
+	
 	
 	
 
