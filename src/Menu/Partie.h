@@ -9,13 +9,13 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 
-#include "Capacites/Capacite.h"
-#include "Projectiles/Projectile.h"
-#include "Vaisseau/Vaisseau.h"
-#include "Interface/Input.h"
-#include "Interface/Overlay.h"
-#include "Pattern/Vague.h"
-#include "def_type.h"
+#include "../Capacites/Capacite.h"
+#include "../Projectiles/Projectile.h"
+#include "../Vaisseau/Vaisseau.h"
+#include "../Interface/Input.h"
+#include "../Interface/Overlay.h"
+#include "../Pattern/Vague.h"
+#include "../def_type.h"
 #include "Ecran.h"
 
 

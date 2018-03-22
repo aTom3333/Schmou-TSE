@@ -2,7 +2,7 @@
 #define PATTERN_H
 
 #include "Vague.h"
-#include "../Partie.h"
+#include "../Menu/Partie.h"
 
 
 class Pattern : public Partie

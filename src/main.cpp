@@ -1,7 +1,7 @@
 #include "constantes.h"
 #include "Entite.h"
 #include "Utilitaires/Collision.h"
-#include "Partie.h"
+#include "Menu/Partie.h"
 #include "Utilitaires/Divers.h"
 #include "Projectiles/_projectiles.h"
 
