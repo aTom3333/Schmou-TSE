@@ -8,7 +8,7 @@ ProjPiou::ProjPiou(int x, int y, sf::Sound sound, Equipe equipe)
 	
 	// Gestion du sprite
 	//texture_.loadFromFile("../../rc/Sprites/base/projectile_test.png");
-	texture_.loadFromFile("../../rc/Sprites/Capacites/Piou20x30.PNG");
+	texture_.loadFromFile("../../rc/Sprites/Capacites/Piou/Piou20x30.PNG");
 	sprite_.setTexture(texture_);
 
 	////Gestion du son
@@ -23,20 +23,19 @@ ProjPiou::ProjPiou(int x, int y, sf::Sound sound, Equipe equipe)
 	
 	// Stats
 	equipe_ = equipe;
-	age_ = 0;
 	actif_ = true;
 
-	pvMax_ = 10;
-	armureMax_ = 0;
-	bouclierMax_ = 0;
+	pvM_ = 10;
+	armureM_ = 0;
+	bouclierM_ = 0;
 
-	pv_ = pvMax_;
-	armure_ = armureMax_;
-	bouclier_ = bouclierMax_;
+	pv_ = pvM_;
+	armure_ = armureM_;
+	bouclier_ = bouclierM_;
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
-	degats_ = 70;
+	degatsColl_ = 70;
 
 	//  Projectile qui se déplace verticalement
 	vit_ = 700;
@@ -58,6 +57,6 @@ void ProjPiou::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 
 void ProjPiou::agit(Entite& proj)
 {
-	proj.recoitDegats(degats_);
+	proj.recoitDegats(degatsColl_);
 	detruit_ = true;
 }

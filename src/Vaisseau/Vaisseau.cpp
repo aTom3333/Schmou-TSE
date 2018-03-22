@@ -11,8 +11,6 @@ Vaisseau::Vaisseau() ///constructeur
 	//personnalisation
 	//stats de base
 	pvM_ = 100;
-	atqM_ = 100;
-	defM_ = 100;
 	vitM_ = 100;
 	//liste de capacités
 }
@@ -34,5 +32,5 @@ void Vaisseau::gestionCapacite(proj_container &projectiles, sf::Time t_ecoule)
 
 void Vaisseau::agit(Entite & e)
 {
-	e.recoitDegats(degats_);
+	e.recoitDegats(degatsColl_);
 }

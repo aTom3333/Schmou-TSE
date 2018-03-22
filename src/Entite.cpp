@@ -10,7 +10,9 @@ bool collision(const Entite& e1, const Entite& e2)
 	{
 		if (e1.actif_ && e2.actif_)
 		{
-			if (!e1.collisionable_ || !e2.collisionable_)
+			if (!e1.collisionnable_ && !e2.collisionnable_)
+				return false;
+			if (!e1.collisionneuse_ && !e2.collisionneuse_)
 				return false;
 			if (e1.equipe_ == e2.equipe_ && e1.equipe_ != NEUTRE)
 				return false;
@@ -139,9 +141,9 @@ bool Entite::estDetruit()
 	return detruit_;
 }
 
-float Entite::getDegats() const
+float Entite::getDegatsColl_() const
 {
-	return degats_;
+	return degatsColl_;
 }
 
 void Entite::setNbPositions(int val)
@@ -174,12 +176,12 @@ void Entite::regen(sf::Time t)
 		bouclier_ += regenBOU_;
 
 		// Si le seuil maximal est dépassé
-		if (pv_ > pvMax_)
-			pv_ = pvMax_;
-		if (armure_ > armureMax_)
-			armure_ = armureMax_;
-		if (bouclier_ > bouclierMax_)
-			bouclier_ = bouclierMax_;
+		if (pv_ > pvM_)
+			pv_ = pvM_;
+		if (armure_ > armureM_)
+			armure_ = armureM_;
+		if (bouclier_ > bouclierM_)
+			bouclier_ = bouclierM_;
 	}
 }
 

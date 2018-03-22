@@ -27,12 +27,13 @@ protected:
 	// personnalisation
 	std::string nom_; /// < Nom du vaisseau
 	int Nskin_; /// numéro du skin du vaisseau
+	
+	//Stats
+	float atqM_ = 0;
+	float defM_ = 0;
 
-	// stats de base
-	int pvM_; /// Points de vie de base
-	int atqM_; /// Attaque de base
-	int defM_; /// Défense de base
-	int vitM_; /// Vitesse de base
+	float atq = 0;
+	float def = 0;
 
 	// liste de capacités
 	std::vector<Capacite*> capacites_; /// Liste des capacités du vaisseau
@@ -80,24 +81,22 @@ public:
 		void setnom(std::string nom){ nom_ = nom; }
 		void setNskin(int Nskin){ Nskin_ = Nskin; }
 		void setpvM(int pvM){ pvM_ = pvM; }
-		void setatqM(int atqM){ atqM_ = atqM; }
-		void setdefM(int defM){ defM_ = defM; }
-		void setvitM(int vitM){ vitM_ = vitM; }
 		void setActif(bool val){ actif_ = val; }
 		void setAnnexeB(int ind, bool val){ annexesB_[ind] = val; }
+		void setatqM(int atqM) { atqM_ = atqM; }
+		void setdefM(int defM) { defM_ = defM; }
 			
 
 	//getters
 		std::string getnom() const {return nom_; }
 		int getNskin() const { return Nskin_; }
 		int getpvM() const { return pvM_; }
-		int getatqM() const { return atqM_; }
-		int getdefM() const { return defM_; }
-		int getvitM() const { return vitM_; }
 		std::vector<Capacite*> getskills() const { return capacites_; }
 		bool estActif() const { return actif_; }
 		vaisseau_container getAnnexes() const { return annexes_; }
 		std::vector<bool> getAnnexesB() const { return annexesB_; }
+		int getatqM() const { return atqM_; }
+		int getdefM() const { return defM_; }
 
 };
 

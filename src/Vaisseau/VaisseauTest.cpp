@@ -19,19 +19,19 @@ VaisseauTest::VaisseauTest() ///constructeur
 	innate_ = true;
 	vit_ = 500;
 
-	pvMax_ = 1000;
-	armureMax_ = 50;
-	bouclierMax_ = 100;
+	pvM_ = 1000;
+	armureM_ = 50;
+	bouclierM_ = 100;
 
-	pv_ = pvMax_;
-	armure_ = armureMax_;
-	bouclier_ = bouclierMax_;
+	pv_ = pvM_;
+	armure_ = armureM_;
+	bouclier_ = bouclierM_;
 
 	regenARM_ = 0;
 	regenBOU_ = 1;
 	regenPV_ = 0;
 
-	degats_ = 50;
+	degatsColl_ = 50;
 
 	actif_ = true;
 

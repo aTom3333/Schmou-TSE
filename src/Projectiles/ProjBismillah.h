@@ -16,19 +16,15 @@ public:
 	*
 	* Créer un projectile piou à la position donnée en paramètre
 	*/
-	ProjBismillah(int x, int y, sf::Sound sound, Equipe equipe = NEUTRE);
+	ProjBismillah(entite_ptr lanceur, std::vector<sf::Sprite>& spriteV, sf::Sound sound, Equipe equipe = NEUTRE);
 
-	void gestion(sf::RenderWindow& window, sf::Time tempsEcoule) override {
-		// Juste pour mute les warnings du compilateur
-        (void)window;
-        (void)tempsEcoule;
-	};
+	void gestion(sf::RenderWindow& window, sf::Time tempsEcoule);
 
-	void agit(Entite& e) override {
-		// Juste pour mute les warnings du compilateur
-        (void)e;
-	};
+	void agit(Entite& e);
 
+private:
+	Entite * lanceur_ = nullptr;
+	size_t age_ = 0;
 };
 
 

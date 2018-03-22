@@ -4,13 +4,22 @@
 CapBismillah::CapBismillah()
 {
 	//Caract�ristiques
-	t_ = frames_ = cooldown_ = 1000;
-	//TODO ici le warning pourrait �tre important (frames_ : float vers uint)
+	t_ = frames_ = cooldown_ = 1000; //ms
+
+	//TODO PG ici le warning pourrait �tre important (frames_ : float vers uint)
 	nom_ = "Bismillah";
 
 	//Ic�ne
 	capText_.loadFromFile("../../rc/Icones_Caps/laser.png");
 	capacite_.setTexture(capText_);
+	
+	//Texture
+	for (size_t i = 0; i < 4; ++i) textureV_.emplace_back(std::unique_ptr<sf::Texture>(new sf::Texture));//resize de taille 4 avec des unique_ptr sur sf::Texture vides
+	textureV_.at(0).get()->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/charge.png");
+	textureV_.at(1).get()->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon1.png");
+	textureV_.at(2).get()->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon2.png");
+	textureV_.at(3).get()->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon3.png");
+	for (size_t i = 0; i < 4; ++i) spriteV_.emplace_back(sf::Sprite(*textureV_.at(i).get()));
 
 	//Son
 	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/Bismillah.wav");
@@ -25,14 +34,9 @@ void CapBismillah::utiliser(int x, int y)
 	// Si la comp�tence est disponible
 	if (t_ >= cooldown_)
 	{
-		//Son au lancement
-		sound_.play();
 		// D�but du timer
 		t_ = 0;
 		frames_ = 0;
-		// Initialisation de l'endroit ou la comp�tence a �t� utilis�e
-		debutX_ = x;
-		debutY_ = y;
 	}
 
 }
@@ -47,6 +51,7 @@ void CapBismillah::actualiser(proj_container& projectiles, Entite& vaisseau, flo
 	{
 		//TODO bug
 		proj_ptr temp(new ProjBismillah(debutX_, debutY_, sound_, ALLIE));
+		sound_.play();
 		projectiles.push_back(temp);
 	}
 
@@ -55,7 +60,5 @@ void CapBismillah::actualiser(proj_container& projectiles, Entite& vaisseau, flo
 	{
 		t_ += tempsEcoule;
 		frames_++;
-
 	}
-
 }
