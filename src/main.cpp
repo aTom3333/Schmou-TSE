@@ -12,6 +12,7 @@
 #include <SFML/Audio.hpp>
 #include <string>
 //#include "Input.h"
+#include "Utilitaires/Chargeur.h"
 
 
 // Code minimal

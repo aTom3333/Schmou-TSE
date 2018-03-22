@@ -19,12 +19,12 @@ CapBismillah::CapBismillah()
 	textureV_.at(3)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon3.png");
 	for(size_t i = 0; i < 4; ++i) spriteV_.emplace_back(sf::Sprite(*textureV_.at(i)));
 
-	//Son
-	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/Bismillah.wav");
-	sound_.setBuffer(soundbuffer_);
-	sound_.setLoop(false);
+    //Son
+    soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/Bismillah.wav");
+    sound_.setBuffer(soundbuffer_);
+    sound_.setLoop(false);
 
-	affiche_ = true;
+    affiche_ = true;
 }
 
 void CapBismillah::utiliser(int x, int y)
@@ -41,7 +41,7 @@ void CapBismillah::utiliser(int x, int y)
 
 void CapBismillah::actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule)
 {
-	// Juste pour mute les warnings du compilateur
+    // Juste pour mute les warnings du compilateur
     (void)vaisseau;
 
 	// Création du projectile au moment où la compétence est lancée
