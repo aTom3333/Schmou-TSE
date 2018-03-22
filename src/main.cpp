@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
 
 	bool continuer = true;
 
-	pile.top()->executer();
+	pile.top()->executer(); 
 	
 	
 
