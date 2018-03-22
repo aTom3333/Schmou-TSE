@@ -21,18 +21,22 @@ int main(int argc, char* argv[])
 	//if (argv[0] != std::string("Schmou'TSE")) //TODO PG faire de la merde avec istringstream
 
 	//TG Pierre
-	//sf::Music eyaeya;
-	//eyaeya.openFromFile("../../rc/Musics/eyaeya.ogg");
-	//eyaeya.setLoop(true);
-	//eyaeya.play();
+    //sf::Music eyaeya;
+    //eyaeya.openFromFile("../../rc/Musics/eyaeya.ogg");
+    //eyaeya.setLoop(true);
+    //eyaeya.play();
+    sf::Music intro;
+    intro.openFromFile("../../rc/Musics/intro_wtf.wav");
+    intro.setLoop(false);
+    intro.play();
 	
-	//TODO PG refaire l'aléatoire
+	//TODO PG refaire l'alÃ©atoire
 	srand(time(nullptr));
 
-	//Fenêtre
+	//FenÃªtre
 	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE");
 
-	//Stack d'écran
+	//Stack d'Ã©cran
 	std::stack<std::unique_ptr<Ecran>> pile;
 
 	//Lancement de partie	
