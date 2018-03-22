@@ -18,9 +18,9 @@ public:
 	*/
 	ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spriteV, sf::Sound sound, Equipe equipe = NEUTRE);
 
-	void gestion(sf::RenderWindow& window, sf::Time tempsEcoule);
+	void gestion(sf::RenderWindow& window, sf::Time tempsEcoule) override;
 
-	void agit(Entite& e);
+	void agit(Entite& e) override;
 
 private:
 	const Entite& lanceur_;

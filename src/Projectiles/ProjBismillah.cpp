@@ -98,7 +98,7 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 		double R = hypot(lanceur_.getPosition().y / 2.0, 96.0 / 2.0);
 		cercleEnglobant_.setRadius(lanceur_.getPosition().y / 2);
 		cercleEnglobant_.setOrigin(R, R);
-		cercleEnglobant_.setPosition(lanceur_.getPosition().x + 32, lanceur_->getPosition().y / 2);
+		cercleEnglobant_.setPosition(lanceur_.getPosition().x + 32, lanceur_.getPosition().y / 2);
 
 		// Modification de la position de la hitbox
 		setPosition({ lanceur_.getPosition().x + 32 - forme_.at(0)->getGlobalBounds().width/(float)2.0 , 0 });
