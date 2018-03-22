@@ -60,6 +60,7 @@ class ProjBoing : public Projectile
 		int my_; /// Multiplicateur (1 ou -1) pour gérer le sens du projectile
 		int vx_; /// Vitesse horizontale
 		int vy_; /// Vitesse Verticale
+		int rotation_;
 };
 
 #endif //PROJ_TEST_H
