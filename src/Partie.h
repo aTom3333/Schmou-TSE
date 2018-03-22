@@ -8,6 +8,7 @@
 #include <memory>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
+
 #include "Capacites/Capacite.h"
 #include "Projectiles/Projectile.h"
 #include "Vaisseau/Vaisseau.h"
@@ -15,6 +16,7 @@
 #include "Interface/Overlay.h"
 #include "Pattern/Vague.h"
 #include "def_type.h"
+#include "Ecran.h"
 
 
 /**
@@ -26,10 +28,10 @@
 
 // test
 
-class Partie
+class Partie : public Ecran
 {
 	public:
-		Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD = true, bool avecPattern = true);
+		Partie(std::stack<std::unique_ptr<Ecran>>& pile, sf::RenderWindow& window, Input::Media media, bool afficheHUD = true, bool avecPattern = true);
 		~Partie();
 
 		void jeu();
@@ -41,8 +43,7 @@ class Partie
 		//Patterns
 		void initPatternTest();
 
-		//TODO temporaire pour tester, n'existe pas dans le jeu livré
-		void testPartie();
+		void executer();
 
 	protected:
 		//attributs de gameplay

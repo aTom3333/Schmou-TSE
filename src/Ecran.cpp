@@ -1,6 +1,6 @@
 #include "Ecran.h"
 
-Ecran::Ecran()
+Ecran::Ecran(std::stack<std::unique_ptr<Ecran>>& pile) : pile_{ pile }
 {
 	//polices
 	sf::Font temp_font;

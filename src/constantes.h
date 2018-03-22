@@ -3,11 +3,11 @@
 
 #define PI acos(-1.0) /// Valeur de pi
 
-constexpr size_t ECRAN_L = 1024; /// Largueur de la fenetre
-constexpr size_t ECRAN_H = 768; /// Hauteur de la fenetre
+constexpr float ECRAN_L = 1024; /// Largueur de la fenetre
+constexpr float ECRAN_H = 768; /// Hauteur de la fenetre
 
-constexpr size_t OVERLAY_BARRE_L=500; /// Largueur des barres de l'overlay
-constexpr size_t OVERLAY_BARRE_H=16; /// Hauteur des barres de l'overlay
+constexpr float OVERLAY_BARRE_L = 500; /// Largueur des barres de l'overlay
+constexpr float OVERLAY_BARRE_H = 16; /// Hauteur des barres de l'overlay
 
 constexpr size_t NB_ACTION = 7; /// Nombre d'actions
 

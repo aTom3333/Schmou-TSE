@@ -6,7 +6,7 @@
 #include "Pattern/Vague.h"
 #include "Ecran.h"
 
-Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : window_{window}, input_(window, media), avecPattern_{avecPattern}, afficheHUD_{afficheHUD}
+Partie::Partie(std::stack<std::unique_ptr<Ecran>>& pile, sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : window_{window}, input_(window, media), avecPattern_{avecPattern}, afficheHUD_{afficheHUD}, Ecran(pile)
 {
 	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
 	{
@@ -22,7 +22,7 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 Partie::~Partie()
 {}
 
-void Partie::testPartie()
+void Partie::executer()
 {
 	//TODO CL réglage volume global temporaire
 	sf::Listener::setGlobalVolume(10);
