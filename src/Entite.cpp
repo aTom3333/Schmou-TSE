@@ -50,7 +50,7 @@ void Entite::afficher(sf::RenderWindow & window, bool debug)
 }
 
 
-void Entite::move(sf::Vector2f& delta)
+void Entite::move(sf::Vector2f delta)
 {
 	if(innate_)
 	{
@@ -141,7 +141,7 @@ bool Entite::estDetruit()
 	return detruit_;
 }
 
-float Entite::getDegatsColl_()
+float Entite::getDegatsColl_() const
 {
 	return degatsColl_;
 }
@@ -152,7 +152,7 @@ void Entite::setNbPositions(int val)
 	if(val == 0) positionsPrev_.clear();
 }
 
-void Entite::setSmokeTexture(sf::Texture &text, sf::Color couleur)
+void Entite::setSmokeTexture(const sf::Texture &text, sf::Color couleur)
 {
 	textSmoke_ = text;
 	smoke_.setTexture(textSmoke_);

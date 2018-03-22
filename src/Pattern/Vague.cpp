@@ -15,12 +15,12 @@ Vague::~Vague()
 		delete v_[i].v;*/
 }
 
-void Vague::ajouterVaisseau(float t, Vaisseau * v)
+void Vague::ajouterVaisseau(float t, vaisseau_ptr v)
 {
 	v_.push_back({ t, v, false });
 }
 
-void Vague::gestion(std::vector<Vaisseau*>& vaisseaux, sf::Time t)
+void Vague::gestion(vaisseau_container& vaisseaux, sf::Time t)
 {
 	float temps = t.asMilliseconds();
 	t_ += temps;

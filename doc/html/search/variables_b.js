@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['v',['v',['../struct_element_vague.html#a74ef9460cb2ccf37f07caa28b48959ec',1,'ElementVague']]],
-  ['vit_5f',['vit_',['../class_entite.html#aaacb36948d7853e03a7f9a42aa6ad2d5',1,'Entite']]],
-  ['vitm_5f',['vitM_',['../class_vaisseau.html#a7cf3915f4d4044ee28fd5e5633fce11c',1,'Vaisseau']]]
+  ['regenarm_5f',['regenARM_',['../class_entite.html#af9b881b665c6997dcc56cd37fb839dce',1,'Entite']]],
+  ['regenbou_5f',['regenBOU_',['../class_entite.html#a12deb3f49595ab2cb4fc01a632a989e8',1,'Entite']]],
+  ['regenpv_5f',['regenPV_',['../class_entite.html#a23d58f4c9b8593a6f0882240b1bf8e8e',1,'Entite']]]
 ];

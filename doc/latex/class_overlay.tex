@@ -2,7 +2,7 @@
 \label{class_overlay}\index{Overlay@{Overlay}}
 
 
-Classe qui gère l\textquotesingle{}overlay ingame.  
+Classe qui le bouton des capacité IG.  
 
 
 
@@ -11,13 +11,8 @@ Classe qui gère l\textquotesingle{}overlay ingame.
 
 
 
-Graphe de collaboration de Overlay\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=151pt]{class_overlay__coll__graph}
-\end{center}
-\end{figure}
+Graphe de collaboration de Overlay\+:
+% FIG 0
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,13 +20,17 @@ Graphe de collaboration de Overlay\+:\nopagebreak
 \item 
 \hyperlink{class_overlay_ad40a5e109ee4acbdec9f21d5496b7fa9}{$\sim$\+Overlay} ()
 \item 
-void \hyperlink{class_overlay_a3fcdcd87bc909289e094ce799708a0c9}{draw} (sf\+::\+Render\+Window \&window, bool b\+Draw=true)
+void \hyperlink{class_overlay_afce384f88db42331c819e361a90d943d}{init} (\hyperlink{class_vaisseau}{Vaisseau} $\ast$vaisseau)
 \item 
-void \hyperlink{class_overlay_a4a0fd28b3355bcaeb54d24641a1066e3}{gestion} (\hyperlink{class_entite}{Entite} $\ast$vaisseau)
+void \hyperlink{class_overlay_a264955d57ee1b8c3d655321f26802e18}{draw} (sf\+::\+Render\+Window \&window, \hyperlink{class_vaisseau}{Vaisseau} $\ast$vaisseau, bool b\+Draw=true)
+\item 
+void \hyperlink{class_overlay_a39d341f16ea50172a8c2add7bfdf2843}{gestion} (\hyperlink{class_vaisseau}{Vaisseau} $\ast$vaisseau)
 \end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
+Classe qui le bouton des capacité IG. 
+
 Classe qui gère l\textquotesingle{}overlay ingame. 
 
 \subsection{Documentation des constructeurs et destructeur}
@@ -50,17 +49,23 @@ Classe qui gère l\textquotesingle{}overlay ingame.
 
 
 \subsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_overlay_a3fcdcd87bc909289e094ce799708a0c9}\label{class_overlay_a3fcdcd87bc909289e094ce799708a0c9}} 
+\mbox{\Hypertarget{class_overlay_a264955d57ee1b8c3d655321f26802e18}\label{class_overlay_a264955d57ee1b8c3d655321f26802e18}} 
 \index{Overlay@{Overlay}!draw@{draw}}
 \index{draw@{draw}!Overlay@{Overlay}}
 \subsubsection{\texorpdfstring{draw()}{draw()}}
-{\footnotesize\ttfamily void Overlay\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{bool}]{b\+Draw = {\ttfamily true} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Overlay\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{\hyperlink{class_vaisseau}{Vaisseau} $\ast$}]{vaisseau,  }\item[{bool}]{b\+Draw = {\ttfamily true} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_overlay_a4a0fd28b3355bcaeb54d24641a1066e3}\label{class_overlay_a4a0fd28b3355bcaeb54d24641a1066e3}} 
+\mbox{\Hypertarget{class_overlay_a39d341f16ea50172a8c2add7bfdf2843}\label{class_overlay_a39d341f16ea50172a8c2add7bfdf2843}} 
 \index{Overlay@{Overlay}!gestion@{gestion}}
 \index{gestion@{gestion}!Overlay@{Overlay}}
 \subsubsection{\texorpdfstring{gestion()}{gestion()}}
-{\footnotesize\ttfamily void Overlay\+::gestion (\begin{DoxyParamCaption}\item[{\hyperlink{class_entite}{Entite} $\ast$}]{vaisseau }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Overlay\+::gestion (\begin{DoxyParamCaption}\item[{\hyperlink{class_vaisseau}{Vaisseau} $\ast$}]{vaisseau }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_overlay_afce384f88db42331c819e361a90d943d}\label{class_overlay_afce384f88db42331c819e361a90d943d}} 
+\index{Overlay@{Overlay}!init@{init}}
+\index{init@{init}!Overlay@{Overlay}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Overlay\+::init (\begin{DoxyParamCaption}\item[{\hyperlink{class_vaisseau}{Vaisseau} $\ast$}]{vaisseau }\end{DoxyParamCaption})}
 
 
 

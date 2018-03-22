@@ -7,17 +7,12 @@ Classe qui décrit les vagues d\textquotesingle{}ennemis.
 
 
 
-{\ttfamily \#include $<$vague.\+h$>$}
+{\ttfamily \#include $<$Vague.\+h$>$}
 
 
 
-Graphe de collaboration de Vague\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=181pt]{class_vague__coll__graph}
-\end{center}
-\end{figure}
+Graphe de collaboration de Vague\+:
+% FIG 0
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,7 +27,11 @@ void \hyperlink{class_vague_a82124cdeb165825047f9dd8164e69a16}{ajouter\+Vaisseau
 void \hyperlink{class_vague_a37649d5f8063b1d516ce1f865a9d521d}{gestion} (std\+::vector$<$ \hyperlink{class_vaisseau}{Vaisseau} $\ast$$>$ \&vaisseaux, sf\+::\+Time t)
 \begin{DoxyCompactList}\small\item\em Gere la vague. \end{DoxyCompactList}\item 
 void \hyperlink{class_vague_a564d612f69751dd198ffa7ac61ea04dd}{set\+Temps\+Debut} (float t)
-\begin{DoxyCompactList}\small\item\em Gere la vague. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gere la vague. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{struct_element_vague}{Element\+Vague} $>$ \hyperlink{class_vague_a1d927f38da46323e72208aaeb1b07d5b}{getv\+\_\+} ()
+\item 
+void \hyperlink{class_vague_aed7f0a70cc0d93ed686af4e100376974}{set\+Equipe\+All} (\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe} equipe)
+\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
@@ -51,7 +50,7 @@ Cette classe pertmet de créer des vaisseaux selon un schéma défini, à partir
 \index{Vague@{Vague}!Vague@{Vague}}
 \index{Vague@{Vague}!Vague@{Vague}}
 \subsubsection{\texorpdfstring{Vague()}{Vague()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Vague\+::\+Vague (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Vague\+::\+Vague (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 \mbox{\Hypertarget{class_vague_a72eb74bd6b6cc6de266fa4b8f77e56d4}\label{class_vague_a72eb74bd6b6cc6de266fa4b8f77e56d4}} 
 \index{Vague@{Vague}!````~Vague@{$\sim$\+Vague}}
@@ -85,6 +84,18 @@ Gere la vague.
 {\em vaisseaux} & Vecteur de tous les vaisseaux présent à l\textquotesingle{}écran Gere le déclanchement de la vague et l\textquotesingle{}apparition des vaisseaux \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_vague_a1d927f38da46323e72208aaeb1b07d5b}\label{class_vague_a1d927f38da46323e72208aaeb1b07d5b}} 
+\index{Vague@{Vague}!getv\+\_\+@{getv\+\_\+}}
+\index{getv\+\_\+@{getv\+\_\+}!Vague@{Vague}}
+\subsubsection{\texorpdfstring{getv\+\_\+()}{getv\_()}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{struct_element_vague}{Element\+Vague}$>$ Vague\+::getv\+\_\+ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vague_aed7f0a70cc0d93ed686af4e100376974}\label{class_vague_aed7f0a70cc0d93ed686af4e100376974}} 
+\index{Vague@{Vague}!set\+Equipe\+All@{set\+Equipe\+All}}
+\index{set\+Equipe\+All@{set\+Equipe\+All}!Vague@{Vague}}
+\subsubsection{\texorpdfstring{set\+Equipe\+All()}{setEquipeAll()}}
+{\footnotesize\ttfamily void Vague\+::set\+Equipe\+All (\begin{DoxyParamCaption}\item[{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}}]{equipe }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_vague_a564d612f69751dd198ffa7ac61ea04dd}\label{class_vague_a564d612f69751dd198ffa7ac61ea04dd}} 
 \index{Vague@{Vague}!set\+Temps\+Debut@{set\+Temps\+Debut}}
 \index{set\+Temps\+Debut@{set\+Temps\+Debut}!Vague@{Vague}}
@@ -104,5 +115,5 @@ Gere la vague.
 
 La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
-src/\hyperlink{vague_8h}{vague.\+h}\item 
-src/\hyperlink{vague_8cpp}{vague.\+cpp}\end{DoxyCompactItemize}
+src/\+Pattern/\hyperlink{_vague_8h}{Vague.\+h}\item 
+src/\+Pattern/\hyperlink{_vague_8cpp}{Vague.\+cpp}\end{DoxyCompactItemize}

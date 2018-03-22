@@ -44,7 +44,7 @@ public:
 	x = x0 + sens*v*t (faux mais approximation si la différence de temps est très petite devant la période)
 	y = pente * (x - x0) + y0 + amplitude * sin(2*pi/période * x)
 	*/
-	VaisseauDefenseur(float x, float y, std::vector<Vaisseau*> &vaisseaux, Trajectoire traj, float param1, float param2, float param3 = 0, float param4 = 0);
+	VaisseauDefenseur(float x, float y, vaisseau_container &vaisseaux, Trajectoire traj, float param1, float param2, float param3 = 0, float param4 = 0);
 	/**
 	* @fn ~VaisseauDefenseur
 	* @brief Destructeur

@@ -80,12 +80,14 @@ $(function() {
 <div class="dynheader">
 Graphe d'héritage de Capacite:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_capacite__inherit__graph.svg" width="488" height="419"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><!-- SVG 0 -->
+</div>
 </div>
 <div class="dynheader">
 Graphe de collaboration de Capacite:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_capacite__coll__graph.svg" width="130" height="250"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><!-- SVG 1 -->
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -102,31 +104,79 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a75c9621d7a704fedb10ad29c6a697d64"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a75c9621d7a704fedb10ad29c6a697d64">actualiser</a> (std::vector&lt; <a class="el" href="class_projectile.html">Projectile</a> *&gt; &amp;projectiles, <a class="el" href="class_entite.html">Entite</a> &amp;vaisseau, float tempsEcoule)=0</td></tr>
 <tr class="memdesc:a75c9621d7a704fedb10ad29c6a697d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction virtuel qui active les effets de la capacité  <a href="#a75c9621d7a704fedb10ad29c6a697d64">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a75c9621d7a704fedb10ad29c6a697d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af07c1c3a2c9259a7eab270b3d8f867de"><td class="memItemLeft" align="right" valign="top">float const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#af07c1c3a2c9259a7eab270b3d8f867de">getCooldown</a> ()</td></tr>
-<tr class="separator:af07c1c3a2c9259a7eab270b3d8f867de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a963dd214cc53c76358b5326d9164884f"><td class="memItemLeft" align="right" valign="top">float const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a963dd214cc53c76358b5326d9164884f">getTime</a> ()</td></tr>
-<tr class="separator:a963dd214cc53c76358b5326d9164884f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96218b289768ff461ffaaa0abe014a42"><td class="memItemLeft" align="right" valign="top">std::string const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a96218b289768ff461ffaaa0abe014a42">getNom</a> ()</td></tr>
-<tr class="separator:a96218b289768ff461ffaaa0abe014a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7e297324570300fe7786dddb8c05ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#aba7e297324570300fe7786dddb8c05ef">initIcon</a> (int i)</td></tr>
+<tr class="separator:aba7e297324570300fe7786dddb8c05ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b7b9b75b737fa5ef94997de294b84aa"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a8b7b9b75b737fa5ef94997de294b84aa">getCooldown</a> () const</td></tr>
+<tr class="separator:a8b7b9b75b737fa5ef94997de294b84aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb50c03553bc0b08585c3886c0a22656"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#abb50c03553bc0b08585c3886c0a22656">getTime</a> () const</td></tr>
+<tr class="separator:abb50c03553bc0b08585c3886c0a22656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36ba3cb1e9a72586dff32fa7f0df85cf"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a36ba3cb1e9a72586dff32fa7f0df85cf">getNom</a> () const</td></tr>
+<tr class="separator:a36ba3cb1e9a72586dff32fa7f0df85cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa66c20bba4433f871c91c3836a0c1929"><td class="memItemLeft" align="right" valign="top">const sf::Sprite &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#aa66c20bba4433f871c91c3836a0c1929">getIcon</a> () const</td></tr>
+<tr class="separator:aa66c20bba4433f871c91c3836a0c1929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4585b46b989301b127a93dc062a0b8aa"><td class="memItemLeft" align="right" valign="top">const sf::RectangleShape &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a4585b46b989301b127a93dc062a0b8aa">getMasque</a> () const</td></tr>
+<tr class="separator:a4585b46b989301b127a93dc062a0b8aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91f1a5f98354c08f75caf99b0513d3c4"><td class="memItemLeft" align="right" valign="top">const sf::Text &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a91f1a5f98354c08f75caf99b0513d3c4">getText</a> () const</td></tr>
+<tr class="separator:a91f1a5f98354c08f75caf99b0513d3c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dd5ea561e52140a345be7e62a33cf1f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a6dd5ea561e52140a345be7e62a33cf1f">getAffiche</a> ()</td></tr>
+<tr class="separator:a6dd5ea561e52140a345be7e62a33cf1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40152147df357f3c0d9ea1116b0f7241"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a40152147df357f3c0d9ea1116b0f7241">getTir</a> ()</td></tr>
+<tr class="separator:a40152147df357f3c0d9ea1116b0f7241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35743163d8764fe437b3ca96bbd1dad1"><td class="memItemLeft" align="right" valign="top">const sf::SoundBuffer &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a35743163d8764fe437b3ca96bbd1dad1">getSoundBuffer_</a> () const</td></tr>
+<tr class="separator:a35743163d8764fe437b3ca96bbd1dad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9850d3e1c8166d4a7e932d288b8fce60"><td class="memItemLeft" align="right" valign="top">const sf::Sound &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a9850d3e1c8166d4a7e932d288b8fce60">getSound_</a> () const</td></tr>
+<tr class="separator:a9850d3e1c8166d4a7e932d288b8fce60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a103031e01d2fc714b52105b23f3547d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a103031e01d2fc714b52105b23f3547d1">afficherNom</a> (sf::RenderWindow &amp;window)</td></tr>
+<tr class="separator:a103031e01d2fc714b52105b23f3547d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af50b4c0bf1de8d846c998cba83e1e51f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#af50b4c0bf1de8d846c998cba83e1e51f">gestionIcon</a> ()</td></tr>
+<tr class="separator:af50b4c0bf1de8d846c998cba83e1e51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
-<tr class="memitem:abc3eb04129009107c0b60b03e7a3ff06"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#abc3eb04129009107c0b60b03e7a3ff06">debutX_</a></td></tr>
-<tr class="separator:abc3eb04129009107c0b60b03e7a3ff06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a741d48934a015c226b15e6519724e400"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a741d48934a015c226b15e6519724e400">debutY_</a></td></tr>
-<tr class="separator:a741d48934a015c226b15e6519724e400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2bb8ed749c9df4dbffcd37bf2760af8"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#ae2bb8ed749c9df4dbffcd37bf2760af8">capText_</a></td></tr>
+<tr class="separator:ae2bb8ed749c9df4dbffcd37bf2760af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7087b64d553bdb520382c97dbcfdcbe"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#ab7087b64d553bdb520382c97dbcfdcbe">capacite_</a></td></tr>
+<tr class="separator:ab7087b64d553bdb520382c97dbcfdcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af256cf39048f6b10f6f7e81ba0f62432"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#af256cf39048f6b10f6f7e81ba0f62432">masque_</a></td></tr>
+<tr class="separator:af256cf39048f6b10f6f7e81ba0f62432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb8abeff4070e7337cb8e42faa93c66f"><td class="memItemLeft" align="right" valign="top">sf::Font&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#abb8abeff4070e7337cb8e42faa93c66f">font_</a></td></tr>
+<tr class="separator:abb8abeff4070e7337cb8e42faa93c66f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad76ace2cf7ece150cd533bba193e262b"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#ad76ace2cf7ece150cd533bba193e262b">text_</a></td></tr>
+<tr class="separator:ad76ace2cf7ece150cd533bba193e262b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b566779d1926b5db0ed5ec4d8cd7891"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a8b566779d1926b5db0ed5ec4d8cd7891">affiche_</a> = false</td></tr>
+<tr class="separator:a8b566779d1926b5db0ed5ec4d8cd7891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5318fb64d0def1069a9730c497d4bb6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#ae5318fb64d0def1069a9730c497d4bb6">tir_</a> = false</td></tr>
+<tr class="separator:ae5318fb64d0def1069a9730c497d4bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a430472b509233086cbad1d6d8332dc8c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a430472b509233086cbad1d6d8332dc8c">nom_</a></td></tr>
+<tr class="separator:a430472b509233086cbad1d6d8332dc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf2ac63aa5928299c14581e681a16328"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#abf2ac63aa5928299c14581e681a16328">niveau_</a></td></tr>
+<tr class="memdesc:abf2ac63aa5928299c14581e681a16328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nom de la compétence.  <a href="#abf2ac63aa5928299c14581e681a16328">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abf2ac63aa5928299c14581e681a16328"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c0157dce9f9de52307d094be0af6d62"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a4c0157dce9f9de52307d094be0af6d62">debutX_</a></td></tr>
+<tr class="memdesc:a4c0157dce9f9de52307d094be0af6d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Niveau, à partir de 1.  <a href="#a4c0157dce9f9de52307d094be0af6d62">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4c0157dce9f9de52307d094be0af6d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06dfbb349078ad8de25be378466c44d8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a06dfbb349078ad8de25be378466c44d8">debutY_</a></td></tr>
+<tr class="separator:a06dfbb349078ad8de25be378466c44d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa84204be03602333d694faa14dbb693c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#aa84204be03602333d694faa14dbb693c">cooldown_</a></td></tr>
 <tr class="memdesc:aa84204be03602333d694faa14dbb693c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position de départ.  <a href="#aa84204be03602333d694faa14dbb693c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa84204be03602333d694faa14dbb693c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23a2b453acba92c50694a3c682258ee9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a23a2b453acba92c50694a3c682258ee9">t_stay</a></td></tr>
+<tr class="memdesc:a23a2b453acba92c50694a3c682258ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temps à attendre avant de pouvoir utiliser la capacité à nouveau.  <a href="#a23a2b453acba92c50694a3c682258ee9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a23a2b453acba92c50694a3c682258ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade805898750e70261be4f4ced92a9063"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#ade805898750e70261be4f4ced92a9063">t_</a></td></tr>
-<tr class="memdesc:ade805898750e70261be4f4ced92a9063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temps à attendre avant de pouvoir utiliser la capacité à nouveau.  <a href="#ade805898750e70261be4f4ced92a9063">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ade805898750e70261be4f4ced92a9063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temps après lequel le projectile issu disparait.  <a href="#ade805898750e70261be4f4ced92a9063">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ade805898750e70261be4f4ced92a9063"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a250c28dafd8e12b58ccfb4224329f111"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a250c28dafd8e12b58ccfb4224329f111">frames_</a></td></tr>
-<tr class="memdesc:a250c28dafd8e12b58ccfb4224329f111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temps écoulé depuis la dernière activation de la compétance.  <a href="#a250c28dafd8e12b58ccfb4224329f111">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a250c28dafd8e12b58ccfb4224329f111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temps écoulé depuis la dernière activation de la compétence.  <a href="#a250c28dafd8e12b58ccfb4224329f111">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a250c28dafd8e12b58ccfb4224329f111"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a430472b509233086cbad1d6d8332dc8c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a430472b509233086cbad1d6d8332dc8c">nom_</a></td></tr>
-<tr class="memdesc:a430472b509233086cbad1d6d8332dc8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de frames écoulé depuis la dernière activation.  <a href="#a430472b509233086cbad1d6d8332dc8c">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a430472b509233086cbad1d6d8332dc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16c9104da3291eb0cae4238fed736e58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a16c9104da3291eb0cae4238fed736e58">autoAim</a></td></tr>
+<tr class="memdesc:a16c9104da3291eb0cae4238fed736e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de frames écoulé depuis la dernière activation.  <a href="#a16c9104da3291eb0cae4238fed736e58">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a16c9104da3291eb0cae4238fed736e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb9d4886a4cd56b9e95d53f527fcaec6"><td class="memItemLeft" align="right" valign="top">sf::SoundBuffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#abb9d4886a4cd56b9e95d53f527fcaec6">soundbuffer_</a></td></tr>
+<tr class="memdesc:abb9d4886a4cd56b9e95d53f527fcaec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">état visée auto.  <a href="#abb9d4886a4cd56b9e95d53f527fcaec6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abb9d4886a4cd56b9e95d53f527fcaec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a535908d8d284fcf9df844fe6f6c3c6b3"><td class="memItemLeft" align="right" valign="top">sf::Sound&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_capacite.html#a535908d8d284fcf9df844fe6f6c3c6b3">sound_</a></td></tr>
+<tr class="separator:a535908d8d284fcf9df844fe6f6c3c6b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe abstraite qui définit la structure générale d'une capacité, à faire hériter de chaque capacité </p>
@@ -233,19 +283,19 @@ Attributs protégés</h2></td></tr>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">projectile</td><td>Vecteur de tout les projectiles présent à l'écran </td></tr>
-    <tr><td class="paramname">vaisseau</td><td><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a> qui a activé la compétance </td></tr>
+    <tr><td class="paramname">vaisseau</td><td><a class="el" href="class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi ">Vaisseau</a> qui a activé la compétence </td></tr>
     <tr><td class="paramname">tempEcoule</td><td>Temps écoulé depuis la dernière boucle</td></tr>
   </table>
   </dd>
 </dl>
 <p>Fonction virtuel qui gère la création de projectiles et des modifications à apporter au vaisseau </p>
 
-<p>Implémenté dans <a class="el" href="class_cap_test.html#a082e76e397a400b9c46e13e63ac7ef85">CapTest</a>, <a class="el" href="class_cap_dash.html#a23e3009b85288e7aadce2eb2b581fac0">CapDash</a>, <a class="el" href="class_cap_piou.html#a0823f301d48377ca2e14a0cd17922716">CapPiou</a>, et <a class="el" href="class_cap_missile.html#adcb6a35330589c49910e6dd6cc7f2f7d">CapMissile</a>.</p>
+<p>Implémenté dans <a class="el" href="class_cap_boing.html#a3d7900fcfc45344f7b584efb7f8c81b6">CapBoing</a>, <a class="el" href="class_cap_bouclier_rond.html#a4b272fe8aece56cb0e0ba7bf21b9d574">CapBouclierRond</a>, <a class="el" href="class_cap_dash.html#a23e3009b85288e7aadce2eb2b581fac0">CapDash</a>, <a class="el" href="class_cap_piou.html#a0823f301d48377ca2e14a0cd17922716">CapPiou</a>, <a class="el" href="class_cap_missile.html#adcb6a35330589c49910e6dd6cc7f2f7d">CapMissile</a>, et <a class="el" href="class_cap_bismillah.html#aef9579d9a4ee46cc92873ceb6440560a">CapBismillah</a>.</p>
 
 </div>
 </div>
-<a id="af07c1c3a2c9259a7eab270b3d8f867de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af07c1c3a2c9259a7eab270b3d8f867de">&#9670;&nbsp;</a></span>getCooldown()</h2>
+<a id="a103031e01d2fc714b52105b23f3547d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a103031e01d2fc714b52105b23f3547d1">&#9670;&nbsp;</a></span>afficherNom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,7 +304,50 @@ Attributs protégés</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float const Capacite::getCooldown </td>
+          <td class="memname">void Capacite::afficherNom </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af50b4c0bf1de8d846c998cba83e1e51f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af50b4c0bf1de8d846c998cba83e1e51f">&#9670;&nbsp;</a></span>gestionIcon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Capacite::gestionIcon </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6dd5ea561e52140a345be7e62a33cf1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dd5ea561e52140a345be7e62a33cf1f">&#9670;&nbsp;</a></span>getAffiche()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Capacite::getAffiche </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -269,8 +362,8 @@ Attributs protégés</h2></td></tr>
 
 </div>
 </div>
-<a id="a96218b289768ff461ffaaa0abe014a42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96218b289768ff461ffaaa0abe014a42">&#9670;&nbsp;</a></span>getNom()</h2>
+<a id="a8b7b9b75b737fa5ef94997de294b84aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b7b9b75b737fa5ef94997de294b84aa">&#9670;&nbsp;</a></span>getCooldown()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,7 +372,207 @@ Attributs protégés</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string const Capacite::getNom </td>
+          <td class="memname">float Capacite::getCooldown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa66c20bba4433f871c91c3836a0c1929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa66c20bba4433f871c91c3836a0c1929">&#9670;&nbsp;</a></span>getIcon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const sf::Sprite&amp; Capacite::getIcon </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4585b46b989301b127a93dc062a0b8aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4585b46b989301b127a93dc062a0b8aa">&#9670;&nbsp;</a></span>getMasque()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const sf::RectangleShape&amp; Capacite::getMasque </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a36ba3cb1e9a72586dff32fa7f0df85cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36ba3cb1e9a72586dff32fa7f0df85cf">&#9670;&nbsp;</a></span>getNom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; Capacite::getNom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9850d3e1c8166d4a7e932d288b8fce60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9850d3e1c8166d4a7e932d288b8fce60">&#9670;&nbsp;</a></span>getSound_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const sf::Sound&amp; Capacite::getSound_ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a35743163d8764fe437b3ca96bbd1dad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35743163d8764fe437b3ca96bbd1dad1">&#9670;&nbsp;</a></span>getSoundBuffer_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const sf::SoundBuffer&amp; Capacite::getSoundBuffer_ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91f1a5f98354c08f75caf99b0513d3c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91f1a5f98354c08f75caf99b0513d3c4">&#9670;&nbsp;</a></span>getText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const sf::Text&amp; Capacite::getText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abb50c03553bc0b08585c3886c0a22656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb50c03553bc0b08585c3886c0a22656">&#9670;&nbsp;</a></span>getTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Capacite::getTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a40152147df357f3c0d9ea1116b0f7241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40152147df357f3c0d9ea1116b0f7241">&#9670;&nbsp;</a></span>getTir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Capacite::getTir </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -294,27 +587,20 @@ Attributs protégés</h2></td></tr>
 
 </div>
 </div>
-<a id="a963dd214cc53c76358b5326d9164884f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a963dd214cc53c76358b5326d9164884f">&#9670;&nbsp;</a></span>getTime()</h2>
+<a id="aba7e297324570300fe7786dddb8c05ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba7e297324570300fe7786dddb8c05ef">&#9670;&nbsp;</a></span>initIcon()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float const Capacite::getTime </td>
+          <td class="memname">void Capacite::initIcon </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -356,18 +642,108 @@ Attributs protégés</h2></td></tr>
 <p>Fonction virtuel qui active la capacite lorsqu'elle est appelée. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>Abscisse de la postion où la capacite est utilisée </td></tr>
-    <tr><td class="paramname">y</td><td>Ordonnée de la postion où la capacite est utilisée</td></tr>
+    <tr><td class="paramname">x</td><td>Abscisse de la position où la capacite est utilisée </td></tr>
+    <tr><td class="paramname">y</td><td>Ordonnée de la position où la capacite est utilisée</td></tr>
   </table>
   </dd>
 </dl>
-<p>Fonction virtuel qui initialise la postion de départ et le timer </p>
+<p>Fonction virtuel qui initialise la position de départ et le timer </p>
 
-<p>Implémenté dans <a class="el" href="class_cap_test.html#a9c85a17dec6cf78f1438b08b175f650d">CapTest</a>, <a class="el" href="class_cap_piou.html#aad0eb3b9fab67785e1d0441b96aa921f">CapPiou</a>, <a class="el" href="class_cap_dash.html#a8a0fe26c8b13d8a9f6cf5a95d6559f3d">CapDash</a>, et <a class="el" href="class_cap_missile.html#a4ba082615a3721083142549a4c8216ad">CapMissile</a>.</p>
+<p>Implémenté dans <a class="el" href="class_cap_bouclier_rond.html#a058b65433ae77666bc6b64d787b455fb">CapBouclierRond</a>, <a class="el" href="class_cap_boing.html#af68b4064c3a6dafd10adbd63c2f27547">CapBoing</a>, <a class="el" href="class_cap_piou.html#aad0eb3b9fab67785e1d0441b96aa921f">CapPiou</a>, <a class="el" href="class_cap_dash.html#a8a0fe26c8b13d8a9f6cf5a95d6559f3d">CapDash</a>, <a class="el" href="class_cap_missile.html#a4ba082615a3721083142549a4c8216ad">CapMissile</a>, et <a class="el" href="class_cap_bismillah.html#a9c3b48cacee26d055f24bf05f669cfca">CapBismillah</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des données membres</h2>
+<a id="a8b566779d1926b5db0ed5ec4d8cd7891"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b566779d1926b5db0ed5ec4d8cd7891">&#9670;&nbsp;</a></span>affiche_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Capacite::affiche_ = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a16c9104da3291eb0cae4238fed736e58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16c9104da3291eb0cae4238fed736e58">&#9670;&nbsp;</a></span>autoAim</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Capacite::autoAim</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Nombre de frames écoulé depuis la dernière activation. </p>
+
+</div>
+</div>
+<a id="ab7087b64d553bdb520382c97dbcfdcbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7087b64d553bdb520382c97dbcfdcbe">&#9670;&nbsp;</a></span>capacite_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite Capacite::capacite_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2bb8ed749c9df4dbffcd37bf2760af8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2bb8ed749c9df4dbffcd37bf2760af8">&#9670;&nbsp;</a></span>capText_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture Capacite::capText_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa84204be03602333d694faa14dbb693c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa84204be03602333d694faa14dbb693c">&#9670;&nbsp;</a></span>cooldown_</h2>
 
@@ -392,8 +768,8 @@ Attributs protégés</h2></td></tr>
 
 </div>
 </div>
-<a id="abc3eb04129009107c0b60b03e7a3ff06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc3eb04129009107c0b60b03e7a3ff06">&#9670;&nbsp;</a></span>debutX_</h2>
+<a id="a4c0157dce9f9de52307d094be0af6d62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c0157dce9f9de52307d094be0af6d62">&#9670;&nbsp;</a></span>debutX_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -402,7 +778,31 @@ Attributs protégés</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Capacite::debutX_</td>
+          <td class="memname">double Capacite::debutX_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Niveau, à partir de 1. </p>
+
+</div>
+</div>
+<a id="a06dfbb349078ad8de25be378466c44d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06dfbb349078ad8de25be378466c44d8">&#9670;&nbsp;</a></span>debutY_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Capacite::debutY_</td>
         </tr>
       </table>
   </td>
@@ -414,8 +814,8 @@ Attributs protégés</h2></td></tr>
 
 </div>
 </div>
-<a id="a741d48934a015c226b15e6519724e400"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a741d48934a015c226b15e6519724e400">&#9670;&nbsp;</a></span>debutY_</h2>
+<a id="abb8abeff4070e7337cb8e42faa93c66f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb8abeff4070e7337cb8e42faa93c66f">&#9670;&nbsp;</a></span>font_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -424,7 +824,7 @@ Attributs protégés</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Capacite::debutY_</td>
+          <td class="memname">sf::Font Capacite::font_</td>
         </tr>
       </table>
   </td>
@@ -456,7 +856,53 @@ Attributs protégés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Temps écoulé depuis la dernière activation de la compétance. </p>
+<p>Temps écoulé depuis la dernière activation de la compétence. </p>
+
+</div>
+</div>
+<a id="af256cf39048f6b10f6f7e81ba0f62432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af256cf39048f6b10f6f7e81ba0f62432">&#9670;&nbsp;</a></span>masque_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape Capacite::masque_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf2ac63aa5928299c14581e681a16328"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf2ac63aa5928299c14581e681a16328">&#9670;&nbsp;</a></span>niveau_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Capacite::niveau_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Nom de la compétence. </p>
 
 </div>
 </div>
@@ -480,7 +926,51 @@ Attributs protégés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Nombre de frames écoulé depuis la dernière activation. </p>
+</div>
+</div>
+<a id="a535908d8d284fcf9df844fe6f6c3c6b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a535908d8d284fcf9df844fe6f6c3c6b3">&#9670;&nbsp;</a></span>sound_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sound Capacite::sound_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abb9d4886a4cd56b9e95d53f527fcaec6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb9d4886a4cd56b9e95d53f527fcaec6">&#9670;&nbsp;</a></span>soundbuffer_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::SoundBuffer Capacite::soundbuffer_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>état visée auto. </p>
 
 </div>
 </div>
@@ -504,12 +994,81 @@ Attributs protégés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Temps après lequel le projectile issu disparait. </p>
+
+</div>
+</div>
+<a id="a23a2b453acba92c50694a3c682258ee9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23a2b453acba92c50694a3c682258ee9">&#9670;&nbsp;</a></span>t_stay</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Capacite::t_stay</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 <p>Temps à attendre avant de pouvoir utiliser la capacité à nouveau. </p>
 
 </div>
 </div>
-<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<a id="ad76ace2cf7ece150cd533bba193e262b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad76ace2cf7ece150cd533bba193e262b">&#9670;&nbsp;</a></span>text_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text Capacite::text_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5318fb64d0def1069a9730c497d4bb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5318fb64d0def1069a9730c497d4bb6">&#9670;&nbsp;</a></span>tir_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Capacite::tir_ = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>src/Capacites/<a class="el" href="_capacite_8h_source.html">Capacite.h</a></li>
+<li>src/Capacites/<a class="el" href="_capacite_8cpp.html">Capacite.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

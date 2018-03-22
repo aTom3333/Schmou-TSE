@@ -8,7 +8,7 @@
 #include "../Entite.h"
 #include "../Projectiles/Projectile.h"
 #include "../Interface/Input.h"
-
+#include "../def_type.h"
 
 
 
@@ -39,7 +39,7 @@ protected:
 	std::vector<Capacite*> capacites_; /// Liste des capacités du vaisseau
 
     //section
-	std::vector<Vaisseau*> annexes_; /// Vecteur contenant toute les parties annexes d'un vaisseau
+	vaisseau_container annexes_; /// Vecteur contenant toute les parties annexes d'un vaisseau
 	std::vector<bool> annexesB_; /// Vecteur indiquant si l'annexe au même indice existe encore
 	Vaisseau * createur_; /// Si c'est une annexe, pointe vers le vaisseau  qui possede cette annexe. null_ptr sinon
 	int nbModule_; /// Si c'est une annexe, indice dans le vecteur annexe du créateur
@@ -57,7 +57,7 @@ public:
 		* Fonction virtuelle qui gère le comportement du vaisseau
 		*/
 		virtual void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input) = 0;
-		void gestionCapacite(std::vector <Projectile*> &projectiles, sf::Time t_ecoule);
+		void gestionCapacite(proj_container &projectiles, sf::Time t_ecoule);
 		/**
 		* @fn agit
 		* @brief Procédure lorsque le projectile agit avec une Entite
@@ -88,15 +88,15 @@ public:
 			
 
 	//getters
-		std::string getnom(){return nom_; }
-		int getNskin(){ return Nskin_; }
-		int getpvM(){ return pvM_; }
-		std::vector<Capacite*> getskills(){ return capacites_; }
-		bool estActif(){ return actif_; }
-		std::vector <Vaisseau*> getAnnexes(){ return annexes_; }
-		std::vector<bool> getAnnexesB(){ return annexesB_; }
-		int getatqM() { return atqM_; }
-		int getdefM() { return defM_; }
+		std::string getnom() const {return nom_; }
+		int getNskin() const { return Nskin_; }
+		int getpvM() const { return pvM_; }
+		std::vector<Capacite*> getskills() const { return capacites_; }
+		bool estActif() const { return actif_; }
+		vaisseau_container getAnnexes() const { return annexes_; }
+		std::vector<bool> getAnnexesB() const { return annexesB_; }
+		int getatqM() const { return atqM_; }
+		int getdefM() const { return defM_; }
 
 };
 

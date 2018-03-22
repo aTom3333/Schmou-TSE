@@ -21,6 +21,10 @@ CapDash::CapDash()
 
 void CapDash::utiliser(int x, int y)
 {
+	// Juste pour mute les warnings du compilateur
+	(void)x;
+	(void)y;
+	
 	// Si la compétence est disponible
 	if (t_ >= cooldown_) {
 		// Début du timer
@@ -31,8 +35,11 @@ void CapDash::utiliser(int x, int y)
 }
 
 
-void CapDash::actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule)
+void CapDash::actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule)
 {
+	// Juste pour mute les warnings du compilateur
+	(void)projectiles;
+	
 	//TODO ne se lance que si le lanceur n'est pas immobile
 
 	// Augmente la vitesse  à l'activation

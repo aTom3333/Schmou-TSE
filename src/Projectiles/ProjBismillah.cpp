@@ -2,7 +2,7 @@
 
 
 
-ProjBismillah::ProjBismillah(Entite* lanceur, std::vector<sf::Sprite>& spriteV, sf::Sound sound, Equipe equipe)
+ProjBismillah::ProjBismillah(entite_ptr lanceur, std::vector<sf::Sprite>& spriteV, sf::Sound sound, Equipe equipe)
 {
 	//Gestion du son
 	sound.play();//TODO PG pourquoi tu ne joues pas ??
@@ -11,13 +11,13 @@ ProjBismillah::ProjBismillah(Entite* lanceur, std::vector<sf::Sprite>& spriteV, 
 	spriteV_ = spriteV;
 
 	// Hitbox 
-	//TODO PG à revoir même si ça sert à rien avec CL
+	//TODO PG ï¿½ revoir mï¿½me si ï¿½a sert ï¿½ rien avec CL
 	float y = lanceur->getPosition().y;
 	double R = hypot(y / 2.0, 96.0 / 2.0);
 	cercleEnglobant_ = sf::CircleShape(R);
 	cercleEnglobant_.setOrigin(R, R);
 	cercleEnglobant_.setPosition(96.0 / 2.0, y / 2.0);
-	forme_.emplace_back(new sf::RectangleShape({ 96, y }));//où est la pos de la forme_ ?
+	forme_.emplace_back(new sf::RectangleShape({ 96, y }));//oï¿½ est la pos de la forme_ ?
 
 	// Attributs d'Entite
 	equipe_ = equipe;
@@ -34,7 +34,7 @@ ProjBismillah::ProjBismillah(Entite* lanceur, std::vector<sf::Sprite>& spriteV, 
 
 void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 {
-	int cast_frames = 50; //nombre de frames pour caster le rayon après le chargement
+	int cast_frames = 50; //nombre de frames pour caster le rayon aprï¿½s le chargement
 	int offset = 70; //nombres de frames de charge
 
 	if (age_ < offset)

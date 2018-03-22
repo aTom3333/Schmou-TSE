@@ -51,12 +51,8 @@ bool is_point_in(const sf::Vector2f& C, const sf::Shape& s)
         auto B = point_transforme(s, (i + 1) % N);
         // Vecteur AB
         auto AB = B - A;
-        // Norme de AB au carré
-        double AB_n_c = AB.x * AB.x + AB.y * AB.y;
         // Vecteur AC
         auto AC = C - A;
-        // Norme de AC au carré
-        double AC_n_c = AC.x * AC.x + AC.y * AC.y;
         // Norme du produit vectoriel de AB par AC (pas vraiment en fait, ça peut être négatif)
         double AB_v_AC_n = AB.x * AC.y - AB.y * AC.x;
 

@@ -49,7 +49,7 @@ class CapBoing : public Capacite
 		* Créer 4 ProjBoing toutes les 5 frames
 		* Actualise le timer
 		*/
-		void actualiser(std::vector<Projectile*>& projectiles, Entite& vaisseau, float tempsEcoule);
+		void actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule);
 };
 
 #endif
