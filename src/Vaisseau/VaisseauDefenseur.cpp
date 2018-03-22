@@ -26,8 +26,9 @@ VaisseauDefenseur::VaisseauDefenseur(float x, float y, vaisseau_container &vaiss
 	frames_ = 1;
 	vit_ = 10;
 	actif_ = false;
+	invincibilite_ = false;
 
-	pvM_ = 50;
+	pvM_ = 100;
 	armureM_ = 50;
 	bouclierM_ = 0;
 

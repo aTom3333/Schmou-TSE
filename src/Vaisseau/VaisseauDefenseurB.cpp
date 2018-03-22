@@ -21,6 +21,7 @@ VaisseauDefenseurB::VaisseauDefenseurB(int nb, float x, float y, Vaisseau *creat
 	equipe_ = ENNEMI;
 	vit_ = 0;
 	actif_ = false;
+	invincibilite_ = false;
 	nbModule_ = nb;
 
 	pvM_ = 1;

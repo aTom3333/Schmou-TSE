@@ -261,7 +261,7 @@ class Entite
 		float getArmure() const { return armure_; };
 		float getBouclier() const { return bouclier_; };
 		const sf::Texture& getTexture() const { return texture_; };
-		bool isInvincible() const { return framesInvincibilite_ != 0; };
+		bool isInvincible() const { return invincibilite_ && framesInvincibilite_ != 0; };
 		bool isCollisionneuse() const { return collisionneuse_; }
 		bool isCollisionnable() const { return collisionnable_; }
 
@@ -285,6 +285,7 @@ class Entite
 		bool collisionneuse_ = true;
 		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
 		bool innate_ = false; ///true si doit rester dans l'écran
+		bool invincibilite_ = true; /// true si l'netité a des frames d'invincibilité
 
 		//état
 		bool detruit_ = false; /// ture lorsque que le vaisseau est détruit

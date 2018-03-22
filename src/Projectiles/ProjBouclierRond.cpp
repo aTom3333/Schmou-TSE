@@ -24,6 +24,7 @@ ProjBouclierRond::ProjBouclierRond(Entite* Entite_liee, int pvM, int degatsColl,
 
 	// Stats
 	actif_ = true;
+	invincibilite_ = false;
 
 	pvM_ = pvM;
 	armureM_ = 0;
