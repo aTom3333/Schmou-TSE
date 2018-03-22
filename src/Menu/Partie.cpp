@@ -1,9 +1,9 @@
 #include "Partie.h"
-#include "Projectiles/_projectiles.h"
-#include "Capacites/_Capacites.h"
-#include "Vaisseau/_vaisseaux.h"
-#include "Interface/bindings.h"
-#include "Pattern/Vague.h"
+#include "../Projectiles/_projectiles.h"
+#include "../Capacites/_Capacites.h"
+#include "../Vaisseau/_vaisseaux.h"
+#include "../Interface/bindings.h"
+#include "../Pattern/Vague.h"
 #include "Ecran.h"
 
 Partie::Partie(std::vector<std::unique_ptr<Ecran>>& pile, sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : window_{window}, input_(window, media), avecPattern_{avecPattern}, afficheHUD_{afficheHUD}, Ecran(pile)
