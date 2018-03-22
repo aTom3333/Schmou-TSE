@@ -12,13 +12,12 @@ ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spr
 	spriteV_ = spriteV;
 
 	// Hitbox 
-	//TODO PG � revoir m�me si �a sert � rien avec CL
 	float y = lanceur.getPosition().y;
 	double R = hypot(y / 2.0, 96.0 / 2.0);
 	cercleEnglobant_ = sf::CircleShape(R);
 	cercleEnglobant_.setOrigin(R, R);
 	cercleEnglobant_.setPosition(96.0 / 2.0, y / 2.0);
-	forme_.emplace_back(new sf::RectangleShape({ 96, y }));//o� est la pos de la forme_ ?
+	forme_.emplace_back(new sf::RectangleShape({ 96, y }));
 
 	// Attributs d'Entite
 	equipe_ = equipe;
@@ -32,6 +31,8 @@ ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spr
 
 void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 {
+	assert(dynamic_cast<sf::RectangleShape*>(forme_.front().get()) != nullptr);
+
 	int cast_frames = 50; //nombre de frames pour caster le rayon apr�s le chargement
 	int offset = 70; //nombres de frames de charge
 
@@ -69,6 +70,7 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 		}
 
 	}
+
 	//affichage boule de chargement
 	spriteV_.at(0).setPosition({ lanceur_.getPosition().x + 32 - spriteV_.at(0).getGlobalBounds().width / (float)2.0,
 		lanceur_.getPosition().y - spriteV_.at(0).getGlobalBounds().height / (float)2.0 });
@@ -84,17 +86,6 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 	// Si le projectile est actif (si l'age � d�pass� l'offste)
 	if (actif_)
 	{
-		// R�cup�ration de la forme du laser
-		//TODO PG je pense que c'est un overkill ce test Thomas, la forme sera TOUJOURS un RectangleShape, c'est dans le **constructeur**
-		auto f = dynamic_cast<sf::RectangleShape*> (forme_[0].get());
-		//
-		//// Si la forme du laser est un rectangle 
-		//if (f != nullptr)
-		//{
-		//	// Changement de la taille de la forme du laser
-		//	f->setSize({ 96, lanceur_->getPosition().y });
-		//}
-		
 		// Repositionnement du cercle englobant
 		double R = hypot(lanceur_.getPosition().y / 2.0, 96.0 / 2.0);
 		cercleEnglobant_.setRadius(lanceur_.getPosition().y / 2);
@@ -108,6 +99,7 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 		bool debug_ = false;
 		if (debug_)
 		{
+			auto f = dynamic_cast<sf::RectangleShape*> (forme_.front().get());
 			if(f != nullptr)
 				f->setFillColor({ 255,100,100,128 });
 

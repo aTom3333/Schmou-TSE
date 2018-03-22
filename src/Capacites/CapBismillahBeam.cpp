@@ -5,11 +5,9 @@ CapBismillah::CapBismillah()
 {
 	//Caractéristiques
 	t_ = frames_ = cooldown_ = 1000; //ms
-
-	//TODO PG ici le warning pourrait �tre important (frames_ : float vers uint)
 	nom_ = "Bismillah";
 
-	//Ic�ne
+	//Icône
 	capText_.loadFromFile("../../rc/Icones_Caps/laser.png");
 	capacite_.setTexture(capText_);
 	
@@ -31,10 +29,10 @@ CapBismillah::CapBismillah()
 
 void CapBismillah::utiliser(int x, int y)
 {
-	// Si la comp�tence est disponible
+	// Si la compétence est disponible
 	if (t_ >= cooldown_)
 	{
-		// D�but du timer
+		// Début du timer
 		t_ = 0;
 		frames_ = 0;
 	}
@@ -46,17 +44,16 @@ void CapBismillah::actualiser(proj_container& projectiles, Entite& vaisseau, flo
 	// Juste pour mute les warnings du compilateur
     (void)vaisseau;
 
-	// Cr�ation du projectile au moment o� la comp�tence est lanc�e
+	// Création du projectile au moment où la compétence est lancée
 	if (frames_ == 0)
 	{
-		//TODO bug
 		proj_ptr temp(new ProjBismillah(vaisseau, spriteV_, sound_, JOUEUR));
 		projectiles.push_back(temp);
 
-		sound_.play();
+		sound_.play();//son au lancement
 	}
 
-	// Si la comp�tence est en cooldown, on actualise le timer
+	// Si la compétence est en cooldown, on actualise le timer
 	if (t_ < cooldown_)
 	{
 		t_ += tempsEcoule;

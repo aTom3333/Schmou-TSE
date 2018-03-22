@@ -10,6 +10,7 @@
 #include <SFML/Audio.hpp>
 #include <deque>
 #include <cmath>
+#include <cassert>
 
 /**
  * @class Entite

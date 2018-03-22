@@ -85,7 +85,7 @@ void Partie::testPartie()
 
 		//gestion temps
 		auto t_ecoule = clock.restart();
-		t_ecoule = t_ecoule * (float)timeSpeed_;//TODO PG vitesse
+		t_ecoule = t_ecoule * (float)timeSpeed_;
 
 		// Efface l'écran
 		window_.clear();
