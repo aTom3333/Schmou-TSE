@@ -13,11 +13,13 @@
  */
 
 class Vaisseau; // Déclaration pour éviter d'avoir à inclure un header
-using vaisseau_ptr = std::shared_ptr<Vaisseau>;
+using vaisseau_ptr = std::unique_ptr<Vaisseau>;
 using vaisseau_container = std::vector<vaisseau_ptr>;
 
 class Projectile;
-using proj_ptr = std::shared_ptr<Projectile>;
+using proj_ptr = std::weak_ptr<Projectile>;
 using proj_container = std::vector<proj_ptr>;
+
+using namespace std;
 
 #endif //SCHMOUTSE_DEF_TYPE_H
