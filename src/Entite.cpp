@@ -136,7 +136,7 @@ void Entite::setDetruit(bool val)
 
 bool Entite::estDetruit()
 {
-	if (pv_ <= 0)
+	if (pv_ <= 0 && isCollisionnable())
 		detruit_ = true;
 	return detruit_;
 }

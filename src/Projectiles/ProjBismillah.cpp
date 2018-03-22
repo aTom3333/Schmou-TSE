@@ -39,8 +39,7 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 
 	if (age_ < offset)
 	{
-		spriteV_.at(0).setPosition({ lanceur_->getPosition().x-218, lanceur_->getPosition().y - 282 });
-		window.draw(spriteV_.at(0));
+		spriteV_.at(0).setScale(sqrt((float)age_ / (float)offset), sqrt((float)age_ / (float)offset));
 	}
 	else if (age_ < offset + 1 * cast_frames / 6.0 || (offset + 5 * cast_frames / 6.0 < age_ && age_ < offset + 6 * cast_frames / 6.0))
 	{
@@ -72,6 +71,11 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 		}
 
 	}
+	//affichage boule de chargement
+	spriteV_.at(0).setPosition({ lanceur_->getPosition().x + 32 - spriteV_.at(0).getGlobalBounds().width / (float)2.0,
+		lanceur_->getPosition().y - spriteV_.at(0).getGlobalBounds().height / (float)2.0 });
+	window.draw(spriteV_.at(0));
+
 
 	if (age_ > cast_frames + offset)
 	{
