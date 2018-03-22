@@ -50,7 +50,7 @@ void CapBismillah::actualiser(proj_container& projectiles, Entite& vaisseau, flo
 	if (frames_ == 0)
 	{
 		//TODO bug
-		proj_ptr temp(new ProjBismillah(debutX_, debutY_, sound_, ALLIE));
+		proj_ptr temp(new ProjBismillah(vaisseau, spriteV_, sound_, ALLIE));
 		sound_.play();
 		projectiles.push_back(temp);
 	}

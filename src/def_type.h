@@ -20,4 +20,7 @@ class Projectile;
 using proj_ptr = std::shared_ptr<Projectile>;
 using proj_container = std::vector<proj_ptr>;
 
+class Entite;
+using entite_ptr = std::shared_ptr<Entite>;
+
 #endif //SCHMOUTSE_DEF_TYPE_H
