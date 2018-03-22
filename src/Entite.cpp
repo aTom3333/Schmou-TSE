@@ -14,7 +14,7 @@ bool collision(const Entite& e1, const Entite& e2)
 				return false;
 			if (!e1.collisionneuse_ && !e2.collisionneuse_)
 				return false;
-			if (e1.equipe_ == e2.equipe_ && e1.equipe_ != NEUTRE)
+			if ((e1.equipe_ == e2.equipe_ && e1.equipe_ != NEUTRE))
 				return false;
 			if (!collision(e1.cercleEnglobant_, e2.cercleEnglobant_))
 				return false;

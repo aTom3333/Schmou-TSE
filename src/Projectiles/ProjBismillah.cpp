@@ -48,6 +48,7 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 		for (float i = trunc(lanceur_->getPosition().y) ; i > -1; i-=0.99)
 		{
 			spriteV_.at(1).setPosition({ (float)lanceur_->getPosition().x - 16, (float)i });
+			dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ 32, lanceur_->getPosition().y });
 			window.draw(spriteV_.at(1));
 		}
 	}
@@ -56,6 +57,7 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 		for (float i = trunc(lanceur_->getPosition().y); i > -1; i -= 0.99)
 		{
 			spriteV_.at(2).setPosition({ (float)lanceur_->getPosition().x - 16, (float)i });
+			dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ 64, lanceur_->getPosition().y });
 			window.draw(spriteV_.at(2));
 		}
 
@@ -65,6 +67,7 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 		for (float i = trunc(lanceur_->getPosition().y); i > -1; i -= 0.99)
 		{
 			spriteV_.at(3).setPosition({ (float)lanceur_->getPosition().x - 16, (float)i });
+			dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ 96, lanceur_->getPosition().y });
 			window.draw(spriteV_.at(3));
 		}
 
@@ -80,23 +83,24 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 	if (actif_)
 	{
 		// Récupération de la forme du laser
+		//TODO PG je pense que c'est un overkill ce test Thomas, la forme sera TOUJOURS un RectangleShape, c'est dans le **constructeur**
 		auto f = dynamic_cast<sf::RectangleShape*> (forme_[0].get());
-		
-		// Si la forme du laser est un rectangle 
-		if (f != nullptr)
-		{
-			// Changement de la taille de la forme du laser
-			f->setSize({ 96, lanceur_->getPosition().y });
-		}
+		//
+		//// Si la forme du laser est un rectangle 
+		//if (f != nullptr)
+		//{
+		//	// Changement de la taille de la forme du laser
+		//	f->setSize({ 96, lanceur_->getPosition().y });
+		//}
 		
 		// Repositionnement du cercle englobant
 		double R = hypot(lanceur_->getPosition().y / 2.0, 96.0 / 2.0);
 		cercleEnglobant_.setRadius(lanceur_->getPosition().y / 2);
 		cercleEnglobant_.setOrigin(R, R);
-		cercleEnglobant_.setPosition(96 / 2 + lanceur_->getPosition().x, lanceur_->getPosition().y / 2);
+		cercleEnglobant_.setPosition(lanceur_->getPosition().x + 32, lanceur_->getPosition().y / 2);
 
 		// Modification de la position de la hitbox
-		setPosition({ lanceur_->getPosition().x, 0 });
+		setPosition({ lanceur_->getPosition().x + 32 - forme_.at(0)->getGlobalBounds().width/(float)2.0 , 0 });
 
 		// HACK CL Affichage de hitbox
 		bool debug_ = false;

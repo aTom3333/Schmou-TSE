@@ -4,7 +4,7 @@
 CapBismillah::CapBismillah()
 {
 	//Caractéristiques
-	t_ = frames_ = cooldown_ = 20000; //ms
+	t_ = frames_ = cooldown_ = 1000; //ms
 
 	//TODO PG ici le warning pourrait �tre important (frames_ : float vers uint)
 	nom_ = "Bismillah";
@@ -49,9 +49,11 @@ void CapBismillah::actualiser(proj_container& projectiles, Entite& vaisseau, flo
 	// Cr�ation du projectile au moment o� la comp�tence est lanc�e
 	if (frames_ == 0)
 	{
-		ProjBismillah *temp = new ProjBismillah(&vaisseau, spriteV_, sound_, JOUEUR);
-		sound_.play();
+		//ProjBismillah *temp = new ProjBismillah(&vaisseau, spriteV_, sound_, JOUEUR);
+		std::shared_ptr<Projectile> temp(new ProjBismillah(&vaisseau, spriteV_, sound_, JOUEUR));
 		projectiles.push_back(temp);
+
+		sound_.play();
 	}
 
 	// Si la comp�tence est en cooldown, on actualise le timer
