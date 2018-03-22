@@ -202,7 +202,7 @@ void Partie::deleteProjectileDetruit()
 {
 	for(unsigned int i = 0; i < projectiles_.size(); i++)
 	{
-		if (projectiles_[i]->estDetruit() && projectiles_[i]->isCollisionnable())//teste si détruit ou si pv <=0;
+		if (projectiles_[i]->estDetruit())//teste si détruit ou si pv <=0;
 		{
             std::swap(projectiles_[i], projectiles_.back());
 			projectiles_.pop_back();

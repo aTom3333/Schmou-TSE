@@ -4,7 +4,7 @@
 CapBismillah::CapBismillah()
 {
 	//Caractéristiques
-	t_ = frames_ = cooldown_ = 20000; //ms
+	t_ = frames_ = cooldown_ = 1000; //ms
 
 	//TODO PG ici le warning pourrait �tre important (frames_ : float vers uint)
 	nom_ = "Bismillah";
@@ -15,7 +15,7 @@ CapBismillah::CapBismillah()
 	
 	//Texture
 	for (size_t i = 0; i < 4; ++i) textureV_.emplace_back(std::unique_ptr<sf::Texture>(new sf::Texture));//resize de taille 4 avec des unique_ptr sur sf::Texture vides
-	textureV_.at(0).get()->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/charge.png");
+	textureV_.at(0).get()->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/charge92x92.png");
 	textureV_.at(1).get()->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon1.png");
 	textureV_.at(2).get()->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon2.png");
 	textureV_.at(3).get()->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon3.png");
@@ -50,7 +50,7 @@ void CapBismillah::actualiser(proj_container& projectiles, Entite& vaisseau, flo
 	if (frames_ == 0)
 	{
 		//ProjBismillah *temp = new ProjBismillah(&vaisseau, spriteV_, sound_, JOUEUR);
-		std::shared_ptr<Projectile> temp(new ProjBismillah(&vaisseau, spriteV_, sound_, JOUEUR));		
+		std::shared_ptr<Projectile> temp(new ProjBismillah(&vaisseau, spriteV_, sound_, JOUEUR));
 		projectiles.push_back(temp);
 
 		sound_.play();

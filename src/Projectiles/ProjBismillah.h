@@ -18,6 +18,8 @@ public:
 	*/
 	ProjBismillah(Entite* lanceur, std::vector<sf::Sprite>& spriteV, sf::Sound sound, Equipe equipe = NEUTRE);
 
+
+
 	void gestion(sf::RenderWindow& window, sf::Time tempsEcoule);
 
 	void agit(Entite& e);
