@@ -25,6 +25,7 @@ VaisseauAttaquant::VaisseauAttaquant(float x, float y, Trajectoire traj, float p
 	frames_ = 1;
 	vit_ = 40;
 	actif_ = false;
+	invincibilite_ = false;
 
 	pvM_ = 300;
 	armureM_ = 50;

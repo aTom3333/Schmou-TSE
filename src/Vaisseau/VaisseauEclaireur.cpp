@@ -25,6 +25,7 @@ VaisseauEclaireur::VaisseauEclaireur(double x, double y,Trajectoire traj, double
 	frames_ = 1;
 	vit_ = 30;
 	actif_ = false;
+	invincibilite_ = false;
 
 	pvM_ = 50;
 	armureM_ = 0;

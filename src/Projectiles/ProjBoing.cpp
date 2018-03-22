@@ -93,7 +93,7 @@ void ProjBoing::gestion(sf::RenderWindow& window, sf::Time tempsEcoule)
 		sound_.play();
 	}
 
-	rotation_ += 20;
+	rotation_ += 10;
 	sprite_.setRotation(rotation_);
 
 	// Afficher le projectile

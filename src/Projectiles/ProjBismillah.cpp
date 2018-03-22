@@ -24,6 +24,7 @@ ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spr
 	equipe_ = equipe;
 	actif_ = false;
 	collisionnable_ = false;
+	invincibilite_ = false;
 
 	degatsColl_ = 350;
 
