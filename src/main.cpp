@@ -8,12 +8,18 @@
 #include "Partie.h"
 #include "Utilitaires/Divers.h"
 #include "Projectiles/_projectiles.h"
+#include <SFML/Audio.hpp>
 //#include "Input.h"
 
 
 // Code minimal
 int main()
 {	
+	sf::Music eyaeya;
+	eyaeya.openFromFile("../../rc/Musics/eyaeya.ogg");
+	eyaeya.setLoop(true);
+	eyaeya.play();
+	
 	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE");
 	Partie partie(window, Input::Media::Keyboard);
 
