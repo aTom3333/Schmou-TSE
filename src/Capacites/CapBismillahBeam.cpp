@@ -13,7 +13,7 @@ CapBismillah::CapBismillah()
 	
 	//Texture
 	for(size_t i = 0; i < 4; ++i) textureV_.emplace_back(new sf::Texture);//resize de taille 4 avec des unique_ptr sur sf::Texture vides
-	textureV_.at(0)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/charge92x92.png");
+	textureV_.at(0)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/charge96x96.png");
 	textureV_.at(1)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon1.png");
 	textureV_.at(2)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon2.png");
 	textureV_.at(3)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon3.png");

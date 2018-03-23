@@ -33,11 +33,13 @@ void Entite::afficher(sf::RenderWindow & window, bool debug)
 	if (equipe_ != JOUEUR)
 	{
 		if (framesInvincibilite_ == 0 || (framesInvincibilite_ / 10) % 2 == 0)
-			sprite_.setColor({ 255, 255, 255 });
+			window.draw(sprite_);
 		else
-			sprite_.setColor({ 255, 100, 100 });
-
-		window.draw(sprite_);
+		{
+			sf::Sprite temp_sprite = sprite_;
+			temp_sprite.setColor({ 255, 100, 100, 128 });
+			window.draw(temp_sprite);
+		}
 	}
 	else
 	{
