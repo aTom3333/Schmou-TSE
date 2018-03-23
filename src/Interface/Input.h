@@ -85,11 +85,15 @@ class Input_base
 		*/
 		bool isMoving() const;
 
+		//setters
         void set_action_keyboard(size_t n, sf::Keyboard::Key key);
         void set_action_mouse(size_t n, sf::Mouse::Button button);
         void set_default_movement_keyboard();
         void set_default_movement_joypad();
         void set_movement_mode(Media movement_media);
+
+		//getters
+		Media get_media() const { return movement_media_; } //thomas est content
 
 
     private:

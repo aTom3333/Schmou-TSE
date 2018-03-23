@@ -1,12 +1,12 @@
 #include "Ecran.h"
 
-Ecran::Ecran(std::vector<std::unique_ptr<Ecran>>& pile) : pile_{ pile }
+Ecran::Ecran(sf::RenderWindow& window) :  window_{ window }
 {
 	//polices
-	sf::Font temp_font;
-	temp_font.loadFromFile("../../rc/Font/hemi.ttf");
-	polices_.push_back(temp_font);
-	temp_font.loadFromFile("../../rc/Font/whitrabt.ttf");
-	polices_.push_back(temp_font);
+	//sf::Font temp_font;
+	//temp_font.loadFromFile("../../rc/Font/hemi.ttf");
+	//polices_["hemi"] = temp_font;
+	//temp_font.loadFromFile("../../rc/Font/whitrabt.ttf");
+	//polices_["whitrabt"] = temp_font;
+
 }
-//é à ù 

@@ -2,6 +2,7 @@
 #include "Entite.h"
 #include "Utilitaires/Collision.h"
 #include "Menu/Partie.h"
+#include "Menu/Accueil.h"
 #include "Utilitaires/Divers.h"
 #include "Projectiles/_projectiles.h"
 
@@ -11,7 +12,6 @@
 #include <iostream>
 #include <SFML/Audio.hpp>
 #include <string>
-//#include "Input.h"
 #include "Utilitaires/Chargeur.h"
 
 
@@ -40,17 +40,24 @@ int main(int argc, char* argv[])
 	std::vector<std::unique_ptr<Ecran>> vectEtats;
 
 	//Lancement de partie	
-	vectEtats.emplace_back(new Partie(vectEtats, window, Input::Media::Keyboard));
+	vectEtats.emplace_back(new Accueil(window));
+	vectEtats.emplace_back(new Partie(window, Input::Media::Keyboard));
 
-	int etat = 0;
+	ecran_t etat = ACCUEIL;
 
-	while (etat != -1)
+	while (etat != VIDE)
 	{
 		etat = vectEtats.at(etat)->executer();
+		for (auto& ecran : vectEtats)
+		{
+			if (ecran->isDetruit())
+			{
+				auto ecran_temp = ecran->factory();
+				ecran.reset();
+				ecran = std::move(ecran_temp);
+			}
+		}
 	}
-	
-	
-	
 
 	return 0;
 }

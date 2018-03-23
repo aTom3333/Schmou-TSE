@@ -31,7 +31,7 @@
 class Partie : public Ecran
 {
 	public:
-		Partie(std::vector<std::unique_ptr<Ecran>>& pile, sf::RenderWindow& window, Input::Media media, bool afficheHUD = true, bool avecPattern = true);
+		Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD = true, bool avecPattern = true);
 		~Partie();
 
 		void jeu();
@@ -43,11 +43,12 @@ class Partie : public Ecran
 		//Patterns
 		void initPatternTest();
 
-		int executer();
+		ecran_t executer() override;
+		std::unique_ptr<Ecran> factory() override;
+
 
 	protected:
 		//attributs de gameplay
-        sf::RenderWindow& window_; /// fenêtre principale
 		sf::Font font_; /// police principale
         Input input_; /// entrée
 		Overlay hud_; /// Affichage Tête Haute

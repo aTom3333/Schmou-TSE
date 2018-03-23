@@ -6,7 +6,7 @@
 #include "../Pattern/Vague.h"
 #include "Ecran.h"
 
-Partie::Partie(std::vector<std::unique_ptr<Ecran>>& pile, sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : window_{window}, input_(window, media), avecPattern_{avecPattern}, afficheHUD_{afficheHUD}, Ecran(pile)
+Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : input_(window, media), avecPattern_{avecPattern}, afficheHUD_{afficheHUD}, Ecran(window)
 {
 	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
 	{
@@ -17,21 +17,8 @@ Partie::Partie(std::vector<std::unique_ptr<Ecran>>& pile, sf::RenderWindow& wind
 	if (media == Input::Media::Keyboard)set_keyboard_default_binding(input_);
 	if (media == Input::Media::Joypad)set_joypad_default_binding(input_);
 
-}
-
-Partie::~Partie()
-{}
-
-int Partie::executer()
-{
-	//TODO CL réglage volume global temporaire
-	sf::Listener::setGlobalVolume(10);
-
-	//horloge
-	sf::Clock clock;
-
 	//Joueur
-    vaisseau_container::value_type vaisseautest(new VaisseauTest);
+	vaisseau_container::value_type vaisseautest(new VaisseauTest);
 	vaisseautest->setequipe_(JOUEUR);
 	vaisseaux_.push_back(vaisseautest);
 	vaisseaux_[0]->setPosition({ 500,700 });
@@ -44,13 +31,28 @@ int Partie::executer()
 	// Modifie la vitesse du jeu (debug)
 	timeSpeed_ = 1;
 
+	hud_.init(vaisseaux_[0]);
+
+}
+
+Partie::~Partie()
+{}
+
+ecran_t Partie::executer()
+{
+	//TODO CL réglage volume global temporaire
+	sf::Listener::setGlobalVolume(10);
+
+	//horloge
+	sf::Clock clock;
+
     // Déplacer la souris à la position du vaisseau
     auto pos = vaisseaux_[0]->getPosition();
     pos.x += 32;
     pos.y += 32;
     sf::Mouse::setPosition(window_.mapCoordsToPixel(pos), window_);
 
-	hud_.init(vaisseaux_[0]);
+	
 
 	clock.restart();
 	while (window_.isOpen())
@@ -59,9 +61,14 @@ int Partie::executer()
 		sf::Event event;
 		while (window_.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
-				//TODO PG 07-03-2018 j'ai mis Suppr pour fermer temporairement
-				window_.close();
+			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+			{
+				detruit_ = true;
+				return ACCUEIL;
+			}	
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
+				return VIDE;
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add))
 			{
@@ -132,7 +139,12 @@ int Partie::executer()
 		sf::sleep(sf::milliseconds(10));
 	}
 
-	return -1;
+	return VIDE;
+}
+
+std::unique_ptr<Ecran> Partie::factory()
+{
+	return std::unique_ptr<Ecran>(new Partie(window_, input_.get_media(), afficheHUD_, avecPattern_));
 }
 
 void Partie::collisionProjectile()

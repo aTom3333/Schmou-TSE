@@ -26,5 +26,10 @@ enum Equipe
 	JOUEUR, ENNEMI, NEUTRE ,ALLIE
 };
 
+enum  ecran_t
+{
+	VIDE = -1, ACCUEIL = 0, PARTIE
+};
+
 
 #endif // CONSTANTES_H
