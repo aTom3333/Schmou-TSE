@@ -5,6 +5,8 @@
 #include "../Interface/bindings.h"
 #include "../Pattern/Vague.h"
 #include "Ecran.h"
+#include "../Utilitaires/Divers.h"
+
 
 Partie::Partie(std::vector<std::unique_ptr<Ecran>>& pile, sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : window_{window}, input_(window, media), avecPattern_{avecPattern}, afficheHUD_{afficheHUD}, Ecran(pile)
 {
@@ -82,6 +84,9 @@ int Partie::executer()
 					timeSpeed_ -= 0.01;
 				}
 			}
+			
+			if(event.type == sf::Event::Resized)
+                adapt_viewport(window_);
 		}
 
 		//gestion temps

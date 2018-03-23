@@ -1,6 +1,7 @@
 #ifndef DIVERS_H
 #define DIVERS_H
-#include <type_traits>
+
+#include <SFML/Graphics.hpp>
 
 template<typename T,typename U>
 bool est(const T& X)
@@ -9,5 +10,8 @@ bool est(const T& X)
 		return false;
 	return (dynamic_cast<U*>(&X) != nullptr);
 }
+
+
+void adapt_viewport(sf::RenderWindow& window);
 
 #endif // !DIVERS_H

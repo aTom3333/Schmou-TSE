@@ -56,7 +56,7 @@ public:
 		*
 		* Fonction virtuelle qui gère le comportement du vaisseau
 		*/
-		virtual void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input) = 0;
+		virtual void gestion(sf::RenderWindow& window, sf::Time tempsEcoule, Input& input) = 0;
 		void gestionCapacite(proj_container &projectiles, sf::Time t_ecoule);
 		/**
 		* @fn agit
