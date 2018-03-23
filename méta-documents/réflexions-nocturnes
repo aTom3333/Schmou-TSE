@@ -1,0 +1,24 @@
+Bon j'ai pas mal parcouru la SFML je vais essayer de noter des choses intéressantes.
+
+*On peut créer des formes personnalisées avec des vertexArray de la couleur qu'on veut:
+https://www.sfml-dev.org/tutorials/2.0/graphics-vertex-array-fr.php
+
+*Il vaut mieux éviter de changer de texture, car le chargement dans la carte graphique d'une texture est long
+Plutôt qu'un vecteurn de textures il vaut mieux utiliser une grosse textures de laquelle on retire des sous-zones,
+  avec sf::Sprite::setTextureRect() 
+  ou les deux arguments de sf::Texture::loadFromFile(const std::string & 	filename,const IntRect & 	area = IntRect())		
+  
+*On peut aussi faire facilement du clignotement en rouge avec cela en créeant les deux images sur gimp puis fusionnées
+dans une seule texture qui est loadFromFile, (puis sélectionnées avec sf::Sprite::setTextureRect()  )
+
+*Sinon il y a un BlendMode je n'ai pas regardé comment ça marche mais paraît intéressant
+https://www.sfml-dev.org/documentation/2.4.2/structsf_1_1BlendMode.php
+  
+*Il existe un événement KeyReleased ; exploitable pour corriger les <<touches opposées>> ?
+    on fait event.pullEvent(KeyReleased) et la touche relachée se trouve dans event.key
+  https://github.com/SFML/SFML/blob/master/include/SFML/Window/Event.hpp
+  
+*On peut créer des shaders maison ! mais il faut apprendre GLSL...
+https://openclassrooms.com/courses/developpez-vos-applications-3d-avec-opengl-3-3/opengl-shading-language-1
+
+
