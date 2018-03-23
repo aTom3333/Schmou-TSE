@@ -22,11 +22,11 @@ int main(int argc, char* argv[])
 
 	//TG Pierre
     //sf::Music eyaeya;
-    //eyaeya.openFromFile("../../rc/Musics/eyaeya.ogg");
+    //eyaeya.openFromFile("../../rc/Musics/Divers/eyaeya.ogg");
     //eyaeya.setLoop(true);
     //eyaeya.play();
     sf::Music intro;
-    intro.openFromFile("../../rc/Musics/intro_wtf.wav");
+    intro.openFromFile("../../rc/Musics/Divers/intro_wtf.wav");
     intro.setLoop(false);
     intro.play();
 	
