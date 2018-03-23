@@ -2,7 +2,7 @@
 #include <cmath>
 
 
-ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spriteV, sf::Sound sound, Equipe equipe) :
+ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spriteV, std::vector<std::shared_ptr<sf::Texture>>& textureV, sf::Sound sound, Equipe equipe) :
     lanceur_(lanceur)
 {
     //Gestion du son
@@ -10,6 +10,7 @@ ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spr
 
     //Sprites
     spriteV_ = spriteV;
+	textureV_ = textureV;
 
 	// Hitbox 
 	float y = lanceur.getPosition().y;
@@ -32,58 +33,54 @@ ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spr
 void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 {
     assert(dynamic_cast<sf::RectangleShape*>(forme_.front().get()) != nullptr);
+	assert(textureV_.at(1));
 
     int cast_frames = 50; //nombre de frames pour caster le rayon après le chargement
-    int offset = 70; //nombres de frames de charge
+    int boule_charge_frames = 70; //nombres de frames de charge
 
-    if (age_ < offset)
+    if (age_ < boule_charge_frames)//changement de la taille de la boule de chargement
     {
-        spriteV_.at(0).setScale(sqrt((float)age_ / (float)offset), sqrt((float)age_ / (float)offset));
+        spriteV_.at(0).setScale(sqrt((float)age_ / (float)boule_charge_frames), sqrt((float)age_ / (float)boule_charge_frames));
     }
-    else if (age_ < offset + 1 * cast_frames / 6.0 || (offset + 5 * cast_frames / 6.0 < age_ && age_ < offset + 6 * cast_frames / 6.0))
+    else if (age_ < boule_charge_frames + 1 * cast_frames / 6.0 || (boule_charge_frames + 5 * cast_frames / 6.0 < age_ && age_ < boule_charge_frames + 6 * cast_frames / 6.0))
     {
         actif_ = true;
-        for (float i = trunc(lanceur_.getPosition().y) ; i > -1; i-=0.99)
-        {
-            spriteV_.at(1).setPosition({ lanceur_.getPosition().x - 16, i });
             dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ 32, lanceur_.getPosition().y });
+			spriteV_.at(1).setTextureRect({ (int)lanceur_.getPosition().x + 16, 0, 32, (int)lanceur_.getPosition().y });
+			spriteV_.at(1).setTexture(*textureV_.at(1).get());
+			spriteV_.at(1).setPosition({ lanceur_.getPosition().x + 16, 0 });
             window.draw(spriteV_.at(1));
-        }
     }
-    else if (age_ < offset + 2 * cast_frames / 6.0 || (offset + 4 * cast_frames / 6.0 < age_ && age_ < offset + 5 * cast_frames / 6.0))
+    else if (age_ < boule_charge_frames + 2 * cast_frames / 6.0 || (boule_charge_frames + 4 * cast_frames / 6.0 < age_ && age_ < boule_charge_frames + 5 * cast_frames / 6.0))
     {
-        for (float i = trunc(lanceur_.getPosition().y); i > -1; i -= 0.99)
-        {
-            spriteV_.at(2).setPosition({ lanceur_.getPosition().x - 16, i });
             dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ 64, lanceur_.getPosition().y });
-            window.draw(spriteV_.at(2));
-        }
-
+			spriteV_.at(1).setTextureRect({ (int)lanceur_.getPosition().x, 0, 32, (int)lanceur_.getPosition().y });
+			spriteV_.at(1).setTexture(*textureV_.at(1).get());
+			spriteV_.at(1).setPosition({ lanceur_.getPosition().x, 0 });
+			window.draw(spriteV_.at(2));
     }
-    else if (age_ < offset + 4 * cast_frames / 6.0)
-    {
-        for (float i = trunc(lanceur_.getPosition().y); i > -1; i -= 0.99)
-        {
-            spriteV_.at(3).setPosition({ (float)lanceur_.getPosition().x - 16, (float)i });
+    else if (age_ < boule_charge_frames + 4 * cast_frames / 6.0)
+	{
             dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ 96, lanceur_.getPosition().y });
-            window.draw(spriteV_.at(3));
-        }
-
+			spriteV_.at(1).setTextureRect({ (int)lanceur_.getPosition().x - 16, 0, 32, (int)lanceur_.getPosition().y });
+			spriteV_.at(1).setTexture(*textureV_.at(1).get());
+			spriteV_.at(1).setPosition({ lanceur_.getPosition().x - 16, 0 });
+			window.draw(spriteV_.at(3));
 	}
 
-	//affichage boule de chargement
+	//affichage boule de chargement à la position du vaisseau
 	spriteV_.at(0).setPosition({ lanceur_.getPosition().x + 32 - spriteV_.at(0).getGlobalBounds().width / (float)2.0,
 		lanceur_.getPosition().y - spriteV_.at(0).getGlobalBounds().height / (float)2.0 });
 	window.draw(spriteV_.at(0));
 
-
-    if (age_ > cast_frames + offset)
+	//si les animations sont finies, on tue le projectile
+    if (age_ > cast_frames + boule_charge_frames)
     {
         detruit_ = true;
         actif_ = false;
     }
 
-	// Si le projectile est actif (si l'âge a dépassé l'offste)
+	// Si le projectile est actif (si l'âge a dépassé boule_charge_frames)
 	if (actif_)
 	{
 		// Repositionnement du cercle englobant
