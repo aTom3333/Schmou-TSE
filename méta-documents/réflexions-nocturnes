@@ -10,9 +10,15 @@ Plutôt qu'un vecteurn de textures il vaut mieux utiliser une grosse textures de
   
 *On peut aussi faire facilement du clignotement en rouge avec cela en créeant les deux images sur gimp puis fusionnées
 dans une seule texture qui est loadFromFile, (puis sélectionnées avec sf::Sprite::setTextureRect()  )
+
+*Sinon il y a un BlendMode je n'ai pas regardé comment ça marche mais paraît intéressant
+https://www.sfml-dev.org/documentation/2.4.2/structsf_1_1BlendMode.php
   
 *Il existe un événement KeyReleased ; exploitable pour corriger les <<touches opposées>> ?
-    on fait event.pull(KeyReleased) et la touche relachée se trouve dans event.key
+    on fait event.pullEvent(KeyReleased) et la touche relachée se trouve dans event.key
   https://github.com/SFML/SFML/blob/master/include/SFML/Window/Event.hpp
+  
+*On peut créer des shaders maison ! mais il faut apprendre GLSL...
+https://openclassrooms.com/courses/developpez-vos-applications-3d-avec-opengl-3-3/opengl-shading-language-1
 
 
