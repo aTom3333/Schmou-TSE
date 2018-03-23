@@ -58,7 +58,7 @@ public:
 		*
 		* Gère le déplacement et l'affichage du vaisseau
 		*/
-		void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input);
+		void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input) override;
 		/**
 		* @fn destruction
 		* @brief Procedure a effectuer lorsque le vaisseau est détruit
