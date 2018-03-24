@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 	//if (argv[0] != std::string("Schmou'TSE")) //TODO PG faire de la merde avec istringstream
 
 	//TODO CL tueur de son
-	sf::Listener::setGlobalVolume(0);
+	sf::Listener::setGlobalVolume(100);
 
 	//TG Pierre
     /*sf::Music eyaeya;
@@ -47,7 +47,8 @@ int main(int argc, char* argv[])
 	//Stack d'écran
 	std::vector<std::unique_ptr<Ecran>> vectEtats;
 
-	chargement(window, sf::Texture());
+    sf::Texture temp_texture;
+	chargement(window, temp_texture);
 
 	//Lancement de partie	
 	vectEtats.emplace_back(new Accueil(window));

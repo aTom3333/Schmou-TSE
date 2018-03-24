@@ -48,7 +48,7 @@ std::shared_ptr<sf::Texture> Chargeur::getTexture(const std::string& name)
     if(location_.find(name) == location_.end())
         throw std::runtime_error("Unknown location of texture " + name);
 
-    auto t = std::make_shared(new sf::Texture);
+    std::shared_ptr<sf::Texture> t(new sf::Texture);
     if(!t->loadFromFile(location_[name]))
         throw std::runtime_error("Can't load "+location_[name]);
 
@@ -66,7 +66,7 @@ std::shared_ptr<sf::SoundBuffer> Chargeur::getSoundBuffer(const std::string& nam
     if(location_.find(name) == location_.end())
         throw std::runtime_error("Unknown location of soundbuffer " + name);
 
-    auto t = std::make_shared(new sf::SoundBuffer);
+    std::shared_ptr<sf::SoundBuffer> t(new sf::SoundBuffer);
     if(!t->loadFromFile(location_[name]))
         throw std::runtime_error("Can't load "+location_[name]);
 
