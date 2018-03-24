@@ -4,6 +4,8 @@
 #include <cstddef>
 
 #define PI acos(-1.0) /// Valeur de pi
+#define VERSION "Debug."
+#define BRANCHE "master"
 
 constexpr float ECRAN_L = 1024; /// Largueur de la fenetre
 constexpr float ECRAN_H = 768; /// Hauteur de la fenetre
@@ -28,7 +30,7 @@ enum Equipe
 
 enum  ecran_t
 {
-	VIDE = -1, ACCUEIL = 0, PARTIE
+	VIDE = -1, ACCUEIL = 0, MENU_PRINCIPAL, PARTIE
 };
 
 

@@ -45,7 +45,7 @@ class Partie : public Ecran
 		//Patterns
 		void initPatternTest();
 
-		ecran_t executer() override;
+		ecran_t executer(sf::Texture &derniereFenetre) override;
 		std::unique_ptr<Ecran> factory() override;
 
 
