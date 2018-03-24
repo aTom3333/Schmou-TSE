@@ -95,7 +95,7 @@ ecran_t Partie::executer()
 			if(event.type == sf::Event::Resized)
                 adapt_viewport(window_);
 		}
-
+            
 		//gestion temps
 		auto t_ecoule = clock.restart();
 		t_ecoule = t_ecoule * (float)timeSpeed_;
