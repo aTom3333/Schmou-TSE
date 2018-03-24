@@ -96,7 +96,7 @@ class Capacite
 		//Texture
 		sf::Texture texture_; /// Texture en cas de texture unique
 		sf::Sprite sprite_; /// Sprite en cas de sprite unique
-		std::vector<std::unique_ptr<sf::Texture>> textureV_; ///< Vecteur de textures pour en avoir plusieurs
+		std::vector<std::shared_ptr<sf::Texture>> textureV_; ///< Vecteur de textures pour en avoir plusieurs
 		std::vector<sf::Sprite> spriteV_; ///< Vecteur de sprites pour en avoir plusieurs
 
 		//Son

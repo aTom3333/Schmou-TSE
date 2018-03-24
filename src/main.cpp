@@ -21,14 +21,16 @@ int main(int argc, char* argv[])
 {	
 	//if (argv[0] != std::string("Schmou'TSE")) //TODO PG faire de la merde avec istringstream
 
-	//TG Pierre
-    //sf::Music eyaeya;
-    //eyaeya.openFromFile("../../rc/Musics/Divers/eyaeya.ogg");
-    //eyaeya.setLoop(true);
-    //eyaeya.play();
+	//TODO CL tueur de son
+	sf::Listener::setGlobalVolume(0);
 
-    /*
-	sf::Music intro;
+	//TG Pierre
+    /*sf::Music eyaeya;
+    eyaeya.openFromFile("../../rc/Musics/Divers/eyaeya.ogg");
+    eyaeya.setLoop(true);
+    eyaeya.play();
+
+    sf::Music intro;
     intro.openFromFile("../../rc/Musics/Divers/intro_wtf.wav");
     intro.setLoop(false);
     intro.play();*/
@@ -44,13 +46,14 @@ int main(int argc, char* argv[])
 	//Stack d'écran
 	std::vector<std::unique_ptr<Ecran>> vectEtats;
 
+	//Écran de chargement
 	chargement(window);
 
 	//Lancement de partie	
 	vectEtats.emplace_back(new Accueil(window));
 	vectEtats.emplace_back(new Partie(window, Input::Media::Keyboard));
 
-	ecran_t etat = ACCUEIL; //TODO modifier ici pour lancer menu directemnt, ACCUEIL normalement
+	ecran_t etat = ACCUEIL;
 
 	while (etat != VIDE)
 	{
