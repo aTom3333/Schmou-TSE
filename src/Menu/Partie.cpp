@@ -25,6 +25,21 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 	vaisseaux_.push_back(vaisseautest);
 	vaisseaux_[0]->setPosition({ 500,700 });
 
+
+	
+	fondTexture_.emplace_back(new sf::Texture());
+	fondTexture_.back()->loadFromFile("../../rc/Fond/etoiles1.png");
+	fond_.emplace_back(sf::Sprite(*fondTexture_.back()));
+	offset_.push_back(0);
+
+
+	fondTexture_.emplace_back(new sf::Texture());
+	fondTexture_.back()->loadFromFile("../../rc/Fond/etoiles2.png");
+	fond_.emplace_back(sf::Sprite(*fondTexture_.back()));
+	offset_.push_back(0);
+
+	
+
 	//init patterns
 	if (avecPattern_) {
 		initPatternTest();
@@ -54,7 +69,7 @@ ecran_t Partie::executer()
     pos.y += 32;
     sf::Mouse::setPosition(window_.mapCoordsToPixel(pos), window_);
 
-	
+	sf::Time t_defilement = sf::Time::Zero;
 
 	clock.restart();
 	while (window_.isOpen())
@@ -99,9 +114,12 @@ ecran_t Partie::executer()
 		//gestion temps
 		auto t_ecoule = clock.restart();
 		t_ecoule = t_ecoule * (float)timeSpeed_;
+		t_defilement += t_ecoule;
 
 		// Efface l'écran
 		window_.clear();
+
+		gestionFond(t_defilement);
 
 		// Gestion des vagues
 		if (avecPattern_)
@@ -244,6 +262,29 @@ void Partie::deleteVaisseauDetruit()
             i--;
 		}
 	}
+}
+
+void Partie::gestionFond(sf::Time &t)
+{
+	bool resetTimer = false;
+	for (int i = 0; i < fond_.size(); i++)
+	{
+		if (t.asMilliseconds() > 15)
+		{
+			offset_[i] += (i+1) * 7;
+			if (offset_[i] > fond_[i].getGlobalBounds().height) offset_[i] = 0;
+
+			resetTimer = true;
+		}
+
+		fond_[i].setPosition(0, offset_[i]);
+		window_.draw(fond_[i]);
+
+		fond_[i].setPosition(0, offset_[i] - fond_[i].getGlobalBounds().height);
+		window_.draw(fond_[i]);
+	}
+	
+	if (resetTimer) t = sf::Time::Zero;
 }
 
 void Partie::initPatternTest()

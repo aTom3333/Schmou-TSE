@@ -45,7 +45,7 @@ int main(int argc, char* argv[])
 
 	//Lancement de partie	
 	vectEtats.emplace_back(new Accueil(window));
-	vectEtats.emplace_back(new Partie(window, Input::Media::Joypad));
+	vectEtats.emplace_back(new Partie(window, Input::Media::Keyboard));
 
 	ecran_t etat = ACCUEIL; //TODO modifier ici pour lancer menu directemnt, ACCUEIL normalement
 

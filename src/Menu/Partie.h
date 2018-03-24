@@ -40,6 +40,8 @@ class Partie : public Ecran
 		void deleteProjectileDetruit();
 		void deleteVaisseauDetruit();
 
+		void gestionFond(sf::Time &t);
+
 		//Patterns
 		void initPatternTest();
 
@@ -52,6 +54,11 @@ class Partie : public Ecran
 		sf::Font font_; /// police principale
         Input input_; /// entrée
 		Overlay hud_; /// Affichage Tête Haute
+
+		std::vector<std::unique_ptr<sf::Texture>> fondTexture_;
+		std::vector<sf::Sprite> fond_;
+
+		std::vector<int> offset_;
 			
 		//pattern
 		std::vector<Vague> pattern_;			
