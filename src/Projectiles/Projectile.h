@@ -24,16 +24,16 @@ class Vaisseau;
 class Projectile : public Entite
 {
 	public:
-		Projectile() {};
+		explicit Projectile(Ecran& ecran) : Entite(ecran) {};
 
-		virtual void gestion(sf::RenderWindow& window, sf::Time tempsEcoule) = 0;
+		virtual void gestion() = 0;
 		/**
 		* @fn destruction
 		* @brief Procedure a effectuer lorsque le vaisseau est détruit
 		*
 		* Détruit l'entité
 		*/
-		void destruction() { detruit_ = true; }
+		void destruction() override { detruit_ = true; }
 	protected:
 };
 

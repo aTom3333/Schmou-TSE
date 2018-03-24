@@ -3,6 +3,7 @@
 
 #include "../constantes.h"
 #include "../Utilitaires/optional.h"
+#include "../Utilitaires/Chargeur.h"
 
 #include <stack>
 #include <memory>
@@ -27,11 +28,17 @@ class Ecran
 
 		//getters
 		bool isDetruit() const { return detruit_; }
+	
+		sf::RenderWindow& getWindow() { return window_; }
+		Chargeur& getChargeur() { return chargeur_; }
+		const sf::Clock& getClock() const { return horloge_; }
 
 	protected:
 		sf::RenderWindow& window_;
 		std::map<std::string, sf::Font> polices_ ; /// < map optionnelle de toutes les polices du jeu
 		bool detruit_ = false;
+		Chargeur chargeur_;
+		sf::Clock horloge_;
 
 };
 

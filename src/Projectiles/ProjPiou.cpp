@@ -1,10 +1,11 @@
 #include "ProjPiou.h"
 #include <cmath>
 
-ProjPiou::ProjPiou(const Entite& lanceur, std::vector<sf::Sprite>& spriteV, std::vector<std::shared_ptr<sf::Texture>>& textureV, sf::Sound& sound, Equipe equipe)
+ProjPiou::ProjPiou(Ecran& ecran, const Entite& lanceur, std::vector<sf::Sprite>& spriteV, sf::Sound& sound, Equipe equipe) :
+	Projectile(ecran)
 {	
 	// Gestion du sprite
-	textureV_ = textureV;
+	textureV_.push_back(ecran.getChargeur().getTexture("Cap.Piou.20x30"));
 	spriteV_ = spriteV;
 
 	//Origines
@@ -40,12 +41,10 @@ ProjPiou::ProjPiou(const Entite& lanceur, std::vector<sf::Sprite>& spriteV, std:
 	setPosition({ lanceur.getPosition().x ,  lanceur.getPosition().y - lanceur.getTaille().y / 2.0f });
 }
 
-ProjPiou::~ProjPiou()
+void ProjPiou::gestion()
 {
-}
-
-void ProjPiou::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
-{
+	auto& window = ecran_.getWindow();
+	auto tempsEcoule = ecran_.getClock().getElapsedTime();
 	move({ 0,-vit_ * tempsEcoule.asSeconds() });
 	window.draw(spriteV_.at(0));//HACK PG màj affocher de entité avec spriteV_ puis changer ici
 }

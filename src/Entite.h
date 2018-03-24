@@ -2,6 +2,7 @@
 #define ENTITE_H
 
 #include "constantes.h"
+#include "Menu/Ecran.h"
 
 #include <vector>
 #include <memory>
@@ -36,6 +37,7 @@ class Entite
 	friend bool collision(const Entite& e1, const Entite& e2);
 
 	public:
+		explicit Entite(Ecran& ecran) : ecran_{ecran} {}
 		/**
 		 * @fn ~Entite
 		 * @brief Destructeur par défaut
@@ -66,7 +68,7 @@ class Entite
 		 * @param [in,out] window Fenêtre SFML dans laquelle afficher l'entité.
 		 * @param [in] debug Un @c bool qui vaut @a true si les informations de debug doivent être affichées et @a false sinon.
 		 */
-		void afficher(sf::RenderWindow &window, bool debug = false);
+		void afficher(bool debug = false);
 
 		// Tranformation setters & getters
         /**
@@ -278,6 +280,9 @@ class Entite
 		void setOrigin(sf::Vector2f origine);
 
 	protected:
+		// Référence vers l'écran
+		Ecran& ecran_;
+	
 		//coordonnées
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
 		sf::Vector2f origine_; ///< Position de l'origine

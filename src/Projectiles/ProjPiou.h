@@ -25,14 +25,14 @@ public:
 	*
 	* Créer un projectile piou à la position donnée en paramètre
 	*/
-	ProjPiou(const Entite& lanceur, std::vector<sf::Sprite>& spriteV, std::vector<std::shared_ptr<sf::Texture>>& textureV, sf::Sound& sound, Equipe equipe = NEUTRE);
+	ProjPiou(Ecran& ecran, const Entite& lanceur, std::vector<sf::Sprite>& spriteV, sf::Sound& sound, Equipe equipe = NEUTRE);
 	/**
 	* @fn ~ProjPiou
 	* @brief Destructeur
 	*
 	* Vide
 	*/
-	~ProjPiou();
+	~ProjPiou() override = default;
 	/**
 	* @fn gestion
 	* @brief Gestion du projectile
@@ -40,7 +40,7 @@ public:
 	*
 	* Gestion du déplacement et de l'affichage
 	*/
-	void gestion(sf::RenderWindow &window, sf::Time tempsEcoule);
+	void gestion() override;
 	/**
 	* @fn agit
 	* @brief Procédure lorsque le projectile agit avec une Entite
@@ -48,7 +48,7 @@ public:
 	*
 	* Vide
 	*/
-	void agit(Entite &e);
+	void agit(Entite &e) override;
 private:
 	int vx_; /// Vitesse horizontale
 	int vy_; /// Vitesse verticale

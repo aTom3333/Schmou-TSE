@@ -28,8 +28,10 @@ bool collision(const Entite& e1, const Entite& e2)
 	return false;
 }
 
-void Entite::afficher(sf::RenderWindow & window, bool debug)
+void Entite::afficher(bool debug)
 {
+	auto& window = ecran_.getWindow();
+	
 	if (equipe_ != JOUEUR)
 	{
 		if (framesInvincibilite_ == 0 || (framesInvincibilite_ / 10) % 2 == 0)
