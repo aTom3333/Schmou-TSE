@@ -96,7 +96,7 @@ class Entite
          * haut gauche de la fenêtre
          * @return la position de l'entité appelante
          */
-		const sf::Vector2f& getPosition() const;
+		sf::Vector2f getPosition() const { return position_; }
 
         /**
          * @fn rotate
@@ -252,17 +252,21 @@ class Entite
 		
 
 		//getters
-		Equipe getEquipe() const { return equipe_; };
+		Equipe getEquipe() const { return equipe_; }
 		sf::Vector2f getTaille() const { return { sprite_.getGlobalBounds().width, sprite_.getGlobalBounds().height }; }//largeur, hauteur
+		sf::Vector2f getLastDelta() const { return last_delta_; }
 		bool getInnate_() const { return innate_; }
-		float getPVMax() const { return pvM_; };
-		float getArmureMax() const { return armureM_; };
-		float getBouclierMax() const { return bouclierM_; };
-		float getPV() const { return pv_; };
-		float getArmure() const { return armure_; };
-		float getBouclier() const { return bouclier_; };
-		const sf::Texture& getTexture() const { return texture_; };
-		bool isInvincible() const { return invincibilite_ && framesInvincibilite_ != 0; };
+		float getPVMax() const { return pvM_; }
+		float getArmureMax() const { return armureM_; }
+		float getBouclierMax() const { return bouclierM_; }
+		float getPV() const { return pv_; }
+		float getArmure() const { return armure_; }
+		float getBouclier() const { return bouclier_; }
+		float getVitMax() const { return vitM_; }
+		float getVit() const { return vit_; }
+		const sf::Texture& getTexture() const { return texture_; }
+		sf::Vector2f getOrigin() const { return origine_; }
+		bool isInvincible() const { return invincibilite_ && framesInvincibilite_ != 0; }
 		bool isCollisionneuse() const { return collisionneuse_; }
 		bool isCollisionnable() const { return collisionnable_; }
 
@@ -271,37 +275,43 @@ class Entite
 		void setInnate_(bool isInnate) { innate_ = isInnate; }
 		void setNbPositions(int val);
 		void setSmokeTexture(const sf::Texture &text, sf::Color couleur = { 255,255,255 });
+		void setOrigin(sf::Vector2f origine);
 
 	protected:
 		//coordonnées
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
-		std::deque<sf::Vector2f> positionsPrev_; ///< Positions précédentes
-			// /!\ne pas itérer, pas stocké contigûment
-		size_t nbPositions_ = 0; ///nombre de positions précédentes à conserver
+		sf::Vector2f origine_; ///< Position de l'origine
 		double angle_; ///< Orientation actuelle de l'Entite
 		double scale_; ///< Échelle actuelle de l'Entite
+
+		//déplacements
+		std::deque<sf::Vector2f> positionsPrev_; ///< Positions précédentes
+			// /!\ne pas itérer, pas stocké contigûment
+		size_t nbPositions_ = 0; ///< nombre de positions précédentes à conserver
+		sf::Vector2f last_delta_; ///< dernier déplacement en paramètre de move effectué
 
 		//caractéristiques
 		bool collisionnable_ = true; ///< Booléen vrai si l'Entite est collisionnable
 		bool collisionneuse_ = true;
 		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
-		bool innate_ = false; ///true si doit rester dans l'écran
-		bool invincibilite_ = true; /// true si l'netité a des frames d'invincibilité
+		bool innate_ = false; ///< true si doit rester dans l'écran
+		bool invincibilite_ = true; ///< true si l'entité a des frames d'invincibilité
 
 		//état
-		bool detruit_ = false; /// ture lorsque que le vaisseau est détruit
-		bool actif_; /// Booleen indiquant si la trajectoire a été amorcée
+		bool detruit_ = false; ///< true lorsque que le vaisseau est détruit
+		bool actif_; ///< Booleen indiquant si la trajectoire a été amorcée
+		bool debug_ = false; //TODO PG à implémenter
 
 		//graphismes
 		sf::CircleShape cercleEnglobant_; ///< Cercle Englobant de l'Entite
 		std::vector<std::unique_ptr<sf::Shape>> forme_; ///< Forme de l'Entite
-		sf::Texture texture_; /// Texture en cas de texture unique
-		sf::Sprite sprite_; /// Sprite en cas de sprite unique
+		sf::Texture texture_; ///< Texture en cas de texture unique
+		sf::Sprite sprite_; ///< Sprite en cas de sprite unique
 		std::vector<std::shared_ptr<sf::Texture>> textureV_; ///< Vecteur de textures pour en avoir plusieurs
 		std::vector<sf::Sprite> spriteV_; ///< Vecteur de sprites pour en avoir plusieurs
 
-		sf::Texture textSmoke_; /// Texture à afficher sur la trainée du vaisseau
-		sf::Sprite smoke_; /// Sprite à afficher sur la trainée du vaisseau
+		sf::Texture textSmoke_; ///< Texture à afficher sur la trainée du vaisseau
+		sf::Sprite smoke_; ///< Sprite à afficher sur la trainée du vaisseau
 
 		//Son
 		sf::SoundBuffer soundbuffer_;

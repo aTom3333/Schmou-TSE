@@ -42,9 +42,6 @@ Partie::~Partie()
 
 ecran_t Partie::executer()
 {
-	//TODO CL réglage volume global temporaire
-	sf::Listener::setGlobalVolume(10);
-
 	//horloge
 	sf::Clock clock;
 

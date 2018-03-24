@@ -25,6 +25,8 @@ public:
 private:
 	const Entite& lanceur_;
 	size_t age_ = 0;
+	const float largeur_max_;
+
 };
 
 

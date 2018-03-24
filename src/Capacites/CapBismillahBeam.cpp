@@ -4,12 +4,13 @@
 CapBismillah::CapBismillah()
 {
 	//Caractéristiques
-	t_ = frames_ = cooldown_ = 1000; //ms
+	t_ = frames_ = cooldown_ = 15000; //ms
 	nom_ = "Bismillah";
 
 	//Icône
 	capText_.loadFromFile("../../rc/Icones_Caps/laser.png");
 	capacite_.setTexture(capText_);
+	affiche_ = true;
 	
 	//Texture
 	for(size_t i = 0; i < 4; ++i) textureV_.emplace_back(new sf::Texture); //resize de taille 4 avec des unique_ptr sur sf::Texture vides
@@ -24,8 +25,6 @@ CapBismillah::CapBismillah()
     soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/Bismillah.wav");
     sound_.setBuffer(soundbuffer_);
     sound_.setLoop(false);
-
-    affiche_ = true;
 }
 
 void CapBismillah::utiliser(int x, int y)

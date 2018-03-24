@@ -2,8 +2,8 @@
 #include <cmath>
 
 
-ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spriteV, std::vector<std::shared_ptr<sf::Texture>>& textureV, sf::Sound sound, Equipe equipe) :
-    lanceur_(lanceur)
+ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spriteV, std::vector<std::shared_ptr<sf::Texture>>& textureV, sf::Sound sound, Equipe equipe) : 
+	largeur_max_{ (float)textureV.at(0)->getSize().x }, lanceur_(lanceur)
 {
     //Gestion du son
     sound.play();//TODO PG pourquoi tu ne joues pas ??
@@ -13,12 +13,13 @@ ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spr
 	textureV_ = textureV;
 
 	// Hitbox 
-	float y = lanceur.getPosition().y;
-	double R = hypot(y / 2.0, 96.0 / 2.0);
+	const float y = lanceur.getPosition().y;
+	const double R = hypot(y / 2.0, largeur_max_ / 2.0);
 	cercleEnglobant_ = sf::CircleShape(R);
-	cercleEnglobant_.setOrigin(R, R);
-	cercleEnglobant_.setPosition(96.0 / 2.0, y / 2.0);
-	forme_.emplace_back(new sf::RectangleShape({ 96, y }));
+	forme_.emplace_back(new sf::RectangleShape());
+
+	//Origine
+	spriteV_.at(0).setOrigin(spriteV_.at(0).getGlobalBounds().width / 2.0f, spriteV_.at(0).getGlobalBounds().height / 2.0f);//boule de charge
 
     // Attributs d'Entite
     equipe_ = equipe;
@@ -26,7 +27,7 @@ ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spr
     collisionnable_ = false;
     invincibilite_ = false;
 
-    degatsColl_ = 350;
+    degatsColl_ = 500;
 
 }
 
@@ -35,65 +36,87 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
     assert(dynamic_cast<sf::RectangleShape*>(forme_.front().get()) != nullptr);
 	assert(textureV_.at(1));
 
-    int cast_frames = 50; //nombre de frames pour caster le rayon après le chargement
-    int boule_charge_frames = 70; //nombres de frames de charge
+	const float largeur_vaisseau = lanceur_.getTaille().x;
+	const float hauteur_vaisseau = lanceur_.getTaille().y;
 
-    if (age_ < boule_charge_frames)//changement de la taille de la boule de chargement
+    const float cast_frames = 75; //nombre de frames total pour les deux phases croissance/décroissance
+    const float charge_frames = 70; //nombres de frames de charge
+	const float stationnaire_frames = 250; //nombre de frames à l'état stationnaire entre les phases croissance et décroissance
+
+    if (age_ <= charge_frames)//changement de la taille de la boule de chargement
     {
-        spriteV_.at(0).setScale(sqrt((float)age_ / (float)boule_charge_frames), sqrt((float)age_ / (float)boule_charge_frames));
+        spriteV_.at(0).setScale(sqrt(age_ / charge_frames), sqrt(age_ / charge_frames));
     }
-    else if (age_ < boule_charge_frames + 1 * cast_frames / 6.0 || (boule_charge_frames + 5 * cast_frames / 6.0 < age_ && age_ < boule_charge_frames + 6 * cast_frames / 6.0))
+	//rayon croissant
+	else if (age_ <= cast_frames / 2.0f + charge_frames)
     {
         actif_ = true;
-            dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ 32, lanceur_.getPosition().y });
-			spriteV_.at(1).setTextureRect({ (int)lanceur_.getPosition().x + 16, 0, 32, (int)lanceur_.getPosition().y });
-			spriteV_.at(1).setTexture(*textureV_.at(1).get());
-			spriteV_.at(1).setPosition({ lanceur_.getPosition().x + 16, 0 });
-            window.draw(spriteV_.at(1));
+		//interpolation linéaire pour que la largeur max soit atteinte en cast_frames images après le temps de charge_boule
+		float largeur_actuelle = 2*largeur_max_ * ((age_ - charge_frames) / (cast_frames));
+		//hitbox
+        dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ largeur_actuelle, lanceur_.getPosition().y });
+		//sprite
+		sf::RectangleShape sprite({ largeur_actuelle, lanceur_.getPosition().y });
+		sprite.setOrigin(largeur_actuelle / 2.0f, lanceur_.getPosition().y);
+		sprite.setPosition({ lanceur_.getPosition().x, lanceur_.getPosition().y - hauteur_vaisseau });
+		sprite.setTexture(textureV_.at(3).get());
+		window.draw(sprite);
     }
-    else if (age_ < boule_charge_frames + 2 * cast_frames / 6.0 || (boule_charge_frames + 4 * cast_frames / 6.0 < age_ && age_ < boule_charge_frames + 5 * cast_frames / 6.0))
-    {
-            dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ 64, lanceur_.getPosition().y });
-			spriteV_.at(1).setTextureRect({ (int)lanceur_.getPosition().x, 0, 32, (int)lanceur_.getPosition().y });
-			spriteV_.at(1).setTexture(*textureV_.at(1).get());
-			spriteV_.at(1).setPosition({ lanceur_.getPosition().x, 0 });
-			window.draw(spriteV_.at(2));
-    }
-    else if (age_ < boule_charge_frames + 4 * cast_frames / 6.0)
+	//rayon stationnaire
+	else if (age_ <= cast_frames / 2.0f + charge_frames + stationnaire_frames)
 	{
-            dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ 96, lanceur_.getPosition().y });
-			spriteV_.at(1).setTextureRect({ (int)lanceur_.getPosition().x - 16, 0, 32, (int)lanceur_.getPosition().y });
-			spriteV_.at(1).setTexture(*textureV_.at(1).get());
-			spriteV_.at(1).setPosition({ lanceur_.getPosition().x - 16, 0 });
-			window.draw(spriteV_.at(3));
+		//hitbox
+		dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ largeur_max_, lanceur_.getPosition().y });
+		//sprite
+		sf::RectangleShape sprite({ largeur_max_, lanceur_.getPosition().y });
+		sprite.setOrigin(largeur_max_ / 2.0f, lanceur_.getPosition().y);
+		sprite.setPosition({ lanceur_.getPosition().x, lanceur_.getPosition().y - hauteur_vaisseau });
+		sprite.setTexture(textureV_.at(3).get());
+		window.draw(sprite);
 	}
-
+	//rayon décroissant
+	else if (age_ <= cast_frames + charge_frames + stationnaire_frames)
+	{
+		//interpolation linéaire inverse pour que la largeur max soit atteinte en cast_frames images après le temps de charge_boule
+		float largeur_actuelle = 2*largeur_max_ * (1 - ((age_ - charge_frames - stationnaire_frames) / cast_frames));
+		//décroissance de la boule de charge avec le rayon
+		spriteV_.at(0).setScale(largeur_actuelle / spriteV_.at(0).getGlobalBounds().width, largeur_actuelle / spriteV_.at(0).getGlobalBounds().height);
+		//hitbox
+		dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ largeur_actuelle, lanceur_.getPosition().y });
+		//sprite
+		sf::RectangleShape sprite({ largeur_actuelle, lanceur_.getPosition().y });
+		sprite.setOrigin(largeur_actuelle / 2.0f, lanceur_.getPosition().y);
+		sprite.setPosition({ lanceur_.getPosition().x, lanceur_.getPosition().y - hauteur_vaisseau});
+		sprite.setTexture(textureV_.at(3).get());
+		window.draw(sprite);
+	}
+	 
 	//affichage boule de chargement à la position du vaisseau
-	spriteV_.at(0).setPosition({ lanceur_.getPosition().x + 32 - spriteV_.at(0).getGlobalBounds().width / (float)2.0,
-		lanceur_.getPosition().y - spriteV_.at(0).getGlobalBounds().height / (float)2.0 });
+	spriteV_.at(0).setPosition({ lanceur_.getPosition().x,lanceur_.getPosition().y - hauteur_vaisseau });
 	window.draw(spriteV_.at(0));
 
 	//si les animations sont finies, on tue le projectile
-    if (age_ > cast_frames + boule_charge_frames)
+    if (age_ > cast_frames + charge_frames + stationnaire_frames)
     {
         detruit_ = true;
         actif_ = false;
     }
 
-	// Si le projectile est actif (si l'âge a dépassé boule_charge_frames)
+	// Si le projectile est actif (si l'âge a dépassé charge_frames)
 	if (actif_)
 	{
 		// Repositionnement du cercle englobant
-		double R = hypot(lanceur_.getPosition().y / 2.0, 96.0 / 2.0);
-		cercleEnglobant_.setRadius(lanceur_.getPosition().y / 2);
+		double R = hypot(lanceur_.getPosition().y / 2.0, largeur_max_ / 2.0);
+		cercleEnglobant_.setRadius(R);
 		cercleEnglobant_.setOrigin(R, R);
-		cercleEnglobant_.setPosition(lanceur_.getPosition().x + 32, lanceur_.getPosition().y / 2);
+		cercleEnglobant_.setPosition(lanceur_.getPosition().x , lanceur_.getPosition().y / 2.0f);
 
-        // Modification de la position de la hitbox
-        setPosition({ lanceur_.getPosition().x + 32 - forme_.at(0)->getGlobalBounds().width/(float)2.0 , 0 });
+        // Modification de la position de la hitbox (rectangle)
+		//forme_.at(0)->setPosition({ lanceur_.getPosition().x - forme_.at(0)->getGlobalBounds().width / 2.0f , - hauteur_vaisseau / 2.0f });
+		setPosition({ lanceur_.getPosition().x - forme_.at(0)->getGlobalBounds().width / 2.0f , - hauteur_vaisseau / 2.0f });
 
 		// HACK CL Affichage de hitbox
-		bool debug_ = false;
+		debug_ = false;
 		if (debug_)
 		{
 			auto f = dynamic_cast<sf::RectangleShape*> (forme_.front().get());

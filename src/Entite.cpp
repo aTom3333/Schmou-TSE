@@ -56,7 +56,10 @@ void Entite::afficher(sf::RenderWindow & window, bool debug)
 	{
 		//window.draw(cercleEnglobant_);
 		for (auto& elem : forme_)
+		{
+			elem->setFillColor({ 255, 100, 100, 128 });
 			window.draw(*elem);
+		}
 	}
 
 	if(framesInvincibilite_ != 0) framesInvincibilite_--;
@@ -68,18 +71,21 @@ void Entite::move(sf::Vector2f delta)
 	if(innate_)
 	{
 		sf::Vector2f taille = getTaille();
-		sf::Vector2f pos = getPosition();
+		sf::Vector2f pos = getPosition() - getOrigin();
 		if ((pos.x + taille.x + delta.x) > ECRAN_L) delta.x = ECRAN_L - pos.x - taille.x;
-		if (pos.x + delta.x < 0) delta.x = -pos.x;
+		else if (pos.x + delta.x < 0) delta.x = -pos.x;
 		if ((pos.y + taille.y + delta.y) > ECRAN_H) delta.y = ECRAN_H - pos.y - taille.y;
-		if (pos.y + delta.y < 0) delta.y = -pos.y;
+		else if (pos.y + delta.y < 0) delta.y = -pos.y;
 	}
 
-		for (auto& elem : forme_)
+		for (auto& elem : forme_) 
 			elem->move(delta);
+		for (auto& sprite : spriteV_)
+			sprite.move(delta);
+		sprite_.move(delta);//TODO PG doit finir par partir
 		cercleEnglobant_.move(delta);
-		sprite_.move(delta);
 
+		//TODO PG il faut gérer ça avec les origines
 		if (nbPositions_)
 		{
 			positionsPrev_.push_front(position_);
@@ -94,10 +100,6 @@ void Entite::setPosition(const sf::Vector2f & pos)
 }
 
 
-const sf::Vector2f& Entite::getPosition() const
-{
-	return position_;
-}
 
 void Entite::rotate(float angle)
 {
@@ -170,6 +172,31 @@ void Entite::setSmokeTexture(const sf::Texture &text, sf::Color couleur)
 	textSmoke_ = text;
 	smoke_.setTexture(textSmoke_);
 	smoke_.setColor(couleur);
+}
+
+void Entite::setOrigin(sf::Vector2f origine)
+{
+	auto delta = origine - origine_;
+	origine_ = origine;
+
+	//vecteur de sprites_
+	for (auto& sprite : spriteV_)
+	{
+		sprite.setOrigin(delta + sprite.getOrigin());
+	}
+
+	//cercle englobant
+	cercleEnglobant_.setOrigin(delta + cercleEnglobant_.getOrigin());
+
+	//forme / hitbox
+	for (auto& forme : forme_)
+	{
+		forme->setOrigin(delta + forme->getOrigin());
+	}
+
+	//HACK PG à changer à la fin le sprite unique
+	sprite_.setOrigin(delta + sprite_.getOrigin());
+
 }
 
 void Entite::regen(sf::Time t)
