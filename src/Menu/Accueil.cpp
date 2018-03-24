@@ -6,7 +6,7 @@ Accueil::Accueil(sf::RenderWindow & window) : Ecran(window)
 	fond_.setTexture(fondText_);
 
 	texte_.setFont(polices_["hemi"]);
-	texte_.setString("Appuyez sur Entrée");
+	texte_.setString("Appuyez sur EntrÃ©e");
 	texte_.setCharacterSize(32);
 	texte_.setPosition(ECRAN_L / 2 - texte_.getGlobalBounds().width / 2, 682);
 }
@@ -20,7 +20,7 @@ ecran_t Accueil::executer()
 	auto t = timer.restart();
 	while (window_.isOpen())
 	{
-		// Gestion  des évènements 
+		// Gestion  des Ã©vÃ¨nements 
 		sf::Event event;
 		while (window_.pollEvent(event))
 		{
@@ -34,7 +34,7 @@ ecran_t Accueil::executer()
 			}
 		}
 
-		// Efface l'écran
+		// Efface l'Ã©cran
 		window_.clear();
 
 		t = timer.getElapsedTime();
@@ -60,7 +60,7 @@ ecran_t Accueil::executer()
 		window_.draw(fond_);
 		window_.draw(texte_);
 
-		// Mise à jour de l'écran
+		// Mise Ã  jour de l'Ã©cran
 		window_.display();
 	}
 
