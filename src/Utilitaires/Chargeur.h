@@ -12,7 +12,7 @@ class Chargeur
 {
     public:
         Chargeur();
-        const sf::Texture& getTexture(const std::string& name) const;
+        const sf::Texture& getTexture(const std::string& name);
     
     private:
         static std::map<std::string, std::string> location_;

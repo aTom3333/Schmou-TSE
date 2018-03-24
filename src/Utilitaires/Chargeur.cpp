@@ -39,7 +39,7 @@ Chargeur::Chargeur()
     }
 }
 
-const sf::Texture& Chargeur::getTexture(const std::string& name) const
+const sf::Texture& Chargeur::getTexture(const std::string& name)
 {
     if(textures_.find(name) != textures_.end())
         return textures_.at(name);

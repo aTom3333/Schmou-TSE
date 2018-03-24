@@ -19,7 +19,6 @@
 // Code minimal
 int main(int argc, char* argv[])
 {	
-	Chargeur c;
 	//if (argv[0] != std::string("Schmou'TSE")) //TODO PG faire de la merde avec istringstream
 
 	//TG Pierre
