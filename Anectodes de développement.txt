@@ -14,3 +14,7 @@
     Reprise d'activité après 2 mois, Pierre avait tout cassé. Cyril est relou donc on fait des optional.
     Merci Andrzej Krzemienski !
     Les deux compères qui m'accompagnent ont enfin compris size_t (signé Thomas le train).
+    
+24/03/2018 5:24
+    On a bien avancé ! Cela fait seulement 50 heures que je n'ai pas dormi, sur lesquelles j'ai passé 30h à coder <3
+    Petite nuit blanche de programmation (et dessiner c'est gagné) avec le krew du klub !
