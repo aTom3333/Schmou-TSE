@@ -28,7 +28,8 @@ int main(int argc, char* argv[])
     //eyaeya.setLoop(true);
     //eyaeya.play();
 
-    /*sf::Music intro;
+    /*
+	sf::Music intro;
     intro.openFromFile("../../rc/Musics/Divers/intro_wtf.wav");
     intro.setLoop(false);
     intro.play();*/
@@ -42,19 +43,23 @@ int main(int argc, char* argv[])
 	//Stack d'écran
 	std::vector<std::unique_ptr<Ecran>> vectEtats;
 
+	chargement(window);
+
 	//Lancement de partie	
 	vectEtats.emplace_back(new Accueil(window));
 	vectEtats.emplace_back(new Partie(window, Input::Media::Keyboard));
 
-	ecran_t etat = PARTIE; //TODO modifier ici pour lancer menu directemnt, ACCUEIL normalement
+	ecran_t etat = ACCUEIL; //TODO modifier ici pour lancer menu directemnt, ACCUEIL normalement
 
 	while (etat != VIDE)
 	{
 		etat = vectEtats.at(etat)->executer();
+
 		for (auto& ecran : vectEtats)
 		{
 			if (ecran->isDetruit())
 			{
+				chargement(window);
 				auto ecran_temp = ecran->factory();
 				ecran.reset();
 				ecran = std::move(ecran_temp);

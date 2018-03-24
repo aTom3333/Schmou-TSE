@@ -12,6 +12,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+void chargement(sf::RenderWindow &window);
 
 class Ecran
 {
@@ -29,7 +30,7 @@ class Ecran
 
 	protected:
 		sf::RenderWindow& window_;
-		static std::experimental::optional < std::map < std::string, sf::Font >> polices_ ; /// < map optionnelle de toutes les polices du jeu
+		std::map<std::string, sf::Font> polices_ ; /// < map optionnelle de toutes les polices du jeu
 		bool detruit_ = false;
 
 };
