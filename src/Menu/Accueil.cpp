@@ -11,7 +11,7 @@ Accueil::Accueil(sf::RenderWindow & window) : Ecran(window)
 	texte_.setPosition(ECRAN_L / 2 - texte_.getGlobalBounds().width / 2, 682);
 }
 
-ecran_t Accueil::executer()
+ecran_t Accueil::executer(sf::Texture &derniereFenetre)
 {
 	sf::Clock timer;
 	int alpha = 255;
@@ -30,7 +30,8 @@ ecran_t Accueil::executer()
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
 			{
-				return PARTIE;
+				derniereFenetre.update(window_);
+				return MENU_PRINCIPAL;
 			}
 		}
 

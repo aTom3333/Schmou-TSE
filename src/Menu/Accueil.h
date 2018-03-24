@@ -9,7 +9,7 @@ public:
 	Accueil(sf::RenderWindow& window);
 	~Accueil() {};
 
-	ecran_t executer() override;
+	ecran_t executer(sf::Texture &derniereFenetre) override;
 
 	std::unique_ptr<Ecran> factory() override;
 

@@ -55,7 +55,7 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 Partie::~Partie()
 {}
 
-ecran_t Partie::executer()
+ecran_t Partie::executer(sf::Texture &derniereFenetre)
 {
 	//horloge
 	sf::Clock clock;
@@ -75,13 +75,14 @@ ecran_t Partie::executer()
 		sf::Event event;
 		while (window_.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 			{
 				detruit_ = true;
+				derniereFenetre.update(window_);
 				return ACCUEIL;
 			}	
 
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
+			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
 				return VIDE;
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add))

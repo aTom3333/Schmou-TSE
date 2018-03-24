@@ -12,7 +12,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-void chargement(sf::RenderWindow &window);
+void chargement(sf::RenderWindow &window, sf::Texture &derniereFenetre);
 
 class Ecran
 {
@@ -21,7 +21,7 @@ class Ecran
 		Ecran(sf::RenderWindow& window); /// < constructeur principal
 		virtual ~Ecran() = default;
 
-		virtual ecran_t executer() = 0;
+		virtual ecran_t executer(sf::Texture &derniereFenetre) = 0;
 
 		virtual std::unique_ptr<Ecran> factory() = 0;
 
