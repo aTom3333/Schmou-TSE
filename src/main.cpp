@@ -38,6 +38,8 @@ int main(int argc, char* argv[])
 
 	//Fenêtre
 	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE");
+    sf::View view1(sf::FloatRect(0, 0, ECRAN_L, ECRAN_H));
+    window.setView(view1);
 
 	//Stack d'écran
 	std::vector<std::unique_ptr<Ecran>> vectEtats;
