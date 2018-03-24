@@ -3,15 +3,18 @@
 CapPiou::CapPiou()
 {
 	//Caractéristiques
-	cooldown_ = 100;
-	t_ = cooldown_;
-	frames_ = cooldown_; //TODO PG ici le warning pourrait être important (float vers uint)
+	t_ = frames_ = cooldown_ = 100;
 	nom_ = "Canon Laser";
-	tir_ = true;
 
 	//Icônes
 	capText_.loadFromFile("../../rc/Icones_Caps/tir.png");
 	capacite_.setTexture(capText_);
+	tir_ = true;
+
+	//Textures
+	textureV_.emplace_back(new sf::Texture);
+	textureV_.at(0)->loadFromFile("../../rc/Sprites/Capacites/Piou/Piou20x30.PNG");
+	spriteV_.emplace_back(sf::Sprite(*textureV_.at(0)));
 
 	//Son
 	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/piou.wav");
@@ -44,9 +47,9 @@ void CapPiou::actualiser(proj_container& projectiles, Entite& vaisseau, float te
 	// Création du projectile au moment où la compétence est lancée
 	if (frames_ == 0)
 	{
-		//TODO bug
-		proj_ptr temp(new ProjPiou(debutX_, debutY_, sound_, JOUEUR));
-		sound_.play();
+		proj_ptr temp(new ProjPiou(vaisseau, spriteV_, textureV_, sound_, JOUEUR));
+		//HACK PG son aau lancement
+		//sound_.play();
 		projectiles.push_back(temp);
 	}
 

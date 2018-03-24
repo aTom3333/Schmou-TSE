@@ -4,27 +4,27 @@
 CapBismillah::CapBismillah()
 {
 	//Caractéristiques
-	t_ = frames_ = cooldown_ = 1000; //ms
+	t_ = frames_ = cooldown_ = 15000; //ms
 	nom_ = "Bismillah";
 
 	//Icône
 	capText_.loadFromFile("../../rc/Icones_Caps/laser.png");
 	capacite_.setTexture(capText_);
+	affiche_ = true;
 	
 	//Texture
-	for(size_t i = 0; i < 4; ++i) textureV_.emplace_back(new sf::Texture);//resize de taille 4 avec des unique_ptr sur sf::Texture vides
+	for(size_t i = 0; i < 4; ++i) textureV_.emplace_back(new sf::Texture); //resize de taille 4 avec des unique_ptr sur sf::Texture vides
 	textureV_.at(0)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/charge96x96.png");
 	textureV_.at(1)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon1.png");
 	textureV_.at(2)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon2.png");
 	textureV_.at(3)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon3.png");
+	for (size_t i = 1; i < 4; ++i) textureV_.at(i)->setRepeated(true); //mode repeated
 	for(size_t i = 0; i < 4; ++i) spriteV_.emplace_back(sf::Sprite(*textureV_.at(i)));
 
     //Son
     soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/Bismillah.wav");
     sound_.setBuffer(soundbuffer_);
     sound_.setLoop(false);
-
-    affiche_ = true;
 }
 
 void CapBismillah::utiliser(int x, int y)
@@ -47,7 +47,7 @@ void CapBismillah::actualiser(proj_container& projectiles, Entite& vaisseau, flo
 	// Création du projectile au moment où la compétence est lancée
 	if (frames_ == 0)
 	{
-		proj_ptr temp(new ProjBismillah(vaisseau, spriteV_, sound_, JOUEUR));
+		proj_ptr temp(new ProjBismillah(vaisseau, spriteV_, textureV_, sound_, JOUEUR));
 		projectiles.push_back(temp);
 
 		sound_.play();//son au lancement

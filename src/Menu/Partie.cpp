@@ -57,9 +57,6 @@ Partie::~Partie()
 
 ecran_t Partie::executer(sf::Texture &derniereFenetre)
 {
-	//TODO CL réglage volume global temporaire
-	sf::Listener::setGlobalVolume(10);
-
 	//horloge
 	sf::Clock clock;
 
@@ -111,7 +108,7 @@ ecran_t Partie::executer(sf::Texture &derniereFenetre)
 			if(event.type == sf::Event::Resized)
                 adapt_viewport(window_);
 		}
-
+            
 		//gestion temps
 		auto t_ecoule = clock.restart();
 		t_ecoule = t_ecoule * (float)timeSpeed_;

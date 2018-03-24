@@ -2,6 +2,8 @@
 #define DIVERS_H
 
 #include <SFML/Graphics.hpp>
+#include <string>
+
 
 template<typename T,typename U>
 bool est(const T& X)
@@ -13,5 +15,9 @@ bool est(const T& X)
 
 
 void adapt_viewport(sf::RenderWindow& window);
+
+std::string trim(std::string str);
+
+std::pair<std::string, std::string> tokenize(const std::string& str, char sep);
 
 #endif // !DIVERS_H

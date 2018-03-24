@@ -3,6 +3,8 @@
 
 #include <cstddef>
 
+#define chemin_rc "../../rc/"
+
 #define PI acos(-1.0) /// Valeur de pi
 #define VERSION "Debug."
 #define BRANCHE "master"
