@@ -24,7 +24,7 @@ ecran_t Accueil::executer(sf::Texture &derniereFenetre)
 		sf::Event event;
 		while (window_.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
+			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Delete) || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 				//TODO PG 07-03-2018 j'ai mis Suppr pour fermer temporairement
 				window_.close();
 
