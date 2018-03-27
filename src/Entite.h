@@ -70,15 +70,25 @@ class Entite
 		 */
 		void afficher(bool debug = false);
 
-		// Tranformation setters & getters
         /**
-         * @fn move
+         * @fn move(sf::Vector2f delta)
          * @brief Déplace l'Entite en fonction de @a delta
          *
          * Appelle la fonction move de la SFML sur les attributs de l'objet appelant.
          * @param [in] delta un @c sf::Vector2f qui donne le déplacement en x et en y
          */
 		void move(sf::Vector2f delta);
+
+		/**
+		* @fn move()
+		* @brief Déplace l'Entite en fonction de vits_ et rotation_
+		*
+		* Crée un delta en calculant à partir des attributs vit_ et rotation_ de Entite, 
+		* puis appelle la fonction move de Entite avec ce delta
+		* 
+		*/
+		void move();
+
         /**
          * @fn setPosition
          * @brief Fixe la position de l'Entite
@@ -255,7 +265,7 @@ class Entite
 
 		//getters
 		Equipe getEquipe() const { return equipe_; }
-		sf::Vector2f getTaille() const { return { sprite_.getGlobalBounds().width, sprite_.getGlobalBounds().height }; }//largeur, hauteur
+		sf::Vector2f getTaille() const { return { sprites_.front().getGlobalBounds().width, sprites_.front().getGlobalBounds().height }; }//largeur, hauteur
 		sf::Vector2f getLastDelta() const { return last_delta_; }
 		bool getInnate_() const { return innate_; }
 		float getPVMax() const { return pvM_; }
@@ -266,7 +276,7 @@ class Entite
 		float getBouclier() const { return bouclier_; }
 		float getVitMax() const { return vitM_; }
 		float getVit() const { return vit_; }
-		const sf::Texture& getTexture() const { return texture_; }
+		//const sf::Texture& getTexture() const { return textures_; } //TODO PG encore utile ?
 		sf::Vector2f getOrigin() const { return origine_; }
 		bool isInvincible() const { return invincibilite_ && framesInvincibilite_ != 0; }
 		bool isCollisionneuse() const { return collisionneuse_; }
@@ -286,8 +296,8 @@ class Entite
 		//coordonnées
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
 		sf::Vector2f origine_; ///< Position de l'origine
-		double angle_; ///< Orientation actuelle de l'Entite
-		double scale_; ///< Échelle actuelle de l'Entite
+		float rotation_; ///< Orientation actuelle de l'Entite
+		float scale_; ///< Échelle actuelle de l'Entite
 
 		//déplacements
 		std::deque<sf::Vector2f> positionsPrev_; ///< Positions précédentes
@@ -312,7 +322,7 @@ class Entite
 		std::vector<std::unique_ptr<sf::Shape>> forme_; ///< Forme de l'Entite
 		std::vector<sf::Sprite> sprites_; ///< Vecteur de sprites pour en avoir plusieurs
     
-        //TODO gérer le chargement des smokes direct avec le chargeur
+        //TODO PG gérer le chargement des smokes direct avec le chargeur
 		//sf::Texture textSmoke_; ///< Texture à afficher sur la trainée du vaisseau
 		std::vector<sf::Sprite> smokes_; ///< Sprite à afficher sur la trainée du vaisseau
 

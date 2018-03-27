@@ -41,13 +41,12 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 	
 
 	//init patterns
-	if (avecPattern_) {
-		initPatternTest();
-	}
+	if (avecPattern_) initPatternTest();
 
 	// Modifie la vitesse du jeu (debug)
-	timeSpeed_ = 1;
+	coeffTemps_ = 1;
 
+	//Initialise le HUD
 	hud_.init(vaisseaux_[0]);
 
 }
@@ -87,21 +86,21 @@ ecran_t Partie::executer(sf::Texture &derniereFenetre)
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add))
 			{
-				if (timeSpeed_ < 20)
+				if (coeffTemps_ < 20)
 				{
-					timeSpeed_ += 0.1;
+					coeffTemps_ += 0.1;
 				}
 			}
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Subtract))
 			{
-				if (timeSpeed_ >= 0.1)
+				if (coeffTemps_ >= 0.1)
 				{
-					timeSpeed_ -= 0.1;
+					coeffTemps_ -= 0.1;
 				}
-				else if (timeSpeed_ > 0.01)
+				else if (coeffTemps_ > 0.01)
 				{
-					timeSpeed_ -= 0.01;
+					coeffTemps_ -= 0.01;
 				}
 			}
 			
@@ -111,7 +110,7 @@ ecran_t Partie::executer(sf::Texture &derniereFenetre)
             
 		//gestion temps
 		auto t_ecoule = clock.restart();
-		t_ecoule = t_ecoule * (float)timeSpeed_;
+		t_ecoule = t_ecoule * (float)coeffTemps_;
 		t_defilement += t_ecoule;
 
 		// Efface l'écran
@@ -156,7 +155,7 @@ ecran_t Partie::executer(sf::Texture &derniereFenetre)
 		// Mise à jour de l'écran
 		window_.display();
 
-		window_.setTitle("Schmou'TSE - Vitesse de jeu : " + std::to_string(timeSpeed_));
+		window_.setTitle("Schmou'TSE - Vitesse de jeu : " + std::to_string(coeffTemps_));
 		sf::sleep(sf::milliseconds(10));
 	}
 

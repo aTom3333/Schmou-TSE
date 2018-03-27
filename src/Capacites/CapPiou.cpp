@@ -10,7 +10,7 @@ CapPiou::CapPiou(Ecran& ecran, const std::weak_ptr<Entite>& lanceur) :
 
 	//Icônes
 	capTexture_ = ecran.getChargeur().getTexture("icone.tir");
-	capacite_.setTexture(*capText_);
+	capacite_.setTexture(*capTexture_);
 	tir_ = true;
 
 	//Textures
@@ -32,7 +32,7 @@ void CapPiou::utiliser(proj_container& projectiles)
         {
             // Début du timer
             t_lastuse_.restart();
-            // Initialisation de l'endroit ou la compétence a été utilisée
+            // Création du projectile au lancement
             proj_ptr temp(new ProjPiou(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe()));
             projectiles.push_back(temp);
             
