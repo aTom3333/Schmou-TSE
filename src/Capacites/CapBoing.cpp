@@ -11,7 +11,7 @@ CapBoing::CapBoing()
 
 	//Icône
 	capText_.loadFromFile("../../rc/Icones_Caps/attaque_test.png");
-	capacite_.setTexture(capText_);
+	icone_.setTexture(capText_);
 
 	//Son
 	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/boing.wav");

@@ -50,8 +50,8 @@ void ProjPiou::gestion()
 {
 	auto& window = ecran_.getWindow();
 	auto tempsEcoule = ecran_.getClock().getElapsedTime();
-	move({ 0,-vit_ * tempsEcoule.asSeconds() });
-	window.draw(sprites_.at(0));//HACK PG màj affocher de entité avec sprites_ puis changer ici
+	move();
+	window.draw(sprites_.at(0));//HACK PG il faut màj afficher de entité avec sprites_ puis le mettre ici
 }
 
 void ProjPiou::agit(Entite& proj)

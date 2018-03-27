@@ -117,8 +117,12 @@ void Entite::rotate(float angle)
 {
 	for(auto& elem : forme_)
 		elem->rotate(angle);
+
     cercleEnglobant_.rotate(angle);
-    sprite_.rotate(angle);
+
+    for (auto sprite : sprites_)
+		sprite.rotate(angle);
+
 	rotation_ = fmod(rotation_ + angle, 360);
 }
 

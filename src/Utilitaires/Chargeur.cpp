@@ -5,7 +5,6 @@
 #include <cctype>
 #include <iostream>
 
-
 bool Chargeur::loaded_ = false;
 std::map<std::string, std::string> Chargeur::location_ = std::map<std::string, std::string>();
 
@@ -33,7 +32,7 @@ Chargeur::Chargeur()
             tokens.first = trim(tokens.first);
             tokens.second = trim(tokens.second);
             
-            if(!tokens.first.empty() and !tokens.second.empty())
+            if(!tokens.first.empty() && !tokens.second.empty())
                 location_.insert({tokens.first, tokens.second});
         }
     }
@@ -74,3 +73,21 @@ std::shared_ptr<sf::SoundBuffer> Chargeur::getSoundBuffer(const std::string& nam
 
     return sound_buffers_.at(name);
 }
+
+std::shared_ptr<sf::Font> Chargeur::getFont(const std::string& name)
+{
+	if (sound_buffers_.find(name) != sound_buffers_.end())
+		return fonts_.at(name);
+
+	if (location_.find(name) == location_.end())
+		throw std::runtime_error("Unknown location of font " + name);
+
+	std::shared_ptr<sf::SoundBuffer> t(new sf::SoundBuffer);
+	if (!t->loadFromFile(location_[name]))
+		throw std::runtime_error("Can't load " + location_[name]);
+
+	sound_buffers_[name] = t;
+
+	return fonts_.at(name);
+}
+

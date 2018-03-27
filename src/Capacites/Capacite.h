@@ -51,52 +51,53 @@ class Capacite
 		* Fonction virtuel qui gère la création de projectiles et des modifications à apporter au vaisseau
 		*/
 		virtual void actualiser(proj_container &projectiles) = 0;
+		
 
+		//fonctions relatives à l'icone
+		void afficherNom() { ecran_.getWindow.draw(text_); };
+		void gestionIcon();
 		void initIcon(int i);
 		
 		// Getters
 		sf::Time getCooldown() const { return cooldown_; };
 		sf::Time getTime() const { return t_lastuse_.getElapsedTime(); };
 		const std::string& getNom() const { return nom_; };
-		const sf::Sprite& getIcon() const { return capacite_; };
+		const sf::Sprite& getIcon() const { return icone_; };
 		const sf::RectangleShape& getMasque() const { return masque_; };
 		const sf::Text& getText() const { return text_; };
 		bool getAffiche() { return affiche_; };
 		bool getTir() { return tir_; };
-		const std::vector<sf::Sound>& getSounds_() const { return sounds_; }
-
-
-
-		void afficherNom(sf::RenderWindow &window) { window.draw(text_); };
-		void gestionIcon();
-		
+		const std::vector<sf::Sound>& getSounds_() const { return sounds_; }		
 
 	protected:
 		// Référence vers l'écran
 		Ecran& ecran_;
-	
-		std::shared_ptr<sf::Texture> capTexture_;
-		sf::Sprite capacite_;
-		sf::RectangleShape masque_;
-		sf::Font font_;
-		sf::Text text_;
-		bool affiche_ = false;
-		bool tir_ = false;
+
+		//Caractéristiques de code
+		bool tir_ = false; /// < True si tir principal 1 ou 2
+		bool autoAim = false; /// < True si en état visée auto
+
+		//Caractéristiques de jeu
 		std::string nom_; /// Nom de la compétence
-		unsigned int niveau_; /// Niveau, à partir de 1
+		unsigned int niveau_ = 0; /// Niveau, à partir de 1
 
 		sf::Time cooldown_; /// Temps à attendre avant de pouvoir utiliser la capacité à nouveau
 		sf::Time longevite_; ///Temps après lequel le projectile issu disparait
-
 		sf::Clock t_lastuse_; /// Temps écoulé depuis la dernière activation de la compétence
 
-		bool autoAim; ///état visée auto
-
 		//Texture
+		//std::shared_ptr<sf::Texture> capTexture_; //TODO PG encore utile ?
 		std::vector<sf::Sprite> sprites_; ///< Vecteur de sprites pour en avoir plusieurs
 
 		//Son
 		std::vector<sf::Sound> sounds_;
+
+		//Icône
+		sf::Font font_;
+		sf::Text text_; /// < Nom affiché en jeu
+		bool affiche_ = false; /// < true si le sprite de l'icone est affiché
+		sf::Sprite icone_;
+		sf::RectangleShape masque_;
     
         // Lanceur
         std::weak_ptr<Entite> lanceur_;

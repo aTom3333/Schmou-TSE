@@ -1,8 +1,6 @@
 #include "Overlay.h"
 
-Overlay::Overlay()
-{
-}
+//TODO PG constantes magiques, lier à un écran pour chargement et window
 
 void Overlay::init(vaisseau_ptr vaisseau)
 {

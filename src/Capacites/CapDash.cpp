@@ -4,7 +4,7 @@
 CapDash::CapDash()
 {
 	capText_.loadFromFile("../../rc/Icones_Caps/tir.png");
-	capacite_.setTexture(capText_);
+	icone_.setTexture(capText_);
 	cooldown_ = 500;
 	frames_ = cooldown_; //TODO PG ici le warning pourrait être important (float vers uint)
 	t_ = cooldown_;
