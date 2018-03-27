@@ -1,30 +1,35 @@
 #include "ProjPiou.h"
 #include <cmath>
 
-ProjPiou::ProjPiou(Ecran& ecran, const Entite& lanceur, std::vector<sf::Sprite>& spriteV, sf::Sound& sound, Equipe equipe) :
+ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe) :
 	Projectile(ecran)
 {	
+    // Weak pointeur vers lanceur
+    lanceur_ = lanceur;
+    
 	// Gestion du sprite
-	textureV_.push_back(ecran.getChargeur().getTexture("Cap.Piou.20x30"));
-	spriteV_ = spriteV;
+	sprites_ = sprite;
 
 	//Origines
 	origine_ = { 10,15 }; //basé sur image Piou20x30
-	spriteV_.at(0).setOrigin({ 10,15 });
+	sprites_.at(0).setOrigin({ 10,15 });
 
 	//Gestion du son
-	sound_ = sound;
-	sound.play();//son joué à la création du projectile	
+	sounds_ = sound;
+	if(!sounds_.empty())sounds_.front().play();//son joué à la création du projectile	
 
-	// Hitbox
+	// cercle englobant
+    //TODO utiliser la fonction Englobeuse
 	cercleEnglobant_ = sf::CircleShape(hypot(20,30));
 	cercleEnglobant_.setOrigin(10, 10);
 	cercleEnglobant_.setPosition(10, 10);
+    
+    //Hitbox
 	forme_.emplace_back(new sf::RectangleShape({20,30}));
+    forme_.at(0)->setOrigin({10,15});
 	
 	// Caractéristiques
 	equipe_ = equipe;
-	actif_ = true;
 
 	//Stats
 	pv_ = pvM_ = 10;
@@ -33,12 +38,12 @@ ProjPiou::ProjPiou(Ecran& ecran, const Entite& lanceur, std::vector<sf::Sprite>&
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
-	degatsColl_ = 70;
+	degatsColl_ = 70; //TODO PG xlanceur.stats().atk
 
 	vit_ = vitM_ = 700;
 
 	//position de départ
-	setPosition({ lanceur.getPosition().x ,  lanceur.getPosition().y - lanceur.getTaille().y / 2.0f });
+	setPosition({ lanceur->getPosition().x ,  lanceur->getPosition().y - lanceur->getTaille().y / 2.0f });
 }
 
 void ProjPiou::gestion()
@@ -46,7 +51,7 @@ void ProjPiou::gestion()
 	auto& window = ecran_.getWindow();
 	auto tempsEcoule = ecran_.getClock().getElapsedTime();
 	move({ 0,-vit_ * tempsEcoule.asSeconds() });
-	window.draw(spriteV_.at(0));//HACK PG màj affocher de entité avec spriteV_ puis changer ici
+	window.draw(sprites_.at(0));//HACK PG màj affocher de entité avec sprites_ puis changer ici
 }
 
 void ProjPiou::agit(Entite& proj)

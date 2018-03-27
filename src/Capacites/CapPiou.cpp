@@ -1,62 +1,51 @@
 #include "CapPiou.h"
 
-CapPiou::CapPiou()
+CapPiou::CapPiou(Ecran& ecran, const std::weak_ptr<Entite>& lanceur) :
+	Capacite(ecran, lanceur)
 {
 	//Caractéristiques
-	t_ = frames_ = cooldown_ = 100;
+    t_lastuse_.restart();
+	cooldown_ = sf::milliseconds(100);
 	nom_ = "Canon Laser";
 
 	//Icônes
-	capText_.loadFromFile("../../rc/Icones_Caps/tir.png");
-	capacite_.setTexture(capText_);
+	capTexture_ = ecran.getChargeur().getTexture("icone.tir");
+	capacite_.setTexture(*capText_);
 	tir_ = true;
 
 	//Textures
-	textureV_.emplace_back(new sf::Texture);
-	textureV_.at(0)->loadFromFile("../../rc/Sprites/Capacites/Piou/Piou20x30.PNG");
-	spriteV_.emplace_back(sf::Sprite(*textureV_.at(0)));
+	sprites_.emplace_back(ecran.getChargeur().getTexture("Cap.Piou.20x30"));
 
 	//Son
-	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/piou.wav");
-	sound_.setBuffer(soundbuffer_);
-	sound_.setLoop(false);
+	sounds_.emplace_back(ecran.getChargeur().getSoundBuffer("son.piou"));
+	sounds_.front().setLoop(false);
 
 }
 
 
-void CapPiou::utiliser(int x, int y)
+void CapPiou::utiliser(proj_container& projectiles)
 {
-	// Si la compétence est disponible
-	if (t_ >= cooldown_)
-	{
-		// Début du timer
-		t_ = 0;
-		frames_ = 0;
-		// Initialisation de l'endroit ou la compétence a été utilisée
-		debutX_ = x;
-		debutY_ = y;
-	}
+    if(auto lanceur = lanceur_.lock())
+    {
+        // Si la compétence est disponible
+        if(t_lastuse_.getElapsedTime() >= cooldown_)
+        {
+            // Début du timer
+            t_lastuse_.restart();
+            // Initialisation de l'endroit ou la compétence a été utilisée
+            proj_ptr temp(new ProjPiou(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe()));
+            projectiles.push_back(temp);
+            
+            // Son au lancement
+            sounds_.front().play();
+        }
+    }
 }
 
-void CapPiou::actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule)
+void CapPiou::actualiser(proj_container& projectiles)
 {
     // Juste pour mute les warnings du compilateur
     (void)projectiles;
-	(void)vaisseau;
     
-	// Création du projectile au moment où la compétence est lancée
-	if (frames_ == 0)
-	{
-		proj_ptr temp(new ProjPiou(vaisseau, spriteV_, textureV_, sound_, JOUEUR));
-		//HACK PG son aau lancement
-		//sound_.play();
-		projectiles.push_back(temp);
-	}
-
-	// Si la compétence est en cooldown, on actualise le timer
-	if (t_ < cooldown_)
-	{
-		t_ += tempsEcoule;
-	}
-	frames_++;
+    // Rien à faire ici
 }

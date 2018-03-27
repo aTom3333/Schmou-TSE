@@ -304,25 +304,20 @@ class Entite
 
 		//état
 		bool detruit_ = false; ///< true lorsque que le vaisseau est détruit
-		bool actif_; ///< Booleen indiquant si la trajectoire a été amorcée
+		bool actif_ = true; ///< Booleen indiquant si la trajectoire a été amorcée
 		bool debug_ = false; //TODO PG à implémenter
 
 		//graphismes
 		sf::CircleShape cercleEnglobant_; ///< Cercle Englobant de l'Entite
 		std::vector<std::unique_ptr<sf::Shape>> forme_; ///< Forme de l'Entite
-		sf::Texture texture_; ///< Texture en cas de texture unique
-		sf::Sprite sprite_; ///< Sprite en cas de sprite unique
-		std::vector<std::shared_ptr<sf::Texture>> textureV_; ///< Vecteur de textures pour en avoir plusieurs
-		std::vector<sf::Sprite> spriteV_; ///< Vecteur de sprites pour en avoir plusieurs
-
-		sf::Texture textSmoke_; ///< Texture à afficher sur la trainée du vaisseau
-		sf::Sprite smoke_; ///< Sprite à afficher sur la trainée du vaisseau
+		std::vector<sf::Sprite> sprites_; ///< Vecteur de sprites pour en avoir plusieurs
+    
+        //TODO gérer le chargement des smokes direct avec le chargeur
+		//sf::Texture textSmoke_; ///< Texture à afficher sur la trainée du vaisseau
+		std::vector<sf::Sprite> smokes_; ///< Sprite à afficher sur la trainée du vaisseau
 
 		//Son
-		sf::SoundBuffer soundbuffer_;
-		sf::Sound sound_;
-		std::vector<std::shared_ptr<sf::SoundBuffer>> soundbufferV_;
-		std::vector<sf::Sound> soundV_;
+		std::vector<sf::Sound> sounds_;
 
 		// Stats
 		float pvM_ = 0; /// Point de vie maximum de l'entite

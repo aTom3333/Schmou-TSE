@@ -35,6 +35,8 @@ class Projectile : public Entite
 		*/
 		void destruction() override { detruit_ = true; }
 	protected:
+        std::weak_ptr<Entite> lanceur_; ///< On garde un lien vers le lanceur à travers un weak_ptr pour éviter les cycles
+
 };
 
 #endif // PROJECTILE_H

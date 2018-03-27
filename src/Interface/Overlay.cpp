@@ -109,7 +109,8 @@ void Overlay::gestion(vaisseau_ptr vaisseau)
 
 		if (vaisseau->getskills()[i] != nullptr && vaisseau->getskills()[i]->getAffiche())
 		{
-			int cooldown = (int)(vaisseau->getskills()[i]->getCooldown() - vaisseau->getskills()[i]->getTime());
+			// TODO TF Vérifier que ça marche avec des sf::Time
+			int cooldown = (vaisseau->getskills()[i]->getCooldown() - vaisseau->getskills()[i]->getTime()).asMilliseconds();
 			std::string str = cooldown <= 0 ? "Ready" : std::to_string(cooldown);
 			statuts_[n].setString(str);
 

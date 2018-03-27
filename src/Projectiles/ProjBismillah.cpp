@@ -9,7 +9,7 @@ ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spr
     sound.play();//TODO PG pourquoi tu ne joues pas ??
 
     //Sprites
-    spriteV_ = spriteV;
+    sprites_ = spriteV;
 	textureV_ = textureV;
 
 	// Hitbox 
@@ -19,7 +19,7 @@ ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spr
 	forme_.emplace_back(new sf::RectangleShape());
 
 	//Origine
-	spriteV_.at(0).setOrigin(spriteV_.at(0).getGlobalBounds().width / 2.0f, spriteV_.at(0).getGlobalBounds().height / 2.0f);//boule de charge
+	sprites_.at(0).setOrigin(sprites_.at(0).getGlobalBounds().width / 2.0f, sprites_.at(0).getGlobalBounds().height / 2.0f);//boule de charge
 
     // Attributs d'Entite
     equipe_ = equipe;
@@ -45,7 +45,7 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 
     if (age_ <= charge_frames)//changement de la taille de la boule de chargement
     {
-        spriteV_.at(0).setScale(sqrt(age_ / charge_frames), sqrt(age_ / charge_frames));
+        sprites_.at(0).setScale(sqrt(age_ / charge_frames), sqrt(age_ / charge_frames));
     }
 	//rayon croissant
 	else if (age_ <= cast_frames / 2.0f + charge_frames)
@@ -80,7 +80,7 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 		//interpolation linéaire inverse pour que la largeur max soit atteinte en cast_frames images après le temps de charge_boule
 		float largeur_actuelle = 2*largeur_max_ * (1 - ((age_ - charge_frames - stationnaire_frames) / cast_frames));
 		//décroissance de la boule de charge avec le rayon
-		spriteV_.at(0).setScale(largeur_actuelle / spriteV_.at(0).getGlobalBounds().width, largeur_actuelle / spriteV_.at(0).getGlobalBounds().height);
+		sprites_.at(0).setScale(largeur_actuelle / sprites_.at(0).getGlobalBounds().width, largeur_actuelle / sprites_.at(0).getGlobalBounds().height);
 		//hitbox
 		dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ largeur_actuelle, lanceur_.getPosition().y });
 		//sprite
@@ -92,8 +92,8 @@ void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 	}
 	 
 	//affichage boule de chargement à la position du vaisseau
-	spriteV_.at(0).setPosition({ lanceur_.getPosition().x,lanceur_.getPosition().y - hauteur_vaisseau });
-	window.draw(spriteV_.at(0));
+	sprites_.at(0).setPosition({ lanceur_.getPosition().x,lanceur_.getPosition().y - hauteur_vaisseau });
+	window.draw(sprites_.at(0));
 
 	//si les animations sont finies, on tue le projectile
     if (age_ > cast_frames + charge_frames + stationnaire_frames)

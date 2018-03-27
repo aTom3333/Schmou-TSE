@@ -84,7 +84,7 @@ void Entite::move(sf::Vector2f delta)
 
 		for (auto& elem : forme_) 
 			elem->move(delta);
-		for (auto& sprite : spriteV_)
+		for (auto& sprite : sprites_)
 			sprite.move(delta);
 		sprite_.move(delta);//TODO PG doit finir par partir
 		cercleEnglobant_.move(delta);
@@ -184,7 +184,7 @@ void Entite::setOrigin(sf::Vector2f origine)
 	origine_ = origine;
 
 	//vecteur de sprites_
-	for (auto& sprite : spriteV_)
+	for (auto& sprite : sprites_)
 	{
 		sprite.setOrigin(delta + sprite.getOrigin());
 	}
