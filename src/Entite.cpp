@@ -28,6 +28,7 @@ bool collision(const Entite& e1, const Entite& e2)
 	return false;
 }
 
+//TODO PG à refondre, l'affichage d'une sprite est désuet
 void Entite::afficher(bool debug)
 {
 	auto& window = ecran_.getWindow();
@@ -86,7 +87,6 @@ void Entite::move(sf::Vector2f delta)
 			elem->move(delta);
 		for (auto& sprite : sprites_)
 			sprite.move(delta);
-		sprite_.move(delta);//TODO PG doit finir par partir
 		cercleEnglobant_.move(delta);
 
 		//TODO PG il faut gérer ça avec les origines
@@ -96,6 +96,14 @@ void Entite::move(sf::Vector2f delta)
 			if (positionsPrev_.size() > nbPositions_)positionsPrev_.pop_back();
 		}
 		position_ += delta;
+}
+
+void Entite::move()
+{
+	float x = vit_ *  -cos(rotation_) * ecran_.getClock().getElapsedTime().asSeconds();
+	float y = vit_ * -sin(rotation_) * ecran_.getClock().getElapsedTime().asSeconds();
+	sf::Vector2f delta(x, y);
+	move(delta);
 }
 
 void Entite::setPosition(const sf::Vector2f & pos)
@@ -111,17 +119,17 @@ void Entite::rotate(float angle)
 		elem->rotate(angle);
     cercleEnglobant_.rotate(angle);
     sprite_.rotate(angle);
-	angle_ = fmod(angle_ + angle, 360);
+	rotation_ = fmod(rotation_ + angle, 360);
 }
 
 void Entite::setRotation(float angle)
 {
-	rotate(angle - angle_);
+	rotate(angle - rotation_);
 }
 
 float Entite::getRotation() const
 {
-	return angle_;
+	return rotation_;
 }
 
 void Entite::scale(float factor)

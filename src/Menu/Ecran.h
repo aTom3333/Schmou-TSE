@@ -34,11 +34,11 @@ class Ecran
 		const sf::Clock& getClock() const { return horloge_; }
 
 	protected:
-		sf::RenderWindow& window_;
+		sf::RenderWindow& window_; /// < Fenêtre de rendu SFML
 		std::map<std::string, sf::Font> polices_ ; /// < map optionnelle de toutes les polices du jeu
 		bool detruit_ = false;
 		Chargeur chargeur_;
-		sf::Clock horloge_;
+		sf::Clock horloge_; /// < horloge globale de l'écran, réinitialisée à chaque affichage de window
 
 };
 

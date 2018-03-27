@@ -68,7 +68,7 @@ class Partie : public Ecran
 		proj_container projectiles_; /// vecteur des projectiles en jeu
 
 		//attributs de debug
-		double timeSpeed_; /// Facteur contrôlant le temps
+		float coeffTemps_; /// Facteur contrôlant le temps
 		bool avecPattern_;
 		bool afficheHUD_; /// Vrai si on veux afficher le HUD, faux sinon
 

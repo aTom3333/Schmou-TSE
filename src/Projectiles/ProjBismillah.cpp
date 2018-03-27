@@ -10,7 +10,6 @@ ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spr
 
     //Sprites
     sprites_ = spriteV;
-	textureV_ = textureV;
 
 	// Hitbox 
 	const float y = lanceur.getPosition().y;
@@ -34,7 +33,7 @@ ProjBismillah::ProjBismillah(const Entite& lanceur, std::vector<sf::Sprite>& spr
 void ProjBismillah::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
 {
     assert(dynamic_cast<sf::RectangleShape*>(forme_.front().get()) != nullptr);
-	assert(textureV_.at(1));
+	assert(sprites_.at(0).getTexture() != nullptr);
 
 	const float largeur_vaisseau = lanceur_.getTaille().x;
 	const float hauteur_vaisseau = lanceur_.getTaille().y;
