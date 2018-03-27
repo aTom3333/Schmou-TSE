@@ -10,7 +10,7 @@ CapPiou::CapPiou(Ecran& ecran, const std::weak_ptr<Entite>& lanceur) :
 
 	//Icônes
 	capTexture_ = ecran.getChargeur().getTexture("icone.tir");
-	capacite_.setTexture(*capText_);
+	capacite_.setTexture(*capTexture_);
 	tir_ = true;
 
 	//Textures
