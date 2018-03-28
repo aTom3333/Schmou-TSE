@@ -23,7 +23,7 @@ class CapDash : public Capacite
 		*
 		* Initialisation de la capacité
 		*/
-		CapDash();
+		CapDash(Ecran& ecran, const std::weak_ptr<Entite>& lanceur);
 		/**
 		* @fn utiliser
 		* @brief Active la capacite
@@ -32,7 +32,7 @@ class CapDash : public Capacite
 		*
 		* Fonction Initialise la position de départ et le timer
 		*/
-		void utiliser(int x, int y) override;
+		void utiliser(proj_container& projectiles) override;
 		/**
 		 * @fn actualiser
 		 * @brief Active les effets de la capacité
@@ -43,7 +43,9 @@ class CapDash : public Capacite
 		 * Augmente la vitesse du vaisseau pour quelques frames
 		 * Actualise le timer
 		 */
-		void actualiser(proj_container &projectiles, Entite& vaisseau, float tempsEcoule) override;
+		void actualiser(proj_container& projectiles) override;
+	private:
+		bool active_; // true si le buff a été activé;
 };
 
 #endif

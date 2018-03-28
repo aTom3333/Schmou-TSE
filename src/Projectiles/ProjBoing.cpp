@@ -44,12 +44,12 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 	degatsColl_ = 30; //TODO PG xlanceur.stats().atk
 
 	vit_ = vitM_ = 400;
-	angle_ = rand() % 100 / 100 * 2 * PI; // TODO CL rand c++
+	rotation_ = rand() % 100 / 100 * 2 * PI; // TODO CL rand c++
 
 	rayon_ = 32.f;
 
 	//position de départ
-	setPosition({ lanceur->getPosition().x + rayon_*cos(angle_),  lanceur->getPosition().y + rayon_*cos(angle_) });
+	setPosition({ lanceur->getPosition().x + rayon_*cos(rotation_),  lanceur->getPosition().y + rayon_*cos(rotation_) });
 }
 
 
@@ -61,10 +61,10 @@ void ProjBoing::gestion()
 {
 	auto& window = ecran_.getWindow();
 	auto tempsEcoule = ecran_.getClock().getElapsedTime();
-	move({ cos(angle_)*vit_ * tempsEcoule.asSeconds(),sin(angle_)*vit_ * tempsEcoule.asSeconds() });
+	move();
 
-	angle_ += 100 * tempsEcoule.asSeconds();
-	sprites_.at(0).setRotation(angle_);
+	rotation_ += 100 * tempsEcoule.asSeconds();
+	sprites_.at(0).setRotation(rotation_);
 
 	window.draw(sprites_.at(0));//HACK PG màj affocher de entité avec sprites_ puis changer ici
 }
