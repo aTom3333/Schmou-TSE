@@ -7,7 +7,7 @@
 
 #define PI acos(-1.0) /// Valeur de pi
 #define VERSION "Debug."
-#define BRANCHE "master"
+#define BRANCHE "Nettoyage de printemps"
 
 constexpr float ECRAN_L = 1024; /// Largueur de la fenetre
 constexpr float ECRAN_H = 768; /// Hauteur de la fenetre
