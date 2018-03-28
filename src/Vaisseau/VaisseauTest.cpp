@@ -2,14 +2,15 @@
 #include <cmath>
 
 
-VaisseauTest::VaisseauTest() ///constructeur
+VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 {
-	//sprite
-	texture_.loadFromFile("../../rc/Sprites/Vaisseaux/VaisseauTest/vaisseauLapin.png");
-	sprite_.setTexture(texture_);
-	sprite_.setOrigin({ 32,52 });
+	// Sprites
+	sprites_.emplace_back(ecran.getChargeur().getTexture("vaiss.vaisseautest.lapin"));
+	for (auto sprite : sprites_)
+		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 
-	//cercle englobant
+	// Cercle englobant
+	//TODO PG Englobeur
 	const float largeur_vaisseau = this->getTaille().x;
 	const float hauteur_vaisseau = this->getTaille().y;
 	const float R = sqrt(2 * largeur_vaisseau * hauteur_vaisseau);
@@ -17,26 +18,25 @@ VaisseauTest::VaisseauTest() ///constructeur
 	cercleEnglobant_.setOrigin(R, R);
 	cercleEnglobant_.setPosition(32, 32);
 
-	//forme / hitbox constituée de la forme exacte
+	// Hitbox
 	sf::ConvexShape forme1(3);
 	forme1.setPoint(0, { 0,64 });
 	forme1.setPoint(1, { 32,0 });
 	forme1.setPoint(2, { 32,46 });
 	forme1.setOrigin({ 32, 32 });
+	forme_.emplace_back(new sf::ConvexShape(forme1));
+
 	sf::ConvexShape forme2(3);
 	forme2.setPoint(0, { 0,0 });
 	forme2.setPoint(1, { 32,64 });
 	forme2.setPoint(2, { 0,46 });
 	forme2.setOrigin({ 0, 32 });
-
-	//origine d'Entite
-	origine_ = { 32,32 };
-
-	forme_.emplace_back(new sf::ConvexShape(forme1));
 	forme_.emplace_back(new sf::ConvexShape(forme2));
 
+	// Origine
+	origine_ = { 32,32 };
 
-	// Caractéristiques
+	// Caractéristiques de code
 	equipe_ = JOUEUR;
 	innate_ = true;
 	actif_ = true;
@@ -49,7 +49,7 @@ VaisseauTest::VaisseauTest() ///constructeur
 	vit_ = vitM_ = 500;
 
 	regenARM_ = 0;
-	regenBOU_ = 1;
+	regenBOU_ = 0;
 	regenPV_ = 0;
 
 	degatsColl_ = 50;
@@ -57,8 +57,9 @@ VaisseauTest::VaisseauTest() ///constructeur
 	// Capacités
 
 	//TIR1
-	CapPiou *piou = new CapPiou();
-	capacites_.push_back(piou);
+	std::shared_ptr<VaisseauTest> temp_ptr(this);
+	capacites_->emplace_back(CapPiou(ecran, std::weak_ptr<VaisseauTest>(temp_ptr)));
+	//TODO PG que faire ?!?
 
 	//TIR2
 	CapDash *dash = new CapDash();
@@ -69,7 +70,7 @@ VaisseauTest::VaisseauTest() ///constructeur
 	capacites_.push_back(boubou);
 
 	//COMP2
-	//TODO CapMissile
+	//TODO PG CapMissile
 	capacites_.push_back(nullptr);
 
 	//COMP 3
@@ -81,53 +82,49 @@ VaisseauTest::VaisseauTest() ///constructeur
 	capacites_.push_back(bism);
 }
 
-void VaisseauTest::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
+void VaisseauTest::gestion(proj_container proj_cont, Input& input)
 {
 	// Gestion du vaisseau
 	// Si la touche TIR 1 est activé
 	if (input.action(TIR1))
 	{
-		// Lance la compétence à la position du vaisseau allié
-		capacites_[0]->utiliser(position_.x, position_.y);
+		capacites_[0]->utiliser(proj_cont);
 
 	}
 	// Si la touche TIR 2 est activé
 	if (input.action(TIR2))
 	{
-		// Lance la compétence à la position du vaisseau allié
-		capacites_[1]->utiliser(position_.x, position_.y);
+		capacites_[1]->utiliser(proj_cont);
 	}
 
 	// Si la touche COMP 1 est activé
 	if (input.action(COMP1))
 	{
-		// Lance la compétence à la position du vaisseau allié
-		capacites_[2]->utiliser(position_.x, position_.y);
+		capacites_[2]->utiliser(proj_cont);
 	}
 
 	// Si la touche COMP 2 est activé
 	if (input.action(COMP2))
 	{
-		
+		capacites_[3]->utiliser(proj_cont);
 	}
 
 	// Si la touche COMP 3 est activé
 	if (input.action(COMP3))
 	{
-		// Lance la compétence à la position du vaisseau allié
-		capacites_[4]->utiliser(position_.x, position_.y);
+		capacites_[4]->utiliser(proj_cont);
 	}
 
 	// Si la touche ULTI est activé
 	if (input.action(ULTI))
 	{
-		capacites_[5]->utiliser(position_.x, position_.y);
+		capacites_[5]->utiliser(proj_cont);
 	}
 
 	//déplacement
-	last_delta_ = input.move(vit_, tempsEcoule);
+	last_delta_ = input.move(vit_, ecran_.getClock().getElapsedTime());
 	move(last_delta_);
 
-	afficher(window);
+	afficher();
 }
 

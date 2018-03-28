@@ -8,18 +8,16 @@
 class VaisseauTest : public Vaisseau
 {
 public:
-	VaisseauTest();
+	VaisseauTest(Ecran& ecran);
 	~VaisseauTest() = default;
-	void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input);
+	void gestion(proj_container proj_cont, Input& input) override;
 	/**
 	* @fn destruction
-	* @brief Procédure à effectuer lorsque le vaisseau est détruit
+	* @brief règle l'attribut detruit_ à true
 	*
-	* Détruit l'entité
+	* Procédure à effectuer lorsque le vaisseau est détruit
 	*/
 	void destruction() { detruit_ = true; }
-
-private:
 };
 
 

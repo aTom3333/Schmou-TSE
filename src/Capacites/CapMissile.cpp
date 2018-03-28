@@ -29,7 +29,7 @@ void CapMissile::utiliser(proj_container& projectiles)
 	}
 }
 
-void CapMissile::actualiser(proj_container& projectiles)
+void CapMissile::actualiser()
 {
 
 }

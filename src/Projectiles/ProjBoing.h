@@ -28,7 +28,7 @@ class ProjBoing : public Projectile
 		*
 		* Vide
 		*/
-		~ProjBoing(); 
+		~ProjBoing() {};
 		/**
 		* @fn gestion
 		* @brief Gestion du projectile
@@ -47,7 +47,7 @@ class ProjBoing : public Projectile
 		*/
 		void agit(Entite& proj);
 	private:
-		float rayon_;
+		float rayonCirc_; /// < rayon du cerlce circonscrit au lanceur où est lancé le projectile
 };
 
 #endif //PROJ_TEST_H

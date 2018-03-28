@@ -28,38 +28,38 @@ bool collision(const Entite& e1, const Entite& e2)
 	return false;
 }
 
-//TODO PG à refondre, l'affichage d'une sprite est désuet
+//TODO PG 28-03-2018 refondu, à tester
 void Entite::afficher(bool debug)
 {
 	auto& window = ecran_.getWindow();
-	
-	if (equipe_ != JOUEUR)
+
+	if (clk_Invincibilite.getElapsedTime() >= t_Invincibilite_) invincible_ = false;
+
+	if (invincible_)
 	{
-		if (framesInvincibilite_ == 0 || (framesInvincibilite_ / 10) % 2 == 0)
-			window.draw(sprite_);
+		if ((clk_Invincibilite.getElapsedTime().asMilliseconds() / 1000) % 2 == 0)
+			window.draw(sprites_.front());
 		else
 		{
-			sf::Sprite temp_sprite = sprite_;
+			sf::Sprite temp_sprite = sprites_.front();
 			temp_sprite.setColor({ 255, 100, 100, 128 });
 			window.draw(temp_sprite);
 		}
+
 	}
-	else
-	{
-		if((framesInvincibilite_ / 10) % 2 == 0)
-			window.draw(sprite_);
-	}
-	
 
 	for (auto pos : positionsPrev_)
 	{
-		smoke_.setPosition(pos);
-		window.draw(smoke_);
+		smokes_.front().setPosition(pos);
+		window.draw(smokes_.front());
 	}
 
 	if(debug)
 	{
-		//window.draw(cercleEnglobant_);
+		//cercle englobant
+		cercleEnglobant_.setFillColor({ 255, 100, 100, 128 });
+		window.draw(cercleEnglobant_);
+		//hitbox
 		for (auto& elem : forme_)
 		{
 			elem->setFillColor({ 255, 100, 100, 128 });
@@ -67,7 +67,6 @@ void Entite::afficher(bool debug)
 		}
 	}
 
-	if(framesInvincibilite_ != 0) framesInvincibilite_--;
 }
 
 
@@ -141,7 +140,8 @@ void Entite::scale(float factor)
 	for(auto& elem : forme_)
 		elem->scale(factor, factor);
     cercleEnglobant_.scale(factor, factor);
-    sprite_.scale(factor, factor);
+    for (auto& elem : sprites_) 
+		elem.scale(factor, factor);
 	scale_ *= factor;
 }
 
@@ -153,11 +153,6 @@ void Entite::setScale(float factor)
 float Entite::getScale() const
 {
 	return scale_;
-}
-
-void Entite::changeSpeed(int val)
-{
-	vit_ += val;
 }
 
 void Entite::setDetruit(bool val)
@@ -183,6 +178,7 @@ void Entite::setNbPositions(int val)
 	if(val == 0) positionsPrev_.clear();
 }
 
+//TODO PG à refondre, utiliser vecteur de sprites et origines
 void Entite::setSmokeTexture(const sf::Texture &text, sf::Color couleur)
 {
 	textSmoke_ = text;
@@ -209,10 +205,6 @@ void Entite::setOrigin(sf::Vector2f origine)
 	{
 		forme->setOrigin(delta + forme->getOrigin());
 	}
-
-	//HACK PG à changer à la fin le sprite unique
-	sprite_.setOrigin(delta + sprite_.getOrigin());
-
 }
 
 void Entite::regen(sf::Time t)
@@ -247,7 +239,11 @@ void Entite::recoitDegats(float degats)
 
 	if (degats != 0)
 	{
-		framesInvincibilite_ = NB_FRAMES_INVINCIBILITE;
+		if (invincibilable_)
+		{
+			invincible_ = true;
+			clk_Invincibilite.restart();
+		}
 
 		bouclier_ -= restant;
 

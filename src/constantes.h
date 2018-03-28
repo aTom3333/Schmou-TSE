@@ -17,7 +17,7 @@ constexpr float OVERLAY_BARRE_H = 16; /// Hauteur des barres de l'overlay
 
 constexpr size_t NB_ACTION = 7; /// Nombre d'actions
 
-constexpr size_t NB_FRAMES_INVINCIBILITE = 60; /// Nombres de frames d'invincibilités
+constexpr size_t TEMPS_INVINCIBILITE = 2000; /// Nombres de millisecondes d'invincibilité par défaut
 
 
 enum Actions

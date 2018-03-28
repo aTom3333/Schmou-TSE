@@ -60,12 +60,10 @@ class Entite
 		const std::vector<std::unique_ptr<sf::Shape>>& getForme() const { return forme_; }
 		/**
 		 * @fn afficher
-		 * @brief Affiche le sprite de l'Entite
+		 * @brief Affiche le premier sprite de l'Entite, gère les frames d'invincibilité
 		 *
 		 * Appelle la fonction afficher de la SFML sur les attributs de l'objet appelant.
-		 * Peut également afficher des informations de debug telles que le cercle englobant,
-		 * et la forme de collision.
-		 * @param [in,out] window Fenêtre SFML dans laquelle afficher l'entité.
+		 * Peut également afficher des informations de debug telles que le cercle englobant ou et la forme de collision.
 		 * @param [in] debug Un @c bool qui vaut @a true si les informations de debug doivent être affichées et @a false sinon.
 		 */
 		void afficher(bool debug = false);
@@ -138,7 +136,7 @@ class Entite
 		 * La valeur renvoyée correspond à un angle en degrés
 		 * @return Un @c float qui correspond à l'eorientation de l'Entite
 		 */
-		float getRotation() const;
+		float getRotation() const { return rotation_; }
 
 		/**
 		 * @fn scale
@@ -168,7 +166,7 @@ class Entite
          * Cette fonction renvoie l'échelle actuelle de l'Entite appelante
          * @return Un @c float qui correspond au facteur d'échelle de l'Entite
          */
-		float getScale() const;
+		float getScale() const { return scale_; }
 
         /**
          * @fn estDehors
@@ -210,7 +208,7 @@ class Entite
          * ésultante peut également être négative, cela résultera en un mouvement en miroir
          * @param [in] val La valeur à ajouter à la vitesse actuelle
          */
-		void changeSpeed(int val); 
+		void changeSpeed(int val) { vitM_ += val; vit_ += val; }
 		/**
 		* @fn setDetruit
 		* @brief Fixe si l'entité est détruit ou non
@@ -276,9 +274,9 @@ class Entite
 		float getBouclier() const { return bouclier_; }
 		float getVitMax() const { return vitM_; }
 		float getVit() const { return vit_; }
-		//const sf::Texture& getTexture() const { return textures_; } //TODO PG encore utile ?
 		sf::Vector2f getOrigin() const { return origine_; }
-		bool isInvincible() const { return invincibilite_ && framesInvincibilite_ != 0; }
+		bool isInvincibilable() const { return invincibilable_; }
+		bool isInvincible() const { return invincible_; }
 		bool isCollisionneuse() const { return collisionneuse_; }
 		bool isCollisionnable() const { return collisionnable_; }
 
@@ -302,21 +300,23 @@ class Entite
 		//déplacements
 		std::deque<sf::Vector2f> positionsPrev_; ///< Positions précédentes
 			// /!\ne pas itérer, pas stocké contigûment
-		size_t nbPositions_ = 0; ///< nombre de positions précédentes à conserver
-		sf::Vector2f last_delta_; ///< dernier déplacement en paramètre de move effectué
+		size_t nbPositions_ = 0; ///<nombre de positions précédentes à conserver
+		sf::Vector2f last_delta_; ///<dernier déplacement en paramètre de move effectué
 
 		//caractéristiques
 		bool collisionnable_ = true; ///< Booléen vrai si l'Entite est collisionnable
 		bool collisionneuse_ = true;
 		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
 		bool innate_ = false; ///< true si doit rester dans l'écran
-		bool invincibilite_ = true; ///< true si l'entité a des frames d'invincibilité
+		bool invincibilable_ = true; ///< true si l'entité peut devenir invincible
 
 		//état
 		bool detruit_ = false; ///< true lorsque que le vaisseau est détruit
 		bool actif_ = true; ///< Booleen indiquant si la trajectoire a été amorcée
-		bool debug_ = false; //TODO PG à implémenter
-
+		bool invincible_ = false;///< en état invincible
+		sf::Time t_Invincibilite_; ///< Temps d'invincibilité total en ms
+		sf::Clock clk_Invincibilite; ///<Clock qui gère l'état invincible
+		
 		//graphismes
 		sf::CircleShape cercleEnglobant_; ///< Cercle Englobant de l'Entite
 		std::vector<std::unique_ptr<sf::Shape>> forme_; ///< Forme de l'Entite
@@ -337,7 +337,7 @@ class Entite
 		float vitM_ = 0; ///Vitesse maximale de l'entite
 
 		float pv_ = pvM_; /// Points de vie actuel
-		float armure_ = armureM_; ///Armure actuel
+		float armure_ = armureM_; ///Armure actuelle
 		float bouclier_ = bouclierM_; /// Bouclier actuel
 		float vit_ = vitM_; /// Vitesse actuelle de l'Entite
 
@@ -346,8 +346,10 @@ class Entite
 		float regenBOU_ = 0; /// Bouclier rendu tout les 250 ms
 		float t_regen_; /// Temps écoulé depuis la dernière régénération
 
-		float degatsColl_ = 0; /// Dégats infligé en cas de collision
-		int framesInvincibilite_ = 0; /// Frames invincibilites
+		float degatsColl_ = 0; ///< Dégats infligés en cas de collision
+
+		// Debug
+		bool debug_ = false; //TODO PG à implémenter
 };
 
 #endif // ENTITE_H

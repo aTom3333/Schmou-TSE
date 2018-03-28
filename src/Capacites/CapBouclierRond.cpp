@@ -10,7 +10,7 @@ CapBouclierRond::CapBouclierRond(Ecran& ecran, const std::weak_ptr<Entite>& lanc
 
 	//Icônes
 	icone_.setTexture(*ecran.getChargeur().getTexture("icone.boubou"));
-	affiche_ = true;
+	afficheIcone_ = true;
 
 	//Sprites
 	sprites_.emplace_back(ecran.getChargeur().getTexture("Cap.boubou"));
@@ -58,10 +58,7 @@ void CapBouclierRond::utiliser(proj_container& projectiles)
 }
 
 
-void CapBouclierRond::actualiser(proj_container& projectiles)
+void CapBouclierRond::actualiser()
 {
-	// Juste pour mute les warnings du compilateur
-	(void)projectiles;
-
 	// Rien à faire ici
 }

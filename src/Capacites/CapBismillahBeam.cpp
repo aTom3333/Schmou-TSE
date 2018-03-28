@@ -40,9 +40,7 @@ void CapBismillah::utiliser(proj_container& projectiles)
 	}
 }
 
-void CapBismillah::actualiser(proj_container& projectiles)
+void CapBismillah::actualiser()
 {
-	// Juste pour mute les warnings du compilateur
-	(void)projectiles;
 	// Rien à faire pour cette capacité
 }

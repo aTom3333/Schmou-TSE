@@ -41,20 +41,22 @@ void CapDash::utiliser(proj_container& projectiles)
 }
 
 
-void CapDash::actualiser(proj_container& projectiles)
-{
-	// Juste pour mute les warnings du compilateur
-	(void)projectiles;
-	
-	if (!active_ && t_lastuse_.getElapsedTime().asMilliseconds() < 100)
-	{
-		lanceur_._Get()->changeSpeed(5000);
-		active_ = true;
-	}
+void CapDash::actualiser()
+{	
+	//TODO PG weak_ptr est-ce propre ?
+	assert(!lanceur_.expired());
+	if (auto lanceur = lanceur_.lock()) {
 
-	if (active_ && t_lastuse_.getElapsedTime().asMilliseconds() > 100)
-	{
-		lanceur_._Get()->changeSpeed(-5000);
-		active_ = false;
+		if (!active_ && t_lastuse_.getElapsedTime().asMilliseconds() < 100)
+		{
+			lanceur->changeSpeed(5000);
+			active_ = true;
+		}
+
+		if (active_ && t_lastuse_.getElapsedTime().asMilliseconds() > 100)
+		{
+			lanceur->changeSpeed(-5000);
+			active_ = false;
+		}
 	}
 }

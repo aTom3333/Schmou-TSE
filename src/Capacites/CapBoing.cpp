@@ -11,8 +11,7 @@ CapBoing::CapBoing(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	afficheIcone_ = true;
 
 	//Icônes
-	capacite_.setTexture(*ecran.getChargeur().getTexture("icone.boing"));
-
+	icone_.setTexture(*ecran.getChargeur().getTexture("icone.boing"));
 
 	//Sprites
 	sprites_.emplace_back(ecran.getChargeur().getTexture("Cap.Boing.Paques"));
@@ -48,9 +47,7 @@ void CapBoing::utiliser(proj_container& projectiles)
 	}
 }
 
-void CapBoing::actualiser(proj_container& projectiles)
-{	// Juste pour mute les warnings du compilateur
-	(void)projectiles;
-
+void CapBoing::actualiser()
+{	
 
 }

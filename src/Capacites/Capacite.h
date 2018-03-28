@@ -44,16 +44,15 @@ class Capacite
 		/**
 		* @fn actualiser
 		* @brief Fonction virtuel qui active les effets de la capacité
-		* @param projectile Vecteur de tout les projectiles présent à l'écran
-		* @param vaisseau Vaisseau qui a activé la compétence
-		* @param tempEcoule Temps écoulé depuis la dernière boucle
+		* @param projectile Vecteur de shared_ptr sur tous les projectiles présent à l'écran
 		*
-		* Fonction virtuel qui gère la création de projectiles et des modifications à apporter au vaisseau
+		* Fonction virtuelle qui gère la création de projectiles et des modifications à apporter au vaisseau
 		*/
 		virtual void actualiser(proj_container &projectiles) = 0;
 		
 
 		//fonctions relatives à l'icone
+		//TODO PG à documenter
 		void afficherNom() { ecran_.getWindow.draw(text_); };
 		void gestionIcon();
 		void initIcon(int i);
