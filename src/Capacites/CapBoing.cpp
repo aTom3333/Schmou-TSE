@@ -12,7 +12,7 @@ CapBoing::CapBoing(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	//Icônes
 	capTexture_ = ecran.getChargeur().getTexture("icone.boing");
 	capacite_.setTexture(*capTexture_);
-	tir_ = true;
+	affiche_ = true;
 
 	//Textures
 	sprites_.emplace_back(ecran.getChargeur().getTexture("Cap.Boing.Paques"));
