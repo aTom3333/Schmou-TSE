@@ -56,7 +56,7 @@ public:
 
 	//setters
 	void setEquipeAll(Equipe equipe) {
-		for (auto &element : v_) element.v->setequipe_(equipe); 
+		for (auto& element : v_) element.v->setequipe_(equipe); 
 	}
 
 private:

@@ -5,7 +5,7 @@
 #include "../constantes.h"
 #include "Vaisseau.h"
 #include "../Utilitaires/Trajectoire.h"
-#include "VaisseauDefenseurB.h"
+#include "VaissBouclier.h"
 
 /**
 * @class VaisseauBouclier
@@ -14,7 +14,7 @@
 * Défenseur : Vaisseau ennemi
 * Comportement : Déplacement (Linéaire, Parabolique, Sinsoidale)
 				 Pas de Tir
-				 Possède un bouclier en face de lui destructible : VaisseauDefenseurB
+				 Possède un bouclier en face de lui destructible : VaissBouclier
 */
 
 class VaisseauDefenseur : public Vaisseau
@@ -44,14 +44,14 @@ public:
 	x = x0 + sens*v*t (faux mais approximation si la différence de temps est très petite devant la période)
 	y = pente * (x - x0) + y0 + amplitude * sin(2*pi/période * x)
 	*/
-	VaisseauDefenseur(float x, float y, vaisseau_container &vaisseaux, Trajectoire traj, float param1, float param2, float param3 = 0, float param4 = 0);
+	VaisseauDefenseur(Ecran& ecran, float x, float y, vaisseau_container &vaisseaux, Trajectoire traj, float param1, float param2, float param3 = 0, float param4 = 0);
 	/**
 	* @fn ~VaisseauDefenseur
 	* @brief Destructeur
 	*
 	* Vide
 	*/
-	~VaisseauDefenseur();
+	~VaisseauDefenseur() {};
 	/**
 	* @fn gestion
 	* @brief Gère le comportement du vaisseau
@@ -61,14 +61,14 @@ public:
 	*
 	* Gère le déplacement et l'affichage du vaisseau
 	*/
-	void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input);
+	void gestion(proj_container proj_cont, Input& input);
 	/**
 	* @fn destruction
 	* @brief Procedure a effectuer lorsque le vaisseau est détruit
 	*
 	* Détruit l'annexe bouclier
 	*/
-	void destruction();
+	void destruction() { detruit_ = true; }
 
 private:
 	sf::Vector2f posInit_; ///position de départ
@@ -78,8 +78,6 @@ private:
 								// param3 Lineaire : Inutilisé		Parabolique : Abscisse de l'extremum		Sinusoidale : Amplitude
 								// param4 Lineaire : Inutilisé		Parabolique : Inutilisé						Sinusoidale : Pente
 	Trajectoire trajectoire_; /// Trajectoire du vaisseau
-	float t_; /// Temps écoulé depuis la création (temps de vie)
-	int frames_;/// temps de vie dans une trajectoire
 
 };
 

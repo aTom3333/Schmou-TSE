@@ -49,7 +49,7 @@ void Entite::afficher(bool debug)
 	}
 	else window.draw(sprites_.front());
 
-	for (auto pos : positionsPrev_)
+	for (auto& pos : positionsPrev_)
 	{
 		smokes_.front().setPosition(pos);
 		window.draw(smokes_.front());
@@ -121,7 +121,7 @@ void Entite::rotate(float angle)
 
     cercleEnglobant_.rotate(angle);
 
-    for (auto sprite : sprites_)
+    for (auto& sprite : sprites_)
 		sprite.rotate(angle);
 
 	rotation_ = fmod(rotation_ + angle, 360);
@@ -180,12 +180,14 @@ void Entite::setNbPositions(int val)
 	if(val == 0) positionsPrev_.clear();
 }
 
-//TODO PG à refondre, utiliser vecteur de sprites et origines
+//TODO PG à refondre, je ne sais pas ce que c'est
 void Entite::setSmokeTexture(const sf::Texture &text, sf::Color couleur)
 {
-	textSmoke_ = text;
-	smoke_.setTexture(textSmoke_);
-	smoke_.setColor(couleur);
+	for (auto& smoke : smokes_)
+	{
+		smoke.setTexture(text);
+		smoke.setColor(couleur);
+	}
 }
 
 void Entite::setOrigin(sf::Vector2f origine)

@@ -41,14 +41,12 @@ public:
 		x = x0 + sens*v*t (faux mais approximation si la différence de temps est très petite devant la période)
 		y = pente * (x - x0) + y0 + amplitude * sin(2*pi/période * x)
 		*/
-		VaisseauAttaquant(float x, float y, Trajectoire traj, float param1, float param2, float param3 = 0, float param4 = 0);
+		VaisseauAttaquant(Ecran& ecran, float x, float y, Trajectoire traj, float param1, float param2, float param3 = 0, float param4 = 0);
 		/**
 		* @fn ~VaisseauEclaireur
-		* @brief Destructeur
-		*
-		* Vide
+		* @brief Destructeur vide
 		*/
-		~VaisseauAttaquant();
+		~VaisseauAttaquant() {};
 		/**
 		* @fn gestion
 		* @brief Gère le comportement du vaisseau
@@ -58,7 +56,7 @@ public:
 		*
 		* Gère le déplacement et l'affichage du vaisseau
 		*/
-		void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input) override;
+		void gestion(proj_container proj_cont, Input& input) override;
 		/**
 		* @fn destruction
 		* @brief Procedure a effectuer lorsque le vaisseau est détruit
@@ -75,8 +73,6 @@ public:
 									// param3 Lineaire : Inutilisé		Parabolique : Abscisse de l'extremum		Sinusoidale : Amplitude
 									// param4 Lineaire : Inutilisé		Parabolique : Inutilisé						Sinusoidale : Pente
 		Trajectoire trajectoire_; /// Trajectoire du vaisseau
-		float t_; /// Temps écoulé depuis la création (temps de vie)
-		int frames_;/// temps de vie dans une trajectoire
 };
 
 

@@ -28,9 +28,6 @@ ProjBismillah::ProjBismillah(Ecran& ecran, std::shared_ptr<Entite> lanceur, std:
 	// Hitbox 
 	forme_.emplace_back(new sf::RectangleShape());	//l'origine est dynamique car le rectangle change de taille
 
-	// Clock
-	t_age_.restart();
-
     // Caractéristiques de code
     equipe_ = equipe;
     actif_ = false;
@@ -57,16 +54,16 @@ void ProjBismillah::gestion()
 		const float charge_frames = 1129; //temps de charge
 		const float stationnaire_frames = 4032; //temps à l'état stationnaire entre les phases croissance et décroissance
 
-		if (t_age_.getElapsedTime().asMilliseconds() <= charge_frames)//changement de la taille de la boule de chargement
+		if (t_age_.asMilliseconds() <= charge_frames)//changement de la taille de la boule de chargement
 		{
-			sprites_.at(0).setScale(sqrt(t_age_.getElapsedTime().asMilliseconds() / charge_frames), sqrt(t_age_.getElapsedTime().asMilliseconds() / charge_frames));
+			sprites_.at(0).setScale(sqrt(t_age_.asMilliseconds() / charge_frames), sqrt(t_age_.asMilliseconds() / charge_frames));
 		}
 		//rayon croissant
-		else if (t_age_.getElapsedTime().asMilliseconds() <= cast_frames / 2.0f + charge_frames)
+		else if (t_age_.asMilliseconds() <= cast_frames / 2.0f + charge_frames)
 		{
 			actif_ = true;
 			//interpolation linéaire pour que la largeur max soit atteinte en cast_frames images après le temps de charge_boule
-			float largeur_actuelle = 2 * largeur_max_ * ((t_age_.getElapsedTime().asMilliseconds() - charge_frames) / (cast_frames));
+			float largeur_actuelle = 2 * largeur_max_ * ((t_age_.asMilliseconds() - charge_frames) / (cast_frames));
 			//hitbox
 			dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ largeur_actuelle, lanceur->getPosition().y });
 			//sprite
@@ -77,7 +74,7 @@ void ProjBismillah::gestion()
 			ecran_.getWindow.draw(sprite);
 		}
 		//rayon stationnaire
-		else if (t_age_.getElapsedTime().asMilliseconds() <= cast_frames / 2.0f + charge_frames + stationnaire_frames)
+		else if (t_age_.asMilliseconds() <= cast_frames / 2.0f + charge_frames + stationnaire_frames)
 		{
 			//hitbox
 			dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ largeur_max_, lanceur->getPosition().y });
@@ -89,10 +86,10 @@ void ProjBismillah::gestion()
 			ecran_.getWindow.draw(sprite);
 		}
 		//rayon décroissant
-		else if (t_age_.getElapsedTime().asMilliseconds() <= cast_frames + charge_frames + stationnaire_frames)
+		else if (t_age_.asMilliseconds() <= cast_frames + charge_frames + stationnaire_frames)
 		{
 			//interpolation linéaire inverse pour que la largeur max soit atteinte en cast_frames images après le temps de charge_boule
-			float largeur_actuelle = 2 * largeur_max_ * (1 - ((t_age_.getElapsedTime().asMilliseconds() - charge_frames - stationnaire_frames) / cast_frames));
+			float largeur_actuelle = 2 * largeur_max_ * (1 - ((t_age_.asMilliseconds() - charge_frames - stationnaire_frames) / cast_frames));
 			//décroissance de la boule de charge avec le rayon
 			sprites_.at(0).setScale(largeur_actuelle / sprites_.at(0).getGlobalBounds().width, largeur_actuelle / sprites_.at(0).getGlobalBounds().height);
 			//hitbox
@@ -110,7 +107,7 @@ void ProjBismillah::gestion()
 		ecran_.getWindow.draw(sprites_.at(0));
 
 		//si les animations sont finies, on tue le projectile
-		if (t_age_.getElapsedTime().asMilliseconds() > cast_frames + charge_frames + stationnaire_frames)
+		if (t_age_.asMilliseconds() > cast_frames + charge_frames + stationnaire_frames)
 		{
 			detruit_ = true;
 			actif_ = false;
@@ -145,6 +142,8 @@ void ProjBismillah::gestion()
 			}
 
 		}
+
+		t_age_ += ecran_.getClock().getElapsedTime();
 	}
 }
 

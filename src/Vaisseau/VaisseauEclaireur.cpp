@@ -4,36 +4,33 @@
 
 VaisseauEclaireur::VaisseauEclaireur(double x, double y,Trajectoire traj, double param1, double param2, double param3, double param4)
 {
-	//sprite
-	texture_.loadFromFile("../../rc/Sprites/base/vaisseauEnnemiTest.png");
-	sprite_.setTexture(texture_);
+	// Sprites
+	sprites_.emplace_back(ecran_.getChargeur().getTexture("vaiss.ennemi.test"));
+	for (auto& sprite : sprites_)
+		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 
-	//hitbox simple
+	// Cercle englobant / Hitbox simple
+	//TODO PG Englobeur
 	cercleEnglobant_ = sf::CircleShape((float)sqrt(2*32*32));
 	cercleEnglobant_.setOrigin((float)sqrt(2 * 32 * 32), (float)sqrt(2 * 32 * 32));
 	cercleEnglobant_.setPosition(16, 32);
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
-	// Initialisation de la position
-	posInit_.x = (float)x;
-	posInit_.y = (float)y;
-	// initialisation de la trajectoire
-	trajectoire_ = traj;
-	// Initialisation des paramètres de base
+	// Hitbox
+	// TODO Hitbox complète
+
+	//Origine
+	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
+
+	// Caractéristiques de code
 	equipe_ = ENNEMI;
-	t_ = 0;
-	frames_ = 1;
-	vit_ = 30;
 	actif_ = false;
-	invincibilite_ = false;
 
-	pvM_ = 50;
-	armureM_ = 0;
-	bouclierM_ = 0;
-
-	pv_ = pvM_;
-	armure_ = armureM_;
-	bouclier_ = bouclierM_;
+	// Stats
+	pv_ = pvM_ = 300;
+	armure_ = armureM_ = 0;
+	bouclier_ = bouclierM_ = 0;
+	vit_ = vitM_ = 30;
 
 	regenARM_ = 0;
 	regenBOU_ = 0;
@@ -41,7 +38,8 @@ VaisseauEclaireur::VaisseauEclaireur(double x, double y,Trajectoire traj, double
 
 	degatsColl_ = 50;
 
-	// Initialisation des paramètres de trajectoire
+	// Initialisation de la trajectoire
+	trajectoire_ = traj;
 	params_.push_back((float)param1);
 	params_.push_back((float)param2);
 	params_.push_back((float)param3);
@@ -49,11 +47,7 @@ VaisseauEclaireur::VaisseauEclaireur(double x, double y,Trajectoire traj, double
 
 }
 
-VaisseauEclaireur::~VaisseauEclaireur()
-{
-}
-
-void VaisseauEclaireur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
+void VaisseauEclaireur::gestion(proj_container proj_cont, Input& input)
 {
 	// Juste pour mute les warnings du compilateur
 	(void)input;
@@ -68,11 +62,10 @@ void VaisseauEclaireur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule,
 	
 	if (actif_)
 	{
-		setPosition(traj_position(trajectoire_, t_, vit_, posInit_, params_));
-		afficher(window);
+		setPosition(traj_position(trajectoire_, t_age_.asMilliseconds(), vit_, posInit_, params_));
+		afficher(debug_);
 
-		t_ += tempsEcoule.asMilliseconds();
-		frames_++;
+		t_age_ += ecran_.getClock().getElapsedTime();		
 	}
 }
 

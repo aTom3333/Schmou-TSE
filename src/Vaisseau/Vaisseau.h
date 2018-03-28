@@ -89,7 +89,6 @@ class Vaisseau : public Entite
 		// Composition de vaisseaux, composé d'annexes de classe Vaisseau
 		vaisseau_container annexes_; /// Vecteur contenant toute les parties annexes d'un vaisseau
 		std::unique_ptr<Vaisseau> createur_; /// Si l'objet est une annexe, pointe vers le vaisseau qui possede cette annexe
-		int nbModule_; /// Si c'est une annexe, indice dans le vecteur annexe du créateur
 
 
 };

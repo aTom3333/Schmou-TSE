@@ -43,8 +43,6 @@ class ProjBismillah : public Projectile
 
 	private:
 		const float largeur_max_;
-		sf::Clock t_age_;
-
 };
 
 

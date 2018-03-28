@@ -6,7 +6,7 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 {
 	// Sprites
 	sprites_.emplace_back(ecran.getChargeur().getTexture("vaiss.vaisseautest.lapin"));
-	for (auto sprite : sprites_)
+	for (auto& sprite : sprites_)
 		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 
 	// Cercle englobant
@@ -34,7 +34,7 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	forme_.emplace_back(new sf::ConvexShape(forme2));
 
 	// Origine
-	origine_ = { 32,32 };
+	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
 
 	// Caractéristiques de code
 	equipe_ = JOUEUR;
@@ -55,31 +55,27 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	degatsColl_ = 50;
 
 	// Capacités
-
-	//TIR1
 	std::shared_ptr<VaisseauTest> temp_ptr(this);
-	capacites_->emplace_back(CapPiou(ecran, std::weak_ptr<VaisseauTest>(temp_ptr)));
-	//TODO PG que faire ?!?
+	//TODO PG est-ce que cela marche ?!?
 
-	//TIR2
-	CapDash *dash = new CapDash();
-	capacites_.push_back(dash);
+	//TIR1 Piou
+	capacites_.emplace_back(CapPiou(ecran, std::weak_ptr<VaisseauTest>(temp_ptr)));
 
-	//COMP1
-	CapBouclierRond *boubou = new CapBouclierRond(1, this);
-	capacites_.push_back(boubou);
+	//TIR2 Dash
+	capacites_.emplace_back(CapDash(ecran, std::weak_ptr<VaisseauTest>(temp_ptr)));
 
-	//COMP2
+	//COMP1 BouclierRond
+	capacites_.emplace_back(CapBouclierRond(ecran, std::weak_ptr<VaisseauTest>(temp_ptr)));
+
+	//COMP2 Missile
 	//TODO PG CapMissile
-	capacites_.push_back(nullptr);
+	//capacites_.emplace_back(CapMissile(ecran, std::weak_ptr<VaisseauTest>(temp_ptr)));
 
-	//COMP 3
-	CapBoing *boing = new CapBoing();
-	capacites_.push_back(boing);
+	//COMP3 Boing
+	capacites_.emplace_back(CapBoing(ecran, std::weak_ptr<VaisseauTest>(temp_ptr)));
 
-	//ULTI
-	CapBismillah *bism = new CapBismillah();
-	capacites_.push_back(bism);
+	//ULTI Bismillah
+	capacites_.emplace_back(CapBismillah(ecran, std::weak_ptr<VaisseauTest>(temp_ptr)));
 }
 
 void VaisseauTest::gestion(proj_container proj_cont, Input& input)

@@ -2,38 +2,36 @@
 #include <cmath>
 
 
-VaisseauAttaquant::VaisseauAttaquant(float x, float y, Trajectoire traj, float param1, float param2, float param3, float param4)
+VaisseauAttaquant::VaisseauAttaquant(Ecran& ecran, float x, float y, Trajectoire traj, float param1, float param2, float param3, float param4) : 
+	Vaisseau(ecran)
 {
-	//sprite
-	texture_.loadFromFile("../../rc/Sprites/base/vaisseauAttaquant.png");
-	sprite_.setTexture(texture_);
+	// Sprites
+	sprites_.emplace_back(ecran_.getChargeur().getTexture("vaiss.attaquant"));
+	for (auto& sprite : sprites_)
+		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 
-	//hitbox simple
+	// Cercle englobant / Hitbox simple
+	//TODO PG Englobeur
 	cercleEnglobant_ = sf::CircleShape(sqrt(32 * 32 + 64 * 64));
 	cercleEnglobant_.setOrigin(sqrt(32 * 32 + 64 * 64), sqrt(32 * 32 + 64 * 64));
 	cercleEnglobant_.setPosition(64, 32);
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
-	// Initialisation de la position
-	posInit_.x = x;
-	posInit_.y = y;
-	// initialisation de la trajectoire
-	trajectoire_ = traj;
-	// Initialisation des paramètres de base
+	// Hitbox
+	// TODO Hitbox complète
+
+	//Origine
+	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
+
+	// Caractéristiques de code
 	equipe_ = ENNEMI;
-	t_ = 0;
-	frames_ = 1;
-	vit_ = 40;
 	actif_ = false;
-	invincibilite_ = false;
 
-	pvM_ = 300;
-	armureM_ = 50;
-	bouclierM_ = 0;
-
-	pv_ = pvM_;
-	armure_ = armureM_;
-	bouclier_ = bouclierM_;
+	// Stats
+	pv_ = pvM_ = 300;
+	armure_ = armureM_ = 0;
+	bouclier_ = bouclierM_ = 0;
+	vit_ = vitM_ = 40;
 
 	regenARM_ = 0;
 	regenBOU_ = 0;
@@ -41,34 +39,33 @@ VaisseauAttaquant::VaisseauAttaquant(float x, float y, Trajectoire traj, float p
 
 	degatsColl_ = 50;
 
-	// Initialisation des paramètres de trajectoire
+	// Initialisation de la trajectoire
+	trajectoire_ = traj;
 	params_.push_back(param1);
 	params_.push_back(param2);
 	params_.push_back(param3);
 	params_.push_back(param4);
 
-	capacites_.push_back(new CapMissile());
+	// Capacités
+	std::shared_ptr<VaisseauAttaquant> temp_ptr(this);
+	//TODO PG est-ce que cela marche ?!?
+	capacites_.emplace_back(CapMissile(ecran, std::weak_ptr<VaisseauAttaquant>(temp_ptr)));
 }
 
-VaisseauAttaquant::~VaisseauAttaquant()
-{
-}
-
-void VaisseauAttaquant::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
+void VaisseauAttaquant::gestion(proj_container proj_cont, Input& input)
 {
 	// Juste pour mute les warnings du compilateur
 	(void)input;
 	
 	if (actif_)
 	{
-		if (t_ > 1000)
-			capacites_[0]->utiliser(position_.x + 32 + 20, position_.y + 2*sqrt(32 * 32 + 64 * 64));
+		if (t_age_.asMilliseconds() > 1000)
+			capacites_[0]->utiliser(proj_cont);
 
-		setPosition(traj_position(trajectoire_, t_, vit_, posInit_, params_));
-		afficher(window);
+		setPosition(traj_position(trajectoire_, t_age_.asMilliseconds(), vit_, posInit_, params_));
+		afficher(debug_);
 
-		t_ += tempsEcoule.asMilliseconds();
-		frames_++;
+		t_age_ += ecran_.getClock().getElapsedTime();
 	}
 }
 

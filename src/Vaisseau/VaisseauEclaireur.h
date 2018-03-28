@@ -43,11 +43,9 @@ public:
 	VaisseauEclaireur(double x, double y, Trajectoire traj, double param1, double param2, double param3 = 0, double param4 = 0);
 	/**
 	* @fn ~VaisseauEclaireur
-	* @brief Destructeur
-	*
-	* Vide
+	* @brief Destructeurvide
 	*/
-	~VaisseauEclaireur();
+	~VaisseauEclaireur() {};
 	/**
 	* @fn gestion
 	* @brief Gère le comportement du vaisseau
@@ -57,7 +55,7 @@ public:
 	*
 	* Gère le déplacement et l'affichage du vaisseau
 	*/
-	void gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input);
+	void gestion(proj_container proj_cont, Input& input);
 	/**
 	* @fn destruction
 	* @brief Procedure a effectuer lorsque le vaisseau est détruit

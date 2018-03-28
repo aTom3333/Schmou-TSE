@@ -3,38 +3,38 @@
 #include <cmath>
 
 
-VaisseauDefenseur::VaisseauDefenseur(float x, float y, vaisseau_container &vaisseaux, Trajectoire traj, float param1, float param2, float param3, float param4)
+VaisseauDefenseur::VaisseauDefenseur(Ecran& ecran, float x, float y, vaisseau_container &vaisseaux, Trajectoire traj, float param1, float param2, float param3, float param4) : 
+	Vaisseau(ecran)
 {
-	//sprite
-	texture_.loadFromFile("../../rc/Sprites/base/vaisseauDefenseur.png");
-	sprite_.setTexture(texture_);
+	// Sprites
+	sprites_.emplace_back(ecran_.getChargeur().getTexture("vaiss.defenseur"));
+	for (auto& sprite : sprites_)
+		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 
-	//hitbox simple
+	// Cercle englobant / Hitbox simple
+	//TODO PG Englobeur
 	cercleEnglobant_ = sf::CircleShape((float)sqrt(32 * 32 + 64 * 64));
 	cercleEnglobant_.setOrigin((float)sqrt(32 * 32 + 64 * 64), sqrt((float)32 * 32 + 64 * 64));
 	cercleEnglobant_.setPosition(16, 32);
 	forme_.emplace_back(new sf::RectangleShape({ 128,64 }));
 
-	// Initialisation de la position
-	posInit_.x = x;
-	posInit_.y = y;
-	// initialisation de la trajectoire
-	trajectoire_ = traj;
-	// Initialisation des paramètres de base
+
+	// Hitbox
+	// TODO Hitbox complète
+
+	//Origine
+	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
+
+	// Caractéristiques de code
 	equipe_ = ENNEMI;
-	t_ = 0;
-	frames_ = 1;
-	vit_ = 10;
 	actif_ = false;
-	invincibilite_ = false;
+	invincibilable_ = false;
 
-	pvM_ = 100;
-	armureM_ = 50;
-	bouclierM_ = 0;
-
-	pv_ = pvM_;
-	armure_ = armureM_;
-	bouclier_ = bouclierM_;
+	// Stats
+	pv_ = pvM_ = 100;
+	armure_ = armureM_ = 50;
+	bouclier_ = bouclierM_ = 0;
+	vit_ = vitM_ = 10;
 
 	regenARM_ = 0;
 	regenBOU_ = 0;
@@ -42,11 +42,13 @@ VaisseauDefenseur::VaisseauDefenseur(float x, float y, vaisseau_container &vaiss
 
 	degatsColl_ = 75;
 
-	annexes_.push_back(vaisseau_ptr(new VaisseauDefenseurB(0, x, y+64, this)));
-	annexesB_.push_back(true);
+	// Composition
+	//ajout d'un bouclier
+	annexes_.emplace_back(VaissBouclier(ecran));
 	vaisseaux.push_back(annexes_[0]);
 
-	// Initialisation des paramètres de trajectoire
+	// Initialisation de la trajectoire
+	trajectoire_ = traj;
 	params_.push_back(param1);
 	params_.push_back(param2);
 	params_.push_back(param3);
@@ -54,12 +56,7 @@ VaisseauDefenseur::VaisseauDefenseur(float x, float y, vaisseau_container &vaiss
 
 }
 
-VaisseauDefenseur::~VaisseauDefenseur()
-{
-
-}
-
-void VaisseauDefenseur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
+void VaisseauDefenseur::gestion(proj_container proj_cont, Input& input)
 {
 	/*if (frames_%100==0)
 	{
@@ -71,29 +68,18 @@ void VaisseauDefenseur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule,
 
 	if (actif_)
 	{
-		setPosition(traj_position(trajectoire_, t_, vit_, posInit_, params_));
-		afficher(window);
+		setPosition(traj_position(trajectoire_, t_age_.asMilliseconds(), vit_, posInit_, params_));
+		afficher(debug_);
 
 		// Gestion du module de bouclier
-		for(unsigned int i = 0; i < annexes_.size(); i++)
+		for (auto& annexe : annexes_)
 		{
-			if (annexesB_[i])
-			{
-				annexes_[i]->setActif(true);
-				annexes_[i]->setPosition({ position_.x, position_.y + 64 });
-				annexes_[i]->gestion(window, tempsEcoule, input);
-			}
+			annexe->setActif(true);
+			annexe->setPosition({ position_.x, position_.y });
+			annexe->gestion(proj_cont, input);
 		}
-			
-		t_ += tempsEcoule.asMilliseconds();
-		frames_++;
+
+		t_age_ += ecran_.getClock().getElapsedTime();
 	}
 	
-}
-
-void VaisseauDefenseur::destruction()
-{
-	annexesB_[0] = false;
-	annexes_[0]->setDetruit(true);
-	detruit_ = true;
 }

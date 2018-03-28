@@ -284,6 +284,7 @@ class Entite
 		void setNbPositions(int val);
 		void setSmokeTexture(const sf::Texture &text, sf::Color couleur = { 255,255,255 });
 		void setOrigin(sf::Vector2f origine);
+		void setActif(const bool& actif) { actif_ = actif; }
 
 	protected:
 		// Référence vers l'écran
@@ -314,6 +315,8 @@ class Entite
 		bool invincible_ = false;///< en état invincible
 		sf::Time t_Invincibilite_; ///< Temps d'invincibilité total en ms
 		sf::Clock clk_Invincibilite; ///<Clock qui gère l'état invincible
+		sf::Time t_age_; /// Temps écoulé depuis la création (temps de vie)
+
 		
 		//graphismes
 		sf::CircleShape cercleEnglobant_; ///< Cercle Englobant de l'Entite
