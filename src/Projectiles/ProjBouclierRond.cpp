@@ -55,12 +55,15 @@ void ProjBouclierRond::gestion()
 	auto& window = ecran_.getWindow();
 	auto tempsEcoule = ecran_.getClock().getElapsedTime();
 	
-	setPosition({ lanceur_._Get()->getPosition().x, lanceur_._Get()->getPosition().y });
+	if (auto lanceur = lanceur_.lock())
+	{
+		setPosition({ lanceur->getPosition().x, lanceur->getPosition().y });
 
-	window.draw(sprites_.at(0));//HACK PG màj affocher de entité avec sprites_ puis changer ici
+		window.draw(sprites_.at(0));//HACK PG màj affocher de entité avec sprites_ puis changer ici
 
-	if (tempsEcoule.asMilliseconds() > tempsMax_)
-		detruit_ = true;
+		if (tempsEcoule.asMilliseconds() > tempsMax_)
+			detruit_ = true;
+	}
 }
 
 
