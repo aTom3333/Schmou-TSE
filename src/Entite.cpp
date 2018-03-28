@@ -132,10 +132,6 @@ void Entite::setRotation(float angle)
 	rotate(angle - rotation_);
 }
 
-float Entite::getRotation() const
-{
-	return rotation_;
-}
 
 void Entite::scale(float factor)
 {
@@ -150,11 +146,6 @@ void Entite::scale(float factor)
 void Entite::setScale(float factor)
 {
 	scale(factor / scale_);
-}
-
-float Entite::getScale() const
-{
-	return scale_;
 }
 
 void Entite::setDetruit(bool val)

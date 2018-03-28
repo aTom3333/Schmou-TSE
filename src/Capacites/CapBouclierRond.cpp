@@ -58,7 +58,7 @@ void CapBouclierRond::utiliser(proj_container& projectiles)
 }
 
 
-void CapBouclierRond::actualiser()
+void CapBouclierRond::actualiser(proj_container &proj)
 {
 	// Rien à faire ici
 }

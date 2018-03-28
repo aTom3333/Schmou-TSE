@@ -79,7 +79,7 @@ void Overlay::draw(sf::RenderWindow & window, vaisseau_ptr vaisseau, bool bDraw)
 			if (vaisseau->getskills()[i] != nullptr && vaisseau->getskills()[i]->getTir())
 			{
 				window.draw(vaisseau->getskills()[i]->getIcon());
-				vaisseau->getskills()[i]->afficherNom(window);
+				vaisseau->getskills()[i]->afficherNom();
 				m++;
 			}
 

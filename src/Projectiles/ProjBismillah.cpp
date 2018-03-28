@@ -3,7 +3,7 @@
 
 
 ProjBismillah::ProjBismillah(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe) :
-	Projectile(ecran), largeur_max_{ sprite.at(0).getTexture()->getSize().x}
+	Projectile(ecran), largeur_max_{ (float)sprite.at(0).getTexture()->getSize().x}
 {
 	// Weak pointeur vers lanceur
 	lanceur_ = lanceur;
@@ -71,7 +71,7 @@ void ProjBismillah::gestion()
 			sprite.setOrigin(largeur_actuelle / 2.0f, lanceur->getPosition().y);
 			sprite.setPosition({ lanceur->getPosition().x, lanceur->getPosition().y - hauteur_vaisseau });
 			sprite.setTexture(sprites_.at(1).getTexture());
-			ecran_.getWindow.draw(sprite);
+			ecran_.getWindow().draw(sprite);
 		}
 		//rayon stationnaire
 		else if (t_age_.asMilliseconds() <= cast_frames / 2.0f + charge_frames + stationnaire_frames)
@@ -83,7 +83,7 @@ void ProjBismillah::gestion()
 			sprite.setOrigin(largeur_max_ / 2.0f, lanceur->getPosition().y);
 			sprite.setPosition({ lanceur->getPosition().x, lanceur->getPosition().y - hauteur_vaisseau });
 			sprite.setTexture(sprites_.at(1).getTexture());
-			ecran_.getWindow.draw(sprite);
+			ecran_.getWindow().draw(sprite);
 		}
 		//rayon décroissant
 		else if (t_age_.asMilliseconds() <= cast_frames + charge_frames + stationnaire_frames)
@@ -99,12 +99,12 @@ void ProjBismillah::gestion()
 			sprite.setOrigin(largeur_actuelle / 2.0f, lanceur->getPosition().y);
 			sprite.setPosition({ lanceur->getPosition().x, lanceur->getPosition().y - hauteur_vaisseau });
 			sprite.setTexture(sprites_.at(1).getTexture());
-			ecran_.getWindow.draw(sprite);
+			ecran_.getWindow().draw(sprite);
 		}
 
 		//affichage boule de chargement à la position du vaisseau
 		sprites_.at(0).setPosition({ lanceur->getPosition().x,lanceur->getPosition().y - hauteur_vaisseau });
-		ecran_.getWindow.draw(sprites_.at(0));
+		ecran_.getWindow().draw(sprites_.at(0));
 
 		//si les animations sont finies, on tue le projectile
 		if (t_age_.asMilliseconds() > cast_frames + charge_frames + stationnaire_frames)
@@ -135,10 +135,10 @@ void ProjBismillah::gestion()
 					f->setFillColor({ 255,100,100,128 });
 
 				for (auto& elem : forme_)
-					ecran_.getWindow.draw(*elem);
+					ecran_.getWindow().draw(*elem);
 
 				cercleEnglobant_.setFillColor({ 255,100,100,128 });
-				ecran_.getWindow.draw(cercleEnglobant_);
+				ecran_.getWindow().draw(cercleEnglobant_);
 			}
 
 		}

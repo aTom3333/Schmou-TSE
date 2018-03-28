@@ -2,7 +2,8 @@
 #include <cmath>
 
 
-VaisseauEclaireur::VaisseauEclaireur(double x, double y,Trajectoire traj, double param1, double param2, double param3, double param4)
+VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, double x, double y,Trajectoire traj, double param1, double param2, double param3, double param4) : 
+	Vaisseau(ecran)
 {
 	// Sprites
 	sprites_.emplace_back(ecran_.getChargeur().getTexture("vaiss.ennemi.test"));

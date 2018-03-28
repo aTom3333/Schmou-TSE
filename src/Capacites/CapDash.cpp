@@ -41,7 +41,7 @@ void CapDash::utiliser(proj_container& projectiles)
 }
 
 
-void CapDash::actualiser()
+void CapDash::actualiser(proj_container& projectiles)
 {	
 	//TODO PG weak_ptr est-ce propre ?
 	assert(!lanceur_.expired());

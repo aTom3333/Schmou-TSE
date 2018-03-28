@@ -3,7 +3,7 @@
 
 
 ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe) :
-	ProjMissile(ecran, lanceur)
+	Projectile(ecran)
 {
 	// Weak pointeur vers lanceur
 	lanceur_ = lanceur;

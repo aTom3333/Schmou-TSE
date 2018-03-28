@@ -47,7 +47,7 @@ void CapBoing::utiliser(proj_container& projectiles)
 	}
 }
 
-void CapBoing::actualiser()
+void CapBoing::actualiser(proj_container& projectiles)
 {	
 
 }

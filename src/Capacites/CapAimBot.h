@@ -23,37 +23,36 @@ public:
 
 
 
-    /**
-    * @fn CapAimBot::CapAimBot
-    * @brief Constructeur
-    *
-    * Vide
-    */
-    CapAimBot();
-    /**
-    * @fn CapAimBot::~CapAimBot
-    * @brief Destructeur
-    *
-    * Vide
-    */
-    ~CapAimBot()
-    {
-    }
-    /**
-    * @fn CapAimBot::set_state_autoAim_true
-    * @brief Destructeur
-    *
-    * change l'état autoaim à true
-    */
-    void set_state_autoAim_true(Capacite& capacite);
-    /**
-    * @fn CapAimBot::set_state_autoAim_false
-    * @brief Destructeur
-    *
-    * change l'état autoaim à false
-    */
-    void set_state_autoAim_false(Capacite& capacite);
-
+    ///**
+    //* @fn CapAimBot::CapAimBot
+    //* @brief Constructeur
+    //*
+    //* Vide
+    //*/
+    //CapAimBot();
+    ///**
+    //* @fn CapAimBot::~CapAimBot
+    //* @brief Destructeur
+    //*
+    //* Vide
+    //*/
+    //~CapAimBot()
+    //{
+    //}
+    ///**
+    //* @fn CapAimBot::set_state_autoAim_true
+    //* @brief Destructeur
+    //*
+    //* change l'état autoaim à true
+    //*/
+    //void set_state_autoAim_true(Capacite& capacite);
+    ///**
+    //* @fn CapAimBot::set_state_autoAim_false
+    //* @brief Destructeur
+    //*
+    //* change l'état autoaim à false
+    //*/
+    //void set_state_autoAim_false(Capacite& capacite);
 
 };
 

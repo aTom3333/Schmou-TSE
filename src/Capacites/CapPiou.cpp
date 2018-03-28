@@ -41,7 +41,7 @@ void CapPiou::utiliser(proj_container& projectiles)
     }
 }
 
-void CapPiou::actualiser()
+void CapPiou::actualiser(proj_container &proj)
 {    
     // Rien à faire pour cette capacité
 }

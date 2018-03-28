@@ -53,7 +53,7 @@ class Capacite
 
 		//fonctions relatives à l'icone
 		//TODO PG à documenter
-		void afficherNom() { ecran_.getWindow.draw(text_); };
+		void afficherNom() { ecran_.getWindow().draw(text_); };
 		void gestionIcon();
 		void initIcon(int i);
 		

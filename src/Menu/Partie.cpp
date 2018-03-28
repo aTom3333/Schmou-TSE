@@ -20,7 +20,7 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 	if (media == Input::Media::Joypad)set_joypad_default_binding(input_);
 
 	//Joueur
-	vaisseau_container::value_type vaisseautest(new VaisseauTest);
+	vaisseau_container::value_type vaisseautest(new VaisseauTest(*this));
 	vaisseautest->setequipe_(JOUEUR);
 	vaisseaux_.push_back(vaisseautest);
 	vaisseaux_[0]->setPosition({ 500,700 });
@@ -129,15 +129,15 @@ ecran_t Partie::executer(sf::Texture &derniereFenetre)
 		for(unsigned int i = 0; i < vaisseaux_.size(); i++)
 		{
 			vaisseaux_[i]->regen(t_ecoule);
-			vaisseaux_[i]->gestion(window_, t_ecoule, input_);
-			vaisseaux_[i]->gestionCapacite(projectiles_, t_ecoule);
+			vaisseaux_[i]->gestion(projectiles_, input_);
+			vaisseaux_[i]->gestionCapacite(projectiles_);
 		}
 
 		// Gestion des projectiles_
 		for(unsigned int i = 0; i < projectiles_.size(); i++)
 		{
 			projectiles_[i]->regen(t_ecoule);
-			projectiles_[i]->gestion(window_, t_ecoule);
+			projectiles_[i]->gestion();
 		}			
 
 		// Gestion des collisions
@@ -292,33 +292,33 @@ void Partie::initPatternTest()
 	VaisseauEclaireur *vaiseauEclaireurP = new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500);
 	VaisseauEclaireur *vaiseauEclaireurS = new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7);*/
 
-	v1.ajouterVaisseau(0, vaisseau_ptr(new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5)));
-	v1.ajouterVaisseau(400, vaisseau_ptr(new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5)));
-	v1.ajouterVaisseau(800, vaisseau_ptr(new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5)));
-	v1.ajouterVaisseau(1200, vaisseau_ptr(new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5)));
-	v1.ajouterVaisseau(1600, vaisseau_ptr(new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5)));
+	v1.ajouterVaisseau(0, vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)));
+	v1.ajouterVaisseau(400, vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)));
+	v1.ajouterVaisseau(800, vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)));
+	v1.ajouterVaisseau(1200, vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)));
+	v1.ajouterVaisseau(1600, vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)));
 
-	v2.ajouterVaisseau(0, vaisseau_ptr(new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500)));
-	v2.ajouterVaisseau(400, vaisseau_ptr(new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500)));
-	v2.ajouterVaisseau(800, vaisseau_ptr(new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500)));
-	v2.ajouterVaisseau(1200, vaisseau_ptr(new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500)));
-	v2.ajouterVaisseau(1600, vaisseau_ptr(new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500)));
+	v2.ajouterVaisseau(0, vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)));
+	v2.ajouterVaisseau(400, vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)));
+	v2.ajouterVaisseau(800, vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)));
+	v2.ajouterVaisseau(1200, vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)));
+	v2.ajouterVaisseau(1600, vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)));
 
-	v3.ajouterVaisseau(0, vaisseau_ptr(new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7)));
-	v3.ajouterVaisseau(500, vaisseau_ptr(new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7)));
-	v3.ajouterVaisseau(1000, vaisseau_ptr(new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7)));
-	v3.ajouterVaisseau(1500, vaisseau_ptr(new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7)));
-	v3.ajouterVaisseau(2000, vaisseau_ptr(new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7)));
+	v3.ajouterVaisseau(0, vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)));
+	v3.ajouterVaisseau(500, vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)));
+	v3.ajouterVaisseau(1000, vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)));
+	v3.ajouterVaisseau(1500, vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)));
+	v3.ajouterVaisseau(2000, vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)));
 
-	v4.ajouterVaisseau(0, vaisseau_ptr(new VaisseauAttaquant(0, -50, PARABOLIQUE, 1, 200, 0)));
-	v4.ajouterVaisseau(0, vaisseau_ptr(new VaisseauAttaquant(250, -50, PARABOLIQUE, 1, 200, 250)));
-	v4.ajouterVaisseau(0, vaisseau_ptr(new VaisseauAttaquant(500, -50, PARABOLIQUE, 1, 200, 500)));
-	v4.ajouterVaisseau(0, vaisseau_ptr(new VaisseauAttaquant(750, -50, PARABOLIQUE, 1, 200, 750)));
-	v4.ajouterVaisseau(0, vaisseau_ptr(new VaisseauAttaquant(1000, -50, PARABOLIQUE, 1, 200, 1000)));
+	v4.ajouterVaisseau(0, vaisseau_ptr(new VaisseauAttaquant(*this, 0, -50, PARABOLIQUE, 1, 200, 0)));
+	v4.ajouterVaisseau(0, vaisseau_ptr(new VaisseauAttaquant(*this, 250, -50, PARABOLIQUE, 1, 200, 250)));
+	v4.ajouterVaisseau(0, vaisseau_ptr(new VaisseauAttaquant(*this, 500, -50, PARABOLIQUE, 1, 200, 500)));
+	v4.ajouterVaisseau(0, vaisseau_ptr(new VaisseauAttaquant(*this, 750, -50, PARABOLIQUE, 1, 200, 750)));
+	v4.ajouterVaisseau(0, vaisseau_ptr(new VaisseauAttaquant(*this, 1000, -50, PARABOLIQUE, 1, 200, 1000)));
 
-	v5.ajouterVaisseau(0, vaisseau_ptr(new VaisseauDefenseur(-50, 500, vaisseaux_, LINEAIRE, 1, 0)));
-	v5.ajouterVaisseau(1500, vaisseau_ptr(new VaisseauDefenseur(-50, 500, vaisseaux_, LINEAIRE, 1, 0)));
-	v5.ajouterVaisseau(3000, vaisseau_ptr(new VaisseauDefenseur(-50, 500, vaisseaux_, LINEAIRE, 1, 0)));
+	v5.ajouterVaisseau(0, vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)));
+	v5.ajouterVaisseau(1500, vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)));
+	v5.ajouterVaisseau(3000, vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)));
 
 	pattern_.push_back(v1);
 	pattern_.push_back(v2);

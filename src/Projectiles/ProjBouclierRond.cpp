@@ -28,12 +28,10 @@ ProjBouclierRond::ProjBouclierRond(Ecran& ecran, std::shared_ptr<Entite> lanceur
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 	forme_.at(0)->setOrigin({ 75,75 });
 
-	// Caractéristiques
+	// Caractéristiques de code
 	equipe_ = equipe;
-
-	// Stats
 	actif_ = true;
-	invincibilite_ = false;
+	invincibilable_ = false;
 
 	//Stats
 	pv_ = pvM_ = 500;
