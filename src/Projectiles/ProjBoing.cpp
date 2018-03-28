@@ -1,60 +1,55 @@
 #include "ProjBoing.h"
 #include "../constantes.h"
 
-ProjBoing::ProjBoing()
+#include <cmath>
+
+
+ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe) :
+	Projectile(ecran)
 {
-}
+	// Weak pointeur vers lanceur
+	lanceur_ = lanceur;
 
-ProjBoing::ProjBoing(int x, int y, sf::Sound sound)
-{
-	//Sprite
-	texture_.loadFromFile("../../rc/Sprites/base/ballePaques.png");
-	sprite_.setTexture(texture_);
+	// Gestion du sprite
+	sprites_ = sprite;
 
-	//son
-	sound_ = sound;
+	//Origines
+	origine_ = { 16,16 }; //basé sur image ballePaques(32x32)
+	sprites_.at(0).setOrigin({ 16,16 });
 
-	//hitbox simple (et complète dans ce cas car c'est le projectile est un cercle)
-	cercleEnglobant_ = sf::CircleShape(16);
+	//Gestion du son
+	sounds_ = sound;
+	if (!sounds_.empty())sounds_.front().play();//son joué à la création du projectile	
+
+												// cercle englobant
+												//TODO utiliser la fonction Englobeuse
+	cercleEnglobant_ = sf::CircleShape(hypot(16, 16));
 	cercleEnglobant_.setOrigin(16, 16);
-	cercleEnglobant_.setPosition(16,16);
+	cercleEnglobant_.setPosition(16, 16);
 
-	sprite_.setOrigin(16, 16);
+	//Hitbox
+	forme_.emplace_back(new sf::RectangleShape({ 16,16 }));
+	forme_.at(0)->setOrigin({ 16,16 });
 
-	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
-	
-	//attributs
+	// Caractéristiques
+	equipe_ = equipe;
 
-	//stats
-
-	pvM_ = 10;
-	armureM_ = 0;
-	bouclierM_ = 0;
-
-	pv_ = pvM_;
-	armure_ = armureM_;
-	bouclier_ = bouclierM_;
+	//Stats
+	pv_ = pvM_ = 10;
+	armure_ = armureM_ = 0;
+	bouclier_ = bouclierM_ = 0;
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
-	degatsColl_ = 50;
-	actif_ = true;
+	degatsColl_ = 30; //TODO PG xlanceur.stats().atk
 
-	// Multiplicateur de direction (1 vers la droite/bas -1 vers le haut/gauche)
-	mx_ = rand() % 2 == 0 ? 1 : -1;
-	my_ = rand() % 2 == 0 ? 1 : -1;
+	vit_ = vitM_ = 400;
+	angle_ = rand() % 100 / 100 * 2 * PI; // TODO CL rand c++
 
-	// Vitesse entre 30 et 80
-	vx_ = (rand() % 5 + 3);
-	vy_ = (rand() % 5 + 3);
+	rayon_ = 32.f;
 
-	vit_ = 100;
-
-	float x1 = x + 40*mx_, y1 = y + 40 * my_;
-
-	setPosition({ x1,  y1 });
-	equipe_ = NEUTRE;
-	rotation_ = 0;
+	//position de départ
+	setPosition({ lanceur->getPosition().x + rayon_*cos(angle_),  lanceur->getPosition().y + rayon_*cos(angle_) });
 }
 
 
@@ -62,42 +57,16 @@ ProjBoing::~ProjBoing()
 {
 }
 
-void ProjBoing::gestion(sf::RenderWindow& window, sf::Time tempsEcoule)
+void ProjBoing::gestion()
 {
-	// Modification de la position
-	setPosition({ position_.x + vit_*vx_*mx_*tempsEcoule.asSeconds(), position_.y + vit_*vy_*my_*tempsEcoule.asSeconds() });
+	auto& window = ecran_.getWindow();
+	auto tempsEcoule = ecran_.getClock().getElapsedTime();
+	move({ cos(angle_)*vit_ * tempsEcoule.asSeconds(),sin(angle_)*vit_ * tempsEcoule.asSeconds() });
 
-	// Gestion du rebond
-	if (position_.x > ECRAN_L - 32 - 1)
-	{
-		position_.x = ECRAN_L - 32 - 1;
-		mx_ = -1;
-		sound_.play();
-	}
-	if (position_.x < 1)
-	{
-		position_.x = 1;
-		mx_ = 1;
-		sound_.play();
-	}
-	if (position_.y > ECRAN_H - 32 - 1)
-	{
-		position_.y = ECRAN_H - 32 - 1;
-		my_ = -1;
-		sound_.play();
-	}
-	if (position_.y < 1)
-	{
-		position_.y = 1;
-		my_ = 1;
-		sound_.play();
-	}
+	angle_ += 100 * tempsEcoule.asSeconds();
+	sprites_.at(0).setRotation(angle_);
 
-	rotation_ += 10;
-	sprite_.setRotation(rotation_);
-
-	// Afficher le projectile
-	afficher(window);
+	window.draw(sprites_.at(0));//HACK PG màj affocher de entité avec sprites_ puis changer ici
 }
 
 void ProjBoing::agit(Entite& proj)
