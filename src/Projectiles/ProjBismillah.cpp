@@ -35,7 +35,7 @@ ProjBismillah::ProjBismillah(Ecran& ecran, std::shared_ptr<Entite> lanceur, std:
     equipe_ = equipe;
     actif_ = false;
     collisionnable_ = false;
-    invincibilite_ = false;
+    invincibilable_ = false;
 
 	// Stats
     degatsColl_ = 500;
@@ -53,9 +53,9 @@ void ProjBismillah::gestion()
 		const float largeur_vaisseau = lanceur->getTaille().x;
 		const float hauteur_vaisseau = lanceur->getTaille().y;
 
-		const float cast_frames = 1209; //nombre de frames total pour les deux phases croissance/décroissance //1129ms : temps du son Bismilllah
-		const float charge_frames = 1129; //nombres de frames de charge
-		const float stationnaire_frames = 4032; //nombre de frames à l'état stationnaire entre les phases croissance et décroissance
+		const float cast_frames = 1209; //temps total pour les deux phases croissance/décroissance //1129ms : temps du son Bismilllah
+		const float charge_frames = 1129; //temps de charge
+		const float stationnaire_frames = 4032; //temps à l'état stationnaire entre les phases croissance et décroissance
 
 		if (t_age_.getElapsedTime().asMilliseconds() <= charge_frames)//changement de la taille de la boule de chargement
 		{
@@ -129,7 +129,7 @@ void ProjBismillah::gestion()
 			//forme_.at(0)->setPosition({ lanceur->getPosition().x - forme_.at(0)->getGlobalBounds().width / 2.0f , - hauteur_vaisseau / 2.0f });
 			setPosition({ lanceur->getPosition().x - forme_.at(0)->getGlobalBounds().width / 2.0f , -hauteur_vaisseau / 2.0f });
 
-			// HACK CL Affichage de hitbox
+			// HACK Affichage de hitbox
 			debug_ = false;
 			if (debug_)
 			{

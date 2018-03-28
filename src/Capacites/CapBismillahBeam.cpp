@@ -40,7 +40,7 @@ void CapBismillah::utiliser(proj_container& projectiles)
 	}
 }
 
-void CapBismillah::actualiser()
+void CapBismillah::actualiser(proj_container& projectiles)
 {
 	// Rien à faire pour cette capacité
 }

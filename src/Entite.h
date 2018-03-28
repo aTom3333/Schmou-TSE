@@ -66,8 +66,12 @@ class Entite
 		 * Peut également afficher des informations de debug telles que le cercle englobant ou et la forme de collision.
 		 * @param [in] debug Un @c bool qui vaut @a true si les informations de debug doivent être affichées et @a false sinon.
 		 */
-		void afficher(bool debug = false);
-
+		void afficher(bool debug = DEBUG);
+		/**
+		* @fn afficher
+		* @brief Afficher des informations de debug telles que le cercle englobant ou et la forme de collision
+		*/
+		void Entite::afficher_debug();
         /**
          * @fn move(sf::Vector2f delta)
          * @brief Déplace l'Entite en fonction de @a delta
@@ -76,7 +80,6 @@ class Entite
          * @param [in] delta un @c sf::Vector2f qui donne le déplacement en x et en y
          */
 		void move(sf::Vector2f delta);
-
 		/**
 		* @fn move()
 		* @brief Déplace l'Entite en fonction de vits_ et rotation_
@@ -86,7 +89,6 @@ class Entite
 		* 
 		*/
 		void move();
-
         /**
          * @fn setPosition
          * @brief Fixe la position de l'Entite
@@ -107,7 +109,6 @@ class Entite
          * @return la position de l'entité appelante
          */
 		sf::Vector2f getPosition() const { return position_; }
-
         /**
          * @fn rotate
          * @brief Tourne l'Entite de l'angle passé en paramètre
@@ -137,7 +138,6 @@ class Entite
 		 * @return Un @c float qui correspond à l'eorientation de l'Entite
 		 */
 		float getRotation() const { return rotation_; }
-
 		/**
 		 * @fn scale
 		 * @brief Change l'échelle de l'Entite
@@ -167,7 +167,6 @@ class Entite
          * @return Un @c float qui correspond au facteur d'échelle de l'Entite
          */
 		float getScale() const { return scale_; }
-
         /**
          * @fn estDehors
          * @brief Teste si l'Entite est hors d'une zone, par défaut l'écran
@@ -198,7 +197,6 @@ class Entite
          * @return Un @c bool qui vaut @a true si l'Entite se trouve dans la zone à tester et @a false sinon
          */
         bool estDedans(float x_min = 0, float y_min = 0, float x_max = ECRAN_L, float y_max = ECRAN_H) const;
-
         /**
          * @fn changeSpeed
          * @brief Change la vitesse de l'Entite en ajoutant à la vitesse actuelle une certaine valeur
@@ -308,7 +306,7 @@ class Entite
 		bool collisionneuse_ = true;
 		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
 		bool innate_ = false; ///< true si doit rester dans l'écran
-		bool invincibilable_ = true; ///< true si l'entité peut devenir invincible
+		bool invincibilable_ = false; ///< true si l'entité peut devenir invincible
 
 		//état
 		bool detruit_ = false; ///< true lorsque que le vaisseau est détruit
@@ -349,7 +347,7 @@ class Entite
 		float degatsColl_ = 0; ///< Dégats infligés en cas de collision
 
 		// Debug
-		bool debug_ = false; //TODO PG à implémenter
+		bool debug_ = DEBUG;
 };
 
 #endif // ENTITE_H

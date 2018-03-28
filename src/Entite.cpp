@@ -47,6 +47,7 @@ void Entite::afficher(bool debug)
 		}
 
 	}
+	else window.draw(sprites_.front());
 
 	for (auto pos : positionsPrev_)
 	{
@@ -54,19 +55,20 @@ void Entite::afficher(bool debug)
 		window.draw(smokes_.front());
 	}
 
-	if(debug)
-	{
-		//cercle englobant
-		cercleEnglobant_.setFillColor({ 255, 100, 100, 128 });
-		window.draw(cercleEnglobant_);
-		//hitbox
-		for (auto& elem : forme_)
-		{
-			elem->setFillColor({ 255, 100, 100, 128 });
-			window.draw(*elem);
-		}
-	}
+	if(debug) afficher_debug();
+}
 
+void Entite::afficher_debug()
+{
+	//cercle englobant
+	cercleEnglobant_.setFillColor({ 255, 100, 100, 128 });
+	ecran_.getWindow().draw(cercleEnglobant_);
+	//hitbox
+	for (auto& elem : forme_)
+	{
+		elem->setFillColor({ 255, 100, 100, 128 });
+		ecran_.getWindow().draw(*elem);
+	}
 }
 
 
