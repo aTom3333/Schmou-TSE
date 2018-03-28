@@ -51,4 +51,6 @@ void CapBoing::utiliser(proj_container& projectiles)
 void CapBoing::actualiser(proj_container& projectiles)
 {	// Juste pour mute les warnings du compilateur
 	(void)projectiles;
+
+
 }

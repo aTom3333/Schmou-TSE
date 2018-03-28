@@ -1,58 +1,67 @@
 #include "ProjBouclierRond.h"
 #include <cmath>
 
-ProjBouclierRond::ProjBouclierRond(Entite* Entite_liee, int pvM, int degatsColl, float tempsMax, Equipe equipe)
+ProjBouclierRond::ProjBouclierRond(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe):
+	Projectile(ecran)
 {
-	// Juste pour mute les warnings du compilateur
-	(void)equipe;
-	
-	// Sprite
-	texture_.loadFromFile("../../rc/Sprites/Capacites/BouclierRond/bouclier_rond.png");
-	sprite_.setTexture(texture_);
+	// Weak pointeur vers lanceur
+	lanceur_ = lanceur;
 
-	//Son
-	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/boubou_stase.wav");
-	sound_.setBuffer(soundbuffer_);
-	sound_.setLoop(true);
-	sound_.play();
+	// Gestion du sprite
+	sprites_ = sprite;
 
-	// Hitbox
+	//Origines
+	origine_ = { 10,15 }; //basé sur image Piou20x30
+	sprites_.at(0).setOrigin({ 10,15 });
+
+	//Gestion du son
+	sounds_ = sound;
+	if (!sounds_.empty())sounds_.front().play();//son joué à la création du projectile	
+
+												// cercle englobant
+												//TODO utiliser la fonction Englobeuse
 	cercleEnglobant_ = sf::CircleShape(75);
 	cercleEnglobant_.setOrigin(75, 75);
 	cercleEnglobant_.setPosition(75, 75);
+
+	//Hitbox
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
+	forme_.at(0)->setOrigin({ 75,75 });
+
+	// Caractéristiques
+	equipe_ = equipe;
 
 	// Stats
 	actif_ = true;
 	invincibilite_ = false;
 
-	pvM_ = pvM;
-	armureM_ = 0;
-	bouclierM_ = 0;
-
-	pv_ = pvM_;
-	armure_ = 0;
-	bouclier_ = 0;
+	//Stats
+	pv_ = pvM_ = 500;
+	armure_ = armureM_ = 0;
+	bouclier_ = bouclierM_ = 0;
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
-	degatsColl_ = degatsColl; 
+	degatsColl_ = 0; //TODO PG xlanceur.stats().atk
 
-	//Entité à laquelle est rattaché le bouclier
-	Entite_liee_ = Entite_liee;
-	equipe_ = JOUEUR;
+	vit_ = vitM_ = 700;
 
-	tempsMax_ = tempsMax;
-	t_ = 0;
+	//position de départ
+	setPosition({ lanceur->getPosition().x ,  lanceur->getPosition().y });
 
+	tempsMax_ = 1000;
 }
 
-void ProjBouclierRond::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
+void ProjBouclierRond::gestion()
 {
-	setPosition({ Entite_liee_->getPosition().x - 75 + 35, Entite_liee_->getPosition().y - 75 + 35});
-	afficher(window);
-	t_ += tempsEcoule.asMilliseconds();
-	if (t_ > tempsMax_)
+	auto& window = ecran_.getWindow();
+	auto tempsEcoule = ecran_.getClock().getElapsedTime();
+	
+	setPosition({ lanceur_._Get()->getPosition().x, lanceur_._Get()->getPosition().y });
+
+	window.draw(sprites_.at(0));//HACK PG màj affocher de entité avec sprites_ puis changer ici
+
+	if (tempsEcoule.asMilliseconds() > tempsMax_)
 		detruit_ = true;
 }
 
@@ -62,7 +71,7 @@ void ProjBouclierRond::agit(Entite& proj)
 	proj.recoitDegats(degatsColl_);
 	pv_ -= proj.getDegatsColl_();
 	int alpha = (int)(pv_ / pvM_ * 255);
-	sprite_.setColor({ 255, 255, 255, ( sf::Uint8)alpha });
+	sprites_.front().setColor({ 255, 255, 255, ( sf::Uint8)alpha });
 	if (pv_ < 0)
 		detruit_ = true;
 }
