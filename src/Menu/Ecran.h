@@ -37,8 +37,8 @@ class Ecran
 		sf::RenderWindow& window_; /// < Fenêtre de rendu SFML
 		std::map<std::string, sf::Font> polices_ ; /// < map optionnelle de toutes les polices du jeu
 		bool detruit_ = false;
-		Chargeur chargeur_;
-		sf::Clock horloge_; /// < horloge globale de l'écran, réinitialisée à chaque affichage de window
+		Chargeur chargeur_; /// < Chargeur associé
+		sf::Clock horloge_; /// < Horloge globale de l'écran, réinitialisée à chaque affichage de window
 
 };
 

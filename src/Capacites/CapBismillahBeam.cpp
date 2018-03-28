@@ -1,33 +1,29 @@
 #include "CapBismillahBeam.h"
 #include "../Projectiles/ProjBismillah.h"
 
-CapBismillah::CapBismillah()
+CapBismillah::CapBismillah(Ecran& ecran, const std::weak_ptr<Entite>& lanceur) :
+	Capacite(ecran, lanceur)
 {
 	//Caractéristiques
-	t_ = frames_ = cooldown_ = 15000; //ms
+	t_lastuse_.restart();
+	cooldown_ = sf::milliseconds(20000);
 	nom_ = "Bismillah";
 
 	//Icône
-	capText_.loadFromFile("../../rc/Icones_Caps/laser.png");
-	capacite_.setTexture(capText_);
+	icone_.setTexture(*ecran.getChargeur().getTexture("icone.bism"));
 	affiche_ = true;
 	
-	//Texture
-	for(size_t i = 0; i < 4; ++i) textureV_.emplace_back(new sf::Texture); //resize de taille 4 avec des unique_ptr sur sf::Texture vides
-	textureV_.at(0)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/charge96x96.png");
-	textureV_.at(1)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon1.png");
-	textureV_.at(2)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon2.png");
-	textureV_.at(3)->loadFromFile("../../rc/Sprites/Capacites/BismillahBeam/base_rayon3.png");
+	//Sprites
 	for (size_t i = 1; i < 4; ++i) textureV_.at(i)->setRepeated(true); //mode repeated
 	for(size_t i = 0; i < 4; ++i) spriteV_.emplace_back(sf::Sprite(*textureV_.at(i)));
 
-    //Son
+    //Sons
     soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/Bismillah.wav");
     sound_.setBuffer(soundbuffer_);
     sound_.setLoop(false);
 }
 
-void CapBismillah::utiliser(int x, int y)
+void CapBismillah::utiliser(proj_container& projectiles)
 {
 	// Si la compétence est disponible
 	if (t_ >= cooldown_)
@@ -39,11 +35,8 @@ void CapBismillah::utiliser(int x, int y)
 
 }
 
-void CapBismillah::actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule)
+void CapBismillah::actualiser(proj_container& projectiles)
 {
-    // Juste pour mute les warnings du compilateur
-    (void)vaisseau;
-
 	// Création du projectile au moment où la compétence est lancée
 	if (frames_ == 0)
 	{

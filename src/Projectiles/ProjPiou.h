@@ -26,7 +26,7 @@ class ProjPiou : public Projectile
 		*
 		* Créer un projectile piou à la position donnée en paramètre
 		*/
-		ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe = NEUTRE);
+		ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe);
 		/**
 		* @fn ~ProjPiou
 		* @brief Destructeur

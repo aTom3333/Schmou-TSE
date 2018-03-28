@@ -15,12 +15,14 @@ class Chargeur
         Chargeur();
         std::shared_ptr<sf::Texture> getTexture(const std::string& name);
         std::shared_ptr<sf::SoundBuffer> getSoundBuffer(const std::string& name);
+		std::shared_ptr<sf::Font> getFont(const std::string& name);
     
     private:
         static std::map<std::string, std::string> location_;
         static bool loaded_;
         std::map<std::string, std::shared_ptr<sf::Texture>> textures_;
         std::map<std::string, std::shared_ptr<sf::SoundBuffer>> sound_buffers_;
+		std::map<std::string, std::shared_ptr<sf::Font>> fonts_;
 };
 
 

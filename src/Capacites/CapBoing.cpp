@@ -7,14 +7,14 @@ CapBoing::CapBoing(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	//Caractéristiques
 	t_lastuse_.restart();
 	cooldown_ = sf::milliseconds(100);
-	nom_ = "Canon Laser";
-
-	//Icônes
-	capTexture_ = ecran.getChargeur().getTexture("icone.boing");
-	capacite_.setTexture(*capTexture_);
+	nom_ = "Boing";
 	affiche_ = true;
 
-	//Textures
+	//Icônes
+	capacite_.setTexture(*ecran.getChargeur().getTexture("icone.boing"));
+
+
+	//Sprites
 	sprites_.emplace_back(ecran.getChargeur().getTexture("Cap.Boing.Paques"));
 
 	//Son
@@ -24,9 +24,6 @@ CapBoing::CapBoing(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 }
 
 
-CapBoing::~CapBoing()
-{
-}
 
 void CapBoing::utiliser(proj_container& projectiles)
 {
@@ -52,8 +49,7 @@ void CapBoing::utiliser(proj_container& projectiles)
 }
 
 void CapBoing::actualiser(proj_container& projectiles)
-{
-	// Juste pour mute les warnings du compilateur
+{	// Juste pour mute les warnings du compilateur
 	(void)projectiles;
 
 

@@ -8,15 +8,14 @@ CapPiou::CapPiou(Ecran& ecran, const std::weak_ptr<Entite>& lanceur) :
 	cooldown_ = sf::milliseconds(100);
 	nom_ = "Canon Laser";
 
-	//Icônes
-	capTexture_ = ecran.getChargeur().getTexture("icone.tir");
-	capacite_.setTexture(*capTexture_);
+	//Icône
+	icone_.setTexture(*ecran.getChargeur().getTexture("icone.tir"));
 	tir_ = true;
 
-	//Textures
+	//Sprites
 	sprites_.emplace_back(ecran.getChargeur().getTexture("Cap.Piou.20x30"));
 
-	//Son
+	//Sons
 	sounds_.emplace_back(ecran.getChargeur().getSoundBuffer("son.piou"));
 	sounds_.front().setLoop(false);
 
@@ -43,9 +42,6 @@ void CapPiou::utiliser(proj_container& projectiles)
 }
 
 void CapPiou::actualiser(proj_container& projectiles)
-{
-    // Juste pour mute les warnings du compilateur
-    (void)projectiles;
-    
-    // Rien à faire ici
+{    
+    // Rien à faire pour cette capacité
 }

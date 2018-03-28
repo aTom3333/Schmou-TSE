@@ -9,18 +9,34 @@ CapBouclierRond::CapBouclierRond(Ecran& ecran, const std::weak_ptr<Entite>& lanc
 	nom_ = "Bouclier";
 
 	//Icônes
-	capTexture_ = ecran.getChargeur().getTexture("icone.boubou");
-	capacite_.setTexture(*capTexture_);
+	capacite_.setTexture(*ecran.getChargeur().getTexture("icone.boubou"));
 	affiche_ = true;
 
-	//Textures
+	//Sprites
 	sprites_.emplace_back(ecran.getChargeur().getTexture("Cap.boubou"));
 
 	//Son
 	sounds_.emplace_back(ecran.getChargeur().getSoundBuffer("son.boubou"));
 	sounds_.front().setLoop(true);
 
-}
+	// TODO CL Gestion des niveaux à refaire
+	switch (niveau)
+	{
+		default:
+			break;
+		case 1:
+			cooldown_ = 15000;
+			pvM_ = 500;
+			degatsColl_ = 50;
+			tempsMax_ = 3000;
+			break;
+		case 2:
+			cooldown_ = 10000;
+			pvM_ = 1000;
+			degatsColl_ = 100;
+			tempsMax_ = 5000;
+			break;
+	}
 
 void CapBouclierRond::utiliser(proj_container& projectiles)
 {
