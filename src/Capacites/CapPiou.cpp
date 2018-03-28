@@ -43,5 +43,7 @@ void CapPiou::utiliser(proj_container& projectiles)
 
 void CapPiou::actualiser(proj_container& projectiles)
 {    
+	// Juste pour mute les warnings du compilateur
+	(void)projectiles;
     // Rien à faire pour cette capacité
 }

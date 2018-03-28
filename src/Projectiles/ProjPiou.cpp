@@ -18,7 +18,7 @@ ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf
 	sounds_ = sound;
 	if(!sounds_.empty())sounds_.front().play();//son joué à la création du projectile	
 
-	// cercle englobant
+	// Cercle englobant
     //TODO utiliser la fonction Englobeuse
 	cercleEnglobant_ = sf::CircleShape(hypot(20,30));
 	cercleEnglobant_.setOrigin(10, 10);
@@ -38,7 +38,7 @@ ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf
 
 	regenARM_ = regenBOU_ = regenPV_ = 0;
 
-	degatsColl_ = 70; //TODO PG xlanceur.stats().atk
+	degatsColl_ = 70; //TODO PG multiplier par lanceur.stats().atk (faire un genre de struct stats)
 
 	vit_ = vitM_ = 700;
 

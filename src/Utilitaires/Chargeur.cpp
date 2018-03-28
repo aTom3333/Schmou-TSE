@@ -38,8 +38,8 @@ Chargeur::Chargeur()
     }
 }
 
-
-std::shared_ptr<sf::Texture> Chargeur::getTexture(const std::string& name)
+//TODO PG je crois qu'on ne peut pas appeler de sous-texture là, si on appelle une 2ème sous texture sur une image de chemins.ini qui a déjà été chargée ça va renvoyer la même...
+std::shared_ptr<sf::Texture> Chargeur::getTexture(const std::string& name, const bool& repeated, const bool& smooth, const sf::IntRect& area)
 {
     if(textures_.find(name) != textures_.end())
         return textures_.at(name);
@@ -48,8 +48,12 @@ std::shared_ptr<sf::Texture> Chargeur::getTexture(const std::string& name)
         throw std::runtime_error("Unknown location of texture " + name);
 
     std::shared_ptr<sf::Texture> t(new sf::Texture);
-    if(!t->loadFromFile(location_[name]))
-        throw std::runtime_error("Can't load "+location_[name]);
+    if(!t->loadFromFile(location_[name],area))
+		throw std::runtime_error("Can't load " + location_[name]);
+	else {
+		t->setRepeated(repeated);
+		t->setSmooth(smooth);
+	}
 
     textures_[name] = t;
 

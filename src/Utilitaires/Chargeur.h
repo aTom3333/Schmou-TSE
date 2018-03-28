@@ -13,7 +13,7 @@ class Chargeur
 {
     public:
         Chargeur();
-        std::shared_ptr<sf::Texture> getTexture(const std::string& name);
+        std::shared_ptr<sf::Texture> getTexture(const std::string& name, const bool& repeated = false, const bool& smooth = true, const sf::IntRect& area = sf::IntRect());
         std::shared_ptr<sf::SoundBuffer> getSoundBuffer(const std::string& name);
 		std::shared_ptr<sf::Font> getFont(const std::string& name);
     

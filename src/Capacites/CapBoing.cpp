@@ -8,7 +8,7 @@ CapBoing::CapBoing(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	t_lastuse_.restart();
 	cooldown_ = sf::milliseconds(100);
 	nom_ = "Boing";
-	affiche_ = true;
+	afficheIcone_ = true;
 
 	//Icônes
 	capacite_.setTexture(*ecran.getChargeur().getTexture("icone.boing"));

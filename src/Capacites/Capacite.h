@@ -65,7 +65,7 @@ class Capacite
 		const sf::Sprite& getIcon() const { return icone_; };
 		const sf::RectangleShape& getMasque() const { return masque_; };
 		const sf::Text& getText() const { return text_; };
-		bool getAffiche() { return affiche_; };
+		bool getAffiche() { return afficheIcone_; };
 		bool getTir() { return tir_; };
 		const std::vector<sf::Sound>& getSounds_() const { return sounds_; }		
 
@@ -95,7 +95,7 @@ class Capacite
 		//Icône
 		sf::Font font_;
 		sf::Text text_; /// < Nom affiché en jeu
-		bool affiche_ = false; /// < true si le sprite de l'icone est affiché
+		bool afficheIcone_ = false; /// < true si le sprite de l'icone est affiché
 		sf::Sprite icone_;
 		sf::RectangleShape masque_;
     
