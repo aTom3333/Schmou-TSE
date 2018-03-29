@@ -31,7 +31,7 @@ VaisseauAttaquant::VaisseauAttaquant(Ecran& ecran, float x, float y, Trajectoire
 	pv_ = pvM_ = 300;
 	armure_ = armureM_ = 0;
 	bouclier_ = bouclierM_ = 0;
-	vit_ = vitM_ = 40;
+	vit_ = vitM_ = 300;
 
 	regenARM_ = 0;
 	regenBOU_ = 0;
@@ -45,6 +45,10 @@ VaisseauAttaquant::VaisseauAttaquant(Ecran& ecran, float x, float y, Trajectoire
 	params_.push_back(param2);
 	params_.push_back(param3);
 	params_.push_back(param4);
+
+	// Position initiale
+	setPosition({ x, y });
+	posInit_ = getPosition();
 }
 
 void VaisseauAttaquant::gestion(proj_container proj_cont, Input& input)

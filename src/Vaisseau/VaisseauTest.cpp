@@ -49,7 +49,7 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	vit_ = vitM_ = 500;
 
 	regenARM_ = 0;
-	regenBOU_ = 0;
+	regenBOU_ = 5;
 	regenPV_ = 0;
 
 	degatsColl_ = 50;

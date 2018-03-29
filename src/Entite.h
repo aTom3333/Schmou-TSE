@@ -284,7 +284,7 @@ class Entite
 		void setNbPositions(int val);
 		void setSmokeTexture(const sf::Texture &text, sf::Color couleur = { 255,255,255 });
 		void setOrigin(sf::Vector2f origine);
-		void setActif(const bool& actif) { actif_ = actif; }
+		void setActif(const bool& actif) { t_age_ = sf::Time::Zero; actif_ = actif; }
 
 	protected:
 		// Référence vers l'écran
