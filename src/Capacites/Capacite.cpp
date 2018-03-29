@@ -1,4 +1,4 @@
-#include <vector>
+ #include <vector>
 #include <string>
 #include <algorithm>
 #include "Capacite.h"

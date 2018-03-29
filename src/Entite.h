@@ -239,7 +239,7 @@ class Entite
 		*
 		* Redonne des points de vie, de l'armure et du bouclier toute les 100 ms selons les paramètres de l'entité
 		*/
-		void regen(sf::Time t);
+		void regen();
 		/**
 		* @fn recoitDegats
 		* @brief Inflige des dégats au bouclier, à l'armure et aux points de vie en fonctions des dégats reçu
@@ -313,7 +313,7 @@ class Entite
 		bool detruit_ = false; ///< true lorsque que le vaisseau est détruit
 		bool actif_ = true; ///< Booleen indiquant si la trajectoire a été amorcée
 		bool invincible_ = false;///< en état invincible
-		sf::Time t_Invincibilite_; ///< Temps d'invincibilité total en ms
+		const sf::Time t_Invincibilite_; ///< Temps d'invincibilité total en ms
 		sf::Clock clk_Invincibilite; ///<Clock qui gère l'état invincible
 		sf::Time t_age_; /// Temps écoulé depuis la création (temps de vie)
 
@@ -342,10 +342,9 @@ class Entite
 		float bouclier_ = bouclierM_; /// Bouclier actuel
 		float vit_ = vitM_; /// Vitesse actuelle de l'Entite
 
-		float regenPV_ = 0; /// Points de vie rendu tout les 250 ms
-		float regenARM_ = 0; /// Armure rendu tout les 250 ms
-		float regenBOU_ = 0; /// Bouclier rendu tout les 250 ms
-		float t_regen_; /// Temps écoulé depuis la dernière régénération
+		float regenPV_ = 0; /// Points de vie rendu par seconde
+		float regenARM_ = 0; /// Armure rendu par seconde
+		float regenBOU_ = 0; /// Bouclier rendu par seconde
 
 		float degatsColl_ = 0; ///< Dégats infligés en cas de collision
 
