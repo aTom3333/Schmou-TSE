@@ -31,6 +31,8 @@ void Capacite::initIcon(int i)
 	masque_.setSize({ rec.width, rec.height });
 	masque_.setPosition(rec.left, rec.top);
 	masque_.setFillColor({ 0,0,0, 172});
+
+	t_lastuse_ = cooldown_;
 }
 
 void Capacite::gestionIcon()
