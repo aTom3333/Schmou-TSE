@@ -9,7 +9,7 @@ CapMissile::CapMissile(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	nom_ = "Missile";
 
 	//Sprites
-	sprites_.emplace_back(ecran.getChargeur().getTexture("Cap.missile"));
+	sprites_.emplace_back(*ecran.getChargeur().getTexture("Cap.missile"));
 
 }
 

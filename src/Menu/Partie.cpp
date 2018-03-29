@@ -22,6 +22,23 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 	//Joueur
 	vaisseau_container::value_type vaisseautest(new VaisseauTest(*this));
 	vaisseautest->setequipe_(JOUEUR);
+	
+	// Capacités
+	//TIR1 Piou
+	vaisseautest->addCapacite(new CapPiou(*this, vaisseautest));
+	//TIR2 Dash
+	vaisseautest->addCapacite(new CapDash(*this, vaisseautest));
+	//COMP1 BouclierRond
+	vaisseautest->addCapacite(new CapBouclierRond(*this, vaisseautest));
+	//COMP2 Missile
+	//TODO PG CapMissile
+	vaisseautest->addCapacite(nullptr);
+	//vaisseautest->addCapacite(new CapMissile(*this, vaisseautest));
+	//COMP3 Boing
+	vaisseautest->addCapacite(new CapBoing(*this, vaisseautest));
+	//ULTI Bismillah
+	vaisseautest->addCapacite(new CapBismillah(*this, vaisseautest));
+	
 	vaisseaux_.push_back(vaisseautest);
 	vaisseaux_[0]->setPosition({ 500,700 });
 
@@ -315,6 +332,8 @@ void Partie::initPatternTest()
 	v4.ajouterVaisseau(0, vaisseau_ptr(new VaisseauAttaquant(*this, 500, -50, PARABOLIQUE, 1, 200, 500)));
 	v4.ajouterVaisseau(0, vaisseau_ptr(new VaisseauAttaquant(*this, 750, -50, PARABOLIQUE, 1, 200, 750)));
 	v4.ajouterVaisseau(0, vaisseau_ptr(new VaisseauAttaquant(*this, 1000, -50, PARABOLIQUE, 1, 200, 1000)));
+	for(auto& vaisseau : v4)
+		vaisseau.v->addCapacite(new CapMissile(*this, vaisseau.v));
 
 	v5.ajouterVaisseau(0, vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)));
 	v5.ajouterVaisseau(1500, vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)));

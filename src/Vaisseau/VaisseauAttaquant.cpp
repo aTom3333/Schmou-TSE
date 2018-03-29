@@ -6,7 +6,7 @@ VaisseauAttaquant::VaisseauAttaquant(Ecran& ecran, float x, float y, Trajectoire
 	Vaisseau(ecran)
 {
 	// Sprites
-	sprites_.emplace_back(ecran_.getChargeur().getTexture("vaiss.attaquant"));
+	sprites_.emplace_back(*ecran_.getChargeur().getTexture("vaiss.attaquant"));
 	for (auto& sprite : sprites_)
 		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 
@@ -45,11 +45,6 @@ VaisseauAttaquant::VaisseauAttaquant(Ecran& ecran, float x, float y, Trajectoire
 	params_.push_back(param2);
 	params_.push_back(param3);
 	params_.push_back(param4);
-
-	// Capacités
-	std::shared_ptr<VaisseauAttaquant> temp_ptr(this);
-	//TODO PG est-ce que cela marche ?!?
-	capacites_.emplace_back(CapMissile(ecran, std::weak_ptr<VaisseauAttaquant>(temp_ptr)));
 }
 
 void VaisseauAttaquant::gestion(proj_container proj_cont, Input& input)

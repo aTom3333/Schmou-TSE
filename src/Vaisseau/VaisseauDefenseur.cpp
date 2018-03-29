@@ -7,7 +7,7 @@ VaisseauDefenseur::VaisseauDefenseur(Ecran& ecran, float x, float y, vaisseau_co
 	Vaisseau(ecran)
 {
 	// Sprites
-	sprites_.emplace_back(ecran_.getChargeur().getTexture("vaiss.defenseur"));
+	sprites_.emplace_back(*ecran_.getChargeur().getTexture("vaiss.defenseur"));
 	for (auto& sprite : sprites_)
 		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 
@@ -44,7 +44,7 @@ VaisseauDefenseur::VaisseauDefenseur(Ecran& ecran, float x, float y, vaisseau_co
 
 	// Composition
 	//ajout d'un bouclier
-	annexes_.emplace_back(VaissBouclier(ecran));
+	annexes_.emplace_back(new VaissBouclier(ecran));
 	vaisseaux.push_back(annexes_[0]);
 
 	// Initialisation de la trajectoire

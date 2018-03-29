@@ -6,7 +6,7 @@ VaissBouclier::VaissBouclier(Ecran& ecran) :
 	Vaisseau(ecran)
 {	
 	// Sprites
-	sprites_.emplace_back(ecran_.getChargeur().getTexture("vaiss.bouclier"));
+	sprites_.emplace_back(*ecran_.getChargeur().getTexture("vaiss.bouclier"));
 	for (auto& sprite : sprites_)
 		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 
@@ -18,12 +18,12 @@ VaissBouclier::VaissBouclier(Ecran& ecran) :
 	forme_.emplace_back(new sf::RectangleShape({ 128,20 }));
 
 	// Hitbox
-	// TODO Hitbox complète
+	// TODO Hitbox complÃ¨te
 
 	//Origine
 	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
 
-	// Caractéristiques de code
+	// CaractÃ©ristiques de code
 	equipe_ = ENNEMI;
 	actif_ = false;
 	invincibilable_ = false;

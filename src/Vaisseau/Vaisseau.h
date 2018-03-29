@@ -40,21 +40,21 @@ class Vaisseau : public Entite
 		*
 		* Vide
 		*/
-		void agit(Entite &e);
+		void agit(Entite &e) override;
 		/**
 		* @fn destruction
 		* @brief Procedure a effectuer lorsque le vaisseau est détruit
 		*
 		* Fonction virtuelle qui doit être surchargée pour les classes héritées.
 		*/
-		virtual void destruction() = 0; 
+		void destruction() override = 0; 
 
 		//setters
 			void setEquipe(const Equipe equipe) {equipe_ = equipe; }
-			void addCapacite(std::unique_ptr<Capacite> skill) {capacites_.push_back(skill); }
-			void addCapacte(Capacite* skill) { std::unique_ptr<Capacite> up(skill); capacites_.push_back(up);}
+			void addCapacite(std::unique_ptr<Capacite> skill) {capacites_.push_back(std::move(skill)); }
+			void addCapacite(Capacite* skill) { capacites_.emplace_back(skill);}
 			void setCapacite(Capacite* skill, const size_t& n){ capacites_.at(n).reset(skill); }
-			void setNom(const std::string nom){ nom_ = nom; }
+			void setNom(const std::string& nom){ nom_ = nom; }
 			void setNskin(const size_t Nskin){ Nskin_ = Nskin; }
 			void setAtqM(const float atqM) { atqM_ = atqM; }
 			void setDefM(const float defM) { defM_ = defM; }
@@ -63,7 +63,7 @@ class Vaisseau : public Entite
 		//getters
 			std::string getNom() const {return nom_; }
 			size_t getNskin() const { return Nskin_; }
-			std::vector<std::unique_ptr<Capacite>> getskills() const { return capacites_; }
+			const std::vector<std::unique_ptr<Capacite>>& getskills() const { return capacites_; }
 			bool estActif() const { return actif_; }
 			vaisseau_container getAnnexes() const { return annexes_; }
 			float getatqM() const { return atqM_; }
@@ -88,7 +88,6 @@ class Vaisseau : public Entite
 
 		// Composition de vaisseaux, composé d'annexes de classe Vaisseau
 		vaisseau_container annexes_; /// Vecteur contenant toute les parties annexes d'un vaisseau
-		std::unique_ptr<Vaisseau> createur_; /// Si l'objet est une annexe, pointe vers le vaisseau qui possede cette annexe
 
 
 };

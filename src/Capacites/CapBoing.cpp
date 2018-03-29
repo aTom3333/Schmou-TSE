@@ -14,10 +14,10 @@ CapBoing::CapBoing(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	icone_.setTexture(*ecran.getChargeur().getTexture("icone.boing"));
 
 	//Sprites
-	sprites_.emplace_back(ecran.getChargeur().getTexture("Cap.Boing.Paques"));
+	sprites_.emplace_back(*ecran.getChargeur().getTexture("Cap.Boing.Paques"));
 
 	//Son
-	sounds_.emplace_back(ecran.getChargeur().getSoundBuffer("son.boing"));
+	sounds_.emplace_back(*ecran.getChargeur().getSoundBuffer("son.boing"));
 	sounds_.front().setLoop(false);
 
 }
