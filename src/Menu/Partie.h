@@ -40,7 +40,7 @@ class Partie : public Ecran
 		void deleteProjectileDetruit();
 		void deleteVaisseauDetruit();
 
-		void gestionFond(sf::Time &t);
+		void gestionFond(sf::Time t);
 
 		//Patterns
 		void initPatternTest();

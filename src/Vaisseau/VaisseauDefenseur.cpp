@@ -34,7 +34,7 @@ VaisseauDefenseur::VaisseauDefenseur(Ecran& ecran, float x, float y, vaisseau_co
 	pv_ = pvM_ = 100;
 	armure_ = armureM_ = 50;
 	bouclier_ = bouclierM_ = 0;
-	vit_ = vitM_ = 10;
+	vit_ = vitM_ = 200;
 
 	regenARM_ = 0;
 	regenBOU_ = 0;
@@ -68,7 +68,7 @@ void VaisseauDefenseur::gestion(proj_container proj_cont, Input& input)
 
 	if (actif_)
 	{
-		setPosition(traj_position(trajectoire_, t_age_.asMilliseconds(), vit_, posInit_, params_));
+		setPosition(traj_position(trajectoire_, t_age_, vit_, posInit_, params_));
 		afficher(debug_);
 
 		// Gestion du module de bouclier
@@ -79,7 +79,7 @@ void VaisseauDefenseur::gestion(proj_container proj_cont, Input& input)
 			annexe->gestion(proj_cont, input);
 		}
 
-		t_age_ += ecran_.getClock().getElapsedTime();
+		t_age_ += ecran_.getTempsFrame();
 	}
 	
 }

@@ -202,30 +202,22 @@ void Entite::setOrigin(sf::Vector2f origine)
 	}
 }
 
-void Entite::regen(sf::Time t)
+void Entite::regen()
 {
-	// Mise à jour du timer
-	t_regen_ += t.asMilliseconds();
 
-	// Si 100 ms se sont écoulé
-	if (t_regen_ >= 50)
-	{
-		// Réinitialisation du timer
-		t_regen_ = 0;
+	// Régénération des différentes statistiques
+	pv_ += regenPV_ * ecran_.getTempsFrame().asSeconds();
+	armure_ += regenARM_ * ecran_.getTempsFrame().asSeconds();
+	bouclier_ += regenBOU_ * ecran_.getTempsFrame().asSeconds();
 
-		// Régénération des différentes statistiques
-		pv_ += regenPV_;
-		armure_ += regenARM_;
-		bouclier_ += regenBOU_;
-
-		// Si le seuil maximal est dépassé
-		if (pv_ > pvM_)
-			pv_ = pvM_;
-		if (armure_ > armureM_)
-			armure_ = armureM_;
-		if (bouclier_ > bouclierM_)
-			bouclier_ = bouclierM_;
-	}
+	// Si le seuil maximal est dépassé
+	if (pv_ > pvM_)
+		pv_ = pvM_;
+	if (armure_ > armureM_)
+		armure_ = armureM_;
+	if (bouclier_ > bouclierM_)
+		bouclier_ = bouclierM_;
+	
 }
 
 void Entite::recoitDegats(float degats)

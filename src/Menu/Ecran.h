@@ -28,6 +28,7 @@ class Ecran
 
 		//getters
 		bool isDetruit() const { return detruit_; }
+		sf::Time getTempsFrame() const { return t_frame_; }
 	
 		sf::RenderWindow& getWindow() { return window_; }
 		Chargeur& getChargeur() { return chargeur_; }
@@ -39,7 +40,7 @@ class Ecran
 		bool detruit_ = false;
 		Chargeur chargeur_; /// < Chargeur associé
 		sf::Clock horloge_; /// < Horloge globale de l'écran, réinitialisée à chaque affichage de window
-
+		sf::Time t_frame_;///< Durée de la frame actuelle
 };
 
 #endif // !ECRAN_H
