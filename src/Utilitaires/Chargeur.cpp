@@ -104,7 +104,7 @@ bool caseInsensitiveCompare::operator()(const std::string& a, const std::string&
     auto last1 = a.end();
     auto last2 = b.end();
 
-    while(first1 != last1 and first2 != last2)
+    while(first1 != last1 && first2 != last2)
     {
         if(tolower(*first1) < tolower(*first2))
             return true;
