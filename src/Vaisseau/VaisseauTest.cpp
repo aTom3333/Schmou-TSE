@@ -9,14 +9,17 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	for (auto& sprite : sprites_)
 		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 
+	// Origine
+	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
+
 	// Cercle englobant
 	//TODO PG Englobeur
 	const float largeur_vaisseau = this->getTaille().x;
 	const float hauteur_vaisseau = this->getTaille().y;
-	const float R = sqrt(2 * largeur_vaisseau * hauteur_vaisseau);
-	cercleEnglobant_ = sf::CircleShape((float)R);
+	const float R = hypot(largeur_vaisseau / 2.0f, hauteur_vaisseau / 2.0f);
+	cercleEnglobant_ = sf::CircleShape(R);
 	cercleEnglobant_.setOrigin(R, R);
-	cercleEnglobant_.setPosition(32, 32);
+	cercleEnglobant_.setPosition({ 0,0 });
 
 	// Hitbox
 	sf::ConvexShape forme1(3);
@@ -32,9 +35,6 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	forme2.setPoint(2, { 0,46 });
 	forme2.setOrigin({ 0, 32 });
 	forme_.emplace_back(new sf::ConvexShape(forme2));
-
-	// Origine
-	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
 
 	// Caractéristiques de code
 	equipe_ = JOUEUR;

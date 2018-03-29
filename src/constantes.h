@@ -19,7 +19,7 @@ constexpr size_t NB_ACTION = 7; /// Nombre d'actions
 
 constexpr size_t TEMPS_INVINCIBILITE = 2000; /// Nombres de millisecondes d'invincibilité par défaut
 
-constexpr bool DEBUG = false;
+constexpr bool DEBUG = true;
 
 enum Actions
 {
