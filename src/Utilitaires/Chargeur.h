@@ -10,7 +10,7 @@
 
 struct caseInsensitiveCompare
 {
-	bool operator()(const std::string& a, const std::string& b);
+	bool operator()(const std::string& a, const std::string& b) const;
 };
 
 class Chargeur

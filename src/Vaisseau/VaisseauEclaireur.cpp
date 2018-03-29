@@ -31,7 +31,7 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, double x, double y,Trajectoir
 	pv_ = pvM_ = 300;
 	armure_ = armureM_ = 0;
 	bouclier_ = bouclierM_ = 0;
-	vit_ = vitM_ = 30;
+	vit_ = vitM_ = 50;
 
 	regenARM_ = 0;
 	regenBOU_ = 0;
@@ -63,10 +63,9 @@ void VaisseauEclaireur::gestion(proj_container proj_cont, Input& input)
 	
 	if (actif_)
 	{
-		setPosition(traj_position(trajectoire_, t_age_.asMilliseconds(), vit_, posInit_, params_));
+		t_age_ += ecran_.getTempsFrame();
+		setPosition(traj_position(trajectoire_, t_age_, vit_, posInit_, params_));
 		afficher(debug_);
-
-		t_age_ += ecran_.getClock().getElapsedTime();		
 	}
 }
 

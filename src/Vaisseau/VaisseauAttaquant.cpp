@@ -57,10 +57,10 @@ void VaisseauAttaquant::gestion(proj_container proj_cont, Input& input)
 		if (t_age_.asMilliseconds() > 1000)
 			capacites_[0]->utiliser(proj_cont);
 
-		setPosition(traj_position(trajectoire_, t_age_.asMilliseconds(), vit_, posInit_, params_));
+		setPosition(traj_position(trajectoire_,t_age_, vit_, posInit_, params_));
 		afficher(debug_);
 
-		t_age_ += ecran_.getClock().getElapsedTime();
+		t_age_ += ecran_.getTempsFrame();
 	}
 }
 

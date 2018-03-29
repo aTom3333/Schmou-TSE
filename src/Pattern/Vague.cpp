@@ -1,44 +1,23 @@
 #include "Vague.h"
 
-Vague::Vague()
-{
-}
+Vague::Vague(Ecran& ecran, const sf::Time& t) :
+	ecran_{ecran}, t_depart_{t}
+{}
 
-Vague::Vague(float t)
+void Vague::gestion(vaisseau_container& vaisseaux) //TODO CL ajouter proj_containes au cas où l'élément c'est un proj
 {
-	t_debut_ = t;
-}
-
-Vague::~Vague()
-{
-	/*for(unsigned int i = 0; i < v_.size(); i++)
-		delete v_[i].v;*/
-}
-
-void Vague::ajouterVaisseau(float t, vaisseau_ptr v)
-{
-	v_.push_back({ t, v, false });
-}
-
-void Vague::gestion(vaisseau_container& vaisseaux, sf::Time t)
-{
-	float temps = t.asMilliseconds();
-	t_ += temps;
-	if (t_ >= t_debut_)
+	t_depuis_debut_partie_ += ecran_.getTempsFrame();
+	if (t_depuis_debut_partie_ >= t_depart_ )
 	{
-		for(unsigned int i = 0; i < v_.size(); i++)
+		for(unsigned int i = 0; i < vaisseaux_vague_.size(); i++)
 		{
-			if (!v_[i].active && v_[i].t < t_ - t_debut_)
+			if (!vaisseaux_vague_[i].actif && vaisseaux_vague_[i].t_depart_element < t_depuis_debut_partie_ - t_depart_)
 			{
-				v_[i].active = true;
-				v_[i].v->setActif(true);
-				vaisseaux.push_back(v_[i].v);
+				vaisseaux_vague_[i].actif = true;
+				vaisseaux_vague_[i].v->setActif(true);
+				vaisseaux.push_back(vaisseaux_vague_[i].v);
 			}
 		}
 	}
 }
 
-void Vague::setTempsDebut(float t)
-{
-	t_debut_ = t;
-}

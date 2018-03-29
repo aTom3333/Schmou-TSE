@@ -30,7 +30,7 @@ enum Trajectoire
 *@param params liste de float pour paramétrer la forme des courbes
 *
 */
-sf::Vector2f traj_position(Trajectoire trajectoire,float t, float vit_, sf::Vector2f posInit, std::vector<float> params);
+sf::Vector2f traj_position(Trajectoire trajectoire, sf::Time t, float vit_, sf::Vector2f posInit, std::vector<float> params);
 
 
 #endif // !Trajectoire_H
