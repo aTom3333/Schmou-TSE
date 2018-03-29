@@ -19,7 +19,7 @@ class Ecran
 {
 	public:
 		//structeurs
-		Ecran(sf::RenderWindow& window); /// < constructeur principal
+		explicit Ecran(sf::RenderWindow& window); /// < constructeur principal
 		virtual ~Ecran() = default;
 
 		virtual ecran_t executer(sf::Texture &derniereFenetre) = 0;
