@@ -61,14 +61,14 @@ public:
 	*
 	* Gère le déplacement et l'affichage du vaisseau
 	*/
-	void gestion(proj_container proj_cont, Input& input);
+	void gestion(proj_container proj_cont, Input& input) override;
 	/**
 	* @fn destruction
 	* @brief Procedure a effectuer lorsque le vaisseau est détruit
 	*
 	* Détruit l'annexe bouclier
 	*/
-	void destruction() { detruit_ = true; }
+	void destruction() override;
 
 private:
 	sf::Vector2f posInit_; ///position de départ

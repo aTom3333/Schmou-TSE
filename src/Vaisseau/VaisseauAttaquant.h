@@ -63,7 +63,7 @@ public:
 		*
 		* Détruit l'entité
 		*/
-		void destruction() { detruit_ = true; }
+		void destruction() override { detruit_ = true; }
 
 	private:
 		sf::Vector2f posInit_; ///position de départ
