@@ -26,7 +26,7 @@ void Capacite::initIcon(int i)
 	text_.setString(nom_);
 	text_.setPosition(20 + 90 - text_.getGlobalBounds().width/2, 668 + i * 45);
 
-	static sf::FloatRect rec = icone_.getGlobalBounds();//rectangle avec les dimensions du sprite icone_
+	sf::FloatRect rec = icone_.getGlobalBounds();//rectangle avec les dimensions du sprite icone_
 
 	masque_.setSize({ rec.width, rec.height });
 	masque_.setPosition(rec.left, rec.top);

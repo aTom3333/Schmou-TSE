@@ -4,7 +4,7 @@ CapBouclierRond::CapBouclierRond(Ecran& ecran, const std::weak_ptr<Entite>& lanc
 	Capacite(ecran, lanceur)
 {
 	//Caractéristiques
-	cooldown_ = sf::milliseconds(100);
+	cooldown_ = sf::milliseconds(1000);
 	nom_ = "Bouclier";
 
 	//Icônes
