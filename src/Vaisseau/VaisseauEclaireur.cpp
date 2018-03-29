@@ -6,7 +6,7 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, double x, double y,Trajectoir
 	Vaisseau(ecran)
 {
 	// Sprites
-	sprites_.emplace_back(ecran_.getChargeur().getTexture("vaiss.ennemi.test"));
+	sprites_.emplace_back(*ecran_.getChargeur().getTexture("vaiss.ennemi.test"));
 	for (auto& sprite : sprites_)
 		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 

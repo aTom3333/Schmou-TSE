@@ -14,10 +14,10 @@ CapDash::CapDash(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	tir_ = true;
 
 	//Sprites
-	sprites_.emplace_back(ecran.getChargeur().getTexture("Cap.Dash"));
+	sprites_.emplace_back(*ecran.getChargeur().getTexture("Cap.Dash"));
 
 	//Sons
-	sounds_.emplace_back(ecran.getChargeur().getSoundBuffer("son.dash"));
+	sounds_.emplace_back(*ecran.getChargeur().getSoundBuffer("son.dash"));
 	sounds_.front().setLoop(false);
 
 	active_ = false;

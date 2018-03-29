@@ -13,10 +13,10 @@ CapPiou::CapPiou(Ecran& ecran, const std::weak_ptr<Entite>& lanceur) :
 	tir_ = true;
 
 	// Sprites
-	sprites_.emplace_back(ecran.getChargeur().getTexture("Cap.Piou.20x30"));
+	sprites_.emplace_back(*ecran.getChargeur().getTexture("Cap.Piou.20x30"));
 
 	// Sons
-	sounds_.emplace_back(ecran.getChargeur().getSoundBuffer("son.piou"));
+	sounds_.emplace_back(*ecran.getChargeur().getSoundBuffer("son.piou"));
 	sounds_.front().setLoop(false);
 
 }

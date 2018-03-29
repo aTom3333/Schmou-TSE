@@ -51,6 +51,12 @@ public:
 	*/
 	void setTempsDebut(float t);
 
+	// Itérateurs
+	std::vector<ElementVague>::iterator begin() { return v_.begin(); }
+	std::vector<ElementVague>::const_iterator begin() const { return v_.cbegin(); }
+	std::vector<ElementVague>::iterator end() { return v_.end(); }
+	std::vector<ElementVague>::const_iterator end() const { return v_.cend(); }
+
 	//getters
 	std::vector<ElementVague> getv_() { return v_; }
 

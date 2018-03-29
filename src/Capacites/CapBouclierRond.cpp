@@ -13,10 +13,10 @@ CapBouclierRond::CapBouclierRond(Ecran& ecran, const std::weak_ptr<Entite>& lanc
 	afficheIcone_ = true;
 
 	//Sprites
-	sprites_.emplace_back(ecran.getChargeur().getTexture("Cap.boubou"));
+	sprites_.emplace_back(*ecran.getChargeur().getTexture("Cap.boubou"));
 
 	//Son
-	sounds_.emplace_back(ecran.getChargeur().getSoundBuffer("son.boubou"));
+	sounds_.emplace_back(*ecran.getChargeur().getSoundBuffer("son.boubou"));
 	sounds_.front().setLoop(true);
 
 	// TODO CL Gestion des niveaux à refaire

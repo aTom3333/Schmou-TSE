@@ -71,7 +71,7 @@ class Entite
 		* @fn afficher
 		* @brief Afficher des informations de debug telles que le cercle englobant ou et la forme de collision
 		*/
-		void Entite::afficher_debug();
+		void afficher_debug();
         /**
          * @fn move(sf::Vector2f delta)
          * @brief Déplace l'Entite en fonction de @a delta
