@@ -59,7 +59,7 @@ class Capacite
 		
 		// Getters
 		sf::Time getCooldown() const { return cooldown_; };
-		sf::Time getTime() const { return t_lastuse_.getElapsedTime(); };
+		sf::Time getTime() const { return t_lastuse_; };
 		const std::string& getNom() const { return nom_; };
 		const sf::Sprite& getIcon() const { return icone_; };
 		const sf::RectangleShape& getMasque() const { return masque_; };
@@ -82,7 +82,7 @@ class Capacite
 
 		sf::Time cooldown_; /// Temps à attendre avant de pouvoir utiliser la capacité à nouveau
 		sf::Time longevite_; ///Temps après lequel le projectile issu disparait
-		sf::Clock t_lastuse_; /// Temps écoulé depuis la dernière activation de la compétence
+		sf::Time t_lastuse_; /// Temps écoulé depuis la dernière activation de la compétence
 
 		//Texture
 		//std::shared_ptr<sf::Texture> capTexture_; //TODO PG encore utile ?

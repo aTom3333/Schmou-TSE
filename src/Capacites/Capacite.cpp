@@ -36,7 +36,7 @@ void Capacite::initIcon(int i)
 void Capacite::gestionIcon()
 {
 	sf::FloatRect rec = icone_.getGlobalBounds(); //rectangle avec les dimensions du sprite icone_
-	float ratio = t_lastuse_.getElapsedTime() >= cooldown_ ? 0 : 1.0f - t_lastuse_.getElapsedTime() / cooldown_;
+	float ratio = t_lastuse_ >= cooldown_ ? 0 : 1.0f - t_lastuse_.asSeconds() / cooldown_.asSeconds();
 
 	if (tir_)
 	{

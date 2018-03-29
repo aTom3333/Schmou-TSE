@@ -7,9 +7,8 @@
 
 void Vaisseau::gestionCapacite(proj_container &projectiles)
 {
-	// Gestion des capacites
-	for(unsigned int i = 0; i < capacites_.size(); i++)
-		if (capacites_[i] != nullptr) capacites_[i]->actualiser(projectiles);
+	for(auto& capacite : capacites_) 
+		if(capacite != nullptr) capacite->actualiser(projectiles);
 }
 
 

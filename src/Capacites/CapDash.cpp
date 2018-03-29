@@ -5,8 +5,7 @@ CapDash::CapDash(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	Capacite(ecran, lanceur)
 {
 	//Caractéristiques
-	t_lastuse_.restart();
-	cooldown_ = sf::milliseconds(100);
+	cooldown_ = sf::milliseconds(1000);
 	nom_ = "Dash";
 
 	//Icône
@@ -26,10 +25,10 @@ void CapDash::utiliser(proj_container& projectiles)
 	if (auto lanceur = lanceur_.lock())
 	{
 		// Si la compétence est disponible
-		if (t_lastuse_.getElapsedTime() >= cooldown_)
+		if (t_lastuse_ >= cooldown_)
 		{
-			// Début du timer
-			t_lastuse_.restart();
+			// Reset timer
+			t_lastuse_ = sf::Time::Zero;
 
 			// Son au lancement
 			sounds_.front().play();
@@ -44,16 +43,17 @@ void CapDash::actualiser(proj_container& projectiles)
 	assert(!lanceur_.expired());
 	if (auto lanceur = lanceur_.lock()) {
 
-		if (!active_ && t_lastuse_.getElapsedTime().asMilliseconds() < 100)
+		if (!active_ && t_lastuse_.asMilliseconds() < 100)
 		{
 			lanceur->changeSpeed(5000);
 			active_ = true;
 		}
 
-		if (active_ && t_lastuse_.getElapsedTime().asMilliseconds() > 100)
+		if (active_ && t_lastuse_.asMilliseconds() > 100)
 		{
 			lanceur->changeSpeed(-5000);
 			active_ = false;
 		}
+		t_lastuse_ += ecran_.getTempsFrame();
 	}
 }
