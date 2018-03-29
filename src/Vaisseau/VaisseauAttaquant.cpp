@@ -41,7 +41,7 @@ VaisseauAttaquant::VaisseauAttaquant(Ecran& ecran, float x, float y, Trajectoire
 
 	// Initialisation de la trajectoire
 	trajectoire_ = traj;
-	params_.push_back(param1);
+	params_.push_back(param1);l
 	params_.push_back(param2);
 	params_.push_back(param3);
 	params_.push_back(param4);

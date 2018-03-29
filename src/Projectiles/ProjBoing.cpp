@@ -54,7 +54,7 @@ void ProjBoing::gestion()
 	rotation_ += 100 * tempsEcoule.asSeconds();
 	sprites_.at(0).setRotation(rotation_);
 
-	window.draw(sprites_.at(0));//HACK PG màj affocher de entité avec sprites_ puis changer ici
+	afficher(debug_);
 }
 
 void ProjBoing::agit(Entite& proj)
