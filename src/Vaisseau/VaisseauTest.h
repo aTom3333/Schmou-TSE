@@ -17,7 +17,7 @@ public:
 	*
 	* Procédure à effectuer lorsque le vaisseau est détruit
 	*/
-	void destruction() { detruit_ = true; }
+	void destruction() override { detruit_ = true; }
 };
 
 

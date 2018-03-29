@@ -83,3 +83,9 @@ void VaisseauDefenseur::gestion(proj_container proj_cont, Input& input)
 	}
 	
 }
+
+void VaisseauDefenseur::destruction()
+{
+	for (auto& annexe : annexes_) annexe->setDetruit(true);
+	detruit_ = true;
+}
