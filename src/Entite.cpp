@@ -60,13 +60,13 @@ void Entite::afficher(bool debug)
 
 void Entite::afficher_debug()
 {
-	//cercle englobant
+	//cercle englobant en rouge mi-transparent
 	cercleEnglobant_.setFillColor({ 255, 100, 100, 128 });
 	ecran_.getWindow().draw(cercleEnglobant_);
-	//hitbox
+	//hitbox en jaune mi-transparent
 	for (auto& elem : forme_)
 	{
-		elem->setFillColor({ 255, 100, 100, 128 });
+		elem->setFillColor({ 255, 255, 100, 128 });
 		ecran_.getWindow().draw(*elem);
 	}
 }
