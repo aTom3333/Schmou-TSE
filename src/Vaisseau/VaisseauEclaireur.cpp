@@ -1,8 +1,10 @@
 #include "VaisseauEclaireur.h"
 #include <cmath>
 
+#include <iostream>
 
-VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, double x, double y,Trajectoire traj, double param1, double param2, double param3, double param4) : 
+
+VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, float x, float y,Trajectoire traj, double param1, double param2, double param3, double param4) :
 	Vaisseau(ecran)
 {
 	// Sprites
@@ -31,7 +33,7 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, double x, double y,Trajectoir
 	pv_ = pvM_ = 300;
 	armure_ = armureM_ = 0;
 	bouclier_ = bouclierM_ = 0;
-	vit_ = vitM_ = 50;
+	vit_ = vitM_ = 300;
 
 	regenARM_ = 0;
 	regenBOU_ = 0;
@@ -45,6 +47,10 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, double x, double y,Trajectoir
 	params_.push_back((float)param2);
 	params_.push_back((float)param3);
 	params_.push_back((float)param4);
+
+	// Position initiale
+	setPosition({ x, y });
+	posInit_ = getPosition();
 
 }
 

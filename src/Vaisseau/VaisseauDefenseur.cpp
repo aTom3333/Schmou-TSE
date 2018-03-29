@@ -54,6 +54,10 @@ VaisseauDefenseur::VaisseauDefenseur(Ecran& ecran, float x, float y, vaisseau_co
 	params_.push_back(param3);
 	params_.push_back(param4);
 
+	// Position initiale
+	setPosition({ x, y });
+	posInit_ = getPosition();
+
 }
 
 void VaisseauDefenseur::gestion(proj_container proj_cont, Input& input)

@@ -312,6 +312,7 @@ void Partie::initPatternTest()
 	v1.ajouterElement({ sf::milliseconds(1200), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
 	v1.ajouterElement({ sf::milliseconds(1600), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
 
+
 	v2.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
 	v2.ajouterElement({ sf::milliseconds(400), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
 	v2.ajouterElement({ sf::milliseconds(800), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
@@ -319,7 +320,7 @@ void Partie::initPatternTest()
 	v2.ajouterElement({ sf::milliseconds(1600), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
 
 	v3.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)) });
-	v3.ajouterElement({ sf::milliseconds(500), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)) });
+	v3.ajouterElement({ sf::milliseconds(500), vaisseau_ptr(new VaisseauEclaireur(*this, 1000,0, SINUS, -1, 300, 100, -.7)) });
 	v3.ajouterElement({ sf::milliseconds(1000), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)) });
 	v3.ajouterElement({ sf::milliseconds(1500), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)) });
 	v3.ajouterElement({ sf::milliseconds(2000), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)) });
