@@ -97,14 +97,14 @@ std::shared_ptr<sf::Font> Chargeur::getFont(const std::string& name)
 	return fonts_.at(name);
 }
 
-bool caseInsensitiveCompare::operator()(const std::string& a, const std::string& b)
+bool caseInsensitiveCompare::operator()(const std::string& a, const std::string& b) const
 {
     auto first1 = a.begin();
     auto first2 = b.begin();
     auto last1 = a.end();
     auto last2 = b.end();
 
-    while(first1 != last1 and first2 != last2)
+    while(first1 != last1 && first2 != last2)
     {
         if(tolower(*first1) < tolower(*first2))
             return true;

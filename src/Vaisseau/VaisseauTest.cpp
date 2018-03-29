@@ -46,7 +46,7 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	pv_ = pvM_ = 1000;
 	armure_ = armureM_ = 50;
 	bouclier_ = bouclierM_ = 100;
-	vit_ = vitM_ = 500;
+	vit_ = vitM_ = 0.500;
 
 	regenARM_ = 0;
 	regenBOU_ = 0;
@@ -79,7 +79,8 @@ void VaisseauTest::gestion(proj_container proj_cont, Input& input)
 	// Si la touche COMP 2 est activé
 	if (input.action(COMP2))
 	{
-		capacites_[3]->utiliser(proj_cont);
+		//TODO PG Missile
+		//capacites_[3]->utiliser(proj_cont);
 	}
 
 	// Si la touche COMP 3 est activé
