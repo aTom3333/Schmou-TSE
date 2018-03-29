@@ -84,7 +84,6 @@ ecran_t Partie::executer(sf::Texture &derniereFenetre)
 
 	sf::Time t_defilement = sf::Time::Zero;
 
-	clock.restart();
 	while (window_.isOpen())
 	{
 		// Gestion  des évènements 

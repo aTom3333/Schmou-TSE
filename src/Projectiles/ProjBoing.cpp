@@ -29,13 +29,13 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 	forme_.emplace_back(new sf::RectangleShape({ 16,16 }));
 	forme_.at(0)->setOrigin({ 16,16 });
 
-	// Caractéristiques
+	// Caractéristiques de code
 	equipe_ = equipe;
 
 	// Stats
 	degatsColl_ = 30; //TODO PG xlanceur.stats().atk
 
-	vit_ = vitM_ = 400;
+	vit_ = vitM_ = 0.400;
 	rotation_ = rand() % 100 / 100 * 2 * PI; // TODO CL rand c++
 
 	rayonCirc_ = hypot(lanceur->getTaille().x, lanceur->getTaille().y);

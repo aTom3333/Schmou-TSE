@@ -84,19 +84,19 @@ void Entite::move(sf::Vector2f delta)
 		else if (pos.y + delta.y < 0) delta.y = -pos.y;
 	}
 
-		for (auto& elem : forme_) 
-			elem->move(delta);
-		for (auto& sprite : sprites_)
-			sprite.move(delta);
-		cercleEnglobant_.move(delta);
+	for (auto& elem : forme_) 
+		elem->move(delta);
+	for (auto& sprite : sprites_)
+		sprite.move(delta);
+	cercleEnglobant_.move(delta);
 
-		//TODO PG il faut gérer ça avec les origines
-		if (nbPositions_)
-		{
-			positionsPrev_.push_front(position_);
-			if (positionsPrev_.size() > nbPositions_)positionsPrev_.pop_back();
-		}
-		position_ += delta;
+	//TODO PG il faut gérer ça avec les origines
+	if (nbPositions_)
+	{
+		positionsPrev_.push_front(position_);
+		if (positionsPrev_.size() > nbPositions_)positionsPrev_.pop_back();
+	}
+	position_ += delta;
 }
 
 void Entite::move()

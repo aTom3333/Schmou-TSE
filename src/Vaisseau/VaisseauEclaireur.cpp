@@ -31,7 +31,7 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, double x, double y,Trajectoir
 	pv_ = pvM_ = 300;
 	armure_ = armureM_ = 0;
 	bouclier_ = bouclierM_ = 0;
-	vit_ = vitM_ = 30;
+	vit_ = vitM_ = 0.3;
 
 	regenARM_ = 0;
 	regenBOU_ = 0;
