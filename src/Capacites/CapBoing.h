@@ -30,7 +30,7 @@ class CapBoing : public Capacite
 		*
 		* Vide
 		*/
-		~CapBoing();
+		~CapBoing() override = default;
 		/**
 		* @fn utiliser
 		* @brief Active la capacite
@@ -39,7 +39,7 @@ class CapBoing : public Capacite
 		*
 		* Fonction Initialise la position de départ et le timer
 		*/
-		void utiliser(proj_container& projectiles);
+		void utiliser(proj_container& projectiles) override;
 		/**
 		* @fn actualiser
 		* @brief Active les effets de la capacité
@@ -49,7 +49,7 @@ class CapBoing : public Capacite
 		* Créer 4 ProjBoing toutes les 5 frames
 		* Actualise le timer
 		*/
-		void actualiser(proj_container& projectiles);
+		void actualiser(proj_container& projectiles) override;
 };
 
 #endif
