@@ -22,7 +22,6 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 	//TODO utiliser la fonction Englobeuse
 	cercleEnglobant_ = sf::CircleShape(hypot(16, 16));
 	cercleEnglobant_.setOrigin(16, 16);
-	cercleEnglobant_.setPosition(16, 16);
 
 	// Hitbox
 	forme_.emplace_back(new sf::RectangleShape({ 16,16 }));
@@ -30,6 +29,7 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 
 	// Caractéristiques de code
 	equipe_ = equipe;
+	innate_ = true;
 
 	// Stats
 	pv_ = pvM_ = 10;
@@ -56,6 +56,13 @@ void ProjBoing::gestion()
 	sprites_.at(0).setRotation(rotationSpr_);
 
 	//TODO écrire "sounds_.front().play()" au rebond
+
+	if (getPosition().x < 0)
+	{
+		setPosition({ 0, getPosition().y });
+		setRotation(-rotation_);
+	}
+		
 
 	afficher();
 }

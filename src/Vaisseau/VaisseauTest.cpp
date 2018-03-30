@@ -12,6 +12,9 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	// Origine
 	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
 
+	// Sons
+	sounds_.emplace_back(*ecran.getChargeur().getSoundBuffer("son.sakado"));
+
 	// Cercle englobant
 	//TODO PG Englobeur
 	const float largeur_vaisseau = this->getTaille().x;
