@@ -20,13 +20,13 @@ ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf
 
 	// Cercle englobant
     //TODO utiliser la fonction Englobeuse
-	cercleEnglobant_ = sf::CircleShape(hypot(20,30));
-	cercleEnglobant_.setOrigin(10, 10);
-	cercleEnglobant_.setPosition(10, 10);
+	const float R = hypot(10, 15); //basé sur Piou20x30
+	cercleEnglobant_ = sf::CircleShape(R);
+	cercleEnglobant_.setOrigin(R, R);
     
     //Hitbox
 	forme_.emplace_back(new sf::RectangleShape({20,30}));
-    forme_.at(0)->setOrigin({10,15});
+    forme_.at(0)->setOrigin({10,15}); //basé sur Piou20x30
 	
 	// Caractéristiques
 	equipe_ = equipe;
