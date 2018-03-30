@@ -48,14 +48,14 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	// Stats
 	pv_ = pvM_ = 1000;
 	armure_ = armureM_ = 50;
-	bouclier_ = bouclierM_ = 100;
+	bouclier_ = bouclierM_ = 0;
 	vit_ = vitM_ = 500;
 
-	regenARM_ = 0;
-	regenBOU_ = 5;
-	regenPV_ = 0;
+	regenArmure_ = 0;
+	regenBouclier_ = 0;
+	regenPv_ = 0;
 
-	degatsColl_ = 50;
+	degatsCollision_ = 50;
 }
 
 void VaisseauTest::gestion(proj_container& proj_cont, Input& input)

@@ -35,11 +35,11 @@ VaissBouclier::VaissBouclier(Ecran& ecran) :
 	bouclier_ = bouclierM_ = 300;
 	vit_ = vitM_ = 0;
 
-	regenARM_ = 0;
-	regenBOU_ = 2;
-	regenPV_ = 0;
+	regenArmure_ = 0;
+	regenBouclier_ = 2;
+	regenPv_ = 0;
 
-	degatsColl_ = 50;
+	degatsCollision_ = 50;
 }
 
 void VaissBouclier::gestion(proj_container& proj_cont, Input& input)

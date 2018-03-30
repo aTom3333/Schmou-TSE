@@ -36,9 +36,9 @@ ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf
 	armure_ = armureM_ = 0;
 	bouclier_ = bouclierM_ = 0;
 
-	regenARM_ = regenBOU_ = regenPV_ = 0;
+	regenArmure_ = regenBouclier_ = regenPv_ = 0;
 
-	degatsColl_ = 70; //TODO PG multiplier par lanceur.stats().atk (faire un genre de struct stats)
+	degatsCollision_ = 70; //TODO PG multiplier par lanceur.stats().atk (faire un genre de struct stats)
 
 	vit_ = vitM_ = 700;
 
@@ -56,6 +56,6 @@ void ProjPiou::gestion()
 
 void ProjPiou::agit(Entite& proj)
 {
-	proj.recoitDegats(degatsColl_);
+	proj.recoitDegats(degatsCollision_);
 	detruit_ = true;
 }

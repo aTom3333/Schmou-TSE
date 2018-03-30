@@ -33,20 +33,19 @@ ProjBouclierRond::ProjBouclierRond(Ecran& ecran, std::shared_ptr<Entite> lanceur
 	invincibilable_ = false;
 
 	//Stats
-	pv_ = pvM_ = 500;
-	armure_ = armureM_ = 0;
-	bouclier_ = bouclierM_ = 0;
+	pv_ = pvM_ = 5000;
 
-	regenARM_ = regenBOU_ = regenPV_ = 0;
-
-	degatsColl_ = 0; //TODO PG xlanceur.stats().atk
-
-	vit_ = vitM_ = 700;
+	degatsCollision_ = 0; //le bouclier n'inflige ici aucun dégat (passif)
 
 	t_longevite_ = sf::milliseconds(7000);
 
 	//position de départ
 	setPosition({ lanceur->getPosition().x ,  lanceur->getPosition().y });
+
+	//Comportement spécifique
+	lanceur->setBouclier(pv_);
+	lanceur->setBouclierM(pvM_);
+	lanceur->setCollisionnable(false);//TODO PG bloquer au bouclier en cas de collision
 }
 
 void ProjBouclierRond::gestion()
@@ -57,10 +56,17 @@ void ProjBouclierRond::gestion()
 	{
 		setPosition({ lanceur->getPosition().x, lanceur->getPosition().y });
 
+		lanceur->setBouclier(pv_);
+
 		afficher();
 
 		if (t_age_ >= t_longevite_)
+		{
 			detruit_ = true;
+			lanceur->setBouclier(0);
+			lanceur->setBouclierM(0);
+			lanceur->setCollisionnable(true);
+		}
 		else t_age_ += ecran_.getTempsFrame();
 	}
 }
@@ -68,10 +74,11 @@ void ProjBouclierRond::gestion()
 
 void ProjBouclierRond::agit(Entite& proj)
 {
-	proj.recoitDegats(degatsColl_);
-	pv_ -= proj.getDegatsColl_();
-	int alpha = (int)(pv_ / pvM_ * 255);
-	sprites_.front().setColor({ 255, 255, 255, ( sf::Uint8)alpha });
-	if (pv_ < 0)
+	proj.recoitDegats(degatsCollision_);//inflige dégats
+	//change d'opacité selon sa vie
+	sf::Uint8 alpha = (sf::Uint8)(pv_ / pvM_ * 255);
+	alpha < 50 ? 50 : alpha;//seuil minimum sinon le bouclier est très peu visible à faible vie
+	sprites_.front().setColor({ 255, 255, 255, alpha });
+	if (pv_ <= 0)
 		detruit_ = true;
 }

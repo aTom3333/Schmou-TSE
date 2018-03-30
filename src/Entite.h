@@ -13,6 +13,38 @@
 #include <cmath>
 #include <cassert>
 
+
+/**
+*@struct Stats
+*@brief Regroupe les attributs qui implémentent les caractéristiques ingame d'une Entite
+* attributs (Max et current):
+base : PV, ATK, DEF, VITESSE, 
+modulateurs de base : ARMURE, BOUCLIER, 
+modulateurs de regen : PV, ARMURE, BOUCLIER
+modulateurs avancés : PRECISION
+dégats divers : COLLISION
+*/
+struct Stats
+{
+	float
+		//base
+		pvM = 0,				pv = 0,
+		atkM = 0,				atk = 0,
+		defM = 0,				def = 0,
+		vitM = 0,				vit = 0,
+
+		armureM = 0,			armure = 0,
+		bouclierM = 0,			bouclier = 0,
+		//regen
+		regenPvM = 0,			regenPv = 0,
+		regenArmureM = 0,		regenArmure = 0,
+		regenBouclierM = 0,		regenBouclier = 0,
+		//avancé
+		precisionM = 0,			precision = 0,
+		//divers
+		degatsCollisionM = 0,	degatsCollision = 0;
+};
+
 /**
  * @class Entite
  * @brief Classe virtuelle qui définit une entité
@@ -283,12 +315,19 @@ class Entite
 
 		//setters
 		void setequipe_(Equipe equipe) { equipe_ = equipe; }
-		void setInnate_(bool isInnate) { innate_ = isInnate; }
-		void setNbPositions(int val);
+		void setInnate_(const bool& isInnate) { innate_ = isInnate; }
+		void setNbPositions(size_t val);
 		void setSmokeTexture(const sf::Texture &text, sf::Color couleur = { 255,255,255 });
 		void setOrigin(sf::Vector2f origine);
 		void setActif(const bool& actif) { t_age_ = sf::Time::Zero; actif_ = actif; }
 		void setLongevite(const sf::Time& t_longevite) { t_longevite_ = t_longevite; }
+
+		void setCollisionneuse(const bool& collisionneuse) { collisionneuse_ = collisionneuse; }
+		void setCollisionnable(const bool& collisionnable) { collisionnable_ = collisionnable; }
+
+		void setBouclier(const float& bouclier) { bouclier_ = bouclier; }
+		void setBouclierM(const float& bouclierM) { bouclierM_ = bouclierM; }
+
 
 	protected:
 		// Référence vers l'écran
@@ -338,23 +377,23 @@ class Entite
 		std::vector<sf::Sound> sounds_;
 
 		// Stats
-		float pvM_ = 0; /// Point de vie maximum de l'entite
-		float armureM_ = 0;  /// Armure maximum de l'entite
-		float bouclierM_ = 0;  /// Bouclier maximum de l'entite
+		float
+			//base
+			pvM_ = 0, pv_ = 0,
+			atkM_ = 0, atk_ = 0,
+			defM_ = 0, def_ = 0,
+			vitM_ = 0, vit_ = 0,
 
-		float vitM_ = 0; ///Vitesse maximale de l'entite
-
-		float pv_ = pvM_; /// Points de vie actuel
-		float armure_ = armureM_; ///Armure actuelle
-		float bouclier_ = bouclierM_; /// Bouclier actuel
-		float vit_ = vitM_; /// Vitesse actuelle de l'Entite
-
-		float regenPV_ = 0; /// Points de vie rendu par seconde
-		float regenARM_ = 0; /// Armure rendu par seconde
-		float regenBOU_ = 0; /// Bouclier rendu par seconde
-
-		float degatsColl_ = 0; ///< Dégats infligés en cas de collision
-
+			armureM_ = 0, armure_ = 0,
+			bouclierM_ = 0, bouclier_ = 0,
+			//regen
+			regenPvM_ = 0, regenPv_ = 0,
+			regenArmureM_ = 0, regenArmure_ = 0,
+			regenBouclierM_ = 0, regenBouclier_ = 0,
+			//avancé
+			precisionM_ = 0, precision_ = 0,
+			//divers
+			degatsCollisionM_ = 0, degatsCollision_ = 0;
 };
 
 #endif // ENTITE_H

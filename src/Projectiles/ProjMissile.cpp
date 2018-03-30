@@ -13,18 +13,18 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 	sprites_ = sprite;
 
 	//Origines
-	origine_ = { 10,15 }; //basé sur image Piou20x30
-	sprites_.at(0).setOrigin({ 10,15 });
+	origine_ = { 20,40 }; //basé sur projectile_missile de dimensions 40x80
+	sprites_.at(0).setOrigin({ 20,40 });
 
 	//Gestion du son
 	sounds_ = sound;
 	if (!sounds_.empty())sounds_.front().play();//son joué à la création du projectile	
 
-												// cercle englobant
-												//TODO utiliser la fonction Englobeuse
-	cercleEnglobant_ = sf::CircleShape(hypot(20, 40));
-	cercleEnglobant_.setOrigin(20, 40);
-	cercleEnglobant_.setPosition(20, 40);
+	// cercle englobant
+	//TODO utiliser la fonction Englobeuse
+	const float R = hypot(20, 40);//basé sur projectile_missile de dimensions 40x80
+	cercleEnglobant_ = sf::CircleShape(R);
+	cercleEnglobant_.setOrigin(R, R);
 
 	//Hitbox
 	forme_.emplace_back(new sf::RectangleShape({ 40,80 }));
@@ -38,9 +38,9 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 	armure_ = armureM_ = 0;
 	bouclier_ = bouclierM_ = 0;
 
-	regenARM_ = regenBOU_ = regenPV_ = 0;
+	regenArmure_ = regenBouclier_ = regenPv_ = 0;
 
-	degatsColl_ = 300; //TODO PG xlanceur.stats().atk
+	degatsCollision_ = 300; //TODO PG xlanceur.stats().atk
 
 	vit_ = vitM_ = 10;
 
@@ -68,6 +68,6 @@ void ProjMissile::gestion()
 
 void ProjMissile::agit(Entite & e)
 {
-    e.recoitDegats(degatsColl_);
+    e.recoitDegats(degatsCollision_);
     detruit_ = true;
 }

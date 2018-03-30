@@ -165,10 +165,10 @@ bool Entite::estDetruit()
 
 float Entite::getDegatsColl_() const
 {
-	return degatsColl_;
+	return degatsCollision_;
 }
 
-void Entite::setNbPositions(int val)
+void Entite::setNbPositions(size_t val)
 {
 	nbPositions_ = val;
 	if(val == 0) positionsPrev_.clear();
@@ -209,9 +209,9 @@ void Entite::regen()
 {
 
 	// Régénération des différentes statistiques
-	pv_ += regenPV_ * ecran_.getTempsFrame().asSeconds();
-	armure_ += regenARM_ * ecran_.getTempsFrame().asSeconds();
-	bouclier_ += regenBOU_ * ecran_.getTempsFrame().asSeconds();
+	pv_ += regenPv_ * ecran_.getTempsFrame().asSeconds();
+	armure_ += regenArmure_ * ecran_.getTempsFrame().asSeconds();
+	bouclier_ += regenBouclier_ * ecran_.getTempsFrame().asSeconds();
 
 	// Si le seuil maximal est dépassé
 	if (pv_ > pvM_)

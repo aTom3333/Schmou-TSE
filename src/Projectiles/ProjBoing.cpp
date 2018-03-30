@@ -33,7 +33,7 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 
 	// Stats
 	pv_ = pvM_ = 10;
-	degatsColl_ = 30; //TODO PG xlanceur.stats().atk
+	degatsCollision_ = 30; //TODO PG xlanceur.stats().atk
 
 	vit_ = vitM_ = 700;
 	rotation_ = rand() % 100 / (float)100. * 2 * PI; // TODO CL rand c++
@@ -69,7 +69,7 @@ void ProjBoing::gestion()
 
 void ProjBoing::agit(Entite& proj)
 {
-	proj.recoitDegats(degatsColl_);
+	proj.recoitDegats(degatsCollision_);
 	detruit_ = true;
 }
 

@@ -36,11 +36,11 @@ VaisseauDefenseur::VaisseauDefenseur(Ecran& ecran, float x, float y, vaisseau_co
 	bouclier_ = bouclierM_ = 0;
 	vit_ = vitM_ = 200;
 
-	regenARM_ = 0;
-	regenBOU_ = 0;
-	regenPV_ = 0;
+	regenArmure_ = 0;
+	regenBouclier_ = 0;
+	regenPv_ = 0;
 
-	degatsColl_ = 75;
+	degatsCollision_ = 75;
 
 	// Composition
 	//ajout d'un bouclier

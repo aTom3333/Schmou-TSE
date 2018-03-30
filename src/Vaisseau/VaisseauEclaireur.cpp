@@ -36,11 +36,11 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, float x, float y,Trajectoire 
 	bouclier_ = bouclierM_ = 0;
 	vit_ = vitM_ = 300;
 
-	regenARM_ = 0;
-	regenBOU_ = 0;
-	regenPV_ = 0;
+	regenArmure_ = 0;
+	regenBouclier_ = 0;
+	regenPv_ = 0;
 
-	degatsColl_ = 50;
+	degatsCollision_ = 50;
 
 	// Initialisation de la trajectoire
 	trajectoire_ = traj;

@@ -14,5 +14,5 @@ void Vaisseau::gestionCapacite(proj_container &projectiles)
 
 void Vaisseau::agit(Entite & e)
 {
-	e.recoitDegats(degatsColl_);
+	e.recoitDegats(degatsCollision_);
 }

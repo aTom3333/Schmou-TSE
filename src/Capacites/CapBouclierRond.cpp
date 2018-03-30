@@ -26,12 +26,12 @@ CapBouclierRond::CapBouclierRond(Ecran& ecran, const std::weak_ptr<Entite>& lanc
 	//		break;
 	//	case 1:
 	//		pvM_ = 500;
-	//		degatsColl_ = sf::milliseconds(50);
+	//		degatsCollision_ = sf::milliseconds(50);
 	//		t_longevite_ = 3000;
 	//		break;
 	//	case 2:
 	//		pvM_ = 1000;
-	//		degatsColl_ = 100;
+	//		degatsCollision_ = 100;
 	//		t_longevite_ = 5000;
 	//		break;
 	//}

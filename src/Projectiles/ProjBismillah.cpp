@@ -34,7 +34,7 @@ ProjBismillah::ProjBismillah(Ecran& ecran, std::shared_ptr<Entite> lanceur, std:
     invincibilable_ = false;
 
 	// Stats
-    degatsColl_ = 500;
+    degatsCollision_ = 500;
 
 }
 
@@ -136,5 +136,5 @@ void ProjBismillah::gestion()
 
 void ProjBismillah::agit(Entite & e)
 {
-    e.recoitDegats(degatsColl_);
+    e.recoitDegats(degatsCollision_);
 }
