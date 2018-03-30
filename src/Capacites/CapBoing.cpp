@@ -5,7 +5,7 @@ CapBoing::CapBoing(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	Capacite(ecran, lanceur)
 {
 	//Caractéristiques
-	cooldown_ = sf::milliseconds(100);
+	cooldown_ = sf::milliseconds(1000);
 	nom_ = "Boing";
 	afficheIcone_ = true;
 

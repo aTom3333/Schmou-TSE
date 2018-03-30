@@ -1,7 +1,6 @@
 #include "ProjMissile.h"
 #include <cmath>
 
-#include <iostream>
 
 
 ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe) :
@@ -62,8 +61,6 @@ void ProjMissile::gestion()
 
 	vit_ *= coef_acceleration_ * (1. + tempsEcoule.asSeconds());
 	if (vit_ >= 1000) vit_ = 1000;
-
-	std::cerr << vit_ << std::endl;
 
 	move();
 	afficher();

@@ -33,15 +33,16 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 	equipe_ = equipe;
 
 	// Stats
+	pv_ = pvM_ = 10;
 	degatsColl_ = 30; //TODO PG xlanceur.stats().atk
 
-	vit_ = vitM_ = 0.400;
-	rotation_ = rand() % 100 / 100 * 2 * PI; // TODO CL rand c++
+	vit_ = vitM_ = 700;
+	rotation_ = rand() % 100 / (float)100. * 2 * PI; // TODO CL rand c++
 
 	rayonCirc_ = hypot(lanceur->getTaille().x, lanceur->getTaille().y);
 
 	// Position de départ
-	setPosition({ lanceur->getPosition().x + rayonCirc_*cos(rotation_),  lanceur->getPosition().y + rayonCirc_*cos(rotation_) });
+	setPosition({ lanceur->getPosition().x + rayonCirc_*cos(rotation_),  lanceur->getPosition().y - rayonCirc_*sin(rotation_) });
 }
 
 
@@ -49,10 +50,11 @@ void ProjBoing::gestion()
 {
 	auto& window = ecran_.getWindow();
 	auto tempsEcoule = ecran_.getTempsFrame();
+
 	move();
 
-	rotation_ += 100 * tempsEcoule.asSeconds();
-	sprites_.at(0).setRotation(rotation_);
+	rotationSpr_ += 500 * tempsEcoule.asSeconds();
+	sprites_.at(0).setRotation(rotationSpr_);
 
 	afficher();
 }
