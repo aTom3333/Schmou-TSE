@@ -81,7 +81,7 @@ class Capacite
 		unsigned int niveau_ = 0; /// Niveau, à partir de 1
 
 		sf::Time cooldown_; /// Temps à attendre avant de pouvoir utiliser la capacité à nouveau
-		sf::Time longevite_; ///Temps après lequel le projectile issu disparait
+		sf::Time t_longevite_; ///Temps après lequel le projectile issu disparait
 		sf::Time t_lastuse_; /// Temps écoulé depuis la dernière activation de la compétence
 
 		//Texture

@@ -288,6 +288,7 @@ class Entite
 		void setSmokeTexture(const sf::Texture &text, sf::Color couleur = { 255,255,255 });
 		void setOrigin(sf::Vector2f origine);
 		void setActif(const bool& actif) { t_age_ = sf::Time::Zero; actif_ = actif; }
+		void setLongevite(const sf::Time& t_longevite) { t_longevite_ = t_longevite; }
 
 	protected:
 		// Référence vers l'écran
@@ -316,9 +317,12 @@ class Entite
 		bool detruit_ = false; ///< true lorsque que le vaisseau est détruit
 		bool actif_ = true; ///< Booleen indiquant si la trajectoire a été amorcée
 		bool invincible_ = false;///< en état invincible
+
+		//Temps
 		const sf::Time t_Invincibilite_; ///< Temps d'invincibilité total en ms
 		sf::Clock clk_Invincibilite; ///<Clock qui gère l'état invincible
 		sf::Time t_age_; /// Temps écoulé depuis la création (temps de vie)
+		sf::Time t_longevite_; ///Temps après lequel l'Entite est détruite
 
 		
 		//graphismes

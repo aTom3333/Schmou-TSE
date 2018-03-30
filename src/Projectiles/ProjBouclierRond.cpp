@@ -11,22 +11,21 @@ ProjBouclierRond::ProjBouclierRond(Ecran& ecran, std::shared_ptr<Entite> lanceur
 	sprites_ = sprite;
 
 	//Origines
-	origine_ = { 10,15 }; //basé sur image Piou20x30
-	sprites_.at(0).setOrigin({ 10,15 });
+	origine_ = { sprites_.at(0).getGlobalBounds().width / 2.0f, sprites_.at(0).getGlobalBounds().height / 2.0f };
+	sprites_.at(0).setOrigin({ sprites_.at(0).getGlobalBounds().width / 2.0f, sprites_.at(0).getGlobalBounds().height / 2.0f });
 
 	//Gestion du son
 	sounds_ = sound;
-	if (!sounds_.empty())sounds_.front().play();//son joué à la création du projectile	
+	if (!sounds_.empty())sounds_.front().play();//son joué à la création du projectile
 
-												// cercle englobant
-												//TODO utiliser la fonction Englobeuse
-	cercleEnglobant_ = sf::CircleShape(75);
-	cercleEnglobant_.setOrigin(75, 75);
-	cercleEnglobant_.setPosition(75, 75);
+	// cercle englobant
+	//TODO utiliser la fonction Englobeuse
+	const float R = sprites_.at(0).getGlobalBounds().width / 2.0f;
+	cercleEnglobant_ = sf::CircleShape(R);
+	cercleEnglobant_.setOrigin(R, R);
 
-	//Hitbox
+	//Hitbox : il s'agit ici du cercle englobant
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
-	forme_.at(0)->setOrigin({ 75,75 });
 
 	// Caractéristiques de code
 	equipe_ = equipe;
@@ -44,25 +43,25 @@ ProjBouclierRond::ProjBouclierRond(Ecran& ecran, std::shared_ptr<Entite> lanceur
 
 	vit_ = vitM_ = 700;
 
+	t_longevite_ = sf::milliseconds(7000);
+
 	//position de départ
 	setPosition({ lanceur->getPosition().x ,  lanceur->getPosition().y });
-
-	tempsMax_ = 1000;
 }
 
 void ProjBouclierRond::gestion()
 {
 	auto& window = ecran_.getWindow();
-	auto tempsEcoule = ecran_.getTempsFrame();
 	
 	if (auto lanceur = lanceur_.lock())
 	{
 		setPosition({ lanceur->getPosition().x, lanceur->getPosition().y });
 
-		window.draw(sprites_.at(0));//HACK PG màj affocher de entité avec sprites_ puis changer ici
+		afficher();
 
-		if (tempsEcoule.asMilliseconds() > tempsMax_)
+		if (t_age_ >= t_longevite_)
 			detruit_ = true;
+		else t_age_ += ecran_.getTempsFrame();
 	}
 }
 
