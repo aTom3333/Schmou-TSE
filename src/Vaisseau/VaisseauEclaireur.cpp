@@ -12,15 +12,16 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, float x, float y,Trajectoire 
 	for (auto& sprite : sprites_)
 		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 
-	// Cercle englobant / Hitbox simple
+	// Cercle englobant
 	//TODO PG Englobeur
-	cercleEnglobant_ = sf::CircleShape((float)sqrt(2*32*32));
-	cercleEnglobant_.setOrigin((float)sqrt(2 * 32 * 32), (float)sqrt(2 * 32 * 32));
-	cercleEnglobant_.setPosition(16, 32);
-	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
+	const float R = hypot(this->getTaille().x / 2.0f, this->getTaille().y / 2.0f);
+	cercleEnglobant_ = sf::CircleShape(R);
+	cercleEnglobant_.setOrigin(R, R);
 
-	// Hitbox
-	// TODO Hitbox complète
+	//Hitbox
+	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
+	for (auto& forme : forme_)
+		forme->setOrigin(forme->getGlobalBounds().width / 2.0f, forme->getGlobalBounds().height / 2.0f);
 
 	//Origine
 	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
