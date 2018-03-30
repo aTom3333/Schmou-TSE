@@ -16,7 +16,7 @@ ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf
 
 	//Gestion du son
 	sounds_ = sound;
-	if(!sounds_.empty())sounds_.front().play();//son joué à la création du projectile	
+	sounds_.front().play(); //son joué à la création du projectile	
 
 	// Cercle englobant
     //TODO utiliser la fonction Englobeuse

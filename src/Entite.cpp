@@ -55,19 +55,22 @@ void Entite::afficher(bool debug)
 		window.draw(smokes_.front());
 	}
 
-	if(DEBUG ^ debug) afficher_debug();
+	afficher_debug(debug);
 }
 
-void Entite::afficher_debug()
+void Entite::afficher_debug(bool debug)
 {
-	//cercle englobant en rouge mi-transparent
-	cercleEnglobant_.setFillColor({ 255, 100, 100, 128 });
-	ecran_.getWindow().draw(cercleEnglobant_);
-	//hitbox en jaune mi-transparent
-	for (auto& elem : forme_)
+	if (DEBUG ^ debug)
 	{
-		elem->setFillColor({ 255, 255, 100, 128 });
-		ecran_.getWindow().draw(*elem);
+		//cercle englobant en rouge mi-transparent
+		cercleEnglobant_.setFillColor({ 255, 100, 100, 128 });
+		ecran_.getWindow().draw(cercleEnglobant_);
+		//hitbox en jaune mi-transparent
+		for (auto& elem : forme_)
+		{
+			elem->setFillColor({ 255, 255, 100, 128 });
+			ecran_.getWindow().draw(*elem);
+		}
 	}
 }
 

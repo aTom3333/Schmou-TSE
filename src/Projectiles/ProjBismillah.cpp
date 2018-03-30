@@ -17,7 +17,6 @@ ProjBismillah::ProjBismillah(Ecran& ecran, std::shared_ptr<Entite> lanceur, std:
 	// Gestion du son
 	sounds_ = sound;
 	if (!sounds_.empty()) sounds_.front().play(); //son joué à la création du projectile	
-	//TODO PG redondant avec le son joué à la capacité à la création
 
 	// Cercle englobant
 	//TODO fonction Englobeuse
@@ -126,20 +125,9 @@ void ProjBismillah::gestion()
 			//forme_.at(0)->setPosition({ lanceur->getPosition().x - forme_.at(0)->getGlobalBounds().width / 2.0f , - hauteur_vaisseau / 2.0f });
 			setPosition({ lanceur->getPosition().x - forme_.at(0)->getGlobalBounds().width / 2.0f , -hauteur_vaisseau / 2.0f });
 
-			// HACK Affichage de hitbox
-			if (DEBUG)
-			{
-				auto f = dynamic_cast<sf::RectangleShape*> (forme_.front().get());
-				if (f != nullptr)
-					f->setFillColor({ 255,100,100,128 });
-
-				for (auto& elem : forme_)
-					ecran_.getWindow().draw(*elem);
-
-				cercleEnglobant_.setFillColor({ 255,100,100,128 });
-				ecran_.getWindow().draw(cercleEnglobant_);
-			}
-
+			//Mode debug
+			//bool force_debug = true;
+			afficher_debug();
 		}
 
 		t_age_ += ecran_.getTempsFrame();

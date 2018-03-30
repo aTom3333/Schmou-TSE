@@ -17,7 +17,6 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 
 	// Gestion du son
 	sounds_ = sound;
-	if (!sounds_.empty())sounds_.front().play();//son joué à la création du projectile	
 
 	// Cercle englobant
 	//TODO utiliser la fonction Englobeuse
@@ -53,6 +52,8 @@ void ProjBoing::gestion()
 
 	rotation_ += 100 * tempsEcoule.asSeconds();
 	sprites_.at(0).setRotation(rotation_);
+
+	//TODO écrire "sounds_.front().play()" au rebond
 
 	afficher();
 }

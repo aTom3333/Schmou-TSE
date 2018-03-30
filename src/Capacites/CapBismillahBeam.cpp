@@ -5,7 +5,7 @@ CapBismillah::CapBismillah(Ecran& ecran, const std::weak_ptr<Entite>& lanceur) :
 	Capacite(ecran, lanceur)
 {
 	//Caractéristiques
-	cooldown_ = sf::milliseconds(20000);
+	cooldown_ = sf::milliseconds(20);
 	nom_ = "Bismillah";
 
 	//Icône
@@ -33,9 +33,6 @@ void CapBismillah::utiliser(proj_container& projectiles)
 			// Création du projectile au lancement
 			proj_ptr temp(new ProjBismillah(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe()));
 			projectiles.push_back(temp);
-
-			// Son au lancement
-			sounds_.front().play();
 		}
 	}
 }
