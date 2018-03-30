@@ -64,14 +64,17 @@ class Entite
 		 *
 		 * Appelle la fonction afficher de la SFML sur les attributs de l'objet appelant.
 		 * Peut également afficher des informations de debug telles que le cercle englobant ou et la forme de collision.
-		 * @param [in] debug Un @c bool qui vaut @a true si les informations de debug doivent être affichées et @a false sinon.
+		 * @param [in] debug si DEBUG est false, régler à true pour forcer l'affichage debug
+							 si DEBUG est true, régler à true pour forcer la désactivation de l'affichage debug
 		 */
 		void afficher(bool debug = false);
 		/**
 		* @fn afficher
 		* @brief Afficher des informations de debug telles que le cercle englobant ou et la forme de collision
+		* @param [in] debug si DEBUG est false, régler à true pour forcer l'affichage debug
+							si DEBUG est true, régler à true pour forcer la désactivation de l'affichage debug
 		*/
-		void afficher_debug();
+		void afficher_debug(bool debug = false);
         /**
          * @fn move(sf::Vector2f delta)
          * @brief Déplace l'Entite en fonction de @a delta

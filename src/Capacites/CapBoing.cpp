@@ -39,9 +39,6 @@ void CapBoing::utiliser(proj_container& projectiles)
 				proj_ptr temp(new ProjBoing(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe()));
 				projectiles.push_back(temp);
 			}
-
-			// Son au lancement
-			sounds_.front().play();
 		}
 	}
 }

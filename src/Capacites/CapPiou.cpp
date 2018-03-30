@@ -34,9 +34,6 @@ void CapPiou::utiliser(proj_container& projectiles)
             // Création du projectile au lancement
             proj_ptr temp(new ProjPiou(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe()));
             projectiles.push_back(temp);
-            
-            // Son au lancement
-            sounds_.front().play();
         }
     }
 }
