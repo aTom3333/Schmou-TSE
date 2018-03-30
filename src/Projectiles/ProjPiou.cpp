@@ -49,9 +49,9 @@ ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf
 void ProjPiou::gestion()
 {
 	auto& window = ecran_.getWindow();
-	auto tempsEcoule = ecran_.getClock().getElapsedTime();
+	auto tempsEcoule = ecran_.getTempsFrame();
 	move();
-	window.draw(sprites_.at(0));//HACK PG il faut màj afficher de entité avec sprites_ puis le mettre ici
+	afficher();
 }
 
 void ProjPiou::agit(Entite& proj)

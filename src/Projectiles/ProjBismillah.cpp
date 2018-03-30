@@ -127,8 +127,7 @@ void ProjBismillah::gestion()
 			setPosition({ lanceur->getPosition().x - forme_.at(0)->getGlobalBounds().width / 2.0f , -hauteur_vaisseau / 2.0f });
 
 			// HACK Affichage de hitbox
-			debug_ = false;
-			if (debug_)
+			if (DEBUG)
 			{
 				auto f = dynamic_cast<sf::RectangleShape*> (forme_.front().get());
 				if (f != nullptr)
@@ -143,7 +142,7 @@ void ProjBismillah::gestion()
 
 		}
 
-		t_age_ += ecran_.getClock().getElapsedTime();
+		t_age_ += ecran_.getTempsFrame();
 	}
 }
 

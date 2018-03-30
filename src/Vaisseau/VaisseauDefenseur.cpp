@@ -60,7 +60,7 @@ VaisseauDefenseur::VaisseauDefenseur(Ecran& ecran, float x, float y, vaisseau_co
 
 }
 
-void VaisseauDefenseur::gestion(proj_container proj_cont, Input& input)
+void VaisseauDefenseur::gestion(proj_container &proj_cont, Input& input)
 {
 	/*if (frames_%100==0)
 	{
@@ -73,7 +73,7 @@ void VaisseauDefenseur::gestion(proj_container proj_cont, Input& input)
 	if (actif_)
 	{
 		setPosition(traj_position(trajectoire_, t_age_, vit_, posInit_, params_));
-		afficher(debug_);
+		afficher();
 
 		// Gestion du module de bouclier
 		for (auto& annexe : annexes_)

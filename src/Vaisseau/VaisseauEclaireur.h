@@ -55,7 +55,7 @@ public:
 	*
 	* Gère le déplacement et l'affichage du vaisseau
 	*/
-	void gestion(proj_container proj_cont, Input& input) override;
+	void gestion(proj_container &proj_cont, Input& input) override;
 	/**
 	* @fn destruction
 	* @brief Procedure a effectuer lorsque le vaisseau est détruit

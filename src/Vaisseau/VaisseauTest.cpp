@@ -55,7 +55,7 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	degatsColl_ = 50;
 }
 
-void VaisseauTest::gestion(proj_container proj_cont, Input& input)
+void VaisseauTest::gestion(proj_container& proj_cont, Input& input)
 {
 	// Gestion du vaisseau
 	// Si la touche TIR 1 est activé

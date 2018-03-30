@@ -51,7 +51,7 @@ VaisseauAttaquant::VaisseauAttaquant(Ecran& ecran, float x, float y, Trajectoire
 	posInit_ = getPosition();
 }
 
-void VaisseauAttaquant::gestion(proj_container proj_cont, Input& input)
+void VaisseauAttaquant::gestion(proj_container &proj_cont, Input& input)
 {
 	// Juste pour mute les warnings du compilateur
 	(void)input;
@@ -62,7 +62,7 @@ void VaisseauAttaquant::gestion(proj_container proj_cont, Input& input)
 			capacites_[0]->utiliser(proj_cont);
 
 		setPosition(traj_position(trajectoire_,t_age_, vit_, posInit_, params_));
-		afficher(debug_);
+		afficher();
 
 		t_age_ += ecran_.getTempsFrame();
 	}

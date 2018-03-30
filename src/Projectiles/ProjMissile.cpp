@@ -1,6 +1,8 @@
 #include "ProjMissile.h"
 #include <cmath>
 
+#include <iostream>
+
 
 ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe) :
 	Projectile(ecran)
@@ -41,7 +43,7 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 
 	degatsColl_ = 300; //TODO PG xlanceur.stats().atk
 
-	vit_ = vitM_ = 700;
+	vit_ = vitM_ = 10;
 
 	//position de départ
 	setPosition({ lanceur->getPosition().x ,  lanceur->getPosition().y - lanceur->getTaille().y / 2.0f });
@@ -49,18 +51,22 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
     actif_ = true;
 
 	coef_acceleration_ = 1.05;
+
+	rotation_ = -PI / 2;
 }
 
 void ProjMissile::gestion()
 {
 	auto& window = ecran_.getWindow();
-	auto tempsEcoule = ecran_.getClock().getElapsedTime();
+	auto tempsEcoule = ecran_.getTempsFrame();
 
-	vit_ *= coef_acceleration_ * tempsEcoule.asMilliseconds();
-	if (vit_ >= 400) vit_ = 400;
+	vit_ *= coef_acceleration_ * (1. + tempsEcoule.asSeconds());
+	if (vit_ >= 1000) vit_ = 1000;
+
+	std::cerr << vit_ << std::endl;
 
 	move();
-	window.draw(sprites_.at(0));//HACK PG il faut màj afficher de entité avec sprites_ puis le mettre ici
+	afficher();
 }
 
 void ProjMissile::agit(Entite & e)

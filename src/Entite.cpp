@@ -55,7 +55,7 @@ void Entite::afficher(bool debug)
 		window.draw(smokes_.front());
 	}
 
-	if(debug) afficher_debug();
+	if(DEBUG ^ debug) afficher_debug();
 }
 
 void Entite::afficher_debug()
@@ -101,8 +101,8 @@ void Entite::move(sf::Vector2f delta)
 
 void Entite::move()
 {
-	float x = vit_ *  -cos(rotation_) * ecran_.getClock().getElapsedTime().asSeconds();
-	float y = vit_ * -sin(rotation_) * ecran_.getClock().getElapsedTime().asSeconds();
+	float x = vit_ * cos(rotation_) * ecran_.getTempsFrame().asSeconds();
+	float y = vit_ * -sin(rotation_) * ecran_.getTempsFrame().asSeconds();
 	sf::Vector2f delta(x, y);
 	move(delta);
 }

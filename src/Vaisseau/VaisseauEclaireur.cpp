@@ -54,7 +54,7 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, float x, float y,Trajectoire 
 
 }
 
-void VaisseauEclaireur::gestion(proj_container proj_cont, Input& input)
+void VaisseauEclaireur::gestion(proj_container &proj_cont, Input& input)
 {
 	// Juste pour mute les warnings du compilateur
 	(void)input;
@@ -71,7 +71,7 @@ void VaisseauEclaireur::gestion(proj_container proj_cont, Input& input)
 	{
 		t_age_ += ecran_.getTempsFrame();
 		setPosition(traj_position(trajectoire_, t_age_, vit_, posInit_, params_));
-		afficher(debug_);
+		afficher();
 	}
 }
 

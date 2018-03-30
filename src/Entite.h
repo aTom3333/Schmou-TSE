@@ -66,7 +66,7 @@ class Entite
 		 * Peut également afficher des informations de debug telles que le cercle englobant ou et la forme de collision.
 		 * @param [in] debug Un @c bool qui vaut @a true si les informations de debug doivent être affichées et @a false sinon.
 		 */
-		void afficher(bool debug = DEBUG);
+		void afficher(bool debug = false);
 		/**
 		* @fn afficher
 		* @brief Afficher des informations de debug telles que le cercle englobant ou et la forme de collision
@@ -293,7 +293,7 @@ class Entite
 		//coordonnées
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
 		sf::Vector2f origine_; ///< Position de l'origine
-		float rotation_; ///< Orientation actuelle de l'Entite
+		float rotation_ = PI/2.; ///< Orientation actuelle de l'Entite
 		float scale_; ///< Échelle actuelle de l'Entite
 
 		//déplacements
@@ -348,8 +348,6 @@ class Entite
 
 		float degatsColl_ = 0; ///< Dégats infligés en cas de collision
 
-		// Debug
-		bool debug_ = DEBUG;
 };
 
 #endif // ENTITE_H

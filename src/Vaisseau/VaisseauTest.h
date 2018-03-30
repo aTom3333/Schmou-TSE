@@ -10,7 +10,7 @@ class VaisseauTest : public Vaisseau
 public:
 	VaisseauTest(Ecran& ecran);
 	~VaisseauTest() = default;
-	void gestion(proj_container proj_cont, Input& input) override;
+	void gestion(proj_container& proj_cont, Input& input) override;
 	/**
 	* @fn destruction
 	* @brief règle l'attribut detruit_ à true

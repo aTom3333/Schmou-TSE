@@ -41,11 +41,11 @@ VaissBouclier::VaissBouclier(Ecran& ecran) :
 	degatsColl_ = 50;
 }
 
-void VaissBouclier::gestion(proj_container proj_cont, Input& input)
+void VaissBouclier::gestion(proj_container& proj_cont, Input& input)
 {
 	// Juste pour mute les warnings du compilateur
 	(void)input;
 	
 	if (actif_)
-		afficher(debug_);
+		afficher();
 }

@@ -48,13 +48,13 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 void ProjBoing::gestion()
 {
 	auto& window = ecran_.getWindow();
-	auto tempsEcoule = ecran_.getClock().getElapsedTime();
+	auto tempsEcoule = ecran_.getTempsFrame();
 	move();
 
 	rotation_ += 100 * tempsEcoule.asSeconds();
 	sprites_.at(0).setRotation(rotation_);
 
-	afficher(debug_);
+	afficher();
 }
 
 void ProjBoing::agit(Entite& proj)

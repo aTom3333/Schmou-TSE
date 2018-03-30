@@ -53,7 +53,7 @@ ProjBouclierRond::ProjBouclierRond(Ecran& ecran, std::shared_ptr<Entite> lanceur
 void ProjBouclierRond::gestion()
 {
 	auto& window = ecran_.getWindow();
-	auto tempsEcoule = ecran_.getClock().getElapsedTime();
+	auto tempsEcoule = ecran_.getTempsFrame();
 	
 	if (auto lanceur = lanceur_.lock())
 	{

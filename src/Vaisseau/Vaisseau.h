@@ -31,7 +31,7 @@ class Vaisseau : public Entite
 		*
 		* Fonction virtuelle qui gère le comportement du vaisseau
 		*/
-		virtual void gestion(proj_container proj_cont, Input& input) = 0;
+		virtual void gestion(proj_container &proj_cont, Input& input) = 0;
 		void gestionCapacite(proj_container &projectiles);
 		/**
 		* @fn agit
