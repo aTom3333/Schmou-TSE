@@ -13,7 +13,7 @@
 class ProjMissile : public Projectile
 {
 	public:
-		ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe);
+		ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe, const bool& aimbot = false);
 		~ProjMissile() {};
 		/**
 		* @fn gestion
@@ -34,6 +34,7 @@ class ProjMissile : public Projectile
 		void agit(Entite &e);
 	private:
 		float coef_acceleration_;
+		std::shared_ptr<Entite> cible_;
 };
 
 #endif // PROJ_MISSILE_H

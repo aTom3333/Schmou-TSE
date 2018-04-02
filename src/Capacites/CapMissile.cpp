@@ -16,7 +16,6 @@ void CapMissile::utiliser(proj_container& projectiles)
 {
 	if (auto lanceur = lanceur_.lock())
 	{
-
 		// Si la compétence est disponible
 		if (t_lastuse_ >= cooldown_)
 		{

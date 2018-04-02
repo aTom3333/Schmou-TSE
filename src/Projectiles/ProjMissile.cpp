@@ -3,7 +3,7 @@
 
 
 
-ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe) :
+ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe, const bool& aimbot) :
 	Projectile(ecran)
 {
 	// Weak pointeur vers lanceur
@@ -32,6 +32,15 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 
 	// Caractéristiques
 	equipe_ = equipe;
+	aimbot_ = aimbot;
+	if (aimbot_)
+	{
+		for (auto vaisseau : ecran_.getVaisseauxContainer())
+		{
+			//TODO PG récupérer position des vaisseaux de l'écran ?
+			//auto pos = vaisseau->getPosition();
+		}
+	}
 
 	//Stats
 	pv_ = pvM_ = 10;
@@ -59,11 +68,18 @@ void ProjMissile::gestion()
 	auto& window = ecran_.getWindow();
 	auto tempsEcoule = ecran_.getTempsFrame();
 
-	vit_ *= coef_acceleration_ * (1. + tempsEcoule.asSeconds());
-	if (vit_ >= 1000) vit_ = 1000;
+	if (!aimbot_)
+	{
+		vit_ *= coef_acceleration_ * (1. + tempsEcoule.asSeconds());
+		if (vit_ >= 1000) vit_ = 1000;
 
-	move();
-	afficher();
+		move();
+		afficher();
+	}
+	else
+	{
+
+	}
 }
 
 void ProjMissile::agit(Entite & e)

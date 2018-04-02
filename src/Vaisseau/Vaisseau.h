@@ -11,8 +11,6 @@
 #include <string>
 #include <algorithm>
 
-
-
 /**
  * @class Vaisseau
  * @brief classe du vaisseau (véhicule) d'un joueur ou d'un ennemi

@@ -321,6 +321,7 @@ class Entite
 		void setOrigin(sf::Vector2f origine);
 		void setActif(const bool& actif) { t_age_ = sf::Time::Zero; actif_ = actif; }
 		void setLongevite(const sf::Time& t_longevite) { t_longevite_ = t_longevite; }
+		void setAutoAim(const bool& aimbot) { aimbot_ = aimbot; }
 
 		void setCollisionneuse(const bool& collisionneuse) { collisionneuse_ = collisionneuse; }
 		void setCollisionnable(const bool& collisionnable) { collisionnable_ = collisionnable; }
@@ -358,6 +359,7 @@ class Entite
 		bool detruit_ = false; ///< true lorsque que le vaisseau est détruit
 		bool actif_ = true; ///< Booleen indiquant si la trajectoire a été amorcée
 		bool invincible_ = false;///< en état invincible
+		bool aimbot_ = false;///<True si en état visée automatique
 
 		//Temps
 		const sf::Time t_Invincibilite_; ///< Temps d'invincibilité total en ms
