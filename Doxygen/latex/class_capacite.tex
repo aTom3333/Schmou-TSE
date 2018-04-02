@@ -1,0 +1,352 @@
+\hypertarget{class_capacite}{}\section{Capacite Class Reference}
+\label{class_capacite}\index{Capacite@{Capacite}}
+
+
+Classe abstraite qui définit la structure générale d\textquotesingle{}une capacité, à faire hériter de chaque capacité  
+
+
+
+
+{\ttfamily \#include $<$Capacite.\+h$>$}
+
+Inheritance diagram for Capacite\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.344538cm]{class_capacite}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_capacite_af1279c795ea1d1d157cf3cad846d374e}{Capacite}} (\mbox{\hyperlink{class_ecran}{Ecran}} \&ecran, std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ lanceur)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_capacite_a43be1570a24a64682ff3f034330779a9}{$\sim$\+Capacite}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_capacite_abac1434e2ac3ecc9e5afdafd9a7a4bed}{utiliser}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&projectile)=0
+\begin{DoxyCompactList}\small\item\em Fonction virtuel qui active la capacite lorsqu\textquotesingle{}elle est appelée. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_capacite_a85355aeb1d4acc049ed97da177acbd5f}{actualiser}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&projectiles)=0
+\begin{DoxyCompactList}\small\item\em Fonction virtuel qui active les effets de la capacité \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_capacite_af2c1a095ea7e7566218a41f2469cd82a}{afficher\+Nom}} ()
+\item 
+void \mbox{\hyperlink{class_capacite_af50b4c0bf1de8d846c998cba83e1e51f}{gestion\+Icon}} ()
+\item 
+void \mbox{\hyperlink{class_capacite_aba7e297324570300fe7786dddb8c05ef}{init\+Icon}} (int i)
+\item 
+sf\+::\+Time \mbox{\hyperlink{class_capacite_aeb57084eeda5d3ac828714fc029d47f9}{get\+Cooldown}} () const
+\item 
+sf\+::\+Time \mbox{\hyperlink{class_capacite_ad14b4e98b6d30717a40f8b57a56af085}{get\+Time}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_capacite_a36ba3cb1e9a72586dff32fa7f0df85cf}{get\+Nom}} () const
+\item 
+const sf\+::\+Sprite \& \mbox{\hyperlink{class_capacite_aa66c20bba4433f871c91c3836a0c1929}{get\+Icon}} () const
+\item 
+const sf\+::\+Rectangle\+Shape \& \mbox{\hyperlink{class_capacite_a4585b46b989301b127a93dc062a0b8aa}{get\+Masque}} () const
+\item 
+const sf\+::\+Text \& \mbox{\hyperlink{class_capacite_a91f1a5f98354c08f75caf99b0513d3c4}{get\+Text}} () const
+\item 
+bool \mbox{\hyperlink{class_capacite_a6dd5ea561e52140a345be7e62a33cf1f}{get\+Affiche}} ()
+\item 
+bool \mbox{\hyperlink{class_capacite_a40152147df357f3c0d9ea1116b0f7241}{get\+Tir}} ()
+\item 
+const std\+::vector$<$ sf\+::\+Sound $>$ \& \mbox{\hyperlink{class_capacite_aec0e0991421f2675830b7234fe494709}{get\+Sounds\+\_\+}} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ecran}{Ecran}} \& \mbox{\hyperlink{class_capacite_a12c1527d4ab9b80bd9e2174d92d00639}{ecran\+\_\+}}
+\item 
+bool \mbox{\hyperlink{class_capacite_ae5318fb64d0def1069a9730c497d4bb6}{tir\+\_\+}} = false
+\item 
+std\+::string \mbox{\hyperlink{class_capacite_a430472b509233086cbad1d6d8332dc8c}{nom\+\_\+}}
+\begin{DoxyCompactList}\small\item\em $<$ True si tir principal 1 ou 2 \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_capacite_abf2ac63aa5928299c14581e681a16328}{niveau\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Nom de la compétence. \end{DoxyCompactList}\item 
+sf\+::\+Time \mbox{\hyperlink{class_capacite_a31264cab5a0e14cd05626727abb7fa83}{cooldown\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Niveau, à partir de 1. \end{DoxyCompactList}\item 
+sf\+::\+Time \mbox{\hyperlink{class_capacite_a73a85c61740d7359eacfec10e152a268}{t\+\_\+longevite\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Temps à attendre avant de pouvoir utiliser la capacité à nouveau. \end{DoxyCompactList}\item 
+sf\+::\+Time \mbox{\hyperlink{class_capacite_a0f1d7e4b84ef86c985401d9b12e1d4ca}{t\+\_\+lastuse\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Temps après lequel le projectile issu disparait. \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+Sprite $>$ \mbox{\hyperlink{class_capacite_a8324d922ef794601f393966caabfb6eb}{sprites\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Temps écoulé depuis la dernière activation de la compétence. \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+Sound $>$ \mbox{\hyperlink{class_capacite_a12ec756b46ceb4f251fac70f61874b3b}{sounds\+\_\+}}
+\item 
+sf\+::\+Font \mbox{\hyperlink{class_capacite_abb8abeff4070e7337cb8e42faa93c66f}{font\+\_\+}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_capacite_ad76ace2cf7ece150cd533bba193e262b}{text\+\_\+}}
+\item 
+bool \mbox{\hyperlink{class_capacite_a5d4f1d24e9ecfbfacc0bafc5ae508f2c}{affiche\+Icone\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em $<$ Nom affiché en jeu \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_capacite_ac56e7b3dc7a5a00fa5b4486a5cb457f8}{icone\+\_\+}}
+\begin{DoxyCompactList}\small\item\em $<$ true si le sprite de l\textquotesingle{}icone est affiché \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_capacite_af256cf39048f6b10f6f7e81ba0f62432}{masque\+\_\+}}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ \mbox{\hyperlink{class_capacite_ac5c0fb8a5251d7be2b1e86adaa3eaf86}{lanceur\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe abstraite qui définit la structure générale d\textquotesingle{}une capacité, à faire hériter de chaque capacité 
+
+Cette classe abstraite permet de définir la structure générale d\textquotesingle{}une capacité du jeu, elle doit être héritée pour chaque capacité qui est ajoutée au jeu 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_capacite_af1279c795ea1d1d157cf3cad846d374e}\label{class_capacite_af1279c795ea1d1d157cf3cad846d374e}} 
+\index{Capacite@{Capacite}!Capacite@{Capacite}}
+\index{Capacite@{Capacite}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{Capacite()}{Capacite()}}
+{\footnotesize\ttfamily Capacite\+::\+Capacite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ecran}{Ecran}} \&}]{ecran,  }\item[{std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$}]{lanceur }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructeur. 
+
+Vide \mbox{\Hypertarget{class_capacite_a43be1570a24a64682ff3f034330779a9}\label{class_capacite_a43be1570a24a64682ff3f034330779a9}} 
+\index{Capacite@{Capacite}!````~Capacite@{$\sim$\+Capacite}}
+\index{````~Capacite@{$\sim$\+Capacite}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{$\sim$\+Capacite()}{~Capacite()}}
+{\footnotesize\ttfamily Capacite\+::$\sim$\+Capacite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructeur. 
+
+Vide 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_capacite_a85355aeb1d4acc049ed97da177acbd5f}\label{class_capacite_a85355aeb1d4acc049ed97da177acbd5f}} 
+\index{Capacite@{Capacite}!actualiser@{actualiser}}
+\index{actualiser@{actualiser}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
+{\footnotesize\ttfamily Capacite\+::actualiser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Fonction virtuel qui active les effets de la capacité 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projectile} & Vecteur de shared\+\_\+ptr sur tous les projectiles présent à l\textquotesingle{}écran\\
+\hline
+\end{DoxyParams}
+Fonction virtuelle qui gère la création de projectiles et des modifications à apporter au vaisseau 
+
+Implemented in \mbox{\hyperlink{class_cap_boing_a2bf6f58f93ff52263cf9926e4d91c239}{Cap\+Boing}}, \mbox{\hyperlink{class_cap_aim_bot_a68cc63c8bb28a33989db721c1ed4674d}{Cap\+Aim\+Bot}}, \mbox{\hyperlink{class_cap_piou_ae566dc069b127f27cdd770f72dbdcbe4}{Cap\+Piou}}, \mbox{\hyperlink{class_cap_dash_a09dce88d953b9b6c4b53cdcb168236ab}{Cap\+Dash}}, \mbox{\hyperlink{class_cap_missile_ae61423876aa92fc8e2555b1b856a7443}{Cap\+Missile}}, \mbox{\hyperlink{class_cap_bouclier_rond_ab664fc0b17a849d606d1a1085f2095c8}{Cap\+Bouclier\+Rond}}, and \mbox{\hyperlink{class_cap_bismillah_a3544607eb3d5e89bb6f5b6e2e2e89be0}{Cap\+Bismillah}}.
+
+\mbox{\Hypertarget{class_capacite_af2c1a095ea7e7566218a41f2469cd82a}\label{class_capacite_af2c1a095ea7e7566218a41f2469cd82a}} 
+\index{Capacite@{Capacite}!afficher\+Nom@{afficher\+Nom}}
+\index{afficher\+Nom@{afficher\+Nom}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{afficher\+Nom()}{afficherNom()}}
+{\footnotesize\ttfamily void Capacite\+::afficher\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_capacite_af50b4c0bf1de8d846c998cba83e1e51f}\label{class_capacite_af50b4c0bf1de8d846c998cba83e1e51f}} 
+\index{Capacite@{Capacite}!gestion\+Icon@{gestion\+Icon}}
+\index{gestion\+Icon@{gestion\+Icon}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{gestion\+Icon()}{gestionIcon()}}
+{\footnotesize\ttfamily void Capacite\+::gestion\+Icon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_capacite_a6dd5ea561e52140a345be7e62a33cf1f}\label{class_capacite_a6dd5ea561e52140a345be7e62a33cf1f}} 
+\index{Capacite@{Capacite}!get\+Affiche@{get\+Affiche}}
+\index{get\+Affiche@{get\+Affiche}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{get\+Affiche()}{getAffiche()}}
+{\footnotesize\ttfamily bool Capacite\+::get\+Affiche (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_capacite_aeb57084eeda5d3ac828714fc029d47f9}\label{class_capacite_aeb57084eeda5d3ac828714fc029d47f9}} 
+\index{Capacite@{Capacite}!get\+Cooldown@{get\+Cooldown}}
+\index{get\+Cooldown@{get\+Cooldown}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{get\+Cooldown()}{getCooldown()}}
+{\footnotesize\ttfamily sf\+::\+Time Capacite\+::get\+Cooldown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_capacite_aa66c20bba4433f871c91c3836a0c1929}\label{class_capacite_aa66c20bba4433f871c91c3836a0c1929}} 
+\index{Capacite@{Capacite}!get\+Icon@{get\+Icon}}
+\index{get\+Icon@{get\+Icon}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{get\+Icon()}{getIcon()}}
+{\footnotesize\ttfamily const sf\+::\+Sprite\& Capacite\+::get\+Icon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_capacite_a4585b46b989301b127a93dc062a0b8aa}\label{class_capacite_a4585b46b989301b127a93dc062a0b8aa}} 
+\index{Capacite@{Capacite}!get\+Masque@{get\+Masque}}
+\index{get\+Masque@{get\+Masque}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{get\+Masque()}{getMasque()}}
+{\footnotesize\ttfamily const sf\+::\+Rectangle\+Shape\& Capacite\+::get\+Masque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_capacite_a36ba3cb1e9a72586dff32fa7f0df85cf}\label{class_capacite_a36ba3cb1e9a72586dff32fa7f0df85cf}} 
+\index{Capacite@{Capacite}!get\+Nom@{get\+Nom}}
+\index{get\+Nom@{get\+Nom}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{get\+Nom()}{getNom()}}
+{\footnotesize\ttfamily const std\+::string\& Capacite\+::get\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_capacite_aec0e0991421f2675830b7234fe494709}\label{class_capacite_aec0e0991421f2675830b7234fe494709}} 
+\index{Capacite@{Capacite}!get\+Sounds\+\_\+@{get\+Sounds\+\_\+}}
+\index{get\+Sounds\+\_\+@{get\+Sounds\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{get\+Sounds\+\_\+()}{getSounds\_()}}
+{\footnotesize\ttfamily const std\+::vector$<$sf\+::\+Sound$>$\& Capacite\+::get\+Sounds\+\_\+ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_capacite_a91f1a5f98354c08f75caf99b0513d3c4}\label{class_capacite_a91f1a5f98354c08f75caf99b0513d3c4}} 
+\index{Capacite@{Capacite}!get\+Text@{get\+Text}}
+\index{get\+Text@{get\+Text}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{get\+Text()}{getText()}}
+{\footnotesize\ttfamily const sf\+::\+Text\& Capacite\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_capacite_ad14b4e98b6d30717a40f8b57a56af085}\label{class_capacite_ad14b4e98b6d30717a40f8b57a56af085}} 
+\index{Capacite@{Capacite}!get\+Time@{get\+Time}}
+\index{get\+Time@{get\+Time}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{get\+Time()}{getTime()}}
+{\footnotesize\ttfamily sf\+::\+Time Capacite\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_capacite_a40152147df357f3c0d9ea1116b0f7241}\label{class_capacite_a40152147df357f3c0d9ea1116b0f7241}} 
+\index{Capacite@{Capacite}!get\+Tir@{get\+Tir}}
+\index{get\+Tir@{get\+Tir}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{get\+Tir()}{getTir()}}
+{\footnotesize\ttfamily bool Capacite\+::get\+Tir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_capacite_aba7e297324570300fe7786dddb8c05ef}\label{class_capacite_aba7e297324570300fe7786dddb8c05ef}} 
+\index{Capacite@{Capacite}!init\+Icon@{init\+Icon}}
+\index{init\+Icon@{init\+Icon}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{init\+Icon()}{initIcon()}}
+{\footnotesize\ttfamily void Capacite\+::init\+Icon (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_capacite_abac1434e2ac3ecc9e5afdafd9a7a4bed}\label{class_capacite_abac1434e2ac3ecc9e5afdafd9a7a4bed}} 
+\index{Capacite@{Capacite}!utiliser@{utiliser}}
+\index{utiliser@{utiliser}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{utiliser()}{utiliser()}}
+{\footnotesize\ttfamily Capacite\+::utiliser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{projectile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Fonction virtuel qui active la capacite lorsqu\textquotesingle{}elle est appelée. 
+
+Fonction virtuel qui initialise la position de départ et le timer 
+
+Implemented in \mbox{\hyperlink{class_cap_boing_a879dfeba930a0be60873ef3403a35eb1}{Cap\+Boing}}, \mbox{\hyperlink{class_cap_aim_bot_ad94e41d0b328576b74e802935450c0ad}{Cap\+Aim\+Bot}}, \mbox{\hyperlink{class_cap_piou_a8833dd4c07fac882bcbad2698fdcd8c4}{Cap\+Piou}}, \mbox{\hyperlink{class_cap_bouclier_rond_ae420337d3d5c5ec2e5a4a0cafa8f69ad}{Cap\+Bouclier\+Rond}}, \mbox{\hyperlink{class_cap_dash_aa7c16bdf13761c0bf761bd417cffdcc9}{Cap\+Dash}}, \mbox{\hyperlink{class_cap_missile_a8972a92894ca15903563ec41bc63c6ef}{Cap\+Missile}}, and \mbox{\hyperlink{class_cap_bismillah_afc32f552a327af6f5759363d460f2eb7}{Cap\+Bismillah}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_capacite_a5d4f1d24e9ecfbfacc0bafc5ae508f2c}\label{class_capacite_a5d4f1d24e9ecfbfacc0bafc5ae508f2c}} 
+\index{Capacite@{Capacite}!affiche\+Icone\+\_\+@{affiche\+Icone\+\_\+}}
+\index{affiche\+Icone\+\_\+@{affiche\+Icone\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{affiche\+Icone\+\_\+}{afficheIcone\_}}
+{\footnotesize\ttfamily bool Capacite\+::affiche\+Icone\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+$<$ Nom affiché en jeu 
+
+\mbox{\Hypertarget{class_capacite_a31264cab5a0e14cd05626727abb7fa83}\label{class_capacite_a31264cab5a0e14cd05626727abb7fa83}} 
+\index{Capacite@{Capacite}!cooldown\+\_\+@{cooldown\+\_\+}}
+\index{cooldown\+\_\+@{cooldown\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{cooldown\+\_\+}{cooldown\_}}
+{\footnotesize\ttfamily sf\+::\+Time Capacite\+::cooldown\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Niveau, à partir de 1. 
+
+\mbox{\Hypertarget{class_capacite_a12c1527d4ab9b80bd9e2174d92d00639}\label{class_capacite_a12c1527d4ab9b80bd9e2174d92d00639}} 
+\index{Capacite@{Capacite}!ecran\+\_\+@{ecran\+\_\+}}
+\index{ecran\+\_\+@{ecran\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{ecran\+\_\+}{ecran\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ecran}{Ecran}}\& Capacite\+::ecran\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_capacite_abb8abeff4070e7337cb8e42faa93c66f}\label{class_capacite_abb8abeff4070e7337cb8e42faa93c66f}} 
+\index{Capacite@{Capacite}!font\+\_\+@{font\+\_\+}}
+\index{font\+\_\+@{font\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{font\+\_\+}{font\_}}
+{\footnotesize\ttfamily sf\+::\+Font Capacite\+::font\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_capacite_ac56e7b3dc7a5a00fa5b4486a5cb457f8}\label{class_capacite_ac56e7b3dc7a5a00fa5b4486a5cb457f8}} 
+\index{Capacite@{Capacite}!icone\+\_\+@{icone\+\_\+}}
+\index{icone\+\_\+@{icone\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{icone\+\_\+}{icone\_}}
+{\footnotesize\ttfamily sf\+::\+Sprite Capacite\+::icone\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+$<$ true si le sprite de l\textquotesingle{}icone est affiché 
+
+\mbox{\Hypertarget{class_capacite_ac5c0fb8a5251d7be2b1e86adaa3eaf86}\label{class_capacite_ac5c0fb8a5251d7be2b1e86adaa3eaf86}} 
+\index{Capacite@{Capacite}!lanceur\+\_\+@{lanceur\+\_\+}}
+\index{lanceur\+\_\+@{lanceur\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{lanceur\+\_\+}{lanceur\_}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{class_entite}{Entite}}$>$ Capacite\+::lanceur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_capacite_af256cf39048f6b10f6f7e81ba0f62432}\label{class_capacite_af256cf39048f6b10f6f7e81ba0f62432}} 
+\index{Capacite@{Capacite}!masque\+\_\+@{masque\+\_\+}}
+\index{masque\+\_\+@{masque\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{masque\+\_\+}{masque\_}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Capacite\+::masque\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_capacite_abf2ac63aa5928299c14581e681a16328}\label{class_capacite_abf2ac63aa5928299c14581e681a16328}} 
+\index{Capacite@{Capacite}!niveau\+\_\+@{niveau\+\_\+}}
+\index{niveau\+\_\+@{niveau\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{niveau\+\_\+}{niveau\_}}
+{\footnotesize\ttfamily unsigned int Capacite\+::niveau\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Nom de la compétence. 
+
+\mbox{\Hypertarget{class_capacite_a430472b509233086cbad1d6d8332dc8c}\label{class_capacite_a430472b509233086cbad1d6d8332dc8c}} 
+\index{Capacite@{Capacite}!nom\+\_\+@{nom\+\_\+}}
+\index{nom\+\_\+@{nom\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{nom\+\_\+}{nom\_}}
+{\footnotesize\ttfamily std\+::string Capacite\+::nom\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+$<$ True si tir principal 1 ou 2 
+
+\mbox{\Hypertarget{class_capacite_a12ec756b46ceb4f251fac70f61874b3b}\label{class_capacite_a12ec756b46ceb4f251fac70f61874b3b}} 
+\index{Capacite@{Capacite}!sounds\+\_\+@{sounds\+\_\+}}
+\index{sounds\+\_\+@{sounds\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{sounds\+\_\+}{sounds\_}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+Sound$>$ Capacite\+::sounds\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_capacite_a8324d922ef794601f393966caabfb6eb}\label{class_capacite_a8324d922ef794601f393966caabfb6eb}} 
+\index{Capacite@{Capacite}!sprites\+\_\+@{sprites\+\_\+}}
+\index{sprites\+\_\+@{sprites\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{sprites\+\_\+}{sprites\_}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+Sprite$>$ Capacite\+::sprites\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temps écoulé depuis la dernière activation de la compétence. 
+
+Vecteur de sprites pour en avoir plusieurs \mbox{\Hypertarget{class_capacite_a0f1d7e4b84ef86c985401d9b12e1d4ca}\label{class_capacite_a0f1d7e4b84ef86c985401d9b12e1d4ca}} 
+\index{Capacite@{Capacite}!t\+\_\+lastuse\+\_\+@{t\+\_\+lastuse\+\_\+}}
+\index{t\+\_\+lastuse\+\_\+@{t\+\_\+lastuse\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{t\+\_\+lastuse\+\_\+}{t\_lastuse\_}}
+{\footnotesize\ttfamily sf\+::\+Time Capacite\+::t\+\_\+lastuse\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temps après lequel le projectile issu disparait. 
+
+\mbox{\Hypertarget{class_capacite_a73a85c61740d7359eacfec10e152a268}\label{class_capacite_a73a85c61740d7359eacfec10e152a268}} 
+\index{Capacite@{Capacite}!t\+\_\+longevite\+\_\+@{t\+\_\+longevite\+\_\+}}
+\index{t\+\_\+longevite\+\_\+@{t\+\_\+longevite\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{t\+\_\+longevite\+\_\+}{t\_longevite\_}}
+{\footnotesize\ttfamily sf\+::\+Time Capacite\+::t\+\_\+longevite\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temps à attendre avant de pouvoir utiliser la capacité à nouveau. 
+
+\mbox{\Hypertarget{class_capacite_ad76ace2cf7ece150cd533bba193e262b}\label{class_capacite_ad76ace2cf7ece150cd533bba193e262b}} 
+\index{Capacite@{Capacite}!text\+\_\+@{text\+\_\+}}
+\index{text\+\_\+@{text\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{text\+\_\+}{text\_}}
+{\footnotesize\ttfamily sf\+::\+Text Capacite\+::text\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_capacite_ae5318fb64d0def1069a9730c497d4bb6}\label{class_capacite_ae5318fb64d0def1069a9730c497d4bb6}} 
+\index{Capacite@{Capacite}!tir\+\_\+@{tir\+\_\+}}
+\index{tir\+\_\+@{tir\+\_\+}!Capacite@{Capacite}}
+\subsubsection{\texorpdfstring{tir\+\_\+}{tir\_}}
+{\footnotesize\ttfamily bool Capacite\+::tir\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Capacites/\mbox{\hyperlink{_capacite_8h}{Capacite.\+h}}\item 
+src/\+Capacites/\mbox{\hyperlink{_capacite_8cpp}{Capacite.\+cpp}}\end{DoxyCompactItemize}

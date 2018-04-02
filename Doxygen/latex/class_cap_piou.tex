@@ -1,0 +1,96 @@
+\hypertarget{class_cap_piou}{}\section{Cap\+Piou Class Reference}
+\label{class_cap_piou}\index{Cap\+Piou@{Cap\+Piou}}
+
+
+Classe Capacité de base.  
+
+
+
+
+{\ttfamily \#include $<$Cap\+Piou.\+h$>$}
+
+Inheritance diagram for Cap\+Piou\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_cap_piou}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cap_piou_aa0c57fbd8faf4c26eec74e99f00d7af3}{Cap\+Piou}} (\mbox{\hyperlink{class_ecran}{Ecran}} \&ecran, const std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ \&lanceur)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cap_piou_a8833dd4c07fac882bcbad2698fdcd8c4}{utiliser}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Active la capacite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cap_piou_ae566dc069b127f27cdd770f72dbdcbe4}{actualiser}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Active les effets de la capacité \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Classe Capacité de base. 
+
+Capacité qui créé 1 \mbox{\hyperlink{class_proj_piou}{Proj\+Piou}} à la position du lanceur Nom \+: Attaque Piou Cooldown \+: 100 ms 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cap_piou_aa0c57fbd8faf4c26eec74e99f00d7af3}\label{class_cap_piou_aa0c57fbd8faf4c26eec74e99f00d7af3}} 
+\index{Cap\+Piou@{Cap\+Piou}!Cap\+Piou@{Cap\+Piou}}
+\index{Cap\+Piou@{Cap\+Piou}!Cap\+Piou@{Cap\+Piou}}
+\subsubsection{\texorpdfstring{Cap\+Piou()}{CapPiou()}}
+{\footnotesize\ttfamily Cap\+Piou\+::\+Cap\+Piou (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ecran}{Ecran}} \&}]{ecran,  }\item[{const std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ \&}]{lanceur }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructeur. 
+
+Initialisation de la capacité 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cap_piou_ae566dc069b127f27cdd770f72dbdcbe4}\label{class_cap_piou_ae566dc069b127f27cdd770f72dbdcbe4}} 
+\index{Cap\+Piou@{Cap\+Piou}!actualiser@{actualiser}}
+\index{actualiser@{actualiser}!Cap\+Piou@{Cap\+Piou}}
+\subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
+{\footnotesize\ttfamily Cap\+Piou\+::actualiser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Active les effets de la capacité 
+
+Créer 1 \mbox{\hyperlink{class_proj_piou}{Proj\+Piou}} à l\textquotesingle{}activation Actualise le timer 
+\begin{DoxyParams}{Parameters}
+{\em projectile} & Vecteur de tout les projectiles présent à l\textquotesingle{}écran \\
+\hline
+{\em vaisseau} & \mbox{\hyperlink{class_vaisseau}{Vaisseau}} qui a activé la compétence \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_capacite_a85355aeb1d4acc049ed97da177acbd5f}{Capacite}}.
+
+\mbox{\Hypertarget{class_cap_piou_a8833dd4c07fac882bcbad2698fdcd8c4}\label{class_cap_piou_a8833dd4c07fac882bcbad2698fdcd8c4}} 
+\index{Cap\+Piou@{Cap\+Piou}!utiliser@{utiliser}}
+\index{utiliser@{utiliser}!Cap\+Piou@{Cap\+Piou}}
+\subsubsection{\texorpdfstring{utiliser()}{utiliser()}}
+{\footnotesize\ttfamily Cap\+Piou\+::utiliser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Active la capacite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Abscisse de la position où la capacite est utilisée \\
+\hline
+{\em y} & Ordonnée de la position où la capacite est utilisée\\
+\hline
+\end{DoxyParams}
+Fonction Initialise la position de départ et le timer 
+
+Implements \mbox{\hyperlink{class_capacite_abac1434e2ac3ecc9e5afdafd9a7a4bed}{Capacite}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Capacites/\mbox{\hyperlink{_cap_piou_8h}{Cap\+Piou.\+h}}\item 
+src/\+Capacites/\mbox{\hyperlink{_cap_piou_8cpp}{Cap\+Piou.\+cpp}}\end{DoxyCompactItemize}

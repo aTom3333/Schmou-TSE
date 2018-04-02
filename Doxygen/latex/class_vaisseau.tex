@@ -1,0 +1,319 @@
+\hypertarget{class_vaisseau}{}\section{Vaisseau Class Reference}
+\label{class_vaisseau}\index{Vaisseau@{Vaisseau}}
+
+
+classe du vaisseau (véhicule) d\textquotesingle{}un joueur ou d\textquotesingle{}un ennemi  
+
+
+
+
+{\ttfamily \#include $<$Vaisseau.\+h$>$}
+
+Inheritance diagram for Vaisseau\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.564885cm]{class_vaisseau}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vaisseau_a91bee41b6575b4ee41128d7f6ad3ef88}{Vaisseau}} (\mbox{\hyperlink{class_ecran}{Ecran}} \&ecran)
+\item 
+virtual void \mbox{\hyperlink{class_vaisseau_aece43c3acf0e125226a03209f66c5eb4}{gestion}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&proj\+\_\+cont, \mbox{\hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input}} \&input)=0
+\begin{DoxyCompactList}\small\item\em Gère le comportement du vaisseau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vaisseau_ad6127e3a4937ae6644fc7d370386c7b6}{gestion\+Capacite}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&projectiles)
+\item 
+void \mbox{\hyperlink{class_vaisseau_a7950f1a06690d5f5eec5e38f3021a04c}{agit}} (\mbox{\hyperlink{class_entite}{Entite}} \&e) override
+\begin{DoxyCompactList}\small\item\em Procédure lorsque le projectile agit avec une \mbox{\hyperlink{class_entite}{Entite}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vaisseau_a6d7506acb12c0367989066c899ec7949}{destruction}} () override=0
+\begin{DoxyCompactList}\small\item\em Procedure a effectuer lorsque le vaisseau est détruit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vaisseau_ac71b96473fe4f4e5f8543166029003ca}{set\+Equipe}} (const \mbox{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}} equipe)
+\item 
+void \mbox{\hyperlink{class_vaisseau_a49a366c2b72649ad942fd8aa896997bb}{add\+Capacite}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_capacite}{Capacite}} $>$ skill)
+\item 
+void \mbox{\hyperlink{class_vaisseau_a04d7069231187e7dba26a06a0aaf2508}{add\+Capacite}} (\mbox{\hyperlink{class_capacite}{Capacite}} $\ast$skill)
+\item 
+void \mbox{\hyperlink{class_vaisseau_ade448f61f366a5b94fbc03c955963398}{set\+Capacite}} (\mbox{\hyperlink{class_capacite}{Capacite}} $\ast$skill, const size\+\_\+t \&n)
+\item 
+void \mbox{\hyperlink{class_vaisseau_a2dbe73bcc7b94642ad0eff30413842d7}{set\+Nom}} (const std\+::string \&nom)
+\item 
+void \mbox{\hyperlink{class_vaisseau_a0c680cba0243fac2ecda59bd2fc1f1fd}{set\+Nskin}} (const size\+\_\+t Nskin)
+\item 
+void \mbox{\hyperlink{class_vaisseau_aad5885e38fac754abd372769c8d2dbfa}{set\+AtqM}} (const float atqM)
+\item 
+void \mbox{\hyperlink{class_vaisseau_a0a2a699a3a0234cbe92683b990329ae3}{set\+DefM}} (const float defM)
+\item 
+std\+::string \mbox{\hyperlink{class_vaisseau_a57c40e657151598e9f5ffd3dd2fdc15a}{get\+Nom}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_vaisseau_a61a0c0d457d87ebc081b5dea42748e78}{get\+Nskin}} () const
+\item 
+const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_capacite}{Capacite}} $>$ $>$ \& \mbox{\hyperlink{class_vaisseau_a7026c8c71519ca32d0e41ff455775edc}{getskills}} () const
+\item 
+bool \mbox{\hyperlink{class_vaisseau_a4f0c76d144f9f5f41b254bde4eb350da}{est\+Actif}} () const
+\item 
+\mbox{\hyperlink{def__type_8h_ad123ed7c93f42c8dd68e4af28b16b639}{vaisseau\+\_\+container}} \mbox{\hyperlink{class_vaisseau_a2ea21b3478208f87754ea41b5809852a}{get\+Annexes}} () const
+\item 
+float \mbox{\hyperlink{class_vaisseau_a8d069f5d4a224b4c120e07541dbe40d0}{getatqM}} () const
+\item 
+float \mbox{\hyperlink{class_vaisseau_a761444b2f44feb6b555ba770e72b2091}{getdefM}} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_vaisseau_a2abb8ab70479bc486d19b563dddbe825}{nom\+\_\+}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_vaisseau_a45365e5a9abdc0a5ea990fa6c36f224b}{Nskin\+\_\+}}
+\begin{DoxyCompactList}\small\item\em $<$ Nom du vaisseau \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_vaisseau_aa2bbb11262b446da2855d90833e16297}{atq\+M\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em numéro du skin du vaisseau \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_vaisseau_a1a64494b34aea8818a2a5f14adfcdd26}{atq}} = 0
+\item 
+float \mbox{\hyperlink{class_vaisseau_a286c951036adbdfe3deca442fc72160a}{def\+M\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_vaisseau_a98239763c1a44cea172db2cdf5625afe}{def}} = 0
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_capacite}{Capacite}} $>$ $>$ \mbox{\hyperlink{class_vaisseau_af6ca9930eaac09830571679bfe48a390}{capacites\+\_\+}}
+\item 
+\mbox{\hyperlink{def__type_8h_ad123ed7c93f42c8dd68e4af28b16b639}{vaisseau\+\_\+container}} \mbox{\hyperlink{class_vaisseau_adcb02cf574b4484c2a9f2d0acd648395}{annexes\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Liste des capacités du vaisseau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+classe du vaisseau (véhicule) d\textquotesingle{}un joueur ou d\textquotesingle{}un ennemi 
+
+Description détaillée 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_vaisseau_a91bee41b6575b4ee41128d7f6ad3ef88}\label{class_vaisseau_a91bee41b6575b4ee41128d7f6ad3ef88}} 
+\index{Vaisseau@{Vaisseau}!Vaisseau@{Vaisseau}}
+\index{Vaisseau@{Vaisseau}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{Vaisseau()}{Vaisseau()}}
+{\footnotesize\ttfamily Vaisseau\+::\+Vaisseau (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ecran}{Ecran}} \&}]{ecran }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vaisseau_a49a366c2b72649ad942fd8aa896997bb}\label{class_vaisseau_a49a366c2b72649ad942fd8aa896997bb}} 
+\index{Vaisseau@{Vaisseau}!add\+Capacite@{add\+Capacite}}
+\index{add\+Capacite@{add\+Capacite}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{add\+Capacite()}{addCapacite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vaisseau\+::add\+Capacite (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_capacite}{Capacite}} $>$}]{skill }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_a04d7069231187e7dba26a06a0aaf2508}\label{class_vaisseau_a04d7069231187e7dba26a06a0aaf2508}} 
+\index{Vaisseau@{Vaisseau}!add\+Capacite@{add\+Capacite}}
+\index{add\+Capacite@{add\+Capacite}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{add\+Capacite()}{addCapacite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vaisseau\+::add\+Capacite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_capacite}{Capacite}} $\ast$}]{skill }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_a7950f1a06690d5f5eec5e38f3021a04c}\label{class_vaisseau_a7950f1a06690d5f5eec5e38f3021a04c}} 
+\index{Vaisseau@{Vaisseau}!agit@{agit}}
+\index{agit@{agit}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{agit()}{agit()}}
+{\footnotesize\ttfamily Vaisseau\+::agit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entite}{Entite}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Procédure lorsque le projectile agit avec une \mbox{\hyperlink{class_entite}{Entite}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \mbox{\hyperlink{class_entite}{Entite}} à modifier\\
+\hline
+\end{DoxyParams}
+Vide 
+
+Implements \mbox{\hyperlink{class_entite_a848ec47afac1d7ba970a2bcab5dc7b3b}{Entite}}.
+
+\mbox{\Hypertarget{class_vaisseau_a6d7506acb12c0367989066c899ec7949}\label{class_vaisseau_a6d7506acb12c0367989066c899ec7949}} 
+\index{Vaisseau@{Vaisseau}!destruction@{destruction}}
+\index{destruction@{destruction}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{destruction()}{destruction()}}
+{\footnotesize\ttfamily Vaisseau\+::destruction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Procedure a effectuer lorsque le vaisseau est détruit. 
+
+Fonction virtuelle qui doit être surchargée pour les classes héritées. 
+
+Implements \mbox{\hyperlink{class_entite_af5c424f69b2c880ae9c12786abd28592}{Entite}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_vaisseau_defenseur_aeaaaa161533c6aa07b627172d8657b3a}{Vaisseau\+Defenseur}}, \mbox{\hyperlink{class_vaisseau_attaquant_a9afe1d07b85b6064c802205a1d0d777b}{Vaisseau\+Attaquant}}, \mbox{\hyperlink{class_vaisseau_eclaireur_ab4ea82a8fc92dc27c6072481099518bc}{Vaisseau\+Eclaireur}}, \mbox{\hyperlink{class_vaiss_bouclier_ab154712cec76a589fd8bce2392982c5b}{Vaiss\+Bouclier}}, and \mbox{\hyperlink{class_vaisseau_test_a5cab0817183471868c5ed6392261f8ec}{Vaisseau\+Test}}.
+
+\mbox{\Hypertarget{class_vaisseau_a4f0c76d144f9f5f41b254bde4eb350da}\label{class_vaisseau_a4f0c76d144f9f5f41b254bde4eb350da}} 
+\index{Vaisseau@{Vaisseau}!est\+Actif@{est\+Actif}}
+\index{est\+Actif@{est\+Actif}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{est\+Actif()}{estActif()}}
+{\footnotesize\ttfamily bool Vaisseau\+::est\+Actif (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_aece43c3acf0e125226a03209f66c5eb4}\label{class_vaisseau_aece43c3acf0e125226a03209f66c5eb4}} 
+\index{Vaisseau@{Vaisseau}!gestion@{gestion}}
+\index{gestion@{gestion}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{gestion()}{gestion()}}
+{\footnotesize\ttfamily Vaisseau\+::gestion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{proj\+\_\+cont,  }\item[{\mbox{\hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input}} \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gère le comportement du vaisseau. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Fenetre S\+F\+ML où le vaisseau sera affiché \\
+\hline
+{\em input} & Classe Input donnant accés aux entrée\\
+\hline
+\end{DoxyParams}
+Fonction virtuelle qui gère le comportement du vaisseau 
+
+Implemented in \mbox{\hyperlink{class_vaisseau_defenseur_a9d8301faaaebc09dd5e807e8ebe829ae}{Vaisseau\+Defenseur}}, \mbox{\hyperlink{class_vaisseau_attaquant_aaa30cf9a9cd4319bbf418799019284d7}{Vaisseau\+Attaquant}}, \mbox{\hyperlink{class_vaisseau_eclaireur_a66811ba07fd951304cca1c8be457b8e4}{Vaisseau\+Eclaireur}}, \mbox{\hyperlink{class_vaiss_bouclier_a03ba45dff79711b32db64d01ab7ff90b}{Vaiss\+Bouclier}}, and \mbox{\hyperlink{class_vaisseau_test_a9207fbb193d4395cefbd6977bc502bcb}{Vaisseau\+Test}}.
+
+\mbox{\Hypertarget{class_vaisseau_ad6127e3a4937ae6644fc7d370386c7b6}\label{class_vaisseau_ad6127e3a4937ae6644fc7d370386c7b6}} 
+\index{Vaisseau@{Vaisseau}!gestion\+Capacite@{gestion\+Capacite}}
+\index{gestion\+Capacite@{gestion\+Capacite}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{gestion\+Capacite()}{gestionCapacite()}}
+{\footnotesize\ttfamily void Vaisseau\+::gestion\+Capacite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{projectiles }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vaisseau_a2ea21b3478208f87754ea41b5809852a}\label{class_vaisseau_a2ea21b3478208f87754ea41b5809852a}} 
+\index{Vaisseau@{Vaisseau}!get\+Annexes@{get\+Annexes}}
+\index{get\+Annexes@{get\+Annexes}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{get\+Annexes()}{getAnnexes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def__type_8h_ad123ed7c93f42c8dd68e4af28b16b639}{vaisseau\+\_\+container}} Vaisseau\+::get\+Annexes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_a8d069f5d4a224b4c120e07541dbe40d0}\label{class_vaisseau_a8d069f5d4a224b4c120e07541dbe40d0}} 
+\index{Vaisseau@{Vaisseau}!getatqM@{getatqM}}
+\index{getatqM@{getatqM}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{getatq\+M()}{getatqM()}}
+{\footnotesize\ttfamily float Vaisseau\+::getatqM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_a761444b2f44feb6b555ba770e72b2091}\label{class_vaisseau_a761444b2f44feb6b555ba770e72b2091}} 
+\index{Vaisseau@{Vaisseau}!getdefM@{getdefM}}
+\index{getdefM@{getdefM}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{getdef\+M()}{getdefM()}}
+{\footnotesize\ttfamily float Vaisseau\+::getdefM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_a57c40e657151598e9f5ffd3dd2fdc15a}\label{class_vaisseau_a57c40e657151598e9f5ffd3dd2fdc15a}} 
+\index{Vaisseau@{Vaisseau}!get\+Nom@{get\+Nom}}
+\index{get\+Nom@{get\+Nom}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{get\+Nom()}{getNom()}}
+{\footnotesize\ttfamily std\+::string Vaisseau\+::get\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_a61a0c0d457d87ebc081b5dea42748e78}\label{class_vaisseau_a61a0c0d457d87ebc081b5dea42748e78}} 
+\index{Vaisseau@{Vaisseau}!get\+Nskin@{get\+Nskin}}
+\index{get\+Nskin@{get\+Nskin}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{get\+Nskin()}{getNskin()}}
+{\footnotesize\ttfamily size\+\_\+t Vaisseau\+::get\+Nskin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_a7026c8c71519ca32d0e41ff455775edc}\label{class_vaisseau_a7026c8c71519ca32d0e41ff455775edc}} 
+\index{Vaisseau@{Vaisseau}!getskills@{getskills}}
+\index{getskills@{getskills}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{getskills()}{getskills()}}
+{\footnotesize\ttfamily const std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_capacite}{Capacite}}$>$ $>$\& Vaisseau\+::getskills (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_aad5885e38fac754abd372769c8d2dbfa}\label{class_vaisseau_aad5885e38fac754abd372769c8d2dbfa}} 
+\index{Vaisseau@{Vaisseau}!set\+AtqM@{set\+AtqM}}
+\index{set\+AtqM@{set\+AtqM}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{set\+Atq\+M()}{setAtqM()}}
+{\footnotesize\ttfamily void Vaisseau\+::set\+AtqM (\begin{DoxyParamCaption}\item[{const float}]{atqM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_ade448f61f366a5b94fbc03c955963398}\label{class_vaisseau_ade448f61f366a5b94fbc03c955963398}} 
+\index{Vaisseau@{Vaisseau}!set\+Capacite@{set\+Capacite}}
+\index{set\+Capacite@{set\+Capacite}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{set\+Capacite()}{setCapacite()}}
+{\footnotesize\ttfamily void Vaisseau\+::set\+Capacite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_capacite}{Capacite}} $\ast$}]{skill,  }\item[{const size\+\_\+t \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_a0a2a699a3a0234cbe92683b990329ae3}\label{class_vaisseau_a0a2a699a3a0234cbe92683b990329ae3}} 
+\index{Vaisseau@{Vaisseau}!set\+DefM@{set\+DefM}}
+\index{set\+DefM@{set\+DefM}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{set\+Def\+M()}{setDefM()}}
+{\footnotesize\ttfamily void Vaisseau\+::set\+DefM (\begin{DoxyParamCaption}\item[{const float}]{defM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_ac71b96473fe4f4e5f8543166029003ca}\label{class_vaisseau_ac71b96473fe4f4e5f8543166029003ca}} 
+\index{Vaisseau@{Vaisseau}!set\+Equipe@{set\+Equipe}}
+\index{set\+Equipe@{set\+Equipe}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{set\+Equipe()}{setEquipe()}}
+{\footnotesize\ttfamily void Vaisseau\+::set\+Equipe (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}}}]{equipe }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_a2dbe73bcc7b94642ad0eff30413842d7}\label{class_vaisseau_a2dbe73bcc7b94642ad0eff30413842d7}} 
+\index{Vaisseau@{Vaisseau}!set\+Nom@{set\+Nom}}
+\index{set\+Nom@{set\+Nom}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{set\+Nom()}{setNom()}}
+{\footnotesize\ttfamily void Vaisseau\+::set\+Nom (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_vaisseau_a0c680cba0243fac2ecda59bd2fc1f1fd}\label{class_vaisseau_a0c680cba0243fac2ecda59bd2fc1f1fd}} 
+\index{Vaisseau@{Vaisseau}!set\+Nskin@{set\+Nskin}}
+\index{set\+Nskin@{set\+Nskin}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{set\+Nskin()}{setNskin()}}
+{\footnotesize\ttfamily void Vaisseau\+::set\+Nskin (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{Nskin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_vaisseau_adcb02cf574b4484c2a9f2d0acd648395}\label{class_vaisseau_adcb02cf574b4484c2a9f2d0acd648395}} 
+\index{Vaisseau@{Vaisseau}!annexes\+\_\+@{annexes\+\_\+}}
+\index{annexes\+\_\+@{annexes\+\_\+}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{annexes\+\_\+}{annexes\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def__type_8h_ad123ed7c93f42c8dd68e4af28b16b639}{vaisseau\+\_\+container}} Vaisseau\+::annexes\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Liste des capacités du vaisseau. 
+
+\mbox{\Hypertarget{class_vaisseau_a1a64494b34aea8818a2a5f14adfcdd26}\label{class_vaisseau_a1a64494b34aea8818a2a5f14adfcdd26}} 
+\index{Vaisseau@{Vaisseau}!atq@{atq}}
+\index{atq@{atq}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{atq}{atq}}
+{\footnotesize\ttfamily float Vaisseau\+::atq = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vaisseau_aa2bbb11262b446da2855d90833e16297}\label{class_vaisseau_aa2bbb11262b446da2855d90833e16297}} 
+\index{Vaisseau@{Vaisseau}!atq\+M\+\_\+@{atq\+M\+\_\+}}
+\index{atq\+M\+\_\+@{atq\+M\+\_\+}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{atq\+M\+\_\+}{atqM\_}}
+{\footnotesize\ttfamily float Vaisseau\+::atq\+M\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+numéro du skin du vaisseau 
+
+\mbox{\Hypertarget{class_vaisseau_af6ca9930eaac09830571679bfe48a390}\label{class_vaisseau_af6ca9930eaac09830571679bfe48a390}} 
+\index{Vaisseau@{Vaisseau}!capacites\+\_\+@{capacites\+\_\+}}
+\index{capacites\+\_\+@{capacites\+\_\+}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{capacites\+\_\+}{capacites\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_capacite}{Capacite}}$>$ $>$ Vaisseau\+::capacites\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vaisseau_a98239763c1a44cea172db2cdf5625afe}\label{class_vaisseau_a98239763c1a44cea172db2cdf5625afe}} 
+\index{Vaisseau@{Vaisseau}!def@{def}}
+\index{def@{def}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{def}{def}}
+{\footnotesize\ttfamily float Vaisseau\+::def = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vaisseau_a286c951036adbdfe3deca442fc72160a}\label{class_vaisseau_a286c951036adbdfe3deca442fc72160a}} 
+\index{Vaisseau@{Vaisseau}!def\+M\+\_\+@{def\+M\+\_\+}}
+\index{def\+M\+\_\+@{def\+M\+\_\+}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{def\+M\+\_\+}{defM\_}}
+{\footnotesize\ttfamily float Vaisseau\+::def\+M\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vaisseau_a2abb8ab70479bc486d19b563dddbe825}\label{class_vaisseau_a2abb8ab70479bc486d19b563dddbe825}} 
+\index{Vaisseau@{Vaisseau}!nom\+\_\+@{nom\+\_\+}}
+\index{nom\+\_\+@{nom\+\_\+}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{nom\+\_\+}{nom\_}}
+{\footnotesize\ttfamily std\+::string Vaisseau\+::nom\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vaisseau_a45365e5a9abdc0a5ea990fa6c36f224b}\label{class_vaisseau_a45365e5a9abdc0a5ea990fa6c36f224b}} 
+\index{Vaisseau@{Vaisseau}!Nskin\+\_\+@{Nskin\+\_\+}}
+\index{Nskin\+\_\+@{Nskin\+\_\+}!Vaisseau@{Vaisseau}}
+\subsubsection{\texorpdfstring{Nskin\+\_\+}{Nskin\_}}
+{\footnotesize\ttfamily size\+\_\+t Vaisseau\+::\+Nskin\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+$<$ Nom du vaisseau 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Vaisseau/\mbox{\hyperlink{_vaisseau_8h}{Vaisseau.\+h}}\item 
+src/\+Vaisseau/\mbox{\hyperlink{_vaisseau_8cpp}{Vaisseau.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,117 @@
+\hypertarget{class_cap_aim_bot}{}\section{Cap\+Aim\+Bot Class Reference}
+\label{class_cap_aim_bot}\index{Cap\+Aim\+Bot@{Cap\+Aim\+Bot}}
+
+
+donne visée auto à un skill (missile)  
+
+
+
+
+{\ttfamily \#include $<$Cap\+Aim\+Bot.\+h$>$}
+
+Inheritance diagram for Cap\+Aim\+Bot\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_cap_aim_bot}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cap_aim_bot_ab55c473ea892d3d5a9e94f8e54282db8}{Cap\+Aim\+Bot}} (\mbox{\hyperlink{class_ecran}{Ecran}} \&ecran, const std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ \&lanceur)
+\item 
+void \mbox{\hyperlink{class_cap_aim_bot_ad94e41d0b328576b74e802935450c0ad}{utiliser}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Active la capacite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cap_aim_bot_a68cc63c8bb28a33989db721c1ed4674d}{actualiser}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Active les effets de la capacité \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cap_aim_bot_a79cd2b5ebd0936e133113d5563c31396}{set\+\_\+state\+\_\+auto\+Aim\+\_\+true}} (\mbox{\hyperlink{class_capacite}{Capacite}} \&capacite)
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cap_aim_bot_aaa7c76ca67faf851d511c7c46ccc8139}{set\+\_\+state\+\_\+auto\+Aim\+\_\+false}} (\mbox{\hyperlink{class_capacite}{Capacite}} \&capacite)
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+donne visée auto à un skill (missile) 
+
+Capacité qui permet de donner un mode visée auto à un autre skill du vaisseau. Niveau 1 \+: seulement le prochain tir Niveau supérieurs \+: plusieurs tirs
+
+Cooldown \+: 10sec 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cap_aim_bot_ab55c473ea892d3d5a9e94f8e54282db8}\label{class_cap_aim_bot_ab55c473ea892d3d5a9e94f8e54282db8}} 
+\index{Cap\+Aim\+Bot@{Cap\+Aim\+Bot}!Cap\+Aim\+Bot@{Cap\+Aim\+Bot}}
+\index{Cap\+Aim\+Bot@{Cap\+Aim\+Bot}!Cap\+Aim\+Bot@{Cap\+Aim\+Bot}}
+\subsubsection{\texorpdfstring{Cap\+Aim\+Bot()}{CapAimBot()}}
+{\footnotesize\ttfamily Cap\+Aim\+Bot\+::\+Cap\+Aim\+Bot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ecran}{Ecran}} \&}]{ecran,  }\item[{const std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ \&}]{lanceur }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cap_aim_bot_a68cc63c8bb28a33989db721c1ed4674d}\label{class_cap_aim_bot_a68cc63c8bb28a33989db721c1ed4674d}} 
+\index{Cap\+Aim\+Bot@{Cap\+Aim\+Bot}!actualiser@{actualiser}}
+\index{actualiser@{actualiser}!Cap\+Aim\+Bot@{Cap\+Aim\+Bot}}
+\subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
+{\footnotesize\ttfamily Cap\+Aim\+Bot\+::actualiser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Active les effets de la capacité 
+
+Créer 1 \mbox{\hyperlink{class_proj_piou}{Proj\+Piou}} à l\textquotesingle{}activation Actualise le timer 
+\begin{DoxyParams}{Parameters}
+{\em projectile} & Vecteur de tout les projectiles présent à l\textquotesingle{}écran \\
+\hline
+{\em vaisseau} & \mbox{\hyperlink{class_vaisseau}{Vaisseau}} qui a activé la compétence \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_capacite_a85355aeb1d4acc049ed97da177acbd5f}{Capacite}}.
+
+\mbox{\Hypertarget{class_cap_aim_bot_aaa7c76ca67faf851d511c7c46ccc8139}\label{class_cap_aim_bot_aaa7c76ca67faf851d511c7c46ccc8139}} 
+\index{Cap\+Aim\+Bot@{Cap\+Aim\+Bot}!set\+\_\+state\+\_\+auto\+Aim\+\_\+false@{set\+\_\+state\+\_\+auto\+Aim\+\_\+false}}
+\index{set\+\_\+state\+\_\+auto\+Aim\+\_\+false@{set\+\_\+state\+\_\+auto\+Aim\+\_\+false}!Cap\+Aim\+Bot@{Cap\+Aim\+Bot}}
+\subsubsection{\texorpdfstring{set\+\_\+state\+\_\+auto\+Aim\+\_\+false()}{set\_state\_autoAim\_false()}}
+{\footnotesize\ttfamily Cap\+Aim\+Bot\+::set\+\_\+state\+\_\+auto\+Aim\+\_\+false (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_capacite}{Capacite}} \&}]{capacite }\end{DoxyParamCaption})}
+
+
+
+Destructeur. 
+
+change l\textquotesingle{}état autoaim à false \mbox{\Hypertarget{class_cap_aim_bot_a79cd2b5ebd0936e133113d5563c31396}\label{class_cap_aim_bot_a79cd2b5ebd0936e133113d5563c31396}} 
+\index{Cap\+Aim\+Bot@{Cap\+Aim\+Bot}!set\+\_\+state\+\_\+auto\+Aim\+\_\+true@{set\+\_\+state\+\_\+auto\+Aim\+\_\+true}}
+\index{set\+\_\+state\+\_\+auto\+Aim\+\_\+true@{set\+\_\+state\+\_\+auto\+Aim\+\_\+true}!Cap\+Aim\+Bot@{Cap\+Aim\+Bot}}
+\subsubsection{\texorpdfstring{set\+\_\+state\+\_\+auto\+Aim\+\_\+true()}{set\_state\_autoAim\_true()}}
+{\footnotesize\ttfamily Cap\+Aim\+Bot\+::set\+\_\+state\+\_\+auto\+Aim\+\_\+true (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_capacite}{Capacite}} \&}]{capacite }\end{DoxyParamCaption})}
+
+
+
+Destructeur. 
+
+change l\textquotesingle{}état autoaim à true \mbox{\Hypertarget{class_cap_aim_bot_ad94e41d0b328576b74e802935450c0ad}\label{class_cap_aim_bot_ad94e41d0b328576b74e802935450c0ad}} 
+\index{Cap\+Aim\+Bot@{Cap\+Aim\+Bot}!utiliser@{utiliser}}
+\index{utiliser@{utiliser}!Cap\+Aim\+Bot@{Cap\+Aim\+Bot}}
+\subsubsection{\texorpdfstring{utiliser()}{utiliser()}}
+{\footnotesize\ttfamily Cap\+Aim\+Bot\+::utiliser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Active la capacite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Abscisse de la position où la capacite est utilisée \\
+\hline
+{\em y} & Ordonnée de la position où la capacite est utilisée\\
+\hline
+\end{DoxyParams}
+Fonction Initialise la position de départ et le timer 
+
+Implements \mbox{\hyperlink{class_capacite_abac1434e2ac3ecc9e5afdafd9a7a4bed}{Capacite}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Capacites/\mbox{\hyperlink{_cap_aim_bot_8h}{Cap\+Aim\+Bot.\+h}}\end{DoxyCompactItemize}

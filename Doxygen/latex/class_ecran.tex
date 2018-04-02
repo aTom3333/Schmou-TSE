@@ -1,0 +1,201 @@
+\hypertarget{class_ecran}{}\section{Ecran Class Reference}
+\label{class_ecran}\index{Ecran@{Ecran}}
+
+
+{\ttfamily \#include $<$Ecran.\+h$>$}
+
+Inheritance diagram for Ecran\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_ecran}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ecran_a2ea4e1f23da32177ec9a1e4d02e87b46}{Ecran}} (sf\+::\+Render\+Window \&window)
+\item 
+virtual \mbox{\hyperlink{class_ecran_a00e529f95c3832a06f2d46b797d76072}{$\sim$\+Ecran}} ()=default
+\begin{DoxyCompactList}\small\item\em $<$ constructeur principal \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{constantes_8h_a33e4f15dde10f34860a6b35be343ae56}{ecran\+\_\+t}} \mbox{\hyperlink{class_ecran_a764dadf20079744d3f5dd633eae268cc}{executer}} (sf\+::\+Texture \&derniere\+Fenetre)=0
+\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_ecran}{Ecran}} $>$ \mbox{\hyperlink{class_ecran_a016213731438ce2fb37831d8b0eeabed}{factory}} ()=0
+\item 
+bool \mbox{\hyperlink{class_ecran_a8ca7e9677252fef3a5e6aee60d27a9e3}{is\+Detruit}} () const
+\item 
+sf\+::\+Time \mbox{\hyperlink{class_ecran_a7fc62bede7a95d972326151446f4e75c}{get\+Temps\+Frame}} () const
+\item 
+sf\+::\+Render\+Window \& \mbox{\hyperlink{class_ecran_a735fe022858b847a019bf1a69e117f1a}{get\+Window}} ()
+\item 
+\mbox{\hyperlink{class_chargeur}{Chargeur}} \& \mbox{\hyperlink{class_ecran_a9b781eadd60c166948dc1ea2bc04194d}{get\+Chargeur}} ()
+\item 
+const sf\+::\+Clock \& \mbox{\hyperlink{class_ecran_ae9a020b22b2c022a082fa3d7566af0e9}{get\+Clock}} () const
+\item 
+\mbox{\hyperlink{def__type_8h_ad123ed7c93f42c8dd68e4af28b16b639}{vaisseau\+\_\+container}} \mbox{\hyperlink{class_ecran_a596618c9e9a039fef504c9dcc9c2addf}{get\+Vaisseaux\+Container}} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Render\+Window \& \mbox{\hyperlink{class_ecran_a2c5cede2731636193a4a70048ab5fdbb}{window\+\_\+}}
+\item 
+std\+::map$<$ std\+::string, sf\+::\+Font $>$ \mbox{\hyperlink{class_ecran_a180354db08d7f975536cc1cb05f18cb1}{polices\+\_\+}}
+\begin{DoxyCompactList}\small\item\em $<$ Fenêtre de rendu S\+F\+ML \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ecran_a0a1c7e8dd7bea72c322b910d33667be8}{detruit\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em $<$ map optionnelle de toutes les polices du jeu \end{DoxyCompactList}\item 
+\mbox{\hyperlink{def__type_8h_ad123ed7c93f42c8dd68e4af28b16b639}{vaisseau\+\_\+container}} \mbox{\hyperlink{class_ecran_a306123479f6a6b688ad13b5b4ca69de7}{vaisseaux\+\_\+}}
+\item 
+\mbox{\hyperlink{class_chargeur}{Chargeur}} \mbox{\hyperlink{class_ecran_a0ae817b129b8dab74f33bf2a1bf05cc5}{chargeur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em vecteur des vaisseaux ennemis en jeu \end{DoxyCompactList}\item 
+sf\+::\+Clock \mbox{\hyperlink{class_ecran_ac31400b0f55cd0892516edf787dc1751}{horloge\+\_\+}}
+\begin{DoxyCompactList}\small\item\em $<$ \mbox{\hyperlink{class_chargeur}{Chargeur}} associé \end{DoxyCompactList}\item 
+sf\+::\+Time \mbox{\hyperlink{class_ecran_aefbd6654c88f1014dadbb04f27243cae}{t\+\_\+frame\+\_\+}}
+\begin{DoxyCompactList}\small\item\em $<$ Horloge globale de l\textquotesingle{}écran, réinitialisée à chaque affichage de window \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ecran_a2ea4e1f23da32177ec9a1e4d02e87b46}\label{class_ecran_a2ea4e1f23da32177ec9a1e4d02e87b46}} 
+\index{Ecran@{Ecran}!Ecran@{Ecran}}
+\index{Ecran@{Ecran}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{Ecran()}{Ecran()}}
+{\footnotesize\ttfamily Ecran\+::\+Ecran (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_ecran_a00e529f95c3832a06f2d46b797d76072}\label{class_ecran_a00e529f95c3832a06f2d46b797d76072}} 
+\index{Ecran@{Ecran}!````~Ecran@{$\sim$\+Ecran}}
+\index{````~Ecran@{$\sim$\+Ecran}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{$\sim$\+Ecran()}{~Ecran()}}
+{\footnotesize\ttfamily virtual Ecran\+::$\sim$\+Ecran (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+$<$ constructeur principal 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ecran_a764dadf20079744d3f5dd633eae268cc}\label{class_ecran_a764dadf20079744d3f5dd633eae268cc}} 
+\index{Ecran@{Ecran}!executer@{executer}}
+\index{executer@{executer}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{executer()}{executer()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{constantes_8h_a33e4f15dde10f34860a6b35be343ae56}{ecran\+\_\+t}} Ecran\+::executer (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{derniere\+Fenetre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_partie_a20962c87a84b89afc4bde92dcc74ac0d}{Partie}}, \mbox{\hyperlink{class_accueil_adfc33857bbaeedd9cac862b90bb79e4e}{Accueil}}, and \mbox{\hyperlink{class_menu_principal_aed108ac830821b93ae4a03673ec566b9}{Menu\+Principal}}.
+
+\mbox{\Hypertarget{class_ecran_a016213731438ce2fb37831d8b0eeabed}\label{class_ecran_a016213731438ce2fb37831d8b0eeabed}} 
+\index{Ecran@{Ecran}!factory@{factory}}
+\index{factory@{factory}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{factory()}{factory()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_ecran}{Ecran}}$>$ Ecran\+::factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_partie_ae0a8a91c00a070f0b324547a0075abc5}{Partie}}, \mbox{\hyperlink{class_accueil_a4448beee6ac1cc997afed55ebd4b9367}{Accueil}}, and \mbox{\hyperlink{class_menu_principal_aa00616cf1c159b871ecbea2807be2687}{Menu\+Principal}}.
+
+\mbox{\Hypertarget{class_ecran_a9b781eadd60c166948dc1ea2bc04194d}\label{class_ecran_a9b781eadd60c166948dc1ea2bc04194d}} 
+\index{Ecran@{Ecran}!get\+Chargeur@{get\+Chargeur}}
+\index{get\+Chargeur@{get\+Chargeur}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{get\+Chargeur()}{getChargeur()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_chargeur}{Chargeur}}\& Ecran\+::get\+Chargeur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_ecran_ae9a020b22b2c022a082fa3d7566af0e9}\label{class_ecran_ae9a020b22b2c022a082fa3d7566af0e9}} 
+\index{Ecran@{Ecran}!get\+Clock@{get\+Clock}}
+\index{get\+Clock@{get\+Clock}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{get\+Clock()}{getClock()}}
+{\footnotesize\ttfamily const sf\+::\+Clock\& Ecran\+::get\+Clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_ecran_a7fc62bede7a95d972326151446f4e75c}\label{class_ecran_a7fc62bede7a95d972326151446f4e75c}} 
+\index{Ecran@{Ecran}!get\+Temps\+Frame@{get\+Temps\+Frame}}
+\index{get\+Temps\+Frame@{get\+Temps\+Frame}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{get\+Temps\+Frame()}{getTempsFrame()}}
+{\footnotesize\ttfamily sf\+::\+Time Ecran\+::get\+Temps\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_ecran_a596618c9e9a039fef504c9dcc9c2addf}\label{class_ecran_a596618c9e9a039fef504c9dcc9c2addf}} 
+\index{Ecran@{Ecran}!get\+Vaisseaux\+Container@{get\+Vaisseaux\+Container}}
+\index{get\+Vaisseaux\+Container@{get\+Vaisseaux\+Container}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{get\+Vaisseaux\+Container()}{getVaisseauxContainer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def__type_8h_ad123ed7c93f42c8dd68e4af28b16b639}{vaisseau\+\_\+container}} Ecran\+::get\+Vaisseaux\+Container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_ecran_a735fe022858b847a019bf1a69e117f1a}\label{class_ecran_a735fe022858b847a019bf1a69e117f1a}} 
+\index{Ecran@{Ecran}!get\+Window@{get\+Window}}
+\index{get\+Window@{get\+Window}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{get\+Window()}{getWindow()}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window\& Ecran\+::get\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_ecran_a8ca7e9677252fef3a5e6aee60d27a9e3}\label{class_ecran_a8ca7e9677252fef3a5e6aee60d27a9e3}} 
+\index{Ecran@{Ecran}!is\+Detruit@{is\+Detruit}}
+\index{is\+Detruit@{is\+Detruit}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{is\+Detruit()}{isDetruit()}}
+{\footnotesize\ttfamily bool Ecran\+::is\+Detruit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_ecran_a0ae817b129b8dab74f33bf2a1bf05cc5}\label{class_ecran_a0ae817b129b8dab74f33bf2a1bf05cc5}} 
+\index{Ecran@{Ecran}!chargeur\+\_\+@{chargeur\+\_\+}}
+\index{chargeur\+\_\+@{chargeur\+\_\+}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{chargeur\+\_\+}{chargeur\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_chargeur}{Chargeur}} Ecran\+::chargeur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+vecteur des vaisseaux ennemis en jeu 
+
+\mbox{\Hypertarget{class_ecran_a0a1c7e8dd7bea72c322b910d33667be8}\label{class_ecran_a0a1c7e8dd7bea72c322b910d33667be8}} 
+\index{Ecran@{Ecran}!detruit\+\_\+@{detruit\+\_\+}}
+\index{detruit\+\_\+@{detruit\+\_\+}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{detruit\+\_\+}{detruit\_}}
+{\footnotesize\ttfamily bool Ecran\+::detruit\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+$<$ map optionnelle de toutes les polices du jeu 
+
+\mbox{\Hypertarget{class_ecran_ac31400b0f55cd0892516edf787dc1751}\label{class_ecran_ac31400b0f55cd0892516edf787dc1751}} 
+\index{Ecran@{Ecran}!horloge\+\_\+@{horloge\+\_\+}}
+\index{horloge\+\_\+@{horloge\+\_\+}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{horloge\+\_\+}{horloge\_}}
+{\footnotesize\ttfamily sf\+::\+Clock Ecran\+::horloge\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+$<$ \mbox{\hyperlink{class_chargeur}{Chargeur}} associé 
+
+\mbox{\Hypertarget{class_ecran_a180354db08d7f975536cc1cb05f18cb1}\label{class_ecran_a180354db08d7f975536cc1cb05f18cb1}} 
+\index{Ecran@{Ecran}!polices\+\_\+@{polices\+\_\+}}
+\index{polices\+\_\+@{polices\+\_\+}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{polices\+\_\+}{polices\_}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, sf\+::\+Font$>$ Ecran\+::polices\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+$<$ Fenêtre de rendu S\+F\+ML 
+
+\mbox{\Hypertarget{class_ecran_aefbd6654c88f1014dadbb04f27243cae}\label{class_ecran_aefbd6654c88f1014dadbb04f27243cae}} 
+\index{Ecran@{Ecran}!t\+\_\+frame\+\_\+@{t\+\_\+frame\+\_\+}}
+\index{t\+\_\+frame\+\_\+@{t\+\_\+frame\+\_\+}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{t\+\_\+frame\+\_\+}{t\_frame\_}}
+{\footnotesize\ttfamily sf\+::\+Time Ecran\+::t\+\_\+frame\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+$<$ Horloge globale de l\textquotesingle{}écran, réinitialisée à chaque affichage de window 
+
+Durée de la frame actuelle \mbox{\Hypertarget{class_ecran_a306123479f6a6b688ad13b5b4ca69de7}\label{class_ecran_a306123479f6a6b688ad13b5b4ca69de7}} 
+\index{Ecran@{Ecran}!vaisseaux\+\_\+@{vaisseaux\+\_\+}}
+\index{vaisseaux\+\_\+@{vaisseaux\+\_\+}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{vaisseaux\+\_\+}{vaisseaux\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def__type_8h_ad123ed7c93f42c8dd68e4af28b16b639}{vaisseau\+\_\+container}} Ecran\+::vaisseaux\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_ecran_a2c5cede2731636193a4a70048ab5fdbb}\label{class_ecran_a2c5cede2731636193a4a70048ab5fdbb}} 
+\index{Ecran@{Ecran}!window\+\_\+@{window\+\_\+}}
+\index{window\+\_\+@{window\+\_\+}!Ecran@{Ecran}}
+\subsubsection{\texorpdfstring{window\+\_\+}{window\_}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window\& Ecran\+::window\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Menu/\mbox{\hyperlink{_ecran_8h}{Ecran.\+h}}\item 
+src/\+Menu/\mbox{\hyperlink{_ecran_8cpp}{Ecran.\+cpp}}\end{DoxyCompactItemize}

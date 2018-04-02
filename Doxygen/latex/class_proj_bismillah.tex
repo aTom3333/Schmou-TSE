@@ -1,0 +1,105 @@
+\hypertarget{class_proj_bismillah}{}\section{Proj\+Bismillah Class Reference}
+\label{class_proj_bismillah}\index{Proj\+Bismillah@{Proj\+Bismillah}}
+
+
+{\ttfamily \#include $<$Proj\+Bismillah.\+h$>$}
+
+Inheritance diagram for Proj\+Bismillah\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_proj_bismillah}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_proj_bismillah_a52d694e47dd50315f8c52b3189e9b238}{Proj\+Bismillah}} (\mbox{\hyperlink{class_ecran}{Ecran}} \&ecran, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ lanceur, std\+::vector$<$ sf\+::\+Sprite $>$ \&sprite, std\+::vector$<$ sf\+::\+Sound $>$ \&sound, \mbox{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}} equipe)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_proj_bismillah_a13ce61097d38db5441c718e81177bf89}{$\sim$\+Proj\+Bismillah}} () override=default
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_proj_bismillah_a5a037871dddbe729c926e7d9eb69b026}{gestion}} () override
+\begin{DoxyCompactList}\small\item\em Gestion du projectile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_proj_bismillah_a85f9cab1718a389d1e177806cb2c32c9}{agit}} (\mbox{\hyperlink{class_entite}{Entite}} \&e) override
+\begin{DoxyCompactList}\small\item\em Procédure lorsque le projectile agit avec une \mbox{\hyperlink{class_entite}{Entite}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_proj_bismillah_a52d694e47dd50315f8c52b3189e9b238}\label{class_proj_bismillah_a52d694e47dd50315f8c52b3189e9b238}} 
+\index{Proj\+Bismillah@{Proj\+Bismillah}!Proj\+Bismillah@{Proj\+Bismillah}}
+\index{Proj\+Bismillah@{Proj\+Bismillah}!Proj\+Bismillah@{Proj\+Bismillah}}
+\subsubsection{\texorpdfstring{Proj\+Bismillah()}{ProjBismillah()}}
+{\footnotesize\ttfamily Proj\+Bismillah\+::\+Proj\+Bismillah (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ecran}{Ecran}} \&}]{ecran,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$}]{lanceur,  }\item[{std\+::vector$<$ sf\+::\+Sprite $>$ \&}]{sprite,  }\item[{std\+::vector$<$ sf\+::\+Sound $>$ \&}]{sound,  }\item[{\mbox{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}}}]{equipe }\end{DoxyParamCaption})}
+
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Abscisse de la position de départ du projectile \\
+\hline
+{\em y} & Ordonnée de la position de départ du projectile \\
+\hline
+{\em equipe} & Représente l\textquotesingle{}équipe depuis \+\_\+constante.\+h \+: enum Equipe \\
+\hline
+{\em sound} & Son par défaut donné par la capacité qui crée le proj\\
+\hline
+\end{DoxyParams}
+Créer un projectile piou à la position donnée en paramètre \mbox{\Hypertarget{class_proj_bismillah_a13ce61097d38db5441c718e81177bf89}\label{class_proj_bismillah_a13ce61097d38db5441c718e81177bf89}} 
+\index{Proj\+Bismillah@{Proj\+Bismillah}!````~Proj\+Bismillah@{$\sim$\+Proj\+Bismillah}}
+\index{````~Proj\+Bismillah@{$\sim$\+Proj\+Bismillah}!Proj\+Bismillah@{Proj\+Bismillah}}
+\subsubsection{\texorpdfstring{$\sim$\+Proj\+Bismillah()}{~ProjBismillah()}}
+{\footnotesize\ttfamily Proj\+Bismillah\+::$\sim$\+Proj\+Bismillah (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructeur. 
+
+Vide 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_proj_bismillah_a85f9cab1718a389d1e177806cb2c32c9}\label{class_proj_bismillah_a85f9cab1718a389d1e177806cb2c32c9}} 
+\index{Proj\+Bismillah@{Proj\+Bismillah}!agit@{agit}}
+\index{agit@{agit}!Proj\+Bismillah@{Proj\+Bismillah}}
+\subsubsection{\texorpdfstring{agit()}{agit()}}
+{\footnotesize\ttfamily Proj\+Bismillah\+::agit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entite}{Entite}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Procédure lorsque le projectile agit avec une \mbox{\hyperlink{class_entite}{Entite}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \mbox{\hyperlink{class_entite}{Entite}} à modifier\\
+\hline
+\end{DoxyParams}
+Vide 
+
+Implements \mbox{\hyperlink{class_entite_a848ec47afac1d7ba970a2bcab5dc7b3b}{Entite}}.
+
+\mbox{\Hypertarget{class_proj_bismillah_a5a037871dddbe729c926e7d9eb69b026}\label{class_proj_bismillah_a5a037871dddbe729c926e7d9eb69b026}} 
+\index{Proj\+Bismillah@{Proj\+Bismillah}!gestion@{gestion}}
+\index{gestion@{gestion}!Proj\+Bismillah@{Proj\+Bismillah}}
+\subsubsection{\texorpdfstring{gestion()}{gestion()}}
+{\footnotesize\ttfamily Proj\+Bismillah\+::gestion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gestion du projectile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Fenetre de jeu\\
+\hline
+\end{DoxyParams}
+Gestion du déplacement et de l\textquotesingle{}affichage 
+
+Implements \mbox{\hyperlink{class_projectile_ad8fae955389ff8944830e9d80e0f1ce1}{Projectile}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Projectiles/\mbox{\hyperlink{_proj_bismillah_8h}{Proj\+Bismillah.\+h}}\item 
+src/\+Projectiles/\mbox{\hyperlink{_proj_bismillah_8cpp}{Proj\+Bismillah.\+cpp}}\end{DoxyCompactItemize}

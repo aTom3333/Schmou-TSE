@@ -1,0 +1,1178 @@
+\hypertarget{class_entite}{}\section{Entite Class Reference}
+\label{class_entite}\index{Entite@{Entite}}
+
+
+Classe virtuelle qui définit une entité  
+
+
+
+
+{\ttfamily \#include $<$Entite.\+h$>$}
+
+Inheritance diagram for Entite\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{class_entite}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entite_a144da7dfc4ebff745b901e75c6167857}{Entite}} (\mbox{\hyperlink{class_ecran}{Ecran}} \&ecran)
+\item 
+virtual \mbox{\hyperlink{class_entite_a8084762a25afbfbcdca31121a3dfcd87}{$\sim$\+Entite}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructeur par défaut. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ sf\+::\+Shape $>$ $>$ \& \mbox{\hyperlink{class_entite_ad7314f276ea1808e98cfd8b7d0e900c8}{get\+Forme}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la forme de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entite_ae8bcb6d81087b421b03f6a97b3aedb8c}{afficher}} (bool debug=false)
+\begin{DoxyCompactList}\small\item\em Affiche le premier sprite de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}, gère les frames d\textquotesingle{}invincibilité \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entite_ac241fa1af0c598a820e2cae2ede17ac4}{afficher\+\_\+debug}} (bool debug=false)
+\item 
+void \mbox{\hyperlink{class_entite_a0e682335d5ae1518970a30eb07d8e6d1}{move}} (sf\+::\+Vector2f delta)
+\begin{DoxyCompactList}\small\item\em Déplace l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} en fonction de {\itshape delta}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entite_a2403ba6bc4c194e7421b6edd3228b69a}{move}} ()
+\begin{DoxyCompactList}\small\item\em Déplace l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} en fonction de vits\+\_\+ et rotation\+\_\+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entite_aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad}{set\+Position}} (const sf\+::\+Vector2f \&pos)
+\begin{DoxyCompactList}\small\item\em Fixe la position de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_entite_a6f6fd1e1f9f6ad44f0ecc74961a774d9}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la position de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} appelante. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entite_af1249039d313e4e691a109440663eae7}{rotate}} (float angle)
+\begin{DoxyCompactList}\small\item\em Tourne l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} de l\textquotesingle{}angle passé en paramètre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entite_a8623ac815e34b553098f45696ea8918b}{set\+Rotation}} (float angle)
+\begin{DoxyCompactList}\small\item\em Fixe l\textquotesingle{}orientation de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} appelante. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_entite_a7f19439f7e7a5028f4b26eff21683de9}{get\+Rotation}} () const
+\begin{DoxyCompactList}\small\item\em Récupère l\textquotesingle{}orientation de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entite_a770f6c53856606c4de768bb942299659}{scale}} (float factor)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}échelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entite_a665939253829baba965ce3ead0f1739c}{set\+Scale}} (float factor)
+\begin{DoxyCompactList}\small\item\em Fixe l\textquotesingle{}échelle de L\textquotesingle{}entite. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_entite_a5f70868f62049291edf4b245a531a6e0}{get\+Scale}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}échelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entite_a3e3abd5eac22335f388e6b31675319c1}{est\+Dehors}} (float x\+\_\+min=0, float y\+\_\+min=0, float x\+\_\+max=\mbox{\hyperlink{constantes_8h_a8958557e953d458537dedcf460f477c1}{E\+C\+R\+A\+N\+\_\+L}}, float y\+\_\+max=\mbox{\hyperlink{constantes_8h_a899c06d4fdb39f4fa51fc7158e2be2d1}{E\+C\+R\+A\+N\+\_\+H}}) const
+\begin{DoxyCompactList}\small\item\em Teste si l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} est hors d\textquotesingle{}une zone, par défaut l\textquotesingle{}écran. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entite_a0861182f1af724c8b5fd70b30720fa04}{est\+Dedans}} (float x\+\_\+min=0, float y\+\_\+min=0, float x\+\_\+max=\mbox{\hyperlink{constantes_8h_a8958557e953d458537dedcf460f477c1}{E\+C\+R\+A\+N\+\_\+L}}, float y\+\_\+max=\mbox{\hyperlink{constantes_8h_a899c06d4fdb39f4fa51fc7158e2be2d1}{E\+C\+R\+A\+N\+\_\+H}}) const
+\begin{DoxyCompactList}\small\item\em Teste si l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} est dans une zone, par défaut l\textquotesingle{}écran. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entite_abd20483e4d51bc7ebb0eb58bb4366757}{change\+Speed}} (int val)
+\begin{DoxyCompactList}\small\item\em Change la vitesse de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} en ajoutant à la vitesse actuelle une certaine valeur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entite_a4b0ce40a2427f44978728dbae9560fee}{set\+Detruit}} (bool val)
+\begin{DoxyCompactList}\small\item\em Fixe si l\textquotesingle{}entité est détruit ou non. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entite_a282ac7b723e1594f49d27337a872f348}{est\+Detruit}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie un booléen indiquant si l\textquotesingle{}entité est détuit. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_entite_a848ec47afac1d7ba970a2bcab5dc7b3b}{agit}} (\mbox{\hyperlink{class_entite}{Entite}} \&e)=0
+\begin{DoxyCompactList}\small\item\em Réalise l\textquotesingle{}action que l\textquotesingle{}{\ttfamily \mbox{\hyperlink{class_entite}{Entite}}} doit faire sur le vaisseau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entite_a0107313e662166fddddb8ffefeb649fe}{regen}} ()
+\begin{DoxyCompactList}\small\item\em Redonne des points de vie, de l\textquotesingle{}armure et du bouclier toute les 100 ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entite_ab16c58f618b3b854310f92f044cc4a17}{recoit\+Degats}} (float degats)
+\begin{DoxyCompactList}\small\item\em Inflige des dégats au bouclier, à l\textquotesingle{}armure et aux points de vie en fonctions des dégats reçu. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_entite_a57bef183cc6104b6b7b8a2048880552f}{get\+Degats\+Coll\+\_\+}} () const
+\item 
+virtual void \mbox{\hyperlink{class_entite_af5c424f69b2c880ae9c12786abd28592}{destruction}} ()=0
+\begin{DoxyCompactList}\small\item\em Procedure a effectuer lorsque le vaisseau est détruit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}} \mbox{\hyperlink{class_entite_a44612e23e1c45af3e865fa039875df1e}{get\+Equipe}} () const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_entite_ac9ce99e4eb26bb9c4b9f2c8aaf3899c8}{get\+Taille}} () const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_entite_aa4c414fcfe783fc8483ce9466d8764c0}{get\+Last\+Delta}} () const
+\item 
+bool \mbox{\hyperlink{class_entite_af607aa77e0ce2f6afa3cf8fdd073b9cf}{get\+Innate\+\_\+}} () const
+\item 
+float \mbox{\hyperlink{class_entite_a474c3aad164255a66c0c9d39b6e4ed1f}{get\+P\+V\+Max}} () const
+\item 
+float \mbox{\hyperlink{class_entite_aa7c171ab62d923d8b6f2912851ac7b1d}{get\+Armure\+Max}} () const
+\item 
+float \mbox{\hyperlink{class_entite_adecf490f77d783aa9492eb833b307939}{get\+Bouclier\+Max}} () const
+\item 
+float \mbox{\hyperlink{class_entite_aa803a384c574a66d2b104fafd43f189a}{get\+PV}} () const
+\item 
+float \mbox{\hyperlink{class_entite_a06ac37b64ff428cd03ba0c935c101227}{get\+Armure}} () const
+\item 
+float \mbox{\hyperlink{class_entite_ae680682baaeab669956e9060fca74923}{get\+Bouclier}} () const
+\item 
+float \mbox{\hyperlink{class_entite_a4b57be1f229ec78b5c1a8ea70bdd1d3d}{get\+Vit\+Max}} () const
+\item 
+float \mbox{\hyperlink{class_entite_a36d7c2ce68d2965d08fe28c77a3b4a70}{get\+Vit}} () const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_entite_a23480947ca71fd3c6004f8b704f675b0}{get\+Origin}} () const
+\item 
+bool \mbox{\hyperlink{class_entite_a7fd69c84f3f9a670356a333640cc5b77}{is\+Invincibilable}} () const
+\item 
+bool \mbox{\hyperlink{class_entite_a3905c5bfe2890fd5da1f7ea704c277ac}{is\+Invincible}} () const
+\item 
+bool \mbox{\hyperlink{class_entite_af18791ba27e747f426db1125bf77aeff}{is\+Collisionneuse}} () const
+\item 
+bool \mbox{\hyperlink{class_entite_ac28aac949f2451d883aafaabb65a7b90}{is\+Collisionnable}} () const
+\item 
+void \mbox{\hyperlink{class_entite_ac5e59154ac3eb3f131d9ed7f2c84d7a8}{setequipe\+\_\+}} (\mbox{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}} equipe)
+\item 
+void \mbox{\hyperlink{class_entite_a43a21ff043627fb6737aeb2a4f3e4986}{set\+Innate\+\_\+}} (const bool \&is\+Innate)
+\item 
+void \mbox{\hyperlink{class_entite_af36fc425e2043216b8519ab0c42f640b}{set\+Nb\+Positions}} (size\+\_\+t val)
+\item 
+void \mbox{\hyperlink{class_entite_a8cf9eefe7401a127d7692ca379528050}{set\+Smoke\+Texture}} (const sf\+::\+Texture \&text, sf\+::\+Color couleur=\{ 255, 255, 255 \})
+\item 
+void \mbox{\hyperlink{class_entite_a9c96cb18e7dafa69117d5573ab47de1e}{set\+Origin}} (sf\+::\+Vector2f origine)
+\item 
+void \mbox{\hyperlink{class_entite_a7b8614d3a7ed5f56ac295e34845310b7}{set\+Actif}} (const bool \&actif)
+\item 
+void \mbox{\hyperlink{class_entite_a1bf4d7561c3aa7f60d5af962a5a7e920}{set\+Longevite}} (const sf\+::\+Time \&t\+\_\+longevite)
+\item 
+void \mbox{\hyperlink{class_entite_a41a766786a95ec14c36483b3c0934e12}{set\+Auto\+Aim}} (const bool \&aimbot)
+\item 
+void \mbox{\hyperlink{class_entite_afb20773e78fd021d737d9f69e347372f}{set\+Collisionneuse}} (const bool \&collisionneuse)
+\item 
+void \mbox{\hyperlink{class_entite_acc07f9acea55b0a93b99f2ed57fef772}{set\+Collisionnable}} (const bool \&collisionnable)
+\item 
+void \mbox{\hyperlink{class_entite_a32e937b33745db139fae2e24b2587890}{set\+Bouclier}} (const float \&bouclier)
+\item 
+void \mbox{\hyperlink{class_entite_a0d6411b7a94d911d8adb0d4e08c3741c}{set\+BouclierM}} (const float \&bouclierM)
+\item 
+void \mbox{\hyperlink{class_entite_a88effd77e4276064031a02f5755cc321}{set\+Cercle\+Englobant}} (const sf\+::\+Circle\+Shape \&cercle\+Englobant)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ecran}{Ecran}} \& \mbox{\hyperlink{class_entite_a45a5a3f7a0f4690aa0d075ba2af172a3}{ecran\+\_\+}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_entite_abbd554c4f122159a73cb113cc8de3860}{position\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Position actuelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_entite_ac3986b76d5eb35e9c9ec1f51bf516987}{origine\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Position de l\textquotesingle{}origine. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_entite_a8b1e07858f2f6090b19765d9a7f723fe}{rotation\+\_\+}} = \mbox{\hyperlink{_collision_8cpp_a952eac791b596a61bba0a133a3bb439f}{PI}}/2.
+\begin{DoxyCompactList}\small\item\em Orientation actuelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_entite_a50e0f8c1188d9833432c55c7f7d2aa0f}{scale\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Échelle actuelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. \end{DoxyCompactList}\item 
+std\+::deque$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{class_entite_a917f4b325c90fea530786637935eb1b5}{positions\+Prev\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Positions précédentes. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_entite_a737d76cd7a3de46a5d72231ef974f8d1}{nb\+Positions\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em nombre de positions précédentes à conserver \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_entite_a39e55c3ccf10d8519e80c7b2a767715a}{last\+\_\+delta\+\_\+}}
+\begin{DoxyCompactList}\small\item\em dernier déplacement en paramètre de move effectué \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entite_a2a904f5930310d0b93e527fed9340198}{collisionnable\+\_\+}} = true
+\begin{DoxyCompactList}\small\item\em Booléen vrai si l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} est collisionnable. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entite_a0a347fd96077f1f331ed17247840df06}{collisionneuse\+\_\+}} = true
+\item 
+\mbox{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}} \mbox{\hyperlink{class_entite_a5fe5eca94bde526873a68163a94011ef}{equipe\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Identifiant de l\textquotesingle{}équipe de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entite_af590dd6815cafa0748f1adc4da1f3cc2}{innate\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em true si doit rester dans l\textquotesingle{}écran \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entite_a9347adaafb6151a497e4f0feaab14151}{invincibilable\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em true si l\textquotesingle{}entité peut devenir invincible \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entite_a2d98d6fac9fb85da156fcda84fcec3ac}{detruit\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em true lorsque que le vaisseau est détruit \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entite_ac8416aa3acec089b4b0daa818d62fea5}{actif\+\_\+}} = true
+\begin{DoxyCompactList}\small\item\em Booleen indiquant si la trajectoire a été amorcée. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entite_a3a39c039df38b442068bc87afe397e1a}{invincible\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em en état invincible \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entite_aedba9766e8c3a34725a948299b81bdc7}{aimbot\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em True si en état visée automatique. \end{DoxyCompactList}\item 
+const sf\+::\+Time \mbox{\hyperlink{class_entite_a05cf4dbc79033259ac661a6a114cdb12}{t\+\_\+\+Invincibilite\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Temps d\textquotesingle{}invincibilité total en ms. \end{DoxyCompactList}\item 
+sf\+::\+Clock \mbox{\hyperlink{class_entite_aec0eb3d4f1e99db7ae737df33310028c}{clk\+\_\+\+Invincibilite}}
+\begin{DoxyCompactList}\small\item\em Clock qui gère l\textquotesingle{}état invincible. \end{DoxyCompactList}\item 
+sf\+::\+Time \mbox{\hyperlink{class_entite_ae0006c0f3415e59ad8fd69385c8c5d03}{t\+\_\+age\+\_\+}}
+\item 
+sf\+::\+Time \mbox{\hyperlink{class_entite_a79f856f9363a2e554b780d720a4164a0}{t\+\_\+longevite\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Temps écoulé depuis la création (temps de vie) \end{DoxyCompactList}\item 
+sf\+::\+Circle\+Shape \mbox{\hyperlink{class_entite_a5b6c62e4dc54221a84ce4dc824fdb2da}{cercle\+Englobant\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Temps après lequel l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} est détruite. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ sf\+::\+Shape $>$ $>$ \mbox{\hyperlink{class_entite_aa6bbda9a40f701f273c344406a6f5122}{forme\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Forme de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+Sprite $>$ \mbox{\hyperlink{class_entite_a0f910cbb084753ee6ff64f102bc3e26c}{sprites\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Vecteur de sprites pour en avoir plusieurs. \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+Sprite $>$ \mbox{\hyperlink{class_entite_ad2082af5de01c6c55e74c7dcbfffee0b}{smokes\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Sprite à afficher sur la trainée du vaisseau. \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+Sound $>$ \mbox{\hyperlink{class_entite_af5c5fcbcde3d33c2436b1d289cff125e}{sounds\+\_\+}}
+\item 
+float \mbox{\hyperlink{class_entite_a862ad5eccfc6c925948d41aaf2142718}{pv\+M\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a85b09d98caf443622a546345db8828b8}{pv\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a23d24cb3993dc5ddd7dff36b9f94b667}{atk\+M\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a824f1b9b1058ed92b8883e84bfe89c0e}{atk\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_af673a89a24b35148e2e53285e3b84bd0}{def\+M\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_aabc79bd2426d8e68c7ef7da9e95c4542}{def\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_ac5f9e68aa96316c6871e1980766977a9}{vit\+M\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_aaacb36948d7853e03a7f9a42aa6ad2d5}{vit\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a09d60cae449cda19266d576c18f20c0a}{armure\+M\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a014535fad669c3d890a216f9e8049d09}{armure\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_ac6dc4d8af8bd8e9ca7e328d16d405b26}{bouclier\+M\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a933a79044c5ac6ffccd397c134248d44}{bouclier\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a66b44d5c567afa0434c26549c2727307}{regen\+Pv\+M\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a7c2872d20a5f134b5cfdf15e26e376e9}{regen\+Pv\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a3ef253a5134f4fa61be2fb6bca812855}{regen\+Armure\+M\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a8a2bbe199842916db0410c3ea6b4b080}{regen\+Armure\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a715631221f737aa571a6981a10e5c452}{regen\+Bouclier\+M\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a8eb7ea99af698268311f42338ebca836}{regen\+Bouclier\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_ae04ca6e434ade85eacd22657d1ac0aa9}{precision\+M\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a1a1eb2e3f6f1a3e1b496797931796549}{precision\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a6a9a0f0446b254c811928b43d16da819}{degats\+Collision\+M\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{class_entite_a7b24bf48cb4546c953feb2c0576fdd02}{degats\+Collision\+\_\+}} = 0
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_entite_ac5011435e5099909dd34cd1750933b30}{collision}} (const \mbox{\hyperlink{class_entite}{Entite}} \&e1, const \mbox{\hyperlink{class_entite}{Entite}} \&e2)
+\begin{DoxyCompactList}\small\item\em Détecte une collision entre deux \mbox{\hyperlink{class_entite}{Entite}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe virtuelle qui définit une entité 
+
+Cette classe est une base à toutes les entités du jeu, les vaisseaux et les projectiles. Elle définit l\textquotesingle{}interface globale à travers laquelle ces entités peuvent être manipulées 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_entite_a144da7dfc4ebff745b901e75c6167857}\label{class_entite_a144da7dfc4ebff745b901e75c6167857}} 
+\index{Entite@{Entite}!Entite@{Entite}}
+\index{Entite@{Entite}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{Entite()}{Entite()}}
+{\footnotesize\ttfamily Entite\+::\+Entite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ecran}{Ecran}} \&}]{ecran }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_entite_a8084762a25afbfbcdca31121a3dfcd87}\label{class_entite_a8084762a25afbfbcdca31121a3dfcd87}} 
+\index{Entite@{Entite}!````~Entite@{$\sim$\+Entite}}
+\index{````~Entite@{$\sim$\+Entite}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{$\sim$\+Entite()}{~Entite()}}
+{\footnotesize\ttfamily Entite\+::$\sim$\+Entite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructeur par défaut. 
+
+Destructeur virtuel par défaut de la classe \mbox{\hyperlink{class_entite}{Entite}}. Le destructeur est virtuel car la classe a vocation à être héritée. Il n\textquotesingle{}y a rien de spécial à faire donc le destructeur par défaut convient 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_entite_ae8bcb6d81087b421b03f6a97b3aedb8c}\label{class_entite_ae8bcb6d81087b421b03f6a97b3aedb8c}} 
+\index{Entite@{Entite}!afficher@{afficher}}
+\index{afficher@{afficher}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{afficher()}{afficher()}}
+{\footnotesize\ttfamily Entite\+::afficher (\begin{DoxyParamCaption}\item[{bool}]{debug = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Affiche le premier sprite de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}, gère les frames d\textquotesingle{}invincibilité 
+
+Afficher des informations de debug telles que le cercle englobant ou et la forme de collision.
+
+Appelle la fonction afficher de la S\+F\+ML sur les attributs de l\textquotesingle{}objet appelant. Peut également afficher des informations de debug telles que le cercle englobant ou et la forme de collision. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em debug} & si D\+E\+B\+UG est false, régler à true pour forcer l\textquotesingle{}affichage debug si D\+E\+B\+UG est true, régler à true pour forcer la désactivation de l\textquotesingle{}affichage debug\\
+\hline
+\mbox{\tt in}  & {\em debug} & si D\+E\+B\+UG est false, régler à true pour forcer l\textquotesingle{}affichage debug si D\+E\+B\+UG est true, régler à true pour forcer la désactivation de l\textquotesingle{}affichage debug \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_entite_ac241fa1af0c598a820e2cae2ede17ac4}\label{class_entite_ac241fa1af0c598a820e2cae2ede17ac4}} 
+\index{Entite@{Entite}!afficher\+\_\+debug@{afficher\+\_\+debug}}
+\index{afficher\+\_\+debug@{afficher\+\_\+debug}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{afficher\+\_\+debug()}{afficher\_debug()}}
+{\footnotesize\ttfamily void Entite\+::afficher\+\_\+debug (\begin{DoxyParamCaption}\item[{bool}]{debug = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entite_a848ec47afac1d7ba970a2bcab5dc7b3b}\label{class_entite_a848ec47afac1d7ba970a2bcab5dc7b3b}} 
+\index{Entite@{Entite}!agit@{agit}}
+\index{agit@{agit}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{agit()}{agit()}}
+{\footnotesize\ttfamily Entite\+::agit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entite}{Entite}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Réalise l\textquotesingle{}action que l\textquotesingle{}{\ttfamily \mbox{\hyperlink{class_entite}{Entite}}} doit faire sur le vaisseau. 
+
+Fonction virtuelle qui doit être surchargée pour les classes héritées. Elle réalise l\textquotesingle{}action que l\textquotesingle{}{\ttfamily \mbox{\hyperlink{class_entite}{Entite}}} appelant sur l\textquotesingle{}{\ttfamily \mbox{\hyperlink{class_entite}{Entite}}} passé en paramètre (dégats, changement de stat, ...) 
+\begin{DoxyParams}{Parameters}
+{\em e} & Une {\ttfamily \mbox{\hyperlink{class_entite}{Entite}}} sur lequel l\textquotesingle{}action de l\textquotesingle{}{\ttfamily \mbox{\hyperlink{class_entite}{Entite}}} va se faire \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_proj_piou_acbc0bea0b23b3daa311679bec7ffe91a}{Proj\+Piou}}, \mbox{\hyperlink{class_proj_boing_acbee1a0aa00582682ce755e1b19d687a}{Proj\+Boing}}, \mbox{\hyperlink{class_proj_bismillah_a85f9cab1718a389d1e177806cb2c32c9}{Proj\+Bismillah}}, \mbox{\hyperlink{class_vaisseau_a7950f1a06690d5f5eec5e38f3021a04c}{Vaisseau}}, \mbox{\hyperlink{class_proj_bouclier_rond_a60547ae68c6862f6e4c8b9cdd94bb52b}{Proj\+Bouclier\+Rond}}, and \mbox{\hyperlink{class_proj_missile_a8125c442857f7a0fc2d0ff442c39aca7}{Proj\+Missile}}.
+
+\mbox{\Hypertarget{class_entite_abd20483e4d51bc7ebb0eb58bb4366757}\label{class_entite_abd20483e4d51bc7ebb0eb58bb4366757}} 
+\index{Entite@{Entite}!change\+Speed@{change\+Speed}}
+\index{change\+Speed@{change\+Speed}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{change\+Speed()}{changeSpeed()}}
+{\footnotesize\ttfamily Entite\+::change\+Speed (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Change la vitesse de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} en ajoutant à la vitesse actuelle une certaine valeur. 
+
+Cette fonction permet de modifier la vitesse de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} appelante en ajoutant à la vitesse actuelle la valeur passée en paramètre. Cette dernière peut être négative pour diminuer la vitesse. La vitesse ésultante peut également être négative, cela résultera en un mouvement en miroir 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em val} & La valeur à ajouter à la vitesse actuelle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_entite_af5c424f69b2c880ae9c12786abd28592}\label{class_entite_af5c424f69b2c880ae9c12786abd28592}} 
+\index{Entite@{Entite}!destruction@{destruction}}
+\index{destruction@{destruction}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{destruction()}{destruction()}}
+{\footnotesize\ttfamily Entite\+::destruction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Procedure a effectuer lorsque le vaisseau est détruit. 
+
+Fonction virtuelle qui doit être surchargée pour les classes héritées. 
+
+Implemented in \mbox{\hyperlink{class_vaisseau_defenseur_aeaaaa161533c6aa07b627172d8657b3a}{Vaisseau\+Defenseur}}, \mbox{\hyperlink{class_vaisseau_attaquant_a9afe1d07b85b6064c802205a1d0d777b}{Vaisseau\+Attaquant}}, \mbox{\hyperlink{class_vaisseau_eclaireur_ab4ea82a8fc92dc27c6072481099518bc}{Vaisseau\+Eclaireur}}, \mbox{\hyperlink{class_vaisseau_a6d7506acb12c0367989066c899ec7949}{Vaisseau}}, \mbox{\hyperlink{class_vaiss_bouclier_ab154712cec76a589fd8bce2392982c5b}{Vaiss\+Bouclier}}, \mbox{\hyperlink{class_projectile_a092690ef6f0f9284e05b775f26833c2d}{Projectile}}, and \mbox{\hyperlink{class_vaisseau_test_a5cab0817183471868c5ed6392261f8ec}{Vaisseau\+Test}}.
+
+\mbox{\Hypertarget{class_entite_a0861182f1af724c8b5fd70b30720fa04}\label{class_entite_a0861182f1af724c8b5fd70b30720fa04}} 
+\index{Entite@{Entite}!est\+Dedans@{est\+Dedans}}
+\index{est\+Dedans@{est\+Dedans}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{est\+Dedans()}{estDedans()}}
+{\footnotesize\ttfamily Entite\+::est\+Dedans (\begin{DoxyParamCaption}\item[{float}]{x\+\_\+min = {\ttfamily 0},  }\item[{float}]{y\+\_\+min = {\ttfamily 0},  }\item[{float}]{x\+\_\+max = {\ttfamily \mbox{\hyperlink{constantes_8h_a8958557e953d458537dedcf460f477c1}{E\+C\+R\+A\+N\+\_\+L}}},  }\item[{float}]{y\+\_\+max = {\ttfamily \mbox{\hyperlink{constantes_8h_a899c06d4fdb39f4fa51fc7158e2be2d1}{E\+C\+R\+A\+N\+\_\+H}}} }\end{DoxyParamCaption}) const}
+
+
+
+Teste si l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} est dans une zone, par défaut l\textquotesingle{}écran. 
+
+Cette fonction permet de tester si l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} se trouve dans une zone rectangulaire délimitée par x\+\_\+min, y\+\_\+min, x\+\_\+max, y\+\_\+max qui vallent par défaut les dimensions de l\textquotesingle{}écran. La détection est grossière, le test est fait de savoir si le carré de côté deux fois le rayon du cercle englobant est complétement compris dans la zone à tester 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x\+\_\+min} & L\textquotesingle{}abscisse minimale de la zone à tester, par défaut 0 \\
+\hline
+\mbox{\tt in}  & {\em y\+\_\+min} & L\textquotesingle{}ordonnée minimale de la zone à tester, par défaut 0 \\
+\hline
+\mbox{\tt in}  & {\em x\+\_\+max} & L\textquotesingle{}abscisse maximale de la zone à tester, par défaut la largeur de la fenêtre \\
+\hline
+\mbox{\tt in}  & {\em y\+\_\+max} & L\textquotesingle{}ordonnée maximale de la zone à tester, par défaut la hauteur de la fenêtre \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un {\ttfamily bool} qui vaut {\itshape true} si l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} se trouve dans la zone à tester et {\itshape false} sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_entite_a3e3abd5eac22335f388e6b31675319c1}\label{class_entite_a3e3abd5eac22335f388e6b31675319c1}} 
+\index{Entite@{Entite}!est\+Dehors@{est\+Dehors}}
+\index{est\+Dehors@{est\+Dehors}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{est\+Dehors()}{estDehors()}}
+{\footnotesize\ttfamily Entite\+::est\+Dehors (\begin{DoxyParamCaption}\item[{float}]{x\+\_\+min = {\ttfamily 0},  }\item[{float}]{y\+\_\+min = {\ttfamily 0},  }\item[{float}]{x\+\_\+max = {\ttfamily \mbox{\hyperlink{constantes_8h_a8958557e953d458537dedcf460f477c1}{E\+C\+R\+A\+N\+\_\+L}}},  }\item[{float}]{y\+\_\+max = {\ttfamily \mbox{\hyperlink{constantes_8h_a899c06d4fdb39f4fa51fc7158e2be2d1}{E\+C\+R\+A\+N\+\_\+H}}} }\end{DoxyParamCaption}) const}
+
+
+
+Teste si l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} est hors d\textquotesingle{}une zone, par défaut l\textquotesingle{}écran. 
+
+Cette fonction permet de tester si l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} se trouve hors d\textquotesingle{}une zone rectangulaire délimitée par x\+\_\+min, y\+\_\+min, x\+\_\+max, y\+\_\+max qui vallent par défaut les dimensions de l\textquotesingle{}écran. La détection est grossière, le test est fait de savoir si le carré de côté deux fois le rayon du cercle englobant est complétement compris hors de la zone à tester 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x\+\_\+min} & L\textquotesingle{}abscisse minimale de la zone à tester, par défaut 0 \\
+\hline
+\mbox{\tt in}  & {\em y\+\_\+min} & L\textquotesingle{}ordonnée minimale de la zone à tester, par défaut 0 \\
+\hline
+\mbox{\tt in}  & {\em x\+\_\+max} & L\textquotesingle{}abscisse maximale de la zone à tester, par défaut la largeur de la fenêtre \\
+\hline
+\mbox{\tt in}  & {\em y\+\_\+max} & L\textquotesingle{}ordonnée maximale de la zone à tester, par défaut la hauteur de la fenêtre \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un {\ttfamily bool} qui vaut {\itshape true} si l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} se trouve hors de la zone à tester et {\itshape false} sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_entite_a282ac7b723e1594f49d27337a872f348}\label{class_entite_a282ac7b723e1594f49d27337a872f348}} 
+\index{Entite@{Entite}!est\+Detruit@{est\+Detruit}}
+\index{est\+Detruit@{est\+Detruit}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{est\+Detruit()}{estDetruit()}}
+{\footnotesize\ttfamily Entite\+::est\+Detruit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie un booléen indiquant si l\textquotesingle{}entité est détuit. 
+
+Renvoie un booléen indiquant si l\textquotesingle{}entité est détuit Si l\textquotesingle{}entité n\textquotesingle{}a plus de point de vie, detruit\+\_\+ est fixé à vrai \mbox{\Hypertarget{class_entite_a06ac37b64ff428cd03ba0c935c101227}\label{class_entite_a06ac37b64ff428cd03ba0c935c101227}} 
+\index{Entite@{Entite}!get\+Armure@{get\+Armure}}
+\index{get\+Armure@{get\+Armure}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Armure()}{getArmure()}}
+{\footnotesize\ttfamily float Entite\+::get\+Armure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_aa7c171ab62d923d8b6f2912851ac7b1d}\label{class_entite_aa7c171ab62d923d8b6f2912851ac7b1d}} 
+\index{Entite@{Entite}!get\+Armure\+Max@{get\+Armure\+Max}}
+\index{get\+Armure\+Max@{get\+Armure\+Max}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Armure\+Max()}{getArmureMax()}}
+{\footnotesize\ttfamily float Entite\+::get\+Armure\+Max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_ae680682baaeab669956e9060fca74923}\label{class_entite_ae680682baaeab669956e9060fca74923}} 
+\index{Entite@{Entite}!get\+Bouclier@{get\+Bouclier}}
+\index{get\+Bouclier@{get\+Bouclier}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Bouclier()}{getBouclier()}}
+{\footnotesize\ttfamily float Entite\+::get\+Bouclier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_adecf490f77d783aa9492eb833b307939}\label{class_entite_adecf490f77d783aa9492eb833b307939}} 
+\index{Entite@{Entite}!get\+Bouclier\+Max@{get\+Bouclier\+Max}}
+\index{get\+Bouclier\+Max@{get\+Bouclier\+Max}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Bouclier\+Max()}{getBouclierMax()}}
+{\footnotesize\ttfamily float Entite\+::get\+Bouclier\+Max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a57bef183cc6104b6b7b8a2048880552f}\label{class_entite_a57bef183cc6104b6b7b8a2048880552f}} 
+\index{Entite@{Entite}!get\+Degats\+Coll\+\_\+@{get\+Degats\+Coll\+\_\+}}
+\index{get\+Degats\+Coll\+\_\+@{get\+Degats\+Coll\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Degats\+Coll\+\_\+()}{getDegatsColl\_()}}
+{\footnotesize\ttfamily float Entite\+::get\+Degats\+Coll\+\_\+ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_entite_a44612e23e1c45af3e865fa039875df1e}\label{class_entite_a44612e23e1c45af3e865fa039875df1e}} 
+\index{Entite@{Entite}!get\+Equipe@{get\+Equipe}}
+\index{get\+Equipe@{get\+Equipe}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Equipe()}{getEquipe()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}} Entite\+::get\+Equipe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_ad7314f276ea1808e98cfd8b7d0e900c8}\label{class_entite_ad7314f276ea1808e98cfd8b7d0e900c8}} 
+\index{Entite@{Entite}!get\+Forme@{get\+Forme}}
+\index{get\+Forme@{get\+Forme}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Forme()}{getForme()}}
+{\footnotesize\ttfamily Entite\+::get\+Forme (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoie la forme de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. 
+
+Cette fonction renvoie la forme de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} appelante. Cette forme se présente comme un {\ttfamily std\+::vector} de pointeur (intelligents, des {\ttfamily std\+::unique\+\_\+ptr}) vers des {\ttfamily sf\+::\+Shape} car la forme totale de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} est la juxtaposition de plusieurs formes plus simples représentées par les {\ttfamily sf\+::\+Shape} indiviuelles \begin{DoxyReturn}{Returns}
+Un {\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$sf\+::\+Shape$>$$>$} qui représente la forme de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_entite_af607aa77e0ce2f6afa3cf8fdd073b9cf}\label{class_entite_af607aa77e0ce2f6afa3cf8fdd073b9cf}} 
+\index{Entite@{Entite}!get\+Innate\+\_\+@{get\+Innate\+\_\+}}
+\index{get\+Innate\+\_\+@{get\+Innate\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Innate\+\_\+()}{getInnate\_()}}
+{\footnotesize\ttfamily bool Entite\+::get\+Innate\+\_\+ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_aa4c414fcfe783fc8483ce9466d8764c0}\label{class_entite_aa4c414fcfe783fc8483ce9466d8764c0}} 
+\index{Entite@{Entite}!get\+Last\+Delta@{get\+Last\+Delta}}
+\index{get\+Last\+Delta@{get\+Last\+Delta}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Last\+Delta()}{getLastDelta()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Entite\+::get\+Last\+Delta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a23480947ca71fd3c6004f8b704f675b0}\label{class_entite_a23480947ca71fd3c6004f8b704f675b0}} 
+\index{Entite@{Entite}!get\+Origin@{get\+Origin}}
+\index{get\+Origin@{get\+Origin}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Origin()}{getOrigin()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Entite\+::get\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a6f6fd1e1f9f6ad44f0ecc74961a774d9}\label{class_entite_a6f6fd1e1f9f6ad44f0ecc74961a774d9}} 
+\index{Entite@{Entite}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily Entite\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoie la position de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} appelante. 
+
+Cette fonction renvoie la position actuelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} appelante par rapport au point haut gauche de la fenêtre \begin{DoxyReturn}{Returns}
+la position de l\textquotesingle{}entité appelante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_entite_aa803a384c574a66d2b104fafd43f189a}\label{class_entite_aa803a384c574a66d2b104fafd43f189a}} 
+\index{Entite@{Entite}!get\+PV@{get\+PV}}
+\index{get\+PV@{get\+PV}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+P\+V()}{getPV()}}
+{\footnotesize\ttfamily float Entite\+::get\+PV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a474c3aad164255a66c0c9d39b6e4ed1f}\label{class_entite_a474c3aad164255a66c0c9d39b6e4ed1f}} 
+\index{Entite@{Entite}!get\+P\+V\+Max@{get\+P\+V\+Max}}
+\index{get\+P\+V\+Max@{get\+P\+V\+Max}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+P\+V\+Max()}{getPVMax()}}
+{\footnotesize\ttfamily float Entite\+::get\+P\+V\+Max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a7f19439f7e7a5028f4b26eff21683de9}\label{class_entite_a7f19439f7e7a5028f4b26eff21683de9}} 
+\index{Entite@{Entite}!get\+Rotation@{get\+Rotation}}
+\index{get\+Rotation@{get\+Rotation}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Rotation()}{getRotation()}}
+{\footnotesize\ttfamily Entite\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Récupère l\textquotesingle{}orientation de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. 
+
+Cette fonction renvoie l\textquotesingle{}orientation actuelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} appelante. La valeur renvoyée correspond à un angle en degrés \begin{DoxyReturn}{Returns}
+Un {\ttfamily float} qui correspond à l\textquotesingle{}eorientation de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_entite_a5f70868f62049291edf4b245a531a6e0}\label{class_entite_a5f70868f62049291edf4b245a531a6e0}} 
+\index{Entite@{Entite}!get\+Scale@{get\+Scale}}
+\index{get\+Scale@{get\+Scale}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Scale()}{getScale()}}
+{\footnotesize\ttfamily Entite\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoie l\textquotesingle{}échelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. 
+
+Cette fonction renvoie l\textquotesingle{}échelle actuelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} appelante \begin{DoxyReturn}{Returns}
+Un {\ttfamily float} qui correspond au facteur d\textquotesingle{}échelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_entite_ac9ce99e4eb26bb9c4b9f2c8aaf3899c8}\label{class_entite_ac9ce99e4eb26bb9c4b9f2c8aaf3899c8}} 
+\index{Entite@{Entite}!get\+Taille@{get\+Taille}}
+\index{get\+Taille@{get\+Taille}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Taille()}{getTaille()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Entite\+::get\+Taille (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a36d7c2ce68d2965d08fe28c77a3b4a70}\label{class_entite_a36d7c2ce68d2965d08fe28c77a3b4a70}} 
+\index{Entite@{Entite}!get\+Vit@{get\+Vit}}
+\index{get\+Vit@{get\+Vit}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Vit()}{getVit()}}
+{\footnotesize\ttfamily float Entite\+::get\+Vit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a4b57be1f229ec78b5c1a8ea70bdd1d3d}\label{class_entite_a4b57be1f229ec78b5c1a8ea70bdd1d3d}} 
+\index{Entite@{Entite}!get\+Vit\+Max@{get\+Vit\+Max}}
+\index{get\+Vit\+Max@{get\+Vit\+Max}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{get\+Vit\+Max()}{getVitMax()}}
+{\footnotesize\ttfamily float Entite\+::get\+Vit\+Max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_ac28aac949f2451d883aafaabb65a7b90}\label{class_entite_ac28aac949f2451d883aafaabb65a7b90}} 
+\index{Entite@{Entite}!is\+Collisionnable@{is\+Collisionnable}}
+\index{is\+Collisionnable@{is\+Collisionnable}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{is\+Collisionnable()}{isCollisionnable()}}
+{\footnotesize\ttfamily bool Entite\+::is\+Collisionnable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_af18791ba27e747f426db1125bf77aeff}\label{class_entite_af18791ba27e747f426db1125bf77aeff}} 
+\index{Entite@{Entite}!is\+Collisionneuse@{is\+Collisionneuse}}
+\index{is\+Collisionneuse@{is\+Collisionneuse}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{is\+Collisionneuse()}{isCollisionneuse()}}
+{\footnotesize\ttfamily bool Entite\+::is\+Collisionneuse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a7fd69c84f3f9a670356a333640cc5b77}\label{class_entite_a7fd69c84f3f9a670356a333640cc5b77}} 
+\index{Entite@{Entite}!is\+Invincibilable@{is\+Invincibilable}}
+\index{is\+Invincibilable@{is\+Invincibilable}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{is\+Invincibilable()}{isInvincibilable()}}
+{\footnotesize\ttfamily bool Entite\+::is\+Invincibilable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a3905c5bfe2890fd5da1f7ea704c277ac}\label{class_entite_a3905c5bfe2890fd5da1f7ea704c277ac}} 
+\index{Entite@{Entite}!is\+Invincible@{is\+Invincible}}
+\index{is\+Invincible@{is\+Invincible}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{is\+Invincible()}{isInvincible()}}
+{\footnotesize\ttfamily bool Entite\+::is\+Invincible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a0e682335d5ae1518970a30eb07d8e6d1}\label{class_entite_a0e682335d5ae1518970a30eb07d8e6d1}} 
+\index{Entite@{Entite}!move@{move}}
+\index{move@{move}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Entite\+::move (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{delta }\end{DoxyParamCaption})}
+
+
+
+Déplace l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} en fonction de {\itshape delta}. 
+
+Appelle la fonction move de la S\+F\+ML sur les attributs de l\textquotesingle{}objet appelant. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em delta} & un {\ttfamily sf\+::\+Vector2f} qui donne le déplacement en x et en y \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_entite_a2403ba6bc4c194e7421b6edd3228b69a}\label{class_entite_a2403ba6bc4c194e7421b6edd3228b69a}} 
+\index{Entite@{Entite}!move@{move}}
+\index{move@{move}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Entite\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Déplace l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} en fonction de vits\+\_\+ et rotation\+\_\+. 
+
+Crée un delta en calculant à partir des attributs vit\+\_\+ et rotation\+\_\+ de \mbox{\hyperlink{class_entite}{Entite}}, puis appelle la fonction move de \mbox{\hyperlink{class_entite}{Entite}} avec ce delta \mbox{\Hypertarget{class_entite_ab16c58f618b3b854310f92f044cc4a17}\label{class_entite_ab16c58f618b3b854310f92f044cc4a17}} 
+\index{Entite@{Entite}!recoit\+Degats@{recoit\+Degats}}
+\index{recoit\+Degats@{recoit\+Degats}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{recoit\+Degats()}{recoitDegats()}}
+{\footnotesize\ttfamily Entite\+::recoit\+Degats (\begin{DoxyParamCaption}\item[{float}]{degats }\end{DoxyParamCaption})}
+
+
+
+Inflige des dégats au bouclier, à l\textquotesingle{}armure et aux points de vie en fonctions des dégats reçu. 
+
+Retire d\textquotesingle{}abord des points de bouclier. Si le bouclier est détuit, retire des points d\textquotesingle{}armure. Les dégats sur l\textquotesingle{}armure sont réduit. Retire le reste des points restant aux points de vie. \mbox{\Hypertarget{class_entite_a0107313e662166fddddb8ffefeb649fe}\label{class_entite_a0107313e662166fddddb8ffefeb649fe}} 
+\index{Entite@{Entite}!regen@{regen}}
+\index{regen@{regen}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{regen()}{regen()}}
+{\footnotesize\ttfamily Entite\+::regen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Redonne des points de vie, de l\textquotesingle{}armure et du bouclier toute les 100 ms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Temps écoulé depuis le dernier appel\\
+\hline
+\end{DoxyParams}
+Redonne des points de vie, de l\textquotesingle{}armure et du bouclier toute les 100 ms selons les paramètres de l\textquotesingle{}entité \mbox{\Hypertarget{class_entite_af1249039d313e4e691a109440663eae7}\label{class_entite_af1249039d313e4e691a109440663eae7}} 
+\index{Entite@{Entite}!rotate@{rotate}}
+\index{rotate@{rotate}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily Entite\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Tourne l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} de l\textquotesingle{}angle passé en paramètre. 
+
+Cette fonction permet de aire tourner l\textquotesingle{}entité de l\textquotesingle{}angle passé en paramètre, chaque élément composant l\textquotesingle{}entité est tourné. L\textquotesingle{}angle est donné en degrés 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em angle} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_entite_a770f6c53856606c4de768bb942299659}\label{class_entite_a770f6c53856606c4de768bb942299659}} 
+\index{Entite@{Entite}!scale@{scale}}
+\index{scale@{scale}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily Entite\+::scale (\begin{DoxyParamCaption}\item[{float}]{factor }\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}échelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. 
+
+Cette fonction permet de modifier l\textquotesingle{}échelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} appelante en appliquant un coefficient multiplicateur à ses dimensions. Un coefficient de 0.\+5 divisera les dimentions par 2, à l\textquotesingle{}inverse un coefficient de 2 rendra l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} 2 fois plus grande. Un coefficient de 1 ne changera rien. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em factor} & Le coefficient multiplicateur d\textquotesingle{}échelle à appliquer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_entite_a7b8614d3a7ed5f56ac295e34845310b7}\label{class_entite_a7b8614d3a7ed5f56ac295e34845310b7}} 
+\index{Entite@{Entite}!set\+Actif@{set\+Actif}}
+\index{set\+Actif@{set\+Actif}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Actif()}{setActif()}}
+{\footnotesize\ttfamily void Entite\+::set\+Actif (\begin{DoxyParamCaption}\item[{const bool \&}]{actif }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a41a766786a95ec14c36483b3c0934e12}\label{class_entite_a41a766786a95ec14c36483b3c0934e12}} 
+\index{Entite@{Entite}!set\+Auto\+Aim@{set\+Auto\+Aim}}
+\index{set\+Auto\+Aim@{set\+Auto\+Aim}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Auto\+Aim()}{setAutoAim()}}
+{\footnotesize\ttfamily void Entite\+::set\+Auto\+Aim (\begin{DoxyParamCaption}\item[{const bool \&}]{aimbot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a32e937b33745db139fae2e24b2587890}\label{class_entite_a32e937b33745db139fae2e24b2587890}} 
+\index{Entite@{Entite}!set\+Bouclier@{set\+Bouclier}}
+\index{set\+Bouclier@{set\+Bouclier}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Bouclier()}{setBouclier()}}
+{\footnotesize\ttfamily void Entite\+::set\+Bouclier (\begin{DoxyParamCaption}\item[{const float \&}]{bouclier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a0d6411b7a94d911d8adb0d4e08c3741c}\label{class_entite_a0d6411b7a94d911d8adb0d4e08c3741c}} 
+\index{Entite@{Entite}!set\+BouclierM@{set\+BouclierM}}
+\index{set\+BouclierM@{set\+BouclierM}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Bouclier\+M()}{setBouclierM()}}
+{\footnotesize\ttfamily void Entite\+::set\+BouclierM (\begin{DoxyParamCaption}\item[{const float \&}]{bouclierM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a88effd77e4276064031a02f5755cc321}\label{class_entite_a88effd77e4276064031a02f5755cc321}} 
+\index{Entite@{Entite}!set\+Cercle\+Englobant@{set\+Cercle\+Englobant}}
+\index{set\+Cercle\+Englobant@{set\+Cercle\+Englobant}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Cercle\+Englobant()}{setCercleEnglobant()}}
+{\footnotesize\ttfamily void Entite\+::set\+Cercle\+Englobant (\begin{DoxyParamCaption}\item[{const sf\+::\+Circle\+Shape \&}]{cercle\+Englobant }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_acc07f9acea55b0a93b99f2ed57fef772}\label{class_entite_acc07f9acea55b0a93b99f2ed57fef772}} 
+\index{Entite@{Entite}!set\+Collisionnable@{set\+Collisionnable}}
+\index{set\+Collisionnable@{set\+Collisionnable}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Collisionnable()}{setCollisionnable()}}
+{\footnotesize\ttfamily void Entite\+::set\+Collisionnable (\begin{DoxyParamCaption}\item[{const bool \&}]{collisionnable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_afb20773e78fd021d737d9f69e347372f}\label{class_entite_afb20773e78fd021d737d9f69e347372f}} 
+\index{Entite@{Entite}!set\+Collisionneuse@{set\+Collisionneuse}}
+\index{set\+Collisionneuse@{set\+Collisionneuse}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Collisionneuse()}{setCollisionneuse()}}
+{\footnotesize\ttfamily void Entite\+::set\+Collisionneuse (\begin{DoxyParamCaption}\item[{const bool \&}]{collisionneuse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a4b0ce40a2427f44978728dbae9560fee}\label{class_entite_a4b0ce40a2427f44978728dbae9560fee}} 
+\index{Entite@{Entite}!set\+Detruit@{set\+Detruit}}
+\index{set\+Detruit@{set\+Detruit}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Detruit()}{setDetruit()}}
+{\footnotesize\ttfamily Entite\+::set\+Detruit (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+
+
+
+Fixe si l\textquotesingle{}entité est détruit ou non. 
+
+Fixe si l\textquotesingle{}entité est détruit ou non 
+\begin{DoxyParams}{Parameters}
+{\em bool} & L\textquotesingle{}etat à appliquer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_entite_ac5e59154ac3eb3f131d9ed7f2c84d7a8}\label{class_entite_ac5e59154ac3eb3f131d9ed7f2c84d7a8}} 
+\index{Entite@{Entite}!setequipe\+\_\+@{setequipe\+\_\+}}
+\index{setequipe\+\_\+@{setequipe\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{setequipe\+\_\+()}{setequipe\_()}}
+{\footnotesize\ttfamily void Entite\+::setequipe\+\_\+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}}}]{equipe }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a43a21ff043627fb6737aeb2a4f3e4986}\label{class_entite_a43a21ff043627fb6737aeb2a4f3e4986}} 
+\index{Entite@{Entite}!set\+Innate\+\_\+@{set\+Innate\+\_\+}}
+\index{set\+Innate\+\_\+@{set\+Innate\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Innate\+\_\+()}{setInnate\_()}}
+{\footnotesize\ttfamily void Entite\+::set\+Innate\+\_\+ (\begin{DoxyParamCaption}\item[{const bool \&}]{is\+Innate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_a1bf4d7561c3aa7f60d5af962a5a7e920}\label{class_entite_a1bf4d7561c3aa7f60d5af962a5a7e920}} 
+\index{Entite@{Entite}!set\+Longevite@{set\+Longevite}}
+\index{set\+Longevite@{set\+Longevite}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Longevite()}{setLongevite()}}
+{\footnotesize\ttfamily void Entite\+::set\+Longevite (\begin{DoxyParamCaption}\item[{const sf\+::\+Time \&}]{t\+\_\+longevite }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entite_af36fc425e2043216b8519ab0c42f640b}\label{class_entite_af36fc425e2043216b8519ab0c42f640b}} 
+\index{Entite@{Entite}!set\+Nb\+Positions@{set\+Nb\+Positions}}
+\index{set\+Nb\+Positions@{set\+Nb\+Positions}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Nb\+Positions()}{setNbPositions()}}
+{\footnotesize\ttfamily void Entite\+::set\+Nb\+Positions (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entite_a9c96cb18e7dafa69117d5573ab47de1e}\label{class_entite_a9c96cb18e7dafa69117d5573ab47de1e}} 
+\index{Entite@{Entite}!set\+Origin@{set\+Origin}}
+\index{set\+Origin@{set\+Origin}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Origin()}{setOrigin()}}
+{\footnotesize\ttfamily void Entite\+::set\+Origin (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{origine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entite_aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad}\label{class_entite_aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad}} 
+\index{Entite@{Entite}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}}
+{\footnotesize\ttfamily Entite\+::set\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{pos }\end{DoxyParamCaption})}
+
+
+
+Fixe la position de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. 
+
+Cette fonction change la position de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} appelante avec les coordonnées données en paramètres. Ces coordonnées sont relatives au coin supérieur gauche de la fenêtre. Cette fonction est implémentée à partir de la fonction {\itshape move} afin que chaque élément reste au même endroit par rapport aux autres s\textquotesingle{}il n\textquotesingle{}ont pas la même position initiale. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pos} & Un {\ttfamily sf\+::\+Vector2f} qui contient la nouvelle position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_entite_a8623ac815e34b553098f45696ea8918b}\label{class_entite_a8623ac815e34b553098f45696ea8918b}} 
+\index{Entite@{Entite}!set\+Rotation@{set\+Rotation}}
+\index{set\+Rotation@{set\+Rotation}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Rotation()}{setRotation()}}
+{\footnotesize\ttfamily Entite\+::set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Fixe l\textquotesingle{}orientation de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} appelante. 
+
+Cette fonction change l\textquotesingle{}orientation de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} appelante à l\textquotesingle{}angle passé en paramètres. La valeur de l\textquotesingle{}angle est donnée en degrés. Cette fonction est implémentée en utilisant la fonction rotate pour que les éléments ne soient pa décalés les uns par rapport aux autres s\textquotesingle{}ils ne disposent pas de la même orientation initiale. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em angle} & La nouvelle orientation de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_entite_a665939253829baba965ce3ead0f1739c}\label{class_entite_a665939253829baba965ce3ead0f1739c}} 
+\index{Entite@{Entite}!set\+Scale@{set\+Scale}}
+\index{set\+Scale@{set\+Scale}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Scale()}{setScale()}}
+{\footnotesize\ttfamily Entite\+::set\+Scale (\begin{DoxyParamCaption}\item[{float}]{factor }\end{DoxyParamCaption})}
+
+
+
+Fixe l\textquotesingle{}échelle de L\textquotesingle{}entite. 
+
+Cette fonction permet de fixer l\textquotesingle{}échelle de L\textquotesingle{}entite appelante. Contrairement à la fonction scale, cette fonction fixe l\textquotesingle{}échelle de manière absolue et non relativement au changements d\textquotesingle{}échelle déjà appliqué à l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em factor} & Le facteur d\textquotesingle{}échelle à appliquer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_entite_a8cf9eefe7401a127d7692ca379528050}\label{class_entite_a8cf9eefe7401a127d7692ca379528050}} 
+\index{Entite@{Entite}!set\+Smoke\+Texture@{set\+Smoke\+Texture}}
+\index{set\+Smoke\+Texture@{set\+Smoke\+Texture}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{set\+Smoke\+Texture()}{setSmokeTexture()}}
+{\footnotesize\ttfamily void Entite\+::set\+Smoke\+Texture (\begin{DoxyParamCaption}\item[{const sf\+::\+Texture \&}]{text,  }\item[{sf\+::\+Color}]{couleur = {\ttfamily \{~255,255,255~\}} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_entite_ac5011435e5099909dd34cd1750933b30}\label{class_entite_ac5011435e5099909dd34cd1750933b30}} 
+\index{Entite@{Entite}!collision@{collision}}
+\index{collision@{collision}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{collision}{collision}}
+{\footnotesize\ttfamily Entite\+::collision (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_entite}{Entite}} \&}]{e1,  }\item[{const \mbox{\hyperlink{class_entite}{Entite}} \&}]{e2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Détecte une collision entre deux \mbox{\hyperlink{class_entite}{Entite}}. 
+
+Cette fonction permet de détecter si deux \mbox{\hyperlink{class_entite}{Entite}} sont en collision ou non. Cette fonction prend en compte si les deux \mbox{\hyperlink{class_entite}{Entite}} sont collisionables, si elles sont d\textquotesingle{}équipes différentes, si leur cercles englobants sont en collision et finalement si leur formes de collisions sont en collision 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em e1} & La première \mbox{\hyperlink{class_entite}{Entite}} à tester \\
+\hline
+\mbox{\tt in}  & {\em e2} & La deuxième \mbox{\hyperlink{class_entite}{Entite}} à tester \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un {\ttfamily bool} qui vaut {\itshape true} si les \mbox{\hyperlink{class_entite}{Entite}} sont en collision et {\itshape false} sinon 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_entite_ac8416aa3acec089b4b0daa818d62fea5}\label{class_entite_ac8416aa3acec089b4b0daa818d62fea5}} 
+\index{Entite@{Entite}!actif\+\_\+@{actif\+\_\+}}
+\index{actif\+\_\+@{actif\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{actif\+\_\+}{actif\_}}
+{\footnotesize\ttfamily bool Entite\+::actif\+\_\+ = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Booleen indiquant si la trajectoire a été amorcée. 
+
+\mbox{\Hypertarget{class_entite_aedba9766e8c3a34725a948299b81bdc7}\label{class_entite_aedba9766e8c3a34725a948299b81bdc7}} 
+\index{Entite@{Entite}!aimbot\+\_\+@{aimbot\+\_\+}}
+\index{aimbot\+\_\+@{aimbot\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{aimbot\+\_\+}{aimbot\_}}
+{\footnotesize\ttfamily bool Entite\+::aimbot\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+True si en état visée automatique. 
+
+\mbox{\Hypertarget{class_entite_a014535fad669c3d890a216f9e8049d09}\label{class_entite_a014535fad669c3d890a216f9e8049d09}} 
+\index{Entite@{Entite}!armure\+\_\+@{armure\+\_\+}}
+\index{armure\+\_\+@{armure\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{armure\+\_\+}{armure\_}}
+{\footnotesize\ttfamily float Entite\+::armure\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a09d60cae449cda19266d576c18f20c0a}\label{class_entite_a09d60cae449cda19266d576c18f20c0a}} 
+\index{Entite@{Entite}!armure\+M\+\_\+@{armure\+M\+\_\+}}
+\index{armure\+M\+\_\+@{armure\+M\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{armure\+M\+\_\+}{armureM\_}}
+{\footnotesize\ttfamily float Entite\+::armure\+M\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a824f1b9b1058ed92b8883e84bfe89c0e}\label{class_entite_a824f1b9b1058ed92b8883e84bfe89c0e}} 
+\index{Entite@{Entite}!atk\+\_\+@{atk\+\_\+}}
+\index{atk\+\_\+@{atk\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{atk\+\_\+}{atk\_}}
+{\footnotesize\ttfamily float Entite\+::atk\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a23d24cb3993dc5ddd7dff36b9f94b667}\label{class_entite_a23d24cb3993dc5ddd7dff36b9f94b667}} 
+\index{Entite@{Entite}!atk\+M\+\_\+@{atk\+M\+\_\+}}
+\index{atk\+M\+\_\+@{atk\+M\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{atk\+M\+\_\+}{atkM\_}}
+{\footnotesize\ttfamily float Entite\+::atk\+M\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a933a79044c5ac6ffccd397c134248d44}\label{class_entite_a933a79044c5ac6ffccd397c134248d44}} 
+\index{Entite@{Entite}!bouclier\+\_\+@{bouclier\+\_\+}}
+\index{bouclier\+\_\+@{bouclier\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{bouclier\+\_\+}{bouclier\_}}
+{\footnotesize\ttfamily float Entite\+::bouclier\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_ac6dc4d8af8bd8e9ca7e328d16d405b26}\label{class_entite_ac6dc4d8af8bd8e9ca7e328d16d405b26}} 
+\index{Entite@{Entite}!bouclier\+M\+\_\+@{bouclier\+M\+\_\+}}
+\index{bouclier\+M\+\_\+@{bouclier\+M\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{bouclier\+M\+\_\+}{bouclierM\_}}
+{\footnotesize\ttfamily float Entite\+::bouclier\+M\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a5b6c62e4dc54221a84ce4dc824fdb2da}\label{class_entite_a5b6c62e4dc54221a84ce4dc824fdb2da}} 
+\index{Entite@{Entite}!cercle\+Englobant\+\_\+@{cercle\+Englobant\+\_\+}}
+\index{cercle\+Englobant\+\_\+@{cercle\+Englobant\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{cercle\+Englobant\+\_\+}{cercleEnglobant\_}}
+{\footnotesize\ttfamily sf\+::\+Circle\+Shape Entite\+::cercle\+Englobant\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temps après lequel l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} est détruite. 
+
+Cercle Englobant de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} \mbox{\Hypertarget{class_entite_aec0eb3d4f1e99db7ae737df33310028c}\label{class_entite_aec0eb3d4f1e99db7ae737df33310028c}} 
+\index{Entite@{Entite}!clk\+\_\+\+Invincibilite@{clk\+\_\+\+Invincibilite}}
+\index{clk\+\_\+\+Invincibilite@{clk\+\_\+\+Invincibilite}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{clk\+\_\+\+Invincibilite}{clk\_Invincibilite}}
+{\footnotesize\ttfamily sf\+::\+Clock Entite\+::clk\+\_\+\+Invincibilite\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Clock qui gère l\textquotesingle{}état invincible. 
+
+\mbox{\Hypertarget{class_entite_a2a904f5930310d0b93e527fed9340198}\label{class_entite_a2a904f5930310d0b93e527fed9340198}} 
+\index{Entite@{Entite}!collisionnable\+\_\+@{collisionnable\+\_\+}}
+\index{collisionnable\+\_\+@{collisionnable\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{collisionnable\+\_\+}{collisionnable\_}}
+{\footnotesize\ttfamily bool Entite\+::collisionnable\+\_\+ = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Booléen vrai si l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}} est collisionnable. 
+
+\mbox{\Hypertarget{class_entite_a0a347fd96077f1f331ed17247840df06}\label{class_entite_a0a347fd96077f1f331ed17247840df06}} 
+\index{Entite@{Entite}!collisionneuse\+\_\+@{collisionneuse\+\_\+}}
+\index{collisionneuse\+\_\+@{collisionneuse\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{collisionneuse\+\_\+}{collisionneuse\_}}
+{\footnotesize\ttfamily bool Entite\+::collisionneuse\+\_\+ = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_aabc79bd2426d8e68c7ef7da9e95c4542}\label{class_entite_aabc79bd2426d8e68c7ef7da9e95c4542}} 
+\index{Entite@{Entite}!def\+\_\+@{def\+\_\+}}
+\index{def\+\_\+@{def\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{def\+\_\+}{def\_}}
+{\footnotesize\ttfamily float Entite\+::def\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_af673a89a24b35148e2e53285e3b84bd0}\label{class_entite_af673a89a24b35148e2e53285e3b84bd0}} 
+\index{Entite@{Entite}!def\+M\+\_\+@{def\+M\+\_\+}}
+\index{def\+M\+\_\+@{def\+M\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{def\+M\+\_\+}{defM\_}}
+{\footnotesize\ttfamily float Entite\+::def\+M\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a7b24bf48cb4546c953feb2c0576fdd02}\label{class_entite_a7b24bf48cb4546c953feb2c0576fdd02}} 
+\index{Entite@{Entite}!degats\+Collision\+\_\+@{degats\+Collision\+\_\+}}
+\index{degats\+Collision\+\_\+@{degats\+Collision\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{degats\+Collision\+\_\+}{degatsCollision\_}}
+{\footnotesize\ttfamily float Entite\+::degats\+Collision\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a6a9a0f0446b254c811928b43d16da819}\label{class_entite_a6a9a0f0446b254c811928b43d16da819}} 
+\index{Entite@{Entite}!degats\+Collision\+M\+\_\+@{degats\+Collision\+M\+\_\+}}
+\index{degats\+Collision\+M\+\_\+@{degats\+Collision\+M\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{degats\+Collision\+M\+\_\+}{degatsCollisionM\_}}
+{\footnotesize\ttfamily float Entite\+::degats\+Collision\+M\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a2d98d6fac9fb85da156fcda84fcec3ac}\label{class_entite_a2d98d6fac9fb85da156fcda84fcec3ac}} 
+\index{Entite@{Entite}!detruit\+\_\+@{detruit\+\_\+}}
+\index{detruit\+\_\+@{detruit\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{detruit\+\_\+}{detruit\_}}
+{\footnotesize\ttfamily bool Entite\+::detruit\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+true lorsque que le vaisseau est détruit 
+
+\mbox{\Hypertarget{class_entite_a45a5a3f7a0f4690aa0d075ba2af172a3}\label{class_entite_a45a5a3f7a0f4690aa0d075ba2af172a3}} 
+\index{Entite@{Entite}!ecran\+\_\+@{ecran\+\_\+}}
+\index{ecran\+\_\+@{ecran\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{ecran\+\_\+}{ecran\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ecran}{Ecran}}\& Entite\+::ecran\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a5fe5eca94bde526873a68163a94011ef}\label{class_entite_a5fe5eca94bde526873a68163a94011ef}} 
+\index{Entite@{Entite}!equipe\+\_\+@{equipe\+\_\+}}
+\index{equipe\+\_\+@{equipe\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{equipe\+\_\+}{equipe\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}} Entite\+::equipe\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Identifiant de l\textquotesingle{}équipe de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. 
+
+\mbox{\Hypertarget{class_entite_aa6bbda9a40f701f273c344406a6f5122}\label{class_entite_aa6bbda9a40f701f273c344406a6f5122}} 
+\index{Entite@{Entite}!forme\+\_\+@{forme\+\_\+}}
+\index{forme\+\_\+@{forme\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{forme\+\_\+}{forme\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$sf\+::\+Shape$>$ $>$ Entite\+::forme\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Forme de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. 
+
+\mbox{\Hypertarget{class_entite_af590dd6815cafa0748f1adc4da1f3cc2}\label{class_entite_af590dd6815cafa0748f1adc4da1f3cc2}} 
+\index{Entite@{Entite}!innate\+\_\+@{innate\+\_\+}}
+\index{innate\+\_\+@{innate\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{innate\+\_\+}{innate\_}}
+{\footnotesize\ttfamily bool Entite\+::innate\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+true si doit rester dans l\textquotesingle{}écran 
+
+\mbox{\Hypertarget{class_entite_a9347adaafb6151a497e4f0feaab14151}\label{class_entite_a9347adaafb6151a497e4f0feaab14151}} 
+\index{Entite@{Entite}!invincibilable\+\_\+@{invincibilable\+\_\+}}
+\index{invincibilable\+\_\+@{invincibilable\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{invincibilable\+\_\+}{invincibilable\_}}
+{\footnotesize\ttfamily bool Entite\+::invincibilable\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+true si l\textquotesingle{}entité peut devenir invincible 
+
+\mbox{\Hypertarget{class_entite_a3a39c039df38b442068bc87afe397e1a}\label{class_entite_a3a39c039df38b442068bc87afe397e1a}} 
+\index{Entite@{Entite}!invincible\+\_\+@{invincible\+\_\+}}
+\index{invincible\+\_\+@{invincible\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{invincible\+\_\+}{invincible\_}}
+{\footnotesize\ttfamily bool Entite\+::invincible\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+en état invincible 
+
+\mbox{\Hypertarget{class_entite_a39e55c3ccf10d8519e80c7b2a767715a}\label{class_entite_a39e55c3ccf10d8519e80c7b2a767715a}} 
+\index{Entite@{Entite}!last\+\_\+delta\+\_\+@{last\+\_\+delta\+\_\+}}
+\index{last\+\_\+delta\+\_\+@{last\+\_\+delta\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{last\+\_\+delta\+\_\+}{last\_delta\_}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Entite\+::last\+\_\+delta\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+dernier déplacement en paramètre de move effectué 
+
+\mbox{\Hypertarget{class_entite_a737d76cd7a3de46a5d72231ef974f8d1}\label{class_entite_a737d76cd7a3de46a5d72231ef974f8d1}} 
+\index{Entite@{Entite}!nb\+Positions\+\_\+@{nb\+Positions\+\_\+}}
+\index{nb\+Positions\+\_\+@{nb\+Positions\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{nb\+Positions\+\_\+}{nbPositions\_}}
+{\footnotesize\ttfamily size\+\_\+t Entite\+::nb\+Positions\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+nombre de positions précédentes à conserver 
+
+\mbox{\Hypertarget{class_entite_ac3986b76d5eb35e9c9ec1f51bf516987}\label{class_entite_ac3986b76d5eb35e9c9ec1f51bf516987}} 
+\index{Entite@{Entite}!origine\+\_\+@{origine\+\_\+}}
+\index{origine\+\_\+@{origine\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{origine\+\_\+}{origine\_}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Entite\+::origine\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Position de l\textquotesingle{}origine. 
+
+\mbox{\Hypertarget{class_entite_abbd554c4f122159a73cb113cc8de3860}\label{class_entite_abbd554c4f122159a73cb113cc8de3860}} 
+\index{Entite@{Entite}!position\+\_\+@{position\+\_\+}}
+\index{position\+\_\+@{position\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{position\+\_\+}{position\_}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Entite\+::position\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Position actuelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. 
+
+\mbox{\Hypertarget{class_entite_a917f4b325c90fea530786637935eb1b5}\label{class_entite_a917f4b325c90fea530786637935eb1b5}} 
+\index{Entite@{Entite}!positions\+Prev\+\_\+@{positions\+Prev\+\_\+}}
+\index{positions\+Prev\+\_\+@{positions\+Prev\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{positions\+Prev\+\_\+}{positionsPrev\_}}
+{\footnotesize\ttfamily std\+::deque$<$sf\+::\+Vector2f$>$ Entite\+::positions\+Prev\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Positions précédentes. 
+
+\mbox{\Hypertarget{class_entite_a1a1eb2e3f6f1a3e1b496797931796549}\label{class_entite_a1a1eb2e3f6f1a3e1b496797931796549}} 
+\index{Entite@{Entite}!precision\+\_\+@{precision\+\_\+}}
+\index{precision\+\_\+@{precision\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{precision\+\_\+}{precision\_}}
+{\footnotesize\ttfamily float Entite\+::precision\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_ae04ca6e434ade85eacd22657d1ac0aa9}\label{class_entite_ae04ca6e434ade85eacd22657d1ac0aa9}} 
+\index{Entite@{Entite}!precision\+M\+\_\+@{precision\+M\+\_\+}}
+\index{precision\+M\+\_\+@{precision\+M\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{precision\+M\+\_\+}{precisionM\_}}
+{\footnotesize\ttfamily float Entite\+::precision\+M\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a85b09d98caf443622a546345db8828b8}\label{class_entite_a85b09d98caf443622a546345db8828b8}} 
+\index{Entite@{Entite}!pv\+\_\+@{pv\+\_\+}}
+\index{pv\+\_\+@{pv\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{pv\+\_\+}{pv\_}}
+{\footnotesize\ttfamily float Entite\+::pv\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a862ad5eccfc6c925948d41aaf2142718}\label{class_entite_a862ad5eccfc6c925948d41aaf2142718}} 
+\index{Entite@{Entite}!pv\+M\+\_\+@{pv\+M\+\_\+}}
+\index{pv\+M\+\_\+@{pv\+M\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{pv\+M\+\_\+}{pvM\_}}
+{\footnotesize\ttfamily float Entite\+::pv\+M\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a8a2bbe199842916db0410c3ea6b4b080}\label{class_entite_a8a2bbe199842916db0410c3ea6b4b080}} 
+\index{Entite@{Entite}!regen\+Armure\+\_\+@{regen\+Armure\+\_\+}}
+\index{regen\+Armure\+\_\+@{regen\+Armure\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{regen\+Armure\+\_\+}{regenArmure\_}}
+{\footnotesize\ttfamily float Entite\+::regen\+Armure\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a3ef253a5134f4fa61be2fb6bca812855}\label{class_entite_a3ef253a5134f4fa61be2fb6bca812855}} 
+\index{Entite@{Entite}!regen\+Armure\+M\+\_\+@{regen\+Armure\+M\+\_\+}}
+\index{regen\+Armure\+M\+\_\+@{regen\+Armure\+M\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{regen\+Armure\+M\+\_\+}{regenArmureM\_}}
+{\footnotesize\ttfamily float Entite\+::regen\+Armure\+M\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a8eb7ea99af698268311f42338ebca836}\label{class_entite_a8eb7ea99af698268311f42338ebca836}} 
+\index{Entite@{Entite}!regen\+Bouclier\+\_\+@{regen\+Bouclier\+\_\+}}
+\index{regen\+Bouclier\+\_\+@{regen\+Bouclier\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{regen\+Bouclier\+\_\+}{regenBouclier\_}}
+{\footnotesize\ttfamily float Entite\+::regen\+Bouclier\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a715631221f737aa571a6981a10e5c452}\label{class_entite_a715631221f737aa571a6981a10e5c452}} 
+\index{Entite@{Entite}!regen\+Bouclier\+M\+\_\+@{regen\+Bouclier\+M\+\_\+}}
+\index{regen\+Bouclier\+M\+\_\+@{regen\+Bouclier\+M\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{regen\+Bouclier\+M\+\_\+}{regenBouclierM\_}}
+{\footnotesize\ttfamily float Entite\+::regen\+Bouclier\+M\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a7c2872d20a5f134b5cfdf15e26e376e9}\label{class_entite_a7c2872d20a5f134b5cfdf15e26e376e9}} 
+\index{Entite@{Entite}!regen\+Pv\+\_\+@{regen\+Pv\+\_\+}}
+\index{regen\+Pv\+\_\+@{regen\+Pv\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{regen\+Pv\+\_\+}{regenPv\_}}
+{\footnotesize\ttfamily float Entite\+::regen\+Pv\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a66b44d5c567afa0434c26549c2727307}\label{class_entite_a66b44d5c567afa0434c26549c2727307}} 
+\index{Entite@{Entite}!regen\+Pv\+M\+\_\+@{regen\+Pv\+M\+\_\+}}
+\index{regen\+Pv\+M\+\_\+@{regen\+Pv\+M\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{regen\+Pv\+M\+\_\+}{regenPvM\_}}
+{\footnotesize\ttfamily float Entite\+::regen\+Pv\+M\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a8b1e07858f2f6090b19765d9a7f723fe}\label{class_entite_a8b1e07858f2f6090b19765d9a7f723fe}} 
+\index{Entite@{Entite}!rotation\+\_\+@{rotation\+\_\+}}
+\index{rotation\+\_\+@{rotation\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{rotation\+\_\+}{rotation\_}}
+{\footnotesize\ttfamily float Entite\+::rotation\+\_\+ = \mbox{\hyperlink{_collision_8cpp_a952eac791b596a61bba0a133a3bb439f}{PI}}/2.\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Orientation actuelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. 
+
+\mbox{\Hypertarget{class_entite_a50e0f8c1188d9833432c55c7f7d2aa0f}\label{class_entite_a50e0f8c1188d9833432c55c7f7d2aa0f}} 
+\index{Entite@{Entite}!scale\+\_\+@{scale\+\_\+}}
+\index{scale\+\_\+@{scale\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{scale\+\_\+}{scale\_}}
+{\footnotesize\ttfamily float Entite\+::scale\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Échelle actuelle de l\textquotesingle{}\mbox{\hyperlink{class_entite}{Entite}}. 
+
+\mbox{\Hypertarget{class_entite_ad2082af5de01c6c55e74c7dcbfffee0b}\label{class_entite_ad2082af5de01c6c55e74c7dcbfffee0b}} 
+\index{Entite@{Entite}!smokes\+\_\+@{smokes\+\_\+}}
+\index{smokes\+\_\+@{smokes\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{smokes\+\_\+}{smokes\_}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+Sprite$>$ Entite\+::smokes\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sprite à afficher sur la trainée du vaisseau. 
+
+\mbox{\Hypertarget{class_entite_af5c5fcbcde3d33c2436b1d289cff125e}\label{class_entite_af5c5fcbcde3d33c2436b1d289cff125e}} 
+\index{Entite@{Entite}!sounds\+\_\+@{sounds\+\_\+}}
+\index{sounds\+\_\+@{sounds\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{sounds\+\_\+}{sounds\_}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+Sound$>$ Entite\+::sounds\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a0f910cbb084753ee6ff64f102bc3e26c}\label{class_entite_a0f910cbb084753ee6ff64f102bc3e26c}} 
+\index{Entite@{Entite}!sprites\+\_\+@{sprites\+\_\+}}
+\index{sprites\+\_\+@{sprites\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{sprites\+\_\+}{sprites\_}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+Sprite$>$ Entite\+::sprites\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vecteur de sprites pour en avoir plusieurs. 
+
+\mbox{\Hypertarget{class_entite_ae0006c0f3415e59ad8fd69385c8c5d03}\label{class_entite_ae0006c0f3415e59ad8fd69385c8c5d03}} 
+\index{Entite@{Entite}!t\+\_\+age\+\_\+@{t\+\_\+age\+\_\+}}
+\index{t\+\_\+age\+\_\+@{t\+\_\+age\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{t\+\_\+age\+\_\+}{t\_age\_}}
+{\footnotesize\ttfamily sf\+::\+Time Entite\+::t\+\_\+age\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_a05cf4dbc79033259ac661a6a114cdb12}\label{class_entite_a05cf4dbc79033259ac661a6a114cdb12}} 
+\index{Entite@{Entite}!t\+\_\+\+Invincibilite\+\_\+@{t\+\_\+\+Invincibilite\+\_\+}}
+\index{t\+\_\+\+Invincibilite\+\_\+@{t\+\_\+\+Invincibilite\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{t\+\_\+\+Invincibilite\+\_\+}{t\_Invincibilite\_}}
+{\footnotesize\ttfamily const sf\+::\+Time Entite\+::t\+\_\+\+Invincibilite\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temps d\textquotesingle{}invincibilité total en ms. 
+
+\mbox{\Hypertarget{class_entite_a79f856f9363a2e554b780d720a4164a0}\label{class_entite_a79f856f9363a2e554b780d720a4164a0}} 
+\index{Entite@{Entite}!t\+\_\+longevite\+\_\+@{t\+\_\+longevite\+\_\+}}
+\index{t\+\_\+longevite\+\_\+@{t\+\_\+longevite\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{t\+\_\+longevite\+\_\+}{t\_longevite\_}}
+{\footnotesize\ttfamily sf\+::\+Time Entite\+::t\+\_\+longevite\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temps écoulé depuis la création (temps de vie) 
+
+\mbox{\Hypertarget{class_entite_aaacb36948d7853e03a7f9a42aa6ad2d5}\label{class_entite_aaacb36948d7853e03a7f9a42aa6ad2d5}} 
+\index{Entite@{Entite}!vit\+\_\+@{vit\+\_\+}}
+\index{vit\+\_\+@{vit\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{vit\+\_\+}{vit\_}}
+{\footnotesize\ttfamily float Entite\+::vit\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entite_ac5f9e68aa96316c6871e1980766977a9}\label{class_entite_ac5f9e68aa96316c6871e1980766977a9}} 
+\index{Entite@{Entite}!vit\+M\+\_\+@{vit\+M\+\_\+}}
+\index{vit\+M\+\_\+@{vit\+M\+\_\+}!Entite@{Entite}}
+\subsubsection{\texorpdfstring{vit\+M\+\_\+}{vitM\_}}
+{\footnotesize\ttfamily float Entite\+::vit\+M\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_entite_8h}{Entite.\+h}}\item 
+src/\mbox{\hyperlink{_entite_8cpp}{Entite.\+cpp}}\end{DoxyCompactItemize}

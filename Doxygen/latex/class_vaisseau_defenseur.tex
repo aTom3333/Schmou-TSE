@@ -1,0 +1,117 @@
+\hypertarget{class_vaisseau_defenseur}{}\section{Vaisseau\+Defenseur Class Reference}
+\label{class_vaisseau_defenseur}\index{Vaisseau\+Defenseur@{Vaisseau\+Defenseur}}
+
+
+{\ttfamily \#include $<$Vaisseau\+Defenseur.\+h$>$}
+
+Inheritance diagram for Vaisseau\+Defenseur\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_vaisseau_defenseur}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vaisseau_defenseur_a19c543d8b04bdc0bb1d1c349bd3f1b99}{Vaisseau\+Defenseur}} (\mbox{\hyperlink{class_ecran}{Ecran}} \&ecran, float x, float y, \mbox{\hyperlink{def__type_8h_ad123ed7c93f42c8dd68e4af28b16b639}{vaisseau\+\_\+container}} \&vaisseaux, \mbox{\hyperlink{_trajectoire_8h_afa7f6e8323d7ee755d93cd1f6019dd95}{Trajectoire}} traj, float param1, float param2, float param3=0, float param4=0)
+\begin{DoxyCompactList}\small\item\em Contructeur. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vaisseau_defenseur_afb1098f176694c537f9a6c31da42d165}{$\sim$\+Vaisseau\+Defenseur}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vaisseau_defenseur_a9d8301faaaebc09dd5e807e8ebe829ae}{gestion}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&proj\+\_\+cont, \mbox{\hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input}} \&input) override
+\begin{DoxyCompactList}\small\item\em Gère le comportement du vaisseau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vaisseau_defenseur_aeaaaa161533c6aa07b627172d8657b3a}{destruction}} () override
+\begin{DoxyCompactList}\small\item\em Procedure a effectuer lorsque le vaisseau est détruit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_vaisseau_defenseur_a19c543d8b04bdc0bb1d1c349bd3f1b99}\label{class_vaisseau_defenseur_a19c543d8b04bdc0bb1d1c349bd3f1b99}} 
+\index{Vaisseau\+Defenseur@{Vaisseau\+Defenseur}!Vaisseau\+Defenseur@{Vaisseau\+Defenseur}}
+\index{Vaisseau\+Defenseur@{Vaisseau\+Defenseur}!Vaisseau\+Defenseur@{Vaisseau\+Defenseur}}
+\subsubsection{\texorpdfstring{Vaisseau\+Defenseur()}{VaisseauDefenseur()}}
+{\footnotesize\ttfamily Vaisseau\+Defenseur\+::\+Vaisseau\+Defenseur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ecran}{Ecran}} \&}]{ecran,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{\mbox{\hyperlink{def__type_8h_ad123ed7c93f42c8dd68e4af28b16b639}{vaisseau\+\_\+container}} \&}]{vaisseaux,  }\item[{\mbox{\hyperlink{_trajectoire_8h_afa7f6e8323d7ee755d93cd1f6019dd95}{Trajectoire}}}]{traj,  }\item[{float}]{param1,  }\item[{float}]{param2,  }\item[{float}]{param3 = {\ttfamily 0},  }\item[{float}]{param4 = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Contructeur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Abscisse de la position de départ \\
+\hline
+{\em y} & Ordonnée de la position de départ \\
+\hline
+{\em vaisseaux} & Vecteur de tout les vaisseaux \\
+\hline
+{\em traj} & Trajectoire voulue (Linéaire, parabolique ou sinusoidale) \\
+\hline
+{\em param1} & Lineaire \+: Sens Parabolique \+: Sens Sinusoidale \+: Sens (1/-\/1) \\
+\hline
+{\em param2} & Lineaire \+: Pente Parabolique \+: Ordonnée de l\textquotesingle{}extremum Sinusoidale \+: Période (spatiale) \\
+\hline
+{\em param3} & Lineaire \+: Inutilisé Parabolique \+: Abscisse de l\textquotesingle{}extremum Sinusoidale \+: Amplitude \\
+\hline
+{\em param4} & Lineaire \+: Inutilisé Parabolique \+: Inutilisé Sinusoidale \+: Pente\\
+\hline
+\end{DoxyParams}
+Initialise le vaisseau à position et à la trajectoires désirées Equations si le vaisseau est en fonction du temps écoulé depuis la création\+:
+\begin{DoxyItemize}
+\item Lineraire \+: x = x0 + sens$\ast$v$\ast$t y = pente$\ast$(x -\/ x0) + y0
+\item Parabolique \+: x = x0 + sens$\ast$v$\ast$t (faux mais approximation si la parabole est assez large) y = (y0 -\/ ordonnee)/(x0 -\/ abscisse)$^\wedge$2 $\ast$ (x -\/ abscisse)$^\wedge$2 + ordonnee
+\item Sinusoidale \+: x = x0 + sens$\ast$v$\ast$t (faux mais approximation si la différence de temps est très petite devant la période) y = pente $\ast$ (x -\/ x0) + y0 + amplitude $\ast$ sin(2$\ast$pi/période $\ast$ x) 
+\end{DoxyItemize}\mbox{\Hypertarget{class_vaisseau_defenseur_afb1098f176694c537f9a6c31da42d165}\label{class_vaisseau_defenseur_afb1098f176694c537f9a6c31da42d165}} 
+\index{Vaisseau\+Defenseur@{Vaisseau\+Defenseur}!````~Vaisseau\+Defenseur@{$\sim$\+Vaisseau\+Defenseur}}
+\index{````~Vaisseau\+Defenseur@{$\sim$\+Vaisseau\+Defenseur}!Vaisseau\+Defenseur@{Vaisseau\+Defenseur}}
+\subsubsection{\texorpdfstring{$\sim$\+Vaisseau\+Defenseur()}{~VaisseauDefenseur()}}
+{\footnotesize\ttfamily Vaisseau\+Defenseur\+::$\sim$\+Vaisseau\+Defenseur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructeur. 
+
+Vide 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vaisseau_defenseur_aeaaaa161533c6aa07b627172d8657b3a}\label{class_vaisseau_defenseur_aeaaaa161533c6aa07b627172d8657b3a}} 
+\index{Vaisseau\+Defenseur@{Vaisseau\+Defenseur}!destruction@{destruction}}
+\index{destruction@{destruction}!Vaisseau\+Defenseur@{Vaisseau\+Defenseur}}
+\subsubsection{\texorpdfstring{destruction()}{destruction()}}
+{\footnotesize\ttfamily Vaisseau\+Defenseur\+::destruction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Procedure a effectuer lorsque le vaisseau est détruit. 
+
+Détruit l\textquotesingle{}annexe bouclier 
+
+Implements \mbox{\hyperlink{class_vaisseau_a6d7506acb12c0367989066c899ec7949}{Vaisseau}}.
+
+\mbox{\Hypertarget{class_vaisseau_defenseur_a9d8301faaaebc09dd5e807e8ebe829ae}\label{class_vaisseau_defenseur_a9d8301faaaebc09dd5e807e8ebe829ae}} 
+\index{Vaisseau\+Defenseur@{Vaisseau\+Defenseur}!gestion@{gestion}}
+\index{gestion@{gestion}!Vaisseau\+Defenseur@{Vaisseau\+Defenseur}}
+\subsubsection{\texorpdfstring{gestion()}{gestion()}}
+{\footnotesize\ttfamily Vaisseau\+Defenseur\+::gestion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{proj\+\_\+cont,  }\item[{\mbox{\hyperlink{_input_8h_a5588d60d674991c719a8df848313e966}{Input}} \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gère le comportement du vaisseau. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Fenetre S\+F\+ML où le vaisseau sera affiché \\
+\hline
+{\em temps\+Ecoule} & Temps écoulé depuis le dernier appel \\
+\hline
+{\em input} & Classe Input donnant accés aux entrée\\
+\hline
+\end{DoxyParams}
+Gère le déplacement et l\textquotesingle{}affichage du vaisseau 
+
+Implements \mbox{\hyperlink{class_vaisseau_aece43c3acf0e125226a03209f66c5eb4}{Vaisseau}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Vaisseau/\mbox{\hyperlink{_vaisseau_defenseur_8h}{Vaisseau\+Defenseur.\+h}}\item 
+src/\+Vaisseau/\mbox{\hyperlink{_vaisseau_defenseur_8cpp}{Vaisseau\+Defenseur.\+cpp}}\end{DoxyCompactItemize}

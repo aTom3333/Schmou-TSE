@@ -1,0 +1,114 @@
+\hypertarget{class_projectile}{}\section{Projectile Class Reference}
+\label{class_projectile}\index{Projectile@{Projectile}}
+
+
+Classe abstraite qui définit la structure générale d\textquotesingle{}un projectile, à faire hériter pour chaque projectile.  
+
+
+
+
+{\ttfamily \#include $<$Projectile.\+h$>$}
+
+Inheritance diagram for Projectile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.823529cm]{class_projectile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_projectile_a34d60aa7b97b30b0fc29d8a2a05db4b5}{Projectile}} (\mbox{\hyperlink{class_ecran}{Ecran}} \&ecran)
+\item 
+virtual void \mbox{\hyperlink{class_projectile_ad8fae955389ff8944830e9d80e0f1ce1}{gestion}} ()=0
+\item 
+void \mbox{\hyperlink{class_projectile_a092690ef6f0f9284e05b775f26833c2d}{destruction}} () override
+\begin{DoxyCompactList}\small\item\em Procedure a effectuer lorsque le vaisseau est détruit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_a89eac25ede6c308ef4bd9b1e676f7c6b}{gestion\+\_\+aimbot}} ()
+\begin{DoxyCompactList}\small\item\em Gestion de projectile en visée auto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ \mbox{\hyperlink{class_projectile_adb4bd9a7bb88e528d517236e887a1639}{lanceur\+\_\+}}
+\begin{DoxyCompactList}\small\item\em On garde un lien vers le lanceur à travers un weak\+\_\+ptr pour éviter les cycles. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_projectile_ae179f4250f0afb1f754e62176f27345c}{aimbot\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em True si en état visée automatique. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe abstraite qui définit la structure générale d\textquotesingle{}un projectile, à faire hériter pour chaque projectile. 
+
+Classe abstraite mère de chaque projectile en tant qu\textquotesingle{}entité propre. Une capacité peut créer plusieurs projectiles ; elle leur donne des méthodes qui les font exister dans la boucle de jeu \+: déplacement, test de collison, dégats... 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_projectile_a34d60aa7b97b30b0fc29d8a2a05db4b5}\label{class_projectile_a34d60aa7b97b30b0fc29d8a2a05db4b5}} 
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{Projectile()}{Projectile()}}
+{\footnotesize\ttfamily Projectile\+::\+Projectile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ecran}{Ecran}} \&}]{ecran }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_projectile_a092690ef6f0f9284e05b775f26833c2d}\label{class_projectile_a092690ef6f0f9284e05b775f26833c2d}} 
+\index{Projectile@{Projectile}!destruction@{destruction}}
+\index{destruction@{destruction}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{destruction()}{destruction()}}
+{\footnotesize\ttfamily Projectile\+::destruction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Procedure a effectuer lorsque le vaisseau est détruit. 
+
+Détruit l\textquotesingle{}entité 
+
+Implements \mbox{\hyperlink{class_entite_af5c424f69b2c880ae9c12786abd28592}{Entite}}.
+
+\mbox{\Hypertarget{class_projectile_ad8fae955389ff8944830e9d80e0f1ce1}\label{class_projectile_ad8fae955389ff8944830e9d80e0f1ce1}} 
+\index{Projectile@{Projectile}!gestion@{gestion}}
+\index{gestion@{gestion}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{gestion()}{gestion()}}
+{\footnotesize\ttfamily virtual void Projectile\+::gestion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_proj_piou_aa25660500d188f1085f8289db91a6170}{Proj\+Piou}}, \mbox{\hyperlink{class_proj_boing_ac0d11abb68efb90dba3529d2bf1ce4f2}{Proj\+Boing}}, \mbox{\hyperlink{class_proj_bismillah_a5a037871dddbe729c926e7d9eb69b026}{Proj\+Bismillah}}, \mbox{\hyperlink{class_proj_bouclier_rond_a13656b7dbcd9cac9a5df9baeab430103}{Proj\+Bouclier\+Rond}}, and \mbox{\hyperlink{class_proj_missile_a90bee0454d77d2846431f2c8704e2d11}{Proj\+Missile}}.
+
+\mbox{\Hypertarget{class_projectile_a89eac25ede6c308ef4bd9b1e676f7c6b}\label{class_projectile_a89eac25ede6c308ef4bd9b1e676f7c6b}} 
+\index{Projectile@{Projectile}!gestion\+\_\+aimbot@{gestion\+\_\+aimbot}}
+\index{gestion\+\_\+aimbot@{gestion\+\_\+aimbot}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{gestion\+\_\+aimbot()}{gestion\_aimbot()}}
+{\footnotesize\ttfamily Projectile\+::gestion\+\_\+aimbot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gestion de projectile en visée auto. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_projectile_ae179f4250f0afb1f754e62176f27345c}\label{class_projectile_ae179f4250f0afb1f754e62176f27345c}} 
+\index{Projectile@{Projectile}!aimbot\+\_\+@{aimbot\+\_\+}}
+\index{aimbot\+\_\+@{aimbot\+\_\+}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{aimbot\+\_\+}{aimbot\_}}
+{\footnotesize\ttfamily bool Projectile\+::aimbot\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+True si en état visée automatique. 
+
+\mbox{\Hypertarget{class_projectile_adb4bd9a7bb88e528d517236e887a1639}\label{class_projectile_adb4bd9a7bb88e528d517236e887a1639}} 
+\index{Projectile@{Projectile}!lanceur\+\_\+@{lanceur\+\_\+}}
+\index{lanceur\+\_\+@{lanceur\+\_\+}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{lanceur\+\_\+}{lanceur\_}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{class_entite}{Entite}}$>$ Projectile\+::lanceur\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+On garde un lien vers le lanceur à travers un weak\+\_\+ptr pour éviter les cycles. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Projectiles/\mbox{\hyperlink{_projectile_8h}{Projectile.\+h}}\end{DoxyCompactItemize}

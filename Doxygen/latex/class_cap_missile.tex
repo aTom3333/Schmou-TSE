@@ -1,0 +1,92 @@
+\hypertarget{class_cap_missile}{}\section{Cap\+Missile Class Reference}
+\label{class_cap_missile}\index{Cap\+Missile@{Cap\+Missile}}
+
+
+Classe Capacité de base.  
+
+
+
+
+{\ttfamily \#include $<$Cap\+Missile.\+h$>$}
+
+Inheritance diagram for Cap\+Missile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_cap_missile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cap_missile_a6cb9e154556aab9d8a7f41bd7d7cfdbc}{Cap\+Missile}} (\mbox{\hyperlink{class_ecran}{Ecran}} \&ecran, const std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ \&lanceur)
+\item 
+void \mbox{\hyperlink{class_cap_missile_a8972a92894ca15903563ec41bc63c6ef}{utiliser}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Active la capacite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cap_missile_ae61423876aa92fc8e2555b1b856a7443}{actualiser}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Active les effets de la capacité \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Classe Capacité de base. 
+
+Capacité qui créé 1 \mbox{\hyperlink{class_proj_missile}{Proj\+Missile}} à la position du lanceur Nom \+: Missile Cooldown \+: 5000 ms 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cap_missile_a6cb9e154556aab9d8a7f41bd7d7cfdbc}\label{class_cap_missile_a6cb9e154556aab9d8a7f41bd7d7cfdbc}} 
+\index{Cap\+Missile@{Cap\+Missile}!Cap\+Missile@{Cap\+Missile}}
+\index{Cap\+Missile@{Cap\+Missile}!Cap\+Missile@{Cap\+Missile}}
+\subsubsection{\texorpdfstring{Cap\+Missile()}{CapMissile()}}
+{\footnotesize\ttfamily Cap\+Missile\+::\+Cap\+Missile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ecran}{Ecran}} \&}]{ecran,  }\item[{const std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ \&}]{lanceur }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cap_missile_ae61423876aa92fc8e2555b1b856a7443}\label{class_cap_missile_ae61423876aa92fc8e2555b1b856a7443}} 
+\index{Cap\+Missile@{Cap\+Missile}!actualiser@{actualiser}}
+\index{actualiser@{actualiser}!Cap\+Missile@{Cap\+Missile}}
+\subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
+{\footnotesize\ttfamily Cap\+Missile\+::actualiser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Active les effets de la capacité 
+
+Créer 1 \mbox{\hyperlink{class_proj_piou}{Proj\+Piou}} à l\textquotesingle{}activation Actualise le timer 
+\begin{DoxyParams}{Parameters}
+{\em projectile} & Vecteur de tout les projectiles présent à l\textquotesingle{}écran \\
+\hline
+{\em vaisseau} & \mbox{\hyperlink{class_vaisseau}{Vaisseau}} qui a activé la compétence \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_capacite_a85355aeb1d4acc049ed97da177acbd5f}{Capacite}}.
+
+\mbox{\Hypertarget{class_cap_missile_a8972a92894ca15903563ec41bc63c6ef}\label{class_cap_missile_a8972a92894ca15903563ec41bc63c6ef}} 
+\index{Cap\+Missile@{Cap\+Missile}!utiliser@{utiliser}}
+\index{utiliser@{utiliser}!Cap\+Missile@{Cap\+Missile}}
+\subsubsection{\texorpdfstring{utiliser()}{utiliser()}}
+{\footnotesize\ttfamily Cap\+Missile\+::utiliser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Active la capacite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Abscisse de la position où la capacite est utilisée \\
+\hline
+{\em y} & Ordonnée de la position où la capacite est utilisée\\
+\hline
+\end{DoxyParams}
+Fonction Initialise la position de départ et le timer 
+
+Implements \mbox{\hyperlink{class_capacite_abac1434e2ac3ecc9e5afdafd9a7a4bed}{Capacite}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Capacites/\mbox{\hyperlink{_cap_missile_8h}{Cap\+Missile.\+h}}\item 
+src/\+Capacites/\mbox{\hyperlink{_cap_missile_8cpp}{Cap\+Missile.\+cpp}}\end{DoxyCompactItemize}

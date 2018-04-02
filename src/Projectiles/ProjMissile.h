@@ -34,7 +34,7 @@ class ProjMissile : public Projectile
 		void agit(Entite &e);
 	private:
 		float coef_acceleration_;
-		std::shared_ptr<Entite> cible_;
+		std::weak_ptr<Entite> cible_;
 };
 
 #endif // PROJ_MISSILE_H

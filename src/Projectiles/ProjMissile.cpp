@@ -39,6 +39,7 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 		{
 			//TODO PG récupérer position des vaisseaux de l'écran ?
 			//auto pos = vaisseau->getPosition();
+			if(auto cible
 		}
 	}
 

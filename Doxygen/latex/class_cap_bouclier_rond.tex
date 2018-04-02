@@ -1,0 +1,96 @@
+\hypertarget{class_cap_bouclier_rond}{}\section{Cap\+Bouclier\+Rond Class Reference}
+\label{class_cap_bouclier_rond}\index{Cap\+Bouclier\+Rond@{Cap\+Bouclier\+Rond}}
+
+
+bouclier circulaire avec x PB  
+
+
+
+
+{\ttfamily \#include $<$Cap\+Bouclier\+Rond.\+h$>$}
+
+Inheritance diagram for Cap\+Bouclier\+Rond\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_cap_bouclier_rond}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cap_bouclier_rond_a371bae2937bafb1cef7e1867a93ba8a1}{Cap\+Bouclier\+Rond}} (\mbox{\hyperlink{class_ecran}{Ecran}} \&ecran, const std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ \&lanceur)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cap_bouclier_rond_ae420337d3d5c5ec2e5a4a0cafa8f69ad}{utiliser}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Fonction virtuel qui active la capacite lorsqu\textquotesingle{}elle est appelée. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cap_bouclier_rond_ab664fc0b17a849d606d1a1085f2095c8}{actualiser}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Fonction virtuel qui active les effets de la capacité \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+bouclier circulaire avec x PB 
+
+Donne un bouclier circulaire qui entoure le vaisseau. Il est supprimé après un certain temps ( s sec) ou si ses (pb) PB tombent à zéro. Le bouclier est un projectile. Niveau 1 \+: Niveau supérieurs (idées) \+: augmente PB, temps de stase, réduit CD
+
+Cooldown \+: 10sec 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cap_bouclier_rond_a371bae2937bafb1cef7e1867a93ba8a1}\label{class_cap_bouclier_rond_a371bae2937bafb1cef7e1867a93ba8a1}} 
+\index{Cap\+Bouclier\+Rond@{Cap\+Bouclier\+Rond}!Cap\+Bouclier\+Rond@{Cap\+Bouclier\+Rond}}
+\index{Cap\+Bouclier\+Rond@{Cap\+Bouclier\+Rond}!Cap\+Bouclier\+Rond@{Cap\+Bouclier\+Rond}}
+\subsubsection{\texorpdfstring{Cap\+Bouclier\+Rond()}{CapBouclierRond()}}
+{\footnotesize\ttfamily Cap\+Bouclier\+Rond\+::\+Cap\+Bouclier\+Rond (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ecran}{Ecran}} \&}]{ecran,  }\item[{const std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ \&}]{lanceur }\end{DoxyParamCaption})}
+
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em niveau} & niveau de la capacité \\
+\hline
+{\em Entite\+\_\+liee\+\_\+} & \mbox{\hyperlink{class_entite}{Entite}} à laquelle s\textquotesingle{}applique le bouclier\\
+\hline
+\end{DoxyParams}
+Initialisation 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cap_bouclier_rond_ab664fc0b17a849d606d1a1085f2095c8}\label{class_cap_bouclier_rond_ab664fc0b17a849d606d1a1085f2095c8}} 
+\index{Cap\+Bouclier\+Rond@{Cap\+Bouclier\+Rond}!actualiser@{actualiser}}
+\index{actualiser@{actualiser}!Cap\+Bouclier\+Rond@{Cap\+Bouclier\+Rond}}
+\subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
+{\footnotesize\ttfamily void Cap\+Bouclier\+Rond\+::actualiser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Fonction virtuel qui active les effets de la capacité 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projectile} & Vecteur de shared\+\_\+ptr sur tous les projectiles présent à l\textquotesingle{}écran\\
+\hline
+\end{DoxyParams}
+Fonction virtuelle qui gère la création de projectiles et des modifications à apporter au vaisseau 
+
+Implements \mbox{\hyperlink{class_capacite_a85355aeb1d4acc049ed97da177acbd5f}{Capacite}}.
+
+\mbox{\Hypertarget{class_cap_bouclier_rond_ae420337d3d5c5ec2e5a4a0cafa8f69ad}\label{class_cap_bouclier_rond_ae420337d3d5c5ec2e5a4a0cafa8f69ad}} 
+\index{Cap\+Bouclier\+Rond@{Cap\+Bouclier\+Rond}!utiliser@{utiliser}}
+\index{utiliser@{utiliser}!Cap\+Bouclier\+Rond@{Cap\+Bouclier\+Rond}}
+\subsubsection{\texorpdfstring{utiliser()}{utiliser()}}
+{\footnotesize\ttfamily void Cap\+Bouclier\+Rond\+::utiliser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{projectile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Fonction virtuel qui active la capacite lorsqu\textquotesingle{}elle est appelée. 
+
+Fonction virtuel qui initialise la position de départ et le timer 
+
+Implements \mbox{\hyperlink{class_capacite_abac1434e2ac3ecc9e5afdafd9a7a4bed}{Capacite}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Capacites/\mbox{\hyperlink{_cap_bouclier_rond_8h}{Cap\+Bouclier\+Rond.\+h}}\item 
+src/\+Capacites/\mbox{\hyperlink{_cap_bouclier_rond_8cpp}{Cap\+Bouclier\+Rond.\+cpp}}\end{DoxyCompactItemize}

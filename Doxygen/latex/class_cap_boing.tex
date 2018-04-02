@@ -1,0 +1,108 @@
+\hypertarget{class_cap_boing}{}\section{Cap\+Boing Class Reference}
+\label{class_cap_boing}\index{Cap\+Boing@{Cap\+Boing}}
+
+
+Classe Capacité de test.  
+
+
+
+
+{\ttfamily \#include $<$Cap\+Boing.\+h$>$}
+
+Inheritance diagram for Cap\+Boing\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_cap_boing}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cap_boing_a9d315f24e4dfa2406956a9c53624d2ec}{Cap\+Boing}} (\mbox{\hyperlink{class_ecran}{Ecran}} \&ecran, const std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ \&lanceur)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cap_boing_a7f90c88c46fa87ff4c0fb66708648f96}{$\sim$\+Cap\+Boing}} () override=default
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cap_boing_a879dfeba930a0be60873ef3403a35eb1}{utiliser}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Active la capacite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cap_boing_a2bf6f58f93ff52263cf9926e4d91c239}{actualiser}} (\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Active les effets de la capacité \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Classe Capacité de test. 
+
+Capacité qui créé 4 \mbox{\hyperlink{class_proj_boing}{Proj\+Boing}} à la position du lanceur Nom \+: Attaque Test Cooldown \+: 1000 ms 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cap_boing_a9d315f24e4dfa2406956a9c53624d2ec}\label{class_cap_boing_a9d315f24e4dfa2406956a9c53624d2ec}} 
+\index{Cap\+Boing@{Cap\+Boing}!Cap\+Boing@{Cap\+Boing}}
+\index{Cap\+Boing@{Cap\+Boing}!Cap\+Boing@{Cap\+Boing}}
+\subsubsection{\texorpdfstring{Cap\+Boing()}{CapBoing()}}
+{\footnotesize\ttfamily Cap\+Boing\+::\+Cap\+Boing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ecran}{Ecran}} \&}]{ecran,  }\item[{const std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ \&}]{lanceur }\end{DoxyParamCaption})}
+
+
+
+Constructeur. 
+
+Initialisation de la capacité \mbox{\Hypertarget{class_cap_boing_a7f90c88c46fa87ff4c0fb66708648f96}\label{class_cap_boing_a7f90c88c46fa87ff4c0fb66708648f96}} 
+\index{Cap\+Boing@{Cap\+Boing}!````~Cap\+Boing@{$\sim$\+Cap\+Boing}}
+\index{````~Cap\+Boing@{$\sim$\+Cap\+Boing}!Cap\+Boing@{Cap\+Boing}}
+\subsubsection{\texorpdfstring{$\sim$\+Cap\+Boing()}{~CapBoing()}}
+{\footnotesize\ttfamily Cap\+Boing\+::$\sim$\+Cap\+Boing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+Destructeur. 
+
+Vide 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cap_boing_a2bf6f58f93ff52263cf9926e4d91c239}\label{class_cap_boing_a2bf6f58f93ff52263cf9926e4d91c239}} 
+\index{Cap\+Boing@{Cap\+Boing}!actualiser@{actualiser}}
+\index{actualiser@{actualiser}!Cap\+Boing@{Cap\+Boing}}
+\subsubsection{\texorpdfstring{actualiser()}{actualiser()}}
+{\footnotesize\ttfamily Cap\+Boing\+::actualiser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Active les effets de la capacité 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projectile} & Vecteur de tout les projectiles présent à l\textquotesingle{}écran \\
+\hline
+{\em vaisseau} & \mbox{\hyperlink{class_vaisseau}{Vaisseau}} qui a activé la compétence\\
+\hline
+\end{DoxyParams}
+Créer 4 \mbox{\hyperlink{class_proj_boing}{Proj\+Boing}} toutes les 5 frames Actualise le timer 
+
+Implements \mbox{\hyperlink{class_capacite_a85355aeb1d4acc049ed97da177acbd5f}{Capacite}}.
+
+\mbox{\Hypertarget{class_cap_boing_a879dfeba930a0be60873ef3403a35eb1}\label{class_cap_boing_a879dfeba930a0be60873ef3403a35eb1}} 
+\index{Cap\+Boing@{Cap\+Boing}!utiliser@{utiliser}}
+\index{utiliser@{utiliser}!Cap\+Boing@{Cap\+Boing}}
+\subsubsection{\texorpdfstring{utiliser()}{utiliser()}}
+{\footnotesize\ttfamily Cap\+Boing\+::utiliser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def__type_8h_a87980cd8ee9533e561a73e8bbc728188}{proj\+\_\+container}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Active la capacite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Abscisse de la position où la capacite est utilisée \\
+\hline
+{\em y} & Ordonnée de la position où la capacite est utilisée\\
+\hline
+\end{DoxyParams}
+Fonction Initialise la position de départ et le timer 
+
+Implements \mbox{\hyperlink{class_capacite_abac1434e2ac3ecc9e5afdafd9a7a4bed}{Capacite}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Capacites/\mbox{\hyperlink{_cap_boing_8h}{Cap\+Boing.\+h}}\item 
+src/\+Capacites/\mbox{\hyperlink{_cap_boing_8cpp}{Cap\+Boing.\+cpp}}\end{DoxyCompactItemize}

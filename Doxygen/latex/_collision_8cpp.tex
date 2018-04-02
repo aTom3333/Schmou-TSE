@@ -1,0 +1,88 @@
+\hypertarget{_collision_8cpp}{}\section{src/\+Utilitaires/\+Collision.cpp File Reference}
+\label{_collision_8cpp}\index{src/\+Utilitaires/\+Collision.\+cpp@{src/\+Utilitaires/\+Collision.\+cpp}}
+{\ttfamily \#include \char`\"{}Collision.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{_collision_8cpp_a19be16a0d78cc53699ec1f6cc1247f0a}{centre\+\_\+transforme}} (const sf\+::\+Circle\+Shape \&c)
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{_collision_8cpp_aaf8f0e4613fb5a09397a7825b1ff4909}{point\+\_\+transforme}} (const sf\+::\+Shape \&s, size\+\_\+t index)
+\item 
+bool \mbox{\hyperlink{_collision_8cpp_a55cd5d990d317edd263c1d3bcd0b5a05}{is\+\_\+point\+\_\+in}} (const sf\+::\+Vector2f \&C, const sf\+::\+Shape \&s)
+\item 
+bool \mbox{\hyperlink{_collision_8cpp_a9037d2ebead3fc780ff50019012ac010}{collision}} (const sf\+::\+Shape \&s1, const sf\+::\+Shape \&s2)
+\item 
+bool \mbox{\hyperlink{_collision_8cpp_a4a4d2e91bbfd88f8aaaeb1572140a024}{collision\+\_\+impl}} (const sf\+::\+Circle\+Shape \&c1, const sf\+::\+Circle\+Shape \&c2)
+\item 
+bool \mbox{\hyperlink{_collision_8cpp_a598969c4bf7355123d972d3cf69eafd5}{collision\+\_\+impl}} (const sf\+::\+Circle\+Shape \&c, const sf\+::\+Shape \&co)
+\item 
+bool \mbox{\hyperlink{_collision_8cpp_adcae147b4b5b0ca770cfbc5b1c65873d}{collision\+\_\+impl}} (const sf\+::\+Shape \&co, const sf\+::\+Circle\+Shape \&c)
+\item 
+bool \mbox{\hyperlink{_collision_8cpp_ad5b149f81d5c820b0f81e5ca66385dee}{collision\+\_\+impl}} (const sf\+::\+Shape \&s1, const sf\+::\+Shape \&s2)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{_collision_8cpp_a952eac791b596a61bba0a133a3bb439f}{PI}} = acos(-\/1)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_collision_8cpp_a19be16a0d78cc53699ec1f6cc1247f0a}\label{_collision_8cpp_a19be16a0d78cc53699ec1f6cc1247f0a}} 
+\index{Collision.\+cpp@{Collision.\+cpp}!centre\+\_\+transforme@{centre\+\_\+transforme}}
+\index{centre\+\_\+transforme@{centre\+\_\+transforme}!Collision.\+cpp@{Collision.\+cpp}}
+\subsubsection{\texorpdfstring{centre\+\_\+transforme()}{centre\_transforme()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f centre\+\_\+transforme (\begin{DoxyParamCaption}\item[{const sf\+::\+Circle\+Shape \&}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_collision_8cpp_a9037d2ebead3fc780ff50019012ac010}\label{_collision_8cpp_a9037d2ebead3fc780ff50019012ac010}} 
+\index{Collision.\+cpp@{Collision.\+cpp}!collision@{collision}}
+\index{collision@{collision}!Collision.\+cpp@{Collision.\+cpp}}
+\subsubsection{\texorpdfstring{collision()}{collision()}}
+{\footnotesize\ttfamily bool collision (\begin{DoxyParamCaption}\item[{const sf\+::\+Shape \&}]{s1,  }\item[{const sf\+::\+Shape \&}]{s2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_collision_8cpp_a4a4d2e91bbfd88f8aaaeb1572140a024}\label{_collision_8cpp_a4a4d2e91bbfd88f8aaaeb1572140a024}} 
+\index{Collision.\+cpp@{Collision.\+cpp}!collision\+\_\+impl@{collision\+\_\+impl}}
+\index{collision\+\_\+impl@{collision\+\_\+impl}!Collision.\+cpp@{Collision.\+cpp}}
+\subsubsection{\texorpdfstring{collision\+\_\+impl()}{collision\_impl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool collision\+\_\+impl (\begin{DoxyParamCaption}\item[{const sf\+::\+Circle\+Shape \&}]{c1,  }\item[{const sf\+::\+Circle\+Shape \&}]{c2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_collision_8cpp_a598969c4bf7355123d972d3cf69eafd5}\label{_collision_8cpp_a598969c4bf7355123d972d3cf69eafd5}} 
+\index{Collision.\+cpp@{Collision.\+cpp}!collision\+\_\+impl@{collision\+\_\+impl}}
+\index{collision\+\_\+impl@{collision\+\_\+impl}!Collision.\+cpp@{Collision.\+cpp}}
+\subsubsection{\texorpdfstring{collision\+\_\+impl()}{collision\_impl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool collision\+\_\+impl (\begin{DoxyParamCaption}\item[{const sf\+::\+Circle\+Shape \&}]{c,  }\item[{const sf\+::\+Shape \&}]{co }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_collision_8cpp_adcae147b4b5b0ca770cfbc5b1c65873d}\label{_collision_8cpp_adcae147b4b5b0ca770cfbc5b1c65873d}} 
+\index{Collision.\+cpp@{Collision.\+cpp}!collision\+\_\+impl@{collision\+\_\+impl}}
+\index{collision\+\_\+impl@{collision\+\_\+impl}!Collision.\+cpp@{Collision.\+cpp}}
+\subsubsection{\texorpdfstring{collision\+\_\+impl()}{collision\_impl()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool collision\+\_\+impl (\begin{DoxyParamCaption}\item[{const sf\+::\+Shape \&}]{co,  }\item[{const sf\+::\+Circle\+Shape \&}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_collision_8cpp_ad5b149f81d5c820b0f81e5ca66385dee}\label{_collision_8cpp_ad5b149f81d5c820b0f81e5ca66385dee}} 
+\index{Collision.\+cpp@{Collision.\+cpp}!collision\+\_\+impl@{collision\+\_\+impl}}
+\index{collision\+\_\+impl@{collision\+\_\+impl}!Collision.\+cpp@{Collision.\+cpp}}
+\subsubsection{\texorpdfstring{collision\+\_\+impl()}{collision\_impl()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool collision\+\_\+impl (\begin{DoxyParamCaption}\item[{const sf\+::\+Shape \&}]{s1,  }\item[{const sf\+::\+Shape \&}]{s2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_collision_8cpp_a55cd5d990d317edd263c1d3bcd0b5a05}\label{_collision_8cpp_a55cd5d990d317edd263c1d3bcd0b5a05}} 
+\index{Collision.\+cpp@{Collision.\+cpp}!is\+\_\+point\+\_\+in@{is\+\_\+point\+\_\+in}}
+\index{is\+\_\+point\+\_\+in@{is\+\_\+point\+\_\+in}!Collision.\+cpp@{Collision.\+cpp}}
+\subsubsection{\texorpdfstring{is\+\_\+point\+\_\+in()}{is\_point\_in()}}
+{\footnotesize\ttfamily bool is\+\_\+point\+\_\+in (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{C,  }\item[{const sf\+::\+Shape \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_collision_8cpp_aaf8f0e4613fb5a09397a7825b1ff4909}\label{_collision_8cpp_aaf8f0e4613fb5a09397a7825b1ff4909}} 
+\index{Collision.\+cpp@{Collision.\+cpp}!point\+\_\+transforme@{point\+\_\+transforme}}
+\index{point\+\_\+transforme@{point\+\_\+transforme}!Collision.\+cpp@{Collision.\+cpp}}
+\subsubsection{\texorpdfstring{point\+\_\+transforme()}{point\_transforme()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f point\+\_\+transforme (\begin{DoxyParamCaption}\item[{const sf\+::\+Shape \&}]{s,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_collision_8cpp_a952eac791b596a61bba0a133a3bb439f}\label{_collision_8cpp_a952eac791b596a61bba0a133a3bb439f}} 
+\index{Collision.\+cpp@{Collision.\+cpp}!PI@{PI}}
+\index{PI@{PI}!Collision.\+cpp@{Collision.\+cpp}}
+\subsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily const double PI = acos(-\/1)}
+

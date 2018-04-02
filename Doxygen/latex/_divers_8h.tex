@@ -1,0 +1,61 @@
+\hypertarget{_divers_8h}{}\section{src/\+Utilitaires/\+Divers.h File Reference}
+\label{_divers_8h}\index{src/\+Utilitaires/\+Divers.\+h@{src/\+Utilitaires/\+Divers.\+h}}
+{\ttfamily \#include \char`\"{}../\+Entite.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$S\+F\+M\+L/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \mbox{\hyperlink{_divers_8h_a3b8884aabd0ad28b2d790bf0752f6984}{est}} (const T \&X)
+\item 
+void \mbox{\hyperlink{_divers_8h_aeabc946ae0fa583e72aff6e8b7e6cbbc}{adapt\+\_\+viewport}} (sf\+::\+Render\+Window \&window)
+\item 
+std\+::string \mbox{\hyperlink{_divers_8h_a9b855aac79a01bc69b093a4ee12bb688}{trim}} (std\+::string str)
+\item 
+std\+::pair$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{_divers_8h_a9a29f7315011778d15db9366fbcbe556}{tokenize}} (const std\+::string \&str, char sep)
+\item 
+double \mbox{\hyperlink{_divers_8h_afe48d80943fa9e3ea1f39998f66213a7}{rayon\+\_\+englobeur}} (const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ sf\+::\+Shape $>$$>$ \&forme, sf\+::\+Vector2f origine)
+\item 
+void \mbox{\hyperlink{_divers_8h_afffd86758e1fafd47919e5874a1e93f6}{englobeur\+\_\+circulaire}} (\mbox{\hyperlink{class_entite}{Entite}} \&entite)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_divers_8h_aeabc946ae0fa583e72aff6e8b7e6cbbc}\label{_divers_8h_aeabc946ae0fa583e72aff6e8b7e6cbbc}} 
+\index{Divers.\+h@{Divers.\+h}!adapt\+\_\+viewport@{adapt\+\_\+viewport}}
+\index{adapt\+\_\+viewport@{adapt\+\_\+viewport}!Divers.\+h@{Divers.\+h}}
+\subsubsection{\texorpdfstring{adapt\+\_\+viewport()}{adapt\_viewport()}}
+{\footnotesize\ttfamily void adapt\+\_\+viewport (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_divers_8h_afffd86758e1fafd47919e5874a1e93f6}\label{_divers_8h_afffd86758e1fafd47919e5874a1e93f6}} 
+\index{Divers.\+h@{Divers.\+h}!englobeur\+\_\+circulaire@{englobeur\+\_\+circulaire}}
+\index{englobeur\+\_\+circulaire@{englobeur\+\_\+circulaire}!Divers.\+h@{Divers.\+h}}
+\subsubsection{\texorpdfstring{englobeur\+\_\+circulaire()}{englobeur\_circulaire()}}
+{\footnotesize\ttfamily void englobeur\+\_\+circulaire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entite}{Entite}} \&}]{entite }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_divers_8h_a3b8884aabd0ad28b2d790bf0752f6984}\label{_divers_8h_a3b8884aabd0ad28b2d790bf0752f6984}} 
+\index{Divers.\+h@{Divers.\+h}!est@{est}}
+\index{est@{est}!Divers.\+h@{Divers.\+h}}
+\subsubsection{\texorpdfstring{est()}{est()}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool est (\begin{DoxyParamCaption}\item[{const T \&}]{X }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_divers_8h_afe48d80943fa9e3ea1f39998f66213a7}\label{_divers_8h_afe48d80943fa9e3ea1f39998f66213a7}} 
+\index{Divers.\+h@{Divers.\+h}!rayon\+\_\+englobeur@{rayon\+\_\+englobeur}}
+\index{rayon\+\_\+englobeur@{rayon\+\_\+englobeur}!Divers.\+h@{Divers.\+h}}
+\subsubsection{\texorpdfstring{rayon\+\_\+englobeur()}{rayon\_englobeur()}}
+{\footnotesize\ttfamily double rayon\+\_\+englobeur (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ sf\+::\+Shape $>$$>$ \&}]{forme,  }\item[{sf\+::\+Vector2f}]{origine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_divers_8h_a9a29f7315011778d15db9366fbcbe556}\label{_divers_8h_a9a29f7315011778d15db9366fbcbe556}} 
+\index{Divers.\+h@{Divers.\+h}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!Divers.\+h@{Divers.\+h}}
+\subsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily std\+::pair$<$std\+::string, std\+::string$>$ tokenize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{char}]{sep }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_divers_8h_a9b855aac79a01bc69b093a4ee12bb688}\label{_divers_8h_a9b855aac79a01bc69b093a4ee12bb688}} 
+\index{Divers.\+h@{Divers.\+h}!trim@{trim}}
+\index{trim@{trim}!Divers.\+h@{Divers.\+h}}
+\subsubsection{\texorpdfstring{trim()}{trim()}}
+{\footnotesize\ttfamily std\+::string trim (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})}
+

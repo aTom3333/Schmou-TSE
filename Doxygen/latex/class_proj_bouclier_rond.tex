@@ -1,0 +1,99 @@
+\hypertarget{class_proj_bouclier_rond}{}\section{Proj\+Bouclier\+Rond Class Reference}
+\label{class_proj_bouclier_rond}\index{Proj\+Bouclier\+Rond@{Proj\+Bouclier\+Rond}}
+
+
+{\ttfamily \#include $<$Proj\+Bouclier\+Rond.\+h$>$}
+
+Inheritance diagram for Proj\+Bouclier\+Rond\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_proj_bouclier_rond}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_proj_bouclier_rond_a4cbfae3e14164be2b345efaeac0b3abd}{$\sim$\+Proj\+Bouclier\+Rond}} () override
+\item 
+\mbox{\hyperlink{class_proj_bouclier_rond_ac0ace14849356b453582614a006116b5}{Proj\+Bouclier\+Rond}} (\mbox{\hyperlink{class_ecran}{Ecran}} \&ecran, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$ lanceur, std\+::vector$<$ sf\+::\+Sprite $>$ \&sprite, std\+::vector$<$ sf\+::\+Sound $>$ \&sound, \mbox{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}} equipe)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_proj_bouclier_rond_a13656b7dbcd9cac9a5df9baeab430103}{gestion}} ()
+\begin{DoxyCompactList}\small\item\em Gestion du projectile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_proj_bouclier_rond_a60547ae68c6862f6e4c8b9cdd94bb52b}{agit}} (\mbox{\hyperlink{class_entite}{Entite}} \&e)
+\begin{DoxyCompactList}\small\item\em Action lorsque collision avec une \mbox{\hyperlink{class_entite}{Entite}} collisionnable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_proj_bouclier_rond_a4cbfae3e14164be2b345efaeac0b3abd}\label{class_proj_bouclier_rond_a4cbfae3e14164be2b345efaeac0b3abd}} 
+\index{Proj\+Bouclier\+Rond@{Proj\+Bouclier\+Rond}!````~Proj\+Bouclier\+Rond@{$\sim$\+Proj\+Bouclier\+Rond}}
+\index{````~Proj\+Bouclier\+Rond@{$\sim$\+Proj\+Bouclier\+Rond}!Proj\+Bouclier\+Rond@{Proj\+Bouclier\+Rond}}
+\subsubsection{\texorpdfstring{$\sim$\+Proj\+Bouclier\+Rond()}{~ProjBouclierRond()}}
+{\footnotesize\ttfamily Proj\+Bouclier\+Rond\+::$\sim$\+Proj\+Bouclier\+Rond (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+\mbox{\Hypertarget{class_proj_bouclier_rond_ac0ace14849356b453582614a006116b5}\label{class_proj_bouclier_rond_ac0ace14849356b453582614a006116b5}} 
+\index{Proj\+Bouclier\+Rond@{Proj\+Bouclier\+Rond}!Proj\+Bouclier\+Rond@{Proj\+Bouclier\+Rond}}
+\index{Proj\+Bouclier\+Rond@{Proj\+Bouclier\+Rond}!Proj\+Bouclier\+Rond@{Proj\+Bouclier\+Rond}}
+\subsubsection{\texorpdfstring{Proj\+Bouclier\+Rond()}{ProjBouclierRond()}}
+{\footnotesize\ttfamily Proj\+Bouclier\+Rond\+::\+Proj\+Bouclier\+Rond (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ecran}{Ecran}} \&}]{ecran,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_entite}{Entite}} $>$}]{lanceur,  }\item[{std\+::vector$<$ sf\+::\+Sprite $>$ \&}]{sprite,  }\item[{std\+::vector$<$ sf\+::\+Sound $>$ \&}]{sound,  }\item[{\mbox{\hyperlink{constantes_8h_a08fa5554288d5031a8f3bb83cc04ee83}{Equipe}}}]{equipe }\end{DoxyParamCaption})}
+
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Entite\+\_\+liee} & entite sur laquelle s\textquotesingle{}applique le bouclier \\
+\hline
+{\em pvM} & pv max \\
+\hline
+{\em degats\+Coll} & dégats infligés lors d\textquotesingle{}une collision avec une \mbox{\hyperlink{class_entite}{Entite}} collisionnable Gestion du déplacement et de l\textquotesingle{}affichage \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_proj_bouclier_rond_a60547ae68c6862f6e4c8b9cdd94bb52b}\label{class_proj_bouclier_rond_a60547ae68c6862f6e4c8b9cdd94bb52b}} 
+\index{Proj\+Bouclier\+Rond@{Proj\+Bouclier\+Rond}!agit@{agit}}
+\index{agit@{agit}!Proj\+Bouclier\+Rond@{Proj\+Bouclier\+Rond}}
+\subsubsection{\texorpdfstring{agit()}{agit()}}
+{\footnotesize\ttfamily Proj\+Bouclier\+Rond\+::agit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entite}{Entite}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Action lorsque collision avec une \mbox{\hyperlink{class_entite}{Entite}} collisionnable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \mbox{\hyperlink{class_entite}{Entite}}\\
+\hline
+\end{DoxyParams}
+Inflige les dégat déterminés à la construction 
+
+Implements \mbox{\hyperlink{class_entite_a848ec47afac1d7ba970a2bcab5dc7b3b}{Entite}}.
+
+\mbox{\Hypertarget{class_proj_bouclier_rond_a13656b7dbcd9cac9a5df9baeab430103}\label{class_proj_bouclier_rond_a13656b7dbcd9cac9a5df9baeab430103}} 
+\index{Proj\+Bouclier\+Rond@{Proj\+Bouclier\+Rond}!gestion@{gestion}}
+\index{gestion@{gestion}!Proj\+Bouclier\+Rond@{Proj\+Bouclier\+Rond}}
+\subsubsection{\texorpdfstring{gestion()}{gestion()}}
+{\footnotesize\ttfamily Proj\+Bouclier\+Rond\+::gestion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gestion du projectile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Fenetre de jeu\\
+\hline
+\end{DoxyParams}
+Gestion du déplacement et de l\textquotesingle{}affichage \+: le bouclier reste lié à l\textquotesingle{}Entite\+\_\+liee 
+
+Implements \mbox{\hyperlink{class_projectile_ad8fae955389ff8944830e9d80e0f1ce1}{Projectile}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Projectiles/\mbox{\hyperlink{_proj_bouclier_rond_8h}{Proj\+Bouclier\+Rond.\+h}}\item 
+src/\+Projectiles/\mbox{\hyperlink{_proj_bouclier_rond_8cpp}{Proj\+Bouclier\+Rond.\+cpp}}\end{DoxyCompactItemize}
