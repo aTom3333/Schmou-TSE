@@ -15,15 +15,6 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	// Sons
 	sounds_.emplace_back(*ecran.getChargeur().getSoundBuffer("son.sakado"));
 
-	// Cercle englobant
-	//TODO PG Englobeur
-	const float largeur_vaisseau = this->getTaille().x;
-	const float hauteur_vaisseau = this->getTaille().y;
-	const float R = hypot(largeur_vaisseau / 2.0f, hauteur_vaisseau / 2.0f);
-	cercleEnglobant_ = sf::CircleShape(R);
-	cercleEnglobant_.setOrigin(R, R);
-	cercleEnglobant_.setPosition({ 0,0 });
-
 	// Hitbox
 	sf::ConvexShape forme1(3);
 	forme1.setPoint(0, { 0,64 });
@@ -38,6 +29,17 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	forme2.setPoint(2, { 0,46 });
 	forme2.setOrigin({ 0, 32 });
 	forme_.emplace_back(new sf::ConvexShape(forme2));
+
+	// Cercle englobant
+	//TODO PG Englobeur
+	////const float largeur_vaisseau = this->getTaille().x;
+	////const float hauteur_vaisseau = this->getTaille().y;
+	////const float R = hypot(largeur_vaisseau / 2.0f, hauteur_vaisseau / 2.0f);
+	////const float rayon = rayon_englobeur(forme_, origine_);
+	////cercleEnglobant_ = sf::CircleShape(R);
+	////cercleEnglobant_.setOrigin(R, R);
+	////cercleEnglobant_.setPosition({ 0,0 });
+	englobeur_circulaire(*this);
 
 	// Caractéristiques de code
 	equipe_ = JOUEUR;

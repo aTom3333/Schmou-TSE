@@ -1,14 +1,15 @@
 #ifndef VAISSEAU_H
 #define VAISSEAU_H
 
-#include <vector>
-#include <string>
-#include <algorithm>
 #include "../Capacites/Capacite.h"
 #include "../Entite.h"
 #include "../Projectiles/Projectile.h"
 #include "../Interface/Input.h"
 #include "../def_type.h"
+#include "../Utilitaires/Divers.h"
+#include <vector>
+#include <string>
+#include <algorithm>
 
 
 

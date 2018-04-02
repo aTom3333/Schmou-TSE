@@ -328,6 +328,8 @@ class Entite
 		void setBouclier(const float& bouclier) { bouclier_ = bouclier; }
 		void setBouclierM(const float& bouclierM) { bouclierM_ = bouclierM; }
 
+		void setCercleEnglobant(const sf::CircleShape& cercleEnglobant) { cercleEnglobant_ = cercleEnglobant; }
+
 
 	protected:
 		// Référence vers l'écran
