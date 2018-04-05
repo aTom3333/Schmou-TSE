@@ -1,0 +1,5 @@
+<map id="VaissBouclier::VaissBouclier" name="VaissBouclier::VaissBouclier">
+<area shape="rect" id="node2" href="$class_ecran.html#a9b781eadd60c166948dc1ea2bc04194d" title="Ecran::getChargeur" alt="" coords="248,5,383,32"/>
+<area shape="rect" id="node3" href="$class_entite.html#ac9ce99e4eb26bb9c4b9f2c8aaf3899c8" title="Entite::getTaille" alt="" coords="259,56,371,83"/>
+<area shape="rect" id="node4" href="$class_chargeur.html#a23fce63f45f73d039cbf70cd455ed995" title="Chargeur::getTexture" alt="" coords="244,107,387,133"/>
+</map>

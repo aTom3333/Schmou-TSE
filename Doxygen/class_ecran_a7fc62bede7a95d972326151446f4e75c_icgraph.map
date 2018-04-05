@@ -1,0 +1,28 @@
+<map id="Ecran::getTempsFrame" name="Ecran::getTempsFrame">
+<area shape="rect" id="node2" href="$class_cap_bismillah.html#a3544607eb3d5e89bb6f5b6e2e2e89be0" title="Active les effets de la capacit� " alt="" coords="224,5,387,32"/>
+<area shape="rect" id="node3" href="$class_cap_bouclier_rond.html#ab664fc0b17a849d606d1a1085f2095c8" title="Fonction virtuel qui active les effets de la capacité " alt="" coords="212,56,399,83"/>
+<area shape="rect" id="node4" href="$class_cap_missile.html#ae61423876aa92fc8e2555b1b856a7443" title="Active les effets de la capacité " alt="" coords="230,107,381,133"/>
+<area shape="rect" id="node5" href="$class_cap_dash.html#a09dce88d953b9b6c4b53cdcb168236ab" title="Active les effets de la capacité " alt="" coords="236,157,375,184"/>
+<area shape="rect" id="node6" href="$class_cap_piou.html#ae566dc069b127f27cdd770f72dbdcbe4" title="Active les effets de la capacité " alt="" coords="238,208,373,235"/>
+<area shape="rect" id="node7" href="$class_cap_boing.html#a2bf6f58f93ff52263cf9926e4d91c239" title="Active les effets de la capacité " alt="" coords="234,259,377,285"/>
+<area shape="rect" id="node8" href="$class_vaisseau_test.html#a9207fbb193d4395cefbd6977bc502bcb" title="Gère le comportement du vaisseau. " alt="" coords="447,411,597,437"/>
+<area shape="rect" id="node9" href="$class_proj_missile.html#a90bee0454d77d2846431f2c8704e2d11" title="Gestion du projectile. " alt="" coords="454,461,590,488"/>
+<area shape="rect" id="node10" href="$class_proj_bouclier_rond.html#a13656b7dbcd9cac9a5df9baeab430103" title="Gestion du projectile. " alt="" coords="675,159,847,185"/>
+<area shape="rect" id="node11" href="$class_proj_bismillah.html#a5a037871dddbe729c926e7d9eb69b026" title="Gestion du projectile. " alt="" coords="687,209,835,236"/>
+<area shape="rect" id="node12" href="$class_proj_boing.html#ac0d11abb68efb90dba3529d2bf1ce4f2" title="Gestion du projectile. " alt="" coords="697,660,825,687"/>
+<area shape="rect" id="node13" href="$class_proj_piou.html#aa25660500d188f1085f8289db91a6170" title="Gestion du projectile. " alt="" coords="461,613,583,640"/>
+<area shape="rect" id="node14" href="$class_vague.html#ae544359836d36fb2d49c26af9bd7ff30" title="Gère la vague. " alt="" coords="251,613,360,640"/>
+<area shape="rect" id="node15" href="$class_vaisseau_eclaireur.html#a66811ba07fd951304cca1c8be457b8e4" title="Gère le comportement du vaisseau. " alt="" coords="693,711,828,753"/>
+<area shape="rect" id="node16" href="$class_vaisseau_attaquant.html#aaa30cf9a9cd4319bbf418799019284d7" title="Gère le comportement du vaisseau. " alt="" coords="691,777,831,818"/>
+<area shape="rect" id="node17" href="$class_vaisseau_defenseur.html#a9d8301faaaebc09dd5e807e8ebe829ae" title="Gère le comportement du vaisseau. " alt="" coords="689,842,832,883"/>
+<area shape="rect" id="node18" href="$class_entite.html#a2403ba6bc4c194e7421b6edd3228b69a" title="Déplace l&#39;Entite en fonction de vits_ et rotation_. " alt="" coords="258,512,353,539"/>
+<area shape="rect" id="node27" href="$class_entite.html#a0107313e662166fddddb8ffefeb649fe" title="Redonne des points de vie, de l&#39;armure et du bouclier toute les 100 ms. " alt="" coords="257,867,353,893"/>
+<area shape="rect" id="node19" href="$class_entite.html#aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad" title="Fixe la position de l&#39;Entite. " alt="" coords="457,512,587,539"/>
+<area shape="rect" id="node20" href="$class_proj_bouclier_rond.html#ac0ace14849356b453582614a006116b5" title="Constructeur. " alt="" coords="645,609,876,636"/>
+<area shape="rect" id="node21" href="$class_proj_boing.html#a4470a575e57978e4941b5771f710d7f3" title="ProjBoing::ProjBoing" alt="" coords="689,260,832,287"/>
+<area shape="rect" id="node22" href="$class_proj_missile.html#aa7eb20457df3b5c051cd607c9f92ae67" title="ProjMissile::ProjMissile" alt="" coords="681,311,840,337"/>
+<area shape="rect" id="node23" href="$class_proj_piou.html#ad1c36a2d7605a09cd964877850394eac" title="Constructeur. " alt="" coords="697,361,825,388"/>
+<area shape="rect" id="node24" href="$class_vaisseau_attaquant.html#af4eff1782c7e67adad4e23aec3e03333" title="VaisseauAttaquant::\lVaisseauAttaquant" alt="" coords="691,413,831,454"/>
+<area shape="rect" id="node25" href="$class_vaisseau_defenseur.html#a19c543d8b04bdc0bb1d1c349bd3f1b99" title="Contructeur. " alt="" coords="689,478,832,519"/>
+<area shape="rect" id="node26" href="$class_vaisseau_eclaireur.html#a3e02d4ef7316d0a44148c785c376deb2" title="Contructeur. " alt="" coords="693,543,828,585"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Entite::setPosition" name="Entite::setPosition">
+<area shape="rect" id="node2" href="$class_entite.html#a2403ba6bc4c194e7421b6edd3228b69a" title="Déplace l&#39;Entite en fonction de vits_ et rotation_. " alt="" coords="183,5,277,32"/>
+<area shape="rect" id="node3" href="$class_ecran.html#a7fc62bede7a95d972326151446f4e75c" title="Ecran::getTempsFrame" alt="" coords="325,5,484,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="ProjBismillah" name="ProjBismillah">
+<area shape="rect" id="node2" href="$class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje..." alt="" coords="17,1612,148,1748"/>
+<area shape="rect" id="node3" href="$class_entite.html" title="Classe virtuelle qui définit une entité " alt="" coords="5,5,160,1564"/>
+</map>

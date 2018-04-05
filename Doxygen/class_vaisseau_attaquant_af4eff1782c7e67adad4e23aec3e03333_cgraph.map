@@ -1,0 +1,9 @@
+<map id="VaisseauAttaquant::VaisseauAttaquant" name="VaisseauAttaquant::VaisseauAttaquant">
+<area shape="rect" id="node2" href="$class_ecran.html#a9b781eadd60c166948dc1ea2bc04194d" title="Ecran::getChargeur" alt="" coords="197,5,332,32"/>
+<area shape="rect" id="node3" href="$class_entite.html#a6f6fd1e1f9f6ad44f0ecc74961a774d9" title="Renvoie la position de l&#39;Entite appelante. " alt="" coords="200,56,329,83"/>
+<area shape="rect" id="node4" href="$class_entite.html#ac9ce99e4eb26bb9c4b9f2c8aaf3899c8" title="Entite::getTaille" alt="" coords="209,107,321,133"/>
+<area shape="rect" id="node5" href="$class_chargeur.html#a23fce63f45f73d039cbf70cd455ed995" title="Chargeur::getTexture" alt="" coords="193,157,336,184"/>
+<area shape="rect" id="node6" href="$class_entite.html#aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad" title="Fixe la position de l&#39;Entite. " alt="" coords="200,208,329,235"/>
+<area shape="rect" id="node7" href="$class_entite.html#a2403ba6bc4c194e7421b6edd3228b69a" title="Déplace l&#39;Entite en fonction de vits_ et rotation_. " alt="" coords="384,208,479,235"/>
+<area shape="rect" id="node8" href="$class_ecran.html#a7fc62bede7a95d972326151446f4e75c" title="Ecran::getTempsFrame" alt="" coords="527,208,685,235"/>
+</map>

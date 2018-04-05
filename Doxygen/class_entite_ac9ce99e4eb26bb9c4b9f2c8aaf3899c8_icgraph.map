@@ -1,0 +1,8 @@
+<map id="Entite::getTaille" name="Entite::getTaille">
+<area shape="rect" id="node2" href="$class_entite.html#a0e682335d5ae1518970a30eb07d8e6d1" title="Déplace l&#39;Entite en fonction de delta. " alt="" coords="213,5,308,32"/>
+<area shape="rect" id="node3" href="$class_vaiss_bouclier.html#a55a735a46a8a469d16b777aa6f05f694" title="Contructeur Initialise le vaisseau à position et à la trajectoires désirées. " alt="" coords="165,56,356,83"/>
+<area shape="rect" id="node4" href="$class_vaisseau_attaquant.html#af4eff1782c7e67adad4e23aec3e03333" title="VaisseauAttaquant::\lVaisseauAttaquant" alt="" coords="191,107,331,149"/>
+<area shape="rect" id="node5" href="$class_vaisseau_defenseur.html#a19c543d8b04bdc0bb1d1c349bd3f1b99" title="Contructeur. " alt="" coords="189,173,332,214"/>
+<area shape="rect" id="node6" href="$class_vaisseau_eclaireur.html#a3e02d4ef7316d0a44148c785c376deb2" title="Contructeur. " alt="" coords="193,238,328,279"/>
+<area shape="rect" id="node7" href="$class_vaisseau_test.html#ae8c0284c5cf04167922da1e026ea90d5" title="VaisseauTest::VaisseauTest" alt="" coords="167,304,355,331"/>
+</map>

@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Schmou&#39;TSE:  Fichier source de D:/_Télécom Saint-Etienne/_Projets/Git Shmou&#39;TSE/src/Menu/Ecran.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="vaisseau.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Schmou&#39;TSE
+   &#160;<span id="projectnumber">Nettoyage de printemps</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_ecran_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Ecran.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_ecran_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CLASSE_ECRAN_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CLASSE_ECRAN_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../constantes.h&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../def_type.h&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../Utilitaires/optional.h&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../Utilitaires/Chargeur.h&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stack&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;SFML/System.hpp&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;SFML/Audio.hpp&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_ecran_8h.html#a302f2585a4c0c94fd4db6106ecf02441">chargement</a>(sf::RenderWindow &amp;window, sf::Texture &amp;derniereFenetre);</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_ecran.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ecran.html">Ecran</a></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">//structeurs</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_ecran.html#a2ea4e1f23da32177ec9a1e4d02e87b46">Ecran</a>(sf::RenderWindow&amp; window); </div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_ecran.html#a00e529f95c3832a06f2d46b797d76072">~Ecran</a>() = <span class="keywordflow">default</span>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="constantes_8h.html#a33e4f15dde10f34860a6b35be343ae56">ecran_t</a> <a class="code" href="class_ecran.html#a764dadf20079744d3f5dd633eae268cc">executer</a>(sf::Texture &amp;derniereFenetre) = 0;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">virtual</span> std::unique_ptr&lt;Ecran&gt; <a class="code" href="class_ecran.html#a016213731438ce2fb37831d8b0eeabed">factory</a>() = 0;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">//getters</span></div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_ecran.html#a8ca7e9677252fef3a5e6aee60d27a9e3">   31</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_ecran.html#a8ca7e9677252fef3a5e6aee60d27a9e3">isDetruit</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_ecran.html#a0a1c7e8dd7bea72c322b910d33667be8">detruit_</a>; }</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_ecran.html#a7fc62bede7a95d972326151446f4e75c">   32</a></span>&#160;        sf::Time <a class="code" href="class_ecran.html#a7fc62bede7a95d972326151446f4e75c">getTempsFrame</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_ecran.html#aefbd6654c88f1014dadbb04f27243cae">t_frame_</a>; }</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_ecran.html#a735fe022858b847a019bf1a69e117f1a">   34</a></span>&#160;        sf::RenderWindow&amp; <a class="code" href="class_ecran.html#a735fe022858b847a019bf1a69e117f1a">getWindow</a>() { <span class="keywordflow">return</span> <a class="code" href="class_ecran.html#a2c5cede2731636193a4a70048ab5fdbb">window_</a>; }</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_ecran.html#a9b781eadd60c166948dc1ea2bc04194d">   35</a></span>&#160;        <a class="code" href="class_chargeur.html">Chargeur</a>&amp; <a class="code" href="class_ecran.html#a9b781eadd60c166948dc1ea2bc04194d">getChargeur</a>() { <span class="keywordflow">return</span> <a class="code" href="class_ecran.html#a0ae817b129b8dab74f33bf2a1bf05cc5">chargeur_</a>; }</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_ecran.html#ae9a020b22b2c022a082fa3d7566af0e9">   36</a></span>&#160;        <span class="keyword">const</span> sf::Clock&amp; <a class="code" href="class_ecran.html#ae9a020b22b2c022a082fa3d7566af0e9">getClock</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_ecran.html#ac31400b0f55cd0892516edf787dc1751">horloge_</a>; }</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_ecran.html#a596618c9e9a039fef504c9dcc9c2addf">   37</a></span>&#160;        <a class="code" href="def__type_8h.html#ad123ed7c93f42c8dd68e4af28b16b639">vaisseau_container</a> <a class="code" href="class_ecran.html#a596618c9e9a039fef504c9dcc9c2addf">getVaisseauxContainer</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_ecran.html#a306123479f6a6b688ad13b5b4ca69de7">vaisseaux_</a>; }</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">protected</span>:</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">//Rendu</span></div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_ecran.html#a2c5cede2731636193a4a70048ab5fdbb">   41</a></span>&#160;        sf::RenderWindow&amp; <a class="code" href="class_ecran.html#a2c5cede2731636193a4a70048ab5fdbb">window_</a>; </div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_ecran.html#a180354db08d7f975536cc1cb05f18cb1">   42</a></span>&#160;        std::map&lt;std::string, sf::Font&gt; <a class="code" href="class_ecran.html#a180354db08d7f975536cc1cb05f18cb1">polices_</a> ; </div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">//Caractéristiques de code</span></div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_ecran.html#a0a1c7e8dd7bea72c322b910d33667be8">   45</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_ecran.html#a0a1c7e8dd7bea72c322b910d33667be8">detruit_</a> = <span class="keyword">false</span>;</div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_ecran.html#a306123479f6a6b688ad13b5b4ca69de7">   46</a></span>&#160;        <a class="code" href="def__type_8h.html#ad123ed7c93f42c8dd68e4af28b16b639">vaisseau_container</a> <a class="code" href="class_ecran.html#a306123479f6a6b688ad13b5b4ca69de7">vaisseaux_</a>; </div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">//Chargeur</span></div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_ecran.html#a0ae817b129b8dab74f33bf2a1bf05cc5">   49</a></span>&#160;        <a class="code" href="class_chargeur.html">Chargeur</a> <a class="code" href="class_ecran.html#a0ae817b129b8dab74f33bf2a1bf05cc5">chargeur_</a>; </div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">//Temps</span></div><div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_ecran.html#ac31400b0f55cd0892516edf787dc1751">   52</a></span>&#160;        sf::Clock <a class="code" href="class_ecran.html#ac31400b0f55cd0892516edf787dc1751">horloge_</a>; </div><div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_ecran.html#aefbd6654c88f1014dadbb04f27243cae">   53</a></span>&#160;        sf::Time <a class="code" href="class_ecran.html#aefbd6654c88f1014dadbb04f27243cae">t_frame_</a>;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif // !ECRAN_H</span></div><div class="ttc" id="class_chargeur_html"><div class="ttname"><a href="class_chargeur.html">Chargeur</a></div><div class="ttdef"><b>Definition:</b> Chargeur.h:16</div></div>
+<div class="ttc" id="class_ecran_html_a7fc62bede7a95d972326151446f4e75c"><div class="ttname"><a href="class_ecran.html#a7fc62bede7a95d972326151446f4e75c">Ecran::getTempsFrame</a></div><div class="ttdeci">sf::Time getTempsFrame() const</div><div class="ttdef"><b>Definition:</b> Ecran.h:32</div></div>
+<div class="ttc" id="class_ecran_html_a00e529f95c3832a06f2d46b797d76072"><div class="ttname"><a href="class_ecran.html#a00e529f95c3832a06f2d46b797d76072">Ecran::~Ecran</a></div><div class="ttdeci">virtual ~Ecran()=default</div><div class="ttdoc">&lt; constructeur principal </div></div>
+<div class="ttc" id="class_ecran_html_a9b781eadd60c166948dc1ea2bc04194d"><div class="ttname"><a href="class_ecran.html#a9b781eadd60c166948dc1ea2bc04194d">Ecran::getChargeur</a></div><div class="ttdeci">Chargeur &amp; getChargeur()</div><div class="ttdef"><b>Definition:</b> Ecran.h:35</div></div>
+<div class="ttc" id="class_ecran_html_aefbd6654c88f1014dadbb04f27243cae"><div class="ttname"><a href="class_ecran.html#aefbd6654c88f1014dadbb04f27243cae">Ecran::t_frame_</a></div><div class="ttdeci">sf::Time t_frame_</div><div class="ttdoc">&lt; Horloge globale de l&amp;#39;écran, réinitialisée à chaque affichage de window </div><div class="ttdef"><b>Definition:</b> Ecran.h:53</div></div>
+<div class="ttc" id="class_ecran_html_a0a1c7e8dd7bea72c322b910d33667be8"><div class="ttname"><a href="class_ecran.html#a0a1c7e8dd7bea72c322b910d33667be8">Ecran::detruit_</a></div><div class="ttdeci">bool detruit_</div><div class="ttdoc">&lt; map optionnelle de toutes les polices du jeu </div><div class="ttdef"><b>Definition:</b> Ecran.h:45</div></div>
+<div class="ttc" id="class_ecran_html_a764dadf20079744d3f5dd633eae268cc"><div class="ttname"><a href="class_ecran.html#a764dadf20079744d3f5dd633eae268cc">Ecran::executer</a></div><div class="ttdeci">virtual ecran_t executer(sf::Texture &amp;derniereFenetre)=0</div></div>
+<div class="ttc" id="class_ecran_html_a735fe022858b847a019bf1a69e117f1a"><div class="ttname"><a href="class_ecran.html#a735fe022858b847a019bf1a69e117f1a">Ecran::getWindow</a></div><div class="ttdeci">sf::RenderWindow &amp; getWindow()</div><div class="ttdef"><b>Definition:</b> Ecran.h:34</div></div>
+<div class="ttc" id="class_ecran_html_ac31400b0f55cd0892516edf787dc1751"><div class="ttname"><a href="class_ecran.html#ac31400b0f55cd0892516edf787dc1751">Ecran::horloge_</a></div><div class="ttdeci">sf::Clock horloge_</div><div class="ttdoc">&lt; Chargeur associé </div><div class="ttdef"><b>Definition:</b> Ecran.h:52</div></div>
+<div class="ttc" id="class_ecran_html_a2c5cede2731636193a4a70048ab5fdbb"><div class="ttname"><a href="class_ecran.html#a2c5cede2731636193a4a70048ab5fdbb">Ecran::window_</a></div><div class="ttdeci">sf::RenderWindow &amp; window_</div><div class="ttdef"><b>Definition:</b> Ecran.h:41</div></div>
+<div class="ttc" id="class_ecran_html"><div class="ttname"><a href="class_ecran.html">Ecran</a></div><div class="ttdef"><b>Definition:</b> Ecran.h:19</div></div>
+<div class="ttc" id="class_ecran_html_a180354db08d7f975536cc1cb05f18cb1"><div class="ttname"><a href="class_ecran.html#a180354db08d7f975536cc1cb05f18cb1">Ecran::polices_</a></div><div class="ttdeci">std::map&lt; std::string, sf::Font &gt; polices_</div><div class="ttdoc">&lt; Fenêtre de rendu SFML </div><div class="ttdef"><b>Definition:</b> Ecran.h:42</div></div>
+<div class="ttc" id="class_ecran_html_a016213731438ce2fb37831d8b0eeabed"><div class="ttname"><a href="class_ecran.html#a016213731438ce2fb37831d8b0eeabed">Ecran::factory</a></div><div class="ttdeci">virtual std::unique_ptr&lt; Ecran &gt; factory()=0</div></div>
+<div class="ttc" id="class_ecran_html_a596618c9e9a039fef504c9dcc9c2addf"><div class="ttname"><a href="class_ecran.html#a596618c9e9a039fef504c9dcc9c2addf">Ecran::getVaisseauxContainer</a></div><div class="ttdeci">vaisseau_container getVaisseauxContainer() const</div><div class="ttdef"><b>Definition:</b> Ecran.h:37</div></div>
+<div class="ttc" id="class_ecran_html_ae9a020b22b2c022a082fa3d7566af0e9"><div class="ttname"><a href="class_ecran.html#ae9a020b22b2c022a082fa3d7566af0e9">Ecran::getClock</a></div><div class="ttdeci">const sf::Clock &amp; getClock() const</div><div class="ttdef"><b>Definition:</b> Ecran.h:36</div></div>
+<div class="ttc" id="class_ecran_html_a0ae817b129b8dab74f33bf2a1bf05cc5"><div class="ttname"><a href="class_ecran.html#a0ae817b129b8dab74f33bf2a1bf05cc5">Ecran::chargeur_</a></div><div class="ttdeci">Chargeur chargeur_</div><div class="ttdoc">vecteur des vaisseaux ennemis en jeu </div><div class="ttdef"><b>Definition:</b> Ecran.h:49</div></div>
+<div class="ttc" id="class_ecran_html_a2ea4e1f23da32177ec9a1e4d02e87b46"><div class="ttname"><a href="class_ecran.html#a2ea4e1f23da32177ec9a1e4d02e87b46">Ecran::Ecran</a></div><div class="ttdeci">Ecran(sf::RenderWindow &amp;window)</div><div class="ttdef"><b>Definition:</b> Ecran.cpp:3</div></div>
+<div class="ttc" id="_ecran_8h_html_a302f2585a4c0c94fd4db6106ecf02441"><div class="ttname"><a href="_ecran_8h.html#a302f2585a4c0c94fd4db6106ecf02441">chargement</a></div><div class="ttdeci">void chargement(sf::RenderWindow &amp;window, sf::Texture &amp;derniereFenetre)</div><div class="ttdef"><b>Definition:</b> Ecran.cpp:15</div></div>
+<div class="ttc" id="class_ecran_html_a8ca7e9677252fef3a5e6aee60d27a9e3"><div class="ttname"><a href="class_ecran.html#a8ca7e9677252fef3a5e6aee60d27a9e3">Ecran::isDetruit</a></div><div class="ttdeci">bool isDetruit() const</div><div class="ttdef"><b>Definition:</b> Ecran.h:31</div></div>
+<div class="ttc" id="class_ecran_html_a306123479f6a6b688ad13b5b4ca69de7"><div class="ttname"><a href="class_ecran.html#a306123479f6a6b688ad13b5b4ca69de7">Ecran::vaisseaux_</a></div><div class="ttdeci">vaisseau_container vaisseaux_</div><div class="ttdef"><b>Definition:</b> Ecran.h:46</div></div>
+<div class="ttc" id="constantes_8h_html_a33e4f15dde10f34860a6b35be343ae56"><div class="ttname"><a href="constantes_8h.html#a33e4f15dde10f34860a6b35be343ae56">ecran_t</a></div><div class="ttdeci">ecran_t</div><div class="ttdef"><b>Definition:</b> constantes.h:34</div></div>
+<div class="ttc" id="def__type_8h_html_ad123ed7c93f42c8dd68e4af28b16b639"><div class="ttname"><a href="def__type_8h.html#ad123ed7c93f42c8dd68e4af28b16b639">vaisseau_container</a></div><div class="ttdeci">std::vector&lt; vaisseau_ptr &gt; vaisseau_container</div><div class="ttdef"><b>Definition:</b> def_type.h:17</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_966d622809021e16937e6471877e7c28.html">_Télécom Saint-Etienne</a></li><li class="navelem"><a class="el" href="dir_96ced5405f341181826ad81faf6656c3.html">_Projets</a></li><li class="navelem"><a class="el" href="dir_de98b535789cc7e70803e176e4362f7b.html">Git Shmou&#39;TSE</a></li><li class="navelem"><a class="el" href="dir_27039fa1428ec68401cbc5b845225be8.html">src</a></li><li class="navelem"><a class="el" href="dir_e50c34de01668c3e2e4ecc415864b82c.html">Menu</a></li><li class="navelem"><a class="el" href="_ecran_8h.html">Ecran.h</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>
