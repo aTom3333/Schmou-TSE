@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Schmou&#39;TSE:  Fichier source de D:/_Télécom Saint-Etienne/_Projets/Git Shmou&#39;TSE/src/Capacites/CapBoing.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="vaisseau.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Schmou&#39;TSE
+   &#160;<span id="projectnumber">Nettoyage de printemps</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par doc 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_cap_boing_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">CapBoing.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_cap_boing_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CAPTEST_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CAPTEST_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_capacite_8h.html">Capacite.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../Projectiles/Projectile.h&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../Projectiles/ProjBoing.h&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_cap_boing.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cap_boing.html">CapBoing</a> : <span class="keyword">public</span> <a class="code" href="class_capacite.html">Capacite</a></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_cap_boing.html#a9d315f24e4dfa2406956a9c53624d2ec">CapBoing</a>(<a class="code" href="class_ecran.html">Ecran</a>&amp; ecran, <span class="keyword">const</span> std::weak_ptr&lt;Entite&gt;&amp; lanceur);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_cap_boing.html#a7f90c88c46fa87ff4c0fb66708648f96">~CapBoing</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_cap_boing.html#a879dfeba930a0be60873ef3403a35eb1">utiliser</a>(<a class="code" href="def__type_8h.html#a87980cd8ee9533e561a73e8bbc728188">proj_container</a>&amp; projectiles) <span class="keyword">override</span>;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_cap_boing.html#a2bf6f58f93ff52263cf9926e4d91c239">actualiser</a>(<a class="code" href="def__type_8h.html#a87980cd8ee9533e561a73e8bbc728188">proj_container</a>&amp; projectiles) <span class="keyword">override</span>;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_cap_boing_html"><div class="ttname"><a href="class_cap_boing.html">CapBoing</a></div><div class="ttdoc">Classe Capacité de test. </div><div class="ttdef"><b>Definition:</b> CapBoing.h:17</div></div>
+<div class="ttc" id="class_cap_boing_html_a7f90c88c46fa87ff4c0fb66708648f96"><div class="ttname"><a href="class_cap_boing.html#a7f90c88c46fa87ff4c0fb66708648f96">CapBoing::~CapBoing</a></div><div class="ttdeci">~CapBoing() override=default</div><div class="ttdoc">Destructeur. </div></div>
+<div class="ttc" id="class_ecran_html"><div class="ttname"><a href="class_ecran.html">Ecran</a></div><div class="ttdef"><b>Definition:</b> Ecran.h:19</div></div>
+<div class="ttc" id="_capacite_8h_html"><div class="ttname"><a href="_capacite_8h.html">Capacite.h</a></div></div>
+<div class="ttc" id="class_cap_boing_html_a2bf6f58f93ff52263cf9926e4d91c239"><div class="ttname"><a href="class_cap_boing.html#a2bf6f58f93ff52263cf9926e4d91c239">CapBoing::actualiser</a></div><div class="ttdeci">void actualiser(proj_container &amp;projectiles) override</div><div class="ttdoc">Active les effets de la capacité </div><div class="ttdef"><b>Definition:</b> CapBoing.cpp:46</div></div>
+<div class="ttc" id="class_cap_boing_html_a9d315f24e4dfa2406956a9c53624d2ec"><div class="ttname"><a href="class_cap_boing.html#a9d315f24e4dfa2406956a9c53624d2ec">CapBoing::CapBoing</a></div><div class="ttdeci">CapBoing(Ecran &amp;ecran, const std::weak_ptr&lt; Entite &gt; &amp;lanceur)</div><div class="ttdoc">Constructeur. </div><div class="ttdef"><b>Definition:</b> CapBoing.cpp:4</div></div>
+<div class="ttc" id="def__type_8h_html_a87980cd8ee9533e561a73e8bbc728188"><div class="ttname"><a href="def__type_8h.html#a87980cd8ee9533e561a73e8bbc728188">proj_container</a></div><div class="ttdeci">std::vector&lt; proj_ptr &gt; proj_container</div><div class="ttdef"><b>Definition:</b> def_type.h:21</div></div>
+<div class="ttc" id="class_capacite_html"><div class="ttname"><a href="class_capacite.html">Capacite</a></div><div class="ttdoc">Classe abstraite qui définit la structure générale d&amp;#39;une capacité, à faire hériter de chaque capacité...</div><div class="ttdef"><b>Definition:</b> Capacite.h:19</div></div>
+<div class="ttc" id="class_cap_boing_html_a879dfeba930a0be60873ef3403a35eb1"><div class="ttname"><a href="class_cap_boing.html#a879dfeba930a0be60873ef3403a35eb1">CapBoing::utiliser</a></div><div class="ttdeci">void utiliser(proj_container &amp;projectiles) override</div><div class="ttdoc">Active la capacite. </div><div class="ttdef"><b>Definition:</b> CapBoing.cpp:26</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_966d622809021e16937e6471877e7c28.html">_Télécom Saint-Etienne</a></li><li class="navelem"><a class="el" href="dir_96ced5405f341181826ad81faf6656c3.html">_Projets</a></li><li class="navelem"><a class="el" href="dir_de98b535789cc7e70803e176e4362f7b.html">Git Shmou&#39;TSE</a></li><li class="navelem"><a class="el" href="dir_27039fa1428ec68401cbc5b845225be8.html">src</a></li><li class="navelem"><a class="el" href="dir_2c3e1f6aa9a70aef1141b8b1d4b44bdd.html">Capacites</a></li><li class="navelem"><a class="el" href="_cap_boing_8h.html">CapBoing.h</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

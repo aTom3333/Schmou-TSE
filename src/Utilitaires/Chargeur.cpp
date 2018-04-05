@@ -114,5 +114,7 @@ bool caseInsensitiveCompare::operator()(const std::string& a, const std::string&
         ++first1;
         ++first2;
     }
-    return false;
+    return first1 == last1 and first2 != last2;
 }
+
+
