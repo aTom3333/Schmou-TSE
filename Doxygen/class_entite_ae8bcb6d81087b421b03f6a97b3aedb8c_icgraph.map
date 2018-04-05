@@ -1,0 +1,11 @@
+<map id="Entite::afficher" name="Entite::afficher">
+<area shape="rect" id="node2" href="$class_vaisseau_test.html#a9207fbb193d4395cefbd6977bc502bcb" title="Gère le comportement du vaisseau. " alt="" coords="169,5,320,32"/>
+<area shape="rect" id="node3" href="$class_proj_missile.html#a90bee0454d77d2846431f2c8704e2d11" title="Gestion du projectile. " alt="" coords="177,56,313,83"/>
+<area shape="rect" id="node4" href="$class_proj_bouclier_rond.html#a13656b7dbcd9cac9a5df9baeab430103" title="Gestion du projectile. " alt="" coords="159,107,331,133"/>
+<area shape="rect" id="node5" href="$class_vaiss_bouclier.html#a03ba45dff79711b32db64d01ab7ff90b" title="Gère le comportement du vaisseau. " alt="" coords="169,157,321,184"/>
+<area shape="rect" id="node6" href="$class_proj_boing.html#ac0d11abb68efb90dba3529d2bf1ce4f2" title="Gestion du projectile. " alt="" coords="181,208,309,235"/>
+<area shape="rect" id="node7" href="$class_proj_piou.html#aa25660500d188f1085f8289db91a6170" title="Gestion du projectile. " alt="" coords="184,259,305,285"/>
+<area shape="rect" id="node8" href="$class_vaisseau_eclaireur.html#a66811ba07fd951304cca1c8be457b8e4" title="Gère le comportement du vaisseau. " alt="" coords="177,310,312,351"/>
+<area shape="rect" id="node9" href="$class_vaisseau_attaquant.html#aaa30cf9a9cd4319bbf418799019284d7" title="Gère le comportement du vaisseau. " alt="" coords="175,375,315,417"/>
+<area shape="rect" id="node10" href="$class_vaisseau_defenseur.html#a9d8301faaaebc09dd5e807e8ebe829ae" title="Gère le comportement du vaisseau. " alt="" coords="173,441,316,482"/>
+</map>

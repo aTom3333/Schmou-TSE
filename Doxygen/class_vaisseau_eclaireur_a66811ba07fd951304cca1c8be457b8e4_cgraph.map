@@ -1,0 +1,9 @@
+<map id="VaisseauEclaireur::gestion" name="VaisseauEclaireur::gestion">
+<area shape="rect" id="node2" href="$class_entite.html#ae8bcb6d81087b421b03f6a97b3aedb8c" title="Affiche le premier sprite de l&#39;Entite, gère les frames d&#39;invincibilité " alt="" coords="200,56,305,83"/>
+<area shape="rect" id="node5" href="$class_ecran.html#a7fc62bede7a95d972326151446f4e75c" title="Ecran::getTempsFrame" alt="" coords="560,120,719,147"/>
+<area shape="rect" id="node6" href="$class_entite.html#aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad" title="Fixe la position de l&#39;Entite. " alt="" coords="188,157,317,184"/>
+<area shape="rect" id="node8" href="$_trajectoire_8cpp.html#a62e683f2f06379bcf274a91c7a9a0a32" title="traj_position" alt="" coords="207,208,299,235"/>
+<area shape="rect" id="node3" href="$class_entite.html#ac241fa1af0c598a820e2cae2ede17ac4" title="Entite::afficher_debug" alt="" coords="365,5,512,32"/>
+<area shape="rect" id="node4" href="$class_ecran.html#a735fe022858b847a019bf1a69e117f1a" title="Ecran::getWindow" alt="" coords="575,44,703,71"/>
+<area shape="rect" id="node7" href="$class_entite.html#a2403ba6bc4c194e7421b6edd3228b69a" title="Déplace l&#39;Entite en fonction de vits_ et rotation_. " alt="" coords="391,157,486,184"/>
+</map>

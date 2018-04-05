@@ -1,0 +1,15 @@
+<map id="Entite::setPosition" name="Entite::setPosition">
+<area shape="rect" id="node2" href="$class_proj_bouclier_rond.html#a13656b7dbcd9cac9a5df9baeab430103" title="Gestion du projectile. " alt="" coords="212,5,384,32"/>
+<area shape="rect" id="node3" href="$class_proj_bismillah.html#a5a037871dddbe729c926e7d9eb69b026" title="Gestion du projectile. " alt="" coords="224,56,372,83"/>
+<area shape="rect" id="node4" href="$class_proj_boing.html#ac0d11abb68efb90dba3529d2bf1ce4f2" title="Gestion du projectile. " alt="" coords="234,107,362,133"/>
+<area shape="rect" id="node5" href="$class_vaisseau_eclaireur.html#a66811ba07fd951304cca1c8be457b8e4" title="Gère le comportement du vaisseau. " alt="" coords="231,158,365,199"/>
+<area shape="rect" id="node6" href="$class_vaisseau_attaquant.html#aaa30cf9a9cd4319bbf418799019284d7" title="Gère le comportement du vaisseau. " alt="" coords="228,223,368,265"/>
+<area shape="rect" id="node7" href="$class_vaisseau_defenseur.html#a9d8301faaaebc09dd5e807e8ebe829ae" title="Gère le comportement du vaisseau. " alt="" coords="227,289,369,330"/>
+<area shape="rect" id="node8" href="$class_proj_boing.html#a4470a575e57978e4941b5771f710d7f3" title="ProjBoing::ProjBoing" alt="" coords="227,355,369,381"/>
+<area shape="rect" id="node9" href="$class_proj_bouclier_rond.html#ac0ace14849356b453582614a006116b5" title="Constructeur. " alt="" coords="183,405,413,432"/>
+<area shape="rect" id="node10" href="$class_proj_missile.html#aa7eb20457df3b5c051cd607c9f92ae67" title="ProjMissile::ProjMissile" alt="" coords="219,456,377,483"/>
+<area shape="rect" id="node11" href="$class_proj_piou.html#ad1c36a2d7605a09cd964877850394eac" title="Constructeur. " alt="" coords="234,507,362,533"/>
+<area shape="rect" id="node12" href="$class_vaisseau_attaquant.html#af4eff1782c7e67adad4e23aec3e03333" title="VaisseauAttaquant::\lVaisseauAttaquant" alt="" coords="228,558,368,599"/>
+<area shape="rect" id="node13" href="$class_vaisseau_defenseur.html#a19c543d8b04bdc0bb1d1c349bd3f1b99" title="Contructeur. " alt="" coords="227,623,369,665"/>
+<area shape="rect" id="node14" href="$class_vaisseau_eclaireur.html#a3e02d4ef7316d0a44148c785c376deb2" title="Contructeur. " alt="" coords="231,689,365,730"/>
+</map>

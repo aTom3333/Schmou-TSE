@@ -59,7 +59,7 @@ class Capacite
 		
 		// Getters
 		sf::Time getCooldown() const { return cooldown_; };
-		sf::Time getTime() const { return t_lastuse_.getElapsedTime(); };
+		sf::Time getTime() const { return t_lastuse_; };
 		const std::string& getNom() const { return nom_; };
 		const sf::Sprite& getIcon() const { return icone_; };
 		const sf::RectangleShape& getMasque() const { return masque_; };
@@ -74,18 +74,16 @@ class Capacite
 
 		//Caractéristiques de code
 		bool tir_ = false; /// < True si tir principal 1 ou 2
-		bool autoAim = false; /// < True si en état visée auto
 
 		//Caractéristiques de jeu
 		std::string nom_; /// Nom de la compétence
 		unsigned int niveau_ = 0; /// Niveau, à partir de 1
 
 		sf::Time cooldown_; /// Temps à attendre avant de pouvoir utiliser la capacité à nouveau
-		sf::Time longevite_; ///Temps après lequel le projectile issu disparait
-		sf::Clock t_lastuse_; /// Temps écoulé depuis la dernière activation de la compétence
+		sf::Time t_longevite_; ///Temps après lequel le projectile issu disparait
+		sf::Time t_lastuse_; /// Temps écoulé depuis la dernière activation de la compétence
 
 		//Texture
-		//std::shared_ptr<sf::Texture> capTexture_; //TODO PG encore utile ?
 		std::vector<sf::Sprite> sprites_; ///< Vecteur de sprites pour en avoir plusieurs
 
 		//Son

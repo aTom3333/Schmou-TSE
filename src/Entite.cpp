@@ -55,19 +55,22 @@ void Entite::afficher(bool debug)
 		window.draw(smokes_.front());
 	}
 
-	if(debug) afficher_debug();
+	afficher_debug(debug);
 }
 
-void Entite::afficher_debug()
+void Entite::afficher_debug(bool debug)
 {
-	//cercle englobant
-	cercleEnglobant_.setFillColor({ 255, 100, 100, 128 });
-	ecran_.getWindow().draw(cercleEnglobant_);
-	//hitbox
-	for (auto& elem : forme_)
+	if (DEBUG ^ debug)
 	{
-		elem->setFillColor({ 255, 100, 100, 128 });
-		ecran_.getWindow().draw(*elem);
+		//cercle englobant en rouge mi-transparent
+		cercleEnglobant_.setFillColor({ 255, 100, 100, 128 });
+		ecran_.getWindow().draw(cercleEnglobant_);
+		//hitbox en jaune mi-transparent
+		for (auto& elem : forme_)
+		{
+			elem->setFillColor({ 255, 255, 100, 128 });
+			ecran_.getWindow().draw(*elem);
+		}
 	}
 }
 
@@ -101,8 +104,8 @@ void Entite::move(sf::Vector2f delta)
 
 void Entite::move()
 {
-	float x = vit_ *  -cos(rotation_) * ecran_.getClock().getElapsedTime().asSeconds();
-	float y = vit_ * -sin(rotation_) * ecran_.getClock().getElapsedTime().asSeconds();
+	float x = vit_ * cos(rotation_) * ecran_.getTempsFrame().asSeconds();
+	float y = vit_ * -sin(rotation_) * ecran_.getTempsFrame().asSeconds();
 	sf::Vector2f delta(x, y);
 	move(delta);
 }
@@ -162,10 +165,10 @@ bool Entite::estDetruit()
 
 float Entite::getDegatsColl_() const
 {
-	return degatsColl_;
+	return degatsCollision_;
 }
 
-void Entite::setNbPositions(int val)
+void Entite::setNbPositions(size_t val)
 {
 	nbPositions_ = val;
 	if(val == 0) positionsPrev_.clear();
@@ -206,9 +209,9 @@ void Entite::regen()
 {
 
 	// Régénération des différentes statistiques
-	pv_ += regenPV_ * ecran_.getTempsFrame().asSeconds();
-	armure_ += regenARM_ * ecran_.getTempsFrame().asSeconds();
-	bouclier_ += regenBOU_ * ecran_.getTempsFrame().asSeconds();
+	pv_ += regenPv_ * ecran_.getTempsFrame().asSeconds();
+	armure_ += regenArmure_ * ecran_.getTempsFrame().asSeconds();
+	bouclier_ += regenBouclier_ * ecran_.getTempsFrame().asSeconds();
 
 	// Si le seuil maximal est dépassé
 	if (pv_ > pvM_)

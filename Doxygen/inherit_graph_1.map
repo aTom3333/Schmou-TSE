@@ -1,0 +1,10 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$class_capacite.html" title="Classe abstraite qui définit la structure générale d&#39;une capacité, à faire hériter de chaque capacité..." alt="" coords="5,157,79,184"/>
+<area shape="rect" id="node2" href="$class_cap_aim_bot.html" title="donne visée auto à un skill (missile) " alt="" coords="144,5,232,32"/>
+<area shape="rect" id="node3" href="$class_cap_bismillah.html" title="CapBismillah" alt="" coords="139,56,237,83"/>
+<area shape="rect" id="node4" href="$class_cap_boing.html" title="Classe Capacité de test. " alt="" coords="149,107,227,133"/>
+<area shape="rect" id="node5" href="$class_cap_bouclier_rond.html" title="bouclier circulaire avec x PB " alt="" coords="127,157,249,184"/>
+<area shape="rect" id="node6" href="$class_cap_dash.html" title="Classe Capacité permettant de dash. " alt="" coords="151,208,225,235"/>
+<area shape="rect" id="node7" href="$class_cap_missile.html" title="Classe Capacité de base. " alt="" coords="145,259,231,285"/>
+<area shape="rect" id="node8" href="$class_cap_piou.html" title="Classe Capacité de base. " alt="" coords="153,309,223,336"/>
+</map>

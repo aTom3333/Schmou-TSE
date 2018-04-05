@@ -1,8 +1,10 @@
 #include "VaisseauEclaireur.h"
 #include <cmath>
 
+#include <iostream>
 
-VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, double x, double y,Trajectoire traj, double param1, double param2, double param3, double param4) : 
+
+VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, float x, float y,Trajectoire traj, double param1, double param2, double param3, double param4) :
 	Vaisseau(ecran)
 {
 	// Sprites
@@ -10,15 +12,16 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, double x, double y,Trajectoir
 	for (auto& sprite : sprites_)
 		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 
-	// Cercle englobant / Hitbox simple
+	// Cercle englobant
 	//TODO PG Englobeur
-	cercleEnglobant_ = sf::CircleShape((float)sqrt(2*32*32));
-	cercleEnglobant_.setOrigin((float)sqrt(2 * 32 * 32), (float)sqrt(2 * 32 * 32));
-	cercleEnglobant_.setPosition(16, 32);
-	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
+	const float R = hypot(this->getTaille().x / 2.0f, this->getTaille().y / 2.0f);
+	cercleEnglobant_ = sf::CircleShape(R);
+	cercleEnglobant_.setOrigin(R, R);
 
-	// Hitbox
-	// TODO Hitbox complète
+	//Hitbox
+	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
+	for (auto& forme : forme_)
+		forme->setOrigin(forme->getGlobalBounds().width / 2.0f, forme->getGlobalBounds().height / 2.0f);
 
 	//Origine
 	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
@@ -31,13 +34,13 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, double x, double y,Trajectoir
 	pv_ = pvM_ = 300;
 	armure_ = armureM_ = 0;
 	bouclier_ = bouclierM_ = 0;
-	vit_ = vitM_ = 50;
+	vit_ = vitM_ = 300;
 
-	regenARM_ = 0;
-	regenBOU_ = 0;
-	regenPV_ = 0;
+	regenArmure_ = 0;
+	regenBouclier_ = 0;
+	regenPv_ = 0;
 
-	degatsColl_ = 50;
+	degatsCollision_ = 50;
 
 	// Initialisation de la trajectoire
 	trajectoire_ = traj;
@@ -46,9 +49,13 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, double x, double y,Trajectoir
 	params_.push_back((float)param3);
 	params_.push_back((float)param4);
 
+	// Position initiale
+	setPosition({ x, y });
+	posInit_ = getPosition();
+
 }
 
-void VaisseauEclaireur::gestion(proj_container proj_cont, Input& input)
+void VaisseauEclaireur::gestion(proj_container &proj_cont, Input& input)
 {
 	// Juste pour mute les warnings du compilateur
 	(void)input;
@@ -65,7 +72,7 @@ void VaisseauEclaireur::gestion(proj_container proj_cont, Input& input)
 	{
 		t_age_ += ecran_.getTempsFrame();
 		setPosition(traj_position(trajectoire_, t_age_, vit_, posInit_, params_));
-		afficher(debug_);
+		afficher();
 	}
 }
 

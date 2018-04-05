@@ -1,0 +1,7 @@
+<map id="ProjMissile::gestion" name="ProjMissile::gestion">
+<area shape="rect" id="node2" href="$class_entite.html#ae8bcb6d81087b421b03f6a97b3aedb8c" title="Affiche le premier sprite de l&#39;Entite, gère les frames d&#39;invincibilité " alt="" coords="189,56,295,83"/>
+<area shape="rect" id="node4" href="$class_ecran.html#a735fe022858b847a019bf1a69e117f1a" title="Ecran::getWindow" alt="" coords="549,56,677,83"/>
+<area shape="rect" id="node5" href="$class_ecran.html#a7fc62bede7a95d972326151446f4e75c" title="Ecran::getTempsFrame" alt="" coords="343,183,501,209"/>
+<area shape="rect" id="node6" href="$class_entite.html#a2403ba6bc4c194e7421b6edd3228b69a" title="Déplace l&#39;Entite en fonction de vits_ et rotation_. " alt="" coords="195,208,289,235"/>
+<area shape="rect" id="node3" href="$class_entite.html#ac241fa1af0c598a820e2cae2ede17ac4" title="Entite::afficher_debug" alt="" coords="349,5,495,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Entite" name="Entite">
+<area shape="rect" id="node12" href="$class_ecran.html" title="{Ecran\n||+ Ecran()\l+ ~Ecran()\l+ executer()\l+ factory()\l+ isDetruit()\l+ getTempsFrame()\l+ getWindow()\l+ getChargeur()\l+ getClock()\l+ getVaisseauxContainer()\l}" alt="" coords="1121,189,1297,399"/>
+<area shape="rect" id="node14" href="$class_chargeur.html" title="{Chargeur\n||+ Chargeur()\l+ getTexture()\l+ getSoundBuffer()\l+ getFont()\l}" alt="" coords="930,5,1061,127"/>
+</map>

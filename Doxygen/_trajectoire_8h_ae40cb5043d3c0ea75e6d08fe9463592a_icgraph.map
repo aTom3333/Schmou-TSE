@@ -1,0 +1,5 @@
+<map id="traj_position" name="traj_position">
+<area shape="rect" id="node2" href="$class_vaisseau_eclaireur.html#a66811ba07fd951304cca1c8be457b8e4" title="Gère le comportement du vaisseau. " alt="" coords="149,5,284,47"/>
+<area shape="rect" id="node3" href="$class_vaisseau_attaquant.html#aaa30cf9a9cd4319bbf418799019284d7" title="Gère le comportement du vaisseau. " alt="" coords="147,71,287,112"/>
+<area shape="rect" id="node4" href="$class_vaisseau_defenseur.html#a9d8301faaaebc09dd5e807e8ebe829ae" title="Gère le comportement du vaisseau. " alt="" coords="145,136,288,177"/>
+</map>

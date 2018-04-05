@@ -9,14 +9,11 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	for (auto& sprite : sprites_)
 		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 
-	// Cercle englobant
-	//TODO PG Englobeur
-	const float largeur_vaisseau = this->getTaille().x;
-	const float hauteur_vaisseau = this->getTaille().y;
-	const float R = sqrt(2 * largeur_vaisseau * hauteur_vaisseau);
-	cercleEnglobant_ = sf::CircleShape((float)R);
-	cercleEnglobant_.setOrigin(R, R);
-	cercleEnglobant_.setPosition(32, 32);
+	// Origine
+	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
+
+	// Sons
+	sounds_.emplace_back(*ecran.getChargeur().getSoundBuffer("son.sakado"));
 
 	// Hitbox
 	sf::ConvexShape forme1(3);
@@ -33,8 +30,16 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	forme2.setOrigin({ 0, 32 });
 	forme_.emplace_back(new sf::ConvexShape(forme2));
 
-	// Origine
-	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
+	// Cercle englobant
+	//TODO PG Englobeur
+	////const float largeur_vaisseau = this->getTaille().x;
+	////const float hauteur_vaisseau = this->getTaille().y;
+	////const float R = hypot(largeur_vaisseau / 2.0f, hauteur_vaisseau / 2.0f);
+	////const float rayon = rayon_englobeur(forme_, origine_);
+	////cercleEnglobant_ = sf::CircleShape(R);
+	////cercleEnglobant_.setOrigin(R, R);
+	////cercleEnglobant_.setPosition({ 0,0 });
+	englobeur_circulaire(*this);
 
 	// Caractéristiques de code
 	equipe_ = JOUEUR;
@@ -45,17 +50,17 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	// Stats
 	pv_ = pvM_ = 1000;
 	armure_ = armureM_ = 50;
-	bouclier_ = bouclierM_ = 100;
+	bouclier_ = bouclierM_ = 0;
 	vit_ = vitM_ = 500;
 
-	regenARM_ = 0;
-	regenBOU_ = 0;
-	regenPV_ = 0;
+	regenArmure_ = 0;
+	regenBouclier_ = 0;
+	regenPv_ = 0;
 
-	degatsColl_ = 50;
+	degatsCollision_ = 50;
 }
 
-void VaisseauTest::gestion(proj_container proj_cont, Input& input)
+void VaisseauTest::gestion(proj_container& proj_cont, Input& input)
 {
 	// Gestion du vaisseau
 	// Si la touche TIR 1 est activé

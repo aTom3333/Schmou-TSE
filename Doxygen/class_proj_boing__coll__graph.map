@@ -1,0 +1,6 @@
+<map id="ProjBoing" name="ProjBoing">
+<area shape="rect" id="node2" href="$class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje..." alt="" coords="1846,1775,1977,1896"/>
+<area shape="rect" id="node3" href="$class_entite.html" title="Classe virtuelle qui définit une entité " alt="" coords="842,652,997,1712"/>
+<area shape="rect" id="node14" href="$class_ecran.html" title="{Ecran\n||+ Ecran()\l+ ~Ecran()\l+ executer()\l+ factory()\l+ isDetruit()\l+ getTempsFrame()\l+ getWindow()\l+ getChargeur()\l+ getClock()\l+ getVaisseauxContainer()\l}" alt="" coords="1282,189,1458,399"/>
+<area shape="rect" id="node16" href="$class_chargeur.html" title="{Chargeur\n||+ Chargeur()\l+ getTexture()\l+ getSoundBuffer()\l+ getFont()\l}" alt="" coords="1105,5,1236,127"/>
+</map>

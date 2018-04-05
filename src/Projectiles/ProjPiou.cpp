@@ -16,17 +16,17 @@ ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf
 
 	//Gestion du son
 	sounds_ = sound;
-	if(!sounds_.empty())sounds_.front().play();//son joué à la création du projectile	
+	sounds_.front().play(); //son joué à la création du projectile	
 
 	// Cercle englobant
     //TODO utiliser la fonction Englobeuse
-	cercleEnglobant_ = sf::CircleShape(hypot(20,30));
-	cercleEnglobant_.setOrigin(10, 10);
-	cercleEnglobant_.setPosition(10, 10);
+	const float R = hypot(10, 15); //basé sur Piou20x30
+	cercleEnglobant_ = sf::CircleShape(R);
+	cercleEnglobant_.setOrigin(R, R);
     
     //Hitbox
 	forme_.emplace_back(new sf::RectangleShape({20,30}));
-    forme_.at(0)->setOrigin({10,15});
+    forme_.at(0)->setOrigin({10,15}); //basé sur Piou20x30
 	
 	// Caractéristiques
 	equipe_ = equipe;
@@ -36,9 +36,9 @@ ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf
 	armure_ = armureM_ = 0;
 	bouclier_ = bouclierM_ = 0;
 
-	regenARM_ = regenBOU_ = regenPV_ = 0;
+	regenArmure_ = regenBouclier_ = regenPv_ = 0;
 
-	degatsColl_ = 70; //TODO PG multiplier par lanceur.stats().atk (faire un genre de struct stats)
+	degatsCollision_ = 70; //TODO PG multiplier par lanceur.stats().atk (faire un genre de struct stats)
 
 	vit_ = vitM_ = 700;
 
@@ -49,13 +49,13 @@ ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf
 void ProjPiou::gestion()
 {
 	auto& window = ecran_.getWindow();
-	auto tempsEcoule = ecran_.getClock().getElapsedTime();
+	auto tempsEcoule = ecran_.getTempsFrame();
 	move();
-	window.draw(sprites_.at(0));//HACK PG il faut màj afficher de entité avec sprites_ puis le mettre ici
+	afficher();
 }
 
 void ProjPiou::agit(Entite& proj)
 {
-	proj.recoitDegats(degatsColl_);
+	proj.recoitDegats(degatsCollision_);
 	detruit_ = true;
 }

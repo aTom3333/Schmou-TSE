@@ -1,0 +1,5 @@
+<map id="VaissBouclier::gestion" name="VaissBouclier::gestion">
+<area shape="rect" id="node2" href="$class_entite.html#ae8bcb6d81087b421b03f6a97b3aedb8c" title="Affiche le premier sprite de l&#39;Entite, gère les frames d&#39;invincibilité " alt="" coords="205,31,311,57"/>
+<area shape="rect" id="node3" href="$class_entite.html#ac241fa1af0c598a820e2cae2ede17ac4" title="Entite::afficher_debug" alt="" coords="359,5,505,32"/>
+<area shape="rect" id="node4" href="$class_ecran.html#a735fe022858b847a019bf1a69e117f1a" title="Ecran::getWindow" alt="" coords="553,31,681,57"/>
+</map>

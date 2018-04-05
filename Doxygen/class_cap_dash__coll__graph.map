@@ -1,0 +1,5 @@
+<map id="CapDash" name="CapDash">
+<area shape="rect" id="node2" href="$class_capacite.html" title="Classe abstraite qui définit la structure générale d&#39;une capacité, à faire hériter de chaque capacité..." alt="" coords="873,461,989,759"/>
+<area shape="rect" id="node14" href="$class_ecran.html" title="{Ecran\n||+ Ecran()\l+ ~Ecran()\l+ executer()\l+ factory()\l+ isDetruit()\l+ getTempsFrame()\l+ getWindow()\l+ getChargeur()\l+ getClock()\l+ getVaisseauxContainer()\l}" alt="" coords="743,189,919,399"/>
+<area shape="rect" id="node16" href="$class_chargeur.html" title="{Chargeur\n||+ Chargeur()\l+ getTexture()\l+ getSoundBuffer()\l+ getFont()\l}" alt="" coords="648,5,779,127"/>
+</map>

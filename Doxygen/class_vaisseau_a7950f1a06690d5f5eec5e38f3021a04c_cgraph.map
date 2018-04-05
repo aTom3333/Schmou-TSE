@@ -1,0 +1,4 @@
+<map id="Vaisseau::agit" name="Vaisseau::agit">
+<area shape="rect" id="node2" href="$class_entite.html#ab16c58f618b3b854310f92f044cc4a17" title="Inflige des dégats au bouclier, à l&#39;armure et aux points de vie en fonctions des dégats reçu..." alt="" coords="159,5,296,32"/>
+<area shape="rect" id="node3" href="$class_entite.html#af5c424f69b2c880ae9c12786abd28592" title="Procedure a effectuer lorsque le vaisseau est détruit. " alt="" coords="344,5,472,32"/>
+</map>

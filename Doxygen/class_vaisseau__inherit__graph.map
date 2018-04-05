@@ -1,0 +1,8 @@
+<map id="Vaisseau" name="Vaisseau">
+<area shape="rect" id="node3" href="$class_vaiss_bouclier.html" title="classe du bouclier du VaisseauDefenseur " alt="" coords="5,2119,136,2240"/>
+<area shape="rect" id="node4" href="$class_vaisseau_attaquant.html" title="classe d&#39;un ennemi de base : l&#39;attaquant " alt="" coords="160,2119,320,2240"/>
+<area shape="rect" id="node5" href="$class_vaisseau_defenseur.html" title="{VaisseauDefenseur\n||+ VaisseauDefenseur()\l+ ~VaisseauDefenseur()\l+ gestion()\l+ destruction()\l}" alt="" coords="344,2119,507,2240"/>
+<area shape="rect" id="node6" href="$class_vaisseau_eclaireur.html" title="classe d&#39;un ennemi de base : l&#39;éclaireur " alt="" coords="531,2119,685,2240"/>
+<area shape="rect" id="node7" href="$class_vaisseau_test.html" title="{VaisseauTest\n||+ VaisseauTest()\l+ ~VaisseauTest()\l+ gestion()\l+ destruction()\l}" alt="" coords="710,2119,839,2240"/>
+<area shape="rect" id="node2" href="$class_entite.html" title="Classe virtuelle qui définit une entité " alt="" coords="348,5,503,1564"/>
+</map>

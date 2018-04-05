@@ -41,6 +41,7 @@ Chargeur::Chargeur()
 }
 
 //TODO PG je crois qu'on ne peut pas appeler de sous-texture là, si on appelle une 2ème sous texture sur une image de chemins.ini qui a déjà été chargée ça va renvoyer la même...
+//TODO PG sous-texture
 std::shared_ptr<sf::Texture> Chargeur::getTexture(const std::string& name, const bool& repeated, const bool& smooth, const sf::IntRect& area)
 {
     if(textures_.find(name) != textures_.end())

@@ -1,0 +1,9 @@
+<map id="Capacite" name="Capacite">
+<area shape="rect" id="node2" href="$class_cap_aim_bot.html" title="donne visée auto à un skill (missile) " alt="" coords="5,556,191,692"/>
+<area shape="rect" id="node3" href="$class_cap_bismillah.html" title="{CapBismillah\n||+ CapBismillah()\l+ utiliser()\l+ actualiser()\l}" alt="" coords="215,571,333,677"/>
+<area shape="rect" id="node4" href="$class_cap_boing.html" title="Classe Capacité de test. " alt="" coords="358,563,465,685"/>
+<area shape="rect" id="node5" href="$class_cap_bouclier_rond.html" title="bouclier circulaire avec x PB " alt="" coords="489,571,632,677"/>
+<area shape="rect" id="node6" href="$class_cap_dash.html" title="Classe Capacité permettant de dash. " alt="" coords="657,571,755,677"/>
+<area shape="rect" id="node7" href="$class_cap_missile.html" title="Classe Capacité de base. " alt="" coords="779,571,886,677"/>
+<area shape="rect" id="node8" href="$class_cap_piou.html" title="Classe Capacité de base. " alt="" coords="910,571,1009,677"/>
+</map>

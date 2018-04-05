@@ -35,9 +35,6 @@ public:
 	* Inflige les dégat déterminés à la construction
 	*/
 	void agit(Entite &e);
-
-protected:
-	float tempsMax_;
 };
 
 

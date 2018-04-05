@@ -2,7 +2,8 @@
 #include <cmath>
 
 
-ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe) :
+
+ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe, const bool& aimbot) :
 	Projectile(ecran)
 {
 	// Weak pointeur vers lanceur
@@ -12,18 +13,18 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 	sprites_ = sprite;
 
 	//Origines
-	origine_ = { 10,15 }; //basé sur image Piou20x30
-	sprites_.at(0).setOrigin({ 10,15 });
+	origine_ = { 20,40 }; //basé sur projectile_missile de dimensions 40x80
+	sprites_.at(0).setOrigin({ 20,40 });
 
 	//Gestion du son
 	sounds_ = sound;
 	if (!sounds_.empty())sounds_.front().play();//son joué à la création du projectile	
 
-												// cercle englobant
-												//TODO utiliser la fonction Englobeuse
-	cercleEnglobant_ = sf::CircleShape(hypot(20, 40));
-	cercleEnglobant_.setOrigin(20, 40);
-	cercleEnglobant_.setPosition(20, 40);
+	// cercle englobant
+	//TODO utiliser la fonction Englobeuse
+	const float R = hypot(20, 40);//basé sur projectile_missile de dimensions 40x80
+	cercleEnglobant_ = sf::CircleShape(R);
+	cercleEnglobant_.setOrigin(R, R);
 
 	//Hitbox
 	forme_.emplace_back(new sf::RectangleShape({ 40,80 }));
@@ -31,17 +32,27 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 
 	// Caractéristiques
 	equipe_ = equipe;
+	aimbot_ = aimbot;
+	if (aimbot_)
+	{
+		for (auto vaisseau : ecran_.getVaisseauxContainer())
+		{
+			//TODO PG récupérer position des vaisseaux de l'écran ?
+			//auto pos = vaisseau->getPosition();
+			//if(auto cible
+		}
+	}
 
 	//Stats
 	pv_ = pvM_ = 10;
 	armure_ = armureM_ = 0;
 	bouclier_ = bouclierM_ = 0;
 
-	regenARM_ = regenBOU_ = regenPV_ = 0;
+	regenArmure_ = regenBouclier_ = regenPv_ = 0;
 
-	degatsColl_ = 300; //TODO PG xlanceur.stats().atk
+	degatsCollision_ = 300; //TODO PG xlanceur.stats().atk
 
-	vit_ = vitM_ = 700;
+	vit_ = vitM_ = 10;
 
 	//position de départ
 	setPosition({ lanceur->getPosition().x ,  lanceur->getPosition().y - lanceur->getTaille().y / 2.0f });
@@ -49,22 +60,31 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
     actif_ = true;
 
 	coef_acceleration_ = 1.05;
+
+	rotation_ = -PI / 2;
 }
 
 void ProjMissile::gestion()
 {
 	auto& window = ecran_.getWindow();
-	auto tempsEcoule = ecran_.getClock().getElapsedTime();
+	auto tempsEcoule = ecran_.getTempsFrame();
 
-	vit_ *= coef_acceleration_ * tempsEcoule.asMilliseconds();
-	if (vit_ >= 400) vit_ = 400;
+	if (!aimbot_)
+	{
+		vit_ *= coef_acceleration_ * (1. + tempsEcoule.asSeconds());
+		if (vit_ >= 1000) vit_ = 1000;
 
-	move();
-	window.draw(sprites_.at(0));//HACK PG il faut màj afficher de entité avec sprites_ puis le mettre ici
+		move();
+		afficher();
+	}
+	else
+	{
+
+	}
 }
 
 void ProjMissile::agit(Entite & e)
 {
-    e.recoitDegats(degatsColl_);
+    e.recoitDegats(degatsCollision_);
     detruit_ = true;
 }

@@ -1,0 +1,4 @@
+<map id="Entite::rotate" name="Entite::rotate">
+<area shape="rect" id="node2" href="$class_entite.html#a8623ac815e34b553098f45696ea8918b" title="Fixe l&#39;orientation de l&#39;Entite appelante. " alt="" coords="151,5,281,32"/>
+<area shape="rect" id="node3" href="$class_proj_boing.html#ac0d11abb68efb90dba3529d2bf1ce4f2" title="Gestion du projectile. " alt="" coords="329,5,457,32"/>
+</map>

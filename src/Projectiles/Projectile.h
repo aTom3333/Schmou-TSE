@@ -34,8 +34,16 @@ class Projectile : public Entite
 		* Détruit l'entité
 		*/
 		void destruction() override { detruit_ = true; }
+
+		/**
+		*@fn gestion_aimbot
+		*@brief Gestion de projectile en visée auto
+		*/
+		void gestion_aimbot();
+
 	protected:
         std::weak_ptr<Entite> lanceur_; ///< On garde un lien vers le lanceur à travers un weak_ptr pour éviter les cycles
+		bool aimbot_ = false;///<True si en état visée automatique
 
 };
 

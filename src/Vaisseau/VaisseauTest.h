@@ -10,14 +10,14 @@ class VaisseauTest : public Vaisseau
 public:
 	VaisseauTest(Ecran& ecran);
 	~VaisseauTest() = default;
-	void gestion(proj_container proj_cont, Input& input) override;
+	void gestion(proj_container& proj_cont, Input& input) override;
 	/**
 	* @fn destruction
 	* @brief règle l'attribut detruit_ à true
 	*
 	* Procédure à effectuer lorsque le vaisseau est détruit
 	*/
-	void destruction() override { detruit_ = true; }
+	void destruction() override { sounds_.front().play(); detruit_ = true; }
 };
 
 
