@@ -315,16 +315,16 @@ class Entite
 
 		//setters
 		void setequipe_(Equipe equipe) { equipe_ = equipe; }
-		void setInnate_(const bool& isInnate) { innate_ = isInnate; }
+		void setInnate_(bool isInnate) { innate_ = isInnate; }
 		void setNbPositions(size_t val);
 		void setSmokeTexture(const sf::Texture &text, sf::Color couleur = { 255,255,255 });
 		void setOrigin(sf::Vector2f origine);
-		void setActif(const bool& actif) { t_age_ = sf::Time::Zero; actif_ = actif; }
+		void setActif(bool actif) { t_age_ = sf::Time::Zero; actif_ = actif; }
 		void setLongevite(const sf::Time& t_longevite) { t_longevite_ = t_longevite; }
-		void setAutoAim(const bool& aimbot) { aimbot_ = aimbot; }
+		void setAutoAim(bool aimbot) { aimbot_ = aimbot; }
 
-		void setCollisionneuse(const bool& collisionneuse) { collisionneuse_ = collisionneuse; }
-		void setCollisionnable(const bool& collisionnable) { collisionnable_ = collisionnable; }
+		void setCollisionneuse(bool collisionneuse) { collisionneuse_ = collisionneuse; }
+		void setCollisionnable(bool collisionnable) { collisionnable_ = collisionnable; }
 
 		void setBouclier(const float& bouclier) { bouclier_ = bouclier; }
 		void setBouclierM(const float& bouclierM) { bouclierM_ = bouclierM; }

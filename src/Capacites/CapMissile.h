@@ -36,8 +36,6 @@ class CapMissile : public Capacite
 		* @param vaisseau Vaisseau qui a activé la compétence
 		*/
 		void actualiser(proj_container& projectiles) override;
-	private:
-
 };
 
 

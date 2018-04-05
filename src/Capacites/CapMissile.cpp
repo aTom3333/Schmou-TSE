@@ -10,6 +10,11 @@ CapMissile::CapMissile(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	//Sprites
 	sprites_.emplace_back(*ecran.getChargeur().getTexture("Cap.missile"));
 
+	// Icônes
+	icone_.setTexture(*ecran.getChargeur().getTexture("icone.missile"));
+
+	// Sons
+
 }
 
 void CapMissile::utiliser(proj_container& projectiles)
@@ -23,7 +28,7 @@ void CapMissile::utiliser(proj_container& projectiles)
 			t_lastuse_ = sf::Time::Zero;
 
 			// Création du projectile au lancement
-			proj_ptr temp(new ProjMissile(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe()));
+			proj_ptr temp(new ProjMissile(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe(), aimbot_));
 			projectiles.push_back(temp);
 		}
 	}

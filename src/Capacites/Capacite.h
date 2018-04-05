@@ -66,8 +66,9 @@ class Capacite
 		const sf::Text& getText() const { return text_; };
 		bool getAffiche() { return afficheIcone_; };
 		bool getTir() { return tir_; };
-		const std::vector<sf::Sound>& getSounds_() const { return sounds_; }		
+		const std::vector<sf::Sound>& getSounds_() const { return sounds_; }	
 
+		void setAutoAim(bool aimbot) { aimbot_ = aimbot; }
 	protected:
 		// Référence vers l'écran
 		Ecran& ecran_;
@@ -78,6 +79,7 @@ class Capacite
 		//Caractéristiques de jeu
 		std::string nom_; /// Nom de la compétence
 		unsigned int niveau_ = 0; /// Niveau, à partir de 1
+		bool aimbot_ = false;///<True si en état visée automatique
 
 		sf::Time cooldown_; /// Temps à attendre avant de pouvoir utiliser la capacité à nouveau
 		sf::Time t_longevite_; ///Temps après lequel le projectile issu disparait

@@ -55,7 +55,7 @@ void ProjBoing::gestion()
 	rotationSpr_ += 500 * tempsEcoule.asSeconds();
 	sprites_.at(0).setRotation(rotationSpr_);
 
-	//TODO écrire "sounds_.front().play()" au rebond
+	//TODO CL écrire "sounds_.front().play()" au rebond
 
 	if (getPosition().x < 0)
 	{

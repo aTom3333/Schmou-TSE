@@ -13,7 +13,7 @@
 class ProjMissile : public Projectile
 {
 	public:
-		ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe, const bool& aimbot = false);
+		ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe, bool aimbot = false);
 		~ProjMissile() {};
 		/**
 		* @fn gestion

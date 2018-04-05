@@ -8,7 +8,7 @@
 #include "../Utilitaires/Divers.h"
 
 
-Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : input_(window, media), avecPattern_{avecPattern}, afficheHUD_{afficheHUD}, Ecran(window)
+Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : input_{window, media}, avecPattern_{avecPattern}, afficheHUD_{afficheHUD}, Ecran(window)
 {
 	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
 	{
@@ -31,9 +31,9 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 	//COMP1 BouclierRond
 	vaisseautest->addCapacite(new CapBouclierRond(*this, vaisseautest));
 	//COMP2 Missile
-	//TODO PG CapMissile
 	vaisseautest->addCapacite(nullptr);
 	//vaisseautest->addCapacite(new CapMissile(*this, vaisseautest));
+	//vaisseautest->getCapacites().at(3)->setAutoAim(true);
 	//COMP3 Boing
 	vaisseautest->addCapacite(new CapBoing(*this, vaisseautest));
 	//ULTI Bismillah
@@ -311,7 +311,6 @@ void Partie::initPatternTest()
 	v1.ajouterElement({ sf::milliseconds(800), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
 	v1.ajouterElement({ sf::milliseconds(1200), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
 	v1.ajouterElement({ sf::milliseconds(1600), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
-
 
 	v2.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
 	v2.ajouterElement({ sf::milliseconds(400), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });

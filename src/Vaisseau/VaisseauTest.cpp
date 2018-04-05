@@ -84,8 +84,7 @@ void VaisseauTest::gestion(proj_container& proj_cont, Input& input)
 	// Si la touche COMP 2 est activé
 	if (input.action(COMP2))
 	{
-		//TODO PG Missile
-		//capacites_[3]->utiliser(proj_cont);
+		capacites_[3]->utiliser(proj_cont);
 	}
 
 	// Si la touche COMP 3 est activé
