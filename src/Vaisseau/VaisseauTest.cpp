@@ -5,7 +5,7 @@
 VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 {
 	// Sprites
-	sprites_.emplace_back(*ecran.getChargeur().getTexture("vaiss.vaisseautest.lapin"));
+	sprites_.emplace_back(*ecran.getChargeur().getTexture("vaiss.vaisseautest.deux"));
 	for (auto& sprite : sprites_)
 		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
 

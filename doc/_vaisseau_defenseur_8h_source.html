@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Schmou&#39;TSE:  Fichier source de D:/_Télécom Saint-Etienne/_Projets/Git Shmou&#39;TSE/src/Vaisseau/VaisseauDefenseur.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="vaisseau.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Schmou&#39;TSE
+   &#160;<span id="projectnumber">Nettoyage de printemps</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par doc 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_vaisseau_defenseur_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">VaisseauDefenseur.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_vaisseau_defenseur_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VAISSEAU_DEFENSEUR_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VAISSEAU_DEFENSEUR_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../constantes.h&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vaisseau_8h.html">Vaisseau.h</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../Utilitaires/Trajectoire.h&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vaiss_bouclier_8h.html">VaissBouclier.h</a>&quot;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_vaisseau_defenseur.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_vaisseau_defenseur.html">VaisseauDefenseur</a> : <span class="keyword">public</span> <a class="code" href="class_vaisseau.html">Vaisseau</a></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_vaisseau_defenseur.html#a19c543d8b04bdc0bb1d1c349bd3f1b99">VaisseauDefenseur</a>(<a class="code" href="class_ecran.html">Ecran</a>&amp; ecran, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <a class="code" href="def__type_8h.html#ad123ed7c93f42c8dd68e4af28b16b639">vaisseau_container</a> &amp;vaisseaux, <a class="code" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95">Trajectoire</a> traj, <span class="keywordtype">float</span> param1, <span class="keywordtype">float</span> param2, <span class="keywordtype">float</span> param3 = 0, <span class="keywordtype">float</span> param4 = 0);</div><div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_vaisseau_defenseur.html#afb1098f176694c537f9a6c31da42d165">   54</a></span>&#160;    <a class="code" href="class_vaisseau_defenseur.html#afb1098f176694c537f9a6c31da42d165">~VaisseauDefenseur</a>() {};</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_vaisseau_defenseur.html#a9d8301faaaebc09dd5e807e8ebe829ae">gestion</a>(<a class="code" href="def__type_8h.html#a87980cd8ee9533e561a73e8bbc728188">proj_container</a>&amp; proj_cont, <a class="code" href="class_input__base.html">Input</a>&amp; input) <span class="keyword">override</span>;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_vaisseau_defenseur.html#aeaaaa161533c6aa07b627172d8657b3a">destruction</a>() <span class="keyword">override</span>;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    sf::Vector2f posInit_; </div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::vector&lt;float&gt; params_; </div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                <span class="comment">// param1 Lineaire : Sens           Parabolique : Sens                          Sinusoidale : Sens (1/-1)</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                <span class="comment">// param2 Lineaire : Pente          Parabolique : Ordonnée de l&#39;extremum        Sinusoidale : Période (spatiale)</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                <span class="comment">// param3 Lineaire : Inutilisé      Parabolique : Abscisse de l&#39;extremum        Sinusoidale : Amplitude</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                <span class="comment">// param4 Lineaire : Inutilisé      Parabolique : Inutilisé                     Sinusoidale : Pente</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95">Trajectoire</a> trajectoire_; </div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif // VAISSEAU_DEFENSEUR_H</span></div><div class="ttc" id="class_vaisseau_defenseur_html_a19c543d8b04bdc0bb1d1c349bd3f1b99"><div class="ttname"><a href="class_vaisseau_defenseur.html#a19c543d8b04bdc0bb1d1c349bd3f1b99">VaisseauDefenseur::VaisseauDefenseur</a></div><div class="ttdeci">VaisseauDefenseur(Ecran &amp;ecran, float x, float y, vaisseau_container &amp;vaisseaux, Trajectoire traj, float param1, float param2, float param3=0, float param4=0)</div><div class="ttdoc">Contructeur. </div><div class="ttdef"><b>Definition:</b> VaisseauDefenseur.cpp:6</div></div>
+<div class="ttc" id="_trajectoire_8h_html_afa7f6e8323d7ee755d93cd1f6019dd95"><div class="ttname"><a href="_trajectoire_8h.html#afa7f6e8323d7ee755d93cd1f6019dd95">Trajectoire</a></div><div class="ttdeci">Trajectoire</div><div class="ttdoc">liste énumérée des types possibles de trajectoire </div><div class="ttdef"><b>Definition:</b> Trajectoire.h:14</div></div>
+<div class="ttc" id="class_vaisseau_defenseur_html_a9d8301faaaebc09dd5e807e8ebe829ae"><div class="ttname"><a href="class_vaisseau_defenseur.html#a9d8301faaaebc09dd5e807e8ebe829ae">VaisseauDefenseur::gestion</a></div><div class="ttdeci">void gestion(proj_container &amp;proj_cont, Input &amp;input) override</div><div class="ttdoc">Gère le comportement du vaisseau. </div><div class="ttdef"><b>Definition:</b> VaisseauDefenseur.cpp:64</div></div>
+<div class="ttc" id="class_vaisseau_defenseur_html_aeaaaa161533c6aa07b627172d8657b3a"><div class="ttname"><a href="class_vaisseau_defenseur.html#aeaaaa161533c6aa07b627172d8657b3a">VaisseauDefenseur::destruction</a></div><div class="ttdeci">void destruction() override</div><div class="ttdoc">Procedure a effectuer lorsque le vaisseau est détruit. </div><div class="ttdef"><b>Definition:</b> VaisseauDefenseur.cpp:92</div></div>
+<div class="ttc" id="class_vaisseau_defenseur_html_afb1098f176694c537f9a6c31da42d165"><div class="ttname"><a href="class_vaisseau_defenseur.html#afb1098f176694c537f9a6c31da42d165">VaisseauDefenseur::~VaisseauDefenseur</a></div><div class="ttdeci">~VaisseauDefenseur()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> VaisseauDefenseur.h:54</div></div>
+<div class="ttc" id="class_ecran_html"><div class="ttname"><a href="class_ecran.html">Ecran</a></div><div class="ttdef"><b>Definition:</b> Ecran.h:19</div></div>
+<div class="ttc" id="class_vaisseau_html"><div class="ttname"><a href="class_vaisseau.html">Vaisseau</a></div><div class="ttdoc">classe du vaisseau (véhicule) d&amp;#39;un joueur ou d&amp;#39;un ennemi </div><div class="ttdef"><b>Definition:</b> Vaisseau.h:21</div></div>
+<div class="ttc" id="class_vaisseau_defenseur_html"><div class="ttname"><a href="class_vaisseau_defenseur.html">VaisseauDefenseur</a></div><div class="ttdef"><b>Definition:</b> VaisseauDefenseur.h:20</div></div>
+<div class="ttc" id="_vaisseau_8h_html"><div class="ttname"><a href="_vaisseau_8h.html">Vaisseau.h</a></div></div>
+<div class="ttc" id="_vaiss_bouclier_8h_html"><div class="ttname"><a href="_vaiss_bouclier_8h.html">VaissBouclier.h</a></div></div>
+<div class="ttc" id="def__type_8h_html_a87980cd8ee9533e561a73e8bbc728188"><div class="ttname"><a href="def__type_8h.html#a87980cd8ee9533e561a73e8bbc728188">proj_container</a></div><div class="ttdeci">std::vector&lt; proj_ptr &gt; proj_container</div><div class="ttdef"><b>Definition:</b> def_type.h:21</div></div>
+<div class="ttc" id="class_input__base_html"><div class="ttname"><a href="class_input__base.html">Input_base&lt; NB_ACTION &gt;</a></div></div>
+<div class="ttc" id="def__type_8h_html_ad123ed7c93f42c8dd68e4af28b16b639"><div class="ttname"><a href="def__type_8h.html#ad123ed7c93f42c8dd68e4af28b16b639">vaisseau_container</a></div><div class="ttdeci">std::vector&lt; vaisseau_ptr &gt; vaisseau_container</div><div class="ttdef"><b>Definition:</b> def_type.h:17</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_966d622809021e16937e6471877e7c28.html">_Télécom Saint-Etienne</a></li><li class="navelem"><a class="el" href="dir_96ced5405f341181826ad81faf6656c3.html">_Projets</a></li><li class="navelem"><a class="el" href="dir_de98b535789cc7e70803e176e4362f7b.html">Git Shmou&#39;TSE</a></li><li class="navelem"><a class="el" href="dir_27039fa1428ec68401cbc5b845225be8.html">src</a></li><li class="navelem"><a class="el" href="dir_0d7adb13ac1003244afcfd2a14fa9927.html">Vaisseau</a></li><li class="navelem"><a class="el" href="_vaisseau_defenseur_8h.html">VaisseauDefenseur.h</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

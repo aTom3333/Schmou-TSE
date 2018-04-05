@@ -6,12 +6,12 @@
 #include "../Vaisseau/_vaisseaux.h"
 #include "../def_type.h"
 
-typedef struct
+struct ElementVague
 {
 	sf::Time t_depart_element;
 	vaisseau_ptr v;
 	bool actif = false;
-} ElementVague;
+};
 //TODO CL vague de Entités
 
 /**

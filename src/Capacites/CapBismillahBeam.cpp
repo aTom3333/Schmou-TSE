@@ -14,7 +14,7 @@ CapBismillah::CapBismillah(Ecran& ecran, const std::weak_ptr<Entite>& lanceur) :
 	
 	//Sprites
 	sprites_.emplace_back(*ecran.getChargeur().getTexture("cap.bism.charge"));
-	sprites_.emplace_back(*ecran.getChargeur().getTexture("cap.bism.rayon3",true)); //texture du rayon est répétée
+	sprites_.emplace_back(*ecran.getChargeur().getTexture("cap.bism.rayon",true)); //texture du rayon est répétée
 
     //Sons
     sounds_.emplace_back(*ecran.getChargeur().getSoundBuffer("son.bism"));
