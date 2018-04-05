@@ -5,7 +5,7 @@
 VaisseauTest::VaisseauTest() ///constructeur
 {
 	//sprite
-	texture_.loadFromFile("../../rc/Sprites/Vaisseaux/VaisseauTest/vaisseauLapin.png");
+	texture_.loadFromFile("../../rc/Sprites/base/vaisseauTest.png");
 	sprite_.setTexture(texture_);
 	sprite_.setOrigin({ 32,52 });
 
