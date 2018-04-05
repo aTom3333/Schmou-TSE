@@ -45,7 +45,7 @@ public:
 	* @fn ~VaisseauEclaireur
 	* @brief Destructeurvide
 	*/
-	~VaisseauEclaireur() {};
+	~VaisseauEclaireur() override = default;
 	/**
 	* @fn gestion
 	* @brief Gère le comportement du vaisseau
