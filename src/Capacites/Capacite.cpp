@@ -5,7 +5,7 @@
 #include "../Vaisseau/Vaisseau.h"
 #include "../Projectiles/Projectile.h"
 
-void Capacite::initIcon(int i)
+void Capacite::initIcon(size_t i)
 {
 	//TODO PG CONSTANTES MAGIQUES
 	if (!tir_)

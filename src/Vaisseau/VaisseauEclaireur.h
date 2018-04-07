@@ -73,7 +73,7 @@ private:
 	// param4 Lineaire : Inutilisé		Parabolique : Inutilisé						Sinusoidale : Pente
 	Trajectoire trajectoire_; /// Trajectoire du vaisseau
 	float t_; /// Temps écoulé depuis la création (temps de vie)
-	int frames_;/// temps de vie dans une trajectoire
+	size_t frames_;/// temps de vie dans une trajectoire
 	
 };
 

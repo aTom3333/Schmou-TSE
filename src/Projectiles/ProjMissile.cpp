@@ -6,7 +6,6 @@ template <typename T> int signe(T val) {
 	return (T(0) < val) - (val < T(0));
 }
 
-
 ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe, bool aimbot) :
 	Projectile(ecran)
 {
@@ -36,21 +35,11 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 
 	// Caractéristiques
 	equipe_ = equipe;
+	if (equipe_ == ENNEMI) rotate(180); //TODO PG projectiles ennemis retournés : à implémenter à partir de roation du lanceur et vaisseaux ennemis déjà retournés
 	aimbot_ = aimbot;
 
-	if (aimbot_)
-	{
-		float distance_min = std::numeric_limits<float>::max();
-		for (auto& vaisseau : ecran_.getVaisseauxContainer())
-		{
-			auto pos = vaisseau->getPosition();
-			if (hypot(pos.x - position_.x, pos.y - position_.y) < distance_min)
-				cible_ = vaisseau;
-		}
-	}
-
 	// Caractéristiques spécifiques
-	coef_acceleration_ = 1.05;
+	coeff_acceleration_ = 1.05;
 
 	//Stats
 	pv_ = pvM_ = 10;
@@ -66,6 +55,24 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 	//position de départ
 	setPosition({ lanceur->getPosition().x ,  lanceur->getPosition().y - lanceur->getTaille().y / 2.0f });
 
+	//Aimbot
+	if (aimbot_)
+	{
+		float distance_min = std::numeric_limits<float>::max();
+		for (auto& vaisseau : ecran_.getVaisseauxContainer())
+		{
+			if (vaisseau->getEquipe() != equipe_ && vaisseau->isActif())
+			{
+				auto pos = vaisseau->getPosition();
+				if (hypot(pos.x - position_.x, pos.y - position_.y) < distance_min)
+				{
+					distance_min = hypot(pos.x - position_.x, pos.y - position_.y);
+					cible_ = vaisseau;
+				}
+			}
+		}
+	}
+
 }
 
 void ProjMissile::gestion()
@@ -74,7 +81,7 @@ void ProjMissile::gestion()
 	auto tempsEcoule = ecran_.getTempsFrame();
 
 
-	vit_ *= coef_acceleration_ * (1. + tempsEcoule.asSeconds());
+	vit_ *= coeff_acceleration_ * (1. + tempsEcoule.asSeconds());
 	if (vit_ >= 1000) vit_ = 1000;
 
 	vaisseau_ptr cible;
@@ -82,17 +89,33 @@ void ProjMissile::gestion()
 	{
 		if (auto cible = cible_.lock())
 		{
-			float X = cible->getPosition().x - position_.x;
-			if (X)
+			if (!cible->estDetruit())
 			{
+				float X = cible->getPosition().x - position_.x;
 				float Y = cible->getPosition().y - position_.y;
-				float angle = tan(X / Y);
-				this->rotate(std::max(angle, 2.f * signe(angle)));
+				float angle = atan2(-Y, -X); //tout est inversé dans SFML
+				this->setRotation(angle * 180 / PI);
 			}
-			else
+			else //nouvelle cible
 			{
-				this->rotate(PI / 2.f * signe(cible->getPosition().y - position_.y));
+				float distance_min = std::numeric_limits<float>::max();
+				for (auto& vaisseau : ecran_.getVaisseauxContainer())
+				{
+					if (vaisseau->getEquipe() != equipe_ && vaisseau->isActif())
+					{
+						auto pos = vaisseau->getPosition();
+						if (hypot(pos.x - position_.x, pos.y - position_.y) < distance_min)
+						{
+							distance_min = hypot(pos.x - position_.x, pos.y - position_.y);
+							cible_ = vaisseau;
+						}
+					}
+				}
 			}
+		}
+		else
+		{
+			aimbot_ = false; //sécurité si pas de cible
 		}
 	}
 

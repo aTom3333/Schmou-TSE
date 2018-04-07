@@ -9,7 +9,7 @@ void Vague::gestion(vaisseau_container& vaisseaux) //TODO CL ajouter proj_contai
 	t_depuis_debut_partie_ += ecran_.getTempsFrame();
 	if (t_depuis_debut_partie_ >= t_depart_ )
 	{
-		for(unsigned int i = 0; i < vaisseaux_vague_.size(); i++)
+		for(size_t i = 0; i < vaisseaux_vague_.size(); i++)
 		{
 			if (!vaisseaux_vague_[i].actif && vaisseaux_vague_[i].t_depart_element < t_depuis_debut_partie_ - t_depart_)
 			{

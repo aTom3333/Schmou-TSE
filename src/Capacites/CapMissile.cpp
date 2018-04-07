@@ -4,7 +4,7 @@ CapMissile::CapMissile(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	Capacite(ecran, lanceur)
 {
 	//Caractéristiques
-	cooldown_ = sf::milliseconds(2000);
+	cooldown_ = sf::milliseconds(100);
 	nom_ = "Missile";
 
 	//Sprites
@@ -12,6 +12,7 @@ CapMissile::CapMissile(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 
 	// Icônes
 	icone_.setTexture(*ecran.getChargeur().getTexture("icone.missile"));
+	afficheIcone_ = true;
 
 	// Sons
 

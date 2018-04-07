@@ -36,6 +36,9 @@ class Ecran
 		const sf::Clock& getClock() const { return horloge_; }
 		vaisseau_container getVaisseauxContainer() const { return vaisseaux_; }
 
+		//setters
+		virtual void setAfficheHUD(bool) {};
+
 	protected:
 		//Rendu
 		sf::RenderWindow& window_; /// < Fenêtre de rendu SFML

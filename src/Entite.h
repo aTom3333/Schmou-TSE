@@ -312,6 +312,7 @@ class Entite
 		bool isInvincible() const { return invincible_; }
 		bool isCollisionneuse() const { return collisionneuse_; }
 		bool isCollisionnable() const { return collisionnable_; }
+		bool isActif() const { return actif_; }
 
 		//setters
 		void setequipe_(Equipe equipe) { equipe_ = equipe; }
@@ -339,7 +340,7 @@ class Entite
 		//coordonnées
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
 		sf::Vector2f origine_; ///< Position de l'origine
-		float rotation_ = PI/2.; ///< Orientation actuelle de l'Entite
+		float rotation_ = 90; ///< Orientation actuelle de l'Entite
 		float scale_; ///< Échelle actuelle de l'Entite
 
 		//déplacements

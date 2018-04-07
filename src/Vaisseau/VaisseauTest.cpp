@@ -106,3 +106,10 @@ void VaisseauTest::gestion(proj_container& proj_cont, Input& input)
 	afficher();
 }
 
+void VaisseauTest::destruction()
+{
+	sounds_.front().play(); 
+	ecran_.setAfficheHUD(false);
+	detruit_ = true;
+}
+

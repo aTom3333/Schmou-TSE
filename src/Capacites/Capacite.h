@@ -55,7 +55,7 @@ class Capacite
 		//TODO PG à documenter
 		void afficherNom() { ecran_.getWindow().draw(text_); };
 		void gestionIcon();
-		void initIcon(int i);
+		void initIcon(size_t i);
 		
 		// Getters
 		sf::Time getCooldown() const { return cooldown_; };
@@ -78,7 +78,7 @@ class Capacite
 
 		//Caractéristiques de jeu
 		std::string nom_; /// Nom de la compétence
-		unsigned int niveau_ = 0; /// Niveau, à partir de 1
+		size_t niveau_ = 0; /// Niveau, à partir de 1
 		bool aimbot_ = false;///<True si en état visée automatique
 
 		sf::Time cooldown_; /// Temps à attendre avant de pouvoir utiliser la capacité à nouveau

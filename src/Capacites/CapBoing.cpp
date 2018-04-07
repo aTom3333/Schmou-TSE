@@ -7,10 +7,10 @@ CapBoing::CapBoing(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	//Caractéristiques
 	cooldown_ = sf::milliseconds(1000);
 	nom_ = "Boing";
-	afficheIcone_ = true;
 
 	//Icônes
 	icone_.setTexture(*ecran.getChargeur().getTexture("icone.boing"));
+	afficheIcone_ = true;
 
 	//Sprites
 	sprites_.emplace_back(*ecran.getChargeur().getTexture("Cap.Boing.Paques"));
@@ -33,7 +33,7 @@ void CapBoing::utiliser(proj_container& projectiles)
 			// Reset timer
 			t_lastuse_ = sf::Time::Zero;
 
-			for (int i = 0; i < 5; i++)
+			for (unsigned int i = 0; i < 5; i++)
 			{
 				// Initialisation de l'endroit ou la compétence a été utilisée
 				proj_ptr temp(new ProjBoing(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe()));

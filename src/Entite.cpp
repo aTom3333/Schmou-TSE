@@ -104,9 +104,9 @@ void Entite::move(sf::Vector2f delta)
 
 void Entite::move()
 {
-	float x = vit_ * cos(rotation_) * ecran_.getTempsFrame().asSeconds();
-	float y = vit_ * -sin(rotation_) * ecran_.getTempsFrame().asSeconds();
-	sf::Vector2f delta(x, y);
+	float x = vit_ * cos(fmod((PI / 180 * rotation_),90)) * ecran_.getTempsFrame().asSeconds();
+	float y = vit_ * sin(fmod((PI / 180 * rotation_),90)) * ecran_.getTempsFrame().asSeconds();
+	sf::Vector2f delta(-x, -y);
 	move(delta);
 }
 
@@ -122,7 +122,7 @@ void Entite::rotate(float angle)
 	for(auto& elem : forme_)
 		elem->rotate(angle);
 
-    cercleEnglobant_.rotate(angle);
+    //cercleEnglobant_.rotate(angle);
 
     for (auto& sprite : sprites_)
 		sprite.rotate(angle);

@@ -31,7 +31,6 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 	//COMP1 BouclierRond
 	vaisseautest->addCapacite(new CapBouclierRond(*this, vaisseautest));
 	//COMP2 Missile
-	vaisseautest->addCapacite(nullptr);
 	vaisseautest->addCapacite(new CapMissile(*this, vaisseautest));
 	vaisseautest->getCapacites().at(3)->setAutoAim(true);
 	//COMP3 Boing
@@ -43,12 +42,11 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 	vaisseaux_[0]->setPosition({ 500,700 });
 
 
-	
+	//Fond défilant
 	fondTexture_.emplace_back(new sf::Texture());
 	fondTexture_.back()->loadFromFile("../../rc/Fond/etoiles1.png");
 	fond_.emplace_back(sf::Sprite(*fondTexture_.back()));
 	offset_.push_back(0);
-
 
 	fondTexture_.emplace_back(new sf::Texture());
 	fondTexture_.back()->loadFromFile("../../rc/Fond/etoiles2.png");
@@ -133,6 +131,7 @@ ecran_t Partie::executer(sf::Texture &derniereFenetre)
 		// Efface l'écran
 		window_.clear();
 
+		//Fond défilant
 		gestionFond(t_frame_);
 
 		// Gestion des vagues
@@ -252,37 +251,41 @@ void Partie::collisionVaisseaux()
 
 void Partie::deleteProjectileDetruit()
 {
-	for(unsigned int i = 0; i < projectiles_.size(); i++)
+	for(auto it = projectiles_.begin(); it != projectiles_.end();)
 	{
-		if (projectiles_[i]->estDetruit())//teste si détruit ou si pv <=0;
+		if ((*it)->estDetruit())//teste si détruit ou si pv <=0;
 		{
-            std::swap(projectiles_[i], projectiles_.back());
-			projectiles_.pop_back();
-            i--;
+			it = projectiles_.erase(it);
+		}
+		else
+		{
+			it++;
 		}
 	}
 }
 
 void Partie::deleteVaisseauDetruit()
 {
-	for(unsigned int i = 0; i < vaisseaux_.size(); i++)
+	for(auto it = vaisseaux_.begin(); it != vaisseaux_.end();)
 	{
-		if (vaisseaux_[i]->estDetruit())
+		if ((*it)->estDetruit())//teste si détruit ou si pv <=0;
 		{
-			if (i == 0)
-				afficheHUD_ = false;
-            std::swap(vaisseaux_[i], vaisseaux_.back());
-			vaisseaux_.pop_back();
-            i--;
+			it = vaisseaux_.erase(it);
+		}
+		else
+		{
+			it++;
 		}
 	}
 }
 
 void Partie::gestionFond(sf::Time t)
 {
-	for (int i = 0; i < fond_.size(); i++)
+	float coeff_vitesse_fond = 5;
+
+	for (size_t i = 0; i < fond_.size(); i++)
 	{
-		offset_[i] += (i+1) * 100 * t.asSeconds();
+		offset_[i] += (i+1) * 100 * t.asSeconds() * coeff_vitesse_fond;
 		if (offset_[i] > fond_[i].getGlobalBounds().height) offset_[i] = 0;
 
 		fond_[i].setPosition(0, offset_[i]);
@@ -305,6 +308,9 @@ void Partie::initPatternTest()
 	/*VaisseauEclaireur *vaiseauEclaireurL = new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5);
 	VaisseauEclaireur *vaiseauEclaireurP = new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500);
 	VaisseauEclaireur *vaiseauEclaireurS = new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7);*/
+
+
+	v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this,500,500, LINEAIRE, 0, 0)) });
 
 	v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
 	v1.ajouterElement({ sf::milliseconds(400), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
@@ -343,5 +349,4 @@ void Partie::initPatternTest()
 	pattern_.push_back(v5);
 
 	for (auto &vague : pattern_) vague.setEquipeAll(ENNEMI);
-
 }

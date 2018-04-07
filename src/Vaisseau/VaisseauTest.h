@@ -17,7 +17,7 @@ public:
 	*
 	* Procédure à effectuer lorsque le vaisseau est détruit
 	*/
-	void destruction() override { sounds_.front().play(); detruit_ = true; }
+	void destruction() override ;
 };
 
 

@@ -14,7 +14,7 @@ Accueil::Accueil(sf::RenderWindow & window) : Ecran(window)
 ecran_t Accueil::executer(sf::Texture &derniereFenetre)
 {
 	sf::Clock timer;
-	int alpha = 255;
+	size_t alpha = 255;
 	int mult = -1;
 
 	auto t = timer.restart();
