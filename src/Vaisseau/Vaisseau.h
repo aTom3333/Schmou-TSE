@@ -67,7 +67,7 @@ class Vaisseau : public Entite
 			vaisseau_container getAnnexes() const { return annexes_; }
 			float getatqM() const { return atqM_; }
 			float getdefM() const { return defM_; }
-			std::vector<std::unique_ptr<Capacite>> getCapacites() const { return capacites_; }
+			const std::vector<std::unique_ptr<Capacite>>& getCapacites() const { return capacites_; }
 
 	protected:
 		// Caractéristiques générales
