@@ -32,8 +32,8 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 	vaisseautest->addCapacite(new CapBouclierRond(*this, vaisseautest));
 	//COMP2 Missile
 	vaisseautest->addCapacite(nullptr);
-	//vaisseautest->addCapacite(new CapMissile(*this, vaisseautest));
-	//vaisseautest->getCapacites().at(3)->setAutoAim(true);
+	vaisseautest->addCapacite(new CapMissile(*this, vaisseautest));
+	vaisseautest->getCapacites().at(3)->setAutoAim(true);
 	//COMP3 Boing
 	vaisseautest->addCapacite(new CapBoing(*this, vaisseautest));
 	//ULTI Bismillah
