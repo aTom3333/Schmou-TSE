@@ -59,7 +59,7 @@ void VaisseauAttaquant::gestion(proj_container &proj_cont, Input& input)
 	
 	if (actif_)
 	{
-		if (t_age_.asMilliseconds() > 1000)
+		if (t_age_.asMilliseconds() > 1000 && t_age_.asMilliseconds() <1010 )
 			capacites_[0]->utiliser(proj_cont);
 
 		setPosition(traj_position(trajectoire_,t_age_, vit_, posInit_, params_));

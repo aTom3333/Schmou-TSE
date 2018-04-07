@@ -47,7 +47,6 @@ class ProjBoing : public Projectile
 		*/
 		void agit(Entite& proj);
 	private:
-		float rayonCirc_; /// < rayon du cerlce circonscrit au lanceur où est lancé le projectile
 		float rotationSpr_ = 0; /// Rotation du sprite
 };
 

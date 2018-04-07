@@ -10,11 +10,11 @@ ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf
 	// Gestion du sprite
 	sprites_ = sprite;
 
-	//Origines
+	// Origines
 	origine_ = { 10,15 }; //basé sur image Piou20x30
 	sprites_.at(0).setOrigin({ 10,15 });
 
-	//Gestion du son
+	// Gestion du son
 	sounds_ = sound;
 	sounds_.front().play(); //son joué à la création du projectile	
 

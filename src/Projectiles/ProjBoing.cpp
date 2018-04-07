@@ -1,6 +1,11 @@
 #include "ProjBoing.h"
 #include "../constantes.h"
+#include "../Utilitaires/Divers.h"
 #include <cmath>
+
+template <typename T> int signe(T val) {
+	return (T(0) < val) - (val < T(0));
+}
 
 ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe) :
 	Projectile(ecran)
@@ -20,28 +25,32 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 
 	// Cercle englobant
 	//TODO utiliser la fonction Englobeuse
-	cercleEnglobant_ = sf::CircleShape(hypot(16, 16));
-	cercleEnglobant_.setOrigin(16, 16);
+	const float R = hypot(16, 16);
+	cercleEnglobant_ = sf::CircleShape(R);
+	cercleEnglobant_.setOrigin(R,R);
 
 	// Hitbox
-	forme_.emplace_back(new sf::RectangleShape({ 16,16 }));
-	forme_.at(0)->setOrigin({ 16,16 });
+	forme_.emplace_back(new sf::CircleShape(R/2));
+	forme_.at(0)->setOrigin({ R / 2, R / 2 });
 
 	// Caractéristiques de code
 	equipe_ = equipe;
-	innate_ = true;
+	//innate_ = true;
 
 	// Stats
 	pv_ = pvM_ = 10;
 	degatsCollision_ = 30; //TODO PG xlanceur.stats().atk
-
 	vit_ = vitM_ = 700;
-	rotation_ = rand() % 100 / (float)100. * 2 * PI; // TODO CL rand c++
-
-	rayonCirc_ = hypot(lanceur->getTaille().x, lanceur->getTaille().y);
+	rotation_ = rand() % 360; // TODO CL rand c++
 
 	// Position de départ
-	setPosition({ lanceur->getPosition().x + rayonCirc_*cos(rotation_),  lanceur->getPosition().y - rayonCirc_*sin(rotation_) });
+	float X = lanceur->getPosition().x + R * cos(rotation_*PI / 180) ,
+		  Y = lanceur->getPosition().y + R * -sin(rotation_*PI / 180);
+	if (X < 0)X = 0;
+	else if (X > ECRAN_L)X = ECRAN_L;
+	if (Y < 0)Y = 0;
+	else if (Y > ECRAN_H)Y = ECRAN_H;
+	setPosition({ X, Y });
 }
 
 
@@ -50,21 +59,40 @@ void ProjBoing::gestion()
 	auto& window = ecran_.getWindow();
 	auto tempsEcoule = ecran_.getTempsFrame();
 
-	move();
-
-	rotationSpr_ += 500 * tempsEcoule.asSeconds();
-	sprites_.at(0).setRotation(rotationSpr_);
-
-	//TODO CL écrire "sounds_.front().play()" au rebond
-
-	if (getPosition().x < 0)
+	float X = getPosition().x;
+	float Y = getPosition().y;
+	const float R = hypot(16, 16) / 2;
+	if (X - R < 0)
 	{
-		setPosition({ 0, getPosition().y });
-		setRotation(-rotation_);
+		rotation_+=(90 * signe(Y));
+		sounds_.front().play();
+	}
+	else if (X + R > ECRAN_L)
+	{
+		rotation_ += (-90 * signe(Y));
+		sounds_.front().play();
+	}
+	else if (Y - R < 0)
+	{
+		rotation_ += (90 * signe(Y));
+		sounds_.front().play();
+	}
+	else if (Y + R > ECRAN_H)
+	{
+		rotation_ += (-90 * signe(Y));
+		sounds_.front().play();
+	}
+	else
+	{
+		//gère la rotation de la sprite sans changer la direction
+		float temp_rotation = getRotation();
+		float vit_angulaire = 500;
+		rotate(vit_angulaire * tempsEcoule.asSeconds());
+		rotation_ = temp_rotation;
 	}
 		
-
-	afficher();
+	move();
+	afficher(true);
 }
 
 void ProjBoing::agit(Entite& proj)
