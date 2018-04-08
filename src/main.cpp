@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
 	vectEtats.emplace_back(new MenuPrincipal(window));
 	vectEtats.emplace_back(new Partie(window, Input::Media::Keyboard));
 
-	ecran_t etat = ACCUEIL;
+	ecran_t etat = PARTIE;//TODO PG écran de départ actuel
 
 	while (etat != VIDE)
 	{

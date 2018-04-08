@@ -1,7 +1,0 @@
-digraph "Input_base&lt; N &gt;"
-{
- // INTERACTIVE_SVG=YES
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="{Input_base\< N \>\n||+ Input_base()\l+ ~Input_base()\l+ move()\l+ action()\l+ isMoving()\l+ set_action_keyboard()\l+ set_action_mouse()\l+ set_default_movement\l_keyboard()\l+ set_default_movement\l_joypad()\l+ set_movement_mode()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-}

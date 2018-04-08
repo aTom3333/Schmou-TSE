@@ -6,7 +6,7 @@
 class ProjBouclierRond : public Projectile
 {
 public:
-	~ProjBouclierRond() { sound_.stop(); }
+	~ProjBouclierRond() override { sounds_.front().stop(); };
 
 	/**
 	* @fn ProjBouclierRond
@@ -16,7 +16,7 @@ public:
 	* @param degatsColl dégats infligés lors d'une collision avec une Entite collisionnable
 	* Gestion du déplacement et de l'affichage
 	*/
-	ProjBouclierRond(Entite* Entite_liee, int pvM, int degatsColl, float tempsMax, Equipe equipe);
+	ProjBouclierRond(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe);
 
 	/**
 	* @fn gestion
@@ -25,7 +25,7 @@ public:
 	*
 	* Gestion du déplacement et de l'affichage : le bouclier reste lié à l'Entite_liee
 	*/
-	void gestion(sf::RenderWindow &window, sf::Time tempsEcoule);
+	void gestion();
 
 	/**
 	* @fn agit
@@ -35,11 +35,6 @@ public:
 	* Inflige les dégat déterminés à la construction
 	*/
 	void agit(Entite &e);
-
-protected:
-	Entite* Entite_liee_;
-	float tempsMax_;
-	float t_;
 };
 
 

@@ -1,0 +1,5 @@
+<map id="collision" name="collision">
+<area shape="rect" id="node2" href="$class_partie.html#a2ed02302df62c0867ebec0fc83078da3" title="Partie::collisionProjectile" alt="" coords="126,5,291,32"/>
+<area shape="rect" id="node4" href="$class_partie.html#a97ce349fac7e91f3cd8cc2a547a35239" title="Partie::collisionVaisseaux" alt="" coords="123,56,295,83"/>
+<area shape="rect" id="node3" href="$class_partie.html#a20962c87a84b89afc4bde92dcc74ac0d" title="Partie::executer" alt="" coords="343,31,457,57"/>
+</map>

@@ -13,9 +13,8 @@
 class ProjMissile : public Projectile
 {
 	public:
-		ProjMissile();
-		ProjMissile(float x, float y, Equipe equipe);
-		~ProjMissile();
+		ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe, bool aimbot = false);
+		~ProjMissile() {};
 		/**
 		* @fn gestion
 		* @brief Gestion du projectile
@@ -24,7 +23,7 @@ class ProjMissile : public Projectile
 		*
 		* Gestion du déplacement et de la collision avec les bords
 		*/
-		void gestion(sf::RenderWindow& window, sf::Time tempsEcoule);
+		void gestion();
 		/**
 		* @fn agit
 		* @brief Procédure lorsque le projectile agit avec une Entite
@@ -34,9 +33,8 @@ class ProjMissile : public Projectile
 		*/
 		void agit(Entite &e);
 	private:
-		float a_;
-		float v_;
-		int sens_;
+		std::weak_ptr<Entite> cible_;
+		sf::Time t_acceleration_;
 };
 
 #endif // PROJ_MISSILE_H

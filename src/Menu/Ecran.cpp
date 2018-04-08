@@ -15,7 +15,7 @@ Ecran::Ecran(sf::RenderWindow& window) :  window_{ window }
 void chargement(sf::RenderWindow &window, sf::Texture& derniereFenetre)
 {
 	sf::Clock timer;
-	int alpha = 50;
+	size_t alpha = 50;
 
 	sf::Texture texture;
 	sf::RectangleShape rect({ECRAN_L, ECRAN_H});

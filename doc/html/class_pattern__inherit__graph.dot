@@ -1,9 +1,0 @@
-digraph "Pattern"
-{
- // INTERACTIVE_SVG=YES
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node0 [label="{Pattern\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node1 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
-  Node1 [label="{Partie\n|# window_\l# font_\l# input_\l# hud_\l# pattern_\l# vaisseaux_\l# projectiles_\l# timeSpeed_\l# avecPattern_\l# afficheHUD_\l|+ Partie()\l+ ~Partie()\l+ jeu()\l+ collisionProjectile()\l+ collisionVaisseaux()\l+ deleteProjectileDetruit()\l+ deleteVaisseauDetruit()\l+ initPatternTest()\l+ testPartie()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_partie.html",tooltip="Description brève. "];
-}

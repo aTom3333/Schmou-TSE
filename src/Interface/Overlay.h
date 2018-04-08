@@ -17,7 +17,7 @@
 class Overlay
 {
 	public:
-		Overlay();
+		Overlay() {};
 		~Overlay();
 		void init(vaisseau_ptr vaisseau);
 		void draw(sf::RenderWindow &window, vaisseau_ptr vaisseau, bool bDraw = true);

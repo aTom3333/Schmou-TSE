@@ -2,6 +2,7 @@
 #define ENTITE_H
 
 #include "constantes.h"
+#include "Menu/Ecran.h"
 
 #include <vector>
 #include <memory>
@@ -11,6 +12,38 @@
 #include <deque>
 #include <cmath>
 #include <cassert>
+
+
+/**
+*@struct Stats
+*@brief Regroupe les attributs qui implémentent les caractéristiques ingame d'une Entite
+* attributs (Max et current):
+base : PV, ATK, DEF, VITESSE, 
+modulateurs de base : ARMURE, BOUCLIER, 
+modulateurs de regen : PV, ARMURE, BOUCLIER
+modulateurs avancés : PRECISION
+dégats divers : COLLISION
+*/
+struct Stats
+{
+	float
+		//base
+		pvM = 0,				pv = 0,
+		atkM = 0,				atk = 0,
+		defM = 0,				def = 0,
+		vitM = 0,				vit = 0,
+
+		armureM = 0,			armure = 0,
+		bouclierM = 0,			bouclier = 0,
+		//regen
+		regenPvM = 0,			regenPv = 0,
+		regenArmureM = 0,		regenArmure = 0,
+		regenBouclierM = 0,		regenBouclier = 0,
+		//avancé
+		precisionM = 0,			precision = 0,
+		//divers
+		degatsCollisionM = 0,	degatsCollision = 0;
+};
 
 /**
  * @class Entite
@@ -36,6 +69,7 @@ class Entite
 	friend bool collision(const Entite& e1, const Entite& e2);
 
 	public:
+		explicit Entite(Ecran& ecran) : ecran_{ecran} {}
 		/**
 		 * @fn ~Entite
 		 * @brief Destructeur par défaut
@@ -58,25 +92,38 @@ class Entite
 		const std::vector<std::unique_ptr<sf::Shape>>& getForme() const { return forme_; }
 		/**
 		 * @fn afficher
-		 * @brief Affiche le sprite de l'Entite
+		 * @brief Affiche le premier sprite de l'Entite, gère les frames d'invincibilité
 		 *
 		 * Appelle la fonction afficher de la SFML sur les attributs de l'objet appelant.
-		 * Peut également afficher des informations de debug telles que le cercle englobant,
-		 * et la forme de collision.
-		 * @param [in,out] window Fenêtre SFML dans laquelle afficher l'entité.
-		 * @param [in] debug Un @c bool qui vaut @a true si les informations de debug doivent être affichées et @a false sinon.
+		 * Peut également afficher des informations de debug telles que le cercle englobant ou et la forme de collision.
+		 * @param [in] debug si DEBUG est false, régler à true pour forcer l'affichage debug
+							 si DEBUG est true, régler à true pour forcer la désactivation de l'affichage debug
 		 */
-		void afficher(sf::RenderWindow &window, bool debug = false);
-
-		// Tranformation setters & getters
+		void afficher(bool debug = false);
+		/**
+		* @fn afficher
+		* @brief Afficher des informations de debug telles que le cercle englobant ou et la forme de collision
+		* @param [in] debug si DEBUG est false, régler à true pour forcer l'affichage debug
+							si DEBUG est true, régler à true pour forcer la désactivation de l'affichage debug
+		*/
+		void afficher_debug(bool debug = false);
         /**
-         * @fn move
+         * @fn move(sf::Vector2f delta)
          * @brief Déplace l'Entite en fonction de @a delta
          *
          * Appelle la fonction move de la SFML sur les attributs de l'objet appelant.
          * @param [in] delta un @c sf::Vector2f qui donne le déplacement en x et en y
          */
 		void move(sf::Vector2f delta);
+		/**
+		* @fn move()
+		* @brief Déplace l'Entite en fonction de vits_ et rotation_
+		*
+		* Crée un delta en calculant à partir des attributs vit_ et rotation_ de Entite, 
+		* puis appelle la fonction move de Entite avec ce delta
+		* 
+		*/
+		void move();
         /**
          * @fn setPosition
          * @brief Fixe la position de l'Entite
@@ -97,7 +144,6 @@ class Entite
          * @return la position de l'entité appelante
          */
 		sf::Vector2f getPosition() const { return position_; }
-
         /**
          * @fn rotate
          * @brief Tourne l'Entite de l'angle passé en paramètre
@@ -126,8 +172,7 @@ class Entite
 		 * La valeur renvoyée correspond à un angle en degrés
 		 * @return Un @c float qui correspond à l'eorientation de l'Entite
 		 */
-		float getRotation() const;
-
+		float getRotation() const { return rotation_; }
 		/**
 		 * @fn scale
 		 * @brief Change l'échelle de l'Entite
@@ -156,8 +201,7 @@ class Entite
          * Cette fonction renvoie l'échelle actuelle de l'Entite appelante
          * @return Un @c float qui correspond au facteur d'échelle de l'Entite
          */
-		float getScale() const;
-
+		float getScale() const { return scale_; }
         /**
          * @fn estDehors
          * @brief Teste si l'Entite est hors d'une zone, par défaut l'écran
@@ -188,7 +232,6 @@ class Entite
          * @return Un @c bool qui vaut @a true si l'Entite se trouve dans la zone à tester et @a false sinon
          */
         bool estDedans(float x_min = 0, float y_min = 0, float x_max = ECRAN_L, float y_max = ECRAN_H) const;
-
         /**
          * @fn changeSpeed
          * @brief Change la vitesse de l'Entite en ajoutant à la vitesse actuelle une certaine valeur
@@ -198,7 +241,7 @@ class Entite
          * ésultante peut également être négative, cela résultera en un mouvement en miroir
          * @param [in] val La valeur à ajouter à la vitesse actuelle
          */
-		void changeSpeed(int val); 
+		void changeSpeed(int val) { vitM_ += val; vit_ += val; }
 		/**
 		* @fn setDetruit
 		* @brief Fixe si l'entité est détruit ou non
@@ -231,7 +274,7 @@ class Entite
 		*
 		* Redonne des points de vie, de l'armure et du bouclier toute les 100 ms selons les paramètres de l'entité
 		*/
-		void regen(sf::Time t);
+		void regen();
 		/**
 		* @fn recoitDegats
 		* @brief Inflige des dégats au bouclier, à l'armure et aux points de vie en fonctions des dégats reçu
@@ -247,97 +290,118 @@ class Entite
 		*
 		* Fonction virtuelle qui doit être surchargée pour les classes héritées.
 		*/
-		virtual void destruction() = 0;
-
-		
+		virtual void destruction() = 0;		
 
 		//getters
 		Equipe getEquipe() const { return equipe_; }
-		sf::Vector2f getTaille() const { return { sprite_.getGlobalBounds().width, sprite_.getGlobalBounds().height }; }//largeur, hauteur
+		sf::Vector2f getTailleSprite() const { return { sprites_.front().getGlobalBounds().width, sprites_.front().getGlobalBounds().height }; }//largeur, hauteur
 		sf::Vector2f getLastDelta() const { return last_delta_; }
 		bool getInnate_() const { return innate_; }
-		float getPVMax() const { return pvM_; }
-		float getArmureMax() const { return armureM_; }
-		float getBouclierMax() const { return bouclierM_; }
-		float getPV() const { return pv_; }
-		float getArmure() const { return armure_; }
-		float getBouclier() const { return bouclier_; }
-		float getVitMax() const { return vitM_; }
-		float getVit() const { return vit_; }
-		const sf::Texture& getTexture() const { return texture_; }
 		sf::Vector2f getOrigin() const { return origine_; }
-		bool isInvincible() const { return invincibilite_ && framesInvincibilite_ != 0; }
+		bool isInvincibilable() const { return invincibilable_; }
+		bool isInvincible() const { return invincible_; }
 		bool isCollisionneuse() const { return collisionneuse_; }
 		bool isCollisionnable() const { return collisionnable_; }
+		bool isActif() const { return actif_; }
 
 		//setters
 		void setequipe_(Equipe equipe) { equipe_ = equipe; }
 		void setInnate_(bool isInnate) { innate_ = isInnate; }
-		void setNbPositions(int val);
+		void setNbPositions(size_t val);
 		void setSmokeTexture(const sf::Texture &text, sf::Color couleur = { 255,255,255 });
 		void setOrigin(sf::Vector2f origine);
+		void setActif(bool actif) { t_age_ = sf::Time::Zero; actif_ = actif; }
+		void setLongevite(const sf::Time& t_longevite) { t_longevite_ = t_longevite; }
+		void setAutoAim(bool aimbot) { aimbot_ = aimbot; }
+
+		void setCollisionneuse(bool collisionneuse) { collisionneuse_ = collisionneuse; }
+		void setCollisionnable(bool collisionnable) { collisionnable_ = collisionnable; }
+
+		void setBouclier(const float& bouclier) { bouclier_ = bouclier; }
+		void setBouclierM(const float& bouclierM) { bouclierM_ = bouclierM; }
+
+		void setCercleEnglobant(const sf::CircleShape& cercleEnglobant) { cercleEnglobant_ = cercleEnglobant; }
+
+		//getters de stats
+		const float getPv() const { return pv_; }
+		const float getPvMax() const { return pvM_; }
+		const float getArmure() const { return armure_; }
+		const float getArmureMax() const { return armureM_; }
+		const float getBouclierMax() const { return bouclierM_; }
+		const float getBouclier() const { return bouclier_; }
+		const float getVit() const { return vit_; }
+		const float getVitMax() const { return vitM_; }
+
+		//setters de stats
+		void setPv(float pv) { pv_ = pv; }
+		void setPvMax(float pvM) { pvM_ = pvM; }
 
 	protected:
+		// Référence vers l'écran
+		Ecran& ecran_;
+	
 		//coordonnées
 		sf::Vector2f position_; ///< Position actuelle de l'Entite
 		sf::Vector2f origine_; ///< Position de l'origine
-		double angle_; ///< Orientation actuelle de l'Entite
-		double scale_; ///< Échelle actuelle de l'Entite
+		float rotation_ = 90; ///< Orientation actuelle de l'Entite
+		float scale_; ///< Échelle actuelle de l'Entite
 
 		//déplacements
 		std::deque<sf::Vector2f> positionsPrev_; ///< Positions précédentes
 			// /!\ne pas itérer, pas stocké contigûment
-		size_t nbPositions_ = 0; ///< nombre de positions précédentes à conserver
-		sf::Vector2f last_delta_; ///< dernier déplacement en paramètre de move effectué
+		size_t nbPositions_ = 0; ///<nombre de positions précédentes à conserver
+		sf::Vector2f last_delta_; ///<dernier déplacement en paramètre de move effectué
 
 		//caractéristiques
 		bool collisionnable_ = true; ///< Booléen vrai si l'Entite est collisionnable
 		bool collisionneuse_ = true;
 		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
 		bool innate_ = false; ///< true si doit rester dans l'écran
-		bool invincibilite_ = true; ///< true si l'entité a des frames d'invincibilité
+		bool invincibilable_ = false; ///< true si l'entité peut devenir invincible
 
 		//état
 		bool detruit_ = false; ///< true lorsque que le vaisseau est détruit
-		bool actif_; ///< Booleen indiquant si la trajectoire a été amorcée
-		bool debug_ = false; //TODO PG à implémenter
+		bool actif_ = true; ///< Booleen indiquant si la trajectoire a été amorcée
+		bool invincible_ = false;///< en état invincible
+		bool aimbot_ = false;///<True si en état visée automatique
 
+		//Temps
+		const sf::Time t_Invincibilite_; ///< Temps d'invincibilité total en ms
+		sf::Clock clk_Invincibilite; ///<Clock qui gère l'état invincible
+		sf::Time t_age_; /// Temps écoulé depuis la création (temps de vie)
+		sf::Time t_longevite_; ///Temps après lequel l'Entite est détruite
+
+		
 		//graphismes
 		sf::CircleShape cercleEnglobant_; ///< Cercle Englobant de l'Entite
 		std::vector<std::unique_ptr<sf::Shape>> forme_; ///< Forme de l'Entite
-		sf::Texture texture_; ///< Texture en cas de texture unique
-		sf::Sprite sprite_; ///< Sprite en cas de sprite unique
-		std::vector<std::shared_ptr<sf::Texture>> textureV_; ///< Vecteur de textures pour en avoir plusieurs
-		std::vector<sf::Sprite> spriteV_; ///< Vecteur de sprites pour en avoir plusieurs
-
-		sf::Texture textSmoke_; ///< Texture à afficher sur la trainée du vaisseau
-		sf::Sprite smoke_; ///< Sprite à afficher sur la trainée du vaisseau
+		std::vector<sf::Sprite> sprites_; ///< Vecteur de sprites pour en avoir plusieurs
+    
+        //TODO PG gérer le chargement des smokes direct avec le chargeur
+		//sf::Texture textSmoke_; ///< Texture à afficher sur la trainée du vaisseau
+		std::vector<sf::Sprite> smokes_; ///< Sprite à afficher sur la trainée du vaisseau
 
 		//Son
-		sf::SoundBuffer soundbuffer_;
-		sf::Sound sound_;
-		std::vector<std::shared_ptr<sf::SoundBuffer>> soundbufferV_;
-		std::vector<sf::Sound> soundV_;
+		std::vector<sf::Sound> sounds_;
 
 		// Stats
-		float pvM_ = 0; /// Point de vie maximum de l'entite
-		float armureM_ = 0;  /// Armure maximum de l'entite
-		float bouclierM_ = 0;  /// Bouclier maximum de l'entite
+		float
+			//base
+			pvM_ = 0, pv_ = 0,
+			atkM_ = 0, atk_ = 0,
+			defM_ = 0, def_ = 0,
+			vitM_ = 0, vit_ = 0,
 
-		float vitM_ = 0; ///Vitesse maximale de l'entite
-
-		float pv_ = pvM_; /// Points de vie actuel
-		float armure_ = armureM_; ///Armure actuel
-		float bouclier_ = bouclierM_; /// Bouclier actuel
-		float vit_ = vitM_; /// Vitesse actuelle de l'Entite
-
-		float regenPV_ = 0; /// Points de vie rendu tout les 250 ms
-		float regenARM_ = 0; /// Armure rendu tout les 250 ms
-		float regenBOU_ = 0; /// Bouclier rendu tout les 250 ms
-		float t_regen_; /// Temps écoulé depuis la dernière régénération
-
-		float degatsColl_ = 0; /// Dégats infligé en cas de collision
-		int framesInvincibilite_ = 0; /// Frames invincibilites
+			armureM_ = 0, armure_ = 0,
+			bouclierM_ = 0, bouclier_ = 0,
+			//regen
+			regenPvM_ = 0, regenPv_ = 0,
+			regenArmureM_ = 0, regenArmure_ = 0,
+			regenBouclierM_ = 0, regenBouclier_ = 0,
+			//avancé
+			precisionM_ = 0, precision_ = 0,
+			//divers
+			degatsCollisionM_ = 0, degatsCollision_ = 0;
 };
 
 #endif // ENTITE_H

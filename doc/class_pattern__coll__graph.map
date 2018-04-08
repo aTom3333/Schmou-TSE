@@ -1,0 +1,8 @@
+<map id="Pattern" name="Pattern">
+<area shape="rect" id="node2" href="$class_partie.html" title="Description brève. " alt="" coords="1226,637,1395,861"/>
+<area shape="rect" id="node3" href="$class_ecran.html" title="{Ecran\n||+ Ecran()\l+ ~Ecran()\l+ executer()\l+ factory()\l+ isDetruit()\l+ getTempsFrame()\l+ getWindow()\l+ getChargeur()\l+ getClock()\l+ getVaisseauxContainer()\l}" alt="" coords="440,343,616,553"/>
+<area shape="rect" id="node6" href="$class_chargeur.html" title="{Chargeur\n||+ Chargeur()\l+ getTexture()\l+ getSoundBuffer()\l+ getFont()\l}" alt="" coords="5,71,136,193"/>
+<area shape="rect" id="node16" href="$class_input__base.html" title="{Input_base\&lt; NB_ACTION \&gt;\n||+ Input_base()\l+ ~Input_base()\l+ move()\l+ action()\l+ isMoving()\l+ set_action_keyboard()\l+ set_action_mouse()\l+ set_default_movement\l_keyboard()\l+ set_default_movement\l_joypad()\l+ set_movement_mode()\l+ get_media()\l}" alt="" coords="1624,321,1805,575"/>
+<area shape="rect" id="node17" href="$class_input__base.html" title="{Input_base\&lt; N \&gt;\n||+ Input_base()\l+ ~Input_base()\l+ move()\l+ action()\l+ isMoving()\l+ set_action_keyboard()\l+ set_action_mouse()\l+ set_default_movement\l_keyboard()\l+ set_default_movement\l_joypad()\l+ set_movement_mode()\l+ get_media()\l}" alt="" coords="1632,5,1797,259"/>
+<area shape="rect" id="node20" href="$class_overlay.html" title="Classe qui le bouton des capacité IG. " alt="" coords="2021,380,2115,516"/>
+</map>

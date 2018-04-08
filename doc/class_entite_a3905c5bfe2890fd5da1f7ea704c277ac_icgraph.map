@@ -1,0 +1,6 @@
+<map id="Entite::isInvincible" name="Entite::isInvincible">
+<area shape="rect" id="node2" href="$_entite_8cpp.html#ac85cf277aaeb8a314734c1fa5f35e3be" title="collision" alt="" coords="180,31,249,57"/>
+<area shape="rect" id="node3" href="$class_partie.html#a2ed02302df62c0867ebec0fc83078da3" title="Partie::collisionProjectile" alt="" coords="301,5,466,32"/>
+<area shape="rect" id="node5" href="$class_partie.html#a97ce349fac7e91f3cd8cc2a547a35239" title="Partie::collisionVaisseaux" alt="" coords="297,56,469,83"/>
+<area shape="rect" id="node4" href="$class_partie.html#a20962c87a84b89afc4bde92dcc74ac0d" title="Partie::executer" alt="" coords="517,31,632,57"/>
+</map>

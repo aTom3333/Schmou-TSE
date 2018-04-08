@@ -1,0 +1,14 @@
+<map id="Entite" name="Entite">
+<area shape="rect" id="node2" href="$class_projectile.html" title="Classe abstraite qui définit la structure générale d&#39;un projectile, à faire hériter pour chaque proje..." alt="" coords="298,1773,429,1909"/>
+<area shape="rect" id="node8" href="$class_vaisseau.html" title="classe du vaisseau (véhicule) d&#39;un joueur ou d&#39;un ennemi " alt="" coords="984,1612,1119,2071"/>
+<area shape="rect" id="node3" href="$class_proj_bismillah.html" title="{ProjBismillah\n||+ ProjBismillah()\l+ ~ProjBismillah()\l+ ProjBismillah()\l+ ~ProjBismillah()\l+ gestion()\l+ agit()\l}" alt="" coords="5,2119,132,2269"/>
+<area shape="rect" id="node4" href="$class_proj_boing.html" title="Projectile de test. " alt="" coords="157,2133,263,2255"/>
+<area shape="rect" id="node5" href="$class_proj_bouclier_rond.html" title="{ProjBouclierRond\n||+ ~ProjBouclierRond()\l+ ProjBouclierRond()\l+ gestion()\l+ agit()\l}" alt="" coords="288,2133,439,2255"/>
+<area shape="rect" id="node6" href="$class_proj_missile.html" title="{ProjMissile\n||+ ProjMissile()\l+ ~ProjMissile()\l+ gestion()\l+ agit()\l}" alt="" coords="463,2133,578,2255"/>
+<area shape="rect" id="node7" href="$class_proj_piou.html" title="Projectile de test. " alt="" coords="602,2133,701,2255"/>
+<area shape="rect" id="node9" href="$class_vaiss_bouclier.html" title="classe du bouclier du VaisseauDefenseur " alt="" coords="725,2133,855,2255"/>
+<area shape="rect" id="node10" href="$class_vaisseau_attaquant.html" title="classe d&#39;un ennemi de base : l&#39;attaquant " alt="" coords="879,2133,1039,2255"/>
+<area shape="rect" id="node11" href="$class_vaisseau_defenseur.html" title="{VaisseauDefenseur\n||+ VaisseauDefenseur()\l+ ~VaisseauDefenseur()\l+ gestion()\l+ destruction()\l}" alt="" coords="1063,2133,1226,2255"/>
+<area shape="rect" id="node12" href="$class_vaisseau_eclaireur.html" title="classe d&#39;un ennemi de base : l&#39;éclaireur " alt="" coords="1250,2133,1405,2255"/>
+<area shape="rect" id="node13" href="$class_vaisseau_test.html" title="{VaisseauTest\n||+ VaisseauTest()\l+ ~VaisseauTest()\l+ gestion()\l+ destruction()\l}" alt="" coords="1429,2133,1559,2255"/>
+</map>

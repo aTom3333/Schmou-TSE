@@ -16,7 +16,7 @@
 class CapMissile : public Capacite
 {
 	public:
-		CapMissile();
+		CapMissile(Ecran& ecran, const std::weak_ptr<Entite>& lanceur);
 		/**
 		* @fn utiliser
 		* @brief Active la capacite
@@ -25,7 +25,7 @@ class CapMissile : public Capacite
 		*
 		* Fonction Initialise la position de départ et le timer
 		*/
-		void utiliser(int x, int y) override;
+		void utiliser(proj_container& projectiles) override;
 		/**
 		* @fn actualiser
 		* @brief Active les effets de la capacité
@@ -35,9 +35,7 @@ class CapMissile : public Capacite
 		* @param projectile Vecteur de tout les projectiles présent à l'écran
 		* @param vaisseau Vaisseau qui a activé la compétence
 		*/
-		void actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule) override;
-	private:
-
+		void actualiser(proj_container& projectiles) override;
 };
 
 

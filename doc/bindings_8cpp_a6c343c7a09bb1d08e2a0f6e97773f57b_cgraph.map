@@ -1,0 +1,5 @@
+<map id="set_mouse_default_binding" name="set_mouse_default_binding">
+<area shape="rect" id="node2" href="$class_input__base.html#aba7163e5edb9d3f938811d990863ce0e" title="Input_base::set_action\l_keyboard" alt="" coords="263,5,417,47"/>
+<area shape="rect" id="node3" href="$class_input__base.html#aa5600e81056832d37167aec2ff0034a4" title="Input_base::set_action\l_mouse" alt="" coords="263,71,417,112"/>
+<area shape="rect" id="node4" href="$class_input__base.html#a103633f42d3fa58352a12b54ed4b3faf" title="Input_base::set_movement_mode" alt="" coords="232,137,448,163"/>
+</map>

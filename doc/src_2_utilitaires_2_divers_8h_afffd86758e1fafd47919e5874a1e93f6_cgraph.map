@@ -1,0 +1,7 @@
+<map id="englobeur_circulaire" name="englobeur_circulaire">
+<area shape="rect" id="node2" href="$class_entite.html#ad7314f276ea1808e98cfd8b7d0e900c8" title="Renvoie la forme de l&#39;Entite. " alt="" coords="220,5,339,32"/>
+<area shape="rect" id="node3" href="$class_entite.html#a23480947ca71fd3c6004f8b704f675b0" title="Entite::getOrigin" alt="" coords="221,56,337,83"/>
+<area shape="rect" id="node4" href="$class_entite.html#a6f6fd1e1f9f6ad44f0ecc74961a774d9" title="Renvoie la position de l&#39;Entite appelante. " alt="" coords="215,107,344,133"/>
+<area shape="rect" id="node5" href="$_divers_8cpp.html#afe48d80943fa9e3ea1f39998f66213a7" title="rayon_englobeur" alt="" coords="221,157,338,184"/>
+<area shape="rect" id="node6" href="$class_entite.html#a88effd77e4276064031a02f5755cc321" title="Entite::setCercleEnglobant" alt="" coords="191,208,368,235"/>
+</map>

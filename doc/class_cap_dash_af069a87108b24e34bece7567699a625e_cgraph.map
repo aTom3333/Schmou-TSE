@@ -1,0 +1,5 @@
+<map id="CapDash::CapDash" name="CapDash::CapDash">
+<area shape="rect" id="node2" href="$class_ecran.html#a9b781eadd60c166948dc1ea2bc04194d" title="Ecran::getChargeur" alt="" coords="207,5,342,32"/>
+<area shape="rect" id="node3" href="$class_chargeur.html#af10ca3942dee0356b249fd9e13a65342" title="Chargeur::getSoundBuffer" alt="" coords="189,56,360,83"/>
+<area shape="rect" id="node4" href="$class_chargeur.html#a23fce63f45f73d039cbf70cd455ed995" title="Chargeur::getTexture" alt="" coords="203,107,346,133"/>
+</map>

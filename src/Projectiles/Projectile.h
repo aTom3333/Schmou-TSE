@@ -24,17 +24,27 @@ class Vaisseau;
 class Projectile : public Entite
 {
 	public:
-		Projectile() {};
+		explicit Projectile(Ecran& ecran) : Entite(ecran) {};
 
-		virtual void gestion(sf::RenderWindow& window, sf::Time tempsEcoule) = 0;
+		virtual void gestion() = 0;
 		/**
 		* @fn destruction
 		* @brief Procedure a effectuer lorsque le vaisseau est détruit
 		*
 		* Détruit l'entité
 		*/
-		void destruction() { detruit_ = true; }
+		void destruction() override { detruit_ = true; }
+
+		/**
+		*@fn gestion_aimbot
+		*@brief Gestion de projectile en visée auto
+		*/
+		void gestion_aimbot();
+
 	protected:
+        std::weak_ptr<Entite> lanceur_; ///< On garde un lien vers le lanceur à travers un weak_ptr pour éviter les cycles
+		bool aimbot_ = false;///<True si en état visée automatique
+
 };
 
 #endif // PROJECTILE_H

@@ -1,0 +1,25 @@
+var struct_stats =
+[
+    [ "armure", "struct_stats.html#afe0c5d28b8ae70881d50a19342e2a0b2", null ],
+    [ "armureM", "struct_stats.html#a461c311822f5823e357873e860d5bc7f", null ],
+    [ "atk", "struct_stats.html#ab39791e705dcf08beea5484c6d961328", null ],
+    [ "atkM", "struct_stats.html#a9bb13fa529483415c37de4dc5d9e9e60", null ],
+    [ "bouclier", "struct_stats.html#a77343d5052cc3c6d14a3833b79a59a0f", null ],
+    [ "bouclierM", "struct_stats.html#a519b38b6c181668a52385b2edb97b66a", null ],
+    [ "def", "struct_stats.html#a9044141c4177dc8cc47e48cad7cda949", null ],
+    [ "defM", "struct_stats.html#a61464eedd04a989f5d9d6ffefaf54db8", null ],
+    [ "degatsCollision", "struct_stats.html#af64e3138f60f64a6c578dd4752a94748", null ],
+    [ "degatsCollisionM", "struct_stats.html#a9a8f5be8c1a6d9f981e538934e552f28", null ],
+    [ "precision", "struct_stats.html#a9bd47ff7ae57b729318962be171f904f", null ],
+    [ "precisionM", "struct_stats.html#a98960e492558ce2ce16ba26e31546185", null ],
+    [ "pv", "struct_stats.html#a2097f1a2792357774e944c923313f509", null ],
+    [ "pvM", "struct_stats.html#aeab4629ec244a16aa0650f9116cb6617", null ],
+    [ "regenArmure", "struct_stats.html#aeedf1d750e5437ad0ff416e6acddd174", null ],
+    [ "regenArmureM", "struct_stats.html#a44ee2218d7144cc876b34b40d54875e2", null ],
+    [ "regenBouclier", "struct_stats.html#a02a13442d1d1c519eecaf854a22090a0", null ],
+    [ "regenBouclierM", "struct_stats.html#a0faf0e564061394e1f532a194135e55c", null ],
+    [ "regenPv", "struct_stats.html#a2261f912e1ccf8c6b2057c6fe6cf1852", null ],
+    [ "regenPvM", "struct_stats.html#af2438df304de00e47c367c8b69b6476d", null ],
+    [ "vit", "struct_stats.html#a634d20f3319d16f84d5dd046f4172f41", null ],
+    [ "vitM", "struct_stats.html#af120203659d012f02f8caa0e803a705f", null ]
+];

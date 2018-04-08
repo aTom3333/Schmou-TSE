@@ -1,0 +1,4 @@
+<map id="Capacite" name="Capacite">
+<area shape="rect" id="node13" href="$class_ecran.html" title="{Ecran\n||+ Ecran()\l+ ~Ecran()\l+ executer()\l+ factory()\l+ isDetruit()\l+ getTempsFrame()\l+ getWindow()\l+ getChargeur()\l+ getClock()\l+ getVaisseauxContainer()\l}" alt="" coords="743,189,919,399"/>
+<area shape="rect" id="node15" href="$class_chargeur.html" title="{Chargeur\n||+ Chargeur()\l+ getTexture()\l+ getSoundBuffer()\l+ getFont()\l}" alt="" coords="648,5,779,127"/>
+</map>

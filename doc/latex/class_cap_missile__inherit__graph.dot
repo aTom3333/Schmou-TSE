@@ -1,9 +1,0 @@
-digraph "CapMissile"
-{
- // INTERACTIVE_SVG=YES
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node0 [label="{CapMissile\n||+ CapMissile()\l+ utiliser()\l+ actualiser()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node1 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
-  Node1 [label="{Capacite\n|# capText_\l# capacite_\l# masque_\l# font_\l# text_\l# affiche_\l# tir_\l# nom_\l# niveau_\l# debutX_\let 8 de plus...\l|+ Capacite()\l+ ~Capacite()\l+ utiliser()\l+ actualiser()\l+ initIcon()\l+ getCooldown()\l+ getTime()\l+ getNom()\l+ getIcon()\l+ getMasque()\let 7 de plus...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_capacite.html",tooltip="Classe abstraite qui définit la structure générale d&#39;une capacité, à faire hériter de chaque capacité..."];
-}

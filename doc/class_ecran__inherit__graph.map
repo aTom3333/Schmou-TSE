@@ -1,0 +1,6 @@
+<map id="Ecran" name="Ecran">
+<area shape="rect" id="node2" href="$class_accueil.html" title="{Accueil\n||+ Accueil()\l+ ~Accueil()\l+ executer()\l+ factory()\l}" alt="" coords="5,483,99,604"/>
+<area shape="rect" id="node3" href="$class_menu_principal.html" title="{MenuPrincipal\n||+ MenuPrincipal()\l+ ~MenuPrincipal()\l+ executer()\l+ factory()\l}" alt="" coords="123,483,255,604"/>
+<area shape="rect" id="node4" href="$class_partie.html" title="Description brève. " alt="" coords="279,351,449,736"/>
+<area shape="rect" id="node5" href="$class_pattern.html" title="{Pattern\n||}" alt="" coords="332,784,396,861"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Partie::collisionProjectile" name="Partie::collisionProjectile">
+<area shape="rect" id="node2" href="$_entite_8cpp.html#ac85cf277aaeb8a314734c1fa5f35e3be" title="collision" alt="" coords="279,5,349,32"/>
+<area shape="rect" id="node4" href="$class_partie.html#a88b2fa21d16b97fc120ea4d0e35208af" title="Partie::deleteProjectile\lDetruit" alt="" coords="237,57,391,98"/>
+<area shape="rect" id="node6" href="$class_partie.html#ae3caf4ac1e50ac945783b1a0d79a85c7" title="Partie::deleteVaisseauDetruit" alt="" coords="219,123,409,149"/>
+<area shape="rect" id="node3" href="$class_entite.html#a3905c5bfe2890fd5da1f7ea704c277ac" title="Entite::isInvincible" alt="" coords="474,5,601,32"/>
+<area shape="rect" id="node5" href="$namespacestd_1_1experimental.html#acdfba2d2e9c79f689a34c9cea5c5682d" title="std::experimental::swap" alt="" coords="457,93,617,120"/>
+</map>

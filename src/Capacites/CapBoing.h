@@ -23,14 +23,14 @@ class CapBoing : public Capacite
 		*
 		* Initialisation de la capacité
 		*/
-		CapBoing();
+		CapBoing(Ecran& ecran, const std::weak_ptr<Entite>& lanceur);
 		/**
 		* @fn CapBoing::~CapBoing
 		* @brief Destructeur
 		*
 		* Vide
 		*/
-		~CapBoing();
+		~CapBoing() override = default;
 		/**
 		* @fn utiliser
 		* @brief Active la capacite
@@ -39,7 +39,7 @@ class CapBoing : public Capacite
 		*
 		* Fonction Initialise la position de départ et le timer
 		*/
-		void utiliser(int x, int y);
+		void utiliser(proj_container& projectiles) override;
 		/**
 		* @fn actualiser
 		* @brief Active les effets de la capacité
@@ -49,7 +49,7 @@ class CapBoing : public Capacite
 		* Créer 4 ProjBoing toutes les 5 frames
 		* Actualise le timer
 		*/
-		void actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule);
+		void actualiser(proj_container& projectiles) override;
 };
 
 #endif

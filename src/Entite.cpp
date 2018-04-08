@@ -28,43 +28,51 @@ bool collision(const Entite& e1, const Entite& e2)
 	return false;
 }
 
-void Entite::afficher(sf::RenderWindow & window, bool debug)
+//TODO PG 28-03-2018 refondu, à tester
+//TODO PG 08-04-2018 à refondre avec les temps et pas la clock
+void Entite::afficher(bool debug)
 {
-	if (equipe_ != JOUEUR)
+	auto& window = ecran_.getWindow();
+
+	if (clk_Invincibilite.getElapsedTime() >= t_Invincibilite_) invincible_ = false;
+
+	if (invincible_)
 	{
-		if (framesInvincibilite_ == 0 || (framesInvincibilite_ / 10) % 2 == 0)
-			window.draw(sprite_);
+		if ((clk_Invincibilite.getElapsedTime().asMilliseconds() / 1000) % 2 == 0)
+			window.draw(sprites_.front());
 		else
 		{
-			sf::Sprite temp_sprite = sprite_;
+			sf::Sprite temp_sprite = sprites_.front();
 			temp_sprite.setColor({ 255, 100, 100, 128 });
 			window.draw(temp_sprite);
 		}
-	}
-	else
-	{
-		if((framesInvincibilite_ / 10) % 2 == 0)
-			window.draw(sprite_);
-	}
-	
 
-	for (auto pos : positionsPrev_)
+	}
+	else window.draw(sprites_.front());
+
+	for (auto& pos : positionsPrev_)
 	{
-		smoke_.setPosition(pos);
-		window.draw(smoke_);
+		smokes_.front().setPosition(pos);
+		window.draw(smokes_.front());
 	}
 
-	if(debug)
+	afficher_debug(debug);
+}
+
+void Entite::afficher_debug(bool debug)
+{
+	if (DEBUG ^ debug)
 	{
-		//window.draw(cercleEnglobant_);
+		//cercle englobant en rouge mi-transparent
+		cercleEnglobant_.setFillColor({ 255, 100, 100, 128 });
+		ecran_.getWindow().draw(cercleEnglobant_);
+		//hitbox en jaune mi-transparent
 		for (auto& elem : forme_)
 		{
-			elem->setFillColor({ 255, 100, 100, 128 });
-			window.draw(*elem);
+			elem->setFillColor({ 255, 255, 100, 128 });
+			ecran_.getWindow().draw(*elem);
 		}
 	}
-
-	if(framesInvincibilite_ != 0) framesInvincibilite_--;
 }
 
 
@@ -72,7 +80,7 @@ void Entite::move(sf::Vector2f delta)
 {
 	if(innate_)
 	{
-		sf::Vector2f taille = getTaille();
+		sf::Vector2f taille = getTailleSprite();
 		sf::Vector2f pos = getPosition() - getOrigin();
 		if ((pos.x + taille.x + delta.x) > ECRAN_L) delta.x = ECRAN_L - pos.x - taille.x;
 		else if (pos.x + delta.x < 0) delta.x = -pos.x;
@@ -80,20 +88,27 @@ void Entite::move(sf::Vector2f delta)
 		else if (pos.y + delta.y < 0) delta.y = -pos.y;
 	}
 
-		for (auto& elem : forme_) 
-			elem->move(delta);
-		for (auto& sprite : spriteV_)
-			sprite.move(delta);
-		sprite_.move(delta);//TODO PG doit finir par partir
-		cercleEnglobant_.move(delta);
+	for (auto& elem : forme_) 
+		elem->move(delta);
+	for (auto& sprite : sprites_)
+		sprite.move(delta);
+	cercleEnglobant_.move(delta);
 
-		//TODO PG il faut gérer ça avec les origines
-		if (nbPositions_)
-		{
-			positionsPrev_.push_front(position_);
-			if (positionsPrev_.size() > nbPositions_)positionsPrev_.pop_back();
-		}
-		position_ += delta;
+	//TODO PG il faut gérer ça avec les origines
+	if (nbPositions_)
+	{
+		positionsPrev_.push_front(position_);
+		if (positionsPrev_.size() > nbPositions_)positionsPrev_.pop_back();
+	}
+	position_ += delta;
+}
+
+void Entite::move()
+{
+	float x = vit_ * cos(fmod((PI / 180 * rotation_),90)) * ecran_.getTempsFrame().asSeconds();
+	float y = vit_ * sin(fmod((PI / 180 * rotation_),90)) * ecran_.getTempsFrame().asSeconds();
+	sf::Vector2f delta(-x, -y);
+	move(delta);
 }
 
 void Entite::setPosition(const sf::Vector2f & pos)
@@ -107,43 +122,34 @@ void Entite::rotate(float angle)
 {
 	for(auto& elem : forme_)
 		elem->rotate(angle);
+
     cercleEnglobant_.rotate(angle);
-    sprite_.rotate(angle);
-	angle_ = fmod(angle_ + angle, 360);
+
+    for (auto& sprite : sprites_)
+		sprite.rotate(angle);
+
+	rotation_ = fmod(rotation_ + angle, 360);
 }
 
 void Entite::setRotation(float angle)
 {
-	rotate(angle - angle_);
+	rotate(angle - rotation_);
 }
 
-float Entite::getRotation() const
-{
-	return angle_;
-}
 
 void Entite::scale(float factor)
 {
 	for(auto& elem : forme_)
 		elem->scale(factor, factor);
     cercleEnglobant_.scale(factor, factor);
-    sprite_.scale(factor, factor);
+    for (auto& elem : sprites_) 
+		elem.scale(factor, factor);
 	scale_ *= factor;
 }
 
 void Entite::setScale(float factor)
 {
 	scale(factor / scale_);
-}
-
-float Entite::getScale() const
-{
-	return scale_;
-}
-
-void Entite::changeSpeed(int val)
-{
-	vit_ += val;
 }
 
 void Entite::setDetruit(bool val)
@@ -160,20 +166,23 @@ bool Entite::estDetruit()
 
 float Entite::getDegatsColl_() const
 {
-	return degatsColl_;
+	return degatsCollision_;
 }
 
-void Entite::setNbPositions(int val)
+void Entite::setNbPositions(size_t val)
 {
 	nbPositions_ = val;
 	if(val == 0) positionsPrev_.clear();
 }
 
+//TODO PG à refondre, je ne sais pas ce que c'est
 void Entite::setSmokeTexture(const sf::Texture &text, sf::Color couleur)
 {
-	textSmoke_ = text;
-	smoke_.setTexture(textSmoke_);
-	smoke_.setColor(couleur);
+	for (auto& smoke : smokes_)
+	{
+		smoke.setTexture(text);
+		smoke.setColor(couleur);
+	}
 }
 
 void Entite::setOrigin(sf::Vector2f origine)
@@ -182,7 +191,7 @@ void Entite::setOrigin(sf::Vector2f origine)
 	origine_ = origine;
 
 	//vecteur de sprites_
-	for (auto& sprite : spriteV_)
+	for (auto& sprite : sprites_)
 	{
 		sprite.setOrigin(delta + sprite.getOrigin());
 	}
@@ -195,36 +204,24 @@ void Entite::setOrigin(sf::Vector2f origine)
 	{
 		forme->setOrigin(delta + forme->getOrigin());
 	}
-
-	//HACK PG à changer à la fin le sprite unique
-	sprite_.setOrigin(delta + sprite_.getOrigin());
-
 }
 
-void Entite::regen(sf::Time t)
+void Entite::regen()
 {
-	// Mise à jour du timer
-	t_regen_ += t.asMilliseconds();
 
-	// Si 100 ms se sont écoulé
-	if (t_regen_ >= 50)
-	{
-		// Réinitialisation du timer
-		t_regen_ = 0;
+	// Régénération des différentes statistiques
+	pv_ += regenPv_ * ecran_.getTempsFrame().asSeconds();
+	armure_ += regenArmure_ * ecran_.getTempsFrame().asSeconds();
+	bouclier_ += regenBouclier_ * ecran_.getTempsFrame().asSeconds();
 
-		// Régénération des différentes statistiques
-		pv_ += regenPV_;
-		armure_ += regenARM_;
-		bouclier_ += regenBOU_;
-
-		// Si le seuil maximal est dépassé
-		if (pv_ > pvM_)
-			pv_ = pvM_;
-		if (armure_ > armureM_)
-			armure_ = armureM_;
-		if (bouclier_ > bouclierM_)
-			bouclier_ = bouclierM_;
-	}
+	// Si le seuil maximal est dépassé
+	if (pv_ > pvM_)
+		pv_ = pvM_;
+	if (armure_ > armureM_)
+		armure_ = armureM_;
+	if (bouclier_ > bouclierM_)
+		bouclier_ = bouclierM_;
+	
 }
 
 void Entite::recoitDegats(float degats)
@@ -233,7 +230,11 @@ void Entite::recoitDegats(float degats)
 
 	if (degats != 0)
 	{
-		framesInvincibilite_ = NB_FRAMES_INVINCIBILITE;
+		if (invincibilable_)
+		{
+			invincible_ = true;
+			clk_Invincibilite.restart();
+		}
 
 		bouclier_ -= restant;
 
@@ -248,7 +249,7 @@ void Entite::recoitDegats(float degats)
 		else
 			restant = 0;
 
-		float reductionArmure = 0.7; // Multiplicateur de réduction de dégats de l'armure
+		float reductionArmure = 0.7f; // Multiplicateur de réduction de dégats de l'armure
 		armure_ -= restant * reductionArmure;
 		if (armure_ < 0)
 		{

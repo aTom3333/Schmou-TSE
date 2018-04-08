@@ -1,0 +1,4 @@
+<map id="Pattern" name="Pattern">
+<area shape="rect" id="node2" href="$class_partie.html" title="Description brève. " alt="" coords="9,351,178,736"/>
+<area shape="rect" id="node3" href="$class_ecran.html" title="{Ecran\n|# window_\l# polices_\l# detruit_\l# vaisseaux_\l# chargeur_\l# horloge_\l# t_frame_\l|+ Ecran()\l+ ~Ecran()\l+ executer()\l+ factory()\l+ isDetruit()\l+ getTempsFrame()\l+ getWindow()\l+ getChargeur()\l+ getClock()\l+ getVaisseauxContainer()\l}" alt="" coords="5,5,181,303"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Capacite::initIcon" name="Capacite::initIcon">
+<area shape="rect" id="node2" href="$class_ecran.html#a9b781eadd60c166948dc1ea2bc04194d" title="Ecran::getChargeur" alt="" coords="176,5,311,32"/>
+<area shape="rect" id="node3" href="$class_chargeur.html#af12147248dcd01072fee81d35a015867" title="Chargeur::getFont" alt="" coords="180,56,307,83"/>
+</map>
