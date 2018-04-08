@@ -1,0 +1,6 @@
+<map id="Input_base::set_movement_mode" name="Input_base::set_movement_mode">
+<area shape="rect" id="node2" href="$bindings_8cpp.html#a5249f510d79fb689561e3e4de1bba0d4" title="set_joypad_default\l_binding" alt="" coords="293,5,424,47"/>
+<area shape="rect" id="node3" href="$bindings_8cpp.html#a33f9529428adfaa552e681749b796076" title="set_keyboard_default\l_binding" alt="" coords="286,71,431,112"/>
+<area shape="rect" id="node4" href="$bindings_8cpp.html#a17708a73bad94fe511a43e063956565d" title="set_keyboard_default\l_binding_2" alt="" coords="286,136,431,177"/>
+<area shape="rect" id="node5" href="$bindings_8cpp.html#a6c343c7a09bb1d08e2a0f6e97773f57b" title="set_mouse_default_binding" alt="" coords="269,202,448,229"/>
+</map>

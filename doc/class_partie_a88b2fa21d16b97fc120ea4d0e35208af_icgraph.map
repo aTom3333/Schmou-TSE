@@ -1,0 +1,4 @@
+<map id="Partie::deleteProjectileDetruit" name="Partie::deleteProjectileDetruit">
+<area shape="rect" id="node2" href="$class_partie.html#a2ed02302df62c0867ebec0fc83078da3" title="Partie::collisionProjectile" alt="" coords="207,13,372,39"/>
+<area shape="rect" id="node3" href="$class_partie.html#a20962c87a84b89afc4bde92dcc74ac0d" title="Partie::executer" alt="" coords="420,13,535,39"/>
+</map>

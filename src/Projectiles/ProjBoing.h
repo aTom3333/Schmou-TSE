@@ -21,23 +21,14 @@ class ProjBoing : public Projectile
 		*
 		* Créer un projectile de test à une position aléatoire
 		*/
-		ProjBoing(); 
-		/**
-		* @fn ProjBoing
-		* @brief Constructeur
-		* @param x Abscisse de la position de départ du projectile
-		* @param y Ordonnée de la position de départ du projectile
-		*
-		* Créer un projectile de test à la position donnée en paramètre
-		*/
-		ProjBoing(int x, int y, sf::Sound sound);
+		ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe = NEUTRE);
 		/**
 		* @fn ~ProjBoing
 		* @brief Destructeur
 		*
 		* Vide
 		*/
-		~ProjBoing(); 
+		~ProjBoing() {};
 		/**
 		* @fn gestion
 		* @brief Gestion du projectile
@@ -46,7 +37,7 @@ class ProjBoing : public Projectile
 		*
 		* Gestion du déplacement et de la collision avec les bords
 		*/
-		void gestion(sf::RenderWindow &window, sf::Time tempsEcoule);
+		void gestion();
 		/**
 		* @fn agit
 		* @brief Procédure lorsque le projectile agit avec unvaisseau
@@ -56,11 +47,7 @@ class ProjBoing : public Projectile
 		*/
 		void agit(Entite& proj);
 	private:
-		int mx_; /// Multiplicateur (1 ou -1) pour gérer le sens du projectile
-		int my_; /// Multiplicateur (1 ou -1) pour gérer le sens du projectile
-		int vx_; /// Vitesse horizontale
-		int vy_; /// Vitesse Verticale
-		int rotation_;
+		float rotationSpr_ = 0; /// Rotation du sprite
 };
 
 #endif //PROJ_TEST_H

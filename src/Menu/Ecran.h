@@ -2,7 +2,9 @@
 #define CLASSE_ECRAN_H
 
 #include "../constantes.h"
+#include "../def_type.h"
 #include "../Utilitaires/optional.h"
+#include "../Utilitaires/Chargeur.h"
 
 #include <stack>
 #include <memory>
@@ -18,7 +20,7 @@ class Ecran
 {
 	public:
 		//structeurs
-		Ecran(sf::RenderWindow& window); /// < constructeur principal
+		explicit Ecran(sf::RenderWindow& window); /// < constructeur principal
 		virtual ~Ecran() = default;
 
 		virtual ecran_t executer(sf::Texture &derniereFenetre) = 0;
@@ -27,11 +29,31 @@ class Ecran
 
 		//getters
 		bool isDetruit() const { return detruit_; }
+		sf::Time getTempsFrame() const { return t_frame_; }
+	
+		sf::RenderWindow& getWindow() { return window_; }
+		Chargeur& getChargeur() { return chargeur_; }
+		const sf::Clock& getClock() const { return horloge_; }
+		vaisseau_container getVaisseauxContainer() const { return vaisseaux_; }
+
+		//setters
+		virtual void setAfficheHUD(bool) {};
 
 	protected:
-		sf::RenderWindow& window_;
+		//Rendu
+		sf::RenderWindow& window_; /// < Fenêtre de rendu SFML
 		std::map<std::string, sf::Font> polices_ ; /// < map optionnelle de toutes les polices du jeu
+
+		//Caractéristiques de code
 		bool detruit_ = false;
+		vaisseau_container vaisseaux_; ///vecteur des vaisseaux ennemis en jeu
+
+		//Chargeur
+		Chargeur chargeur_; /// < Chargeur associé
+
+		//Temps
+		sf::Clock horloge_; /// < Horloge globale de l'écran, réinitialisée à chaque affichage de window
+		sf::Time t_frame_;///< Durée de la frame actuelle
 
 };
 

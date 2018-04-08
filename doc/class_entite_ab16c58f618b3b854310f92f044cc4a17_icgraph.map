@@ -1,0 +1,8 @@
+<map id="Entite::recoitDegats" name="Entite::recoitDegats">
+<area shape="rect" id="node2" href="$class_proj_missile.html#a8125c442857f7a0fc2d0ff442c39aca7" title="Procédure lorsque le projectile agit avec une Entite. " alt="" coords="209,5,323,32"/>
+<area shape="rect" id="node3" href="$class_proj_bouclier_rond.html#a60547ae68c6862f6e4c8b9cdd94bb52b" title="Action lorsque collision avec une Entite collisionnable. " alt="" coords="191,56,341,83"/>
+<area shape="rect" id="node4" href="$class_proj_bismillah.html#a85f9cab1718a389d1e177806cb2c32c9" title="Procédure lorsque le projectile agit avec une Entite. " alt="" coords="203,107,329,133"/>
+<area shape="rect" id="node5" href="$class_vaisseau.html#a7950f1a06690d5f5eec5e38f3021a04c" title="Procédure lorsque le projectile agit avec une Entite. " alt="" coords="213,157,319,184"/>
+<area shape="rect" id="node6" href="$class_proj_boing.html#acbee1a0aa00582682ce755e1b19d687a" title="Procédure lorsque le projectile agit avec unvaisseau. " alt="" coords="213,208,319,235"/>
+<area shape="rect" id="node7" href="$class_proj_piou.html#acbc0bea0b23b3daa311679bec7ffe91a" title="Procédure lorsque le projectile agit avec une Entite. " alt="" coords="216,259,316,285"/>
+</map>

@@ -7,7 +7,7 @@
 
 #define PI acos(-1.0) /// Valeur de pi
 #define VERSION "Debug."
-#define BRANCHE "master"
+#define BRANCHE "Nettoyage de printemps"
 
 constexpr float ECRAN_L = 1024; /// Largueur de la fenetre
 constexpr float ECRAN_H = 768; /// Hauteur de la fenetre
@@ -17,8 +17,9 @@ constexpr float OVERLAY_BARRE_H = 16; /// Hauteur des barres de l'overlay
 
 constexpr size_t NB_ACTION = 7; /// Nombre d'actions
 
-constexpr size_t NB_FRAMES_INVINCIBILITE = 60; /// Nombres de frames d'invincibilités
+constexpr size_t TEMPS_INVINCIBILITE = 2000; /// Nombres de millisecondes d'invincibilité par défaut
 
+constexpr bool DEBUG = false;
 
 enum Actions
 {

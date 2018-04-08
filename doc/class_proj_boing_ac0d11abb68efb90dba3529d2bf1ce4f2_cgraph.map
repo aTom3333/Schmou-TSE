@@ -1,0 +1,11 @@
+<map id="ProjBoing::gestion" name="ProjBoing::gestion">
+<area shape="rect" id="node2" href="$class_entite.html#ae8bcb6d81087b421b03f6a97b3aedb8c" title="Affiche le premier sprite de l&#39;Entite, gère les frames d&#39;invincibilité " alt="" coords="194,56,299,83"/>
+<area shape="rect" id="node4" href="$class_ecran.html#a735fe022858b847a019bf1a69e117f1a" title="Ecran::getWindow" alt="" coords="570,56,698,83"/>
+<area shape="rect" id="node5" href="$class_entite.html#a6f6fd1e1f9f6ad44f0ecc74961a774d9" title="Renvoie la position de l&#39;Entite appelante. " alt="" coords="182,157,311,184"/>
+<area shape="rect" id="node6" href="$class_ecran.html#a7fc62bede7a95d972326151446f4e75c" title="Ecran::getTempsFrame" alt="" coords="555,233,713,260"/>
+<area shape="rect" id="node7" href="$class_entite.html#a2403ba6bc4c194e7421b6edd3228b69a" title="Déplace l&#39;Entite en fonction de vits_ et rotation_. " alt="" coords="386,259,481,285"/>
+<area shape="rect" id="node8" href="$class_entite.html#aa7fe4a7ebd8eb4c80ef9fdb7d97f2dad" title="Fixe la position de l&#39;Entite. " alt="" coords="182,309,311,336"/>
+<area shape="rect" id="node9" href="$class_entite.html#a8623ac815e34b553098f45696ea8918b" title="Fixe l&#39;orientation de l&#39;Entite appelante. " alt="" coords="181,360,312,387"/>
+<area shape="rect" id="node3" href="$class_entite.html#ac241fa1af0c598a820e2cae2ede17ac4" title="Entite::afficher_debug" alt="" coords="360,5,507,32"/>
+<area shape="rect" id="node10" href="$class_entite.html#af1249039d313e4e691a109440663eae7" title="Tourne l&#39;Entite de l&#39;angle passé en paramètre. " alt="" coords="385,360,482,387"/>
+</map>

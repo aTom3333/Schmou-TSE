@@ -14,6 +14,7 @@
 * Cooldown : 100 ms
 */
 
+//TODO refaire la doc
 
 class CapPiou : public Capacite
 {
@@ -24,7 +25,7 @@ class CapPiou : public Capacite
 		*
 		* Initialisation de la capacité
 		*/
-		CapPiou();
+		explicit CapPiou(Ecran& ecran, const std::weak_ptr<Entite>& lanceur);
 		/**
 		* @fn utiliser
 		* @brief Active la capacite
@@ -33,7 +34,7 @@ class CapPiou : public Capacite
 		*
 		* Fonction Initialise la position de départ et le timer
 		*/
-		void utiliser(int x, int y) override;
+		void utiliser(proj_container& projectiles) override;
 		/**
 		* @fn actualiser
 		* @brief Active les effets de la capacité
@@ -43,7 +44,7 @@ class CapPiou : public Capacite
 		* @param projectile Vecteur de tout les projectiles présent à l'écran
 		* @param vaisseau Vaisseau qui a activé la compétence
 		*/
-		void actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule) override;
+		void actualiser(proj_container& projectiles) override;
 };
 
 #endif //CAPPIOU

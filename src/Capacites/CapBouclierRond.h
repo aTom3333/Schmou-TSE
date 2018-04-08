@@ -20,31 +20,21 @@
 
 class CapBouclierRond : public Capacite
 {
-protected :
-	int pvM_; ///pv max du bouclier
-	int degatsColl_; /// dégats infligés lors d'une collisison avec une Entite collisionnable
-	float tempsMax_; /// durée de vie du bouclier 
-	Entite* Entite_liee_; /// Entite à laquelle s'applique le bouclier
-
-public:
-
-
-
-	/**
-	* @fn CapBouclierRond::CapBouclierRond
-	* @brief Constructeur
-	* @param niveau niveau de la capacité
-	* @param Entite_liee_ Entite à laquelle s'applique le bouclier
-	*
-	* Initialisation
-	*/
-	CapBouclierRond(int niveau, Entite* Entite_liee);
+	public:
+		/**
+		* @fn CapBouclierRond::CapBouclierRond
+		* @brief Constructeur
+		* @param niveau niveau de la capacité
+		* @param Entite_liee_ Entite à laquelle s'applique le bouclier
+		*
+		* Initialisation
+		*/
+		CapBouclierRond(Ecran& ecran, const std::weak_ptr<Entite>& lanceur);
 	
 
-	void utiliser(int x, int y) override;
+		void utiliser(proj_container& projectiles) override;
 
-	void actualiser(proj_container& GVP, Entite& vaisseau, float tempsEcoule);
-
+		void actualiser(proj_container& projectiles) override;
 };
 
 #endif //BOUCLIER_ROND_H

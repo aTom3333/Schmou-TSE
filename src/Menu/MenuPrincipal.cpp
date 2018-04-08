@@ -23,7 +23,7 @@ MenuPrincipal::MenuPrincipal(sf::RenderWindow & window) : Ecran(window)
 	temp.setString("Quitter");
 	textes_.push_back(temp);
 
-	for (int i = 0; i < textes_.size(); i++)
+	for (size_t i = 0; i < textes_.size(); i++)
 		textes_[i].setPosition(100, 310 + 60*i);
 }
 
@@ -90,7 +90,7 @@ ecran_t MenuPrincipal::executer(sf::Texture & derniereFenetre)
 		window_.draw(version_);
 			
 
-		for (int i = 0; i < textes_.size(); i++)
+		for (size_t i = 0; i < textes_.size(); i++)
 		{
 			if (i == selection_)
 				textes_[i].setPosition(200, 310 + 60 * i);

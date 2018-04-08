@@ -1,61 +1,49 @@
 #include "CapBoing.h"
 #include "CapDash.h"
 
-CapBoing::CapBoing()
+CapBoing::CapBoing(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
+	Capacite(ecran, lanceur)
 {
-	t_ = frames_ = cooldown_ = 1000; //TODO PG ici le warning pourrait être important (float vers uint)
-	nom_ = "Attaque Test";
+	//Caractéristiques
+	cooldown_ = sf::milliseconds(1000);
+	nom_ = "Boing";
 
-	//état
-	affiche_ = true;
+	//Icônes
+	icone_.setTexture(*ecran.getChargeur().getTexture("icone.boing"));
+	afficheIcone_ = true;
 
-	//Icône
-	capText_.loadFromFile("../../rc/Icones_Caps/attaque_test.png");
-	capacite_.setTexture(capText_);
+	//Sprites
+	sprites_.emplace_back(*ecran.getChargeur().getTexture("Cap.Boing.Paques"));
 
 	//Son
-	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/boing.wav");
-	sound_.setBuffer(soundbuffer_);
-	sound_.setLoop(false);
+	sounds_.emplace_back(*ecran.getChargeur().getSoundBuffer("son.boing"));
+	sounds_.front().setLoop(false);
 
 }
 
 
-CapBoing::~CapBoing()
-{
-}
 
-void CapBoing::utiliser(int x, int y)
+void CapBoing::utiliser(proj_container& projectiles)
 {
-	// Si la compétence est disponible
-	if (t_ >= cooldown_)
+	if (auto lanceur = lanceur_.lock())
 	{
-		// Début du timer
-		t_ = 0;
-		frames_ = 0;
-		// Initialisation de l'endroit ou la compétence a été utilisée
-		debutX_ = x;
-		debutY_ = y;
+		// Si la compétence est disponible
+		if (t_lastuse_ >= cooldown_)
+		{
+			// Reset timer
+			t_lastuse_ = sf::Time::Zero;
+
+			for (unsigned int i = 0; i < 5; i++)
+			{
+				// Initialisation de l'endroit ou la compétence a été utilisée
+				proj_ptr temp(new ProjBoing(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe()));
+				projectiles.push_back(temp);
+			}
+		}
 	}
 }
 
-void CapBoing::actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule)
-{
-    // Juste pour mute les warnings du compilateur
-    (void)vaisseau;
-    
-	// Pour avoir la création des 4 projectile toute les 5 frames
-	if (frames_ < 20 && frames_ % 5 == 0)
-	{
-		// Création d'un nouveau projectile
-		proj_ptr temp(new ProjBoing(debutX_, debutY_, sound_));
-		projectiles.push_back(temp);
-	}
-
-	// Si la compétence est en cooldown, on actualise le timer
-	if (t_ < cooldown_)
-	{
-		t_ += tempsEcoule;
-	}
-	frames_++;
+void CapBoing::actualiser(proj_container& projectiles)
+{	
+	t_lastuse_ += ecran_.getTempsFrame();
 }

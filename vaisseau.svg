@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="vaisseau.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="715.62349"
+     inkscape:cy="830.64434"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-to-guides="true"
+     inkscape:snap-grids="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:#d5d5ff;stroke-width:1.55516648;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path4989"
+       cx="57.86092"
+       cy="49.487045"
+       rx="6.4693646"
+       ry="20.788691"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       ry="18.006123"
+       rx="3.6632731"
+       cy="50.363083"
+       cx="57.799023"
+       id="ellipse20"
+       style="fill:#8080ff;stroke-width:1.08912361;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#b3b3b3;stroke-width:0.26458332"
+       d="M 48.527173,52.405805 H 66.386547 L 63.520284,59.809752 52.15987,59.776342 Z"
+       id="rect70"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#d5d5ff;stroke-width:0.93894476;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 74.799935,47.663132 c 0,8.467664 -1.431582,15.332062 -3.197529,15.332064 -1.765947,10e-7 -3.19753,-6.864398 -3.19753,-15.332064 0,-8.467665 0.128644,-15.499108 1.894591,-15.499106 1.765947,10e-7 4.500468,7.031442 4.500468,15.499106 z"
+       id="ellipse197-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssss"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       ry="15.332064"
+       rx="1.4226501"
+       cy="46.984879"
+       cx="71.644417"
+       id="ellipse253-5"
+       style="fill:#8080ff;stroke-width:0.62629914;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#b3b3b3;stroke-width:0.19335726"
+       d="m 66.75959,50.914733 h 9.096593 l -2.021465,7.728273 h -4.4761 z"
+       id="rect70-5-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       ry="15.332064"
+       rx="3.1975296"
+       cy="47.798447"
+       cx="45.016579"
+       id="ellipse428"
+       style="fill:#d5d5ff;stroke-width:0.93894476;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#8080ff;stroke-width:0.62629914;stroke-miterlimit:4;stroke-dasharray:none"
+       id="ellipse430"
+       cx="45.058594"
+       cy="47.120193"
+       rx="1.4226501"
+       ry="15.332064"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path432"
+       d="m 40.173761,51.050046 h 9.096593 l -2.021465,7.728273 h -4.4761 z"
+       style="fill:#b3b3b3;stroke-width:0.19335726"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       sodipodi:type="star"
+       style="fill:#808080;stroke-width:0.26458332"
+       id="path3745"
+       sodipodi:sides="3"
+       sodipodi:cx="29.132378"
+       sodipodi:cy="25.320524"
+       sodipodi:r1="17.160494"
+       sodipodi:r2="8.5802469"
+       sodipodi:arg1="0.58584278"
+       sodipodi:arg2="1.6330403"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 43.431297,34.808593 28.598654,33.884155 13.76601,32.959718 21.982918,20.57649 30.199826,8.1932622 36.815562,21.500927 Z"
+       inkscape:transform-center-x="0.086372638"
+       inkscape:transform-center-y="-4.7692009"
+       transform="matrix(1.1287824,-0.06019777,0.06026492,1.1275245,23.675628,12.694158)"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#999999;stroke-width:0.26004952"
+       inkscape:transform-center-x="0.066446739"
+       inkscape:transform-center-y="-4.692067"
+       d="M 82.447404,56.789963 69.524273,56.642942 56.601142,56.495926 63.162377,42.272714 c 0,0 5.474208,-14.230172 6.561233,-14.223214 1.087025,0.007 6.361896,14.37023 6.361896,14.37023 z"
+       id="path3751"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccczcc"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#a02c2c;stroke-width:0.9843803"
+       d="m 66.581974,34.898219 -1.044445,21.858208 4.317563,-0.0163 C 69.555293,51.301105 67.757047,37.461886 67.757047,37.461886 l -1.175131,-2.563582 z"
+       id="rect4564"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#999999;stroke-width:0.26004952"
+       inkscape:transform-center-x="-0.066443179"
+       inkscape:transform-center-y="-4.692067"
+       d="m 33.822271,56.651509 12.92313,-0.147021 12.92313,-0.147013 -6.561234,-14.223215 c 0,0 -5.307165,-14.196763 -6.561234,-14.223215 -1.254068,-0.02645 -6.361895,14.370231 -6.361895,14.370231 z"
+       id="path4646"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccczcc"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#a02c2c;stroke-width:0.9843803"
+       d="m 49.687704,34.759766 1.044446,21.858207 -4.317564,-0.0163 c 0.2998,-5.439027 2.098045,-19.278253 2.098045,-19.278253 l 1.175131,-2.563582 z"
+       id="path4648"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#808080;stroke-width:0.27133134"
+       d="M 49.356975,34.287296 66.865456,34.402125 65.537529,56.756427 50.73215,56.617973 Z"
+       id="rect4586"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#e6e6e6;stroke-width:1"
+       id="rect4562"
+       width="6.1471992"
+       height="12.160764"
+       x="55.088512"
+       y="27.786663"
+       ry="1.6370258"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#ff00ff;stroke:#ffffff;stroke-width:1.39999998;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3753"
+       cx="58.179493"
+       cy="48.55024"
+       r="5.5279016"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#a02c2c;stroke-width:0.25596389"
+       inkscape:transform-center-x="0.12039564"
+       inkscape:transform-center-y="-1.4611808"
+       d="m 39.477735,46.818177 6.545106,-4.963877 -2.101098,14.123916 -4.474466,-0.03066 -3.338572,0.234614 0.09592,-2.31367 z"
+       id="path4718"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       sodipodi:nodetypes="ccccccc"
+       inkscape:connector-curvature="0"
+       id="path4720"
+       d="m 39.005889,52.605305 1.457005,3.563583 5.181413,-0.176046 1.513477,-15.3123 -0.28191,-7.233058 -3.718327,9.157249 z"
+       inkscape:transform-center-y="-2.7961209"
+       inkscape:transform-center-x="1.1297245"
+       style="fill:#ececec;stroke-width:0.13565636"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       sodipodi:nodetypes="ccccccc"
+       inkscape:connector-curvature="0"
+       id="path4981"
+       d="m 76.956165,47.007166 -6.545107,-4.963877 2.101099,14.123911 4.474467,-0.03066 3.33857,0.234614 -0.09592,-2.313665 z"
+       inkscape:transform-center-y="-1.4611808"
+       inkscape:transform-center-x="-0.12039564"
+       style="fill:#a02c2c;stroke-width:0.25596389"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#ececec;stroke-width:0.13565636"
+       inkscape:transform-center-x="-1.1297245"
+       inkscape:transform-center-y="-2.7961209"
+       d="m 77.428012,52.794289 -1.457005,3.563583 -5.181415,-0.176046 -1.513474,-15.312296 0.281908,-7.233057 3.71833,9.157248 z"
+       id="path4983"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="D:\Schmou-TSE\rc\Sprites\base\vaisseauTest.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>

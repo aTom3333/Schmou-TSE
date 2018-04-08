@@ -1,0 +1,9 @@
+<map id="Entite::destruction" name="Entite::destruction">
+<area shape="rect" id="node2" href="$class_entite.html#ab16c58f618b3b854310f92f044cc4a17" title="Inflige des dégats au bouclier, à l&#39;armure et aux points de vie en fonctions des dégats reçu..." alt="" coords="181,132,319,159"/>
+<area shape="rect" id="node3" href="$class_proj_bismillah.html#a85f9cab1718a389d1e177806cb2c32c9" title="Procédure lorsque le projectile agit avec une Entite. " alt="" coords="379,5,505,32"/>
+<area shape="rect" id="node4" href="$class_proj_bouclier_rond.html#a60547ae68c6862f6e4c8b9cdd94bb52b" title="Action lorsque collision avec une Entite collisionnable. " alt="" coords="367,56,517,83"/>
+<area shape="rect" id="node5" href="$class_proj_boing.html#acbee1a0aa00582682ce755e1b19d687a" title="Procédure lorsque le projectile agit avec unvaisseau. " alt="" coords="389,107,495,133"/>
+<area shape="rect" id="node6" href="$class_proj_missile.html#a8125c442857f7a0fc2d0ff442c39aca7" title="Procédure lorsque le projectile agit avec une Entite. " alt="" coords="385,157,499,184"/>
+<area shape="rect" id="node7" href="$class_proj_piou.html#acbc0bea0b23b3daa311679bec7ffe91a" title="Procédure lorsque le projectile agit avec une Entite. " alt="" coords="392,208,492,235"/>
+<area shape="rect" id="node8" href="$class_vaisseau.html#a7950f1a06690d5f5eec5e38f3021a04c" title="Procédure lorsque le projectile agit avec une Entite. " alt="" coords="389,259,495,285"/>
+</map>

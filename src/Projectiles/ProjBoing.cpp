@@ -1,108 +1,133 @@
 #include "ProjBoing.h"
 #include "../constantes.h"
+#include "../Utilitaires/Divers.h"
+#include <cmath>
 
-ProjBoing::ProjBoing()
-{
+#include <iostream>
+
+template <typename T> int signe(T val) {
+	return (T(0) < val) - (val < T(0));
 }
 
-ProjBoing::ProjBoing(int x, int y, sf::Sound sound)
+ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe) :
+	Projectile(ecran)
 {
-	//Sprite
-	texture_.loadFromFile("../../rc/Sprites/base/ballePaques.png");
-	sprite_.setTexture(texture_);
+	// Weak pointeur vers lanceur
+	lanceur_ = lanceur;
 
-	//son
-	sound_ = sound;
+	// Gestion du sprite
+	sprites_ = sprite;
 
-	//hitbox simple (et complète dans ce cas car c'est le projectile est un cercle)
-	cercleEnglobant_ = sf::CircleShape(16);
-	cercleEnglobant_.setOrigin(16, 16);
-	cercleEnglobant_.setPosition(16,16);
+	// Origines
+	origine_ = { 16,16 }; //basé sur image ballePaques(32x32)
+	sprites_.at(0).setOrigin({ 16,16 });
 
-	sprite_.setOrigin(16, 16);
+	// Gestion du son
+	sounds_ = sound;
 
-	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
-	
-	//attributs
+	// Cercle englobant
+	//TODO utiliser la fonction Englobeuse
+	const float R = hypot(16, 16);
+	cercleEnglobant_ = sf::CircleShape(R);
+	cercleEnglobant_.setOrigin(R,R);
 
-	//stats
+	// Hitbox
+	forme_.emplace_back(new sf::CircleShape(R/2));
+	forme_.at(0)->setOrigin({ R / 2, R / 2 });
 
-	pvM_ = 10;
-	armureM_ = 0;
-	bouclierM_ = 0;
-
-	pv_ = pvM_;
-	armure_ = armureM_;
-	bouclier_ = bouclierM_;
-
-	regenARM_ = regenBOU_ = regenPV_ = 0;
-
-	degatsColl_ = 50;
-	actif_ = true;
-
-	// Multiplicateur de direction (1 vers la droite/bas -1 vers le haut/gauche)
-	mx_ = rand() % 2 == 0 ? 1 : -1;
-	my_ = rand() % 2 == 0 ? 1 : -1;
-
-	// Vitesse entre 30 et 80
-	vx_ = (rand() % 5 + 3);
-	vy_ = (rand() % 5 + 3);
-
-	vit_ = 100;
-
-	float x1 = x + 40*mx_, y1 = y + 40 * my_;
-
-	setPosition({ x1,  y1 });
+	// Caractéristiques de code
 	equipe_ = NEUTRE;
-	rotation_ = 0;
+	//innate_ = true;
+
+	// Stats
+	pv_ = pvM_ = 100;
+	degatsCollision_ = 100; //TODO PG xlanceur.stats().atk
+	vit_ = vitM_ = 700;
+	rotation_ = rand() % 360; // TODO CL rand c++
+	//rotation_ = 45 * (rand()%8);
+
+	// Position de départ
+	float X = lanceur->getPosition().x + lanceur->getTailleSprite().x * -cos(rotation_*PI / 180) ,
+		  Y = lanceur->getPosition().y + lanceur->getTailleSprite().y * -sin(rotation_*PI / 180);
+	if (X < 0)X = 0;
+	else if (X > ECRAN_L)X = ECRAN_L;
+	if (Y < 0)Y = 0;
+	else if (Y > ECRAN_H)Y = ECRAN_H;
+	setPosition({ X, Y });
 }
 
 
-ProjBoing::~ProjBoing()
+void ProjBoing::gestion()
 {
-}
+	auto& window = ecran_.getWindow();
+	auto tempsEcoule = ecran_.getTempsFrame();
 
-void ProjBoing::gestion(sf::RenderWindow& window, sf::Time tempsEcoule)
-{
-	// Modification de la position
-	setPosition({ position_.x + vit_*vx_*mx_*tempsEcoule.asSeconds(), position_.y + vit_*vy_*my_*tempsEcoule.asSeconds() });
+	const float X = getPosition().x;
+	const float Y = getPosition().y;
 
-	// Gestion du rebond
-	if (position_.x > ECRAN_L - 32 - 1)
-	{
-		position_.x = ECRAN_L - 32 - 1;
-		mx_ = -1;
-		sound_.play();
-	}
-	if (position_.x < 1)
-	{
-		position_.x = 1;
-		mx_ = 1;
-		sound_.play();
-	}
-	if (position_.y > ECRAN_H - 32 - 1)
-	{
-		position_.y = ECRAN_H - 32 - 1;
-		my_ = -1;
-		sound_.play();
-	}
-	if (position_.y < 1)
-	{
-		position_.y = 1;
-		my_ = 1;
-		sound_.play();
-	}
+	const short sens_vertical = (180 < rotation_ && rotation_ < 360) ? -1 : ((rotation_ == 180 || rotation_ == 360) ? 0 : 1);
+	const short sens_horizontal = (90 < rotation_ && rotation_ < 270) ? -1 : ((rotation_ == 90 || rotation_ == 270) ? 0 : 1);
 
-	rotation_ += 10;
-	sprite_.setRotation(rotation_);
+	const float R = cercleEnglobant_.getRadius() / 2;
 
-	// Afficher le projectile
-	afficher(window);
+	if (X - R < 0)
+	{
+		if (sens_vertical == 1)
+			rotation_ = 180 - fmod(rotation_, 90);
+		else if (sens_vertical == -1)
+			rotation_ = 270 - fmod(rotation_, 90);
+		else
+			rotation_ = 180; //TODO PG décalage lorsque rebond à angle droite sur la gauche
+		sounds_.at(0).play();
+		pv_ -= 10;
+	}
+	else if (X + R > ECRAN_L)
+	{
+		if (sens_vertical == 1)
+			rotation_ = 90 - fmod(rotation_, 90);
+		else if (sens_vertical == -1)
+			rotation_ = 360 - fmod(rotation_, 90);
+		else
+			rotation_ = 0;
+		sounds_.at(0).play();
+		pv_ -= 10;
+	}
+	else if (Y - R < 0)
+	{
+		if (sens_horizontal == 1)
+			rotation_ = 360 - fmod(rotation_, 90);
+		else if (sens_horizontal == -1)
+			rotation_ = 270 - fmod(rotation_, 90);
+		else
+			rotation_ = 270;
+		sounds_.at(0).play();
+		pv_ -= 10;
+	}
+	else if (Y + R > ECRAN_H)
+	{
+		if (sens_horizontal == 1)
+			rotation_ = 90 - fmod(rotation_, 90);
+		else if (sens_horizontal == -1)
+			rotation_ = 180 - fmod(rotation_, 90);
+		else
+			rotation_ = 90;
+		sounds_.at(0).play();
+		pv_ -= 10;
+	}
+	
+	//gère la rotation de sprite & hitbox sans changer la rotation_
+	float temp_rotation = getRotation();
+	float vit_angulaire = 500;
+	rotate(vit_angulaire * tempsEcoule.asSeconds());
+	rotation_ = temp_rotation;
+		
+	move();
+	afficher();
 }
 
 void ProjBoing::agit(Entite& proj)
 {
-	proj.recoitDegats(degatsColl_);
+	proj.recoitDegats(degatsCollision_);
 	detruit_ = true;
 }
 

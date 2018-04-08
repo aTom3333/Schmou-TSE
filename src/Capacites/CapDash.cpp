@@ -1,69 +1,59 @@
 #include "CapDash.h"
 #include "../Interface/Input.h"
 
-CapDash::CapDash()
+CapDash::CapDash(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
+	Capacite(ecran, lanceur)
 {
-	capText_.loadFromFile("../../rc/Icones_Caps/tir.png");
-	capacite_.setTexture(capText_);
-	cooldown_ = 500;
-	frames_ = cooldown_; //TODO PG ici le warning pourrait être important (float vers uint)
-	t_ = cooldown_;
+	//Caractéristiques
+	cooldown_ = sf::milliseconds(1000);
 	nom_ = "Dash";
+
+	//Icône
+	icone_.setTexture(*ecran.getChargeur().getTexture("icone.dash"));
 	tir_ = true;
 
-	//son
-	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/dash.wav");
-	sound_.setBuffer(soundbuffer_);
-	sound_.setLoop(false);
+	//Sons
+	sounds_.emplace_back(*ecran.getChargeur().getSoundBuffer("son.dash"));
+	sounds_.front().setLoop(false);
 
+	active_ = false;
 }
 
 
-void CapDash::utiliser(int x, int y)
+void CapDash::utiliser(proj_container& projectiles)
 {
-	// Juste pour mute les warnings du compilateur
-	(void)x;
-	(void)y;
-	
-	// Si la compétence est disponible
-	if (t_ >= cooldown_) {
-		// Début du timer
-		t_ = 0;
-		frames_ = 0;
-		sound_.play();
+	if (auto lanceur = lanceur_.lock())
+	{
+		// Si la compétence est disponible
+		if (t_lastuse_ >= cooldown_)
+		{
+			// Reset timer
+			t_lastuse_ = sf::Time::Zero;
+
+			// Son au lancement
+			sounds_.front().play();
+		}
 	}
 }
 
 
-void CapDash::actualiser(proj_container& projectiles, Entite& vaisseau, float tempsEcoule)
-{
-	// Juste pour mute les warnings du compilateur
-	(void)projectiles;
-	
-	//TODO ne se lance que si le lanceur n'est pas immobile
+void CapDash::actualiser(proj_container& projectiles)
+{	
+	//TODO PG weak_ptr est-ce propre ?
+	assert(!lanceur_.expired());
+	if (auto lanceur = lanceur_.lock()) {
 
-	// Augmente la vitesse  à l'activation
-	if (frames_ == 0)
-	{
-		vaisseau.changeSpeed(2500);
-		vaisseau.setNbPositions(15);
-		vaisseau.setSmokeTexture(vaisseau.getTexture(), { 120, 120, 120, 120 });
-	}
-		
-	// Retourne à la vitesse de base au bout de 6 frames
-	if (frames_ == 6)
-	{
-		vaisseau.changeSpeed(-2500);
-		vaisseau.setNbPositions(0);
-	}
-		
+		if (!active_ && t_lastuse_.asMilliseconds() < 50)
+		{
+			lanceur->changeSpeed(5000);
+			active_ = true;
+		}
 
-	// Si la compétence est en cooldown, on actualise le timer
-	if (t_ < cooldown_)
-	{
-		t_ += tempsEcoule;
+		if (active_ && t_lastuse_.asMilliseconds() > 50)
+		{
+			lanceur->changeSpeed(-5000);
+			active_ = false;
+		}
+		t_lastuse_ += ecran_.getTempsFrame();
 	}
-	
-	frames_++;
-
 }

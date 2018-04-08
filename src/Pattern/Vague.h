@@ -6,12 +6,13 @@
 #include "../Vaisseau/_vaisseaux.h"
 #include "../def_type.h"
 
-typedef struct
+struct VaisseauVague
 {
-	float t;
-	vaisseau_ptr v;
-	bool active;
-} ElementVague;
+	sf::Time t_depart_element;
+	vaisseau_ptr vaiss;
+	bool actif = false;
+};
+//TODO CL vague de Entités
 
 /**
 * @class Vague
@@ -23,47 +24,62 @@ typedef struct
 
 class Vague
 {
-public:
-	Vague();
-	explicit Vague(float t);
-	~Vague();
+	public:
+		/**
+		*@fn Vague
+		*@brief Constructeur
+		*@param ecran Référence vers l'écran
+		*@param t Temps de départ de la vague après la construction de la partie
+		*/
+		explicit Vague(Ecran& ecran, const sf::Time& t = sf::Time::Zero);
+		~Vague() = default;
 
-	/**
-	* @fn ajouterVaissseau
-	* @brief Ajoute un vaisseau à la vague
-	* @param t Le temps écoulé depuis le début de la vague avant apparition que le vaisseau apparaisse
-	* @param v Le vaisseau à vaire apparaitre
-	*/
-	void ajouterVaisseau(float t, vaisseau_ptr v);
-	/**
-	* @fn gestion
-	* @brief Gere la vague
-	* @param t Temps écoulé depuis le début de la boucle
-	* @param vaisseaux Vecteur de tous les vaisseaux présent à l'écran
-	* Gere le déclanchement de la vague et l'apparition des vaisseaux
-	*/
-	void gestion(vaisseau_container &vaisseaux, sf::Time t);
-	/**
-	* @fn setTempsDebut
-	* @brief Gere la vague
-	* @param t Temps de départ de la vague
-	* Fixe le temps de départ du début de la vague
-	*/
-	void setTempsDebut(float t);
+		/**
+		* @fn ajouterElement
+		* @brief Ajoute un élement à la vague
+		* @param vaiss L'élement à ajouter
+		*/
+		void ajouterElement(VaisseauVague e) { vaisseaux_vague_.push_back(e); }
+		/**
+		* @fn gestion
+		* @brief Gère la vague
+		* @param t Temps écoulé depuis le début de la boucle
+		* @param vaisseaux Vecteur de tous les vaisseaux présent à l'écran
+		* Gere le déclanchement de la vague et l'apparition des vaisseaux
+		*/
+		void gestion(vaisseau_container &vaisseaux);
+		/**
+		* @fn setTempsDepart
+		* @brief Fixe le temps de départ de la vague
+		* @param t Temps de départ de la vague
+		* Fixe le temps de départ du début de la vague
+		*/
+		void setTempsDepart(sf::Time t) { t_depart_ = t; }
 
-	//getters
-	std::vector<ElementVague> getv_() { return v_; }
+		// Itérateurs
+		std::vector<VaisseauVague>::iterator begin() { return vaisseaux_vague_.begin(); }
+		std::vector<VaisseauVague>::const_iterator begin() const { return vaisseaux_vague_.cbegin(); }
+		std::vector<VaisseauVague>::iterator end() { return vaisseaux_vague_.end(); }
+		std::vector<VaisseauVague>::const_iterator end() const { return vaisseaux_vague_.cend(); }
 
-	//setters
-	void setEquipeAll(Equipe equipe) {
-		for (auto &element : v_) element.v->setequipe_(equipe); 
-	}
+		//getters
+		std::vector<VaisseauVague> getElements() { return vaisseaux_vague_; }
 
-private:
-	float t_debut_; /// Temps en millisecondes du début de la vague
-	float t_; /// Temps depuis le début de la vague
-	std::vector<ElementVague> v_; /// Vecteur des vaisseaux qui apparaissent
+		//setters
+		void setEquipeAll(Equipe equipe) {
+			for (auto& element : vaisseaux_vague_) element.vaiss->setequipe_(equipe); 
+		}
 
+
+	private:
+		// Référence vers l'écran
+		Ecran& ecran_;
+
+		// Temps
+		sf::Time t_depart_; ///<Temps de départ de la vague
+		sf::Time t_depuis_debut_partie_; ///<Durée depuis la création de la partie
+
+		std::vector<VaisseauVague> vaisseaux_vague_; ///<Vecteur des vaisseaux qui constituent le pattern
 };
 
 #endif //VAGUE_H

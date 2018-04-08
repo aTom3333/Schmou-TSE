@@ -1,69 +1,63 @@
 ﻿#include "CapBouclierRond.h"
 
-CapBouclierRond::CapBouclierRond(int niveau, Entite* Entite_liee)
+CapBouclierRond::CapBouclierRond(Ecran& ecran, const std::weak_ptr<Entite>& lanceur) :
+	Capacite(ecran, lanceur)
 {
-	niveau_ = niveau;
-	Entite_liee_ = Entite_liee;
-
-	capText_.loadFromFile("../../rc/Icones_Caps/boubou.png");
-	capacite_.setTexture(capText_);
-	affiche_ = true;
-	
-
-	switch (niveau)
-	{
-	default:
-		break;
-
-	case 1:
-		cooldown_ = 15000;
-		pvM_ = 500;
-		degatsColl_ = 50;
-		tempsMax_ = 3000;
-		break;
-	case 2:
-		cooldown_ = 10000;
-		pvM_ = 1000;
-		degatsColl_ = 100;
-		tempsMax_ = 5000;
-		break;
-	}
+	//Caractéristiques
+	cooldown_ = sf::milliseconds(10000);
 	nom_ = "Bouclier";
-	t_ = cooldown_;
-	frames_ = cooldown_; //TODO PG ici le warning pourrait être important (float vers uint)
 
+	//Icônes
+	icone_.setTexture(*ecran.getChargeur().getTexture("icone.boubou"));
+	afficheIcone_ = true;
+
+	//Sprites
+	sprites_.emplace_back(*ecran.getChargeur().getTexture("Cap.boubou"));
+
+	//Son
+	sounds_.emplace_back(*ecran.getChargeur().getSoundBuffer("son.boubou"));
+	sounds_.front().setLoop(true);
+
+	// TODO CL Gestion des niveaux à refaire
+	niveau_ = 0;
+	//switch (niveau_)
+	//{
+	//	default:
+	//		break;
+	//	case 1:
+	//		pvM_ = 500;
+	//		degatsCollision_ = sf::milliseconds(50);
+	//		t_longevite_ = 3000;
+	//		break;
+	//	case 2:
+	//		pvM_ = 1000;
+	//		degatsCollision_ = 100;
+	//		t_longevite_ = 5000;
+	//		break;
+	//}
+
+	//TODO PG structure statistiques !!
 }
 
-void CapBouclierRond::utiliser(int x, int y)
+void CapBouclierRond::utiliser(proj_container& projectiles)
 {
-	// Si la compétence est disponible
-	if (t_ >= cooldown_)
+	if (auto lanceur = lanceur_.lock())
 	{
-		// Début du timer
-		t_ = 0;
-		frames_ = 0;
-		// Initialisation de l'endroit ou la compétence a été utilisée
-		debutX_ = x;
-		debutY_ = y;
+		// Si la compétence est disponible
+		if (t_lastuse_ >= cooldown_)
+		{
+			// Reset timer
+			t_lastuse_ = sf::Time::Zero;
+
+			// Création du projectile au lancement
+			proj_ptr temp(new ProjBouclierRond(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe()));
+			projectiles.push_back(temp);
+		}
 	}
 }
 
 
-void CapBouclierRond::actualiser(proj_container& GVP, Entite& vaisseau, float tempsEcoule)
+void CapBouclierRond::actualiser(proj_container &proj)
 {
-	// Création du projectile au moment où la compétence est lancée
-	if (frames_ == 0)
-	{
-		//TODO bug
-		proj_ptr temp(new ProjBouclierRond(Entite_liee_, pvM_, degatsColl_, tempsMax_, vaisseau.getEquipe()));
-		GVP.push_back(temp);
-	}
-
-	// Si la compétence est en cooldown, on actualise le timer
-	if (t_ < cooldown_)
-	{
-		t_ += tempsEcoule;
-	}
-	frames_++;
-	
+	t_lastuse_ += ecran_.getTempsFrame();
 }

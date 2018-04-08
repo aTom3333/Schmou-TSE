@@ -1,0 +1,4 @@
+<map id="set_keyboard_default_binding_2" name="set_keyboard_default_binding_2">
+<area shape="rect" id="node2" href="$class_input__base.html#aba7163e5edb9d3f938811d990863ce0e" title="Input_base::set_action\l_keyboard" alt="" coords="230,5,383,47"/>
+<area shape="rect" id="node3" href="$class_input__base.html#a103633f42d3fa58352a12b54ed4b3faf" title="Input_base::set_movement_mode" alt="" coords="199,71,415,98"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="CapPiou::CapPiou" name="CapPiou::CapPiou">
+<area shape="rect" id="node2" href="$class_ecran.html#a9b781eadd60c166948dc1ea2bc04194d" title="Ecran::getChargeur" alt="" coords="199,5,334,32"/>
+<area shape="rect" id="node3" href="$class_chargeur.html#af10ca3942dee0356b249fd9e13a65342" title="Chargeur::getSoundBuffer" alt="" coords="181,56,352,83"/>
+<area shape="rect" id="node4" href="$class_chargeur.html#a23fce63f45f73d039cbf70cd455ed995" title="Chargeur::getTexture" alt="" coords="195,107,338,133"/>
+</map>

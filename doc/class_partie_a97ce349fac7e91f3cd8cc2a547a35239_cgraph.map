@@ -1,0 +1,6 @@
+<map id="Partie::collisionVaisseaux" name="Partie::collisionVaisseaux">
+<area shape="rect" id="node2" href="$_entite_8cpp.html#ac85cf277aaeb8a314734c1fa5f35e3be" title="collision" alt="" coords="286,5,355,32"/>
+<area shape="rect" id="node4" href="$class_partie.html#ae3caf4ac1e50ac945783b1a0d79a85c7" title="Partie::deleteVaisseauDetruit" alt="" coords="225,56,416,83"/>
+<area shape="rect" id="node3" href="$class_entite.html#a3905c5bfe2890fd5da1f7ea704c277ac" title="Entite::isInvincible" alt="" coords="481,5,607,32"/>
+<area shape="rect" id="node5" href="$namespacestd_1_1experimental.html#acdfba2d2e9c79f689a34c9cea5c5682d" title="std::experimental::swap" alt="" coords="464,56,624,83"/>
+</map>

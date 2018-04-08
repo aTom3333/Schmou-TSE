@@ -1,40 +1,41 @@
 #include "CapMissile.h"
 
-CapMissile::CapMissile()
+CapMissile::CapMissile(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
+	Capacite(ecran, lanceur)
 {
-	cooldown_ = 5000;
-	t_ = cooldown_;
-	frames_ = cooldown_; //TODO PG ici le warning pourrait être important (float vers uint)
+	//Caractéristiques
+	cooldown_ = sf::milliseconds(100);
 	nom_ = "Missile";
+
+	//Sprites
+	sprites_.emplace_back(*ecran.getChargeur().getTexture("Cap.missile"));
+
+	// Icônes
+	icone_.setTexture(*ecran.getChargeur().getTexture("icone.missile"));
+	afficheIcone_ = true;
+
+	// Sons
+
 }
 
-void CapMissile::utiliser(int x, int y)
+void CapMissile::utiliser(proj_container& projectiles)
 {
-	// Si la compétence est disponible
-	if (t_ >= cooldown_)
+	if (auto lanceur = lanceur_.lock())
 	{
-		// Début du timer
-		t_ = 0;
-		frames_ = 0;
-		// Initialisation de l'endroit ou la compétence a été utilisée
-		debutX_ = x;
-		debutY_ = y;
+		// Si la compétence est disponible
+		if (t_lastuse_ >= cooldown_)
+		{
+			// Reset timer
+			t_lastuse_ = sf::Time::Zero;
+
+			// Création du projectile au lancement
+			proj_ptr temp(new ProjMissile(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe(), aimbot_));
+			projectiles.push_back(temp);
+		}
 	}
 }
 
-void CapMissile::actualiser(proj_container& projectiles, Entite & vaisseau, float tempsEcoule)
+void CapMissile::actualiser(proj_container& projectiles)
 {
-	// Création du projectile au moment où la compétence est lancée
-	if (frames_ == 0)
-	{
-		proj_ptr temp(new ProjMissile(debutX_, debutY_, vaisseau.getEquipe()));
-		projectiles.push_back(temp);
-	}
-
-	// Si la compétence est en cooldown, on actualise le timer
-	if (t_ < cooldown_)
-	{
-		t_ += tempsEcoule;
-	}
-	frames_++;
+	t_lastuse_ += ecran_.getTempsFrame();
 }

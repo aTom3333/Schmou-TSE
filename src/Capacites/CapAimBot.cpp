@@ -1,7 +1,7 @@
 #include "CapAimBot.h"
 #include "CapMissile.h"
 
-CapAimBot::CapAimBot()
+/*CapAimBot::CapAimBot()
 {
 	cooldown_ = 500;
 }
@@ -20,4 +20,4 @@ void CapAimBot::set_state_autoAim_false(Capacite & capacite)
     (void)capacite;
 	
 	autoAim_ = false;
-}
+}*/

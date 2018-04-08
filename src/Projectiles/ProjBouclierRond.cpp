@@ -1,68 +1,84 @@
 #include "ProjBouclierRond.h"
 #include <cmath>
 
-ProjBouclierRond::ProjBouclierRond(Entite* Entite_liee, int pvM, int degatsColl, float tempsMax, Equipe equipe)
+ProjBouclierRond::ProjBouclierRond(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe):
+	Projectile(ecran)
 {
-	// Juste pour mute les warnings du compilateur
-	(void)equipe;
-	
-	// Sprite
-	texture_.loadFromFile("../../rc/Sprites/Capacites/BouclierRond/bouclier_rond.png");
-	sprite_.setTexture(texture_);
+	// Weak pointeur vers lanceur
+	lanceur_ = lanceur;
 
-	//Son
-	soundbuffer_.loadFromFile("../../rc/Sounds/Capacites/boubou_stase.wav");
-	sound_.setBuffer(soundbuffer_);
-	sound_.setLoop(true);
-	sound_.play();
+	// Gestion du sprite
+	sprites_ = sprite;
 
-	// Hitbox
-	cercleEnglobant_ = sf::CircleShape(75);
-	cercleEnglobant_.setOrigin(75, 75);
-	cercleEnglobant_.setPosition(75, 75);
+	//Origines
+	origine_ = { sprites_.at(0).getGlobalBounds().width / 2.0f, sprites_.at(0).getGlobalBounds().height / 2.0f };
+	sprites_.at(0).setOrigin({ sprites_.at(0).getGlobalBounds().width / 2.0f, sprites_.at(0).getGlobalBounds().height / 2.0f });
+
+	//Gestion du son
+	sounds_ = sound;
+	if (!sounds_.empty())sounds_.front().play();//son joué à la création du projectile
+
+	// cercle englobant
+	//TODO utiliser la fonction Englobeuse
+	const float R = sprites_.at(0).getGlobalBounds().width / 2.0f;
+	cercleEnglobant_ = sf::CircleShape(R);
+	cercleEnglobant_.setOrigin(R, R);
+
+	//Hitbox : il s'agit ici du cercle englobant
 	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
 
-	// Stats
+	// Caractéristiques de code
+	equipe_ = equipe;
 	actif_ = true;
-	invincibilite_ = false;
+	invincibilable_ = false;
 
-	pvM_ = pvM;
-	armureM_ = 0;
-	bouclierM_ = 0;
+	//Stats
+	pv_ = pvM_ = 5000;
 
-	pv_ = pvM_;
-	armure_ = 0;
-	bouclier_ = 0;
+	degatsCollision_ = 0; //le bouclier n'inflige ici aucun dégat (passif)
 
-	regenARM_ = regenBOU_ = regenPV_ = 0;
+	t_longevite_ = sf::milliseconds(7000);
 
-	degatsColl_ = degatsColl; 
+	//position de départ
+	setPosition({ lanceur->getPosition().x ,  lanceur->getPosition().y });
 
-	//Entité à laquelle est rattaché le bouclier
-	Entite_liee_ = Entite_liee;
-	equipe_ = JOUEUR;
-
-	tempsMax_ = tempsMax;
-	t_ = 0;
-
+	//Comportement spécifique
+	lanceur->setBouclier(pv_);
+	lanceur->setBouclierM(pvM_);
+	lanceur->setCollisionnable(false);//TODO PG bloquer au bouclier en cas de collision
 }
 
-void ProjBouclierRond::gestion(sf::RenderWindow & window, sf::Time tempsEcoule)
+void ProjBouclierRond::gestion()
 {
-	setPosition({ Entite_liee_->getPosition().x - 75 + 35, Entite_liee_->getPosition().y - 75 + 35});
-	afficher(window);
-	t_ += tempsEcoule.asMilliseconds();
-	if (t_ > tempsMax_)
-		detruit_ = true;
+	auto& window = ecran_.getWindow();
+	
+	if (auto lanceur = lanceur_.lock())
+	{
+		setPosition({ lanceur->getPosition().x, lanceur->getPosition().y });
+
+		lanceur->setBouclier(pv_);
+
+		afficher();
+
+		if (t_age_ >= t_longevite_)
+		{
+			detruit_ = true;
+			lanceur->setBouclier(0);
+			lanceur->setBouclierM(0);
+			lanceur->setCollisionnable(true);
+		}
+		else t_age_ += ecran_.getTempsFrame();
+	}
 }
 
 
 void ProjBouclierRond::agit(Entite& proj)
 {
-	proj.recoitDegats(degatsColl_);
-	pv_ -= proj.getDegatsColl_();
-	int alpha = (int)(pv_ / pvM_ * 255);
-	sprite_.setColor({ 255, 255, 255, ( sf::Uint8)alpha });
-	if (pv_ < 0)
+	proj.recoitDegats(degatsCollision_);//inflige dégats
+	//change d'opacité selon sa vie
+	sf::Uint8 alpha = (sf::Uint8)(pv_ / pvM_ * 255);
+	alpha < 50 ? 50 : alpha;//seuil minimum sinon le bouclier est très peu visible à faible vie
+	sprites_.front().setColor({ 255, 255, 255, alpha });
+	if (pv_ <= 0)
 		detruit_ = true;
 }

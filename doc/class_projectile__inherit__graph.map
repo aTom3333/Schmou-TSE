@@ -1,0 +1,8 @@
+<map id="Projectile" name="Projectile">
+<area shape="rect" id="node3" href="$class_proj_bismillah.html" title="{ProjBismillah\n||+ ProjBismillah()\l+ ~ProjBismillah()\l+ ProjBismillah()\l+ ~ProjBismillah()\l+ gestion()\l+ agit()\l}" alt="" coords="5,1796,132,1947"/>
+<area shape="rect" id="node4" href="$class_proj_boing.html" title="Projectile de test. " alt="" coords="157,1811,263,1932"/>
+<area shape="rect" id="node5" href="$class_proj_bouclier_rond.html" title="{ProjBouclierRond\n||+ ~ProjBouclierRond()\l+ ProjBouclierRond()\l+ gestion()\l+ agit()\l}" alt="" coords="288,1811,439,1932"/>
+<area shape="rect" id="node6" href="$class_proj_missile.html" title="{ProjMissile\n||+ ProjMissile()\l+ ~ProjMissile()\l+ gestion()\l+ agit()\l}" alt="" coords="463,1811,578,1932"/>
+<area shape="rect" id="node7" href="$class_proj_piou.html" title="Projectile de test. " alt="" coords="602,1811,701,1932"/>
+<area shape="rect" id="node2" href="$class_entite.html" title="Classe virtuelle qui définit une entité " alt="" coords="209,5,363,1564"/>
+</map>

@@ -1,59 +1,61 @@
 #include "VaisseauEclaireur.h"
 #include <cmath>
 
+#include <iostream>
 
-VaisseauEclaireur::VaisseauEclaireur(double x, double y,Trajectoire traj, double param1, double param2, double param3, double param4)
+
+VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, float x, float y,Trajectoire traj, double param1, double param2, double param3, double param4) :
+	Vaisseau(ecran)
 {
-	//sprite
-	texture_.loadFromFile("../../rc/Sprites/base/vaisseauEnnemiTest.png");
-	sprite_.setTexture(texture_);
+	// Sprites
+	sprites_.emplace_back(*ecran_.getChargeur().getTexture("vaiss.ennemi.test"));
+	for (auto& sprite : sprites_)
+		sprite.setOrigin({ this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f });
 
-	//hitbox simple
-	cercleEnglobant_ = sf::CircleShape((float)sqrt(2*32*32));
-	cercleEnglobant_.setOrigin((float)sqrt(2 * 32 * 32), (float)sqrt(2 * 32 * 32));
-	cercleEnglobant_.setPosition(16, 32);
-	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
+	// Cercle englobant
+	//TODO PG Englobeur
+	const float R = hypot(this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f);
+	cercleEnglobant_ = sf::CircleShape(R);
+	cercleEnglobant_.setOrigin(R, R);
 
-	// Initialisation de la position
-	posInit_.x = (float)x;
-	posInit_.y = (float)y;
-	// initialisation de la trajectoire
-	trajectoire_ = traj;
-	// Initialisation des paramètres de base
+	//Hitbox
+	forme_.emplace_back(new sf::RectangleShape({ this->getTailleSprite().x, this->getTailleSprite().y}));
+	for (auto& forme : forme_)
+		forme->setOrigin(forme->getGlobalBounds().width / 2.0f, forme->getGlobalBounds().height / 2.0f);
+
+	//Origine
+	origine_ = { this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f };
+
+	// Caractéristiques de code
 	equipe_ = ENNEMI;
-	t_ = 0;
-	frames_ = 1;
-	vit_ = 30;
 	actif_ = false;
-	invincibilite_ = false;
 
-	pvM_ = 50;
-	armureM_ = 0;
-	bouclierM_ = 0;
+	// Stats
+	pv_ = pvM_ = 50;
+	armure_ = armureM_ = 0;
+	bouclier_ = bouclierM_ = 0;
+	vit_ = vitM_ = 300;
 
-	pv_ = pvM_;
-	armure_ = armureM_;
-	bouclier_ = bouclierM_;
+	regenArmure_ = 0;
+	regenBouclier_ = 0;
+	regenPv_ = 0;
 
-	regenARM_ = 0;
-	regenBOU_ = 0;
-	regenPV_ = 0;
+	degatsCollision_ = 50;
 
-	degatsColl_ = 50;
-
-	// Initialisation des paramètres de trajectoire
+	// Initialisation de la trajectoire
+	trajectoire_ = traj;
 	params_.push_back((float)param1);
 	params_.push_back((float)param2);
 	params_.push_back((float)param3);
 	params_.push_back((float)param4);
 
+	// Position initiale
+	setPosition({ x, y });
+	posInit_ = getPosition();
+
 }
 
-VaisseauEclaireur::~VaisseauEclaireur()
-{
-}
-
-void VaisseauEclaireur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule, Input& input)
+void VaisseauEclaireur::gestion(proj_container &proj_cont, Input& input)
 {
 	// Juste pour mute les warnings du compilateur
 	(void)input;
@@ -68,11 +70,9 @@ void VaisseauEclaireur::gestion(sf::RenderWindow & window, sf::Time tempsEcoule,
 	
 	if (actif_)
 	{
-		setPosition(traj_position(trajectoire_, t_, vit_, posInit_, params_));
-		afficher(window);
-
-		t_ += tempsEcoule.asMilliseconds();
-		frames_++;
+		t_age_ += ecran_.getTempsFrame();
+		setPosition(traj_position(trajectoire_, t_age_, vit_, posInit_, params_));
+		afficher();
 	}
 }
 

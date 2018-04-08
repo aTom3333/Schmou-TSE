@@ -1,0 +1,5 @@
+<map id="Entite::move" name="Entite::move">
+<area shape="rect" id="node2" href="$class_entite.html#a23480947ca71fd3c6004f8b704f675b0" title="Entite::getOrigin" alt="" coords="155,5,271,32"/>
+<area shape="rect" id="node3" href="$class_entite.html#a6f6fd1e1f9f6ad44f0ecc74961a774d9" title="Renvoie la position de l&#39;Entite appelante. " alt="" coords="148,56,277,83"/>
+<area shape="rect" id="node4" href="$class_entite.html#ac9ce99e4eb26bb9c4b9f2c8aaf3899c8" title="Entite::getTaille" alt="" coords="157,107,269,133"/>
+</map>
