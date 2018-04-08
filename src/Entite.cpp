@@ -52,8 +52,8 @@ void Entite::afficher(bool debug)
 
 	for (auto& pos : positionsPrev_)
 	{
-		smokes_.front().setPosition(pos);
-		window.draw(smokes_.front());
+		smoke_.setPosition(pos);
+		window.draw(smoke_);
 	}
 
 	afficher_debug(debug);
@@ -175,14 +175,12 @@ void Entite::setNbPositions(size_t val)
 	if(val == 0) positionsPrev_.clear();
 }
 
-//TODO PG à refondre, je ne sais pas ce que c'est
 void Entite::setSmokeTexture(const sf::Texture &text, sf::Color couleur)
 {
-	for (auto& smoke : smokes_)
-	{
-		smoke.setTexture(text);
-		smoke.setColor(couleur);
-	}
+	smoke_.setTexture(text);
+	smoke_.setColor(couleur);
+	smoke_.setOrigin(origine_);
+	
 }
 
 void Entite::setOrigin(sf::Vector2f origine)
