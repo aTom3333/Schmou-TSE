@@ -114,7 +114,7 @@ void ProjMissile::gestion()
 			else //nouvelle cible
 			{
 				// TODO CL Pas de nouvelle cible ?
-				float distance_min = std::numeric_limits<float>::max();
+				/*float distance_min = std::numeric_limits<float>::max();
 				for (auto& vaisseau : ecran_.getVaisseauxContainer())
 				{
 					if (vaisseau->getEquipe() != equipe_ && vaisseau->isActif())
@@ -126,7 +126,9 @@ void ProjMissile::gestion()
 							cible_ = vaisseau;
 						}
 					}
-				}
+				}*/
+
+				aimbot_ = false;
 			}
 		}
 		else

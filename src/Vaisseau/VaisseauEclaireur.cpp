@@ -31,7 +31,7 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, float x, float y,Trajectoire 
 	actif_ = false;
 
 	// Stats
-	pv_ = pvM_ = 1000;
+	pv_ = pvM_ = 50;
 	armure_ = armureM_ = 0;
 	bouclier_ = bouclierM_ = 0;
 	vit_ = vitM_ = 300;
