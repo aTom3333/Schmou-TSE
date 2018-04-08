@@ -38,7 +38,7 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 
 	// Caractéristiques
 	equipe_ = equipe;
-	if (equipe_ == ENNEMI) rotate(180); //TODO PG projectiles ennemis retournés : à implémenter à partir de roation du lanceur et vaisseaux ennemis déjà retournés
+	if (equipe_ == ENNEMI) rotate(180); //TODO PG projectiles ennemis retournés : à implémenter à partir de rotation du lanceur et vaisseaux ennemis déjà retournés
 	aimbot_ = aimbot;
 
 	// Caractéristiques spécifiques
@@ -96,27 +96,26 @@ void ProjMissile::gestion()
 		{
 			if (!cible->estDetruit())
 			{
-				float vit_angulaire = 100 * ecran_.getTempsFrame().asSeconds();//degrés par seconde
 				float X = cible->getPosition().x - position_.x;
 				float Y = cible->getPosition().y - position_.y;
 				float angleTot = atan2(-Y, -X) * 180 / PI ; //angle avec cible
 
+				//ciblage limité
+				float vit_angulaire = 100; //degrés par seconde
+				float dAngle = vit_angulaire * ecran_.getTempsFrame().asSeconds();//variation max d'angle possible
 				if (angleTot < 0) angleTot += 360;
+				short sens = -1;
+				if ((rotation_ - angleTot) < 0 || (rotation_ - angleTot >= 180 )) sens = 1;
+				float angle = fabs(rotation_ - angleTot) < dAngle ? angleTot - rotation_ : sens * dAngle; // angle est le maximum entre l'angle avec la cible et dAngle non signé
+				rotate(angle);
 
-				int mult = -1;
-				if (rotation_ < angleTot || (rotation_ - angleTot >= 180 )) mult = +1;
-
-				float angle = abs(rotation_ - angleTot) < vit_angulaire ? angleTot - rotation_ : mult * vit_angulaire; // angle est le maximum entre l'angle avce la cible et la vitesse angulaire max
-
-				rotate(angle); //ciblage limité
-
-				//setRotation(angle); //ciblage parfait
+				//ciblage parfait
+				//setRotation(angleTot);
 
 			}
 			else //nouvelle cible
 			{
-				// TODO CL Pas de nouvelle cible ?
-				//TODO PG c'est une proposition ou un report de bug ? ça m'avait l'air de marcher
+				//TODO PG rendre la recherche de nouvelle cible activable ; par ex, en fonction du niveau de la capacité
 				/*float distance_min = std::numeric_limits<float>::max();
 				for (auto& vaisseau : ecran_.getVaisseauxContainer())
 				{
@@ -131,6 +130,7 @@ void ProjMissile::gestion()
 					}
 				}*/
 
+				//TODO PG temp par défaut, la nouvelle recherche de cible n'est pas activée
 				aimbot_ = false;
 			}
 		}
