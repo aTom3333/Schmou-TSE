@@ -76,6 +76,8 @@ ecran_t Partie::executer(sf::Texture &derniereFenetre)
 
 	// Temps
 	sf::Time t_previous = sf::Time::Zero;
+	std::pair<sf::Time, size_t> countFPS;
+	float fps = 0;
 
     // Déplacer la souris à la position du vaisseau
     auto pos = vaisseaux_[0]->getPosition();
@@ -86,7 +88,7 @@ ecran_t Partie::executer(sf::Texture &derniereFenetre)
 
 	while (window_.isOpen())
 	{
-		// Gestion  des évènements 
+		// Gestion  des événements 
 		sf::Event event;
 		while (window_.pollEvent(event))
 		{
@@ -104,7 +106,7 @@ ecran_t Partie::executer(sf::Texture &derniereFenetre)
 			{
 				if (coeffTemps_ < 20)
 				{
-					coeffTemps_ += 0.1;
+					coeffTemps_ += 0.1f;
 				}
 			}
 
@@ -112,11 +114,11 @@ ecran_t Partie::executer(sf::Texture &derniereFenetre)
 			{
 				if (coeffTemps_ >= 0.1)
 				{
-					coeffTemps_ -= 0.1;
+					coeffTemps_ -= 0.1f;
 				}
 				else if (coeffTemps_ > 0.01)
 				{
-					coeffTemps_ -= 0.01;
+					coeffTemps_ -= 0.01f;
 				}
 			}
 			
@@ -171,8 +173,19 @@ ecran_t Partie::executer(sf::Texture &derniereFenetre)
 		// Mise à jour de l'écran
 		window_.display();
 
-		window_.setTitle("Schmou'TSE - Vitesse de jeu : " + std::to_string(coeffTemps_));
+		//calcul FPS
+		countFPS.first += t_frame_;
+		countFPS.second++;
+		if (countFPS.second == 10)
+		{
+			fps = 10 * coeffTemps_ / countFPS.first.asSeconds();
+			countFPS.second = 0;
+			countFPS.first = sf::Time::Zero;
+		}
+
+		window_.setTitle("Schmou'TSE - Vitesse de jeu : " + std::to_string(coeffTemps_) + " FPS : " + std::to_string(fps));
 		sf::sleep(sf::milliseconds(10));
+
 	}
 
 	return VIDE;
@@ -311,7 +324,15 @@ void Partie::initPatternTest()
 	VaisseauEclaireur *vaiseauEclaireurP = new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500);
 	VaisseauEclaireur *vaiseauEclaireurS = new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7);*/
 
-	v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this,500,500, LINEAIRE, 0, 0)) });
+	//TODO tests à enlever
+	v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this,ECRAN_L/2, ECRAN_H/2, LINEAIRE, 0, 0)) });
+	v1.getElements().at(0).vaiss->addCapacite(new CapMissile(*this, v1.getElements().at(0).vaiss));
+	v1.getElements().at(0).vaiss->getCapacites().at(0)->setAutoAim(true);
+	v1.getElements().at(0).vaiss->setPvMax(std::numeric_limits<float>::max());
+	v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)) });
+	v1.getElements().at(1).vaiss->setPv(1);
+	v1.getElements().at(1).vaiss->getAnnexes().at(0)->setPv(2);
+	//
 
 	//v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
 	//v1.ajouterElement({ sf::milliseconds(400), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
@@ -337,7 +358,7 @@ void Partie::initPatternTest()
 	//v4.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this, 750, -50, PARABOLIQUE, 1, 200, 750)) });
 	//v4.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this, 1000, -50, PARABOLIQUE, 1, 200, 1000)) });
 	//for(auto& vaisseau : v4)
-	//	vaisseau.v->addCapacite(new CapMissile(*this, vaisseau.v));
+	//	vaisseau.vaiss->addCapacite(new CapMissile(*this, vaisseau.vaiss));
 
 	//v5.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)) });
 	//v5.ajouterElement({ sf::milliseconds(1500), vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)) });

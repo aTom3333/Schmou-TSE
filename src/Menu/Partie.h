@@ -1,14 +1,6 @@
 #ifndef PARTIE_H
 #define PARTIE_H
 
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <iostream>
-#include <memory>
-#include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-
 #include "../Capacites/Capacite.h"
 #include "../Projectiles/Projectile.h"
 #include "../Vaisseau/Vaisseau.h"
@@ -18,6 +10,13 @@
 #include "../def_type.h"
 #include "Ecran.h"
 
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <iostream>
+#include <memory>
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 
 /**
  * @class Partie

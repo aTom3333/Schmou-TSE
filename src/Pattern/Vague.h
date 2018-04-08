@@ -6,10 +6,10 @@
 #include "../Vaisseau/_vaisseaux.h"
 #include "../def_type.h"
 
-struct ElementVague
+struct VaisseauVague
 {
 	sf::Time t_depart_element;
-	vaisseau_ptr v;
+	vaisseau_ptr vaiss;
 	bool actif = false;
 };
 //TODO CL vague de Entités
@@ -37,9 +37,9 @@ class Vague
 		/**
 		* @fn ajouterElement
 		* @brief Ajoute un élement à la vague
-		* @param v L'élement à ajouter
+		* @param vaiss L'élement à ajouter
 		*/
-		void ajouterElement(ElementVague e) { vaisseaux_vague_.push_back(e); }
+		void ajouterElement(VaisseauVague e) { vaisseaux_vague_.push_back(e); }
 		/**
 		* @fn gestion
 		* @brief Gère la vague
@@ -57,17 +57,17 @@ class Vague
 		void setTempsDepart(sf::Time t) { t_depart_ = t; }
 
 		// Itérateurs
-		std::vector<ElementVague>::iterator begin() { return vaisseaux_vague_.begin(); }
-		std::vector<ElementVague>::const_iterator begin() const { return vaisseaux_vague_.cbegin(); }
-		std::vector<ElementVague>::iterator end() { return vaisseaux_vague_.end(); }
-		std::vector<ElementVague>::const_iterator end() const { return vaisseaux_vague_.cend(); }
+		std::vector<VaisseauVague>::iterator begin() { return vaisseaux_vague_.begin(); }
+		std::vector<VaisseauVague>::const_iterator begin() const { return vaisseaux_vague_.cbegin(); }
+		std::vector<VaisseauVague>::iterator end() { return vaisseaux_vague_.end(); }
+		std::vector<VaisseauVague>::const_iterator end() const { return vaisseaux_vague_.cend(); }
 
 		//getters
-		std::vector<ElementVague> getElements() { return vaisseaux_vague_; }
+		std::vector<VaisseauVague> getElements() { return vaisseaux_vague_; }
 
 		//setters
 		void setEquipeAll(Equipe equipe) {
-			for (auto& element : vaisseaux_vague_) element.v->setequipe_(equipe); 
+			for (auto& element : vaisseaux_vague_) element.vaiss->setequipe_(equipe); 
 		}
 
 
@@ -79,7 +79,7 @@ class Vague
 		sf::Time t_depart_; ///<Temps de départ de la vague
 		sf::Time t_depuis_debut_partie_; ///<Durée depuis la création de la partie
 
-		std::vector<ElementVague> vaisseaux_vague_; ///<Vecteur des vaisseaux qui constituent le pattern
+		std::vector<VaisseauVague> vaisseaux_vague_; ///<Vecteur des vaisseaux qui constituent le pattern
 };
 
 #endif //VAGUE_H

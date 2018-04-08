@@ -94,7 +94,7 @@ void Overlay::gestion(vaisseau_ptr vaisseau)
 {
 
 	// Gestion de barres de vie, d'armure et de bouclier
-	barre_[0].setSize({ OVERLAY_BARRE_L*vaisseau->getPV() / vaisseau->getPVMax(), OVERLAY_BARRE_H });
+	barre_[0].setSize({ OVERLAY_BARRE_L*vaisseau->getPv() / vaisseau->getPvMax(), OVERLAY_BARRE_H });
 	barre_[1].setSize({ OVERLAY_BARRE_L*vaisseau->getArmure() / vaisseau->getArmureMax(), OVERLAY_BARRE_H });
 	barre_[2].setSize({ OVERLAY_BARRE_L*vaisseau->getBouclier() / vaisseau->getBouclierMax(), OVERLAY_BARRE_H });
 

@@ -64,7 +64,7 @@ class Vaisseau : public Entite
 			size_t getNskin() const { return Nskin_; }
 			const std::vector<std::unique_ptr<Capacite>>& getskills() const { return capacites_; }
 			bool estActif() const { return actif_; }
-			vaisseau_container getAnnexes() const { return annexes_; }
+			const vaisseau_container& getAnnexes() const { return annexes_; }
 			float getatqM() const { return atqM_; }
 			float getdefM() const { return defM_; }
 			const std::vector<std::unique_ptr<Capacite>>& getCapacites() const { return capacites_; }

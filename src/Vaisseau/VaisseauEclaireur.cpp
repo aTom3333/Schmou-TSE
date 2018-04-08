@@ -10,21 +10,21 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, float x, float y,Trajectoire 
 	// Sprites
 	sprites_.emplace_back(*ecran_.getChargeur().getTexture("vaiss.ennemi.test"));
 	for (auto& sprite : sprites_)
-		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
+		sprite.setOrigin({ this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f });
 
 	// Cercle englobant
 	//TODO PG Englobeur
-	const float R = hypot(this->getTaille().x / 2.0f, this->getTaille().y / 2.0f);
+	const float R = hypot(this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f);
 	cercleEnglobant_ = sf::CircleShape(R);
 	cercleEnglobant_.setOrigin(R, R);
 
 	//Hitbox
-	forme_.emplace_back(new sf::CircleShape(cercleEnglobant_));
+	forme_.emplace_back(new sf::RectangleShape({ this->getTailleSprite().x, this->getTailleSprite().y}));
 	for (auto& forme : forme_)
 		forme->setOrigin(forme->getGlobalBounds().width / 2.0f, forme->getGlobalBounds().height / 2.0f);
 
 	//Origine
-	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
+	origine_ = { this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f };
 
 	// Caractéristiques de code
 	equipe_ = ENNEMI;

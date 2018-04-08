@@ -290,23 +290,13 @@ class Entite
 		*
 		* Fonction virtuelle qui doit être surchargée pour les classes héritées.
 		*/
-		virtual void destruction() = 0;
-
-		
+		virtual void destruction() = 0;		
 
 		//getters
 		Equipe getEquipe() const { return equipe_; }
-		sf::Vector2f getTaille() const { return { sprites_.front().getGlobalBounds().width, sprites_.front().getGlobalBounds().height }; }//largeur, hauteur
+		sf::Vector2f getTailleSprite() const { return { sprites_.front().getGlobalBounds().width, sprites_.front().getGlobalBounds().height }; }//largeur, hauteur
 		sf::Vector2f getLastDelta() const { return last_delta_; }
 		bool getInnate_() const { return innate_; }
-		float getPVMax() const { return pvM_; }
-		float getArmureMax() const { return armureM_; }
-		float getBouclierMax() const { return bouclierM_; }
-		float getPV() const { return pv_; }
-		float getArmure() const { return armure_; }
-		float getBouclier() const { return bouclier_; }
-		float getVitMax() const { return vitM_; }
-		float getVit() const { return vit_; }
 		sf::Vector2f getOrigin() const { return origine_; }
 		bool isInvincibilable() const { return invincibilable_; }
 		bool isInvincible() const { return invincible_; }
@@ -332,6 +322,19 @@ class Entite
 
 		void setCercleEnglobant(const sf::CircleShape& cercleEnglobant) { cercleEnglobant_ = cercleEnglobant; }
 
+		//getters de stats
+		const float getPv() const { return pv_; }
+		const float getPvMax() const { return pvM_; }
+		const float getArmure() const { return armure_; }
+		const float getArmureMax() const { return armureM_; }
+		const float getBouclierMax() const { return bouclierM_; }
+		const float getBouclier() const { return bouclier_; }
+		const float getVit() const { return vit_; }
+		const float getVitMax() const { return vitM_; }
+
+		//setters de stats
+		void setPv(float pv) { pv_ = pv; }
+		void setPvMax(float pvM) { pvM_ = pvM; }
 
 	protected:
 		// Référence vers l'écran

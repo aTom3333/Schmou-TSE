@@ -40,11 +40,11 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 	//innate_ = true;
 
 	// Stats
-	pv_ = pvM_ = 10;
-	degatsCollision_ = 30; //TODO PG xlanceur.stats().atk
+	pv_ = pvM_ = 100;
+	degatsCollision_ = 100; //TODO PG xlanceur.stats().atk
 	vit_ = vitM_ = 700;
-	//rotation_ = rand() % 360; // TODO CL rand c++
-	rotation_ = 50 * (rand()%8);
+	rotation_ = rand() % 360; // TODO CL rand c++
+	//rotation_ = 45 * (rand()%8);
 
 	// Position de départ
 	float X = lanceur->getPosition().x + R * cos(rotation_*PI / 180) ,
@@ -79,6 +79,7 @@ void ProjBoing::gestion()
 		else
 			rotation_ = 180; //TODO PG décalage lorsque rebond à angle droite sur la gauche
 		sounds_.at(0).play();
+		pv_ -= 10;
 	}
 	else if (X + R > ECRAN_L)
 	{
@@ -89,6 +90,7 @@ void ProjBoing::gestion()
 		else
 			rotation_ = 0;
 		sounds_.at(0).play();
+		pv_ -= 10;
 	}
 	else if (Y - R < 0)
 	{
@@ -99,6 +101,7 @@ void ProjBoing::gestion()
 		else
 			rotation_ = 270;
 		sounds_.at(0).play();
+		pv_ -= 10;
 	}
 	else if (Y + R > ECRAN_H)
 	{
@@ -109,6 +112,7 @@ void ProjBoing::gestion()
 		else
 			rotation_ = 90;
 		sounds_.at(0).play();
+		pv_ -= 10;
 	}
 	
 	//gère la rotation de sprite & hitbox sans changer la rotation_
@@ -118,7 +122,7 @@ void ProjBoing::gestion()
 	rotation_ = temp_rotation;
 		
 	move();
-	afficher(true);
+	afficher();
 }
 
 void ProjBoing::agit(Entite& proj)

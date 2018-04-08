@@ -15,7 +15,7 @@ bool est(const T& X)
 	return (dynamic_cast<U*>(&X) != nullptr);
 }
 
-//utilisé pour l'augmentation de la taille d'écran
+//utilisÃ© pour l'augmentation de la taille d'Ã©cran
 void adapt_viewport(sf::RenderWindow& window);
 
 //pour le chargeur
@@ -24,15 +24,15 @@ std::pair<std::string, std::string> tokenize(const std::string& str, char sep);
 
 /**
 *@fn rayon_englobeur
-*@brief Renvoie la distance entre l'origine et le point le plus éloigné de la forme
-*@param forme Vector de unique_ptr utilisé dans Entite
+*@brief Renvoie la distance entre l'origine et le point le plus Ã©loignÃ© de la forme
+*@param forme Vector de unique_ptr utilisÃ© dans Entite
 *@param orgine Origine du lanceur qui veut se faire englober
 */
 double rayon_englobeur(const std::vector<std::unique_ptr<sf::Shape>> & forme, sf::Vector2f origine);
 
 /**
 *@fn englobeur_circulaire
-*@brief Règle le cercle englobant de l'Entite en paramètre
+*@brief RÃ¨gle le cercle englobant de l'Entite en paramÃ¨tre
 @param entite Entite qui doit se faire englober
 */
 void englobeur_circulaire(Entite& entite);

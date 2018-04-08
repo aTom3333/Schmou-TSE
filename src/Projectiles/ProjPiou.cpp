@@ -40,10 +40,10 @@ ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf
 
 	degatsCollision_ = 70; //TODO PG multiplier par lanceur.stats().atk (faire un genre de struct stats)
 
-	vit_ = vitM_ = 700;
+	vit_ = vitM_ = 1000;
 
 	//position de départ
-	setPosition({ lanceur->getPosition().x ,  lanceur->getPosition().y - lanceur->getTaille().y / 2.0f });
+	setPosition({ lanceur->getPosition().x ,  lanceur->getPosition().y - lanceur->getTailleSprite().y / 2.0f });
 }
 
 void ProjPiou::gestion()

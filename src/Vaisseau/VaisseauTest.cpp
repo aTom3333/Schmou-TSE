@@ -7,10 +7,10 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	// Sprites
 	sprites_.emplace_back(*ecran.getChargeur().getTexture("vaiss.vaisseautest.deux"));
 	for (auto& sprite : sprites_)
-		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
+		sprite.setOrigin({ this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f });
 
 	// Origine
-	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
+	origine_ = { this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f };
 
 	// Sons
 	sounds_.emplace_back(*ecran.getChargeur().getSoundBuffer("son.sakado"));
@@ -32,8 +32,8 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 
 	// Cercle englobant
 	//TODO PG Englobeur
-	////const float largeur_vaisseau = this->getTaille().x;
-	////const float hauteur_vaisseau = this->getTaille().y;
+	////const float largeur_vaisseau = this->getTailleSprite().x;
+	////const float hauteur_vaisseau = this->getTailleSprite().y;
 	////const float R = hypot(largeur_vaisseau / 2.0f, hauteur_vaisseau / 2.0f);
 	////const float rayon = rayon_englobeur(forme_, origine_);
 	////cercleEnglobant_ = sf::CircleShape(R);

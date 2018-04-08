@@ -54,7 +54,7 @@ std::pair<std::string, std::string> tokenize(const std::string& str, char sep)
 
 double rayon_englobeur(const std::vector<std::unique_ptr<sf::Shape>> & forme, sf::Vector2f origine)
 {
-	double dist_max = 0; //distance du point le plus éloigné de l'origine parmi tous
+	double dist_max = 0; //distance du point le plus Ã©loignÃ© de l'origine parmi tous
 	for (auto const& shape_ptr : forme)
 	{
 		size_t N = shape_ptr->getPointCount(); //nombre de points de la shape actuelle

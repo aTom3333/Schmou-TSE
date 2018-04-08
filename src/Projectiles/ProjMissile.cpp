@@ -56,7 +56,7 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 	vit_ = vitM_ = 1000;
 
 	//position de départ
-	setPosition({ lanceur->getPosition().x ,  lanceur->getPosition().y - lanceur->getTaille().y / 2.0f });
+	setPosition({ lanceur->getPosition().x ,  lanceur->getPosition().y - lanceur->getTailleSprite().y / 2.0f });
 
 	//Aimbot
 	if (aimbot_)
@@ -98,8 +98,13 @@ void ProjMissile::gestion()
 			{
 				float X = cible->getPosition().x - position_.x;
 				float Y = cible->getPosition().y - position_.y;
-				float angle = atan2(-Y, -X); //tout est inversé dans SFML
-				this->setRotation(angle * 180 / PI);
+				float angle = atan2(-Y, -X) * 180 / PI; //angle avec cible
+				setRotation(angle); //ciblage parfait
+
+				//TODO PG à implémenter
+				//float vit_angulaire = 10;//degrés par seconde
+				//if((angle - rotation_)>0)rotate((angle  - rotation_) * 0.08 );
+				//else if ((angle - rotation_)<0)rotate(-(angle - rotation_) * 0.08);
 			}
 			else //nouvelle cible
 			{
@@ -127,6 +132,8 @@ void ProjMissile::gestion()
 	t_age_ += ecran_.getTempsFrame();
 	move();
 	afficher();
+
+	if (t_age_ > sf::seconds(10)) detruit_ = true;
 }
 
 void ProjMissile::agit(Entite & e)

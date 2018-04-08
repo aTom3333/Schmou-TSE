@@ -34,7 +34,7 @@ ProjBismillah::ProjBismillah(Ecran& ecran, std::shared_ptr<Entite> lanceur, std:
     invincibilable_ = false;
 
 	// Stats
-    degatsCollision_ = 500;
+    degatsCollision_ = 5;
 
 }
 
@@ -46,8 +46,8 @@ void ProjBismillah::gestion()
 	//TODO PG comment chopper un shared proprement à partir de l'attribut ?
 	if (auto lanceur = lanceur_.lock()) {
 
-		const float largeur_vaisseau = lanceur->getTaille().x;
-		const float hauteur_vaisseau = lanceur->getTaille().y;
+		const float largeur_vaisseau = lanceur->getTailleSprite().x;
+		const float hauteur_vaisseau = lanceur->getTailleSprite().y;
 
 		const float cast_frames = 1209; //temps total pour les deux phases croissance/décroissance //1129ms : temps du son Bismilllah
 		const float charge_frames = 1129; //temps de charge

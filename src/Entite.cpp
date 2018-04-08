@@ -80,7 +80,7 @@ void Entite::move(sf::Vector2f delta)
 {
 	if(innate_)
 	{
-		sf::Vector2f taille = getTaille();
+		sf::Vector2f taille = getTailleSprite();
 		sf::Vector2f pos = getPosition() - getOrigin();
 		if ((pos.x + taille.x + delta.x) > ECRAN_L) delta.x = ECRAN_L - pos.x - taille.x;
 		else if (pos.x + delta.x < 0) delta.x = -pos.x;
@@ -249,7 +249,7 @@ void Entite::recoitDegats(float degats)
 		else
 			restant = 0;
 
-		float reductionArmure = 0.7; // Multiplicateur de réduction de dégats de l'armure
+		float reductionArmure = 0.7f; // Multiplicateur de réduction de dégats de l'armure
 		armure_ -= restant * reductionArmure;
 		if (armure_ < 0)
 		{

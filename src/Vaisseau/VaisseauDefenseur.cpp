@@ -9,11 +9,11 @@ VaisseauDefenseur::VaisseauDefenseur(Ecran& ecran, float x, float y, vaisseau_co
 	// Sprites
 	sprites_.emplace_back(*ecran_.getChargeur().getTexture("vaiss.defenseur"));
 	for (auto& sprite : sprites_)
-		sprite.setOrigin({ this->getTaille().x / 2.0f, this->getTaille().y / 2.0f });
+		sprite.setOrigin({ this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f });
 
 	// Cercle englobant
 	//TODO PG Englobeur
-	const float R = hypot(this->getTaille().x / 2.0f, this->getTaille().y / 2.0f);
+	const float R = hypot(this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f);
 	cercleEnglobant_ = sf::CircleShape(R);
 	cercleEnglobant_.setOrigin(R, R);
 
@@ -23,7 +23,7 @@ VaisseauDefenseur::VaisseauDefenseur(Ecran& ecran, float x, float y, vaisseau_co
 		forme->setOrigin(forme->getGlobalBounds().width/2.0f, forme->getGlobalBounds().height/2.0f);
 
 	//Origine
-	origine_ = { this->getTaille().x / 2.0f, this->getTaille().y / 2.0f };
+	origine_ = { this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f };
 
 	// Caractéristiques de code
 	equipe_ = ENNEMI;
@@ -45,7 +45,7 @@ VaisseauDefenseur::VaisseauDefenseur(Ecran& ecran, float x, float y, vaisseau_co
 	// Composition
 	//ajout d'un bouclier
 	annexes_.emplace_back(new VaissBouclier(ecran));
-	annexes_.at(0)->setOrigin(annexes_.at(0)->getOrigin() + sf::Vector2f({ 0, -(this->getTaille().y + annexes_.at(0)->getTaille().y) / 2.0f }));
+	annexes_.at(0)->setOrigin(annexes_.at(0)->getOrigin() + sf::Vector2f({ 0, -(this->getTailleSprite().y + annexes_.at(0)->getTailleSprite().y) / 2.0f }));
 	vaisseaux.push_back(annexes_[0]);
 
 	// Initialisation de la trajectoire
