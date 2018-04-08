@@ -96,18 +96,24 @@ void ProjMissile::gestion()
 		{
 			if (!cible->estDetruit())
 			{
+				float vit_angulaire = 100 * ecran_.getTempsFrame().asSeconds();//degrés par seconde
 				float X = cible->getPosition().x - position_.x;
 				float Y = cible->getPosition().y - position_.y;
-				float angle = atan2(-Y, -X) * 180 / PI; //angle avec cible
-				setRotation(angle); //ciblage parfait
+				float angleTot = atan2(-Y, -X) * 180 / PI ; //angle avec cible
 
-				//TODO PG à implémenter
-				//float vit_angulaire = 10;//degrés par seconde
-				//if((angle - rotation_)>0)rotate((angle  - rotation_) * 0.08 );
-				//else if ((angle - rotation_)<0)rotate(-(angle - rotation_) * 0.08);
+				if (angleTot < 0) angleTot += 360;
+
+				int mult = -1;
+				if (rotation_ < angleTot || (rotation_ - angleTot >= 180 )) mult = +1;
+
+				float angle = abs(rotation_ - angleTot) < vit_angulaire ? angleTot - rotation_ : mult * vit_angulaire; // angle est le maximum entre l'angle avce la cible et la vitesse angulaire max
+
+				rotate(angle); //ciblage parfait
+
 			}
 			else //nouvelle cible
 			{
+				// TODO CL Pas de nouvelle cible ?
 				float distance_min = std::numeric_limits<float>::max();
 				for (auto& vaisseau : ecran_.getVaisseauxContainer())
 				{
