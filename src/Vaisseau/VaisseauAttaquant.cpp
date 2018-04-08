@@ -61,7 +61,7 @@ void VaisseauAttaquant::gestion(proj_container &proj_cont, Input& input)
 	
 	if (actif_)
 	{
-		if (t_age_.asMilliseconds() > 1000)
+		if (t_age_.asMilliseconds() > 2000)
 		{
 			capacites_[0]->utiliser(proj_cont);
 			t_age_ = sf::Time::Zero;
@@ -73,6 +73,5 @@ void VaisseauAttaquant::gestion(proj_container &proj_cont, Input& input)
 		t_age_ += ecran_.getTempsFrame();
 	}
 
-	std::cerr << pv_ << std::endl;//TODO PG test à enlever
 }
 

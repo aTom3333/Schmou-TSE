@@ -99,12 +99,13 @@ void ProjMissile::gestion()
 				float X = cible->getPosition().x - position_.x;
 				float Y = cible->getPosition().y - position_.y;
 				float angle = atan2(-Y, -X) * 180 / PI; //angle avec cible
-				setRotation(angle); //ciblage parfait
+				//setRotation(angle); //ciblage parfait
 
 				//TODO PG à implémenter
-				//float vit_angulaire = 10;//degrés par seconde
-				//if((angle - rotation_)>0)rotate((angle  - rotation_) * 0.08 );
-				//else if ((angle - rotation_)<0)rotate(-(angle - rotation_) * 0.08);
+				float vit_angulaire = 10;//degrés par seconde
+				rotate(fmod((angle  - rotation_),360) * 0.08 );
+
+				std::cerr << "angle : " << angle << "  rotation : " << rotation_ << std::endl;
 			}
 			else //nouvelle cible
 			{
