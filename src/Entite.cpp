@@ -251,6 +251,7 @@ void Entite::recoitDegats(float degats)
 	if (degats != 0)
 	{
 		//TODO PG pas génial, non ?
+		//feedback visuel pour les ennemis touchés
 		if (equipe_ == ENNEMI)
 			for (auto& sprite : sprites_)
 			{
