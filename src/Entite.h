@@ -383,7 +383,7 @@ class Entite
     
         //TODO PG gérer le chargement des smokes direct avec le chargeur
 		//sf::Texture textSmoke_; ///< Texture à afficher sur la trainée du vaisseau
-		std::vector<sf::Sprite> smokes_; ///< Sprite à afficher sur la trainée du vaisseau
+		sf::Sprite smoke_; ///< Sprite à afficher sur la trainée du vaisseau
 
 		//Son
 		std::vector<sf::Sound> sounds_;

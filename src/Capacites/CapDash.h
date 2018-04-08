@@ -46,6 +46,7 @@ class CapDash : public Capacite
 		void actualiser(proj_container& projectiles) override;
 	private:
 		bool active_; // true si le buff a été activé;
+		sf::Texture smoke_; // trainée que laisse le joueur lors du dash
 };
 
 #endif

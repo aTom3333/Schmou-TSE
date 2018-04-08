@@ -16,6 +16,9 @@ CapDash::CapDash(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	sounds_.emplace_back(*ecran.getChargeur().getSoundBuffer("son.dash"));
 	sounds_.front().setLoop(false);
 
+	// Trainée
+	smoke_ = *ecran.getChargeur().getTexture("vaiss.vaisseautest.deux");
+
 	active_ = false;
 }
 
@@ -46,12 +49,15 @@ void CapDash::actualiser(proj_container& projectiles)
 		if (!active_ && t_lastuse_.asMilliseconds() < 50)
 		{
 			lanceur->changeSpeed(5000);
+			lanceur->setNbPositions(15);
+			lanceur->setSmokeTexture(smoke_, { 180, 180, 180 });
 			active_ = true;
 		}
 
 		if (active_ && t_lastuse_.asMilliseconds() > 50)
 		{
 			lanceur->changeSpeed(-5000);
+			lanceur->setNbPositions(0);
 			active_ = false;
 		}
 		t_lastuse_ += ecran_.getTempsFrame();
