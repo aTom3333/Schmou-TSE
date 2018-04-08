@@ -77,7 +77,7 @@ void ProjBouclierRond::agit(Entite& proj)
 	proj.recoitDegats(degatsCollision_);//inflige dégats
 	//change d'opacité selon sa vie
 	sf::Uint8 alpha = (sf::Uint8)(pv_ / pvM_ * 255);
-	alpha < 50 ? 50 : alpha;//seuil minimum sinon le bouclier est très peu visible à faible vie
+	alpha < 50 ? 50 : alpha;//seuil minimum pour alpha sinon le bouclier est très peu visible à faible vie
 	sprites_.front().setColor({ 255, 255, 255, alpha });
 	if (pv_ <= 0)
 		detruit_ = true;

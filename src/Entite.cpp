@@ -3,6 +3,8 @@
 #include "constantes.h"
 #include <cmath>
 
+#include <iostream>
+
 
 bool collision(const Entite& e1, const Entite& e2)
 {
@@ -10,15 +12,15 @@ bool collision(const Entite& e1, const Entite& e2)
 	{
 		if (e1.actif_ && e2.actif_)
 		{
-			if (!e1.collisionnable_ && !e2.collisionnable_)
+			if (!e1.collisionnable_ && !e2.collisionnable_)//si aucun n'est collisionnable
 				return false;
-			if (!e1.collisionneuse_ && !e2.collisionneuse_)
+			if (!e1.collisionneuse_ && !e2.collisionneuse_)//si aucun n'est collisionneur
 				return false;
-			if ((e1.equipe_ == e2.equipe_ && e1.equipe_ != NEUTRE))
+			if ((e1.equipe_ == e2.equipe_ && e1.equipe_ != NEUTRE))//si même équipe, qui n'est pas NEUTRE
 				return false;
-			if (!collision(e1.cercleEnglobant_, e2.cercleEnglobant_))
+			if (!collision(e1.cercleEnglobant_, e2.cercleEnglobant_))//premier test rapide des Cercles Englobants
 				return false;
-			for (const auto& f1 : e1.forme_)
+			for (const auto& f1 : e1.forme_)//deuxième test précis des formes
 				for (const auto& f2 : e2.forme_)
 					if (collision(*f1, *f2))
 						return true;
@@ -34,21 +36,41 @@ void Entite::afficher(bool debug)
 {
 	auto& window = ecran_.getWindow();
 
-	if (clk_Invincibilite.getElapsedTime() >= t_Invincibilite_) invincible_ = false;
 
-	if (invincible_)
+	if (invincible_) //clignotement en cas d'invulnérabilité
 	{
-		if ((clk_Invincibilite.getElapsedTime().asMilliseconds() / 1000) % 2 == 0)
-			window.draw(sprites_.front());
+		const unsigned short nbClignotement = 10;
+		//nb de clignotements(passage de normal à rouge puis rouge à normal) pendant le temps d'invicibilité imparti t_Invincibilite
+
+		int quotient;
+		std::remquo((float)t_invincible_courant.asMilliseconds(), t_Invincibilite_.asMilliseconds() / (2 * nbClignotement), &quotient);
+
+		//std::cerr << t_invincible_courant.asMilliseconds() <<" div : "<< t_Invincibilite_.asMilliseconds() / (2 * nbClignotement)<< "  quot : "<<quotient<<std::endl;
+
+		if (quotient % 2 == 0)
+		{
+			for (auto& sprite : sprites_)
+				window.draw(sprite);
+		}
 		else
 		{
-			sf::Sprite temp_sprite = sprites_.front();
-			temp_sprite.setColor({ 255, 100, 100, 128 });
-			window.draw(temp_sprite);
+			for (auto& sprite : sprites_)
+			{
+				sf::Sprite temp_sprite = sprite;
+				temp_sprite.setColor({ 255,100,100,128 });
+				window.draw(temp_sprite);
+			}
 		}
 
+		t_invincible_courant += ecran_.getTempsFrame();
+		if (t_invincible_courant >= t_Invincibilite_) 
+			invincible_ = false;
 	}
-	else window.draw(sprites_.front());
+	else //affichage normal
+	{
+		for (auto& sprite : sprites_)
+			window.draw(sprite);
+	}
 
 	for (auto& pos : positionsPrev_)
 	{
@@ -159,7 +181,7 @@ void Entite::setDetruit(bool val)
 
 bool Entite::estDetruit()
 {
-	if (pv_ <= 0 && isCollisionnable())
+	if (pv_ <= 0 )
 		detruit_ = true;
 	return detruit_;
 }
@@ -230,12 +252,16 @@ void Entite::recoitDegats(float degats)
 
 	if (degats != 0)
 	{
-		if (invincibilable_)
-		{
-			invincible_ = true;
-			clk_Invincibilite.restart();
-		}
-
+		//TODO PG pas génial, non ?
+		if (equipe_ == ENNEMI)
+			for (auto& sprite : sprites_)
+			{
+				sf::Sprite temp_sprite = sprite;
+				temp_sprite.setColor({ 0,0,0,255 });
+				ecran_.getWindow().draw(temp_sprite);
+			}
+			
+		//BOUCLIER
 		bouclier_ -= restant;
 
 		// Si le bouclier est détruit
@@ -247,8 +273,20 @@ void Entite::recoitDegats(float degats)
 		}
 		// Sinon le bouclier a absorbé tout les dégats 
 		else
-			restant = 0;
+		{
+			//restant = 0;
+			return;
+		}
 
+		//frames d'invulnérabilité si des dégats traversent le bouclier
+		if (invincibilable_)
+		{
+			invincible_ = true;
+			t_invincible_courant = sf::Time::Zero;
+		}
+
+
+		//ARMURE
 		float reductionArmure = 0.7f; // Multiplicateur de réduction de dégats de l'armure
 		armure_ -= restant * reductionArmure;
 		if (armure_ < 0)
@@ -257,8 +295,12 @@ void Entite::recoitDegats(float degats)
 			armure_ = 0;
 		}
 		else
-			restant = 0;
+		{
+			//restant = 0;
+			return;
+		}
 
+		//PV
 		pv_ -= restant;
 		if (pv_ <= 0)
 		{

@@ -45,10 +45,10 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	equipe_ = JOUEUR;
 	innate_ = true;
 	actif_ = true;
-	nbPositions_ = 0;
+	invincibilable_ = true;
 
 	// Stats
-	pv_ = pvM_ = 1000;
+	pv_ = pvM_ = 2000;
 	armure_ = armureM_ = 50;
 	bouclier_ = bouclierM_ = 0;
 	vit_ = vitM_ = 500;

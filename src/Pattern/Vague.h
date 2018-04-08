@@ -67,7 +67,7 @@ class Vague
 
 		//setters
 		void setEquipeAll(Equipe equipe) {
-			for (auto& element : vaisseaux_vague_) element.vaiss->setequipe_(equipe); 
+			for (auto& element : vaisseaux_vague_) element.vaiss->setEquipe(equipe); 
 		}
 
 

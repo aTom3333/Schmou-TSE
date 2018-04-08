@@ -296,23 +296,25 @@ class Entite
 		Equipe getEquipe() const { return equipe_; }
 		sf::Vector2f getTailleSprite() const { return { sprites_.front().getGlobalBounds().width, sprites_.front().getGlobalBounds().height }; }//largeur, hauteur
 		sf::Vector2f getLastDelta() const { return last_delta_; }
-		bool getInnate_() const { return innate_; }
 		sf::Vector2f getOrigin() const { return origine_; }
+		sf::Time getTempsInvincibilite() { return t_Invincibilite_; }
 		bool isInvincibilable() const { return invincibilable_; }
 		bool isInvincible() const { return invincible_; }
 		bool isCollisionneuse() const { return collisionneuse_; }
 		bool isCollisionnable() const { return collisionnable_; }
 		bool isActif() const { return actif_; }
+		bool isInnate() const { return innate_; }
 
 		//setters
-		void setequipe_(Equipe equipe) { equipe_ = equipe; }
-		void setInnate_(bool isInnate) { innate_ = isInnate; }
+		void setEquipe(Equipe equipe) { equipe_ = equipe; }
+		void setInnate(bool isInnate) { innate_ = isInnate; }
 		void setNbPositions(size_t val);
 		void setSmokeTexture(const sf::Texture &text, sf::Color couleur = { 255,255,255 });
 		void setOrigin(sf::Vector2f origine);
 		void setActif(bool actif) { t_age_ = sf::Time::Zero; actif_ = actif; }
 		void setLongevite(const sf::Time& t_longevite) { t_longevite_ = t_longevite; }
 		void setAutoAim(bool aimbot) { aimbot_ = aimbot; }
+		void setTempsInvincibilite(sf::Time time) { t_Invincibilite_ = time; }
 
 		void setCollisionneuse(bool collisionneuse) { collisionneuse_ = collisionneuse; }
 		void setCollisionnable(bool collisionnable) { collisionnable_ = collisionnable; }
@@ -357,17 +359,19 @@ class Entite
 		bool collisionneuse_ = true;
 		Equipe equipe_; ///< Identifiant de l'équipe de l'Entite
 		bool innate_ = false; ///< true si doit rester dans l'écran
-		bool invincibilable_ = false; ///< true si l'entité peut devenir invincible
+
+		//gestion invincibilité
+		bool invincible_ = false;///<en état invincible
+		bool invincibilable_ = false; ///<true si l'entité peut devenir invincible
+		sf::Time t_Invincibilite_ = sf::milliseconds(2000); ///<Temps d'invincibilité total
+		sf::Time t_invincible_courant;///<Temps actuel d'invincibilité
 
 		//état
 		bool detruit_ = false; ///< true lorsque que le vaisseau est détruit
 		bool actif_ = true; ///< Booleen indiquant si la trajectoire a été amorcée
-		bool invincible_ = false;///< en état invincible
 		bool aimbot_ = false;///<True si en état visée automatique
 
 		//Temps
-		const sf::Time t_Invincibilite_; ///< Temps d'invincibilité total en ms
-		sf::Clock clk_Invincibilite; ///<Clock qui gère l'état invincible
 		sf::Time t_age_; /// Temps écoulé depuis la création (temps de vie)
 		sf::Time t_longevite_; ///Temps après lequel l'Entite est détruite
 

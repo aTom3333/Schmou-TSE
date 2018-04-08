@@ -21,7 +21,7 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 
 	//Joueur
 	vaisseau_container::value_type vaisseautest(new VaisseauTest(*this));
-	vaisseautest->setequipe_(JOUEUR);
+	vaisseautest->setEquipe(JOUEUR);
 	
 	// Capacités
 	//TIR1 Piou
