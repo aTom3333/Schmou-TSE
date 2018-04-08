@@ -33,8 +33,8 @@ class ProjMissile : public Projectile
 		*/
 		void agit(Entite &e);
 	private:
-		float coeff_acceleration_;
 		std::weak_ptr<Entite> cible_;
+		sf::Time t_acceleration_;
 };
 
 #endif // PROJ_MISSILE_H

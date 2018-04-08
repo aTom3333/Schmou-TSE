@@ -2,6 +2,9 @@
 #include "../Vaisseau/Vaisseau.h"
 #include <cmath>
 
+
+#include <iostream>
+
 template <typename T> int signe(T val) {
 	return (T(0) < val) - (val < T(0));
 }
@@ -39,7 +42,7 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 	aimbot_ = aimbot;
 
 	// Caractéristiques spécifiques
-	coeff_acceleration_ = 1.05;
+	t_acceleration_ = sf::milliseconds(2000);//temps pour atteindre vitesse max
 
 	//Stats
 	pv_ = pvM_ = 10;
@@ -50,7 +53,7 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 
 	degatsCollision_ = 300; //TODO PG xlanceur.stats().atk
 
-	vit_ = vitM_ = 10;
+	vit_ = vitM_ = 1000;
 
 	//position de départ
 	setPosition({ lanceur->getPosition().x ,  lanceur->getPosition().y - lanceur->getTaille().y / 2.0f });
@@ -80,9 +83,11 @@ void ProjMissile::gestion()
 	auto& window = ecran_.getWindow();
 	auto tempsEcoule = ecran_.getTempsFrame();
 
+	vit_ = vitM_ * pow(expm1(t_age_ / t_acceleration_), 2);
+	if (vit_ > vitM_)vit_ = vitM_;
 
-	vit_ *= coeff_acceleration_ * (1. + tempsEcoule.asSeconds());
-	if (vit_ >= 1000) vit_ = 1000;
+	//affiche valeurs vitesses possibles, voir métadocuments
+	//std::cerr << "age : "<<t_age_.asMilliseconds() << "   sqrt : " << vitM_ * sqrt(t_age_ / t_acceleration_)<< "   lin : " << vitM_ * t_age_ / t_acceleration_ << "   exp : " << vit_ << std::endl;
 
 	vaisseau_ptr cible;
 	if (aimbot_)
@@ -119,6 +124,7 @@ void ProjMissile::gestion()
 		}
 	}
 
+	t_age_ += ecran_.getTempsFrame();
 	move();
 	afficher();
 }

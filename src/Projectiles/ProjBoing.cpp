@@ -3,6 +3,8 @@
 #include "../Utilitaires/Divers.h"
 #include <cmath>
 
+#include <iostream>
+
 template <typename T> int signe(T val) {
 	return (T(0) < val) - (val < T(0));
 }
@@ -41,7 +43,8 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 	pv_ = pvM_ = 10;
 	degatsCollision_ = 30; //TODO PG xlanceur.stats().atk
 	vit_ = vitM_ = 700;
-	rotation_ = rand() % 360; // TODO CL rand c++
+	//rotation_ = rand() % 360; // TODO CL rand c++
+	rotation_ = 50 * (rand()%8);
 
 	// Position de départ
 	float X = lanceur->getPosition().x + R * cos(rotation_*PI / 180) ,
@@ -59,37 +62,60 @@ void ProjBoing::gestion()
 	auto& window = ecran_.getWindow();
 	auto tempsEcoule = ecran_.getTempsFrame();
 
-	float X = getPosition().x;
-	float Y = getPosition().y;
-	const float R = hypot(16, 16) / 2;
+	const float X = getPosition().x;
+	const float Y = getPosition().y;
+
+	const short sens_vertical = (180 < rotation_ && rotation_ < 360) ? -1 : ((rotation_ == 180 || rotation_ == 360) ? 0 : 1);
+	const short sens_horizontal = (90 < rotation_ && rotation_ < 270) ? -1 : ((rotation_ == 90 || rotation_ == 270) ? 0 : 1);
+
+	const float R = cercleEnglobant_.getRadius() / 2;
+
 	if (X - R < 0)
 	{
-		rotation_+=(90 * signe(Y));
-		sounds_.front().play();
+		if (sens_vertical == 1)
+			rotation_ = 180 - fmod(rotation_, 90);
+		else if (sens_vertical == -1)
+			rotation_ = 270 - fmod(rotation_, 90);
+		else
+			rotation_ = 180; //TODO PG décalage lorsque rebond à angle droite sur la gauche
+		sounds_.at(0).play();
 	}
 	else if (X + R > ECRAN_L)
 	{
-		rotation_ += (-90 * signe(Y));
-		sounds_.front().play();
+		if (sens_vertical == 1)
+			rotation_ = 90 - fmod(rotation_, 90);
+		else if (sens_vertical == -1)
+			rotation_ = 360 - fmod(rotation_, 90);
+		else
+			rotation_ = 0;
+		sounds_.at(0).play();
 	}
 	else if (Y - R < 0)
 	{
-		rotation_ += (90 * signe(Y));
-		sounds_.front().play();
+		if (sens_horizontal == 1)
+			rotation_ = 360 - fmod(rotation_, 90);
+		else if (sens_horizontal == -1)
+			rotation_ = 270 - fmod(rotation_, 90);
+		else
+			rotation_ = 270;
+		sounds_.at(0).play();
 	}
 	else if (Y + R > ECRAN_H)
 	{
-		rotation_ += (-90 * signe(Y));
-		sounds_.front().play();
+		if (sens_horizontal == 1)
+			rotation_ = 90 - fmod(rotation_, 90);
+		else if (sens_horizontal == -1)
+			rotation_ = 180 - fmod(rotation_, 90);
+		else
+			rotation_ = 90;
+		sounds_.at(0).play();
 	}
-	else
-	{
-		//gère la rotation de la sprite sans changer la direction
-		float temp_rotation = getRotation();
-		float vit_angulaire = 500;
-		rotate(vit_angulaire * tempsEcoule.asSeconds());
-		rotation_ = temp_rotation;
-	}
+	
+	//gère la rotation de sprite & hitbox sans changer la rotation_
+	float temp_rotation = getRotation();
+	float vit_angulaire = 500;
+	rotate(vit_angulaire * tempsEcoule.asSeconds());
+	rotation_ = temp_rotation;
 		
 	move();
 	afficher(true);

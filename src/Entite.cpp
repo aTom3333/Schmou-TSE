@@ -29,6 +29,7 @@ bool collision(const Entite& e1, const Entite& e2)
 }
 
 //TODO PG 28-03-2018 refondu, à tester
+//TODO PG 08-04-2018 à refondre avec les temps et pas la clock
 void Entite::afficher(bool debug)
 {
 	auto& window = ecran_.getWindow();
@@ -122,7 +123,7 @@ void Entite::rotate(float angle)
 	for(auto& elem : forme_)
 		elem->rotate(angle);
 
-    //cercleEnglobant_.rotate(angle);
+    cercleEnglobant_.rotate(angle);
 
     for (auto& sprite : sprites_)
 		sprite.rotate(angle);
