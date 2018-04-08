@@ -43,13 +43,13 @@ void CapDash::actualiser(proj_container& projectiles)
 	assert(!lanceur_.expired());
 	if (auto lanceur = lanceur_.lock()) {
 
-		if (!active_ && t_lastuse_.asMilliseconds() < 100)
+		if (!active_ && t_lastuse_.asMilliseconds() < 50)
 		{
 			lanceur->changeSpeed(5000);
 			active_ = true;
 		}
 
-		if (active_ && t_lastuse_.asMilliseconds() > 100)
+		if (active_ && t_lastuse_.asMilliseconds() > 50)
 		{
 			lanceur->changeSpeed(-5000);
 			active_ = false;

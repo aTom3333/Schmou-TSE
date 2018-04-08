@@ -96,20 +96,28 @@ void ProjMissile::gestion()
 		{
 			if (!cible->estDetruit())
 			{
+				float vit_angulaire = 100 * ecran_.getTempsFrame().asSeconds();//degrés par seconde
 				float X = cible->getPosition().x - position_.x;
 				float Y = cible->getPosition().y - position_.y;
-				float angle = atan2(-Y, -X) * 180 / PI; //angle avec cible
+				float angleTot = atan2(-Y, -X) * 180 / PI ; //angle avec cible
+
+				if (angleTot < 0) angleTot += 360;
+
+				int mult = -1;
+				if (rotation_ < angleTot || (rotation_ - angleTot >= 180 )) mult = +1;
+
+				float angle = abs(rotation_ - angleTot) < vit_angulaire ? angleTot - rotation_ : mult * vit_angulaire; // angle est le maximum entre l'angle avce la cible et la vitesse angulaire max
+
+				rotate(angle); //ciblage limité
+
 				//setRotation(angle); //ciblage parfait
 
-				//TODO PG à implémenter
-				float vit_angulaire = 10;//degrés par seconde
-				rotate(fmod((angle  - rotation_),360) * 0.08 );
-
-				std::cerr << "angle : " << angle << "  rotation : " << rotation_ << std::endl;
 			}
 			else //nouvelle cible
 			{
-				float distance_min = std::numeric_limits<float>::max();
+				// TODO CL Pas de nouvelle cible ?
+				//TODO PG c'est une proposition ou un report de bug ? ça m'avait l'air de marcher
+				/*float distance_min = std::numeric_limits<float>::max();
 				for (auto& vaisseau : ecran_.getVaisseauxContainer())
 				{
 					if (vaisseau->getEquipe() != equipe_ && vaisseau->isActif())
@@ -121,7 +129,9 @@ void ProjMissile::gestion()
 							cible_ = vaisseau;
 						}
 					}
-				}
+				}*/
+
+				aimbot_ = false;
 			}
 		}
 		else

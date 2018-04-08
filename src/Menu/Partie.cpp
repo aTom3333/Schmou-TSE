@@ -325,44 +325,44 @@ void Partie::initPatternTest()
 	VaisseauEclaireur *vaiseauEclaireurS = new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7);*/
 
 	//TODO tests à enlever
-	v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this,ECRAN_L/2, ECRAN_H/2, LINEAIRE, 0, 0)) });
-	v1.getElements().at(0).vaiss->addCapacite(new CapMissile(*this, v1.getElements().at(0).vaiss));
-	v1.getElements().at(0).vaiss->getCapacites().at(0)->setAutoAim(true);
-	v1.getElements().at(0).vaiss->setPvMax(std::numeric_limits<float>::max());
-	v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)) });
-	v1.getElements().at(1).vaiss->setPv(1);
-	v1.getElements().at(1).vaiss->getAnnexes().at(0)->setPv(2);
-	//
+	//v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this,ECRAN_L/2, ECRAN_H/2, LINEAIRE, 0, 0)) });
+	//v1.getElements().at(0).vaiss->addCapacite(new CapMissile(*this, v1.getElements().at(0).vaiss));
+	//v1.getElements().at(0).vaiss->getCapacites().at(0)->setAutoAim(true);
+	//v1.getElements().at(0).vaiss->setPvMax(std::numeric_limits<float>::max());
+	//v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)) });
+	//v1.getElements().at(1).vaiss->setPv(1);
+	//v1.getElements().at(1).vaiss->getAnnexes().at(0)->setPv(2);
+	
 
-	//v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
-	//v1.ajouterElement({ sf::milliseconds(400), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
-	//v1.ajouterElement({ sf::milliseconds(800), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
-	//v1.ajouterElement({ sf::milliseconds(1200), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
-	//v1.ajouterElement({ sf::milliseconds(1600), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
+	v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
+	v1.ajouterElement({ sf::milliseconds(400), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
+	v1.ajouterElement({ sf::milliseconds(800), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
+	v1.ajouterElement({ sf::milliseconds(1200), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
+	v1.ajouterElement({ sf::milliseconds(1600), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });
 
-	//v2.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
-	//v2.ajouterElement({ sf::milliseconds(400), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
-	//v2.ajouterElement({ sf::milliseconds(800), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
-	//v2.ajouterElement({ sf::milliseconds(1200), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
-	//v2.ajouterElement({ sf::milliseconds(1600), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
+	v2.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
+	v2.ajouterElement({ sf::milliseconds(400), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
+	v2.ajouterElement({ sf::milliseconds(800), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
+	v2.ajouterElement({ sf::milliseconds(1200), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
+	v2.ajouterElement({ sf::milliseconds(1600), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, PARABOLIQUE, -1, 500, 500)) });
 
-	//v3.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)) });
-	//v3.ajouterElement({ sf::milliseconds(500), vaisseau_ptr(new VaisseauEclaireur(*this, 1000,0, SINUS, -1, 300, 100, -.7)) });
-	//v3.ajouterElement({ sf::milliseconds(1000), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)) });
-	//v3.ajouterElement({ sf::milliseconds(1500), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)) });
-	//v3.ajouterElement({ sf::milliseconds(2000), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)) });
+	v3.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)) });
+	v3.ajouterElement({ sf::milliseconds(500), vaisseau_ptr(new VaisseauEclaireur(*this, 1000,0, SINUS, -1, 300, 100, -.7)) });
+	v3.ajouterElement({ sf::milliseconds(1000), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)) });
+	v3.ajouterElement({ sf::milliseconds(1500), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)) });
+	v3.ajouterElement({ sf::milliseconds(2000), vaisseau_ptr(new VaisseauEclaireur(*this, 1000, 0, SINUS, -1, 300, 100, -.7)) });
 
-	//v4.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this, 0, -50, PARABOLIQUE, 1, 200, 0)) });
-	//v4.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this, 250, -50, PARABOLIQUE, 1, 200, 250)) });
-	//v4.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this, 500, -50, PARABOLIQUE, 1, 200, 500)) });
-	//v4.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this, 750, -50, PARABOLIQUE, 1, 200, 750)) });
-	//v4.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this, 1000, -50, PARABOLIQUE, 1, 200, 1000)) });
-	//for(auto& vaisseau : v4)
-	//	vaisseau.vaiss->addCapacite(new CapMissile(*this, vaisseau.vaiss));
+	v4.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this, 0, -50, PARABOLIQUE, 1, 200, 0)) });
+	v4.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this, 250, -50, PARABOLIQUE, 1, 200, 250)) });
+	v4.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this, 500, -50, PARABOLIQUE, 1, 200, 500)) });
+	v4.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this, 750, -50, PARABOLIQUE, 1, 200, 750)) });
+	v4.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this, 1000, -50, PARABOLIQUE, 1, 200, 1000)) });
+	for(auto& vaisseau : v4)
+		vaisseau.vaiss->addCapacite(new CapMissile(*this, vaisseau.vaiss));
 
-	//v5.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)) });
-	//v5.ajouterElement({ sf::milliseconds(1500), vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)) });
-	//v5.ajouterElement({ sf::milliseconds(3000), vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)) });
+	v5.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)) });
+	v5.ajouterElement({ sf::milliseconds(1500), vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)) });
+	v5.ajouterElement({ sf::milliseconds(3000), vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)) });
 
 	pattern_.push_back(v1);
 	pattern_.push_back(v2);

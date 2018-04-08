@@ -36,7 +36,7 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 	forme_.at(0)->setOrigin({ R / 2, R / 2 });
 
 	// Caractéristiques de code
-	equipe_ = equipe;
+	equipe_ = NEUTRE;
 	//innate_ = true;
 
 	// Stats
@@ -47,8 +47,8 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 	//rotation_ = 45 * (rand()%8);
 
 	// Position de départ
-	float X = lanceur->getPosition().x + R * cos(rotation_*PI / 180) ,
-		  Y = lanceur->getPosition().y + R * -sin(rotation_*PI / 180);
+	float X = lanceur->getPosition().x + lanceur->getTailleSprite().x * -cos(rotation_*PI / 180) ,
+		  Y = lanceur->getPosition().y + lanceur->getTailleSprite().y * -sin(rotation_*PI / 180);
 	if (X < 0)X = 0;
 	else if (X > ECRAN_L)X = ECRAN_L;
 	if (Y < 0)Y = 0;
