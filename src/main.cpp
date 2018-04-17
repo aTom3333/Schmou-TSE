@@ -26,15 +26,15 @@ int main(int argc, char* argv[])
 	sf::Listener::setGlobalVolume(100);
 
 	//TG Pierre
-    /*sf::Music eyaeya;
-    eyaeya.openFromFile("../../rc/Musics/Divers/eyaeya.ogg");
-    eyaeya.setLoop(true);
-    eyaeya.play();
+    //sf::Music eyaeya;
+    //eyaeya.openFromFile("../../rc/Musics/Divers/eyaeya.ogg");
+    //eyaeya.setLoop(true);
+    //eyaeya.play();
 
-    sf::Music intro;
-    intro.openFromFile("../../rc/Musics/Divers/intro_wtf.wav");
-    intro.setLoop(false);
-    intro.play();*/
+    //sf::Music intro;
+    //intro.openFromFile("../../rc/Musics/Divers/intro_wtf.wav");
+    //intro.setLoop(false);
+    //intro.play();
 	
 	//TODO PG refaire l'aléatoire
 	srand(time(nullptr));
@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
 	vectEtats.emplace_back(new MenuPrincipal(window));
 	vectEtats.emplace_back(new Partie(window, Input::Media::Keyboard));
 
-	ecran_t etat = PARTIE;//TODO PG écran de départ actuel
+	ecran_t etat = ACCUEIL;//TODO PG écran de départ actuel
 
 	while (etat != VIDE)
 	{
