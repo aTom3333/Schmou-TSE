@@ -61,10 +61,11 @@ void VaisseauAttaquant::gestion(proj_container &proj_cont, Input& input)
 	
 	if (actif_)
 	{
-		if (t_age_.asMilliseconds() > 2000)
+		if (t_age_.asMilliseconds() > n_ * 2000)
 		{
 			capacites_[0]->utiliser(proj_cont);
-			t_age_ = sf::Time::Zero;
+			n_++;
+			//t_age_ = sf::Time::Zero;
 		}
 
 		setPosition(traj_position(trajectoire_,t_age_, vit_, posInit_, params_));

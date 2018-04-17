@@ -73,6 +73,7 @@ public:
 									// param3 Lineaire : Inutilisé		Parabolique : Abscisse de l'extremum		Sinusoidale : Amplitude
 									// param4 Lineaire : Inutilisé		Parabolique : Inutilisé						Sinusoidale : Pente
 		Trajectoire trajectoire_; /// Trajectoire du vaisseau
+		int n_ = 1; /// Nombre de fois que le missile est lancé
 };
 
 
