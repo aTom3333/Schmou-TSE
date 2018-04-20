@@ -33,7 +33,7 @@ enum Equipe
 
 enum  ecran_t
 {
-	VIDE = -1, ACCUEIL = 0, MENU_PRINCIPAL, PARTIE
+	VIDE = -1, ACCUEIL = 0, MENU_PRINCIPAL, PARTIE, HANGAR
 };
 
 

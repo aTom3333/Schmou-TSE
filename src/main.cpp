@@ -4,6 +4,7 @@
 #include "Menu/Partie.h"
 #include "Menu/Accueil.h"
 #include "Menu/MenuPrincipal.h"
+#include "Menu/Hangar.h"
 #include "Utilitaires/Divers.h"
 #include "Projectiles/_projectiles.h"
 #include "Utilitaires/Chargeur.h"
@@ -54,14 +55,15 @@ int main(int argc, char* argv[])
 	vectEtats.emplace_back(new Accueil(window));
 	vectEtats.emplace_back(new MenuPrincipal(window));
 	vectEtats.emplace_back(new Partie(window, Input::Media::Keyboard));
+	vectEtats.emplace_back(new Hangar(window));
 
-	ecran_t etat = ACCUEIL;//TODO PG écran de départ actuel
+	ecran_t etat = PARTIE;//TODO PG écran de départ actuel
 
 	while (etat != VIDE)
 	{
 		sf::Texture derniereFenetre;
 		derniereFenetre.create(ECRAN_L, ECRAN_H);
-		etat = vectEtats.at(etat)->executer(derniereFenetre);
+		etat = vectEtats.at(etat)->executer(vectEtats, derniereFenetre);
 
 		for (auto& ecran : vectEtats)
 		{

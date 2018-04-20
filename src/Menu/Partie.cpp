@@ -5,6 +5,7 @@
 #include "../Interface/bindings.h"
 #include "../Pattern/Vague.h"
 #include "Ecran.h"
+#include "Hangar.h"
 #include "../Utilitaires/Divers.h"
 
 
@@ -69,7 +70,7 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 Partie::~Partie()
 {}
 
-ecran_t Partie::executer(sf::Texture &derniereFenetre)
+ecran_t Partie::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, sf::Texture &derniereFenetre)
 {
 	//horloge
 	horloge_.restart();
@@ -120,6 +121,15 @@ ecran_t Partie::executer(sf::Texture &derniereFenetre)
 				{
 					coeffTemps_ -= 0.01f;
 				}
+			}
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
+			{
+
+				vectEtats[HANGAR]->setVaisseau(vaisseaux_.front());
+				derniereFenetre.update(window_);
+				return HANGAR;
+				
 			}
 			
 			if(event.type == sf::Event::Resized)

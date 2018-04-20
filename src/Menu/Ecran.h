@@ -15,6 +15,7 @@
 #include <SFML/Audio.hpp>
 
 void chargement(sf::RenderWindow &window, sf::Texture &derniereFenetre);
+void fade(sf::RenderWindow &window, sf::Texture &derniereFenetre);
 
 class Ecran
 {
@@ -23,7 +24,7 @@ class Ecran
 		explicit Ecran(sf::RenderWindow& window); /// < constructeur principal
 		virtual ~Ecran() = default;
 
-		virtual ecran_t executer(sf::Texture &derniereFenetre) = 0;
+		virtual ecran_t executer(std::vector<std::unique_ptr<Ecran>> &vectEtats, sf::Texture &derniereFenetre) = 0;
 
 		virtual std::unique_ptr<Ecran> factory() = 0;
 
@@ -35,6 +36,7 @@ class Ecran
 		Chargeur& getChargeur() { return chargeur_; }
 		const sf::Clock& getClock() const { return horloge_; }
 		vaisseau_container getVaisseauxContainer() const { return vaisseaux_; }
+		void setVaisseau(vaisseau_ptr vaiss) { vaisseau_ = vaiss; };
 
 		//setters
 		virtual void setAfficheHUD(bool) {};
@@ -47,6 +49,7 @@ class Ecran
 		//Caractéristiques de code
 		bool detruit_ = false;
 		vaisseau_container vaisseaux_; ///vecteur des vaisseaux ennemis en jeu
+		vaisseau_ptr vaisseau_; /// Vaisseau selectionné pour le hangar
 
 		//Chargeur
 		Chargeur chargeur_; /// < Chargeur associé

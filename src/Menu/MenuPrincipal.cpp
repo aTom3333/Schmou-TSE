@@ -27,7 +27,7 @@ MenuPrincipal::MenuPrincipal(sf::RenderWindow & window) : Ecran(window)
 		textes_[i].setPosition(100, 310 + 60*i);
 }
 
-ecran_t MenuPrincipal::executer(sf::Texture & derniereFenetre)
+ecran_t MenuPrincipal::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, sf::Texture & derniereFenetre)
 {
 	selection_ = -1;
 

@@ -48,10 +48,12 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	invincibilable_ = true;
 
 	// Stats
+	nom_ = "Vaisseau Test";
 	pv_ = pvM_ = 2000;
 	armure_ = armureM_ = 50;
 	bouclier_ = bouclierM_ = 0;
 	vit_ = vitM_ = 500;
+	atqM_ = 10000000;
 
 	regenArmure_ = 0;
 	regenBouclier_ = 0;

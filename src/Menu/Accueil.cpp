@@ -11,7 +11,7 @@ Accueil::Accueil(sf::RenderWindow & window) : Ecran(window)
 	texte_.setPosition(ECRAN_L / 2 - texte_.getGlobalBounds().width / 2, 682);
 }
 
-ecran_t Accueil::executer(sf::Texture &derniereFenetre)
+ecran_t Accueil::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, sf::Texture &derniereFenetre)
 {
 	sf::Clock timer;
 	size_t alpha = 255;
