@@ -36,5 +36,10 @@ enum  ecran_t
 	VIDE = -1, ACCUEIL = 0, MENU_PRINCIPAL, PARTIE, HANGAR
 };
 
+enum module_t
+{
+	ATTAQUE, DEFENSE, UTILITAIRE, DEPLACEMENT
+};
+
 
 #endif // CONSTANTES_H

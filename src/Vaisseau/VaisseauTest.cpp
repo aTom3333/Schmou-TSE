@@ -60,6 +60,16 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	regenPv_ = 0;
 
 	degatsCollision_ = 50;
+
+	// Modules
+	spriteHangar_.setTexture(*ecran.getChargeur().getTexture("modele.basique"));
+
+	modules_.emplace_back(ecran, DEFENSE, 160, 20);
+	modules_.emplace_back(ecran, UTILITAIRE, 160, 100);
+	modules_.emplace_back(ecran, UTILITAIRE, 70, 170);
+	modules_.emplace_back(ecran, ATTAQUE, 250, 170);
+	modules_.emplace_back(ecran, DEPLACEMENT, 160, 200);
+
 }
 
 void VaisseauTest::gestion(proj_container& proj_cont, Input& input)

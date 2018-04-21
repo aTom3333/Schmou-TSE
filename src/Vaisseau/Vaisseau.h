@@ -7,6 +7,7 @@
 #include "../Interface/Input.h"
 #include "../def_type.h"
 #include "../Utilitaires/Divers.h"
+#include "../Utilitaires/Module.h"
 #include <vector>
 #include <string>
 #include <algorithm>
@@ -57,6 +58,7 @@ class Vaisseau : public Entite
 			void setNskin(const size_t Nskin){ Nskin_ = Nskin; }
 			void setAtqM(const float atqM) { atqM_ = atqM; }
 			void setDefM(const float defM) { defM_ = defM; }
+			void setModelePosition(const float x, const float y) { spriteHangar_.setPosition(x, y); }
 			
 
 		//getters
@@ -65,9 +67,11 @@ class Vaisseau : public Entite
 			const std::vector<std::unique_ptr<Capacite>>& getskills() const { return capacites_; }
 			bool estActif() const { return actif_; }
 			const vaisseau_container& getAnnexes() const { return annexes_; }
-			float getatqM() const { return atqM_; }
-			float getdefM() const { return defM_; }
+			const float getatqM() const { return atqM_; }
+			const float getdefM() const { return defM_; }
 			const std::vector<std::unique_ptr<Capacite>>& getCapacites() const { return capacites_; }
+			const sf::Sprite getModele() const { return spriteHangar_; }
+			const std::vector<Module> getModules() const { return modules_; }
 
 	protected:
 		// Caractéristiques générales
@@ -82,6 +86,10 @@ class Vaisseau : public Entite
 
 		float defM_ = 0;
 		float def = 0;
+
+		// Hangar
+		sf::Sprite spriteHangar_; /// Sprite du vaisseau dans le hangar
+		std::vector<Module> modules_; /// Liste des modules du vaisseaux
 
 		// Liste de capacités
 		std::vector<std::unique_ptr<Capacite>> capacites_; /// Liste des capacités du vaisseau
