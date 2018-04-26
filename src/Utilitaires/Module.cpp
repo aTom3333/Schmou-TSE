@@ -2,7 +2,7 @@
 
 float distance(sf::Vector2i p1, sf::Vector2i p2)
 {
-	return sqrt((p1.x - p2.x)*(p1.x - p2.x) + (p1.y - p2.y)*(p1.y - p2.y));
+	return hypot((p1.x - p2.x), (p1.y - p2.y));
 }
 
 float maxi(float a, float b)
