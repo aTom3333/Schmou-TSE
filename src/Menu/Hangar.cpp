@@ -166,7 +166,7 @@ void Hangar::move()
 	
 }
 
-std::optional<ecran_t> Hangar::gestionEvent(const sf::Event& event)
+optional<ecran_t> Hangar::gestionEvent(const sf::Event& event)
 {
 	auto retour = Ecran::gestionEvent(event);
 	if(retour)
@@ -175,7 +175,7 @@ std::optional<ecran_t> Hangar::gestionEvent(const sf::Event& event)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 	{
 		detruit_ = false;
-		return std::make_optional(PARTIE);
+		return make_optional(PARTIE);
 	}
 	else if (event.type == sf::Event::MouseButtonPressed && !animation_)
 	{
@@ -214,5 +214,5 @@ std::optional<ecran_t> Hangar::gestionEvent(const sf::Event& event)
 			animation_ = true;
 	}
 	
-	return std::nullopt;
+	return nullopt;
 }

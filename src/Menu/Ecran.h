@@ -14,6 +14,10 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+using std::experimental::optional;
+using std::experimental::make_optional;
+using std::experimental::nullopt;
+
 void chargement(sf::RenderWindow &window, sf::Texture &derniereFenetre);
 void fade(sf::RenderWindow &window, sf::Texture &derniereFenetre);
 
@@ -25,7 +29,7 @@ class Ecran
 		virtual ~Ecran() = default;
 
 		virtual ecran_t executer(std::vector<std::unique_ptr<Ecran>> &vectEtats, sf::Texture &derniereFenetre) = 0;
-		virtual std::optional<ecran_t> gestionEvent(const sf::Event& event);
+		virtual optional<ecran_t> gestionEvent(const sf::Event& event);
 
 		virtual std::unique_ptr<Ecran> factory() = 0;
 

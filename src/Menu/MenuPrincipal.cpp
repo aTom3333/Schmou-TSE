@@ -75,7 +75,7 @@ std::unique_ptr<Ecran> MenuPrincipal::factory()
 	return std::unique_ptr<Ecran>(new MenuPrincipal(window_));
 }
 
-std::optional<ecran_t> MenuPrincipal::gestionEvent(const sf::Event& event)
+optional<ecran_t> MenuPrincipal::gestionEvent(const sf::Event& event)
 {
 	auto retour = Ecran::gestionEvent(event);
 	if(retour)
@@ -83,7 +83,7 @@ std::optional<ecran_t> MenuPrincipal::gestionEvent(const sf::Event& event)
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 	{
-		return std::make_optional(ACCUEIL);
+		return make_optional(ACCUEIL);
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
@@ -105,18 +105,18 @@ std::optional<ecran_t> MenuPrincipal::gestionEvent(const sf::Event& event)
 		switch (selection_)
 		{
 			case 0:
-				return std::make_optional(PARTIE);
+				return make_optional(PARTIE);
 			case 1:
 				break;
 			case 2:
 				break;
 			case 3:
-				return std::make_optional(VIDE);
+				return make_optional(VIDE);
 			default:
 				break;
 
 		}
 	}
 	
-	return std::nullopt;
+	return nullopt;
 }

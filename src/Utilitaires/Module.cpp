@@ -5,12 +5,6 @@ float distance(sf::Vector2f p1, sf::Vector2f p2)
 	return hypot(p1.x - p2.x, p1.y - p2.y);
 }
 
-float maxi(float a, float b)
-{
-	return a > b ? a : b;
-}
-
-
 Module::Module(Ecran &ecran, module_t type, float x, float y) : ecran_{ ecran }, type_ { type }, x_{ x }, y_{ y }
 {
 	switch (type_)
@@ -53,7 +47,7 @@ void Module::checkSelection(sf::Vector2f curseur, sf::Vector2f& res, float offse
 	if (res.x == 0 && res.y == 0)
 	{
 		sf::Vector2f pos = { (x_ + sprite_.getGlobalBounds().width/2.f + offsetX), (y_ + sprite_.getGlobalBounds().height/2.f + offsetY) };
-		res = distance(curseur, pos) < maxi(sprite_.getGlobalBounds().width/2, sprite_.getGlobalBounds().height/2) ? 
+		res = distance(curseur, pos) < std::max(sprite_.getGlobalBounds().width/2, sprite_.getGlobalBounds().height/2) ? 
 			sf::Vector2f(pos.x - sprite_.getGlobalBounds().width / 2.f - 8, pos.y- sprite_.getGlobalBounds().height / 2.f - 11)
 	   		: sf::Vector2f(0, 0);
 	}

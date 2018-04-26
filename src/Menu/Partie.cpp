@@ -349,7 +349,7 @@ void Partie::initPatternTest()
 	for (auto &vague : pattern_) vague.setEquipeAll(ENNEMI);
 }
 
-std::optional<ecran_t> Partie::gestionEvent(const sf::Event& event)
+optional<ecran_t> Partie::gestionEvent(const sf::Event& event)
 {
     auto retour = Ecran::gestionEvent(event);
     if(retour)
@@ -358,7 +358,7 @@ std::optional<ecran_t> Partie::gestionEvent(const sf::Event& event)
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
     {
         detruit_ = true;
-        return std::make_optional(ACCUEIL);
+        return make_optional(ACCUEIL);
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add))
     {
@@ -374,8 +374,8 @@ std::optional<ecran_t> Partie::gestionEvent(const sf::Event& event)
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
     {
-        return std::make_optional(HANGAR);
+        return make_optional(HANGAR);
     }
 	
-	return std::nullopt;
+	return nullopt;
 }

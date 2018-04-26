@@ -14,16 +14,16 @@ Ecran::Ecran(sf::RenderWindow& window) :  window_{ window }
 
 }
 
-std::optional<ecran_t> Ecran::gestionEvent(const sf::Event& event)
+optional<ecran_t> Ecran::gestionEvent(const sf::Event& event)
 {
     if(event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
-    	return std::make_optional(VIDE);
+    	return make_optional(VIDE);
     else if(event.type == sf::Event::Resized) {
 		adapt_viewport(window_);
-		return std::nullopt;
+		return nullopt;
 	}
 	
-	return std::nullopt;
+	return nullopt;
 }
 
 void chargement(sf::RenderWindow &window, sf::Texture& derniereFenetre)
