@@ -25,6 +25,7 @@ class Ecran
 		virtual ~Ecran() = default;
 
 		virtual ecran_t executer(std::vector<std::unique_ptr<Ecran>> &vectEtats, sf::Texture &derniereFenetre) = 0;
+		virtual std::optional<ecran_t> gestionEvent(const sf::Event& event);
 
 		virtual std::unique_ptr<Ecran> factory() = 0;
 
@@ -36,7 +37,7 @@ class Ecran
 		Chargeur& getChargeur() { return chargeur_; }
 		const sf::Clock& getClock() const { return horloge_; }
 		vaisseau_container getVaisseauxContainer() const { return vaisseaux_; }
-		void setVaisseau(vaisseau_ptr vaiss) { vaisseau_ = vaiss; };
+		void setVaisseau(vaisseau_ptr vaiss) { vaisseau_ = std::move(vaiss); }
 
 		//setters
 		virtual void setAfficheHUD(bool) {};

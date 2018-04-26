@@ -23,10 +23,11 @@ constexpr float TEMPS_ANIMATION = 0.5f;
 class Hangar : public Ecran
 {
 	public:
-		Hangar(sf::RenderWindow &window);
-		~Hangar() {};
+		explicit Hangar(sf::RenderWindow &window);
+		~Hangar() override = default;
 
 		ecran_t executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, sf::Texture &derniereFenetre) override;
+		std::optional<ecran_t> gestionEvent(const sf::Event& event) override;
 		std::unique_ptr<Ecran> factory() override;
 	private:
 		sf::Sprite fond_, selection_;

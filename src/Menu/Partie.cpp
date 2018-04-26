@@ -93,47 +93,13 @@ ecran_t Partie::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, sf::Tex
 		sf::Event event;
 		while (window_.pollEvent(event))
 		{
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-			{
-				detruit_ = true;
-				derniereFenetre.update(window_);
-				return ACCUEIL;
-			}	
-
-			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
-				return VIDE;
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add))
-			{
-				if (coeffTemps_ < 20)
-				{
-					coeffTemps_ += 0.1f;
-				}
+			auto retour = gestionEvent(event);
+			if(retour) {
+			    derniereFenetre.update(window_);
+			    if(retour == HANGAR)
+			        vectEtats[HANGAR]->setVaisseau(vaisseaux_.front());
+			    return *retour;
 			}
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Subtract))
-			{
-				if (coeffTemps_ >= 0.1)
-				{
-					coeffTemps_ -= 0.1f;
-				}
-				else if (coeffTemps_ > 0.01)
-				{
-					coeffTemps_ -= 0.01f;
-				}
-			}
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
-			{
-
-				vectEtats[HANGAR]->setVaisseau(vaisseaux_.front());
-				derniereFenetre.update(window_);
-				return HANGAR;
-				
-			}
-			
-			if(event.type == sf::Event::Resized)
-                adapt_viewport(window_);
 		}
             
 		//gestion du temps
@@ -381,4 +347,35 @@ void Partie::initPatternTest()
 	pattern_.push_back(v5);
 
 	for (auto &vague : pattern_) vague.setEquipeAll(ENNEMI);
+}
+
+std::optional<ecran_t> Partie::gestionEvent(const sf::Event& event)
+{
+    auto retour = Ecran::gestionEvent(event);
+    if(retour)
+        return retour;
+    
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+    {
+        detruit_ = true;
+        return std::make_optional(ACCUEIL);
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add))
+    {
+        if (coeffTemps_ < 20)
+            coeffTemps_ += 0.1f;
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Subtract))
+    {
+        if (coeffTemps_ >= 0.1)
+            coeffTemps_ -= 0.1f;
+        else if (coeffTemps_ > 0.01)
+            coeffTemps_ -= 0.01f;
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
+    {
+        return std::make_optional(HANGAR);
+    }
+	
+	return std::nullopt;
 }

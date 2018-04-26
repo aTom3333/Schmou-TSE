@@ -37,49 +37,11 @@ ecran_t MenuPrincipal::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, 
 		sf::Event event;
 		while (window_.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
-				//TODO PG 07-03-2018 j'ai mis Suppr pour fermer temporairement
-				window_.close();
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-			{
-				derniereFenetre.update(window_);
-				return ACCUEIL;
-			}
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-			{
-				if (selection_ <= 0)
-					selection_ = 3;
-				else
-					selection_--;
-			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-			{
-				if (selection_ >= 3)
-					selection_ = 0;
-				else
-					selection_++;
-			}
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
-			{
-				switch (selection_)
-				{
-					case 0:
-						return PARTIE;
-						break;
-					case 1:
-						break;
-					case 2:
-						break;
-					case 3:
-						return VIDE;
-						break;
-					default:
-						break;
-
-				}
+			auto retour = gestionEvent(event);
+			if(retour) {
+				if(retour == PARTIE)
+					derniereFenetre.update(window_);
+				return *retour;
 			}
 		}
 
@@ -111,4 +73,50 @@ ecran_t MenuPrincipal::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, 
 std::unique_ptr<Ecran> MenuPrincipal::factory()
 {
 	return std::unique_ptr<Ecran>(new MenuPrincipal(window_));
+}
+
+std::optional<ecran_t> MenuPrincipal::gestionEvent(const sf::Event& event)
+{
+	auto retour = Ecran::gestionEvent(event);
+	if(retour)
+		return retour;
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+	{
+		return std::make_optional(ACCUEIL);
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
+		if(selection_ <= 0)
+			selection_ = 3;
+		else
+			selection_--;
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		if (selection_ >= 3)
+			selection_ = 0;
+		else
+			selection_++;
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+	{
+		switch (selection_)
+		{
+			case 0:
+				return std::make_optional(PARTIE);
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				return std::make_optional(VIDE);
+			default:
+				break;
+
+		}
+	}
+	
+	return std::nullopt;
 }
