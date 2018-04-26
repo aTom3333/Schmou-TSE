@@ -63,7 +63,7 @@ class Input_base
          * @param [in] elapsed_time Temps écoulé qui doit être utilisé pour le calcul de la distance
          * @return Un @c sf::Vector2f qui contient le déplacement qui doit être effectué sur les deux axes
          */
-        sf::Vector2f move(float max_speed, const sf::Time& elapsed_time);
+        sf::Vector2f move(float max_speed, const sf::Time& elapsed_time, sf::Vector2f referencePos);
 
         /**
          * @fn action
@@ -106,7 +106,7 @@ class Input_base
 
         sf::Vector2f move_keyboard(float max_speed, const sf::Time& elapsed_time);
         sf::Vector2f move_joypad(float max_speed, const sf::Time& elapsed_time);
-        sf::Vector2f move_mouse(float max_speed, const sf::Time& elapsed_time);
+        sf::Vector2f move_mouse(float max_speed, const sf::Time& elapsed_time, sf::Vector2f referencePos);
 
         bool action_keyboard(size_t n) const;
         bool action_joypad(size_t n) const;
@@ -124,7 +124,7 @@ class Input_base
                                              sf::Keyboard::Down,
                                              sf::Keyboard::Left,
                                              sf::Keyboard::Right};}
-            ~movement_input_t() {};
+            ~movement_input_t() = default;
             struct keyboard_t {
                 // Movement Keyboard binding
                 optional<sf::Keyboard::Key> up_key_;
@@ -152,12 +152,11 @@ class Input_base
                 } joypad_input_;
             } joypad_;
             struct mouse_t {
-                optional<sf::Vector2f> last_pos_;
             } mouse_;
         } movement_input_;
         struct action_t {
-            action_t() {};
-            ~action_t() {};
+            action_t() = default;
+            ~action_t() =default;
             Media action_media_;
             union binding_t {
                 binding_t() {}

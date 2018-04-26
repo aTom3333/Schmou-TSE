@@ -1,5 +1,6 @@
 #include "VaisseauTest.h"
 #include <cmath>
+#include <iostream>
 
 
 VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
@@ -100,7 +101,7 @@ void VaisseauTest::gestion(proj_container& proj_cont, Input& input)
 	}
 
 	//déplacement
-	last_delta_ = input.move(vit_, ecran_.getTempsFrame());
+    last_delta_ = input.move(vit_, ecran_.getTempsFrame(), position_);
 	move(last_delta_);
 
 	afficher();

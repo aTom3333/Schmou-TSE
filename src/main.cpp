@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
 	//Lancement de partie	
 	vectEtats.emplace_back(new Accueil(window));
 	vectEtats.emplace_back(new MenuPrincipal(window));
-	vectEtats.emplace_back(new Partie(window, Input::Media::Keyboard));
+	vectEtats.emplace_back(new Partie(window, Input::Media::Mouse));
 
 	ecran_t etat = ACCUEIL;//TODO PG écran de départ actuel
 

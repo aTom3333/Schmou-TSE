@@ -1,5 +1,6 @@
 #include "Input.h"
 #include <cmath>
+#include <iostream>
 
 
 template<size_t N>
@@ -76,7 +77,7 @@ void Input_base<N>::init_default_mouse()
 
 
 template<size_t N>
-sf::Vector2f Input_base<N>::move(float max_speed, const sf::Time& elapsed_time)
+sf::Vector2f Input_base<N>::move(float max_speed, const sf::Time& elapsed_time, sf::Vector2f referencePos)
 {
     switch(movement_media_)
     {
@@ -87,7 +88,7 @@ sf::Vector2f Input_base<N>::move(float max_speed, const sf::Time& elapsed_time)
             return move_joypad(max_speed, elapsed_time);
 
         case Media::Mouse:
-            return move_mouse(max_speed, elapsed_time);
+            return move_mouse(max_speed, elapsed_time, referencePos);
 
         default:
             return {0, 0};
@@ -175,15 +176,11 @@ sf::Vector2f Input_base<N>::move_joypad(float max_speed, const sf::Time& elapsed
 
 
 template<size_t N>
-sf::Vector2f Input_base<N>::move_mouse(float max_speed, const sf::Time& elapsed_time)
+sf::Vector2f Input_base<N>::move_mouse(float max_speed, const sf::Time& elapsed_time, sf::Vector2f referencePos)
 {
     auto new_pos = window_.mapPixelToCoords(sf::Mouse::getPosition(window_));
-    if(!movement_input_.mouse_.last_pos_)
-    {
-        movement_input_.mouse_.last_pos_ = new_pos;
-        return {0, 0};
-    }
-    auto diff = new_pos - movement_input_.mouse_.last_pos_.value();
+
+    auto diff = new_pos - referencePos;
 
     if(diff.x == 0 && diff.y == 0)
         return {0, 0};
@@ -192,9 +189,7 @@ sf::Vector2f Input_base<N>::move_mouse(float max_speed, const sf::Time& elapsed_
     float dy = diff.y * abs(diff.y) / (diff.x*diff.x + diff.y*diff.y);
 
     sf::Vector2f delta{dx * max_speed * elapsed_time.asSeconds(), dy * max_speed * elapsed_time.asSeconds()};
-
-    movement_input_.mouse_.last_pos_.value() += delta;
-
+    
     return delta;
 }
 
