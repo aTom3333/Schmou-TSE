@@ -17,7 +17,7 @@ class Module
 		Module(Ecran &ecran, module_t type = UTILITAIRE, float x = 0, float y = 0);
 		~Module() {};
 		void init(size_t id);
-		void checkSelection(sf::Vector2i curseur, sf::Vector2f &res, float offsetX, float offsetY);
+		void checkSelection(sf::Vector2f curseur, sf::Vector2f& res, float offsetX, float offsetY);
 		int checkPosition(float size);
 
 		void setPositionModules(float x, float y);

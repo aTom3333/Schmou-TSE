@@ -188,7 +188,7 @@ std::optional<ecran_t> Hangar::gestionEvent(const sf::Event& event)
 		for (auto mod : vaisseau_->getModules())
 		{
 			sf::Vector2i localPosition = sf::Mouse::getPosition(window_);
-			mod.checkSelection(localPosition, posSelection_, positionModeleX_, positionModeleY_);
+			mod.checkSelection(window_.mapPixelToCoords(localPosition), posSelection_, positionModeleX_, positionModeleY_);
 
 			if (posSelection_.x != 0 && posSelection_.y != 0)
 			{
