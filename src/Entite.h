@@ -325,17 +325,17 @@ class Entite
 		void setCercleEnglobant(const sf::CircleShape& cercleEnglobant) { cercleEnglobant_ = cercleEnglobant; }
 
 		//getters de stats
-		const float getPv() const { return pv_; }
-		const float getPvMax() const { return pvM_; }
-		const float getPvRegen() const { return regenPv_; }
-		const float getArmure() const { return armure_; }
-		const float getArmureMax() const { return armureM_; }
-		const float getArmureRegen() const { return regenArmure_; }
-		const float getBouclierMax() const { return bouclierM_; }
-		const float getBouclier() const { return bouclier_; }
-		const float getBouclierRegen() const { return regenBouclier_; }
-		const float getVit() const { return vit_; }
-		const float getVitMax() const { return vitM_; }
+		float getPv() const { return pv_; }
+		float getPvMax() const { return pvM_; }
+		float getPvRegen() const { return regenPv_; }
+		float getArmure() const { return armure_; }
+		float getArmureMax() const { return armureM_; }
+		float getArmureRegen() const { return regenArmure_; }
+		float getBouclierMax() const { return bouclierM_; }
+		float getBouclier() const { return bouclier_; }
+		float getBouclierRegen() const { return regenBouclier_; }
+		float getVit() const { return vit_; }
+		float getVitMax() const { return vitM_; }
 		
 
 		//setters de stats

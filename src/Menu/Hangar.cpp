@@ -36,58 +36,16 @@ ecran_t Hangar::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, sf::Tex
 {
 	while (window_.isOpen())
 	{
-		
 		sf::Event event;
 		while (window_.pollEvent(event))
 		{
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-			{
-				detruit_ = false;
+			auto retour = gestionEvent(event);
+			if(retour) {
 				derniereFenetre.update(window_);
-				fade(window_, derniereFenetre);
-				
-				return PARTIE;
+				if(retour == PARTIE)
+					fade(window_, derniereFenetre);
+				return *retour;
 			}
-
-			if (event.type == sf::Event::MouseButtonPressed && !animation_)
-			{
-				horloge_.restart();
-
-				departX_ = positionModeleX_;
-				destinationX_ = milieuX;
-
-				posSelection_ = { 0, 0 };
-				for (auto mod : vaisseau_->getModules())
-				{
-					sf::Vector2i localPosition = sf::Mouse::getPosition(window_);
-					mod.checkSelection(localPosition, posSelection_, positionModeleX_, positionModeleY_);
-
-					if (posSelection_.x != 0 && posSelection_.y != 0)
-					{
-						titreDescription_.setString(mod.getNom());
-
-						switch (mod.checkPosition(vaisseau_->getModele().getGlobalBounds().width))
-						{
-							case -1:
-								destinationX_ = droiteX;
-								break;
-							case 1:
-								destinationX_ = gaucheX;
-								break;
-							default:
-								destinationX_ = milieuX;
-								break;
-						}
-						break;
-					}
-				}
-
-				if(departX_ != destinationX_)
-					animation_ = true;
-			}
-
-			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
-				return VIDE;
 		}
 
 		move();
@@ -206,4 +164,55 @@ void Hangar::move()
 			animation_ = false;
 	}
 	
+}
+
+std::optional<ecran_t> Hangar::gestionEvent(const sf::Event& event)
+{
+	auto retour = Ecran::gestionEvent(event);
+	if(retour)
+		return retour;
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+	{
+		detruit_ = false;
+		return std::make_optional(PARTIE);
+	}
+	else if (event.type == sf::Event::MouseButtonPressed && !animation_)
+	{
+		horloge_.restart();
+
+		departX_ = positionModeleX_;
+		destinationX_ = milieuX;
+
+		posSelection_ = { 0, 0 };
+		for (auto mod : vaisseau_->getModules())
+		{
+			sf::Vector2i localPosition = sf::Mouse::getPosition(window_);
+			mod.checkSelection(localPosition, posSelection_, positionModeleX_, positionModeleY_);
+
+			if (posSelection_.x != 0 && posSelection_.y != 0)
+			{
+				titreDescription_.setString(mod.getNom());
+
+				switch (mod.checkPosition(vaisseau_->getModele().getGlobalBounds().width))
+				{
+					case -1:
+						destinationX_ = droiteX;
+						break;
+					case 1:
+						destinationX_ = gaucheX;
+						break;
+					default:
+						destinationX_ = milieuX;
+						break;
+				}
+				break;
+			}
+		}
+
+		if(departX_ != destinationX_)
+			animation_ = true;
+	}
+	
+	return std::nullopt;
 }

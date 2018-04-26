@@ -67,8 +67,8 @@ class Vaisseau : public Entite
 			const std::vector<std::unique_ptr<Capacite>>& getskills() const { return capacites_; }
 			bool estActif() const { return actif_; }
 			const vaisseau_container& getAnnexes() const { return annexes_; }
-			const float getatqM() const { return atqM_; }
-			const float getdefM() const { return defM_; }
+			float getatqM() const { return atqM_; }
+			float getdefM() const { return defM_; }
 			const std::vector<std::unique_ptr<Capacite>>& getCapacites() const { return capacites_; }
 			const sf::Sprite getModele() const { return spriteHangar_; }
 			const std::vector<Module> getModules() const { return modules_; }
