@@ -15,15 +15,16 @@
 
 
 /**
-*@struct Stats
-*@brief Regroupe les attributs qui implémentent les caractéristiques ingame d'une Entite
-* attributs (Max et current):
-base : PV, ATK, DEF, VITESSE, 
-modulateurs de base : ARMURE, BOUCLIER, 
-modulateurs de regen : PV, ARMURE, BOUCLIER
-modulateurs avancés : PRECISION
-dégats divers : COLLISION
-*/
+ * @struct Stats
+ * @brief Regroupe les attributs qui implémentent les caractéristiques ingame d'une Entite
+ *
+ * Attributs (Max et current):
+ * base : PV, ATK, DEF, VITESSE, 
+ * dégats divers : COLLISION
+ * modulateurs de base : ARMURE, BOUCLIER, 
+ * modulateurs de regen : PV, ARMURE, BOUCLIER
+ * modulateurs avancés : PRECISION
+ */
 struct Stats
 {
 	float
