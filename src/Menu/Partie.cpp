@@ -238,34 +238,38 @@ void Partie::collisionVaisseaux()
 	deleteVaisseauDetruit();
 }
 
-void Partie::deleteProjectileDetruit()
+bool Partie::deleteProjectileDetruit()
 {
 	for(auto it = projectiles_.begin(); it != projectiles_.end();)
 	{
 		if ((*it)->estDetruit())//teste si détruit ou si pv <=0;
 		{
 			it = projectiles_.erase(it);
+			return true;
 		}
 		else
 		{
 			it++;
 		}
 	}
+	return false;
 }
 
-void Partie::deleteVaisseauDetruit()
+bool Partie::deleteVaisseauDetruit()
 {
 	for(auto it = vaisseaux_.begin(); it != vaisseaux_.end();)
 	{
 		if ((*it)->estDetruit())//teste si détruit ou si pv <=0;
 		{
 			it = vaisseaux_.erase(it);
+			return true;
 		}
 		else
 		{
 			it++;
 		}
 	}
+	return false;
 }
 
 void Partie::gestionFond(sf::Time t)
@@ -301,13 +305,13 @@ void Partie::initPatternTest()
 	VaisseauEclaireur *vaiseauEclaireurS = new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7);*/
 
 	//TODO tests à enlever
-	v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this,ECRAN_L/2, ECRAN_H/2, LINEAIRE, 0, 0)) });
-	v1.getElements().at(0).vaiss->addCapacite(new CapMissile(*this, v1.getElements().at(0).vaiss));
-	v1.getElements().at(0).vaiss->getCapacites().at(0)->setAutoAim(true);
-	v1.getElements().at(0).vaiss->setPvMax(std::numeric_limits<float>::max());
-	v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)) });
-	v1.getElements().at(1).vaiss->setPv(1);
-	v1.getElements().at(1).vaiss->getAnnexes().at(0)->setPv(2);
+	//v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this,ECRAN_L/2, ECRAN_H/2, LINEAIRE, 0, 0)) });
+	//v1.getElements().at(0).vaiss->addCapacite(new CapMissile(*this, v1.getElements().at(0).vaiss));
+	//v1.getElements().at(0).vaiss->getCapacites().at(0)->setAutoAim(true);
+	//v1.getElements().at(0).vaiss->setPvMax(std::numeric_limits<float>::max());
+	//v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauDefenseur(*this, -50, 500, vaisseaux_, LINEAIRE, 1, 0)) });
+	//v1.getElements().at(1).vaiss->setPv(1);
+	//v1.getElements().at(1).vaiss->getAnnexes().at(0)->setPv(2);
 	
 
 	v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauEclaireur(*this, 0, 0, LINEAIRE, 1, 0.5)) });

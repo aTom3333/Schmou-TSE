@@ -1,0 +1,21 @@
+Vaisseau "Gravité"
+PV : faible
+Armure : Forte
+Bouclier : nul
+
+Vaisseau entouré de modules Pourfendeurs (atk) et Gardiens (déf)
+en rotation autour du vaisseau principal
+
+TIR1 : tir des Pourfendeurs
+TIR2 : tir des Gardiens
+CAP1 : Surcharge du synchrotron :
+	la vitesse de rotation des modules augmente et après un court instant
+	une décharge d'énergie à courte portée est émise
+CAP2 : Génération spontanée :
+	Spawn aléatoirement un Gardien ou un Pourfendeur dans la limite possible
+CAP3 : Horizon des événements :
+	Toutes les entités collisionnables sont violemment attirées 
+	vers le vaisseau
+ULTI : Réplication du cycle énergétique
+	Un deuxième anneau de module apparaît temporairement autour du vaisseau
+	Il possède les mêmes propriétés que le premier.

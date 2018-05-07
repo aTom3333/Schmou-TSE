@@ -5,7 +5,7 @@ CapBismillah::CapBismillah(Ecran& ecran, const std::weak_ptr<Entite>& lanceur) :
 	Capacite(ecran, lanceur)
 {
 	//Caractéristiques
-	cooldown_ = sf::milliseconds(20);
+	cooldown_ = sf::milliseconds(200);
 	nom_ = "Bismillah";
 
 	//Icône

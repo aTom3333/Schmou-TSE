@@ -31,9 +31,11 @@ ProjBismillah::ProjBismillah(Ecran& ecran, std::shared_ptr<Entite> lanceur, std:
     equipe_ = equipe;
     actif_ = false;
     collisionnable_ = false;
+	collisionneuse_ = false;
     invincibilable_ = false;
 
 	// Stats
+	pvM_ = pv_ = 1;
     degatsCollision_ = 5;
 
 }
@@ -43,24 +45,24 @@ void ProjBismillah::gestion()
     assert(dynamic_cast<sf::RectangleShape*>(forme_.front().get()) != nullptr);
 	assert(sprites_.at(0).getTexture() != nullptr);
 
-	//TODO PG comment chopper un shared proprement à partir de l'attribut ?
 	if (auto lanceur = lanceur_.lock()) {
 
 		const float largeur_vaisseau = lanceur->getTailleSprite().x;
 		const float hauteur_vaisseau = lanceur->getTailleSprite().y;
 
-		const float cast_frames = 1209; //temps total pour les deux phases croissance/décroissance //1129ms : temps du son Bismilllah
-		const float charge_frames = 1129; //temps de charge
+		const float cast_frames = 1209; //temps total pour les deux phases croissance/décroissance
+		const float charge_frames = 1129; //temps de charge //1129ms : temps du son Bismilllah
 		const float stationnaire_frames = 4032; //temps à l'état stationnaire entre les phases croissance et décroissance
 
 		if (t_age_.asMilliseconds() <= charge_frames)//changement de la taille de la boule de chargement
 		{
+			actif_ = true;
 			sprites_.at(0).setScale(sqrt(t_age_.asMilliseconds() / charge_frames), sqrt(t_age_.asMilliseconds() / charge_frames));
 		}
 		//rayon croissant
 		else if (t_age_.asMilliseconds() <= cast_frames / 2.0f + charge_frames)
 		{
-			actif_ = true;
+			collisionneuse_ = true;
 			//interpolation linéaire pour que la largeur max soit atteinte en cast_frames images après le temps de charge_boule
 			float largeur_actuelle = 2 * largeur_max_ * ((t_age_.asMilliseconds() - charge_frames) / (cast_frames));
 			//hitbox
@@ -127,7 +129,7 @@ void ProjBismillah::gestion()
 
 			//Mode debug
 			//bool force_debug = true;
-			afficher_debug();
+			afficher_debug(true);
 		}
 
 		t_age_ += ecran_.getTempsFrame();

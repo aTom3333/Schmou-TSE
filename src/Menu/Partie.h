@@ -36,8 +36,8 @@ class Partie : public Ecran
 		void jeu();
 		void collisionProjectile();
 		void collisionVaisseaux();
-		void deleteProjectileDetruit();
-		void deleteVaisseauDetruit();
+		bool deleteProjectileDetruit();
+		bool deleteVaisseauDetruit();
 
 		void gestionFond(sf::Time t);
 
