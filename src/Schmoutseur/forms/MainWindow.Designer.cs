@@ -47,11 +47,10 @@
             // 
             // buttonRessourceManager
             // 
-            this.buttonRessourceManager.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.buttonRessourceManager.Image = ((System.Drawing.Image)(resources.GetObject("buttonRessourceManager.Image")));
             this.buttonRessourceManager.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.buttonRessourceManager.Name = "buttonRessourceManager";
-            this.buttonRessourceManager.Size = new System.Drawing.Size(142, 24);
+            this.buttonRessourceManager.Size = new System.Drawing.Size(162, 24);
             this.buttonRessourceManager.Text = "Ressource Manager";
             this.buttonRessourceManager.Click += new System.EventHandler(this.buttonRessourceManager_Click);
             // 
