@@ -1,6 +1,7 @@
 #include "VaisseauDefenseur.h"
 
 #include <cmath>
+#include "VaissBouclier.h"
 
 
 VaisseauDefenseur::VaisseauDefenseur(Ecran& ecran, float x, float y, vaisseau_container &vaisseaux, Trajectoire traj, float param1, float param2, float param3, float param4) : 

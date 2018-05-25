@@ -2,8 +2,6 @@
 #define VAISSEAU_POURFENDEUR_H
 
 #include "../Vaisseau.h"
-#include "../../Capacites/Capacite.h"
-#include "../../Capacites/_Capacites.h"
 
 class VaisseauPourfendeur : public Vaisseau
 {

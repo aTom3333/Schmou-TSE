@@ -43,18 +43,13 @@ ecran_t Accueil::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, sf::Te
 		{
 			alpha += mult*10;
 
-			if (alpha < 0)
-			{
-				alpha = 0;
-				mult = -mult;
-			}
-			if (alpha > 255)
+		    if (alpha > 255)
 			{
 				alpha = 255;
 				mult = -mult;
 			}
 
-			texte_.setFillColor({ 255, 255, 255, (sf::Uint8)alpha });
+			texte_.setFillColor({ 255, 255, 255, static_cast<sf::Uint8>(alpha) });
 			t = timer.restart();
 		}
 
@@ -70,5 +65,5 @@ ecran_t Accueil::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, sf::Te
 
 std::unique_ptr<Ecran> Accueil::factory()
 {
-	return std::unique_ptr<Ecran>(new Accueil(window_));
+	return std::unique_ptr<Ecran>(std::make_unique<Accueil>(window_));
 }

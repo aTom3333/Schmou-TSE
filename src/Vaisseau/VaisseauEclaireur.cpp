@@ -44,10 +44,10 @@ VaisseauEclaireur::VaisseauEclaireur(Ecran &ecran, float x, float y,Trajectoire 
 
 	// Initialisation de la trajectoire
 	trajectoire_ = traj;
-	params_.push_back((float)param1);
-	params_.push_back((float)param2);
-	params_.push_back((float)param3);
-	params_.push_back((float)param4);
+	params_.push_back(static_cast<float>(param1));
+	params_.push_back(static_cast<float>(param2));
+	params_.push_back(static_cast<float>(param3));
+	params_.push_back(static_cast<float>(param4));
 
 	// Position initiale
 	setPosition({ x, y });

@@ -8,19 +8,19 @@
 void adapt_viewport(sf::RenderWindow& window)
 {
     auto view = window.getView();
-    auto size = window.getSize();
-    
-    float ratio = (float)size.x / size.y;
-    float ratio_normal = ECRAN_L / ECRAN_H;
+    const auto size = window.getSize();
+
+    const float ratio = static_cast<float>(size.x) / size.y;
+    const float ratio_normal = ECRAN_L / ECRAN_H;
     
     if(ratio > ratio_normal)
     {
-        float proportion = ratio_normal / ratio;
+        const float proportion = ratio_normal / ratio;
         view.setViewport({(1-proportion)/2, 0, proportion, 1});
     }
     else
     {
-        float proportion = ratio / ratio_normal;
+        const float proportion = ratio / ratio_normal;
         view.setViewport({0, (1-proportion)/2, 1, proportion});
     }
     
@@ -41,7 +41,7 @@ std::string trim(std::string str)
 
 std::pair<std::string, std::string> tokenize(const std::string& str, char sep)
 {
-    auto pos = str.find(sep);
+    const auto pos = str.find(sep);
     
     if(pos == std::string::npos)
         return {str, ""};
@@ -57,10 +57,10 @@ double rayon_englobeur(const std::vector<std::unique_ptr<sf::Shape>> & forme, sf
 	double dist_max = 0; //distance du point le plus éloigné de l'origine parmi tous
 	for (auto const& shape_ptr : forme)
 	{
-		size_t N = shape_ptr->getPointCount(); //nombre de points de la shape actuelle
+	    const size_t N = shape_ptr->getPointCount(); //nombre de points de la shape actuelle
 		for (size_t i = 0; i < N; i++)
 		{
-			sf::Vector2f point = shape_ptr->getPoint(i);
+		    const sf::Vector2f point = shape_ptr->getPoint(i);
 			if (hypot(point.x - origine.x, point.y - origine.y) > dist_max)
 				dist_max = hypot(point.x - origine.x, point.y - origine.y);
 		}

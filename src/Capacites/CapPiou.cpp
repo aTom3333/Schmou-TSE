@@ -1,4 +1,5 @@
 #include "CapPiou.h"
+#include "../Projectiles/ProjPiou.h"
 
 CapPiou::CapPiou(Ecran& ecran, const std::weak_ptr<Entite>& lanceur) :
 	Capacite(ecran, lanceur)
@@ -23,7 +24,7 @@ CapPiou::CapPiou(Ecran& ecran, const std::weak_ptr<Entite>& lanceur) :
 
 void CapPiou::utiliser(proj_container& projectiles)
 {
-    if(auto lanceur = lanceur_.lock())
+    if(const auto lanceur = lanceur_.lock())
     {
         // Si la compétence est disponible
         if(t_lastuse_ >= cooldown_)
@@ -32,7 +33,7 @@ void CapPiou::utiliser(proj_container& projectiles)
 			t_lastuse_ = sf::Time::Zero;
 
             // Création du projectile au lancement
-            proj_ptr temp(new ProjPiou(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe()));
+            const proj_ptr temp(new ProjPiou(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe()));
             projectiles.push_back(temp);
         }
     }

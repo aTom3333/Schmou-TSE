@@ -3,8 +3,6 @@
 #include "Divers.h"
 #include <fstream>
 #include <cctype>
-#include <iostream>
-#include <algorithm>
 
 bool Chargeur::loaded_ = false;
 std::map<std::string, std::string, caseInsensitiveCompare> Chargeur::location_ = 
@@ -17,16 +15,16 @@ Chargeur::Chargeur()
     {
         loaded_ = true;
         
-        std::ifstream liste(chemin_rc "Data/chemins.ini");
+        std::ifstream liste(CHEMIN_RC "Data/chemins.ini");
         if(!liste.is_open())
-            throw std::runtime_error("Fichier " chemin_rc "Data/chemins.ini non trouvé");
+            throw std::runtime_error("Fichier " CHEMIN_RC "Data/chemins.ini non trouvé");
         while(!liste.eof())
         {
             std::string ligne;
             std::getline(liste, ligne);
             
             // On enlève les commentaires
-            auto pos = ligne.find('#');
+            const auto pos = ligne.find('#');
             if(pos != std::string::npos)
                 ligne.erase(pos);
             
@@ -51,8 +49,8 @@ std::shared_ptr<sf::Texture> Chargeur::getTexture(const std::string& name, bool 
         throw std::runtime_error("Unknown location of texture " + name);
 
     auto t = std::make_shared<sf::Texture>();
-    if(!t->loadFromFile(std::string(chemin_rc) + location_[name],area))
-		throw std::runtime_error("Can't load " chemin_rc + location_[name]);
+    if(!t->loadFromFile(std::string(CHEMIN_RC) + location_[name],area))
+		throw std::runtime_error("Can't load " CHEMIN_RC + location_[name]);
 	else {
 		t->setRepeated(repeated);
 		t->setSmooth(smooth);
@@ -73,8 +71,8 @@ std::shared_ptr<sf::SoundBuffer> Chargeur::getSoundBuffer(const std::string& nam
         throw std::runtime_error("Unknown location of soundbuffer " + name);
 
     auto t = std::make_shared<sf::SoundBuffer>();
-    if(!t->loadFromFile(std::string(chemin_rc) + location_[name]))
-        throw std::runtime_error("Can't load " chemin_rc+location_[name]);
+    if(!t->loadFromFile(std::string(CHEMIN_RC) + location_[name]))
+        throw std::runtime_error("Can't load " CHEMIN_RC+location_[name]);
 
     sound_buffers_[name] = t;
 
@@ -90,8 +88,8 @@ std::shared_ptr<sf::Font> Chargeur::getFont(const std::string& name)
 		throw std::runtime_error("Unknown location of font " + name);
 
 	auto t = std::make_shared<sf::Font>();
-	if (!t->loadFromFile(std::string(chemin_rc) + location_[name]))
-		throw std::runtime_error("Can't load " chemin_rc + location_[name]);
+	if (!t->loadFromFile(std::string(CHEMIN_RC) + location_[name]))
+		throw std::runtime_error("Can't load " CHEMIN_RC + location_[name]);
 
 	fonts_[name] = t;
 
@@ -102,8 +100,8 @@ bool caseInsensitiveCompare::operator()(const std::string& a, const std::string&
 {
     auto first1 = a.begin();
     auto first2 = b.begin();
-    auto last1 = a.end();
-    auto last2 = b.end();
+    const auto last1 = a.end();
+    const auto last2 = b.end();
 
     while(first1 != last1 && first2 != last2)
     {

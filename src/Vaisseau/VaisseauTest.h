@@ -2,13 +2,11 @@
 #define VAISSEAUTEST_H
 
 #include "Vaisseau.h"
-#include "../Capacites/Capacite.h"
-#include "../Capacites/_Capacites.h"
 
 class VaisseauTest : public Vaisseau
 {
 public:
-	VaisseauTest(Ecran& ecran);
+    explicit VaisseauTest(Ecran& ecran);
 	~VaisseauTest() = default;
 	void gestion(proj_container& proj_cont, Input& input) override;
 	/**

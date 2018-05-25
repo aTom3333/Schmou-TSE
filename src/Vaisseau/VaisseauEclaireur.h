@@ -2,7 +2,6 @@
 #define VAISSEAU_ECRAIREUR_H
 
 #include <vector>
-#include "../constantes.h"
 #include "Vaisseau.h"
 #include "../Utilitaires/Trajectoire.h"
 
@@ -20,6 +19,7 @@ public:
 	/**
 	* @fn VaisseauEclaireur
 	* @brief Contructeur
+	* @param ecran Référence vers l'écran dans lequel est construit l'objet
 	* @param x Abscisse de la position de départ
 	* @param y Ordonnée de la position de départ
 	* @param traj Trajectoire voulue (Linéaire, parabolique ou sinusoidale)
@@ -49,8 +49,7 @@ public:
 	/**
 	* @fn gestion
 	* @brief Gère le comportement du vaisseau
-	* @param window Fenetre SFML où le vaisseau sera affiché
-	* @param tempsEcoule Temps écoulé depuis le dernier appel
+	* @param proj_cont Vecteur de tous les projectiles à l'écran
 	* @param input Classe Input donnant accés aux entrée
 	*
 	* Gère le déplacement et l'affichage du vaisseau

@@ -3,7 +3,6 @@
 
 #include "Capacite.h"
 #include "../Projectiles/Projectile.h"
-#include "../Projectiles/ProjBouclierRond.h"
 
 
 /**
@@ -24,13 +23,12 @@ class CapBouclierRond : public Capacite
 		/**
 		* @fn CapBouclierRond::CapBouclierRond
 		* @brief Constructeur
-		* @param niveau niveau de la capacité
-		* @param Entite_liee_ Entite à laquelle s'applique le bouclier
+		* @param ecran Référence vers un écran où se trouve le lanceur
+		* @param lanceur lanceur de la capacité
 		*
 		* Initialisation
 		*/
-		CapBouclierRond(Ecran& ecran, const std::weak_ptr<Entite>& lanceur);
-	
+		CapBouclierRond(Ecran& ecran, const std::weak_ptr<Entite>& lanceur);	
 
 		void utiliser(proj_container& projectiles) override;
 

@@ -66,7 +66,7 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 		{
 			if (vaisseau->getEquipe() != equipe_ && vaisseau->isActif())
 			{
-				auto pos = vaisseau->getPosition();
+			    const auto pos = vaisseau->getPosition();
 				if (hypot(pos.x - position_.x, pos.y - position_.y) < distance_min)
 				{
 					distance_min = hypot(pos.x - position_.x, pos.y - position_.y);
@@ -92,21 +92,21 @@ void ProjMissile::gestion()
 	vaisseau_ptr cible;
 	if (aimbot_)
 	{
-		if (auto cible = cible_.lock())
+		if (auto& cible = cible_.lock())
 		{
 			if (!cible->estDetruit())
 			{
-				float X = cible->getPosition().x - position_.x;
-				float Y = cible->getPosition().y - position_.y;
+			    const float X = cible->getPosition().x - position_.x;
+			    const float Y = cible->getPosition().y - position_.y;
 				float angleTot = atan2(-Y, -X) * 180 / PI ; //angle avec cible
 
 				//ciblage limité
-				float vit_angulaire = 100; //degrés par seconde
-				float dAngle = vit_angulaire * ecran_.getTempsFrame().asSeconds();//variation max d'angle possible
+			    static const float VIT_ANGULAIRE = 100; //degrés par seconde
+			    const float dAngle = VIT_ANGULAIRE * ecran_.getTempsFrame().asSeconds();//variation max d'angle possible
 				if (angleTot < 0) angleTot += 360;
 				short sens = -1;
 				if ((rotation_ - angleTot) < 0 || (rotation_ - angleTot >= 180 )) sens = 1;
-				float angle = fabs(rotation_ - angleTot) < dAngle ? angleTot - rotation_ : sens * dAngle; // angle est le maximum entre l'angle avec la cible et dAngle non signé
+			    const float angle = fabs(rotation_ - angleTot) < dAngle ? angleTot - rotation_ : sens * dAngle; // angle est le maximum entre l'angle avec la cible et dAngle non signé
 				rotate(angle);
 
 				//ciblage parfait

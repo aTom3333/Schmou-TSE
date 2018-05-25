@@ -1,19 +1,6 @@
 #include "bindings.h"
 
 
-void set_keyboard_default_binding_2(Input& in)
-{
-    in.set_movement_mode(Input::Media::Keyboard);
-    in.set_action_keyboard(PAUSE, sf::Keyboard::Escape);
-    in.set_action_keyboard(TIR1, sf::Keyboard::W);
-    in.set_action_keyboard(TIR2, sf::Keyboard::X);
-    in.set_action_keyboard(COMP1, sf::Keyboard::Q);
-    in.set_action_keyboard(COMP2, sf::Keyboard::S);
-    in.set_action_keyboard(COMP3, sf::Keyboard::D);
-    in.set_action_keyboard(ULTI, sf::Keyboard::C);
-}
-
-
 void set_keyboard_default_binding(Input& in)
 {
 	in.set_movement_mode(Input::Media::Keyboard);

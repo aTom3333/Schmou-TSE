@@ -1,7 +1,6 @@
 #ifndef PATTERN_H
 #define PATTERN_H
 
-#include "Vague.h"
 #include "../Menu/Partie.h"
 
 

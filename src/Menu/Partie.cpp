@@ -1,15 +1,14 @@
 #include "Partie.h"
-#include "../Projectiles/_projectiles.h"
 #include "../Capacites/_Capacites.h"
 #include "../Vaisseau/_vaisseaux.h"
 #include "../Interface/bindings.h"
 #include "../Pattern/Vague.h"
 #include "Ecran.h"
 #include "Hangar.h"
-#include "../Utilitaires/Divers.h"
+#include <iostream>
 
 
-Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : input_{window, media}, avecPattern_{avecPattern}, afficheHUD_{afficheHUD}, Ecran(window)
+Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : Ecran(window), input_{window, media}, avecPattern_{avecPattern}, afficheHUD_{afficheHUD}
 {
 	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
 	{
@@ -169,14 +168,14 @@ ecran_t Partie::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, sf::Tex
 
 std::unique_ptr<Ecran> Partie::factory()
 {
-	return std::unique_ptr<Ecran>(new Partie(window_, input_.get_media(), afficheHUD_, avecPattern_));
+	return std::unique_ptr<Ecran>(std::make_unique<Partie>(window_, input_.get_media(), afficheHUD_, avecPattern_));
 }
 
 void Partie::collisionProjectile()
 {
 	/*std::vector<Entite*> allEntite;
 	allEntite.insert(projectiles_.begin(), vaisseaux_.begin(), vaisseaux_.end());*/
-	size_t n = projectiles_.size() + vaisseaux_.size();
+    const size_t n = projectiles_.size() + vaisseaux_.size();
 	std::vector<std::shared_ptr<Entite> > allEntite(n);
 
 	for(unsigned int i = 0; i < projectiles_.size(); i++)
@@ -249,7 +248,7 @@ bool Partie::deleteProjectileDetruit()
 		}
 		else
 		{
-			it++;
+			++it;
 		}
 	}
 	return false;
@@ -266,7 +265,7 @@ bool Partie::deleteVaisseauDetruit()
 		}
 		else
 		{
-			it++;
+			++it;
 		}
 	}
 	return false;
@@ -274,7 +273,7 @@ bool Partie::deleteVaisseauDetruit()
 
 void Partie::gestionFond(sf::Time t)
 {
-	float coeff_vitesse_fond = 5;
+    const float coeff_vitesse_fond = 5;
 
 	for (size_t i = 0; i < fond_.size(); i++)
 	{

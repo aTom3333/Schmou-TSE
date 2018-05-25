@@ -37,13 +37,12 @@ class Vague
 		/**
 		* @fn ajouterElement
 		* @brief Ajoute un élement à la vague
-		* @param vaiss L'élement à ajouter
+		* @param e L'élement à ajouter
 		*/
-		void ajouterElement(VaisseauVague e) { vaisseaux_vague_.push_back(e); }
+		void ajouterElement(const VaisseauVague e) { vaisseaux_vague_.push_back(e); }
 		/**
 		* @fn gestion
 		* @brief Gère la vague
-		* @param t Temps écoulé depuis le début de la boucle
 		* @param vaisseaux Vecteur de tous les vaisseaux présent à l'écran
 		* Gere le déclanchement de la vague et l'apparition des vaisseaux
 		*/
@@ -63,7 +62,7 @@ class Vague
 		std::vector<VaisseauVague>::const_iterator end() const { return vaisseaux_vague_.cend(); }
 
 		//getters
-		std::vector<VaisseauVague> getElements() { return vaisseaux_vague_; }
+		std::vector<VaisseauVague> getElements() const { return vaisseaux_vague_; }
 
 		//setters
 		void setEquipeAll(Equipe equipe) {

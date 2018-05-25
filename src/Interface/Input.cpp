@@ -98,11 +98,10 @@ sf::Vector2f Input_base<N>::move(float max_speed, const sf::Time& elapsed_time)
 template<size_t N>
 sf::Vector2f Input_base<N>::move_keyboard(float max_speed, const sf::Time& elapsed_time)
 {
-    bool up, down, left, right;
-    up = movement_input_.keyboard_.up_key_ && sf::Keyboard::isKeyPressed(movement_input_.keyboard_.up_key_.value());
-    down = movement_input_.keyboard_.down_key_ && sf::Keyboard::isKeyPressed(movement_input_.keyboard_.down_key_.value());
-    left = movement_input_.keyboard_.left_key_ && sf::Keyboard::isKeyPressed(movement_input_.keyboard_.left_key_.value());
-    right = movement_input_.keyboard_.right_key_ && sf::Keyboard::isKeyPressed(movement_input_.keyboard_.right_key_.value());
+    bool up = movement_input_.keyboard_.up_key_ && sf::Keyboard::isKeyPressed(movement_input_.keyboard_.up_key_.value()),
+         down = movement_input_.keyboard_.down_key_ && sf::Keyboard::isKeyPressed(movement_input_.keyboard_.down_key_.value()),
+         left = movement_input_.keyboard_.left_key_ && sf::Keyboard::isKeyPressed(movement_input_.keyboard_.left_key_.value()),
+         right = movement_input_.keyboard_.right_key_ && sf::Keyboard::isKeyPressed(movement_input_.keyboard_.right_key_.value());
 	
     // Si on a les deux côtés opposés, on annule
 	//TODO il serait plus agréable (affordant) que le côté opposé pressé en dernier soit prioritaire car là si on appuie sur les deux en même temps le vaisseau s'arrête et c'est contre-intuitif. Mais ce n'est pas possible si on fait comme ça, il faudrait récupérer les évènement pour savoir à quel instant quelle touche est pressée alors que là, on ne fait que récupérer l'état du clavier à l'instant t. Eh bien c'est très simple on créer un vector d'inputs qui gare en mémoire les actions effectuées depuis x secondes ohohoh
@@ -114,9 +113,9 @@ sf::Vector2f Input_base<N>::move_keyboard(float max_speed, const sf::Time& elaps
     if(!up && !down && !left && !right)
         return {0, 0};
 
-    int nb = up + down + left + right;
+    const int nb = up + down + left + right;
 
-    return {(right - left) * max_speed / (float)sqrt(nb) * elapsed_time.asSeconds(), (down - up ) * max_speed / (float)sqrt(nb) * elapsed_time.asSeconds()};
+    return {(right - left) * max_speed / static_cast<float>(sqrt(nb)) * elapsed_time.asSeconds(), (down - up ) * max_speed / static_cast<float>(sqrt(nb)) * elapsed_time.asSeconds()};
 }
 
 
@@ -145,15 +144,14 @@ sf::Vector2f Input_base<N>::move_joypad(float max_speed, const sf::Time& elapsed
         }
         else if(movement_input_.joypad_.input_type_ == movement_input_t::joypad_t::Button)
         {
-            bool up, down, left, right;
-            up = movement_input_.joypad_.joypad_input_.buttons_.up_button_
-                 && sf::Joystick::isButtonPressed(id, movement_input_.joypad_.joypad_input_.buttons_.up_button_.value());
-            down = movement_input_.joypad_.joypad_input_.buttons_.down_button_
-                 && sf::Joystick::isButtonPressed(id, movement_input_.joypad_.joypad_input_.buttons_.down_button_.value());
-            left = movement_input_.joypad_.joypad_input_.buttons_.left_button_
-                 && sf::Joystick::isButtonPressed(id, movement_input_.joypad_.joypad_input_.buttons_.left_button_.value());
-            right = movement_input_.joypad_.joypad_input_.buttons_.right_button_
-                 && sf::Joystick::isButtonPressed(id, movement_input_.joypad_.joypad_input_.buttons_.right_button_.value());
+            bool up = movement_input_.joypad_.joypad_input_.buttons_.up_button_
+                    && sf::Joystick::isButtonPressed(id, movement_input_.joypad_.joypad_input_.buttons_.up_button_.value());
+            bool down = movement_input_.joypad_.joypad_input_.buttons_.down_button_
+                    && sf::Joystick::isButtonPressed(id, movement_input_.joypad_.joypad_input_.buttons_.down_button_.value());
+            bool left = movement_input_.joypad_.joypad_input_.buttons_.left_button_
+                    && sf::Joystick::isButtonPressed(id, movement_input_.joypad_.joypad_input_.buttons_.left_button_.value());
+            bool right = movement_input_.joypad_.joypad_input_.buttons_.right_button_
+                    && sf::Joystick::isButtonPressed(id, movement_input_.joypad_.joypad_input_.buttons_.right_button_.value());
 
             // Si on a les deux côtés opposés, on annule
             if(up && down)
@@ -164,9 +162,9 @@ sf::Vector2f Input_base<N>::move_joypad(float max_speed, const sf::Time& elapsed
             if(!up && !down && !left && !right)
                 return {0, 0};
 
-            int nb = up + down + left + right;
+            const int nb = up + down + left + right;
 
-            return {(right - left) * max_speed / (float)sqrt(nb) * elapsed_time.asSeconds(), (down - up ) * max_speed / (float)sqrt(nb) * elapsed_time.asSeconds()};
+            return {(right - left) * max_speed / static_cast<float>(sqrt(nb)) * elapsed_time.asSeconds(), (down - up ) * max_speed / static_cast<float>(sqrt(nb)) * elapsed_time.asSeconds()};
         }
     }
 
@@ -188,8 +186,8 @@ sf::Vector2f Input_base<N>::move_mouse(float max_speed, const sf::Time& elapsed_
     if(diff.x == 0 && diff.y == 0)
         return {0, 0};
 
-    float dx = diff.x * abs(diff.x) / (diff.x*diff.x + diff.y*diff.y);
-    float dy = diff.y * abs(diff.y) / (diff.x*diff.x + diff.y*diff.y);
+    const float dx = diff.x * abs(diff.x) / (diff.x*diff.x + diff.y*diff.y);
+    const float dy = diff.y * abs(diff.y) / (diff.x*diff.x + diff.y*diff.y);
 
     sf::Vector2f delta{dx * max_speed * elapsed_time.asSeconds(), dy * max_speed * elapsed_time.asSeconds()};
 
@@ -342,7 +340,6 @@ void Input_base<N>::set_movement_mode(Media movement_media)
             break;
             
         case Media::Mouse:
-            movement_media = Media::Mouse;
             movement_input_.mouse_ = {};
             break;
             

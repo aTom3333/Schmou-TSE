@@ -53,7 +53,7 @@ void chargement(sf::RenderWindow &window, sf::Texture& derniereFenetre)
 			if (alpha > 255)
 				alpha = 255;
 
-			rect.setFillColor({ 0, 0, 0, (sf::Uint8)alpha });
+			rect.setFillColor({ 0, 0, 0, static_cast<sf::Uint8>(alpha) });
 			t = timer.restart();
 		}
 		window.clear();
@@ -91,7 +91,7 @@ void fade(sf::RenderWindow & window, sf::Texture & derniereFenetre)
 			if (alpha > 255)
 				alpha = 255;
 
-			rect.setFillColor({ 0, 0, 0, (sf::Uint8)alpha });
+			rect.setFillColor({ 0, 0, 0, static_cast<sf::Uint8>(alpha) });
 			t = timer.restart();
 		}
 		window.clear();

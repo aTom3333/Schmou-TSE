@@ -6,6 +6,7 @@
 class ProjBismillah : public Projectile
 {
 	public:
+    //TODO documentation
 		/**
 		* @fn ProjBismillah
 		* @brief Constructeur
@@ -27,7 +28,6 @@ class ProjBismillah : public Projectile
 		/**
 		* @fn gestion
 		* @brief Gestion du projectile
-		* @param window Fenetre de jeu
 		*
 		* Gestion du déplacement et de l'affichage
 		*/

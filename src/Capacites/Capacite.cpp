@@ -1,9 +1,5 @@
- #include <vector>
-#include <string>
-#include <algorithm>
 #include "Capacite.h"
 #include "../Vaisseau/Vaisseau.h"
-#include "../Projectiles/Projectile.h"
 
 void Capacite::initIcon(size_t i)
 {
@@ -26,7 +22,7 @@ void Capacite::initIcon(size_t i)
 	text_.setString(nom_);
 	text_.setPosition(20 + 90 - text_.getGlobalBounds().width/2, 668 + i * 45);
 
-	sf::FloatRect rec = icone_.getGlobalBounds();//rectangle avec les dimensions du sprite icone_
+    const sf::FloatRect rec = icone_.getGlobalBounds();//rectangle avec les dimensions du sprite icone_
 
 	masque_.setSize({ rec.width, rec.height });
 	masque_.setPosition(rec.left, rec.top);
@@ -37,8 +33,8 @@ void Capacite::initIcon(size_t i)
 
 void Capacite::gestionIcon()
 {
-	sf::FloatRect rec = icone_.getGlobalBounds(); //rectangle avec les dimensions du sprite icone_
-	float ratio = t_lastuse_ >= cooldown_ ? 0 : 1.0f - t_lastuse_.asSeconds() / cooldown_.asSeconds();
+    const sf::FloatRect rec = icone_.getGlobalBounds(); //rectangle avec les dimensions du sprite icone_
+    const float ratio = t_lastuse_ >= cooldown_ ? 0 : 1.0f - t_lastuse_.asSeconds() / cooldown_.asSeconds();
 
 	if (tir_)
 	{

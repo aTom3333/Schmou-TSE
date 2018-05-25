@@ -14,7 +14,7 @@
 
 
 class ProjPiou : public Projectile
-{
+{//TODO documentation
 	public:
 		/**
 		* @fn ProjPiou

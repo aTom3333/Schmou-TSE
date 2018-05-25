@@ -1,22 +1,15 @@
 #ifndef PARTIE_H
 #define PARTIE_H
 
-#include "../Capacites/Capacite.h"
-#include "../Projectiles/Projectile.h"
 #include "../Vaisseau/Vaisseau.h"
 #include "../Interface/Input.h"
 #include "../Interface/Overlay.h"
 #include "../Pattern/Vague.h"
 #include "../def_type.h"
 #include "Ecran.h"
-
 #include <vector>
-#include <string>
-#include <algorithm>
-#include <iostream>
 #include <memory>
 #include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
 
 /**
  * @class Partie
@@ -33,7 +26,7 @@ class Partie : public Ecran
 		Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD = true, bool avecPattern = true);
 		~Partie();
 
-		void jeu();
+		void jeu() = delete;
 		void collisionProjectile();
 		void collisionVaisseaux();
 		bool deleteProjectileDetruit();

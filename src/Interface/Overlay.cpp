@@ -10,16 +10,31 @@ void Overlay::init(vaisseau_ptr vaisseau)
 	overlay_.setTexture(overlayText_);
 
 	// Initialisation des barre de vie, d'armure et de bouclier
-	for(size_t i = 0; i < 3; i++)
-	{
-		barre_[i].setSize({ OVERLAY_BARRE_L, OVERLAY_BARRE_H });
-		barre_[i].setPosition(20, 12 + (OVERLAY_BARRE_H + 4) * i);
-		switch (i) {
-		case 0: {barre_[i].setFillColor({ 255, 66, 66, 150 }); break; }
-		case 1: {barre_[i].setFillColor({ 244, 244, 66, 150 }); break; }
-		case 2: {barre_[i].setFillColor({ 66, 166, 244, 150 }); break; }
-		}
-	}
+    for(size_t i = 0 ; i < 3 ; i++)
+    {
+        barre_[i].setSize({OVERLAY_BARRE_L, OVERLAY_BARRE_H});
+        barre_[i].setPosition(20, 12 + (OVERLAY_BARRE_H + 4) * i);
+        switch(i)
+        {
+            case 0 :
+                {
+                    barre_[i].setFillColor({255, 66, 66, 150});
+                    break;
+                }
+            case 1 :
+                {
+                    barre_[i].setFillColor({244, 244, 66, 150});
+                    break;
+                }
+            case 2 :
+                {
+                    barre_[i].setFillColor({66, 166, 244, 150});
+                    break;
+                }
+            default :
+                throw std::runtime_error("");
+        }
+    }
 
 	// Compteur qui permet de connaitre le nombre de capacités a afficher
 	size_t n = 0, m = 0;
@@ -56,7 +71,7 @@ Overlay::~Overlay()
 	delete[] statuts_;
 }
 
-void Overlay::draw(sf::RenderWindow & window, vaisseau_ptr vaisseau, bool bDraw)
+void Overlay::draw(sf::RenderWindow & window, vaisseau_ptr vaisseau, bool bDraw) const
 {
 	// Affichage de l'overlay
 	if (bDraw)
@@ -110,7 +125,7 @@ void Overlay::gestion(vaisseau_ptr vaisseau)
 			{
 				// TODO TF Vérifier que ça marche avec des sf::Time
 				sf::Time cooldown = (vaisseau->getskills()[i]->getCooldown() - vaisseau->getskills()[i]->getTime());
-				std::wstring str = cooldown.asMilliseconds() <= 0 ? L"Prét" : std::to_wstring(cooldown.asMilliseconds());
+			    const std::wstring str = cooldown.asMilliseconds() <= 0 ? L"Prét" : std::to_wstring(cooldown.asMilliseconds());
 				statuts_[n].setString(str);
 
 				statuts_[n].setPosition(1015 - statuts_[n].getLocalBounds().width, statuts_[n].getPosition().y);

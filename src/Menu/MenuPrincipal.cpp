@@ -72,7 +72,7 @@ ecran_t MenuPrincipal::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, 
 
 std::unique_ptr<Ecran> MenuPrincipal::factory()
 {
-	return std::unique_ptr<Ecran>(new MenuPrincipal(window_));
+	return std::unique_ptr<Ecran>(std::make_unique<MenuPrincipal>(window_));
 }
 
 optional<ecran_t> MenuPrincipal::gestionEvent(const sf::Event& event)

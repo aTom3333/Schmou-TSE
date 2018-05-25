@@ -3,7 +3,6 @@
 
 #include "Capacite.h"
 #include "../Entite.h"
-#include "../Projectiles/ProjBoing.h"
 
 /**
 * @class CapDash
@@ -27,8 +26,7 @@ class CapDash : public Capacite
 		/**
 		* @fn utiliser
 		* @brief Active la capacite
-		* @param [in] x Abscisse de la position où la capacite est utilisée
-		* @param [in] y Ordonnée de la position où la capacite est utilisée
+		* @param projectiles Vecteur de tout les projectiles présent à l'écran
 		*
 		* Fonction Initialise la position de départ et le timer
 		*/
@@ -36,9 +34,7 @@ class CapDash : public Capacite
 		/**
 		 * @fn actualiser
 		 * @brief Active les effets de la capacité
-		 * @param [in,out] projectile Vecteur de tout les projectiles présent à l'écran
-		 * @param [in,out] vaisseau Vaisseau qui a activé la compétence
-		 * @param [in] tempsEcoule Temps écoulé en millisecondes
+		 * @param [in,out] projectiles Vecteur de tout les projectiles présent à l'écran
 		 *
 		 * Augmente la vitesse du vaisseau pour quelques frames
 		 * Actualise le timer

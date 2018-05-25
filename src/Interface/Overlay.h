@@ -2,10 +2,8 @@
 #define OVERLAY_H
 
 #include "SFML/Graphics.hpp"
-#include "../constantes.h"
 #include "../Vaisseau/Vaisseau.h"
 #include "../def_type.h"
-#include <iostream>
 
 
 /**
@@ -17,10 +15,10 @@
 class Overlay
 {
 	public:
-		Overlay() {};
+		Overlay() = default;
 		~Overlay();
 		void init(vaisseau_ptr vaisseau);
-		void draw(sf::RenderWindow &window, vaisseau_ptr vaisseau, bool bDraw = true);
+		void draw(sf::RenderWindow &window, vaisseau_ptr vaisseau, bool bDraw = true) const;
 		void gestion(vaisseau_ptr vaisseau);
 		
 	private :

@@ -1,21 +1,14 @@
 #include "constantes.h"
 #include "Entite.h"
-#include "Utilitaires/Collision.h"
 #include "Menu/Partie.h"
 #include "Menu/Accueil.h"
 #include "Menu/MenuPrincipal.h"
 #include "Menu/Hangar.h"
-#include "Utilitaires/Divers.h"
-#include "Projectiles/_projectiles.h"
 #include "Utilitaires/Chargeur.h"
-
 #include <SFML/Graphics.hpp>
-#include <cmath>
 #include <ctime>
 #include <iostream>
 #include <SFML/Audio.hpp>
-#include <string>
-#include "Utilitaires/Chargeur.h"
 
 
 // Code minimal
@@ -42,7 +35,7 @@ int main(int argc, char* argv[])
 
 	//Fenêtre
 	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE");
-    sf::View view1(sf::FloatRect(0, 0, ECRAN_L, ECRAN_H));
+    const sf::View view1(sf::FloatRect(0, 0, ECRAN_L, ECRAN_H));
     window.setView(view1);
 
 	//Stack d'écran

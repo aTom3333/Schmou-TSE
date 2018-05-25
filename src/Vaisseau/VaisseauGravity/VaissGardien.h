@@ -2,8 +2,6 @@
 #define VAISSEAU_GARDIEN_H
 
 #include "../Vaisseau.h"
-#include "../../Capacites/Capacite.h"
-#include "../../Capacites/_Capacites.h"
 
 class VaisseauGardien : public Vaisseau
 {

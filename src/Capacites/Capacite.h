@@ -4,7 +4,6 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-#include "../Projectiles/Projectile.h"
 #include "../Entite.h"
 #include "../def_type.h"
 
@@ -44,7 +43,7 @@ class Capacite
 		/**
 		* @fn actualiser
 		* @brief Fonction virtuel qui active les effets de la capacité
-		* @param projectile Vecteur de shared_ptr sur tous les projectiles présent à l'écran
+		* @param projectiles Vecteur de shared_ptr sur tous les projectiles présent à l'écran
 		*
 		* Fonction virtuelle qui gère la création de projectiles et des modifications à apporter au vaisseau
 		*/
@@ -53,7 +52,7 @@ class Capacite
 
 		//fonctions relatives à l'icone
 		//TODO PG à documenter
-		void afficherNom() { ecran_.getWindow().draw(text_); };
+		void afficherNom() const { ecran_.getWindow().draw(text_); };
 		void gestionIcon();
 		void initIcon(size_t i);
 		
@@ -64,8 +63,8 @@ class Capacite
 		const sf::Sprite& getIcon() const { return icone_; };
 		const sf::RectangleShape& getMasque() const { return masque_; };
 		const sf::Text& getText() const { return text_; };
-		bool getAffiche() { return afficheIcone_; };
-		bool getTir() { return tir_; };
+		bool getAffiche() const { return afficheIcone_; };
+		bool getTir() const { return tir_; };
 		const std::vector<sf::Sound>& getSounds_() const { return sounds_; }	
 
 		void setAutoAim(bool aimbot) { aimbot_ = aimbot; }

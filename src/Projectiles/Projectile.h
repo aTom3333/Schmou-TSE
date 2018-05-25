@@ -1,9 +1,6 @@
 #ifndef PROJECTILE_H
 #define PROJECTILE_H
 
-#include <vector>
-#include <string>
-#include <algorithm>
 #include "../Entite.h"
 
 

@@ -1,5 +1,4 @@
 #include "ProjBouclierRond.h"
-#include <cmath>
 
 ProjBouclierRond::ProjBouclierRond(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe):
 	Projectile(ecran)
@@ -76,7 +75,7 @@ void ProjBouclierRond::agit(Entite& proj)
 {
 	proj.recoitDegats(degatsCollision_);//inflige dégats
 	//change d'opacité selon sa vie
-	sf::Uint8 alpha = (sf::Uint8)(pv_ / pvM_ * 255);
+    const sf::Uint8 alpha = static_cast<sf::Uint8>(pv_ / pvM_ * 255);
 	alpha < 50 ? 50 : alpha;//seuil minimum pour alpha sinon le bouclier est très peu visible à faible vie
 	sprites_.front().setColor({ 255, 255, 255, alpha });
 	if (pv_ <= 0)

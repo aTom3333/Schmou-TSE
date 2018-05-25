@@ -5,12 +5,9 @@
 #include "../def_type.h"
 #include "../Utilitaires/optional.h"
 #include "../Utilitaires/Chargeur.h"
-
-#include <stack>
 #include <memory>
 #include <vector>
 #include <map>
-#include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
@@ -37,7 +34,7 @@ class Ecran
 		bool isDetruit() const { return detruit_; }
 		sf::Time getTempsFrame() const { return t_frame_; }
 	
-		sf::RenderWindow& getWindow() { return window_; }
+		sf::RenderWindow& getWindow() const { return window_; }
 		Chargeur& getChargeur() { return chargeur_; }
 		const sf::Clock& getClock() const { return horloge_; }
 		vaisseau_container getVaisseauxContainer() const { return vaisseaux_; }

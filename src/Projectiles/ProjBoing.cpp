@@ -116,9 +116,9 @@ void ProjBoing::gestion()
 	}
 	
 	//gère la rotation de sprite & hitbox sans changer la rotation_
-	float temp_rotation = getRotation();
-	float vit_angulaire = 500;
-	rotate(vit_angulaire * tempsEcoule.asSeconds());
+    const float temp_rotation = getRotation();
+    static const float VIT_ANGULAIRE = 500;
+	rotate(VIT_ANGULAIRE * tempsEcoule.asSeconds());
 	rotation_ = temp_rotation;
 		
 	move();

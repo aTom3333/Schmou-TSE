@@ -1,5 +1,4 @@
 #include "VaisseauTest.h"
-#include <cmath>
 
 
 VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur

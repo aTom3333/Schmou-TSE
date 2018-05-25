@@ -8,6 +8,7 @@ class ProjBouclierRond : public Projectile
 public:
 	~ProjBouclierRond() override { sounds_.front().stop(); };
 
+    //TODO documentation
 	/**
 	* @fn ProjBouclierRond
 	* @brief Constructeur
@@ -25,7 +26,7 @@ public:
 	*
 	* Gestion du déplacement et de l'affichage : le bouclier reste lié à l'Entite_liee
 	*/
-	void gestion();
+	void gestion() override;
 
 	/**
 	* @fn agit
@@ -34,7 +35,7 @@ public:
 	*
 	* Inflige les dégat déterminés à la construction
 	*/
-	void agit(Entite &e);
+	void agit(Entite &e) override;
 };
 
 

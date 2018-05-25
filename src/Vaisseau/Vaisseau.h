@@ -3,7 +3,6 @@
 
 #include "../Capacites/Capacite.h"
 #include "../Entite.h"
-#include "../Projectiles/Projectile.h"
 #include "../Interface/Input.h"
 #include "../def_type.h"
 #include "../Utilitaires/Divers.h"
@@ -20,13 +19,13 @@
  */
 
 class Vaisseau : public Entite
-{
+{//TODO documentation
 	public:
 		explicit Vaisseau(Ecran& ecran) : Entite(ecran) {};
 		/**
 		* @fn gestion
 		* @brief Gère le comportement du vaisseau
-		* @param window Fenetre SFML où le vaisseau sera affiché
+		* @param proj_cont
 		* @param input Classe Input donnant accés aux entrée 
 		*
 		* Fonction virtuelle qui gère le comportement du vaisseau
@@ -50,7 +49,6 @@ class Vaisseau : public Entite
 		void destruction() override = 0; 
 
 		//setters
-			void setEquipe(const Equipe equipe) {equipe_ = equipe; }
 			void addCapacite(std::unique_ptr<Capacite> skill) {capacites_.push_back(std::move(skill)); }
 			void addCapacite(Capacite* skill) { capacites_.emplace_back(skill);}
 			void setCapacite(Capacite* skill, const size_t& n){ capacites_.at(n).reset(skill); }
@@ -70,8 +68,8 @@ class Vaisseau : public Entite
 			float getatqM() const { return atqM_; }
 			float getdefM() const { return defM_; }
 			const std::vector<std::unique_ptr<Capacite>>& getCapacites() const { return capacites_; }
-			const sf::Sprite getModele() const { return spriteHangar_; }
-			const std::vector<Module> getModules() const { return modules_; }
+            sf::Sprite getModele() const { return spriteHangar_; }
+            std::vector<Module> getModules() const { return modules_; }
 
 	protected:
 		// Caractéristiques générales

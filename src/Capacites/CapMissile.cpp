@@ -20,7 +20,7 @@ CapMissile::CapMissile(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 
 void CapMissile::utiliser(proj_container& projectiles)
 {
-	if (auto lanceur = lanceur_.lock())
+	if (const auto lanceur = lanceur_.lock())
 	{
 		// Si la compétence est disponible
 		if (t_lastuse_ >= cooldown_)
@@ -29,7 +29,7 @@ void CapMissile::utiliser(proj_container& projectiles)
 			t_lastuse_ = sf::Time::Zero;
 
 			// Création du projectile au lancement
-			proj_ptr temp(new ProjMissile(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe(), aimbot_));
+		    const proj_ptr temp(new ProjMissile(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe(), aimbot_));
 			projectiles.push_back(temp);
 		}
 	}

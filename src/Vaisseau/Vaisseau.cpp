@@ -1,18 +1,15 @@
-#include <vector>
-#include <string>
-#include <algorithm>
 #include "../Capacites/Capacite.h"
 #include "Vaisseau.h"
-#include "../Projectiles/Projectile.h"
 
-void Vaisseau::gestionCapacite(proj_container &projectiles)
+void Vaisseau::gestionCapacite(proj_container& projectiles)
 {
-	for(auto& capacite : capacites_) 
-		if(capacite != nullptr) capacite->actualiser(projectiles);
+    for(auto& capacite : capacites_)
+        if(capacite != nullptr)
+            capacite->actualiser(projectiles);
 }
 
 
-void Vaisseau::agit(Entite & e)
+void Vaisseau::agit(Entite& e)
 {
-	e.recoitDegats(degatsCollision_);
+    e.recoitDegats(degatsCollision_);
 }

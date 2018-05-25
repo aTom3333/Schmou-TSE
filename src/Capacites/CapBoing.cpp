@@ -1,5 +1,6 @@
 #include "CapBoing.h"
 #include "CapDash.h"
+#include "../Projectiles/ProjBoing.h"
 
 CapBoing::CapBoing(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 	Capacite(ecran, lanceur)
@@ -25,7 +26,7 @@ CapBoing::CapBoing(Ecran& ecran, const std::weak_ptr<Entite>& lanceur):
 
 void CapBoing::utiliser(proj_container& projectiles)
 {
-	if (auto lanceur = lanceur_.lock())
+	if (const auto lanceur = lanceur_.lock())
 	{
 		// Si la compétence est disponible
 		if (t_lastuse_ >= cooldown_)
@@ -36,7 +37,7 @@ void CapBoing::utiliser(proj_container& projectiles)
 			for (unsigned int i = 0; i < 5; i++)
 			{
 				// Initialisation de l'endroit ou la compétence a été utilisée
-				proj_ptr temp(new ProjBoing(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe()));
+			    const proj_ptr temp(new ProjBoing(ecran_, lanceur, sprites_, sounds_, lanceur->getEquipe()));
 				projectiles.push_back(temp);
 			}
 		}

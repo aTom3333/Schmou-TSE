@@ -1,9 +1,7 @@
 #ifndef VAISSEAU_ATTAQUANT_H
 #define VAISSEAU_ATTAQUANT_H
 
-#include "../constantes.h"
 #include "Vaisseau.h"
-#include "../Capacites/CapMissile.h"
 #include "../Utilitaires/Trajectoire.h"
 
 /**
@@ -21,6 +19,7 @@ public:
 		/**
 		* @fn VaisseauEclaireur
 		* @brief Contructeur
+		* @param ecran
 		* @param x Abscisse de la position de départ
 		* @param y Ordonnée de la position de départ
 		* @param traj Trajectoire voulue (Linéaire, parabolique ou sinusoidale)
@@ -50,8 +49,7 @@ public:
 		/**
 		* @fn gestion
 		* @brief Gère le comportement du vaisseau
-		* @param window Fenetre SFML où le vaisseau sera affiché
-		* @param tempsEcoule Temps écoulé depuis le dernier appel
+		* @param proj_cont Vecteur de tous les projectiles à l'écran
 		* @param input Classe Input donnant accés aux entrée
 		*
 		* Gère le déplacement et l'affichage du vaisseau

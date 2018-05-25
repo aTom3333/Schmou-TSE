@@ -1,5 +1,4 @@
 #include "CapAimBot.h"
-#include "CapMissile.h"
 
 /*CapAimBot::CapAimBot()
 {

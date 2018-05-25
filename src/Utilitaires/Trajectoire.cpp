@@ -1,11 +1,10 @@
 #include "Trajectoire.h"
 #include "../constantes.h"
 
-#include <iostream>
 
 sf::Vector2f traj_position(Trajectoire trajectoire,sf::Time tempsEcoule, float vit_, sf::Vector2f posInit, std::vector<float> params)
 {
-	float t = tempsEcoule.asSeconds();
+    const float t = tempsEcoule.asSeconds();
 	sf::Vector2f posOut;//position de sortie
 	switch (trajectoire)
 	{
@@ -25,7 +24,7 @@ sf::Vector2f traj_position(Trajectoire trajectoire,sf::Time tempsEcoule, float v
 		{
 			posOut.x = posInit.x;
 			params[0] = (params[1] - posInit.y)/abs(params[1] - posInit.y);
-			double g = - vit_ * vit_ / (2 * (params[1] - posInit.y));
+		    const double g = - vit_ * vit_ / (2 * (params[1] - posInit.y));
 			posOut.y = 0.5* g*t*t+ params[0] * vit_ * t  + posInit.y;
 		}
 		break;

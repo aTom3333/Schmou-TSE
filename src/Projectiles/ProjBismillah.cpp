@@ -3,7 +3,7 @@
 
 
 ProjBismillah::ProjBismillah(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe) :
-	Projectile(ecran), largeur_max_{ (float)sprite.at(0).getTexture()->getSize().x}
+	Projectile(ecran), largeur_max_{ static_cast<float>(sprite.at(0).getTexture()->getSize().x)}
 {
 	// Weak pointeur vers lanceur
 	lanceur_ = lanceur;
@@ -45,7 +45,7 @@ void ProjBismillah::gestion()
     assert(dynamic_cast<sf::RectangleShape*>(forme_.front().get()) != nullptr);
 	assert(sprites_.at(0).getTexture() != nullptr);
 
-	if (auto lanceur = lanceur_.lock()) {
+	if (const auto lanceur = lanceur_.lock()) {
 
 		const float largeur_vaisseau = lanceur->getTailleSprite().x;
 		const float hauteur_vaisseau = lanceur->getTailleSprite().y;
@@ -64,7 +64,7 @@ void ProjBismillah::gestion()
 		{
 			collisionneuse_ = true;
 			//interpolation linéaire pour que la largeur max soit atteinte en cast_frames images après le temps de charge_boule
-			float largeur_actuelle = 2 * largeur_max_ * ((t_age_.asMilliseconds() - charge_frames) / (cast_frames));
+		    const float largeur_actuelle = 2 * largeur_max_ * ((t_age_.asMilliseconds() - charge_frames) / (cast_frames));
 			//hitbox
 			dynamic_cast<sf::RectangleShape*>(forme_.at(0).get())->setSize({ largeur_actuelle, lanceur->getPosition().y });
 			//sprite
@@ -90,7 +90,7 @@ void ProjBismillah::gestion()
 		else if (t_age_.asMilliseconds() <= cast_frames + charge_frames + stationnaire_frames)
 		{
 			//interpolation linéaire inverse pour que la largeur max soit atteinte en cast_frames images après le temps de charge_boule
-			float largeur_actuelle = 2 * largeur_max_ * (1 - ((t_age_.asMilliseconds() - charge_frames - stationnaire_frames) / cast_frames));
+		    const float largeur_actuelle = 2 * largeur_max_ * (1 - ((t_age_.asMilliseconds() - charge_frames - stationnaire_frames) / cast_frames));
 			//décroissance de la boule de charge avec le rayon
 			sprites_.at(0).setScale(largeur_actuelle / sprites_.at(0).getGlobalBounds().width, largeur_actuelle / sprites_.at(0).getGlobalBounds().height);
 			//hitbox
@@ -118,7 +118,7 @@ void ProjBismillah::gestion()
 		if (actif_)
 		{
 			// Repositionnement du cercle englobant
-			double R = hypot(lanceur->getPosition().y / 2.0, largeur_max_ / 2.0);
+		    const double R = hypot(lanceur->getPosition().y / 2.0, largeur_max_ / 2.0);
 			cercleEnglobant_.setRadius(R);
 			cercleEnglobant_.setOrigin(R, R);
 			cercleEnglobant_.setPosition(lanceur->getPosition().x, lanceur->getPosition().y / 2.0f);
@@ -129,7 +129,7 @@ void ProjBismillah::gestion()
 
 			//Mode debug
 			//bool force_debug = true;
-			afficher_debug(true);
+			afficher_debug();
 		}
 
 		t_age_ += ecran_.getTempsFrame();

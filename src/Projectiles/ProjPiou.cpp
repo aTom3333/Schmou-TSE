@@ -1,7 +1,8 @@
 #include "ProjPiou.h"
 #include <cmath>
 
-ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite, std::vector<sf::Sound>& sound, Equipe equipe) :
+ProjPiou::ProjPiou(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<sf::Sprite>& sprite,
+                   std::vector<sf::Sound>& sound, Equipe equipe) :
 	Projectile(ecran)
 {	
     // Weak pointeur vers lanceur

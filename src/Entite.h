@@ -6,12 +6,9 @@
 
 #include <vector>
 #include <memory>
-#include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <deque>
-#include <cmath>
-#include <cassert>
 
 
 /**
@@ -70,7 +67,7 @@ class Entite
 	friend bool collision(const Entite& e1, const Entite& e2);
 
 	public:
-		explicit Entite(Ecran& ecran) : ecran_{ecran} {}
+		explicit Entite(Ecran& ecran) : ecran_{ ecran } {}
 		/**
 		 * @fn ~Entite
 		 * @brief Destructeur par défaut
@@ -242,13 +239,13 @@ class Entite
          * ésultante peut également être négative, cela résultera en un mouvement en miroir
          * @param [in] val La valeur à ajouter à la vitesse actuelle
          */
-		void changeSpeed(int val) { vitM_ += val; vit_ += val; }
+		void changeSpeed(const int val) { vitM_ += val; vit_ += val; }
 		/**
 		* @fn setDetruit
 		* @brief Fixe si l'entité est détruit ou non
+		* @param val L'état à appliquer
 		*
 		* Fixe si l'entité est détruit ou non
-		* @param bool L'etat à appliquer
 		*/
 		void setDetruit(bool val);
 		/**
@@ -271,7 +268,6 @@ class Entite
 		/**
 		* @fn regen
 		* @brief Redonne des points de vie, de l'armure et du bouclier toute les 100 ms
-		* @param t Temps écoulé depuis le dernier appel
 		*
 		* Redonne des points de vie, de l'armure et du bouclier toute les 100 ms selons les paramètres de l'entité
 		*/
@@ -298,7 +294,7 @@ class Entite
 		sf::Vector2f getTailleSprite() const { return { sprites_.front().getGlobalBounds().width, sprites_.front().getGlobalBounds().height }; }//largeur, hauteur
 		sf::Vector2f getLastDelta() const { return last_delta_; }
 		sf::Vector2f getOrigin() const { return origine_; }
-		sf::Time getTempsInvincibilite() { return t_Invincibilite_; }
+		sf::Time getTempsInvincibilite() const { return t_Invincibilite_; }
 		bool isInvincibilable() const { return invincibilable_; }
 		bool isInvincible() const { return invincible_; }
 		bool isCollisionneuse() const { return collisionneuse_; }
@@ -307,7 +303,7 @@ class Entite
 		bool isInnate() const { return innate_; }
 
 		//setters
-		void setEquipe(Equipe equipe) { equipe_ = equipe; }
+        void setEquipe(Equipe equipe) { equipe_ = equipe; }
 		void setInnate(bool isInnate) { innate_ = isInnate; }
 		void setNbPositions(size_t val);
 		void setSmokeTexture(const sf::Texture &text, sf::Color couleur = { 255,255,255 });
@@ -386,7 +382,7 @@ class Entite
 		std::vector<std::unique_ptr<sf::Shape>> forme_; ///< Forme de l'Entite
 		std::vector<sf::Sprite> sprites_; ///< Vecteur de sprites pour en avoir plusieurs
     
-        //TODO PG gérer le chargement des smokes direct avec le chargeur
+        //TODO PG gérer le chargement des smokes directement avec le chargeur
 		//sf::Texture textSmoke_; ///< Texture à afficher sur la trainée du vaisseau
 		sf::Sprite smoke_; ///< Sprite à afficher sur la trainée du vaisseau
 

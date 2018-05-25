@@ -4,8 +4,8 @@
 #include "Projectile.h"
 
 /**
-* @class ProjPiou
-* @brief Projectile de test
+* @class ProjMissile
+* @brief Missile guidé
 *
 * Projectile de base. Tire en ligne droite (vers le bas) avec qui une acceleration verticale
 */
@@ -18,12 +18,10 @@ class ProjMissile : public Projectile
 		/**
 		* @fn gestion
 		* @brief Gestion du projectile
-		* @param window Fenetre de jeu
-		* @param tempsEcoule Temps écoulé depuis le dernier appel
 		*
 		* Gestion du déplacement et de la collision avec les bords
 		*/
-		void gestion();
+		void gestion() override;
 		/**
 		* @fn agit
 		* @brief Procédure lorsque le projectile agit avec une Entite
@@ -31,7 +29,7 @@ class ProjMissile : public Projectile
 		*
 		* Vide
 		*/
-		void agit(Entite &e);
+		void agit(Entite &e) override;
 	private:
 		std::weak_ptr<Entite> cible_;
 		sf::Time t_acceleration_;

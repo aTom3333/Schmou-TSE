@@ -32,20 +32,18 @@ class ProjBoing : public Projectile
 		/**
 		* @fn gestion
 		* @brief Gestion du projectile
-		* @param window Fenetre de jeu
-		* @param tempsEcoule Temps écoulé depuis le dernier appel
 		*
 		* Gestion du déplacement et de la collision avec les bords
 		*/
-		void gestion();
+		void gestion() override;
 		/**
 		* @fn agit
 		* @brief Procédure lorsque le projectile agit avec unvaisseau
-		* @param Vaisseau à modifier
+		* @param proj Projectil sur lequel l'objet agit
 		*
 		* Vide
 		*/
-		void agit(Entite& proj);
+		void agit(Entite& proj) override;
 	private:
 		float rotationSpr_ = 0; /// Rotation du sprite
 };

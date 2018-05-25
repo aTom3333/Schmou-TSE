@@ -1,4 +1,5 @@
 #include "Hangar.h"
+#include "../Vaisseau/_vaisseaux.h"
 
 Hangar::Hangar(sf::RenderWindow & window) : Ecran(window)
 {
@@ -68,17 +69,17 @@ ecran_t Hangar::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, sf::Tex
 
 std::unique_ptr<Ecran> Hangar::factory()
 {
-	return std::unique_ptr<Ecran>(new Hangar(window_));
+	return std::unique_ptr<Ecran>(std::make_unique<Hangar>(window_));
 }
 
 void Hangar::drawStats()
 {
 	std::string temp[NB_STATS];
-	temp[0] = std::to_string((int)vaisseau_->getPvMax()) + "(+" + std::to_string((int)vaisseau_->getPvRegen()) + "/sec)";
-	temp[1] = std::to_string((int)vaisseau_->getArmureMax()) + "(+" + std::to_string((int)vaisseau_->getArmureRegen()) + "/sec)";
-	temp[2] = std::to_string((int)vaisseau_->getBouclierMax()) + "(+" + std::to_string((int)vaisseau_->getBouclierRegen()) + "/sec)";
-	temp[3] = std::to_string((int)vaisseau_->getatqM());
-	temp[4] = std::to_string((int)vaisseau_->getVitMax());
+	temp[0] = std::to_string(static_cast<int>(vaisseau_->getPvMax())) + "(+" + std::to_string(static_cast<int>(vaisseau_->getPvRegen())) + "/sec)";
+	temp[1] = std::to_string(static_cast<int>(vaisseau_->getArmureMax())) + "(+" + std::to_string(static_cast<int>(vaisseau_->getArmureRegen())) + "/sec)";
+	temp[2] = std::to_string(static_cast<int>(vaisseau_->getBouclierMax())) + "(+" + std::to_string(static_cast<int>(vaisseau_->getBouclierRegen())) + "/sec)";
+	temp[3] = std::to_string(static_cast<int>(vaisseau_->getatqM()));
+	temp[4] = std::to_string(static_cast<int>(vaisseau_->getVitMax()));
 
 	float ratio[NB_STATS];
 	ratio[0] = vaisseau_->getPvMax() > MAX_PV ? 1.f : vaisseau_->getPvMax() / MAX_PV;
@@ -154,7 +155,7 @@ void Hangar::move()
 		sf::Time t = horloge_.getElapsedTime();
 		if (t.asSeconds() < TEMPS_ANIMATION)
 		{
-			float D = destinationX_ - departX_;
+		    const float D = destinationX_ - departX_;
 			float delta = positionModeleX_;
 			positionModeleX_ = - D / (TEMPS_ANIMATION*TEMPS_ANIMATION) * t.asSeconds() *  t.asSeconds() + 2 * D / TEMPS_ANIMATION * t.asSeconds() + departX_;
 			delta -= positionModeleX_;
@@ -187,7 +188,7 @@ optional<ecran_t> Hangar::gestionEvent(const sf::Event& event)
 		posSelection_ = { 0, 0 };
 		for (auto mod : vaisseau_->getModules())
 		{
-			sf::Vector2i localPosition = sf::Mouse::getPosition(window_);
+		    const sf::Vector2i localPosition = sf::Mouse::getPosition(window_);
 			mod.checkSelection(window_.mapPixelToCoords(localPosition), posSelection_, positionModeleX_, positionModeleY_);
 
 			if (posSelection_.x != 0 && posSelection_.y != 0)
