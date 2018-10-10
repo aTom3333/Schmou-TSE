@@ -1,4 +1,5 @@
 #include "VaisseauTest.h"
+#include "../Utilitaires/utilities.h"
 
 
 VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
@@ -48,8 +49,8 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 
 	// Stats
 	nom_ = "Vaisseau Test";
-	pv_ = pvM_ = 2000;
-	armure_ = armureM_ = 50;
+	pv_ = pvM_ = 1;
+	armure_ = armureM_ = 1;
 	bouclier_ = bouclierM_ = 0;
 	vit_ = vitM_ = 500;
 	atqM_ = 10000000;
@@ -119,7 +120,7 @@ void VaisseauTest::gestion(proj_container& proj_cont, Input& input)
 
 void VaisseauTest::destruction()
 {
-	sounds_.front().play(); 
+	ecran_.getChargeur().playSoundAtDeath("son.sakado");
 	ecran_.setAfficheHUD(false);
 	detruit_ = true;
 }

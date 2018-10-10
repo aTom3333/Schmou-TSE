@@ -5,7 +5,6 @@
 #include "../Entite.h"
 #include "../Interface/Input.h"
 #include "../def_type.h"
-#include "../Utilitaires/Divers.h"
 #include "../Utilitaires/Module.h"
 #include <vector>
 #include <string>
