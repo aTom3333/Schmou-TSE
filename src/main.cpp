@@ -5,10 +5,12 @@
 #include "Menu/MenuPrincipal.h"
 #include "Menu/Hangar.h"
 #include "Utilitaires/Chargeur.h"
-#include <SFML/Graphics.hpp>
+#include "Utilitaires/utilities.h"
+
 #include <ctime>
 #include <iostream>
 #include <SFML/Audio.hpp>
+#include <SFML/Graphics.hpp>
 
 
 // Code minimal
@@ -29,9 +31,6 @@ int main(int argc, char* argv[])
     //intro.openFromFile("../../rc/Musics/Divers/intro_wtf.wav");
     //intro.setLoop(false);
     //intro.play();
-	
-	//TODO PG refaire l'aléatoire
-	srand(time(nullptr));
 
 	//Fenêtre
 	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE");
@@ -47,7 +46,7 @@ int main(int argc, char* argv[])
 	//Lancement de partie	
 	vectEtats.emplace_back(new Accueil(window));
 	vectEtats.emplace_back(new MenuPrincipal(window));
-	vectEtats.emplace_back(new Partie(window, Input::Media::Keyboard));
+	vectEtats.emplace_back(new Partie(window, Input::Media::Mouse));
 	vectEtats.emplace_back(new Hangar(window));
 
 	ecran_t etat = PARTIE;//TODO PG écran de départ actuel
