@@ -1,6 +1,5 @@
 #include "ProjBoing.h"
 #include "../constantes.h"
-#include "../Utilitaires/Divers.h"
 #include "../Utilitaires/utilities.h"
 
 #include <cmath>
