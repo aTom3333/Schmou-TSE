@@ -6,7 +6,7 @@ Accueil::Accueil(sf::RenderWindow & window) : Ecran(window)
 	fond_.setTexture(fondText_);
 
 	texte_.setFont(polices_["hemi"]);
-	texte_.setString("Appuyez sur Entrée");
+	texte_.setString(L"Appuyez sur Entrée");
 	texte_.setCharacterSize(32);
 	texte_.setPosition(ECRAN_L / 2 - texte_.getGlobalBounds().width / 2, 682);
 }
