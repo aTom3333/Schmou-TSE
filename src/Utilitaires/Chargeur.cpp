@@ -1,8 +1,9 @@
 #include "Chargeur.h"
 #include "../constantes.h"
-#include "Divers.h"
+#include "utilities.h"
 #include <fstream>
 #include <cctype>
+
 
 bool Chargeur::loaded_ = false;
 std::map<std::string, std::string, caseInsensitiveCompare> Chargeur::location_ = 
@@ -94,6 +95,15 @@ std::shared_ptr<sf::Font> Chargeur::getFont(const std::string& name)
 	fonts_[name] = t;
 
 	return fonts_.at(name);
+}
+
+void Chargeur::playSoundAtDeath(const std::string & name)
+{
+	if (!sound_buffers_[name])
+		throw std::runtime_error("Sound \"" + name + "\" not loaded.");
+	if (sounds_at_death_.find(name) == sounds_at_death_.end())
+		sounds_at_death_.emplace(name, *sound_buffers_[name]);
+	sounds_at_death_.at(name).play();
 }
 
 bool caseInsensitiveCompare::operator()(const std::string& a, const std::string& b) const
