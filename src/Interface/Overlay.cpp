@@ -6,6 +6,7 @@ void Overlay::init(vaisseau_ptr vaisseau)
 {
 	// Chargement des images
 	font_.loadFromFile("../../rc/Font/whitrabt.ttf");
+    //TODO PG ça n'affiche pas le ê de "Prêt" car il n'y a pas d'accents dans cette police... faudra la changer Cyril
 	overlayText_.loadFromFile("../../rc/UI/overlay.png");
 	overlay_.setTexture(overlayText_);
 
@@ -125,7 +126,7 @@ void Overlay::gestion(vaisseau_ptr vaisseau)
 			{
 				// TODO TF Vérifier que ça marche avec des sf::Time
 				sf::Time cooldown = (vaisseau->getskills()[i]->getCooldown() - vaisseau->getskills()[i]->getTime());
-			    const std::wstring str = cooldown.asMilliseconds() <= 0 ? L"Prét" : std::to_wstring(cooldown.asMilliseconds());
+			    const std::wstring str = cooldown.asMilliseconds() <= 0 ? L"Prêt" : std::to_wstring(cooldown.asMilliseconds());
 				statuts_[n].setString(str);
 
 				statuts_[n].setPosition(1015 - statuts_[n].getLocalBounds().width, statuts_[n].getPosition().y);
