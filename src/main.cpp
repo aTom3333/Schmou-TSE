@@ -7,7 +7,6 @@
 #include "Utilitaires/Chargeur.h"
 #include "Utilitaires/utilities.h"
 
-#include <ctime>
 #include <iostream>
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
