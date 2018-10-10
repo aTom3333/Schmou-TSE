@@ -1,9 +1,11 @@
 #include "ProjBoing.h"
 #include "../constantes.h"
 #include "../Utilitaires/Divers.h"
-#include <cmath>
+#include "../Utilitaires/utilities.h"
 
+#include <cmath>
 #include <iostream>
+
 
 template <typename T> int signe(T val) {
 	return (T(0) < val) - (val < T(0));
@@ -41,9 +43,9 @@ ProjBoing::ProjBoing(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vector<
 
 	// Stats
 	pv_ = pvM_ = 100;
-	degatsCollision_ = 100; //TODO PG xlanceur.stats().atk
+	degatsCollision_ = 100; //TODO PG * (fois) lanceur.stats().atk
 	vit_ = vitM_ = 700;
-	rotation_ = rand() % 360; // TODO CL rand c++
+	rotation_ = random() % 360;
 	//rotation_ = 45 * (rand()%8);
 
 	// Position de départ

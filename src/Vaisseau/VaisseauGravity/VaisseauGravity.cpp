@@ -1,4 +1,5 @@
 #include "VaisseauGravity.h"
+#include "../../Utilitaires/utilities.h"
 
 
 VaisseauGravity::VaisseauGravity(Ecran& ecran) : Vaisseau(ecran) ///constructeur

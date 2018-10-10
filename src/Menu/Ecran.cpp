@@ -1,5 +1,5 @@
 #include "Ecran.h"
-#include "../Utilitaires/Divers.h"
+#include "../Utilitaires/utilities.h"
 
 
 Ecran::Ecran(sf::RenderWindow& window) :  window_{ window }
