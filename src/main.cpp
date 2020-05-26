@@ -19,26 +19,26 @@ int main(int argc, char* argv[]) {
     //if (argv[0] != std::string("Schmou'TSE")) //TODO PG faire de la merde avec istringstream
 
     //TODO CL tueur de son
-	sf::Listener::setGlobalVolume(100);
+    sf::Listener::setGlobalVolume(100);
 
-	//TG Pierre
+    //TG Pierre
     //sf::Music eyaeya;
     //eyaeya.openFromFile("../../rc/Musics/Divers/eyaeya.ogg");
     //eyaeya.setLoop(true);
     //eyaeya.play();
 
-    //sf::Music intro;
-    //intro.openFromFile("../../rc/Musics/Divers/intro_wtf.wav");
-    //intro.setLoop(false);
-    //intro.play();
+    sf::Music intro;
+    intro.openFromFile("../../rc/Musics/Divers/intro_wtf.wav");
+    intro.setLoop(false);
+    intro.play();
 
-	//Fenêtre
+    //Fenêtre
     sf::RenderWindow window(sf::VideoMode(ECRAN_L, ECRAN_H), "Schmou'TSE");
     sf::View view1(sf::FloatRect(0, 0, ECRAN_L, ECRAN_H));
     window.setView(view1);
 
-	//Stack d'écran
-	std::vector<std::unique_ptr<Ecran>> vectEtats;
+    //Stack d'écran
+    std::vector<std::unique_ptr<Ecran>> vectEtats;
 
     sf::Texture temp_texture;
     chargement(window, temp_texture);

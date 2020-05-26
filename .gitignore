@@ -42,6 +42,7 @@ Doxyfile.in
 
 # Dossier où est généré l'éxecutable
 bin/
+*.exe
 
 # machins de visual studio
 .vs/

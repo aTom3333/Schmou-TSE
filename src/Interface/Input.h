@@ -63,9 +63,9 @@ class Input_base
          * @param [in] elapsed_time Temps écoulé qui doit être utilisé pour le calcul de la distance
          * @return Un @c sf::Vector2f qui contient le déplacement qui doit être effectué sur les deux axes
          */
-        sf::Vector2f move(float max_speed, const sf::Time& elapsed_time, sf::Vector2f referencePos);
+        sf::Vector2f move(float max_speed, const sf::Time& elapsed_time, sf::Vector2f const& referencePos);
 
-    /**
+        /**
          * @fn action
          * @brief Teste si une action est en cours
          *
@@ -105,8 +105,8 @@ class Input_base
         void init_default_mouse();
 
         sf::Vector2f move_keyboard(float max_speed, const sf::Time& elapsed_time);
-    sf::Vector2f move_joypad(float max_speed, const sf::Time& elapsed_time);
-    sf::Vector2f move_mouse(float max_speed, const sf::Time& elapsed_time, sf::Vector2f referencePos);
+        sf::Vector2f move_joypad(float max_speed, const sf::Time& elapsed_time);
+        sf::Vector2f move_mouse(float max_speed, const sf::Time& elapsed_time, sf::Vector2f const& referencePos);
 
         bool action_keyboard(size_t n) const;
         bool action_joypad(size_t n) const;
@@ -124,7 +124,6 @@ class Input_base
                                              sf::Keyboard::Down,
                                              sf::Keyboard::Left,
                                              sf::Keyboard::Right};}
-
             ~movement_input_t() = default;
             struct keyboard_t {
                 // Movement Keyboard binding
@@ -155,26 +154,22 @@ class Input_base
             struct mouse_t {
             } mouse_;
         } movement_input_;
-
-    struct action_t {
-        action_t() = default;
-        ~action_t() = default;
-        Media action_media_;
-
-        union binding_t {
-            binding_t() {}
-
-            ~binding_t() {};
-            optional<sf::Keyboard::Key> keyboard_key_;
-            optional<unsigned int> joypad_button_;
-            optional<sf::Mouse::Button> mouse_button_;
-        } binding_;
-    };
+        struct action_t {
+            action_t() = default;
+            ~action_t() =default;
+            Media action_media_;
+            union binding_t {
+                binding_t() {}
+                ~binding_t() {};
+                optional<sf::Keyboard::Key> keyboard_key_;
+                optional<unsigned int> joypad_button_;
+                optional<sf::Mouse::Button> mouse_button_;
+            } binding_;
+        };
         action_t actions_[N];
         /// @endcond
 };
 
 using Input = Input_base<NB_ACTION>;
-//aaaaaaaaaaaaaaaaaaaaaaaah le N était NB_ACTION depuis tout ce temps !! Thomas pourquoi tu l'as mis ici tout caché omg tout est clair maintenant !!
 
 #endif // INPUT_H

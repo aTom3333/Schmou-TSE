@@ -23,27 +23,27 @@ VaisseauGravity::VaisseauGravity(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	forme1.setOrigin({ 32, 32 });
 	forme_.emplace_back(new sf::ConvexShape(forme1));
 
-	sf::ConvexShape forme2(3);
-	forme2.setPoint(0, { 0,0 });
-	forme2.setPoint(1, { 32,64 });
-	forme2.setPoint(2, { 0,46 });
-	forme2.setOrigin({ 0, 32 });
-	forme_.emplace_back(new sf::ConvexShape(forme2));
+    sf::ConvexShape forme2(3);
+    forme2.setPoint(0, {0, 0});
+    forme2.setPoint(1, {32, 64});
+    forme2.setPoint(2, {0, 46});
+    forme2.setOrigin({0, 32});
+    forme_.emplace_back(new sf::ConvexShape(forme2));
 
-	// Cercle englobant
-	englobeur_circulaire(*this);
+    // Cercle englobant
+    englobeur_circulaire(*this);
 
-	// Caractéristiques de code
-	equipe_ = JOUEUR;
-	innate_ = true;
-	actif_ = true;
-	invincibilable_ = true;
+    // CaractÃ©ristiques de code
+    equipe_ = JOUEUR;
+    innate_ = true;
+    actif_ = true;
+    invincibilable_ = true;
 
-	// Stats
-	nom_ = "";
-	pv_ = pvM_ = 500;
-	armure_ = armureM_ = 5000;
-	bouclier_ = bouclierM_ = 0;
+    // Stats
+    nom_ = "";
+    pv_ = pvM_ = 500;
+    armure_ = armureM_ = 5000;
+    bouclier_ = bouclierM_ = 0;
 	vit_ = vitM_ = 500;
 	atqM_ = 0;
 
@@ -63,50 +63,43 @@ VaisseauGravity::VaisseauGravity(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 
 }
 
-void VaisseauGravity::gestion(proj_container& proj_cont, Input& input)
-{
-	// Gestion du vaisseau
-	// Si la touche TIR 1 est activé
-	if (input.action(TIR1))
-	{
-		capacites_[0]->utiliser(proj_cont);
+void VaisseauGravity::gestion(proj_container& proj_cont, Input& input) {
+    // Gestion du vaisseau
+    // Si la touche TIR 1 est activÃ©
+    if (input.action(TIR1)) {
+        capacites_[0]->utiliser(proj_cont);
 
-	}
-	// Si la touche TIR 2 est activé
-	if (input.action(TIR2))
-	{
-		capacites_[1]->utiliser(proj_cont);
-	}
+    }
+    // Si la touche TIR 2 est activÃ©
+    if (input.action(TIR2)) {
+        capacites_[1]->utiliser(proj_cont);
+    }
 
-	// Si la touche COMP 1 est activé
-	if (input.action(COMP1))
-	{
-		capacites_[2]->utiliser(proj_cont);
-	}
+    // Si la touche COMP 1 est activÃ©
+    if (input.action(COMP1)) {
+        capacites_[2]->utiliser(proj_cont);
+    }
 
-	// Si la touche COMP 2 est activé
-	if (input.action(COMP2))
-	{
-		capacites_[3]->utiliser(proj_cont);
-	}
+    // Si la touche COMP 2 est activÃ©
+    if (input.action(COMP2)) {
+        capacites_[3]->utiliser(proj_cont);
+    }
 
-	// Si la touche COMP 3 est activé
-	if (input.action(COMP3))
-	{
-		capacites_[4]->utiliser(proj_cont);
-	}
+    // Si la touche COMP 3 est activÃ©
+    if (input.action(COMP3)) {
+        capacites_[4]->utiliser(proj_cont);
+    }
 
-	// Si la touche ULTI est activé
-	if (input.action(ULTI))
-	{
-		capacites_[5]->utiliser(proj_cont);
-	}
+    // Si la touche ULTI est activÃ©
+    if (input.action(ULTI)) {
+        capacites_[5]->utiliser(proj_cont);
+    }
 
-	//déplacement
-	last_delta_ = input.move(vit_, ecran_.getTempsFrame());
-	move(last_delta_);
+    //dÃ©placement
+    last_delta_ = input.move(vit_, ecran_.getTempsFrame(), position_);
+    move(last_delta_);
 
-	afficher();
+    afficher();
 }
 
 void VaisseauGravity::destruction()

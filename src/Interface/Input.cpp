@@ -1,6 +1,5 @@
 #include "Input.h"
 #include <cmath>
-#include <iostream>
 
 
 template<size_t N>
@@ -77,13 +76,16 @@ void Input_base<N>::init_default_mouse()
 
 
 template<size_t N>
-sf::Vector2f Input_base<N>::move(float max_speed, const sf::Time& elapsed_time, sf::Vector2f referencePos) {
+sf::Vector2f Input_base<N>::move(float max_speed, const sf::Time& elapsed_time, sf::Vector2f const& referencePos) {
     switch (movement_media_) {
-        case Media::Keyboard:return move_keyboard(max_speed, elapsed_time);
+        case Media::Keyboard:
+            return move_keyboard(max_speed, elapsed_time);
 
-        case Media::Joypad:return move_joypad(max_speed, elapsed_time);
+        case Media::Joypad:
+            return move_joypad(max_speed, elapsed_time);
 
-        case Media::Mouse:return move_mouse(max_speed, elapsed_time, referencePos);
+        case Media::Mouse:
+            return move_mouse(max_speed, elapsed_time, referencePos);
 
         default:
             return {0, 0};
@@ -135,8 +137,8 @@ sf::Vector2f Input_base<N>::move_joypad(float max_speed, const sf::Time& elapsed
             dx *= max_speed / 100 * elapsed_time.asSeconds() * (movement_input_.joypad_.joypad_input_.joysticks_.left_right_dir_.value_or(false) ? -1 : 1);
             dy *= max_speed / 100 * elapsed_time.asSeconds() * (movement_input_.joypad_.joypad_input_.joysticks_.up_down_dir_.value_or(false) ? -1 : 1);
 
-            return {static_cast<float>(dx*abs(dx) / hypot(dx, dy)), 
-                    static_cast<float>(dy*abs(dy) / hypot(dx, dy))};
+            return {static_cast<float>(dx*abs(dx) / std::hypot(dx, dy)),
+                    static_cast<float>(dy*abs(dy) / std::hypot(dx, dy))};
         }
         else if(movement_input_.joypad_.input_type_ == movement_input_t::joypad_t::Button)
         {
@@ -169,7 +171,7 @@ sf::Vector2f Input_base<N>::move_joypad(float max_speed, const sf::Time& elapsed
 
 
 template<size_t N>
-sf::Vector2f Input_base<N>::move_mouse(float max_speed, const sf::Time& elapsed_time, sf::Vector2f referencePos) {
+sf::Vector2f Input_base<N>::move_mouse(float max_speed, const sf::Time& elapsed_time, sf::Vector2f const& referencePos) {
     auto new_pos = window_.mapPixelToCoords(sf::Mouse::getPosition(window_));
 
     auto diff = new_pos - referencePos;
@@ -329,6 +331,7 @@ void Input_base<N>::set_movement_mode(Media movement_media)
             break;
             
         case Media::Mouse:
+            movement_media = Media::Mouse;
             movement_input_.mouse_ = {};
             break;
             
