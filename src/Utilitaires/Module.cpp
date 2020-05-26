@@ -9,20 +9,16 @@ float distance(sf::Vector2f p1, sf::Vector2f p2) {
 Module::Module(Ecran& ecran, module_t type, float x, float y) : ecran_{ecran}, type_{type}, x_{x}, y_{y} {
     switch (type_)
 	{
-		case ATTAQUE:
-			nom_ = "Vide (Attaque)";
+		case ATTAQUE: nom_ = L"Vide (Attaque)";
 			sprite_.setTexture(*ecran_.getChargeur().getTexture("hangar.icone.atk"));
 			break;
-		case DEFENSE:
-			nom_ = "Vide (Défense)";
+        case DEFENSE: nom_ = L"Vide (Défense)";
 			sprite_.setTexture(*ecran_.getChargeur().getTexture("hangar.icone.def"));
 			break;
-		case UTILITAIRE :
-			nom_ = "Vide (Utilitaire)";
+        case UTILITAIRE : nom_ = L"Vide (Utilitaire)";
 			sprite_.setTexture(*ecran_.getChargeur().getTexture("hangar.icone.div"));
 			break;
-		case DEPLACEMENT:
-			nom_ = "Vide (Déplacement)";
+        case DEPLACEMENT: nom_ = L"Vide (Déplacement)";
 			sprite_.setTexture(*ecran_.getChargeur().getTexture("hangar.icone.dep"));
 			break;
 		default:

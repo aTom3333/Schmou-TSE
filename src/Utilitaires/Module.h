@@ -19,7 +19,8 @@ class Module
 
     void setPositionModules(float x, float y);
     sf::Sprite getSprite() const { return sprite_; }
-    std::string getNom() const { return nom_; }
+
+    std::wstring getNom() const { return nom_; }
 
 
     private :
@@ -30,7 +31,7 @@ class Module
     sf::Sprite sprite_;
 
     // Particularité du module
-    std::string nom_;
+    std::wstring nom_;
     size_t id_ = 0;
     float pvM_ = 0.f, pvRegen_ = 0.f;
     float armureM_ = 0.f, armureRegen_ = 0.f;

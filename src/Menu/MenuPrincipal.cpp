@@ -10,21 +10,23 @@ MenuPrincipal::MenuPrincipal(sf::RenderWindow & window) : Ecran(window)
 	version_.setString("Version " VERSION " " BRANCHE);
 	version_.setPosition(0, ECRAN_H - version_.getGlobalBounds().height - 4);
 
-	sf::Text temp;
-	temp.setFont(polices_["hemi"]);
-	temp.setCharacterSize(50);
-	
-	temp.setString("Nouvelle Partie");
-	textes_.push_back(temp);
-	temp.setString("Continuer");
-	textes_.push_back(temp);
-	temp.setString("Options");
-	textes_.push_back(temp);
-	temp.setString("Quitter");
-	textes_.push_back(temp);
+    sf::Text temp;
+    temp.setFont(polices_["hemi"]);
+    temp.setCharacterSize(50);
 
-	for (size_t i = 0; i < textes_.size(); i++)
-		textes_[i].setPosition(100, 310 + 60*i);
+    temp.setString("Nouvelle Partie");
+    textes_.push_back(temp);
+    temp.setString("Continuer");
+    textes_.push_back(temp);
+    temp.setString("Options");
+    textes_.push_back(temp);
+    temp.setString("Hangar");
+    textes_.push_back(temp);
+    temp.setString("Quitter");
+    textes_.push_back(temp);
+
+    for (size_t i = 0; i < textes_.size(); i++)
+        textes_[i].setPosition(100, 310 + 60 * i);
 }
 
 ecran_t MenuPrincipal::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, sf::Texture & derniereFenetre)
@@ -86,35 +88,28 @@ optional<ecran_t> MenuPrincipal::gestionEvent(const sf::Event& event)
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
-		if(selection_ <= 0)
-			selection_ = 3;
-		else
-			selection_--;
+        if (selection_ <= 0)
+            selection_ = textes_.size();
+        else
+            selection_--;
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	{
-		if (selection_ >= 3)
-			selection_ = 0;
-		else
-			selection_++;
-	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+        if (selection_ >= textes_.size())
+            selection_ = 0;
+        else
+            selection_++;
+    }
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
 	{
-		switch (selection_)
-		{
-			case 0:
-				return make_optional(PARTIE);
-			case 1:
-				break;
-			case 2:
-				break;
-			case 3:
-				return make_optional(VIDE);
-			default:
-				break;
-
-		}
+		switch (selection_) {
+            case 0: return make_optional(PARTIE);
+            case 1: break;
+            case 2: break;
+            case 3:return make_optional(HANGAR);
+            case 4: return make_optional(VIDE);
+            default: break;
+        }
 	}
 	
 	return nullopt;
