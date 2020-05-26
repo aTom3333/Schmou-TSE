@@ -5,7 +5,7 @@
 
 #define CHEMIN_RC "../../rc/"
 
-#define PI acos(-1.0) /// Valeur de pi
+constexpr double PI = 3.1415926835897932384626433832; /// Valeur de pi
 #define VERSION "Debug."
 #define BRANCHE "master"
 
@@ -19,7 +19,7 @@ constexpr size_t NB_ACTION = 7; /// Nombre d'actions
 
 constexpr size_t TEMPS_INVINCIBILITE = 2000; /// Nombres de millisecondes d'invincibilité par défaut
 
-constexpr bool DEBUG = true;
+constexpr bool DEBUG = false;
 
 enum Actions
 {

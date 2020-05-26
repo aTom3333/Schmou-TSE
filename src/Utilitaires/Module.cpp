@@ -1,13 +1,13 @@
 #include "Module.h"
+#include <cmath>
 
-float distance(sf::Vector2f p1, sf::Vector2f p2)
-{
-	return hypot(p1.x - p2.x, p1.y - p2.y);
+
+float distance(sf::Vector2f p1, sf::Vector2f p2) {
+    return std::hypot(p1.x - p2.x, p1.y - p2.y);
 }
 
-Module::Module(Ecran &ecran, module_t type, float x, float y) : ecran_{ ecran }, type_ { type }, x_{ x }, y_{ y }
-{
-	switch (type_)
+Module::Module(Ecran& ecran, module_t type, float x, float y) : ecran_{ecran}, type_{type}, x_{x}, y_{y} {
+    switch (type_)
 	{
 		case ATTAQUE:
 			nom_ = "Vide (Attaque)";

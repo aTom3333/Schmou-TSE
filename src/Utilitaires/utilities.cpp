@@ -15,10 +15,13 @@ int random(int max)
 
 int random(int min, int max)
 {
-	static std::random_device device;
-	const std::uniform_int_distribution<int> distr(min, max);
-	std::default_random_engine en(device());
-	return distr(en);
+    #if defined(WIN32) && (defined(__GNUC__) || defined(__GNUG__)) && !defined(_GLIBCXX_USE_DEV_RANDOM)
+    static std::mt19937_64 random_engine(std::time(nullptr));
+    #else
+    static std::default_random_engine random_engine(std::random_device{}());
+    #endif
+    std::uniform_int_distribution<int> distr(min, max);
+    return distr(random_engine);
 }
 
 void adapt_viewport(sf::RenderWindow& window)
@@ -68,19 +71,16 @@ std::pair<std::string, std::string> tokenize(const std::string& str, char sep)
 	return { str1, str2 };
 }
 
-double rayon_englobeur(const std::vector<std::unique_ptr<sf::Shape>> & forme, sf::Vector2f origine)
-{
-	double dist_max = 0; //distance du point le plus éloigné de l'origine parmi tous
-	for (auto const& shape_ptr : forme)
-	{
-		const size_t N = shape_ptr->getPointCount(); //nombre de points de la shape actuelle
-		for (size_t i = 0; i < N; i++)
-		{
-			const sf::Vector2f point = shape_ptr->getPoint(i);
-			if (hypot(point.x - origine.x, point.y - origine.y) > dist_max)
-				dist_max = hypot(point.x - origine.x, point.y - origine.y);
-		}
-	}
+double rayon_englobeur(const std::vector<std::unique_ptr<sf::Shape>> & forme, sf::Vector2f origine) {
+    double dist_max = 0; //distance du point le plus Ã©loignÃ© de l'origine parmi tous
+    for (auto const& shape_ptr : forme) {
+        const size_t N = shape_ptr->getPointCount(); //nombre de points de la shape actuelle
+        for (size_t i = 0; i < N; i++) {
+            const sf::Vector2f point = shape_ptr->getPoint(i);
+            if (hypot(point.x - origine.x, point.y - origine.y) > dist_max)
+                dist_max = hypot(point.x - origine.x, point.y - origine.y);
+        }
+    }
 	return dist_max;
 }
 

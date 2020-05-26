@@ -42,25 +42,24 @@ ecran_t MenuPrincipal::executer(std::vector<std::unique_ptr<Ecran>>& vectEtats, 
 				if(retour == PARTIE)
 					derniereFenetre.update(window_);
 				return *retour;
-			}
-		}
+            }
+        }
 
-		// Efface l'écran
-		window_.clear();
+        // Efface l'écran
+        window_.clear();
 
-		window_.draw(fond_);
-		window_.draw(version_);
-			
+        window_.draw(fond_);
+        window_.draw(version_);
 
-		for (size_t i = 0; i < textes_.size(); i++)
-		{
-			if (i == selection_)
-				textes_[i].setPosition(200, 310 + 60 * i);
-			else
-				textes_[i].setPosition(100, 310 + 60 * i);
 
-			window_.draw(textes_[i]);
-		}
+        for (int i = 0; i < textes_.size(); i++) {
+            if (i == selection_)
+                textes_[i].setPosition(200, 310 + 60 * i);
+            else
+                textes_[i].setPosition(100, 310 + 60 * i);
+
+            window_.draw(textes_[i]);
+        }
 			
 
 		// Mise à jour de l'écran

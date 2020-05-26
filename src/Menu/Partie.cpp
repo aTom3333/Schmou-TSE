@@ -291,17 +291,17 @@ void Partie::gestionFond(sf::Time t)
 
 void Partie::initPatternTest()
 {
-	std::cerr << sizeof(long long int) << std::endl << sizeof(long int) << std::endl << sizeof(int) << std::endl << sizeof(short int) << std::endl << sizeof(unsigned int) << std::endl << std::endl << std::endl << sizeof(long double) << std::endl << sizeof(double) << std::endl << sizeof(float) << std::endl << std::endl << sizeof(signed char) << std::endl << sizeof(unsigned char) << std::endl << sizeof(bool) << std::endl;
+    // std::cerr << sizeof(long long int) << std::endl << sizeof(long int) << std::endl << sizeof(int) << std::endl << sizeof(short int) << std::endl << sizeof(unsigned int) << std::endl << std::endl << std::endl << sizeof(long double) << std::endl << sizeof(double) << std::endl << sizeof(float) << std::endl << std::endl << sizeof(signed char) << std::endl << sizeof(unsigned char) << std::endl << sizeof(bool) << std::endl;
 
-	Vague v1(*this, sf::seconds(0)),
-		  v2(*this, sf::seconds(5)),
-		  v3(*this, sf::seconds(10)),
-		  v4(*this, sf::seconds(15)),
-		  v5(*this, sf::seconds(10));
+    Vague v1(*this, sf::seconds(0)),
+            v2(*this, sf::seconds(5)),
+            v3(*this, sf::seconds(10)),
+            v4(*this, sf::seconds(15)),
+            v5(*this, sf::seconds(10));
 
-	/*VaisseauEclaireur *vaiseauEclaireurL = new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5);
-	VaisseauEclaireur *vaiseauEclaireurP = new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500);
-	VaisseauEclaireur *vaiseauEclaireurS = new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7);*/
+    /*VaisseauEclaireur *vaiseauEclaireurL = new VaisseauEclaireur(0, 0, LINEAIRE, 1, 0.5);
+    VaisseauEclaireur *vaiseauEclaireurP = new VaisseauEclaireur(1000, 0, PARABOLIQUE, -1, 500, 500);
+    VaisseauEclaireur *vaiseauEclaireurS = new VaisseauEclaireur(1000, 0, SINUS, -1, 300, 100, -.7);*/
 
 	//TODO tests à enlever
 	//v1.ajouterElement({ sf::milliseconds(0), vaisseau_ptr(new VaisseauAttaquant(*this,ECRAN_L/2, ECRAN_H/2, LINEAIRE, 0, 0)) });

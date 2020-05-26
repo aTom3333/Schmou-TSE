@@ -40,25 +40,23 @@ int main(int argc, char* argv[])
 	std::vector<std::unique_ptr<Ecran>> vectEtats;
 
     sf::Texture temp_texture;
-	chargement(window, temp_texture);
+    chargement(window, temp_texture);
 
-	//Lancement de partie	
-	vectEtats.emplace_back(new Accueil(window));
-	vectEtats.emplace_back(new MenuPrincipal(window));
-	vectEtats.emplace_back(new Partie(window, Input::Media::Mouse));
-	vectEtats.emplace_back(new Hangar(window));
+    //Lancement de partie
+    vectEtats.emplace_back(new Accueil(window));
+    vectEtats.emplace_back(new MenuPrincipal(window));
+    vectEtats.emplace_back(new Partie(window, Input::Media::Mouse));
+    vectEtats.emplace_back(new Hangar(window));
 
-	ecran_t etat = PARTIE;//TODO PG écran de départ actuel
+    ecran_t etat = ACCUEIL;//TODO PG écran de départ actuel
 
-	while (etat != VIDE)
-	{
-		sf::Texture derniereFenetre;
-		derniereFenetre.create(ECRAN_L, ECRAN_H);
-		etat = vectEtats.at(etat)->executer(vectEtats, derniereFenetre);
+    while (etat != VIDE) {
+        sf::Texture derniereFenetre;
+        derniereFenetre.create(ECRAN_L, ECRAN_H);
+        etat = vectEtats.at(etat)->executer(vectEtats, derniereFenetre);
 
-		for (auto& ecran : vectEtats)
-		{
-			if (ecran->isDetruit())
+        for (auto& ecran : vectEtats) {
+            if (ecran->isDetruit())
 			{
 				chargement(window, derniereFenetre);
 				auto ecran_temp = ecran->factory();

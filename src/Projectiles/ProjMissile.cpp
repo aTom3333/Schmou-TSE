@@ -80,39 +80,37 @@ ProjMissile::ProjMissile(Ecran& ecran, std::shared_ptr<Entite> lanceur, std::vec
 
 void ProjMissile::gestion()
 {
-	auto& window = ecran_.getWindow();
-	auto tempsEcoule = ecran_.getTempsFrame();
+    auto& window = ecran_.getWindow();
+    auto tempsEcoule = ecran_.getTempsFrame();
 
-	vit_ = vitM_ * pow(expm1(t_age_ / t_acceleration_), 2);
-	if (vit_ > vitM_)vit_ = vitM_;
+    vit_ = vitM_ * pow(std::expm1(t_age_ / t_acceleration_), 2);
+    if (vit_ > vitM_)vit_ = vitM_;
 
-	//affiche valeurs vitesses possibles, voir métadocuments
-	//std::cerr << "age : "<<t_age_.asMilliseconds() << "   sqrt : " << vitM_ * sqrt(t_age_ / t_acceleration_)<< "   lin : " << vitM_ * t_age_ / t_acceleration_ << "   exp : " << vit_ << std::endl;
+    //affiche valeurs vitesses possibles, voir métadocuments
+    //std::cerr << "age : "<<t_age_.asMilliseconds() << "   sqrt : " << vitM_ * sqrt(t_age_ / t_acceleration_)<< "   lin : " << vitM_ * t_age_ / t_acceleration_ << "   exp : " << vit_ << std::endl;
 
-	vaisseau_ptr cible;
-	if (aimbot_)
-	{
-		if (auto& cible = cible_.lock())
-		{
-			if (!cible->estDetruit())
-			{
-			    const float X = cible->getPosition().x - position_.x;
-			    const float Y = cible->getPosition().y - position_.y;
-				float angleTot = atan2(-Y, -X) * 180 / PI ; //angle avec cible
+    vaisseau_ptr cible;
+    if (aimbot_) {
+        if (auto cible = cible_.lock()) {
+            if (!cible->estDetruit()) {
+                const float X = cible->getPosition().x - position_.x;
+                const float Y = cible->getPosition().y - position_.y;
+                float angleTot = std::atan2(-Y, -X) * 180 / PI; //angle avec cible
 
-				//ciblage limité
-			    static const float VIT_ANGULAIRE = 100; //degrés par seconde
-			    const float dAngle = VIT_ANGULAIRE * ecran_.getTempsFrame().asSeconds();//variation max d'angle possible
-				if (angleTot < 0) angleTot += 360;
-				short sens = -1;
-				if ((rotation_ - angleTot) < 0 || (rotation_ - angleTot >= 180 )) sens = 1;
-			    const float angle = fabs(rotation_ - angleTot) < dAngle ? angleTot - rotation_ : sens * dAngle; // angle est le maximum entre l'angle avec la cible et dAngle non signé
-				rotate(angle);
+                //ciblage limité
+                static const float VIT_ANGULAIRE = 100; //degrés par seconde
+                const float dAngle = VIT_ANGULAIRE * ecran_.getTempsFrame().asSeconds();//variation max d'angle possible
+                if (angleTot < 0) angleTot += 360;
+                short sens = -1;
+                if ((rotation_ - angleTot) < 0 || (rotation_ - angleTot >= 180)) sens = 1;
+                const float angle = std::fabs(rotation_ - angleTot) < dAngle ? angleTot - rotation_ : sens *
+                                                                                                      dAngle; // angle est le maximum entre l'angle avec la cible et dAngle non signé
+                rotate(angle);
 
-				//ciblage parfait
-				//setRotation(angleTot);
+                //ciblage parfait
+                //setRotation(angleTot);
 
-			}
+            }
 			else //nouvelle cible
 			{
 				//TODO PG rendre la recherche de nouvelle cible activable ; par ex, en fonction du niveau de la capacité

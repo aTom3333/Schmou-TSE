@@ -35,6 +35,7 @@
 
 # Fichiers de CMake
 cmake-build-debug/
+cmake-build-release/
 cmake_modules/
 CMakeLists.txt
 Doxyfile.in
@@ -54,3 +55,6 @@ Schmou'tseur_gtkmm/
 _dossier-pierre/_temp
 /_dossier-pierre
 /à trier
+
+#JetBrains
+.idea
