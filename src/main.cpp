@@ -4,20 +4,21 @@
 #include "Menu/Accueil.h"
 #include "Menu/MenuPrincipal.h"
 #include "Menu/Hangar.h"
-#include "Utilitaires/Chargeur.h"
+#include "Projectiles/_projectiles.h"
 #include "Utilitaires/utilities.h"
-
-#include <iostream>
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include <cmath>
+#include <ctime>
+#include <iostream>
+#include <string>
 
 
 // Code minimal
-int main(int argc, char* argv[])
-{	
-	//if (argv[0] != std::string("Schmou'TSE")) //TODO PG faire de la merde avec istringstream
+int main(int argc, char* argv[]) {
+    //if (argv[0] != std::string("Schmou'TSE")) //TODO PG faire de la merde avec istringstream
 
-	//TODO CL tueur de son
+    //TODO CL tueur de son
 	sf::Listener::setGlobalVolume(100);
 
 	//TG Pierre
@@ -32,8 +33,8 @@ int main(int argc, char* argv[])
     //intro.play();
 
 	//Fenêtre
-	sf::RenderWindow window(sf::VideoMode(ECRAN_L,ECRAN_H), "Schmou'TSE");
-    const sf::View view1(sf::FloatRect(0, 0, ECRAN_L, ECRAN_H));
+    sf::RenderWindow window(sf::VideoMode(ECRAN_L, ECRAN_H), "Schmou'TSE");
+    sf::View view1(sf::FloatRect(0, 0, ECRAN_L, ECRAN_H));
     window.setView(view1);
 
 	//Stack d'écran

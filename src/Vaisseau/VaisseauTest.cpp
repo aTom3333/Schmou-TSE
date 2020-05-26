@@ -1,5 +1,7 @@
 #include "VaisseauTest.h"
 #include "../Utilitaires/utilities.h"
+#include <cmath>
+#include <iostream>
 
 
 VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
@@ -7,7 +9,7 @@ VaisseauTest::VaisseauTest(Ecran& ecran) : Vaisseau(ecran) ///constructeur
 	// Sprites
 	sprites_.emplace_back(*ecran.getChargeur().getTexture("vaiss.vaisseautest.deux"));
 	for (auto& sprite : sprites_)
-		sprite.setOrigin({ this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f });
+		sprite.setOrigin({this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f});
 
 	// Origine
 	origine_ = { this->getTailleSprite().x / 2.0f, this->getTailleSprite().y / 2.0f };
@@ -112,7 +114,7 @@ void VaisseauTest::gestion(proj_container& proj_cont, Input& input)
 	}
 
 	//déplacement
-	last_delta_ = input.move(vit_, ecran_.getTempsFrame());
+	last_delta_ = input.move(vit_, ecran_.getTempsFrame(), position_);
 	move(last_delta_);
 
 	afficher();
