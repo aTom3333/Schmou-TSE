@@ -2,7 +2,7 @@
 
 MenuPrincipal::MenuPrincipal(sf::RenderWindow & window) : Ecran(window)
 {
-	fondText_.loadFromFile("../../rc/Accueil/menu_principal.png");
+	fondText_.loadFromFile(RessourceFinder::getPath("Accueil/menu_principal.png"));
 	fond_.setTexture(fondText_);
 
 	version_.setFont(polices_["hemi"]);

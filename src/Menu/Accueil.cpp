@@ -2,7 +2,7 @@
 
 Accueil::Accueil(sf::RenderWindow & window) : Ecran(window) 
 {
-	fondText_.loadFromFile("../../rc/Accueil/titre.png");
+	fondText_.loadFromFile(RessourceFinder::getPath("Accueil/titre.png"));
 	fond_.setTexture(fondText_);
 
 	texte_.setFont(polices_["hemi"]);

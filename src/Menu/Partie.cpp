@@ -10,11 +10,10 @@
 
 Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bool avecPattern) : Ecran(window), input_{window, media}, avecPattern_{avecPattern}, afficheHUD_{afficheHUD}
 {
-	if (!font_.loadFromFile("../../rc/Font/hemi.ttf"))
-	{
+	if (!font_.loadFromFile(RessourceFinder::getPath("Font/hemi.ttf"))) {
 		std::cout << "Impossible de charger la police" << std::endl;
 	}
-	
+
 	if (media == Input::Media::Mouse)set_mouse_default_binding(input_);
 	if (media == Input::Media::Keyboard)set_keyboard_default_binding(input_);
 	if (media == Input::Media::Joypad)set_joypad_default_binding(input_);
@@ -37,23 +36,23 @@ Partie::Partie(sf::RenderWindow& window, Input::Media media, bool afficheHUD, bo
 	vaisseautest->addCapacite(new CapBoing(*this, vaisseautest));
 	//ULTI Bismillah
 	vaisseautest->addCapacite(new CapBismillah(*this, vaisseautest));
-	
+
 	vaisseaux_.push_back(vaisseautest);
-	vaisseaux_[0]->setPosition({ 500,700 });
+	vaisseaux_[0]->setPosition({500, 700});
 
 
 	//Fond défilant
 	fondTexture_.emplace_back(new sf::Texture());
-	fondTexture_.back()->loadFromFile("../../rc/Fond/etoiles1.png");
+	fondTexture_.back()->loadFromFile(RessourceFinder::getPath("Fond/etoiles1.png"));
 	fond_.emplace_back(sf::Sprite(*fondTexture_.back()));
 	offset_.push_back(0);
 
 	fondTexture_.emplace_back(new sf::Texture());
-	fondTexture_.back()->loadFromFile("../../rc/Fond/etoiles2.png");
+	fondTexture_.back()->loadFromFile(RessourceFinder::getPath("Fond/etoiles2.png"));
 	fond_.emplace_back(sf::Sprite(*fondTexture_.back()));
 	offset_.push_back(0);
 
-	
+
 
 	//init patterns
 	if (avecPattern_) initPatternTest();

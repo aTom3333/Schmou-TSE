@@ -6,10 +6,10 @@ Ecran::Ecran(sf::RenderWindow& window) :  window_{ window }
 {
 	//polices
 	sf::Font temp_font;
-	temp_font.loadFromFile("../../rc/Font/hemi.ttf");
+	temp_font.loadFromFile(RessourceFinder::getPath("Font/hemi.ttf"));
 
 	polices_["hemi"] = temp_font;
-	temp_font.loadFromFile("../../rc/Font/whitrabt.ttf");
+	temp_font.loadFromFile(RessourceFinder::getPath("Font/whitrabt.ttf"));
 	polices_["whitrabt"] = temp_font;
 
 }
@@ -26,8 +26,7 @@ optional<ecran_t> Ecran::gestionEvent(const sf::Event& event)
 	return nullopt;
 }
 
-void chargement(sf::RenderWindow &window, sf::Texture& derniereFenetre)
-{
+void chargement(sf::RenderWindow &window, sf::Texture& derniereFenetre) {
 	sf::Clock timer;
 	size_t alpha = 50;
 
@@ -35,19 +34,17 @@ void chargement(sf::RenderWindow &window, sf::Texture& derniereFenetre)
 	sf::RectangleShape rect({ECRAN_L, ECRAN_H});
 	sf::Sprite sprite, fond;
 
-	rect.setFillColor({ 0,0,0,0 });
+	rect.setFillColor({0, 0, 0, 0});
 
-	texture.loadFromFile("../../rc/Chargement/chargement.png");
+	texture.loadFromFile(RessourceFinder::getPath("Chargement/chargement.png"));
 	sprite.setTexture(texture);
 	fond.setTexture(derniereFenetre);
 
 	auto t = timer.restart();
 
-	while (alpha < 255)
-	{
+	while (alpha < 255) {
 		t = timer.getElapsedTime();
-		if (t.asMilliseconds() > 50)
-		{
+		if (t.asMilliseconds() > 50) {
 			alpha += 50;
 
 			if (alpha > 255)

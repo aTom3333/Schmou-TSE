@@ -3,8 +3,6 @@
 
 #include <cstddef>
 
-#define CHEMIN_RC "../../rc/"
-
 constexpr double PI = 3.1415926835897932384626433832; /// Valeur de pi
 #define VERSION "Debug."
 #define BRANCHE "master"

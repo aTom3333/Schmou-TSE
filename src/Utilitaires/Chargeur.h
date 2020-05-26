@@ -8,28 +8,42 @@
 #include <string>
 #include <SFML/Audio.hpp>
 
-struct caseInsensitiveCompare
-{
-	bool operator()(const std::string& a, const std::string& b) const;
+struct caseInsensitiveCompare {
+    bool operator()(const std::string& a, const std::string& b) const;
 };
 
-class Chargeur
-{
-    public:
-        Chargeur();
-        std::shared_ptr<sf::Texture> getTexture(const std::string& name, bool repeated = false, bool smooth = true, const sf::IntRect& area = sf::IntRect());
-        std::shared_ptr<sf::SoundBuffer> getSoundBuffer(const std::string& name);
-		std::shared_ptr<sf::Font> getFont(const std::string& name);
+struct RessourceFinder {
+public:
+    RessourceFinder(RessourceFinder const&) = delete;
+    RessourceFinder(RessourceFinder&&) = delete;
+    RessourceFinder& operator=(RessourceFinder) = delete;
+    RessourceFinder& operator=(RessourceFinder const&) = delete;
+    RessourceFinder& operator=(RessourceFinder&&) = delete;
 
-		void playSoundAtDeath(const std::string& name);
-    
-    private:
-        static std::map<std::string, std::string, caseInsensitiveCompare> location_;
-        static bool loaded_;
-        std::map<std::string, std::shared_ptr<sf::Texture>, caseInsensitiveCompare> textures_;
-        std::map<std::string, std::shared_ptr<sf::SoundBuffer>, caseInsensitiveCompare> sound_buffers_;
-		std::map<std::string, sf::Sound, caseInsensitiveCompare> sounds_at_death_;
-		std::map<std::string, std::shared_ptr<sf::Font>, caseInsensitiveCompare> fonts_;
+    static RessourceFinder& instance();
+    static std::string getPath(std::string const& name);
+private:
+    RessourceFinder() = default;
+    bool wdSet = false;
+};
+
+class Chargeur {
+public:
+    Chargeur();
+    std::shared_ptr<sf::Texture>
+    getTexture(const std::string& name, bool repeated = false, bool smooth = true, const sf::IntRect& area = sf::IntRect());
+    std::shared_ptr<sf::SoundBuffer> getSoundBuffer(const std::string& name);
+    std::shared_ptr<sf::Font> getFont(const std::string& name);
+
+    void playSoundAtDeath(const std::string& name);
+
+private:
+    static std::map<std::string, std::string, caseInsensitiveCompare> location_;
+    static bool loaded_;
+    std::map<std::string, std::shared_ptr<sf::Texture>, caseInsensitiveCompare> textures_;
+    std::map<std::string, std::shared_ptr<sf::SoundBuffer>, caseInsensitiveCompare> sound_buffers_;
+    std::map<std::string, sf::Sound, caseInsensitiveCompare> sounds_at_death_;
+    std::map<std::string, std::shared_ptr<sf::Font>, caseInsensitiveCompare> fonts_;
 };
 
 

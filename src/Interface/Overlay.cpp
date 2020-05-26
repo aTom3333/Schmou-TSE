@@ -5,19 +5,17 @@
 void Overlay::init(vaisseau_ptr vaisseau)
 {
 	// Chargement des images
-	font_.loadFromFile("../../rc/Font/whitrabt.ttf");
-    //TODO PG ça n'affiche pas le ê de "Prêt" car il n'y a pas d'accents dans cette police... faudra la changer Cyril
-	overlayText_.loadFromFile("../../rc/UI/overlay.png");
+	font_.loadFromFile(RessourceFinder::getPath("Font/whitrabt.ttf"));
+	//TODO PG ça n'affiche pas le ê de "Prêt" car il n'y a pas d'accents dans cette police... faudra la changer Cyril
+	overlayText_.loadFromFile(RessourceFinder::getPath("UI/overlay.png"));
 	overlay_.setTexture(overlayText_);
 
 	// Initialisation des barre de vie, d'armure et de bouclier
-    for(size_t i = 0 ; i < 3 ; i++)
-    {
-        barre_[i].setSize({OVERLAY_BARRE_L, OVERLAY_BARRE_H});
-        barre_[i].setPosition(20, 12 + (OVERLAY_BARRE_H + 4) * i);
-        switch(i)
-        {
-            case 0 :
+	for (size_t i = 0; i < 3; i++) {
+		barre_[i].setSize({OVERLAY_BARRE_L, OVERLAY_BARRE_H});
+		barre_[i].setPosition(20, 12 + (OVERLAY_BARRE_H + 4) * i);
+		switch (i) {
+			case 0 :
                 {
                     barre_[i].setFillColor({255, 66, 66, 150});
                     break;

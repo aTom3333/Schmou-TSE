@@ -23,12 +23,12 @@ int main(int argc, char* argv[]) {
 
     //TG Pierre
     //sf::Music eyaeya;
-    //eyaeya.openFromFile("../../rc/Musics/Divers/eyaeya.ogg");
+    //eyaeya.openFromFile(RessourceFinder::getPath("Musics/Divers/eyaeya.ogg"));
     //eyaeya.setLoop(true);
     //eyaeya.play();
 
     sf::Music intro;
-    intro.openFromFile("../../rc/Musics/Divers/intro_wtf.wav");
+    intro.openFromFile(RessourceFinder::getPath("Musics/Divers/intro_wtf.wav"));
     intro.setLoop(false);
     intro.play();
 
