@@ -9,8 +9,6 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <cmath>
-#include <ctime>
-#include <iostream>
 #include <string>
 
 
@@ -36,6 +34,11 @@ int main(int argc, char* argv[]) {
     sf::RenderWindow window(sf::VideoMode(ECRAN_L, ECRAN_H), "Schmou'TSE");
     sf::View view1(sf::FloatRect(0, 0, ECRAN_L, ECRAN_H));
     window.setView(view1);
+
+    // Icone
+    sf::Image thumbnail;
+    thumbnail.loadFromFile(RessourceFinder::getPath("Sprites/Vaisseaux/vaisseauTest/vaisseau.png"));
+    window.setIcon(thumbnail.getSize().x, thumbnail.getSize().y, thumbnail.getPixelsPtr());
 
     //Stack d'écran
     std::vector<std::unique_ptr<Ecran>> vectEtats;
